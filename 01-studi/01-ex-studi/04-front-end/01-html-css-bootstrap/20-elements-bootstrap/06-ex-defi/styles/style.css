@@ -1,0 +1,38 @@
+/*.head {
+  height: 70px;
+}
+
+nav ul {
+  width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border-top: 1px black solid;
+  border-bottom: 1px black solid;
+}
+
+nav li {
+  float: left;
+}
+
+nav li a {
+  display: block;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+nav .about {
+  float: right;
+}
+
+section {
+  margin-top: 20px;
+}
+
+table td, table th {
+  border: 1px black solid;
+  text-align: center;
+  padding: 5px;
+}*/

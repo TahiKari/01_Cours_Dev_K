@@ -1,0 +1,11 @@
+# Ignore les fichier .text, .docx, .pdf.
+*.text
+*.docx
+*.pdf
+
+# Ignore les repertoire uploads et vendors.
+uploads/
+vendors/
+
+#conserve le fichier REAMDE.md
+!uploads/README.md

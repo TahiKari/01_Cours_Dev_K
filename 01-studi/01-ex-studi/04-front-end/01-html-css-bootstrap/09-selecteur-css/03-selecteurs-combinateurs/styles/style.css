@@ -1,0 +1,21 @@
+nav a {
+  text-decoration: none;
+  font-weight: 700;
+}
+
+nav > ul.site-navigation > li {
+  display: inline;
+  list-style: none;
+  color: green;
+  font-size: 14px;
+  margin: 10px;
+}
+
+
+nav > ul.site-navigation > li > a {
+  color: #2b2b2b;
+}
+
+nav > a {
+  color: brown;
+}

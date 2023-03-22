@@ -1,0 +1,11 @@
+{
+  "editor.fontSize": 16,
+  "editor.rulers": [
+    {
+      "column": 100,
+      "color": "#ff0000"
+    }
+  ],
+  "editor.tabSize": 2,
+  "liveServer.settings.showOnStatusbar": true
+}

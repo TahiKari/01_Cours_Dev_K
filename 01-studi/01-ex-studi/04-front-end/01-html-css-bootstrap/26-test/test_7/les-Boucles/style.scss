@@ -1,0 +1,9 @@
+$system-font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, 
+sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+$radius: 12px 10px 8px 14px;
+
+.box {
+  border-radius: $radius;
+  width: nth($radius, 2);
+}

@@ -1,0 +1,35 @@
+$system-font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, 
+sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+$info: #0984e3;
+$info-darker: darken(#0984e3, 10%);
+$info-lighter: lighten(#0984e3, 10%);
+$info-semi-tranparent: fade-out(#0984e3, 0.8);
+
+* {
+  font-family: $system-font-stack;
+}
+
+.information {
+  margin: 50px;
+  padding: 15px;
+  box-shadow: 4px 4px 10px lightgray;
+  border-radius: 6px;
+  width: 400px;
+  background: $info-semi-tranparent;
+
+  h4 {
+    color: $info-darker;
+    font-size: 1.4rem;
+    margin: 5px 0;
+  }
+  
+  p {
+    color: $info;
+  }
+  
+  a {
+    color: $info-lighter;
+  }
+}
+

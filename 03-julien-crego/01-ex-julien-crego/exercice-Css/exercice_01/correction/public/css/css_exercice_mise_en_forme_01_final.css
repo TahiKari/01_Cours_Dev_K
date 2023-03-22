@@ -1,0 +1,119 @@
+/*******************************************************************************
+ * ATTENTION REGLAGES DE L'INTERFACE GLOBALE.
+ * NE PAS TOUCHER !!!!!!
+ ******************************************************************************/
+.page{
+    width: 900px;
+    margin: auto;
+}
+.entete{
+    height: 100px;
+}
+.colonne_menu{
+    float: left;
+    width: 200px;
+    height: 100%;
+}
+.colonne_contenu {
+    margin-left: 200px;
+}
+.pieddepage{
+    height: 50px;
+}
+/*******************************************************************************
+ * SAISISSEZ VOS DECLARATIONS CSS EN-DESSOUS DE CETTE LIGNE
+ ******************************************************************************/
+
+/* INITIALISATION *************************************************************/
+body{
+    background-color: #333333;
+    font-size: 0.9rem;
+    font-family: "Trebuchet MS";
+    margin: 0;
+    padding: 0;
+}
+
+/* ZONE D'ENTETE **************************************************************/
+.entete{
+    padding: 10px;
+    background-color: #666666;
+}
+.site_titre{
+    color: #efefef;
+    font-size: 2rem;
+}
+.site_slogan{
+    color: #cccccc;
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+/* ZONE PIED DE PAGE **********************************************************/
+.pieddepage{
+    background-color: #666666;
+    color: #efefef;
+    text-align: center;
+    line-height: 50px;
+}
+
+/* ZONE COLONNE CONTENU *******************************************************/
+.colonne_contenu {
+    background-color: #ffffff;
+    padding: 10px;
+}
+/* Possible de mettre ".colonne_contenu h1" mais pas utile donc juste h1 */
+h1 { 
+    background-color: #cccccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-bottom: 5px solid #47b1fc;
+}
+h2 {
+    color: #47b1fc;
+    margin: 10px;
+    text-decoration: underline;
+}
+strong{
+    color: #fa6a7d ;
+    font-weight: normal;
+}
+em {
+    color: #fadf82;
+}
+.introduction{
+    font-style: italic;
+    padding: 10px;
+    border: 1px solid #999999;
+    border-radius: 10px;
+}
+a {
+    font-weight: bold;
+}
+
+a:hover{
+    color: #333333 ;
+    text-decoration: none ;
+}
+
+/* ZONE COLONNE MENU **********************************************************/
+.colonnes, .colonne_menu {
+    background-color: #8cbdfc;
+}
+.colonne_menu ul {
+    padding: 0px;
+    margin: 0px;
+}
+.colonne_menu li {
+    list-style-type: none;
+    background-color: #fadf82;
+    margin: 5px;
+    padding: 5px;
+    text-align: center;
+}
+.colonne_menu li:hover {
+    background-color: #fa6a7d;
+}
+.colonne_menu a {
+    text-decoration: none ;
+    color: #000000 ;
+}

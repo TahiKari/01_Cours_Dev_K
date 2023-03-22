@@ -1,0 +1,51 @@
+.test {
+  width: 400px;
+  height: 60px;
+  margin: 5px 0;
+  padding: 5px 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.color-info {
+  color: #599bff;
+}
+
+.color-success {
+  color: #76fc65;
+}
+
+.color-error {
+  color: #fd5f5f;
+}
+
+.background-color-info {
+  background-color: #599bff;
+}
+
+.background-color-success {
+  background-color: #76fc65;
+}
+
+.background-color-error {
+  background-color: #fd5f5f;
+}
+
+.border-color-info {
+  border-color: #599bff;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.border-color-success {
+  border-color: #76fc65;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.border-color-error {
+  border-color: #fd5f5f;
+  border-width: 2px;
+  border-style: solid;
+}
+/*# sourceMappingURL=style.css.map */

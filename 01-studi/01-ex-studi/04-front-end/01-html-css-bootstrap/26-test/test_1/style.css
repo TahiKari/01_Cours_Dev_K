@@ -1,0 +1,22 @@
+@keyframes changeBackground {
+    0% { 
+      background: red;
+    }
+    50% {
+      background: green;   
+    }
+    100% { 
+      background: blue;
+      transform: 
+        translateX(800px)
+        rotate(4160deg);  
+    }
+  }
+  
+  .animation {
+    width: 100px;
+    height: 100px;
+    margin-top: 100px;
+    background: red;
+    animation: 4s linear 0s infinite alternate changeBackground;
+  }

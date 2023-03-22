@@ -1,0 +1,462 @@
+*{
+  box-sizing: border-box;
+}
+
+p {
+  color: #000;
+}
+
+.dFlex-Flex-Col {
+  display: flex;
+  flex-direction: column;
+}
+
+.justContBetween-aliItCenter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.posiRela-Bot10 {
+  position: relative;
+  bottom: 10px;
+}
+
+.posiRelative {
+  position: relative;
+}
+
+.color {
+  color: #0065FC
+}
+
+.color-black {
+  color: #000;
+}
+
+.bg-b {
+  background: rgb(222, 235, 255);
+}
+
+.bg-gray {
+  background: #F2F2F2;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.active {
+  color: #0065FC;
+}
+
+.pRelative {
+  position: relative;
+}
+
+.fs-fas-link {
+  font-size: 1.2rem;
+}
+
+.bd-link1234 {
+  border-top: 2px solid rgb(235, 235, 235);
+  border-bottom: 2px solid rgb(235, 235, 235);
+  border-right: 2px solid rgb(235, 235, 235);
+  height: 60px;
+  border-radius: 50px;
+}
+
+img {
+  object-fit: cover;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h3 {
+  font-size: 1.6em;
+  padding: 20px 20px 10px;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+  background: #fff;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 1fr 2fr 1fr;
+  grid-template-areas: 
+  "header"
+  "main"
+  "footer";
+}
+
+header {
+  grid-area: header;
+  padding: 25px;
+}
+
+.nav-header {
+  margin: 30px 25px ;
+}
+
+.img-header {
+  width: 30%;
+}
+
+.menu-header a:nth-child(1) {
+  padding: 0 45px 0;
+}
+
+.menu-header a:nth-child(2) {
+  padding-right: 65px;
+  color: #000;
+}
+
+.nav-header a,
+.menu-header a {
+  font-size: 1.3em;
+  text-decoration: none;
+}
+
+.menu-header a:nth-child(1)::after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  margin-top: 15px;
+  width: 50%;
+  height: 4px;
+  background: #0065FC;
+}
+
+.menu-header a:nth-child(2)::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0px;
+  margin-top: 15px;
+  width: 50%;
+  height: 4px;
+  background: #f2f2f2;
+}
+
+.search-filter {
+  margin: 19px auto 0;
+  padding: 20px 0 0;
+  width: 100%;
+}
+
+.search-filter strong {
+  font-size: 1.6em;
+}
+
+.search-filter p:nth-child(2) {
+  font-size: 1.2em;
+}
+
+.menu-search {
+  width: 100%;
+}
+
+form {
+  width: 100%;
+  height: 57px;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid rgb(235, 235, 235);
+  border-bottom: 1px solid rgb(235, 235, 235);
+  border-radius: 15px;
+}
+
+.input-search {
+  height: 55px;
+  width: 100%;
+  border: 1px solid rgb(242, 242, 242);
+  border-radius: 0px 15px 15px 0;
+  font-size: 1.3em;
+  padding-left: 20px;
+}
+
+.search label {
+  height: 55px;
+  background: rgb(247, 247, 247);
+  border-radius: 15px 0 0 15px;
+}
+
+.menu-search a {
+  height: 57px;
+  width: 56px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  border-radius: 15px;
+  outline: 0 none;
+  background: #0065FC;
+}
+
+.fas {
+  width: 50px;
+  height: 45px;
+  font-size: 20px;
+}
+
+.fa-map-marker-alt {
+  top: 19px;
+  left: 19px;
+}
+
+.fa-search {
+  margin: 19px 0 0 19px;
+  color: white;
+}
+
+.title-filter {
+  display: block;
+  margin: 20px 0 5px 0;
+}
+
+.menu-filter {
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 0.5fr);
+  grid-template-areas: 
+  "link1 link2"
+  "link3 ."
+  "link4 link4";
+  gap: 10px;
+}
+
+.link1 {
+  grid-area: link1;
+  width: 205px;
+}
+
+.link2 {
+  grid-area: link2;
+  width: 165px
+}
+
+.link3 {
+  grid-area: link3;
+  width: 195px;
+}
+
+.link4 {
+  grid-area: link4;
+  width: 250px;
+}
+
+.button {
+  top: 15px;
+  left: 5px;
+}
+
+.filter-link .fas {
+  bottom: 17px;
+  left: -4px;
+  height: 59px;
+  width: 59px;
+  border-radius: 50%;
+}
+
+.link1 .fas::before,
+.link3 .fas::before,
+.link4 .fas::before {
+  position: relative;
+  top: 19px;
+  left: 19px;
+}
+
+.link2 .fas::before {
+  position: relative;
+  top: 18px;
+  left: 22px;
+}
+
+.button a {
+  margin-left: 50px;
+}
+
+.info {
+  display: flex;
+  align-items: flex-start;
+}
+
+.info i {
+  border: 1px solid #000;
+  border-radius: 50%;
+  width: 40px;
+  height: 30px;
+  margin: 15px 10px 0 0;
+}
+
+.info i::before {
+  position: relative;
+  top: 3px;
+  left: 11px;
+  font-size: 0.9em;
+  color: #0065FC;
+}
+
+aside {
+  padding-bottom: 30px;
+}
+
+aside i::before {
+  font-size: 1.3em;
+  position: relative;
+  bottom: 20px;
+}
+
+.aside-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.log-aside {
+  width: 90%;
+  height: 160px;
+  background-color: #fff;
+  border-radius: 30px;
+  margin: 10px auto;
+  padding: 6px;
+  box-shadow: 0px 5px 30px #f2f2f2;
+  display: flex;
+  justify-content: space-between;
+}
+
+.log-aside img {
+  width: 150px;
+  height: 150px;
+  display: block;
+  border-radius: 25px 0 0 25px;
+
+}
+
+.log-infos {
+  bottom: 10px;
+  right: 35px;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.log-infos p {
+  position: absolute;
+  top: 60px;
+}
+
+.log-infos h4 {
+  font-size: 1.2em;
+}
+
+.log-infos img {
+  width: 80px;
+  height: 20px;
+  margin-top: 35px;
+}
+
+.log {
+  width: 90%;
+  height: 225px;
+  border-radius: 30px;
+  margin: 20px auto;
+  padding: 6px;
+  box-shadow: 0px 5px 30px #ececec;
+}
+
+.log img {
+  width: 100%;
+  height: 130px;
+  border-radius: 25px 25px 0 0;
+}
+
+.log-acco {
+  top: -15px;
+  left: 10px;
+  height: 65px;
+}
+
+.log-acco p {
+  position: absolute;
+  bottom: 10px;
+}
+
+.log-acco img {
+  position: absolute;
+  width: 80px;
+  height: 20px;
+  margin-top: 35px;
+  bottom: -5px;
+}
+
+.art-top a:last-child {
+  margin-left: 30px;
+  font-weight: bold;
+  font-size: 1.1em;
+  color: #000;
+}
+
+.act {
+  margin: 50px 0;
+}
+
+.log-bot,
+.log-bot-tall {
+  width: 90%;
+  height: 260px;
+  background-color: #fff;
+  border-radius: 25px;
+  margin: 10px auto;
+  box-shadow: 0px 5px 30px #f2f2f2;
+}
+
+.log-bot img,
+.log-bot-tall img {
+  width: 100%;
+  height: 190px;
+  border-radius: 25px 25px 0 0;
+}
+
+.log-bot h4,
+.log-bot-tall h4 {
+  margin-left: 20px;
+}
+
+footer {
+  padding: 20px;
+  background: #F2F2F2;
+}
+
+footer h5 {
+  font-size: 1.3em;
+  margin-bottom: 15px;
+}
+
+footer a {
+  padding: 5px;
+  font-size: 1.1em
+}
+
+.nav-right {
+  margin-bottom: 50px;
+}

@@ -1,0 +1,82 @@
+body {
+    font-family: Calibri, serif;
+    background-color: lightskyblue;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+form {
+    max-width: 50%;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    background-color: linen;
+    padding: 20px;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+label.inline-label {
+    display: inline-block;
+}
+
+fieldset {
+    border: 1px solid lightgray;
+    background-color: rgba(225, 233, 255, 0.25);
+    text-align: center;
+    width: 79.5%;
+}
+
+legend {
+    font-style: italic;
+    font-size: 1.1em;
+    padding: 5px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+input, select, textarea {
+    text-align: center;
+}
+
+select#sponsor {
+    text-align-last: center;
+}
+
+input#avatar {
+    text-align-last: center;
+}
+
+form input, form select, form textarea {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 80%;
+}
+
+input::placeholder, textarea::placeholder {
+    text-align: center;
+}
+
+form input[type="radio"], form input[type="checkbox"], form input[type="submit"] {
+    width: auto;
+}
+
+button[type=submit] {
+    padding: 10px;
+    margin-top: 15px;
+}
+
+button {
+    margin-top: 25px;
+}

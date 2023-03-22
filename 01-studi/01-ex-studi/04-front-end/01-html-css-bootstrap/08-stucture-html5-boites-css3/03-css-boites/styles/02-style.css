@@ -1,0 +1,15 @@
+nav {
+  background-color: gray; 
+  width: 15%;
+}
+
+article { 
+  background-color: #9fcdff;
+  width: 60%;
+}
+
+nav, article {
+  display: inline-block;
+  height: 500px;
+  vertical-align: top;
+}

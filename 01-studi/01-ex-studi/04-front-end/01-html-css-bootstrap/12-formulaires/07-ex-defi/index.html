@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Exercice : Défi</title>
+    </head>
+
+    <body>
+        <h1>Exercice : Défi</h1>
+
+        <h2>Formulaire d'inscription</h2>
+        <form action="action.php" method="POST">
+            <fieldset>
+                <legend class="bold">Information d'inscription</legend>
+
+                <label for="email" class="inline-label">Adresse e-mail</label>
+                <input type="email" name="email" id="email" placeholder="Saisissez votre adresse e-mail. ex : jean@mail.fr" required>
+
+                <label for="pass">Mot de passe</label>
+                <input type="password" name="password" id="pass" placeholder="Saisissez un mot de passe" required>
+
+                <label for="rePass">Confirmation du mot de passe</label>
+                <input type="password" name="password" id="rePass" placeholder="Confirmez le mot de passe" required>
+
+                <label for="avatar">Choisissez une photo de profil</label>
+                <input type="file" name="avatar" id="avatar" accept="image/*" required>
+            </fieldset>
+
+            <fieldset>
+                <legend class="bold">Civilité</legend>
+
+                <input type="radio" name="civilite" id="Mr" value="Mr">
+                <label for="Mr" class="inline-label">Monsieur</label>
+
+                <input type="radio" name="civilite" id="Mme" value="Mme">
+                <label for="Mme" class="inline-label">Madame</label>
+                
+                <label for="lastName">Nom</label>
+                <input type="text" name="lastName" id="lastName" placeholder="Saisissez votre nom" required>
+
+                <label for="firstName">Prénom</label>
+                <input type="text" name="firstName" id="firstName" placeholder="Saisissez votre prénom" required>
+
+                <label for="birthDate">Date de naissance</label>
+                <input type="date" name="birthDate" id="birthDate">
+
+                <label for="phoneNumber">N° de téléphone</label>
+                <input type="tel" name="phoneNumber" id="phoneNumber" placeholder="Saisissez votre numéro de téléphone">
+            </fieldset>
+
+            <fieldset>
+                <legend class="bold">Adresse</legend>
+
+                <label for="city">Ville</label>
+                <input type="text" name="city" id="city" placeholder="Saisissez votre ville de résidence">
+
+                <label for="zipCode">Code postal</label>
+                <input type="text" name="zipCode" id="zipCode" placeholder="Saisissez votre code postal">
+
+                <label for="address">Adresse</label>
+                <textarea name="address" id="address" cols="30" rows="10" placeholder="Saisissez votre adresse d'habitation"></textarea>
+            </fieldset>
+
+            <fieldset>
+                <legend class="bold">Jeux de société</legend>
+
+                <label for="games">Jeux de société favoris</label>
+                <select name="games" id="games" multiple>
+                    <option value="tarot">Tarot</option>
+                    <option value="echec">Échecs</option>
+                    <option value="dames">Dames</option>
+                    <option value="battleship">Bataille navale</option>
+                    <option value="little-horses">Petits-chevaux</option>
+                    <option value="poker">Poker</option>
+                </select>
+            </fieldset>
+            
+            <fieldset>
+                <legend class="bold">Parrainage</legend>
+
+                <label for="sponsor">Parain</label>
+                <select name="sponsor" id="sponsor">
+                    <option value="">Indiquer le prénom de votre parrain</option>
+                    <option value="laure">Laure</option>
+                    <option value="adam">Adam</option>
+                    <option value="chloe">Chloé</option>
+                    <option value="jules">Jules</option>
+                    <option value="camille">Camille</option>
+                    <option value="raphael">Raphaël</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <legend class="bold">Newsletter</legend>
+
+                <input type="checkbox" name="newsletter" id="newsletter" value="yes">
+                <label for="newsletter" class="inline-label">Jaccepte de recevoir la newsletter</label>
+            </fieldset>
+
+            <button type="reset">
+                Réinitialisez
+            </button>
+
+            <button type="button">
+                Validez l'inscription
+            </button>
+        </form>
+    </body>
+
+</html>

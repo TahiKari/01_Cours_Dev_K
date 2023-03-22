@@ -1,0 +1,31 @@
+%flex-centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+$info: #0059ff;
+$success: #00ff59;
+$danger: #ff3c00;
+$white: #fff;
+
+.btn {
+  @extend %flex-centered;
+  border-radius: 4px;
+  border: none;
+  color: $white;
+  margin: 5px;
+  padding: 10px 30px;
+
+  &.info {
+    background: $info;
+  }
+
+  &.success {
+    background: $success;
+  }
+
+  &.danger {
+    background: $danger;
+  }
+}

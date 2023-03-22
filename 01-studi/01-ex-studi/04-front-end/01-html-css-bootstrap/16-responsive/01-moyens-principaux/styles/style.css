@@ -1,0 +1,23 @@
+.change-width {
+    border: 1px solid black;
+    width: 40%;
+}
+
+div {
+    font-size: 16px;
+}
+
+.change-height {
+    border: 1px solid black;
+    height: 2em;
+}
+
+.bottom-right {
+    float: right;
+    width: 50%;
+    background: red;
+}
+
+.change-viewport {
+    font-size: 7vh;
+}

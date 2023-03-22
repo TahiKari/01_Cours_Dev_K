@@ -1,0 +1,36 @@
+/* Code déjà présent */
+body {
+  font-family: Calibri, sans-serif;
+  color: #000634;
+}
+
+nav a {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a:hover, nav > ul.site-navigation > li > a:hover {
+  color: #2657cf;
+  text-decoration: underline;
+}
+
+nav > a {
+  color: brown;
+}
+
+nav > ul.site-navigation > li {
+  display: inline;
+  list-style: none;
+  color: green;
+  font-size: 14px;
+  margin: 10px;
+}
+
+nav > ul.site-navigation > li > a {
+  color: #2b2b2b;
+}
+
+p::selection {
+  background: rgba(0, 255, 85, 0.15);
+}
+

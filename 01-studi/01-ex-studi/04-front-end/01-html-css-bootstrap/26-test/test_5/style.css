@@ -1,0 +1,20 @@
+.container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.row-custom {
+  border: 1px solid #ddd;
+  background: #eee;
+  height: 200px;
+}
+
+.row div {
+  border: 1px solid #aaa;
+  background: #ccc;
+  padding: 15px;
+}
+
+.row-custom div {
+  height: 50px;
+}

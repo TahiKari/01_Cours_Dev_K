@@ -1,0 +1,12 @@
+/* j'ai appliqué un texte décoration à h1 et je l'ai mis en italic */
+
+h1 {
+  text-decoration: underline;
+  font-style: italic;
+}
+
+/* j'ai appliqué une couleur orange au paragraphe p */
+
+p {
+  color: orange;
+}

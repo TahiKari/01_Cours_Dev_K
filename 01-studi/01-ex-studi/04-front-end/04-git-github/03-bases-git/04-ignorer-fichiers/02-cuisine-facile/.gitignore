@@ -1,0 +1,11 @@
+# Ignore tous les fichier .txt.
+*.txt
+
+# Conserve important.txt.
+!important.txt
+
+# Ignore le répertoire /vendors.
+vendors/
+
+# Ignore les fichiers .pdf du répertoire uploads.
+uploads/**/*.pdf

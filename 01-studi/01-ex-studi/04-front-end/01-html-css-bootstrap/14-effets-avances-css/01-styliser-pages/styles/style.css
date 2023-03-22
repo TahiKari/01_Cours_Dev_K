@@ -1,0 +1,41 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 15px;
+}
+
+.boxWithShadow, .roundedBox {
+    margin: auto;
+}
+
+.boxWithShadow {
+    width: 300px;
+    height: 200px;
+    box-shadow: -4px 6px 20px hsla(0, 0%, 0%, 0.8);
+}
+
+.roundedBox {
+    width: 300px;
+    height: 200px;
+    /*background: contain no-repeat url('https://picsum.photos/200/300');*/
+    background: no-repeat center/cover url("https://picsum.photos/200/300");
+    border-radius: 8px 20px 4px 6px;
+}
+
+.gradientBox {
+    margin: auto;
+    width: 300px;
+    height: 200px;
+    background: linear-gradient(25deg, yellow, green);
+}

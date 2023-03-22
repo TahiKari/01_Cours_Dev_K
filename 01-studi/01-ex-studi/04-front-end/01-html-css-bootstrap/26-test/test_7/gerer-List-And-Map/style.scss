@@ -1,0 +1,33 @@
+$system-font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, 
+sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+$info: #0984e3;
+$text: #fff;
+
+@function h($num) {
+  @return $num / 2;
+}
+
+@mixin card ($radius: 0) {
+  background: white;
+  padding: 20px;
+  margin: 40px;
+  @if $radius > 0 {
+    border-radius: $radius;
+    box-shadow: 4px 4px 10px lightgray;
+  }
+  @else {
+    box-shadow: 4px 4px 10px gray;
+  }
+}
+
+.box {
+  background: $info;
+  height: #{h(800)}px;
+  width: 800px;
+}
+
+.card {
+  @include card(12px);
+  color: red;
+}

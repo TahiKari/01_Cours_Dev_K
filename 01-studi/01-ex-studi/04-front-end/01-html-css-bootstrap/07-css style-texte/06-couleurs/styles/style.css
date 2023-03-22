@@ -1,0 +1,46 @@
+.parent {
+  width: 100%;
+  font-size: 16px;
+}
+
+.title, .subtitle, .text, .citation {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.title, .subtitle, .text {
+  font-family: Arial, sans-serif;
+}
+
+.title, .subtitle {
+  margin-bottom: 10px;
+  line-height: 2em;
+  /* solution */
+  font-weight: bold;
+  /* solution */
+}
+
+.text, .citation {
+  margin-bottom: 5px
+}
+.title {
+  font-size: 2em;
+  color: red;
+}
+
+.subtitle {
+  font-size: 1.5em;
+  color: green;
+}
+
+.text {
+  font-size: 1em;
+  text-align: justify;
+  word-break: normal;
+  color: blue;
+}
+
+.citation {
+  font-size: 0.8em;
+  color: orange;
+}

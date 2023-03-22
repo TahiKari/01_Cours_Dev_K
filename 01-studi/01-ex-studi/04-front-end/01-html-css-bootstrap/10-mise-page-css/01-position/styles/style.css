@@ -1,0 +1,38 @@
+html, body {
+  width: 100%;
+  height: 3000px;
+  margin: 0;
+}
+
+.a, .b, .c, .d, .e {
+  width: 150px;
+  height: 150px;
+}
+
+.a {
+  background: paleturquoise;
+}
+
+.b {
+  background: lightgreen;
+}
+
+.c {
+  background: lightpink;
+  position: relative;
+  bottom: 40px;
+}
+
+.d {
+  background: palegoldenrod;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.e {
+  background: lightseagreen;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}

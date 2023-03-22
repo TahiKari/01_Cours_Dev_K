@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <title>list</title>
+    <link rel="stylesheet" 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" 
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="container">
+      <header class="py-2">
+        <div class="row justify-content-between align-items-center">
+          <div class="col-8">
+            <h2>Mon titre de site</h2>
+          </div>
+          <div class="col-4">
+            <div class="d-flex align-item-center justify-content-end p-2">
+              <div class="rounded-circle bg-secondary text-white p-2 text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" 
+                width="30" 
+                height="30" 
+                fill="currentColor" 
+                class="bi bi-person-fill" 
+                viewBox="0 0 16 16">
+                  <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 
+                  6z"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Ordinateurs</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Accessoires </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Cartes mères</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Cartes graphiques</a>
+              </li>
+            </ul>
+            <span class="navbar-text">
+              <a href="#">A propos</a>
+            </span>
+          </div>
+        </nav>
+      </header>
+
+      <section class="mt-4">
+        <div class="row justify-content-between">
+          <div class="col-md-4 col-xl-3">
+            <aside>
+              <div class="list-group">
+                <a class="list-group-item list-group-item-action active" href="#">Mon premiere article</a>
+                <a class="list-group-item list-group-item-action" href="#">Mon second article</a>
+                <a class="list-group-item list-group-item-action" href="#">Mon troisieme article</a>
+                <a class="list-group-item list-group-item-action" href="#">Mon quatrieme article</a>
+                <a class="list-group-item list-group-item-action" href="#">Mon cinquieme article</a>
+              </div>
+            </aside>
+          </div>
+          <div class="col">
+            <article class="row justify-content-center text-justify">
+              <div class="col">
+                <h1>Mon premier article</h1>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique augue non 
+                nibh imperdiet dictum. In hac habitasse platea dictumst. Donec porttitor odio ante, 
+                vitae rutrum nunc fringilla id. Etiam fermentum tellus eu arcu malesuada, 
+                consectetur semper arcu consectetur. In hac habitasse platea dictumst. Sed elit 
+                metus, efficitur non urna vel, consectetur mollis nunc. Duis porttitor orci nulla, 
+                et euismod dolor condimentum ac.
+              </p> 
+              <p>
+                In urna lorem, maximus vitae dolor in, ullamcorper maximus purus. Mauris lacus 
+                mauris, facilisis vel mattis ac, blandit rutrum ante.
+              </p>
+              <p>
+                Morbi fringilla enim in justo molestie, vitae euismod est faucibus. Sed aliquam 
+                ligula sed orci sagittis condimentum. Ut porta orci eget ex interdum, ac 
+                pellentesque odio sodales. Nam vel elit non dui eleifend dignissim id dapibus 
+                massa.
+              </p>  
+              <p>
+                Vestibulum vel placerat odio. Nullam maximus sagittis sapien nec accumsan. Fusce 
+                at auctor odio. Fusce ut nunc vitae diam iaculis laoreet eu et nulla. Donec lacus 
+                ante, pulvinar eu mollis a, auctor vitae ex. Sed ut molestie ligula. Pellentesque 
+                quis eros et sapien lacinia suscipit. Suspendisse tristique dui at dapibus laoreet. 
+                Fusce viverra eget elit nec laoreet.
+              </p>
+              <h4>Prix des écrans</h4>
+              <div class="table-responsive">
+                <table class="table table-striped text-center">
+                  <thead class="bg-primary text-white">
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col">15 pouces</th>
+                      <th scope="col" scope="col">17 pouces</th>
+                      <th scope="col">19 pouces</th>
+                      <th scope="col">21 pouces</th>
+                      <th scope="col"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Asus</th>
+                      <td>100€</td>
+                      <td>150€</td>
+                      <td>200€</td>
+                      <td>300€</td>
+                      <td>
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                        role="button" 
+                        width="24" 
+                        height="24" 
+                        fill="currentColor" 
+                        class="bi bi-basket2 text-primary" 
+                        viewBox="0 0 16 16">
+                          <path d="M4 10a1 1 0 0 1 2 0v2a1 1 0 0 1-2 0v-2zm3 0a1 1 0 0 1 2 0v2a1 1 
+                          0 0 1-2 0v-2zm3 0a1 1 0 1 1 2 0v2a1 1 0 0 1-2 0v-2z"/>
+                          <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 
+                          0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 
+                          1-.5.5h-.623l-1.844 6.456a.75.75 0 0 1-.722.544H3.69a.75.75 0 0 
+                          1-.722-.544L1.123 8H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 
+                          1.243a.5.5 0 0 1 .686-.172zM2.163 8l1.714 6h8.246l1.714-6H2.163z"/>
+                        </svg>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Dell</th>
+                      <td>80€</td>
+                      <td>120€</td>
+                      <td>140€</td>
+                      <td>200€</td>
+                      <td>
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                        role="button"
+                        width="24" 
+                        height="24" 
+                        fill="currentColor" 
+                        class="bi bi-basket2 text-primary" 
+                        viewBox="0 0 16 16">
+                          <path d="M4 10a1 1 0 0 1 2 0v2a1 1 0 0 1-2 0v-2zm3 0a1 1 0 0 1 2 0v2a1 1 
+                          0 0 1-2 0v-2zm3 0a1 1 0 1 1 2 0v2a1 1 0 0 1-2 0v-2z"/>
+                          <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 
+                          0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 
+                          1-.5.5h-.623l-1.844 6.456a.75.75 0 0 1-.722.544H3.69a.75.75 0 0 
+                          1-.722-.544L1.123 8H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 
+                          1.243a.5.5 0 0 1 .686-.172zM2.163 8l1.714 6h8.246l1.714-6H2.163z"/>
+                        </svg>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Acer</th>
+                      <td>130€</td>
+                      <td>180€</td>
+                      <td>260€</td>
+                      <td>350€</td>
+                      <td>
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                        role="button" 
+                        width="24" 
+                        height="24" 
+                        fill="currentColor" 
+                        class="bi bi-basket2 text-primary" 
+                        viewBox="0 0 16 16">
+                          <path d="M4 10a1 1 0 0 1 2 0v2a1 1 0 0 1-2 0v-2zm3 0a1 1 0 0 1 2 0v2a1 1 
+                          0 0 1-2 0v-2zm3 0a1 1 0 1 1 2 0v2a1 1 0 0 1-2 0v-2z"/>
+                          <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 
+                          0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 
+                          1-.5.5h-.623l-1.844 6.456a.75.75 0 0 1-.722.544H3.69a.75.75 0 0 
+                          1-.722-.544L1.123 8H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 
+                          1.243a.5.5 0 0 1 .686-.172zM2.163 8l1.714 6h8.246l1.714-6H2.163z"/>
+                        </svg>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Samsung</th>
+                      <td>60€</td>
+                      <td>100€</td>
+                      <td>160€</td>
+                      <td>240€</td>
+                      <td>
+                        <svg xmlns="http://www.w3.org/2000/svg" 
+                        role="button"
+                        width="24" 
+                        height="24" 
+                        fill="currentColor" 
+                        class="bi bi-basket2 text-primary" 
+                        viewBox="0 0 16 16">
+                          <path d="M4 10a1 1 0 0 1 2 0v2a1 1 0 0 1-2 0v-2zm3 0a1 1 0 0 1 2 0v2a1 1 
+                          0 0 1-2 0v-2zm3 0a1 1 0 1 1 2 0v2a1 1 0 0 1-2 0v-2z"/>
+                          <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 
+                          0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 
+                          1-.5.5h-.623l-1.844 6.456a.75.75 0 0 1-.722.544H3.69a.75.75 0 0 
+                          1-.722-.544L1.123 8H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 
+                          1.243a.5.5 0 0 1 .686-.172zM2.163 8l1.714 6h8.246l1.714-6H2.163z"/>
+                        </svg>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" 
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" 
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" 
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" 
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" 
+    integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" 
+    crossorigin="anonymous"></script>
+  </body>
+</html>

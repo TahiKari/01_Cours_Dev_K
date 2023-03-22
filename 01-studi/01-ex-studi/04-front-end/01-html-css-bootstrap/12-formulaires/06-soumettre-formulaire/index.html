@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Les choix des formulaires</title>
+    </head>
+    <body>
+        <form action="action.php" method="POST">
+            <fieldset>
+                <legend class="bold">Civilité</legend>
+
+                <input type="radio" name="civilite" id="Mr" value="Mr" required>
+                <label for="Mr" class="inline-label">Monsieur</label>
+
+                <input type="radio" name="civilite" id="Mme" value="Mme" required>
+                <label for="Mme" class="inline-label">Madame</label>
+            </fieldset>
+
+            <label for="lastName">Nom</label>
+            <input type="text" name="lastName" id="lastName" placeholder="Entrez votre nom" required>
+
+            <label for="firstName">Prénom</label>
+            <input type="text" name="firstName" id="firstName" placeholder="Entrez votre prénom" required>
+
+            <label for="birthDate">Date de naissance</label>
+            <input type="date" name="birthDate" id="birthDate" required>
+
+            <label for="phone">N° de téléphone</label>
+            <input type="tel" name="phone" id="phone" placeholder="Entrez votre numéro de téléphone" required>
+
+            <label for="e-mail">Adresse e-mail</label>
+            <input type="email" name="e-mail" id="e-mail" placeholder="Entrez votre adresse e-mail" required>
+
+            <label for="pass">Mot de passe</label>
+            <input type="password" name="password" id="pass" placeholder="Entrez un mot de passe" required>
+
+            <label for="rePass">Retapez votre mot de passe</label>
+            <input type="password" name="password" id="rePass" placeholder="Saisissez de nouveau votre mot de passe" required>
+
+            <label for="presentation">Présentation</label>
+            <textarea name="presentation" id="presentation" placeholder="Présentez-vous" cols="30" rows="4" required></textarea>
+
+            <label for="langages">Sélectionnez les langages que vous maîtrisés</label>
+            <select name="langages" id="langages" multiple required>
+                <optgroup label="Front-End">
+                    <option value="HTML">HTML</option>
+                    <option value="CSS">CSS</option>
+                    <option value="JS">JS</option>
+                </optgroup>
+                <optgroup label="Back-End">
+                    <option value="PHP">PHP</option>
+                    <option value="Python">Python</option>
+                    <option value="SQL">SQL</option>
+                </optgroup>
+            </select>
+
+            <p>Acceptez-vous les conditions générales d'utilisation ?</p>
+            <input type="checkbox" name="tos" id="tos" required>
+            <label for="tos" class="inline-label">J'accepte les conditions générales d'utilisation</label>
+
+            <button type="reset">
+                Réinitialisez le formulaire
+            </button>
+
+            <button type="submit">
+                Validez
+            </button>
+        </form>
+    </body>
+</html>

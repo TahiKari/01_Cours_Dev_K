@@ -1,0 +1,59 @@
+*::selection {
+  background: rgba(134, 183, 31, 0.2);
+}
+
+body {
+  font-family: calibri, sans-serif;
+  font-size: 12px;
+}
+
+.menu li {
+  display: inline-block;
+  margin: 10px;
+  list-style: none;
+  font-family: Tahoma, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.menu li a {
+  color: #B9482B;
+  text-decoration: none;
+}
+
+.menu li a:hover {
+  text-decoration: underline;
+}
+
+.menu li a:visited {
+  color: #FF00FF;
+}
+
+.menu li:first-child a::after {
+  content: '\0020 \2302';
+}
+
+h1 {
+  color: #bc8e14;
+}
+
+h2, h3, h4 {
+  color: #729e0e;
+}
+
+h4 {
+  text-decoration: underline;
+}
+
+article h2::before {
+  content: '\2708';
+}
+
+section > p {
+  padding: 10px;
+  border: 1px solid gray;
+}
+
+p:not(.description):not(.informations) {
+  font-style: italic;
+}

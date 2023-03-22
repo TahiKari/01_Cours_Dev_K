@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>L'accessibilité des formulaires</title>
+    </head>
+
+    <body>
+        <form method="POST" action="action.php">
+            <h1>L'accessibilité des formulaires</h1>
+            <label for="name">Votre nom
+                <input type="text" name="name" id="name" placeholder="Saisissez votre nom">
+            </label>
+            <label for="birthDate">Votre date de naissance
+                <input type="date" name="birthDate" id="birthDate" placeholder="Saisissez votre date de naissance">
+            </label>
+            <label for="comment">Commentaire
+                <textarea rows="4" name="comment" id="comment" placeholder="Ajoutez un commentaire pertinent"></textarea>
+            </label>
+            <label for="email">Votre adresse e-mail
+                <input type="email" name="email" id="email" placeholder="Saisissez votre adresse e-mail">
+            </label>
+        </form>
+    </body>
+
+</html>

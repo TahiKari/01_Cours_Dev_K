@@ -1,0 +1,7 @@
+{
+    "editor.fontSize": 18,
+    "editor.tabSize": 4,
+    "editor.accessibilityPageSize": 14,
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 110
+}

@@ -1,0 +1,11 @@
+# Ignore tous les fichiers .txt
+*.txt
+
+#Execption pour le fichier important.txt qui ne doit pas être ignorer.
+!important.txt
+
+# Ignore le répertoire /vendors
+vendors/
+
+# Ignore les fichiers .pdf dans le répertoire /uploads
+uploads/**/*.pdf
