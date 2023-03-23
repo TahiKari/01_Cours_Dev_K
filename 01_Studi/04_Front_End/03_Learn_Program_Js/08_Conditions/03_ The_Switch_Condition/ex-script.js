@@ -1,30 +1,30 @@
 let message;
-let tvStation = 1;
+let tvStation = 8;
 
 switch (tvStation) {
     case 1:
-        message = 'Tf1';
+        message = "TF1";
         break;
-    case 2:
-        message = 'France 2';
+    case 2: 
+        message = "FRANCE 2";
         break;
-    case 1:
-        message = 'France 3';
+    case 3:
+        message = "FRANCE 3";
         break;
-    case 2:
-        message = 'Canal +';
-        break; 
+    case 4:
+        message = "CANAL +";
+        break;
     case 5:
-        message = 'France 5';
+        message = "FRANCE 5";
         break;
-    case 6 :
-        message = 'M6';
+    case 6:
+        message = "M6"
         break;
-    case 7 :
-        message = 'Arte';
-        break;
+    case 7:
+        message = "Arte";
     default:
-        message = 'Chaine inconnue'  
-    }
+        message = 'Chaine indisponible';
+        break;
+}
 
-    console.log(message);
+console.log(message);
