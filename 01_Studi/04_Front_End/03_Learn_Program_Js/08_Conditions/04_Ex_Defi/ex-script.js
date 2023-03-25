@@ -8,37 +8,37 @@ el.addEventListener('submit', (event) => {
   let newsletter = event.target.newsletter.checked;
 
   // Les variables déclarées ci-dessus contiennent les données du formulaire
-
-  let displayedCivility = civility === 'female' ? 'Mme.' : 'M.';
+  let displayedCivility  = civility === 'female' ? 'Mme' : 'Mr';
   let newsletterMessage;
 
-  if (newsletter) {
+  if (newsletter === true) {
     newsletterMessage = 'Merci de vous être abonné à notre newsletter';
   } else {
-    newsletterMessage = 'Inscrivez-vous vite à notre newsletter';
-  }
+    newsletterMessage ='Inscrivez-vous vite à notre newsletter';
+  };
 
   let displayedCategory;
 
-  switch (category){
-    case 'cold-starter':
+  switch (category) {
+    case 'cold-starter': 
       displayedCategory = 'Entrée froide';
-      break;
+    break;
     case 'soup':
       displayedCategory = 'Soupe';
-      break;
+    break;
     case 'main-course':
       displayedCategory = 'Plat';
       break;
     case 'fruit-dessert':
       displayedCategory = 'Dessert (fruits)';
       break;
-    case 'chocolate-dessert':
-      displayedCategory = 'Dessert (Chocolat)';
+    case 'chocolate-dessert': 
+      displayedCategory = 'Dessert (chocolat)';
       break;
     default:
-      displayedCategory = 'Entrée froide'
-  }
+      displayedCategory = 'merci de choisir une catégorie';
+    break;
+  } 
 
-  alert(`Bonjour ${displayedCivility} ${name}. ${newsletterMessage}, elle permettra de vous envoyer de délicieuses recettes de votre catégorie préférée, ${displayedCategory}!`);
+alert(`Bonjour ${displayedCivility} ${name}. ${newsletterMessage} elle permettra de vous envoyer de délicieuses recettes de votre catégorie préférée, ${displayedCategory}!`);
 });

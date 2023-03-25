@@ -17,3 +17,11 @@ const secretAgent = {firstName: 'James', lastName: 'BOND', code: '007'};
 for (let property in secretAgent) {
     console.log(`${property} : ${secretAgent[property]}`);
 };
+
+let text = 'Javascript';
+
+console.log('-------------------');
+
+for (let value of text) {
+    console.log(value);
+}

@@ -1,8 +1,6 @@
-let row;
-for (let i = 0; i <= 10; i++) {
-    row = '';
-    for (let j = 0; j < i; j++) {
-        row += j + ' ';
-    }
-    console.log(row);
+let word = "JavaScript"; 
+let i = 0; 
+while(word[i]){
+  i = i + 1; 
 }
+console.log(i);

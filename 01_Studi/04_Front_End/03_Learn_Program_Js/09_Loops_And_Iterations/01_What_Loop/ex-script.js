@@ -2,6 +2,7 @@
 // AFFICHE(i)
 // FIN_POUR 
 
+// total = 0
 // TANT_QUE total INFERIEUR À 20 FAIRE
     // total = total + 1
 // FIN_TANT_QUE
