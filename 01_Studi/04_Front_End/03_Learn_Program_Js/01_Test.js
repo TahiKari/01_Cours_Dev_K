@@ -1,31 +1,18 @@
-let message;
-let tvStation = 8;
+const el = document.getElementById('register-form');
+el.addEventListener('submit', (event) => {
+  event.preventDefault();
 
-switch (tvStation) {
-    case 1:
-        message = "TF1";
-        break;
-    case 2: 
-        message = "FRANCE 2";
-        break;
-    case 3:
-        message = "FRANCE 3";
-        break;
-    case 4:
-        message = "CANAL +";
-        break;
-    case 5:
-        message = "FRANCE 5";
-        break;
-    case 6:
-        message = "M6"
-        break;
-    case 7:
-        message = "Arte";
-    default:
-        message = 'Chaine indisponible';
-        break;
-}
+  let civility = event.target.female.checked ? 'female' : 'male';
+  let name = event.target.name.value;
+  let category = event.target.category.value;
+  let newsletter = event.target.newsletter.checked;
 
-console.log(message);
+  // Les variables déclarées ci-dessus contiennent les données du formulaire
+  
+  
+
+
+alert(`Bonjour ${}`);
+});
+
 
