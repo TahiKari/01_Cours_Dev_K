@@ -1,48 +1,91 @@
-// On créer une variable color et on lui défini tout les élément du tableau qu'elle contiendra
 let colors = ['Bleu', 'Rouge', 'Vert', 'Jaune', 'Blanc'];
-console.log(``);
 
-// On affiche via un console log la longueur du tableau
-console.log(`La longueur du tableau est de : ${colors.length}`);
+console.log('=== Affiche la longueur du tableau. ===');
+console.log(colors.length);
 
-console.log(``);
+console.log('--------------------------------------------------------------------------------');
 
-// On affiche la couleur bleu
-console.log(`Couleur : ${colors[0]}`)
+console.log('=== Affiche couleur Bleu, Blanc, Rouge. ===');
+// Bleu
+console.log(colors[0]);
+// Blanc
+console.log(colors[4]);
+//Rouge
+console.log(colors[1]);
 
-console.log(``);
+console.log('--------------------------------------------------------------------------------');
 
-// On affiche la couleur blanche
-console.log(`Couleur : ${colors[4]}`)
-
-console.log(``);
-
-// On affiche la couleur rouge
-console.log(`Couleur : ${colors[1]}`)
-
-console.log(``);
-// Affiche toutes les valeurs du tableau avec la boucle for
+console.log('=== Affiche toutes les valeurs du tableau avec la méthode (for). ===');
 for (let i = 0; i < colors.length; i++) {
     console.log(colors[i]);
+}
+
+console.log('--------------------------------------------------------------------------------');
+
+console.log('=== Affiche toutes les valeurs du tableau avec la méthode (forEach). ===');
+colors.forEach(function(element) {
+    console.log(element);
+});
+
+let colorsMulti = [
+    ['Bleu', 'Blanc', 'Rouge'],
+    ['Jaune', 'Vert']
+]
+
+console.log('--------------------------------------------------------------------------------');
+
+console.log('=== Affiche directement la valeurs "Blanc" puis "Vert". ===');
+console.log(colorsMulti[0][1]);
+console.log(colorsMulti[1][1]);
+
+console.log('--------------------------------------------------------------------------------'); 
+
+console.log('=== Affiche toutes les valeurs de ce nouveau tableau avec (for). ===');
+for (let i = 0; i < colorsMulti.length; i++) {
+    for (let j = 0; j < colorsMulti[i].length; j++) {
+        console.log(colorsMulti[i][j]);
+    }
 };
 
-console.log(``);
-// Affiche toutes les valeurs du tableau avec la boucle forEach
-colors.forEach(function(element) {
-  console.log(element)
+
+console.log('--------------------------------------------------------------------------------');
+
+console.log('=== Affiche toutes les valeurs de ce nouveau tableau avec (forEach). ===');
+colorsMulti.forEach(function(colorsMultiIndex) {
+    colorsMultiIndex.forEach(function(colorsIndex) {
+        console.log(colorsIndex)
+    });
 });
 
-// On créer un tableau multidimentionnel
-let tableMultiColors = [
-  ['Bleu', 'Blanc', 'Rouge'],
-  ['Jaune', 'Vert']
-];
+console.log('--------------------------------------------------------------------------------');
 
-console.log(``);
+console.log('=== Affiche toutes les valeurs en ordre alphabétique avec (for). ===');
+for (let i = 0; i < colors.length - 1; i++) {
+    for (let j = 0; j < colors.length - i - 1; j++) {
+        if (colors[j] > colors[j + 1]) {
 
-// On Affiche les tous les éléments du tableau multidimentionnel
-tableMultiColors.forEach(function(multiColorsElement) {
-  multiColorsElement.forEach(function(element) {
-    console.log(element);
-  });
-});
+        let temp;
+        temp = colors[j];
+        colors[j] = colors[j + 1];
+        colors[j + 1] = temp;
+        }
+    }
+}
+console.log(colors);
+
+let persons = ['jules', 'laure', 'vincent', 'emma', 'karim'];
+let personsLength = persons.length;
+
+for (let main = 0; main < personsLength - 1; main++) {
+    for (let cell = 0; cell < personsLength - main - 1; cell++) {
+      if (persons[cell] > persons[cell + 1]) {
+  
+       let temp;
+       temp = persons[cell];
+       persons[cell] = persons[cell + 1];
+       persons[cell + 1] = temp;
+      }
+    }
+  }
+  console.log(persons);
+

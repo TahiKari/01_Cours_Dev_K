@@ -1,4 +1,4 @@
-let persons = ['jules', 'laure', 'vincent', 'emma'];
+let persons = ['jules', 'laure', 'vincent', 'emma', 'karim'];
 let personsLength = persons.length;
 		
 for (let main = 0; main < personsLength - 1; main++) {
