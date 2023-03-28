@@ -1,9 +1,17 @@
-console.log(``);
+const FIRST_NAME = 'Julien';
 
-const firstName = 'Julien';
-
-function getName() {
-  return firstName;
+function getNAme() {
+    return FIRST_NAME;
 }
 
-console.log(getName());
+getNAme();
+getNAme();
+
+const FIRST_NAME1 = 'Méhdi';
+
+function getNAme1() {
+    console.log(FIRST_NAME1);
+}
+
+getNAme1();
+getNAme1();

@@ -1,8 +1,9 @@
-function Asc(array){
-  return array.sort(function(a, b){
-    return a - b
-  });
+function count() {
+  let compteur = 0;
+  for (let i = 0 ; i < 10; i++){
+    let compteur = i
+  }
+  console.log(compteur);
 }
 
-const myArray = [5, 9, 8, 2, 7];
-console.log(Asc(myArray));
+count(); // 9

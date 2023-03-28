@@ -1,6 +1,6 @@
 function cube(height, width, depth) {
-  return height * width * depth;
-  
+    return height * width * depth;
+    
 }
 
 const height = prompt('Hauteur du parallélépipèdes ');
