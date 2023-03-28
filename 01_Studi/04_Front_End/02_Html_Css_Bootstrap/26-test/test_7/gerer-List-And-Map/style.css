@@ -9,8 +9,6 @@
   padding: 20px;
   margin: 40px;
   border-radius: 12px;
-  -webkit-box-shadow: 4px 4px 10px lightgray;
-          box-shadow: 4px 4px 10px lightgray;
+  box-shadow: 4px 4px 10px lightgray;
   color: red;
-}
-/*# sourceMappingURL=style.css.map */
+}/*# sourceMappingURL=style.css.map */
