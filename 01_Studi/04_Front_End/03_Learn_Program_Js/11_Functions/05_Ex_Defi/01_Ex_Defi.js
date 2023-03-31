@@ -1,42 +1,54 @@
-let chaise = 120.50;
-let table = 1200.99;
-let vase = 420.01;
-let canape = 12585.55;
-const prices = [120.50,1200.99,420.01,12585.55];
+let chaise = 120.50
+let table = 1200.99
+let vase = 420.01
+let canape = 12585.55
+const prices = [120.50,1200.99,420.01,12585.55]
 
-// On créer une fonction pour calculer le prix promotionnel
-function getPromoPrice(price, percent) {
-    return price - (price * percent / 100)
-}
+function promoAppliquer(prix, pourcentage) {
+  return prix - (prix * pourcentage / 100);
+};
 
-// on créer une fonction pour remplacer le '.' par une ','
+function formatagePrix(prix) {
+  return prix.toString().replace('.', ',') + '€'; 
+};
 
-function formatPrice(price) {
-    return price.toString().replace('.', ',') + ' €';
-}
+function arrondisDecimal(nombre) {
+  return Math.ceil(nombre);
+};
 
-// On créer une fonction pour enlever les décimals
-
-function roundDecimal(number) {
-    return Math.ceil(number)
-}
-
-console.log('-----------------------------------------------');
 for (let i = 0; i < prices.length; i++) {
-    let newPromoPrice = getPromoPrice(prices[i], 25);
-    let roundedPrice = roundDecimal(newPromoPrice);
-    let finalPrice = formatPrice(roundedPrice);
-    console.log(finalPrice);
+  let nouveauxPrix = promoAppliquer(prices[i], 25);
+  let prixArrondis = arrondisDecimal(nouveauxPrix);
+  let prixFinal = formatagePrix(prixArrondis)
+  console.log(prixFinal);
 }
 
-console.log('-----------------------------------------------');
+console.log('----- Ou -----')
 
-prices.forEach(function(price) {
-    let newPromoPrice = getPromoPrice(price, 25);
-    let roundedPrice = roundDecimal(newPromoPrice);
-    let finalPrice = formatPrice(roundedPrice);
-    console.log(finalPrice);
+prices.forEach(function(prices) {
+  let nouveauxPrix = promoAppliquer(prices, 25);
+  let prixArrondis = arrondisDecimal(nouveauxPrix);
+  let prixFinal = formatagePrix(prixArrondis)
+  console.log(prixFinal);
 });
 
+console.log('----- Ou -----')
+
+function calculerPrixFinal(prix, pourcentage) {
+  let prixApresPromo = prix - (prix * pourcentage / 100);
+  let prixArrondis = Math.ceil(prixApresPromo);
+  return prixArrondis.toString().replace('.', ',') + '€';
+   
+};
+
+for (let i = 0; i < prices.length; i++) {
+  console.log(calculerPrixFinal(prices[i], 25));
+}
+
+console.log('--- ou ---');
+
+prices.forEach(function(price) {
+  console.log(calculerPrixFinal(price, 25));
+});
 
     

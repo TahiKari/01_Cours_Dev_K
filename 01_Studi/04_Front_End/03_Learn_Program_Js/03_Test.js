@@ -1,9 +1,29 @@
-function getNumber(myNumber){
-    return myNumber
+function loading (percent) {
+  while (percent < 100) {
+  percent++
+  }
+  console.log('Chargement terminé !')
   }
   
-  function initNumber(myNumber) {
-    return getNumber(myNumber)
+  function loadingRecursive (percent) {
+  if (percent < 100) {
+  percent++
+  loadingRecursive(percent)
+  } else {
+  console.log('Chargement terminé !')
+  }
   }
   
-  console.log(initNumber(8));
+  loading(0)
+  loadingRecursive(0)
+
+  function countDown (number) {
+    console.log(number)
+    
+    if (number > 0) {
+      number--
+      countDown(number)
+    }
+  }
+  
+  countDown(5)
