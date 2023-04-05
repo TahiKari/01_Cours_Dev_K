@@ -1,29 +1,11 @@
-function loading (percent) {
-  while (percent < 100) {
-  percent++
-  }
-  console.log('Chargement terminé !')
-  }
-  
-  function loadingRecursive (percent) {
-  if (percent < 100) {
-  percent++
-  loadingRecursive(percent)
-  } else {
-  console.log('Chargement terminé !')
-  }
-  }
-  
-  loading(0)
-  loadingRecursive(0)
-
-  function countDown (number) {
-    console.log(number)
+function topDouble(value, top) {
+  let val = value
+  while(val < top) {
+     
+    val *= 2
     
-    if (number > 0) {
-      number--
-      countDown(number)
-    }
-  }
-  
-  countDown(5)
+  }  
+  return console.log(64)
+}
+
+topDouble(2, 100);
