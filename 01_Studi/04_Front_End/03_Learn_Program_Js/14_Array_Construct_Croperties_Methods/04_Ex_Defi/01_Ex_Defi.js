@@ -1,15 +1,15 @@
-function isGreaterThanZero(element) {
-    return element > 0
-  }
-  
-  let productStocks = [15, 184, 29, 0, 35]
-  
-  console.log(productStocks.every(isGreaterThanZero))
-
-function isGreaterThanZero(element) {
-  return element > 0
+function isTextLengthGreaterThan5(element) {
+  return element.length > 5
 }
 
-let productStocks1 = [15, 184, 29, 0, 35]
+let webBrowsers = ['Opera', 'Safari', 'Internet Explorer', 'Vivaldi', 'Firefox', 'Chrome', 'Edge']
 
-console.log(productStocks.every(isGreaterThanZero))
+console.log(webBrowsers.every(isTextLengthGreaterThan5))
+
+webBrowsers.sort()
+console.log(webBrowsers)
+
+let webBrowsersFilter = webBrowsers.filter(isTextLengthGreaterThan5)
+console.log(webBrowsersFilter)
+
+console.log(webBrowsersFilter.join(' - '))

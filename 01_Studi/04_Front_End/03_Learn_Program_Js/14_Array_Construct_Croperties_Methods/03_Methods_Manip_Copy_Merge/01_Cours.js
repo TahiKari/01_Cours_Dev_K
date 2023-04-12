@@ -21,7 +21,7 @@ console.log(colors.unshift('Blanc', 'Rouge'))
 // Display colors array with the 2 added values : ['Blanc', 'Rouge', 'Bleu']
 console.log(colors)*/
 
-let animals = ['Lion', 'Chat', 'Chien', 'Cheval', 'Tigre', 'Ours']
+/*let animals = ['Lion', 'Chat', 'Chien', 'Cheval', 'Tigre', 'Ours']
 
 // Display ['Chien']
 // Because the deletion starts at index 2 and concerns only 1 item.
@@ -58,7 +58,7 @@ console.log(animals)
 console.log(animals.splice(0, 0, 'Requin'))
 
 // Display ['Requin', 'Lion']
-console.log(animals)
+console.log(animals)*/
 
 /*let animals = ['Chat', 'Lynx']
 let otherAnimals = ['Lion', 'Tigre']
@@ -96,7 +96,7 @@ console.log(animals.join())
 console.log(animals.join(' / '))*/
 
 
-/*let animals = [
+let animals = [
     'Zèbre',
     ['Lion', 'Tigre'],
     'Vache',
@@ -138,10 +138,10 @@ console.log(animals.join(' / '))*/
     'Cheval'
   ]
   */
-  /*console.log(animals2Flat1)
+  console.log(animals2Flat1)
   
   let animals2Flat2 = animals2.flat(2)
   
   // Display : ['Chat', 'Lynx', 'Aigle', 'Faucon', 'Ours', 'Zèbre', 'Chien', 'Lion', 'Tigre', 'Cheval']
   // As the defined depth is 2, all arrays have been flattened.
-  console.log(animals2Flat2)*/
+  console.log(animals2Flat2)
