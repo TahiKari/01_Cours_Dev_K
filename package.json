@@ -1,7 +1,10 @@
 {
   "dependencies": {
+    "dayjs": "^1.11.7",
+    "moment": "^2.29.4",
     "mongodb": "^5.1.0",
-    "openai": "^3.2.1"
+    "openai": "^3.2.1",
+    "react-dayjs": "^0.3.2"
   },
   "devDependencies": {
     "@types/node": "^18.15.5"
