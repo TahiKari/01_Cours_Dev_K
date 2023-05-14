@@ -10,7 +10,6 @@
     "react-dayjs": "^0.3.2"
   },
   "devDependencies": {
-    "@types/node": "^18.15.5",
-    "jasmine": "^5.0.0"
+    "@types/node": "^18.15.5"
   }
 }
