@@ -1,0 +1,12 @@
+{
+  "name": "05_ex_defi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "promo.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
