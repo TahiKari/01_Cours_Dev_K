@@ -3,9 +3,7 @@ function factorielle(nombre)
 {
   let produit = 1;
   for (let i = 1; i <= nombre; i++) {
-    console.log(i)
     produit *= i;
-    console.log(produit)
   }
 
   if (produit > 100) {
