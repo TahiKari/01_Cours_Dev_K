@@ -11,5 +11,6 @@
     "editor.fontWeight": "normal",
     "editor.codeActionsOnSave": {
     
-    }
+    },
+    "python.analysis.typeCheckingMode": "basic"
 }
