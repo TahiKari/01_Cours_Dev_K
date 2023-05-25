@@ -1,35 +1,35 @@
-"use strict";
+'use strict'
 
-function askUsername() {
-  return prompt('Quel est votre nom d\'utilisateur ?');
+function askUsername () {
+  return prompt("Quel est votre nom d'utilisateur ?")
 }
-function askMathOperation() {
-  return prompt('Combien font 2 + 2');
+function askMathOperation () {
+  return prompt('Combien font 2 + 2')
 }
-function success() {
-  console.log('Vous pouvez accéder à l\'application');
+function success () {
+  console.log("Vous pouvez accéder à l'application")
 }
-function error() {
-  console.log('Restez où vous êtes');
+function error () {
+  console.log('Restez où vous êtes')
 }
-function checkUsername() {
+function checkUsername () {
   return new Promise(function (resolve, reject) {
-    var username = askUsername();
+    var username = askUsername()
     if ('admin' === username) {
-      resolve();
+      resolve()
     } else {
-      reject();
+      reject()
     }
-  });
+  })
 }
-function checkIfIsBot() {
+function checkIfIsBot () {
   return new Promise(function (resolve, reject) {
-    var result = askMathOperation();
+    var result = askMathOperation()
     if (4 === parseInt(result)) {
-      resolve();
+      resolve()
     } else {
-      reject();
+      reject()
     }
-  });
+  })
 }
-Promise.all([checkUsername(), checkIfIsBot()]).then(success, error);
+Promise.all([checkUsername(), checkIfIsBot()]).then(success, error)
