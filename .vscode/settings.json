@@ -42,6 +42,18 @@
             "editorRuler.foreground": "#ff4040"
         }
     },
+    "editor.tokenColorCustomizations": {
+        "[One Dark Pro Darker]": {
+            "textMateRules": [
+                {
+                    "scope": "comment",
+                    "settings": {
+                        "foreground": "#cfe448"
+                    }
+                }
+            ]
+        }
+    },
     "multiCommand.commands": [
         {
             "command": "multiCommand.makeRoom",
@@ -123,5 +135,11 @@
     // Permet de voir en passant sur une ligne qui a fait le commit
     "gitlens.hovers.currentLine.over": "line",
     "liveServer.settings.donotShowInfoMsg": true,
+    "material-icon-theme.folders.color": "#90a4ae",
+    "workbench.colorTheme": "One Dark Pro Darker",
+    "workbench.preferredDarkColorTheme": "Default Dark Modern",
+    "workbench.preferredHighContrastColorTheme": "Default High Contrast",
+    "workbench.preferredHighContrastLightColorTheme": "Default High Contrast Light",
+    "workbench.preferredLightColorTheme": "Default Light Modern",
 }
 
