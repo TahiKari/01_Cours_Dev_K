@@ -3,10 +3,6 @@
         "editor.formatOnType": true
     },
     "python.analysis.typeCheckingMode": "basic",
-    "diffEditor.wordWrap": "on",
-    // Permet de zoomer
-    "window.zoomLevel": 0,
-    "editor.rulers": [95],
     "emojisense.languages": {
         "markdown": true,
         "plaintext": {
@@ -43,7 +39,7 @@
         "[NarutoDark]": {
             "editor.selectionBackground": "#3d59a1",
             "editor.selectionHighlightBackground": "#3d59a1",
-            "editorRuler.foreground": "#ff4081"
+            "editorRuler.foreground": "#ff4040"
         }
     },
     "multiCommand.commands": [
@@ -93,10 +89,14 @@
     // Permet de changer la taille du texte
     "editor.fontSize": 20,
     "editor.tabSize": 4,
+    "editor.insertSpaces": true,
     "editor.accessibilityPageSize": 14,
     // Permet de mùettre a la ligne meme en redimensionnant la fenêtre
     "editor.wordWrap": "bounded",
-    "editor.wordWrapColumn": 80,
+    // Permet de zoomer
+    "editor.wordWrapColumn": 95,
+    "window.zoomLevel": 0,
+    "editor.rulers": [95],
     "editor.fontVariations": false,
     "editor.fontWeight": "normal",
     "editor.codeActionsOnSave": {
