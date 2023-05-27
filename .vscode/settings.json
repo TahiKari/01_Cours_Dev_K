@@ -100,7 +100,7 @@
     "editor.lineHeight": 30,
     // Permet de changer la taille du texte
     "editor.fontSize": 20,
-    "editor.tabSize": 4,
+    "editor.tabSize": 2,
     "editor.insertSpaces": true,
     "editor.accessibilityPageSize": 14,
     // Permet de mùettre a la ligne meme en redimensionnant la fenêtre
