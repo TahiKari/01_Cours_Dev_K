@@ -74,7 +74,7 @@
     //Permet de désactiver la preview d'un fichier
     "workbench.editor.enablePreview": false,
     // Permet d'activer l'auto save
-    "files.autoSave": "onFocusChange",
+    "files.autoSave": "afterDelay",
     "open-php-html-js-in-browser.selectedBrowser": "Chrome",
     // Enlève la minimap
     "editor.minimap.enabled": false,

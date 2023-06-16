@@ -1,21 +1,17 @@
-/*let count = 0;
-for(let i = 1; i <= 11; i++) {
-    const remainder = i % 2;
-    const isEven = remainder === 0;
-    if(isEven) {
-        count++;
-    }
-}
-console.log(count); // 5.*/
+class Event {
+  
+  constructor(titre, date, description) {
+    this.titre = titre;
+    this.date = new Date(date);
+    this.description = description;
+  }
 
-function isEven(num) {
-    const remainder = num % 2;
-    const isEven = remainder === 0;    
-    if (isEven) {
-        true
-        
-    }
-    console.log(remainder)
+  affEvent() {
+    let dateFormated = this.date.toLocaleDateString("fr-FR"); //Nous formatons la date avec la locale française.
+    console.log(`-------- ${dateFormated} --------\nTitre de l’évènement : ${this.titre}\nDescription : ${this.description}`);
+  }
 }
 
-console.log(isEven(4))
+const event = new Event("rdv medical", "2023-12-10T14:30:00", "visite medicale");
+
+event.affEvent();
