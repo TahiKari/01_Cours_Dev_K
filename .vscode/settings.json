@@ -107,11 +107,12 @@
     "editor.wordWrap": "bounded",
     // Permet de zoomer
     "editor.wordWrapColumn": 95,
-    "window.zoomLevel": 0,
+    "window.zoomLevel": 1,
     "editor.rulers": [95],
     "editor.fontVariations": false,
     "editor.fontWeight": "normal",
     "editor.codeActionsOnSave": {
+
     },
     "CodeGPT.model": "gpt-4",
     "CodeGPT.query.language": "French",
