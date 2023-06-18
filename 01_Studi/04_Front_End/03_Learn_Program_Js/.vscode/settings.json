@@ -1,4 +1,144 @@
 {
+  "[python]": {
+      "editor.formatOnType": true
+  },
+  "python.analysis.typeCheckingMode": "basic",
+  "emojisense.languages": {
+      "markdown": true,
+      "plaintext": {
+          "markupCompletionsEnabled": false,
+          "emojiDecoratorsEnabled": false
+      },
+      "scminput": true,
+      "git-commit": true
+  },
+  "[vue]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.associations": {
+      "*.html": "html",
+      "*.css": "styled-css"
+  },
+  "[javascript]": {
+      "editor.defaultFormatter": "numso.prettier-standard-vscode"
+  },
+  "[css]": {
+      "editor.defaultFormatter": "aeschli.vscode-css-formatter"
+  },
+  "[scss]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+      "editor.defaultFormatter": "numso.prettier-standard-vscode"
+  },
+  "javascript.preferences.importModuleSpecifierEnding": "js",
+  "typescript.preferences.importModuleSpecifierEnding": "js",
+  "workbench.iconTheme": "material-icon-theme",
+  // permet de personnaliser un thème
+  "workbench.colorCustomizations": {
+      "[NarutoDark]": {
+          "editor.selectionBackground": "#3d59a1",
+          "editor.selectionHighlightBackground": "#3d59a1",
+          "editorRuler.foreground": "#ff4040"
+      }
+  },
+  "editor.tokenColorCustomizations": {
+      "[One Dark Pro Darker]": {
+          "textMateRules": [
+              {
+                  "scope": "comment",
+                  "settings": {
+                      "foreground": "#cfe448"
+                  }
+              }
+          ]
+      }
+  },
+  "multiCommand.commands": [
+      {
+          "command": "multiCommand.makeRoom",
+          "sequence": [
+              // Permet de masquer la sideBar explorateur
+              "workbench.action.toggleSidebarVisibility",
+              // permet de masquer la barre d'activité
+              "workbench.action.toggleActivityBarVisibility"
+          ]
+      }
+  ],
+  // Permet d'enlever les flèches dans l'explorateur de fichier (Marche pas)
+  "material-icon-theme.hidesExplorerArrows": true,
+  // Permet de modifier la valeur de l'indention des fichiers
+  "workbench.tree.indent": 15,
+  // Permet d'activer la barre d'indentation
+  "workbench.tree.renderIndentGuides": "always",
+  //Permet de désactiver la preview d'un fichier
+  "workbench.editor.enablePreview": false,
+  // Permet d'activer l'auto save
+  "files.autoSave": "afterDelay",
+  "open-php-html-js-in-browser.selectedBrowser": "Chrome",
+  // Enlève la minimap
+  "editor.minimap.enabled": false,
+  // Empèche le formatage de texte lorsque sa sauvegarde
+  "editor.formatOnSave": false,
+  // Empèche le formatage de texte lorsque l'on copie colle du texte
+  "editor.formatOnPaste": false,
+  // Affiche les petit point avant et après
+  "editor.renderWhitespace": "all",
+  // Permet d'éviter les élément lier
+  "editor.linkedEditing": true,
+  // Permet de mettre les occurence en surveillance
+  "editor.occurrencesHighlight": false,
+  // permet de definir comment insérer les suggestions
+  "editor.suggest.insertMode": "replace",
+  // Permet d'utiliser les suggestions
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  // Permet de modifier la police d'écriture
+  "editor.fontFamily": "'JetBrains Mono', Consolas, 'Courier New', monospace",
+  // Permet d'activer les ligatures
+  "editor.fontLigatures": true,
+  // Permet de changer la hauteur de ligne
+  "editor.lineHeight": 30,
+  // Permet de changer la taille du texte
+  "editor.fontSize": 20,
   "editor.tabSize": 2,
-  "editor.indentSize": "tabSize"
+  "editor.insertSpaces": true,
+  "editor.accessibilityPageSize": 14,
+  // Permet de mùettre a la ligne meme en redimensionnant la fenêtre
+  "editor.wordWrap": "bounded",
+  // Permet de zoomer
+  "editor.wordWrapColumn": 95,
+  "window.zoomLevel": 0,
+  "editor.rulers": [95],
+  "editor.fontVariations": false,
+  "editor.fontWeight": "normal",
+  "editor.codeActionsOnSave": {
+  },
+  "CodeGPT.model": "gpt-4",
+  "CodeGPT.query.language": "French",
+  "CodeGPT.maxTokens": 2500,
+  // Permet d'afficher automatiquement le fichier ouvert dans la partie exploreur
+  "explorer.autoReveal": false,
+  // Permet d'afficher la boite de confirmation lors d'un drag and drop
+  "explorer.confirmDragAndDrop": false,
+  // Permet d'afficher la boite de confirmation lors d'une suppréssion
+  "explorer.confirmDelete": false,
+  // Permet dextendre un tag avec tab lorsque l'on se place a sa droite
+  "emmet.triggerExpansionOnTab": true,
+  // Permet de désactiver la fenêtre de confirmation lorsque qu'on synchronise avec git
+  "git.confirmSync": false,
+  // Permet d'avoir le bouton de validation des commits avec git
+  "git.enableSmartCommit": true,
+  // Permet d'éviter d'afficher les information sur la ligne courrante
+  "gitlens.currentLine.enabled": false,
+  // Permet de désactiver le surplus d'information
+  "gitlens.codeLens.enabled": false,
+  // Permet de voir en passant sur une ligne qui a fait le commit
+  "gitlens.hovers.currentLine.over": "line",
+  "liveServer.settings.donotShowInfoMsg": true,
+  "material-icon-theme.folders.color": "#90a4ae",
+  "workbench.colorTheme": "One Dark Pro Darker",
+  "workbench.preferredDarkColorTheme": "Default Dark Modern",
+  "workbench.preferredHighContrastColorTheme": "Default High Contrast",
+  "workbench.preferredHighContrastLightColorTheme": "Default High Contrast Light",
+  "workbench.preferredLightColorTheme": "Default Light Modern",
 }
