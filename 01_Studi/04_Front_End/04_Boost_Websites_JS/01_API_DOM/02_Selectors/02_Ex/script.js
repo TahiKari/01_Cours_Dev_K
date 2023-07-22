@@ -1,19 +1,22 @@
-// Paragraphe avec l'id #titre
 let p = document.getElementById('titre')
 console.log(p)
 
-// Tous les éléments avec la classe .info
+console.log('----------')
+
 let infos = document.getElementsByClassName('info')
 console.log(infos)
 
-// Input email
-let input = document.getElementsByName('email')
+console.log('----------')
+
+let input = document.getElementsByTagName('email')
 console.log(input)
 
-// Les éléments span de la div avec l'id #contenu
+console.log('----------')
+
 let spans = document.getElementById('contenu').getElementsByTagName('span')
 console.log(spans)
 
-// Les éléments avec le sélecteur CSS div#contenu span
+console.log('----------')
+
 let element = document.querySelectorAll('div#contenu span')
 console.log(element)
