@@ -1,52 +1,41 @@
 //Element.attributes
 //Cette propriété nous permet d'accéder à une liste d'attributs déclarés dans le nœud spécifié. Nous l'utiliserons pour parser l'ensemble des attributs d'une balise HTML.
-/*let lastname = document.getElementById('lastname')
-console.log(lastname.attributes)*/
-//attributes nous permet d'obtenir tous les attributs du champ du formulaire. Grâce à une boucle, nous pouvons accéder à chacun d'entre eux.
+/*const lastname = document.getElementById('lastname')
+for (let attribute of lastname.attributes) {
+  console.log(attribute.textContent) // Affiche toutes les valeur des attributs
+  console.log('--------------')
+  console.log(attribute.name) // Affiche le nom de l'attribut
+}*/
 
-//Element.getAttribute('name')
-//Cette méthode nous renvoie la valeur de l'attribut passé en paramètre, s'il existe dans le DOM. Nous l'utiliserons pour accéder à la valeur d'un attribut en particulier d'un élément.
-/*let lastname = document.getElementById('lastname')
-let attributName = lastname.getAttribute('name')
-console.log(`Valeur de l'attribut name = ${attributName}`) // Affiche la valeur de l'attribut name soit lastname*/
-//getAttribute nous permettra de filtrer les résultats d'une recherche dans le DOM. Par exemple, nous pourrons sélectionner toutes les balises input d'un formulaire, sauf celles qui possèdent l'attribut class="info".
+/*const lastname = document.getElementById('lastname')
+const attributeName = lastname.getAttribute('name') // Permet de récupérer un attribue en particulier que ou l'on connais déjâ son nom
+console.log(attributeName)*/
 
-//Element.getAttributeNames()
-//Cette méthode nous renvoie une liste des noms d'attributs d'un élément du DOM.
-/*let lastname = document.getElementById('lastname')
-console.log(lastname.getAttributeNames())*/
-//getAttributeNames() nous permettra de vérifier qu'un élément possède bien un attribut, par exemple qu'une balise input possède bien l'attribut type.
+/*const lastname = document.getElementById('lastname')
+for (let attribute of lastname.getAttributeNames()) {
+  console.log(attribute)
+} // Permet de récupérer la liste de tout les noms d'attributs*/
 
-//Element.getAttributeNode('id')
-//Cette méthode nous renvoie le nœud d'attribut spécifié en paramètre. Nous l'utiliserons pour accéder à un élément attribut en particulier dans le DOM.
-/*let lastname = document.getElementById('lastname')
-console.log(lastname.getAttributeNode('id'))*/
-//Nous obtenons le nœud attribut id correspondant à la balise input avec l'ID #lastname.
+/*const lastname = document.getElementById('lastname')
+console.log(lastname.getAttributeNode('id').value)// Permer de récupérer le type de l'attribut avec sa valeur*/
 
-//Element.hasAttribute('id')
-//Cette méthode nous renvoie une valeur booléenne (vrai ou faux) si l'élément possède le nom d'attribut passé en paramètre. Nous l'utiliserons pour filtrer notre résultat de recherche dans le DOM ou bien pour associer des scripts à certains éléments et d'autres non.
-
-/*let elements = document.getElementsByTagName('li')
-
-for(let element of elements) {
+/*const elements = document.getElementsByTagName('li')
+for (let element of elements) {
   if (element.hasAttribute('class')) {
     console.log(element.innerText)
   }
-}*/
-//Nous obtenons tous les éléments correspondant aux balises li, sauf celle qui n'a pas l'attribut class.
+}// Permet de vérifier qu'un noeud possède un attribut*/
 
-//Element.hasAttributes()
-//Cette méthode nous renvoie une valeur booléenne (vrai ou faux) si l'élément possède au moins un attribut ou aucun. Là aussi, nous pourrons l'utiliser pour filtrer nos résultats de recherche dans le DOM et pour associer ou non des scripts à certains éléments.
-/*let elements = document.getElementsByTagName('ul')
-for(let element of elements) {
-  console.log(element.hasAttributes())
-}*/
-//La balise ul ne possède aucun attribut : hasAttributes nous renvoie donc la valeur false.
+/*const elements = document.getElementsByTagName('li')
+for (let element of elements) {
+  if (element.hasAttributes()) {
+    console.log(element.innerText)
+  }
+}// Permet de vérifier qu'un noeud possède des attributs en général*/
 
-//L'un des intérêts de pouvoir parcourir et sélectionner les attributs du DOM est d'en ajouter, de les modifier ou les supprimer. Pour ce faire, nous pourrons utiliser deux méthodes de l'API : setAttribute('name', 'valeur') et removeAttribute('name').
-//setAttribute nous permettra d'ajouter un nouvel attribut ou de modifier un attribut existant en précisant en paramètres le nom de l'attribut, puis sa valeur.
-/*let checkbox = document.getElementById('box')
-checkbox.setAttribute('checked', 'checked')*/
-//removeAttribute nous permettra de supprimer un attribut en précisant en paramètre son nom.
-let checkbox = document.getElementById('box')
+// modification d'attribut
+/*const checkbox = document.getElementById('box')
+checkbox.setAttribute('checked', 'checked')// Permet de faire que la checkbox soit coché de base si elle ne l'est pas fait dans le HTML*/
+
+const checkbox = document.getElementById('box')
 checkbox.removeAttribute('checked')

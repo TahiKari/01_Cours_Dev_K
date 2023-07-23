@@ -1,14 +1,12 @@
 let inputText = document.getElementById('email')
-
-for (let attribut of inputText.attributes) {
-    console.log(attribut)
+for (let attribute of inputText.attributes) {
+  console.log(attribute)
 }
 
-let inputTextId =inputText.getAttribute('id')
+let inputTextId = inputText.getAttribute('id')
 console.log(inputTextId)
 
 let checkbox = document.getElementById('connexion')
-
 if (checkbox.hasAttribute('checked')) {
   console.log(checkbox.getAttribute('checked'))
   checkbox.removeAttribute('checked')
