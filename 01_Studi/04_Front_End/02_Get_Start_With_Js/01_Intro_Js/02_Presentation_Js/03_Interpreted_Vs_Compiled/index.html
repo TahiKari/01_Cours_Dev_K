@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Langage interprété vs langage compilé</title>
+  </head>
+  <body>
+    <h1>Langage interprété vs langage compilé</h1>
+    <h2>Langage interprété et langage compilé</h2>
+    <p>
+      En programmation, on distingue langage interprété et langage compilé. En
+      réalité, ces 2 termes sont liés à la manière dont va être traduit un code
+      en langage machine (binaire) pour qu’il soit exécuté :
+    </p>
+    <ul>
+      <li>
+        Un langage interprété est un langage où le code source (code écrit dans
+        ce langage) est lu puis exécuté dans l’ordre des lignes du script. Un
+        interpréteur lit chaque instruction du code source, et l’exécute.
+      </li>
+      <li>
+        Un langage compilé n’est pas traité de la même manière, il nécessite un
+        compilateur. Un compilateur va lire toutes les instructions d’un code
+        source pour créer à partir de l’ensemble un code objet, c’est-à-dire un
+        fichier lisible par la machine. Ce fichier indépendant du code source
+        pourra être stocké dans un fichier exécutable par la machine.
+      </li>
+    </ul>
+    <p>
+      On comprend donc que la stratégie de traitement d’un code source n’est pas
+      la même pour un langage interprété et pour un langage compilé.
+    </p>
+    <p>
+      JavaScript est classé parmi les langages interprétés. En effet, lorsque
+      l’on exécute un script JavaScript, le code est exécuté de haut en bas,
+      chaque instruction est traduite une par une en langage machine et
+      exécutée.
+    </p>
+    <h3>Attention</h3>
+    <p>
+      Initialement, les moteurs JavaScript (programmes permettant d’exécuter du
+      JavaScript) étaient des interpréteurs. Aujourd’hui, de nombreux
+      navigateurs web utilisent des moteurs JavaScript faisant appel au principe
+      de « compilation à la volée », permettant de réduire la perte de
+      performance. Le principe de compilation à la volée consiste à compiler les
+      instructions au moment de l’exécution, ce qui va faire gagner du temps
+      lorsque par exemple, un code est appelé plusieurs fois (étant donné qu’il
+      aura été compilé).
+    </p>
+    <h2>Différence entre interprétation et compilation</h2>
+    <p>
+      Sans trop s’attarder sur cette notion, voyons la différence de
+      comportement entre l’interprétation et la compilation d’un script.
+    </p>
+    <p>Prenons un exemple d’un script très simple :</p>
+    <p
+      class="codepen"
+      data-height="300"
+      data-default-tab="html,result"
+      data-slug-hash="NWEObxM"
+      data-user="OpenSpirit"
+      style="
+        height: 300px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid;
+        margin: 1em 0;
+        padding: 1em;
+      "
+    >
+      <span
+        >See the Pen
+        <a href="https://codepen.io/OpenSpirit/pen/NWEObxM"> Untitled</a> by
+        OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>) on
+        <a href="https://codepen.io">CodePen</a>.</span
+      >
+    </p>
+    <script
+      async
+      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+    ></script>
+    <p>
+      Dans ce script, qui a pour objectif d’afficher dans la console les nombres
+      1 2 3 4 5, on peut constater une erreur à la ligne consolelog(3). En
+      effet, il manque un point. Donc, si on intègre ce script dans un code
+      HTML, la console va afficher :
+    </p>
+    <p
+      class="codepen"
+      data-height="300"
+      data-default-tab="html,result"
+      data-slug-hash="RwqeoaV"
+      data-user="OpenSpirit"
+      style="
+        height: 300px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid;
+        margin: 1em 0;
+        padding: 1em;
+      "
+    >
+      <span
+        >See the Pen
+        <a href="https://codepen.io/OpenSpirit/pen/RwqeoaV"> Untitled</a> by
+        OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>) on
+        <a href="https://codepen.io">CodePen</a>.</span
+      >
+    </p>
+    <script
+      async
+      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+    ></script>
+    <p>
+      Le moteur JavaScript lie chaque instruction et à chaque fois l’exécute,
+      jusqu’à ce qu’il rencontre l’erreur. La console affiche donc les 2
+      premières valeurs et l’exécution s’arrête dès que l’erreur est rencontrée.
+      On peut voir que le comportement n’aurait pas été le même si JavaScript
+      avait été compilé. En effet, dans ce dernier cas, le compilateur aurait
+      analysé le programme dans son ensemble. Étant donné qu’il rencontre une
+      erreur, il n’aurait même pas compilé le script, et il n’y aurait eu aucune
+      exécution.
+    </p>
+    <h2>Comment est exécuté JavaScript ?</h2>
+    <p>
+      Avec toutes ces informations que nous avons maintenant, on comprend que le
+      JavaScript s’exécute comme suit :
+    </p>
+    <ul>
+      <li>
+        Le navigateur récupère et charge les codes d’une page web (HTML/CSS/JS).
+      </li>
+      <li>
+        Le navigateur transforme toute la page en notre fameux Document Object
+        Model, dans lequel il crée une représentation de chaque élément HTML.
+      </li>
+      <li>
+        Le moteur JavaScript du navigateur convertit le code JS en un code
+        intermédiaire entre le code source et la machine d’exécution, le
+        bytecode.
+      </li>
+      <li>
+        Les évènements comme les clics de souris qui sont reliés à des blocs de
+        code en JS déclenchent leur exécution. Le moteur JavaScript procède à
+        l’interprétation du bytecode généré pour les blocs de code appelés et
+        apporte les modifications visées sur le Document Object Model.
+      </li>
+      <li>Le nouveau Document Object Model est alors affiché.</li>
+    </ul>
+    <p>
+      On peut voir que, conformément à ce système, les navigateurs web peuvent
+      utiliser des scripts JavaScript pour modifier le DOM d’une page web, et
+      donc mettre à jour son affichage.
+    </p>
+    <h2>Modules</h2>
+    <h3>Remarque</h3>
+    <p>
+      Il faut par ailleurs savoir que JavaScript est un langage modulable. De
+      nombreuses bibliothèques sont facilement utilisables, et permettent
+      d’accroître et d’optimiser l’utilisation de JavaScript.
+    </p>
+    <h2>Bibliothèque</h2>
+    <h3>Définition</h3>
+    <p>
+      En programmation, une bibliothèque (ou une librairie) est un ensemble de
+      fonctions que l’on peut importer. Ces fonctions sont finalement des
+      ensembles de codes déjà écrits et que l’on pourra appeler et donc utiliser
+      sans avoir à les écrire nous-mêmes.
+    </p>
+    <p>
+      Voici quelques exemples de bibliothèques que l’on peut utiliser avec
+      JavaScript :
+    </p>
+    <ul>
+      <li>
+        Ajout de fonctions permettant de manipuler le Document Object Model
+        (DOM) :
+        <ul>
+          <li>
+            <a href="https://jquery.com/" target="_blank" rel="alternate"
+              >Jquery</a
+            >
+          </li>
+          <li>
+            <a href="https://umbrellajs.com/" target="_blank" rel="alternate"
+              >Umbrella JS</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li>
+        Ajout de fonctions de visualisation des données :
+        <ul>
+          <li>
+            <a href="https://www.chartjs.org/" target="_blank" rel="alternate"
+              >Chart.js</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://www.algolia.com/blog/product/"
+              target="_blank"
+              rel="alternate"
+              >Algolia places</a
+            >
+          </li>
+        </ul>
+      </li>
+      <li>
+        Ajout de fonctions de formulaires :
+        <ul>
+          <li>
+            <a
+              href="https://code.google.com/archive/p/wforms/"
+              target="_blank"
+              rel="alternate"
+              >wForms</a
+            >
+          </li>
+          <li>
+            <a
+              href="https://github.com/gcao/validanguage"
+              target="_blank"
+              rel="alternate"
+              >Validanguage</a
+            >
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <h2>Framexorks</h2>
+    <p>Un autre point intéressant est celui des frameworks.</p>
+    <p>
+      Un framework est comme une grande bibliothèque, mais qui va constituer en
+      quelques sortes un espace de travail pour les projets de code. Un
+      framework va donc jouer un rôle dans l’organisation du projet et impacter
+      toute sa conception.
+    </p>
+    <p>Il existe plusieurs frameworks JavaScript :</p>
+    <ul>
+      <li>
+        React Native : pour le développement d’applications JS pour Android et
+        IOS
+      </li>
+      <li>Angular JS : pour les applications web plus complètes</li>
+      <li>Bootstrap : pour la création de designs en responsive</li>
+      <li>Node.js : pour créer des applications côté serveur</li>
+    </ul>
+    <p>
+      Voilà, vous en savez maintenant beaucoup plus sur JavaScript et ses
+      spécificités.
+    </p>
+  </body>
+</html>

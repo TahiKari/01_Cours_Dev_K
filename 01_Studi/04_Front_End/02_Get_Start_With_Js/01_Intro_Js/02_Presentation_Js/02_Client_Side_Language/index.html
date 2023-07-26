@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Language côté client</title>
+  </head>
+  <body>
+    <h1>Language côté client</h1>
+    <p>
+      JavaScript est, au même titre que HTML et CSS, un langage côté client. À
+      la différence de ces derniers qui permettent de gérer le visuel d’une page
+      informatique, JavaScript est un vrai langage de programmation. Que veut
+      dire exactement l’expression « côté client » ?
+    </p>
+    <h2>Côté client ou côté serveur</h2>
+    <p>
+      Ces deux termes définissent comme nous l’avons dit le « lieu » où sont
+      exécutées les instructions de code.
+    </p>
+    <ul>
+      <li>
+        Côté serveur : le navigateur web communique avec des serveurs distants
+        (des ordinateurs qui stockent les données) par le biais d’un protocole
+        que vous connaissez très certainement : le protocole HTTP. En réalité,
+        lorsque l’on visite un site réalisé avec un langage côté serveur, le
+        navigateur envoie par le biais de ce protocole des requêtes aux serveurs
+        distants. Il peut ainsi, par exemple, accéder à des bases de données
+        distantes (qui ne sont pas stockées sur son ordinateur). Le navigateur
+        n’accède pas aux bases de données de manière directe, mais par le biais
+        du serveur distant. Les scripts sont exécutés sur le serveur distant.
+      </li>
+      <li>
+        Côté client : à la différence d’un langage côté serveur, un langage côté
+        client est exécuté sur la machine du client, grâce au navigateur. Bien
+        évidemment, le navigateur va communiquer avec un serveur distant pour
+        recevoir les informations nécessaires, mais les instructions seront
+        exécutées sur la machine de l’utilisateur et non sur le serveur. C’est
+        le cas de JavaScript.
+      </li>
+    </ul>
+    <p>
+      JavaScript est un langage côté client, mais c’est également le cas de
+      HTML. Quel va être le lien entre ces deux langages ?
+    </p>
+    <p>
+      Pour le comprendre, il va nous falloir nous intéresser au concept de
+      Document Object Model (DOM).
+    </p>
+    <h2>Document Object Model HTML</h2>
+    <p>
+      Comme vous l’avez peut-être noté, nous avons dit que JavaScript est un
+      langage permettant d’aborder la programmation orientée objet. Mais
+      qu’est-ce que c’est ?
+    </p>
+    <p>
+      La programmation orientée objet est une manière spécifique d’aborder la
+      programmation. En fait, toutes les données sont représentées par le biais
+      d’entités appelées « objets ». Les objets sont assimilables à des concepts
+      de la réalité. Ils sont définis par leurs attributs (des valeurs qui les
+      définissent) et des méthodes (des actions qu’ils peuvent utiliser).
+    </p>
+    <h3>Exemple</h3>
+    <p>
+      Prenons un exemple simple de la vie de tous les jours pour que vous
+      puissiez mieux vous représenter ce concept.
+    </p>
+    <p>Un ordinateur est un objet. Il a des attributs, par exemple :</p>
+    <p
+      class="codepen"
+      data-height="300"
+      data-default-tab="html,result"
+      data-slug-hash="eYQPdox"
+      data-user="OpenSpirit"
+      style="
+        height: 300px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid;
+        margin: 1em 0;
+        padding: 1em;
+      "
+    >
+      <span
+        >See the Pen
+        <a href="https://codepen.io/OpenSpirit/pen/eYQPdox"> Untitled</a> by
+        OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>) on
+        <a href="https://codepen.io">CodePen</a>.</span
+      >
+    </p>
+    <script
+      async
+      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+    ></script>
+    <p>
+      Mais il a aussi des fonctions. Il peut par exemple s’allumer, s’éteindre, allumer certains pixels, etc. On peut comparer ces fonctions à des méthodes de l’objet ordinateur.
+    </p>
+    <p>
+      JavaScript est donc un langage qui va permettre de programmer en orienté objet. Mais quel est le rapport avec HTML ? C’est que les langages JavaScript et HTML vont pouvoir interagir grâce à cette logique.
+    </p>
+    <p>
+      Le Document Object Model est une convention qui permet de créer des représentations sous la forme d’objets, notamment dans des documents HTML. Il faut voir le Document Object Model comme un arbre d’objets représentant tous les éléments d’un document HTML, structuré conformément à sa hiérarchie.
+    </p>
+    <p>
+      Via le DOM HTML, JavaScript va pouvoir accéder aux différents objets du document HTML et interagir avec eux. JavaScript est donc un langage extrêmement lié à HTML. D’ailleurs, son intégration est possible directement dans des documents HTML. 
+    </p>
+  </body>
+</html>

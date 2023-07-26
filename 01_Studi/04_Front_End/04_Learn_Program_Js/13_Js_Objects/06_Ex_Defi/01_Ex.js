@@ -18,7 +18,7 @@ for (let i = 0; i < workers.length; i++) {
 }*/
 
 // On ajoute à chaque objet une méthode qui retournera l'alerte
-const workers = [
+/*const workers = [
   {name: 'Benjamin', age: 25, nbHour: 35, alert: function () {return `employé: ${this.name}, heures: ${this.nbHour}`}},
   {name: 'Luc', age: 45, nbHour: 36, alert: function () {return `employé: ${this.name}, heures: ${this.nbHour}`}},
   {name: 'Marie', age: 23, nbHour: 35, alert: function () {return `employé: ${this.name}, heures: ${this.nbHour}`}},
@@ -35,9 +35,33 @@ alerte += `${workers[i].alert()} \n`;
 }
 }
 
-alert(alerte);
+alert(alerte);*/
 
+let produit = new Object();
 
+produit = {
+  marque: new String("Apple"),
+  modele: new String("Iphone 11"),
+  ram: new Number(4),
+  stockage: new Number(128),
+  prix: new Number(500),
+
+  addPrice: function(montant) {
+    return this.prix += montant;
+  },
+  moinsPrice: function(montant) {
+    return this.prix -= montant;
+  },
+  affPrice: function () {
+    console.log(this.prix);
+  }
+}
+
+produit.moinsPrice(40);
+
+produit.addPrice(80);
+
+produit.affPrice();
 
 
 
