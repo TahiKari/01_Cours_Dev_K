@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appliquer la convention et éviter une erreur courante</title>
+  </head>
+  <body>
+    <h1>Appliquer la convention et éviter une erreur courante</h1>
+    <p>
+      Vous connaissez maintenant la syntaxe très simple permettant d’intégrer un
+      script JavaScript dans un document HTML. Mais où l’intégrer ? Dans le
+      dernier exemple, vous avez constaté qu’on intègre le script à la fin de la
+      balise &ltbody&gt. Cependant, d’un point de vue conventionnel, il est
+      conseillé d’insérer les scripts (avec l’attribut src) dans la balise
+      &lthead&gt. Avec le script JavaScript que nous avons écrit, cela ne posera
+      pas de problème. Nous allons au passage déplacer le contenu de la balise
+      &ltstyle&gt dans un fichier .css à part, contenu dans un répertoire «
+      styles » :
+    </p>
+    <p
+      class="codepen"
+      data-height="300"
+      data-default-tab="html,result"
+      data-slug-hash="KKrGWVq"
+      data-user="OpenSpirit"
+      style="
+        height: 300px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid;
+        margin: 1em 0;
+        padding: 1em;
+      "
+    >
+      <span
+        >See the Pen
+        <a href="https://codepen.io/OpenSpirit/pen/KKrGWVq"> Untitled</a> by
+        OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>) on
+        <a href="https://codepen.io">CodePen</a>.</span
+      >
+    </p>
+    <script
+      async
+      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+    ></script>
+    <p>
+      Lien replit:
+      <a
+        href="https://Code-4-HTMLCSSJS.javascript-studi.repl.co"
+        target="_blank"
+        rel="alternate"
+        >https://Code-4-HTMLCSSJS.javascript-studi.repl.co</a
+      >
+    </p>
+    <h2>Ordre des métadonnées</h2>
+    <h3>Attention</h3>
+    <p>
+      Il est préférable, voire indispensable, de placer dans le head les liens
+      vers les feuilles de style avant les scripts, pour afficher correctement
+      et rapidement le visuel du site.
+    </p>
+    <p>
+      Dans ce cas-ci, ça ne pose pas de problème, mais admettons qu’on modifie
+      notre HTML pour y insérer un bouton qui déclenchera une action :
+    </p>
+    <p
+      class="codepen"
+      data-height="300"
+      data-default-tab="html,result"
+      data-slug-hash="abQRJNR"
+      data-user="OpenSpirit"
+      style="
+        height: 300px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid;
+        margin: 1em 0;
+        padding: 1em;
+      "
+    >
+      <span
+        >See the Pen
+        <a href="https://codepen.io/OpenSpirit/pen/abQRJNR"> Untitled</a> by
+        OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>) on
+        <a href="https://codepen.io">CodePen</a>.</span
+      >
+    </p>
+    <script
+      async
+      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+    ></script>
+    <p>
+      Lien replit:
+      <a
+        href="https://Code-5-HTMLCSSJS.javascript-studi.repl.co"
+        target="_blank"
+        rel="Alternate"
+        >https://Code-5-HTMLCSSJS.javascript-studi.repl.co</a
+      >
+    </p>
+    <p>
+      Ce script permet simplement de récupérer l’élément HTML button pour qu’il
+      déclenche une alerte lorsqu’il est cliqué. Ne vous inquiétez pas, le but
+      n’est pas de comprendre comment fonctionne ce script, mais simplement de
+      voir ce qui se passe. Si on actualise notre page HTML depuis notre
+      navigateur, on peut voir que rien ne se passe. D’ailleurs, si on affiche
+      la console, une erreur est présente :
+    </p>
+    <p
+      class="codepen"
+      data-height="300"
+      data-default-tab="html,result"
+      data-slug-hash="KKrGWgv"
+      data-user="OpenSpirit"
+      style="
+        height: 300px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid;
+        margin: 1em 0;
+        padding: 1em;
+      "
+    >
+      <span
+        >See the Pen
+        <a href="https://codepen.io/OpenSpirit/pen/KKrGWgv"> Untitled</a> by
+        OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>) on
+        <a href="https://codepen.io">CodePen</a>.</span
+      >
+    </p>
+    <script
+      async
+      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+    ></script>
+    <p>
+      Mais pourquoi cela ne fonctionne pas ? Tout simplement parce que lors du
+      traitement du fichier HTML, le script étant indiqué en début du fichier
+      (dans la balise &lthead&gt), il est exécuté avant que le code HTML soit
+      chargé intégralement. Or, le script JavaScript fait référence à un bouton
+      ayant pour id : "btn". Mais comme la page HTML n’est pas chargée, ce
+      bouton n’existe pas encore, donc, la console indique que le script fait
+      référence à un élément HTML qui n’existe pas. Comment résoudre ce problème
+      ? Une solution très simple consiste à indiquer l’attribut defer de la
+      balise &ltscript&gt qui pour résumer simplement permet d’indiquer que le
+      script doit être exécuté de manière différée, donc une fois que le
+      document est analysé. Cet attribut doit être utilisé uniquement dans le
+      cas où un attribut src est spécifié (donc pas dans le cas de la méthode n°
+      1). Avec cette intégration, tout fonctionne :
+    </p>
+    <p
+      class="codepen"
+      data-height="300"
+      data-default-tab="html,result"
+      data-slug-hash="ZEmqeBx"
+      data-user="OpenSpirit"
+      style="
+        height: 300px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid;
+        margin: 1em 0;
+        padding: 1em;
+      "
+    >
+      <span
+        >See the Pen
+        <a href="https://codepen.io/OpenSpirit/pen/ZEmqeBx"> Untitled</a> by
+        OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>) on
+        <a href="https://codepen.io">CodePen</a>.</span
+      >
+    </p>
+    <script
+      async
+      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+    ></script>
+    <p>
+      Lien replit:
+      <a
+        href="https://Code-6-HTMLCSSJS.javascript-studi.repl.co
+
+      "
+        target="_blank"
+        rel="alternate"
+        >https://Code-6-HTMLCSSJS.javascript-studi.repl.co
+      </a>
+    </p>
+  </body>
+</html>

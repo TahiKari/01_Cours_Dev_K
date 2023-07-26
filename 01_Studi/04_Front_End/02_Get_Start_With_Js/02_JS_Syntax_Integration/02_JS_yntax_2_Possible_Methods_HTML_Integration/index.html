@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Syntaxe de JavaScript et 2 méthodes possibles d’intégration en HTML
+    </title>
+  </head>
+  <body>
+    <h1>Syntaxe de JavaScript et 2 méthodes possibles d’intégration en HTML</h1>
+    <p>
+      Avant de nous intéresser à l’intégration d’un script JavaScript dans un
+      code HTML, parlons de la syntaxe générale de JavaScript.
+    </p>
+    <h2>Syntaxe générale de JavaScript</h2>
+    <p>
+      Pour faire simple, voici une liste non exhaustive de règles de syntaxe en
+      JavaScript :
+    </p>
+    <ul>
+      <li>
+        La hiérarchie des instructions est représentée via le système
+        d’indentation (tab),
+      </li>
+      <li>Chaque ligne d’instructions se termine par un « ; »,</li>
+      <li>
+        Les paramètres d’une fonction sont inscrits entre parenthèses et séparés
+        par des virgules : (paramètre 1, paramètre 2),
+      </li>
+      <li>
+        Le corps d’une fonction est inscrit entre accolades : {corps d’une
+        fonction},
+      </li>
+      <li>Les commentaires sont précédés des caractères : « // »,</li>
+      <li>Etc.</li>
+    </ul>
+    <p>
+      Voici quelques règles basiques de syntaxe, mais vous pourrez découvrir les
+      autres au fur et à mesure de votre apprentissage de JavaScript.
+    </p>
+    <h2>
+      Intégration d’un script directement dans un document HTML (intégration
+      interne)
+    </h2>
+    <p>
+      La première méthode que nous pouvons utiliser pour intégrer un script
+      JavaScript est de l’écrire directement dans notre document HTML
+      (intégration interne). Pour cela, nous allons utiliser la balise
+      &ltscript&gt. Prenons un exemple d’un script HTML tout simple :
+    </p>
+    <p
+      class="codepen"
+      data-height="300"
+      data-default-tab="html,result"
+      data-slug-hash="mdQzRaY"
+      data-user="OpenSpirit"
+      style="
+        height: 300px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid;
+        margin: 1em 0;
+        padding: 1em;
+      "
+    >
+      <span
+        >See the Pen
+        <a href="https://codepen.io/OpenSpirit/pen/mdQzRaY"> Untitled</a> by
+        OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>) on
+        <a href="https://codepen.io">CodePen</a>.</span
+      >
+    </p>
+    <script
+      async
+      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+    ></script>
+    <p>
+      <strong>Lien Replit:</strong>
+      <a
+        href="https://code-1-htmlcss.javascript-studi.repl.co"
+        target="_blank"
+        rel="alternate"
+        >https://code-1-htmlcss.javascript-studi.repl.co</a
+      >
+    </p>
+
+    <p>
+      Ici, on a directement inséré le code css dans le fichier HTML pour faire
+      plus simple (dans la réalité, il est mieux de créer des fichiers .css et
+      de les intégrer via un lien dans la balise &lthead&gt). Maintenant,
+      écrivons un script JavaScript très simple qui déclenche une alerte. Pour
+      cela, nous allons insérer une balise &ltscript&gt :
+    </p>
+    <p
+      class="codepen"
+      data-height="300"
+      data-default-tab="html,result"
+      data-slug-hash="XWyxpQV"
+      data-user="OpenSpirit"
+      style="
+        height: 300px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid;
+        margin: 1em 0;
+        padding: 1em;
+      "
+    >
+      <span
+        >See the Pen
+        <a href="https://codepen.io/OpenSpirit/pen/XWyxpQV"> Untitled</a> by
+        OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>) on
+        <a href="https://codepen.io">CodePen</a>.</span
+      >
+    </p>
+    <script
+      async
+      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+    ></script>
+    <p>
+      Lien Replit:
+      <a
+        href="https://code-2-htmlcssjs.javascript-studi.repl.co/
+      "
+        target="_blank"
+        rel="alternate"
+        >https://code-2-htmlcssjs.javascript-studi.repl.co/</a
+      >
+    </p>
+    <p>
+      Si on exécute ce code, on peut voir qu’il fonctionne, l’alerte se
+      déclenche.
+    </p>
+    <p>Maintenant, voyons comment insérer un lien vers un fichier .js.</p>
+    <h2>
+      Intégration d’un script via un lien dans un document HTML (intégration
+      externe)
+    </h2>
+    <p>
+      Il faut simplement utiliser la balise &ltscript&gt et définir l’attribut
+      src sur l’adresse du fichier .js. On va donc, dans notre exemple, créer un
+      dossier « scripts » dans lequel on va créer un fichier « script.js ». Puis
+      dans le fichier script.js, on insère l’instruction :
+    </p>
+    <p
+      class="codepen"
+      data-height="300"
+      data-default-tab="html,result"
+      data-slug-hash="dyQgNxa"
+      data-user="OpenSpirit"
+      style="
+        height: 300px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid;
+        margin: 1em 0;
+        padding: 1em;
+      "
+    >
+      <span
+        >See the Pen
+        <a href="https://codepen.io/OpenSpirit/pen/dyQgNxa"> Untitled</a> by
+        OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>) on
+        <a href="https://codepen.io">CodePen</a>.</span
+      >
+    </p>
+    <script
+      async
+      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+    ></script>
+    <p>
+      Maintenant, on peut modifier le fichier .html pour qu’il intègre le script
+      :
+    </p>
+    <p
+      class="codepen"
+      data-height="300"
+      data-default-tab="html,result"
+      data-slug-hash="JjemWPm"
+      data-user="OpenSpirit"
+      style="
+        height: 300px;
+        box-sizing: border-box;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid;
+        margin: 1em 0;
+        padding: 1em;
+      "
+    >
+      <span
+        >See the Pen
+        <a href="https://codepen.io/OpenSpirit/pen/JjemWPm"> Untitled</a> by
+        OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>) on
+        <a href="https://codepen.io">CodePen</a>.</span
+      >
+    </p>
+    <script
+      async
+      src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+    ></script>
+    <p>
+      Lien Replit:
+      <a
+        href="https://Code-3-HTMLCSSJS.javascript-studi.repl.co"
+        target="_blank"
+        rel="alternate"
+        >https://Code-3-HTMLCSSJS.javascript-studi.repl.co</a
+      >
+    </p>
+    <p>
+      En règle générale, lorsque nous intégrons des scripts JavaScript longs
+      dans un code HTML, nous créons des fichiers .js que nous pouvons classer
+      dans le projet, avant d’insérer un lien qui permet de les exécuter. C’est
+      une méthode à privilégier. Elle permet par ailleurs d’isoler les scripts
+      JavaScript, il sera donc plus simple de s’y retrouver. Comme vous pouvez
+      le constater, la procédure est assez simple.
+    </p>
+    <h2>Syntaxe des chemins relatifs</h2>
+    <h3>Complément</h3>
+    <p>
+      Dans notre exemple, nous avons utilisé l’attribut src en spécifiant un
+      chemin relatif. Si le document HTML se trouve dans un sous dossier, il
+      faudra sortir du sous-dossier pour se placer dans le dossier parent, pour
+      ensuite se déplacer dans le sous-dossier « scripts ». Pour sortir du
+      dossier et donc se placer dans le dossier parent, il faut commencer le
+      chemin par : « ../ ». Cette inscription permet de se déplacer dans le
+      dossier parent.
+    </p>
+  </body>
+</html>

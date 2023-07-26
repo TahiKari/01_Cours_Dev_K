@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Essentiel</title>
+  </head>
+  <body>
+    <h1>Essentiel</h1>
+
+    <p>
+      Nous avons vu comment intégrer un script JavaScript dans une page HTML.
+      Nous avons compris que c’est la balise &ltscript&gt qui permet d’intégrer
+      du JS. Il existe 2 méthodes permettant d’intégrer des scripts JS.
+    </p>
+    <p>
+      La méthode interne revient à écrire directement le code JavaScript dans le
+      code HTML, à l’intérieur d’une balise &ltscript&gt. Cette méthode peut
+      être pratique pour des courts extraits de codes, mais n’est pas
+      recommandée car le code HTML peut vite devenir illisible.
+    </p>
+    <p>
+      La méthode externe quant à elle revient à écrire le script dans un fichier
+      .js à part. On utilise la balise &ltscript&gt dans le code HTML et
+      l’attribut src pour spécifier un chemin vers le fichier. Cette méthode est
+      préconisée, car elle permet de rendre plus lisible le code HTML et par
+      ailleurs d’organiser ses scripts dans des fichiers classés dans des
+      répertoires.
+    </p>
+    <p>
+      D’un point de vue conventionnel, c’est dans la balise &lthead&gt qu’on va
+      intégrer nos scripts (via des balises scripts avec bien évidemment la
+      méthode externe). Il vaut mieux intégrer les scripts après les liens vers
+      les feuilles de style (.css). Cependant, dans le cas presque systématique
+      ou le script JS essaye de récupérer des éléments HTML, des erreurs vont se
+      produire. En effet, les scripts vont être exécutés avant le chargement de
+      la page. Donc pour éviter ce problème, nous pouvons utiliser l’attribut
+      defer qui permet d’exécuter un script après le chargement de la page.
+    </p>
+  </body>
+</html>
