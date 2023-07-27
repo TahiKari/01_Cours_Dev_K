@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Déclaration de variables en JavaScript</title>
+  </head>
+  <body>
+    <h1>Déclaration de variables en JavaScript</h1>
+    <div>
+      <h2>Utilisation de 'var'</h2>
+      <div>
+        <p>
+          L'utilisation de 'var' en JavaScript concerne la déclaration de
+          variables qui peuvent être réaffectées et dont la portée est définie
+          par la fonction englobante. Bien que 'var' ait été le mot-clé standard
+          pour déclarer des variables dans les versions antérieures de
+          JavaScript, l'introduction de 'let' et 'const' dans ECMAScript 2015
+          (ES6) a rendu son utilisation moins courante en raison de certaines
+          limitations.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="oNQaJKg"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/oNQaJKg"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, nous déclarons une variable appelée age avec la
+          valeur 25. Ensuite, nous réaffectons la valeur 26 à la variable et
+          affichons la nouvelle valeur.
+        </p>
+        <p>
+          Cependant, il est important de noter que l'utilisation de 'var'
+          présente certaines limitations. Par exemple, les variables déclarées
+          avec 'var' sont accessibles en dehors du bloc dans lequel elles sont
+          définies, tant qu'elles restent dans la fonction englobante. Cela peut
+          entraîner des problèmes de lisibilité et des erreurs involontaires.
+        </p>
+        <p>Voici d’ailleurs une erreur type de l’utilisation de “var” :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="xxQymvv"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/xxQymvv"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, la variable testVariable est déclarée dans une
+          condition qui ne sera jamais satisfaite, car la condition if (false)
+          ne sera jamais vraie. Cependant, la variable est toujours accessible
+          en dehors de cette condition, car elle est déclarée avec le mot-clé
+          "var".
+        </p>
+        <p>
+          Lorsque la fonction testFunction() est appelée, elle affiche la valeur
+          de la variable test avec console.log(). Comme la variable est déclarée
+          avec "var" dans la fonction, elle est accessible tout au long de la
+          fonction, même si elle n'a jamais été définie.
+        </p>
+        <p>
+          Cela peut conduire à des erreurs involontaires, car si la variable
+          n'est pas définie dans toutes les conditions dans lesquelles elle est
+          utilisée, elle peut causer des problèmes dans d'autres parties du
+          code. C'est pourquoi les variables sont déclarées dans des blocs de
+          code avec "let" ou "const" afin de limiter leur portée et d'éviter les
+          erreurs involontaires.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="ExOdrjB"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/ExOdrjB"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          De plus, les variables déclarées avec 'var' ont une particularité
+          concernant leur portée : elles sont traitées comme si elles étaient
+          déclarées au début de la fonction englobante, même si elles sont
+          définies plus loin dans le code. Ce phénomène peut provoquer des
+          comportements inattendus.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="QWJZYyr"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/QWJZYyr"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Le hoisting est un comportement en JavaScript où les déclarations de
+            variables et de fonctions sont déplacées au début de leur portée
+            respective, c'est-à-dire que la variable ou la fonction peut être
+            utilisée avant d'être déclarée. Cela signifie que même si une
+            variable est déclarée plus tard dans le code, elle peut être
+            utilisée avant sa déclaration en raison du hoisting.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Utilisation de 'let'</h2>
+        <p>
+          L'utilisation de 'let' en JavaScript concerne la déclaration de
+          variables qui peuvent être réaffectées et dont la portée est définie
+          par le bloc englobant. 'let' a été introduit dans ECMAScript 2015
+          (ES6) et est devenu un choix préféré pour déclarer des variables, en
+          particulier pour les débutants, en raison de sa gestion améliorée de
+          la portée et de l'absence de hoisting.
+        </p>
+        <h3>Exemple</h3>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="YzRJBGG"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/YzRJBGG"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, nous déclarons une variable appelée age avec la
+          valeur 25. Ensuite, nous réaffectons la valeur 26 à la variable et
+          affichons la nouvelle valeur.
+        </p>
+        <p>
+          Contrairement à 'var', les variables déclarées avec 'let' ont une
+          portée de bloc, ce qui signifie qu'elles ne sont accessibles qu'à
+          l'intérieur du bloc dans lequel elles sont définies.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="zYMmeog"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/zYMmeog"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="OJaBdWO"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/OJaBdWO"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+
+      <div>
+        <h2>Utilisation de 'const'</h2>
+        <p>
+          L'utilisation de 'const' en JavaScript concerne la déclaration de
+          variables dont la valeur ne peut pas être modifiée une fois qu'elles
+          ont été initialisées. 'const' a été introduit dans ECMAScript 2015
+          (ES6) et est devenu un choix préféré pour déclarer des variables
+          immuables, en raison de sa gestion améliorée de la portée et de
+          l'absence de hoisting.
+        </p>
+        hé
+        <div>
+          <h2>Exemple simple de l'utilisation de 'const'</h2>
+          <h3>Exemple</h3>
+        </div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="abQRXWz"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/abQRXWz"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, nous déclarons une variable appelée age avec la
+          valeur 25 en utilisant 'const'. Si nous essayons de réaffecter la
+          valeur 26 à la variable, cela générera une erreur, car la valeur d'une
+          constante ne peut pas être modifiée une fois qu'elle a été
+          initialisée.
+        </p>
+        <p>
+          Comme pour 'let', les variables déclarées avec 'const' ont une portée
+          de bloc, ce qui signifie qu'elles ne sont accessibles qu'à l'intérieur
+          du bloc dans lequel elles sont définies.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="qBQJgXb"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/qBQJgXb"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          De plus, les variables déclarées avec 'const' ne sont pas hoistées, ce
+          qui empêche les comportements inattendus et améliore la lisibilité du
+          code.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="yLQRZoZ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/yLQRZoZ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Il est recommandé d'utiliser 'const' pour déclarer des variables
+          immuables et de se familiariser avec 'let' pour les variables dont la
+          valeur doit être modifiée.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comparaison entre 'var', 'let' et 'const'</title>
+  </head>
+  <body>
+    <h1>Comparaison entre 'var', 'let' et 'const'</h1>
+    <div>
+      <img
+        src="01_Img/variables-js-tableau.png"
+        alt="Image comparaison entre les Variables"
+      />
+      <p>
+        En ce qui concerne la portée, il convient de noter que 'var' a une
+        portée de fonction, c'est-à-dire qu'elle peut être appelée n'importe où
+        dans la fonction où elle est déclarée. En revanche, 'let' et 'const' ont
+        une portée de bloc, ce qui signifie qu'elles sont uniquement accessibles
+        dans le bloc de code où elles sont déclarées, généralement un couple de
+        {}.
+      </p>
+      <p>
+        En ce qui concerne la réaffectation, il est important de noter que 'var'
+        et 'let' peuvent être réaffectées à tout moment, ce qui signifie que
+        leur valeur peut être modifiée après leur déclaration. En revanche, une
+        fois que 'const' a été déclarée et initialisée, elle ne peut pas être
+        réaffectée.
+      </p>
+      <p>
+        En ce qui concerne le hoisting, cela signifie que la déclaration de
+        'var' et 'let' sont élevées en haut de leur scope, c'est-à-dire qu'elles
+        peuvent être appelées avant leur déclaration effective. Toutefois, seule
+        la déclaration de 'var' est "hoisted", pas son affectation.
+      </p>
+      <p>
+        Si l'on essaie d'appeler une variable déclarée à l'aide de 'var' avant
+        son affectation, cela nous renverra une erreur.
+      </p>
+      <p>En revanche, 'const' n'est pas soumise au hoisting.</p>
+      <p>
+        Les variables déclarées avec "let" et "const" sont hoisting sans
+        initialisation par défaut.
+      </p>
+      <p>
+        Les variables déclarées avec "var" sont hoisting avec comme
+        initialisation par défaut "undefined"
+      </p>
+      <p>
+        Le "scope" se réfère à la portée ou à l'étendue des variables déclarées
+        en JavaScript. En d'autres termes, le scope détermine où dans le code
+        une variable peut être utilisée ou référencée.
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercice de compréhension et mise en pratique</title>
+  </head>
+  <body>
+    <h1>Exercice de compréhension et mise en pratique</h1>
+    <div>
+      <div>
+        <div>
+          <h2>Exercice 1 : déclaration et manipulation de variables</h2>
+          <h3>Méthode</h3>
+        </div>
+        <div>
+          <p>
+            Créez un programme qui calcule l'aire d'un triangle à partir de la
+            longueur de sa base et de sa hauteur. Déclarez et initialisez les
+            variables pour la base et la hauteur, puis calculez l'aire du
+            triangle en utilisant la formule "aire = (base * hauteur) / 2".
+            Affichez ensuite l'aire du triangle à l'aide de la méthode
+            console.log().
+          </p>
+          <h3>Solution</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="WNYaPgY"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/WNYaPgY"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+      <div>
+        <h2>Exercice 2 : la portée des variables</h2>
+        <p>Quelle est la sortie de ce code</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="yLQRZRd"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/yLQRZRd"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <h3>Solution</h3>
+        <p>La sortie de ce code sera :</p>
+        <p>10</p>
+        <p>5</p>
+        <p>
+          Au début du code, la variable x est déclarée et initialisée à 5.
+          Ensuite, une fonction nommée foo() est définie. À l'intérieur de cette
+          fonction, une variable locale x est déclarée et initialisée à 10.
+          Lorsque la fonction foo() est appelée, la valeur de la variable locale
+          x (qui est 10) est affichée. Enfin, en dehors de la fonction foo(), la
+          valeur de la variable globale x est affichée (qui est 5). Cela montre
+          que la portée de la variable locale x à l'intérieur de la fonction
+          foo() est limitée à cette fonction, et que la portée de la variable
+          globale x s'étend à l'ensemble du code.
+        </p>
+      </div>
+      <div>
+        <h3>Exercice 3 : application des bonnes pratiques</h3>
+        <p>Considérez le code suivant :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="bGQmzOm"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/bGQmzOm"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Identifiez les bonnes pratiques qui ont été suivies dans ce code et
+          proposez une amélioration pour respecter une autre bonne pratique.
+        </p>
+        <h3>Solution :</h3>
+        <p>Dans ce code, les bonnes pratiques suivantes ont été appliquées :</p>
+        <ul>
+          <li>
+            La déclaration des variables avec let ou const plutôt que var,
+          </li>
+          <li>
+            L'utilisation de fonctions pour regrouper les blocs de code
+            réutilisables,
+          </li>
+          <li>L'utilisation de console.log() pour afficher les résultats.</li>
+        </ul>
+        <p>
+          Cependant, il est important de noter qu'une autre bonne pratique
+          consiste à toujours déclarer les variables au début de leur portée.
+          Dans ce code, la variable x est bien déclarée avant la fonction
+          calculate(). Toutefois, la variable result est déclarée à l'intérieur
+          de la fonction, ce qui peut rendre le code plus difficile à lire et à
+          comprendre.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
