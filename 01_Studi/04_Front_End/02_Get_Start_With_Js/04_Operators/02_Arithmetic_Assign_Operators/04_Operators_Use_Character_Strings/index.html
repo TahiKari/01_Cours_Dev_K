@@ -1,11 +1,114 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opérateurs à utiliser pour les chaînes de caractères</title>
+  </head>
+  <body>
+    <h1>Opérateurs à utiliser pour les chaînes de caractères</h1>
+    <div>
+      <div>
+        <h3>Définition</h3>
+        <p>
+          Les chaînes de caractères permettent de représenter des textes. Ce
+          sont, comme leur nom l’indique, des ensembles de caractères, assemblés
+          les uns à la suite des autres. 2 opérateurs vont être très utiles pour
+          modifier des chaînes de caractères : l’opérateur de concaténation et
+          l’opérateur d’affectation après concaténation.
+        </p>
+      </div>
+      <div>
+        <h2>L’opérateur de concaténation « + »</h2>
+        <p>
+          Le symbole + n’est pas utilisé uniquement pour additionner des
+          nombres. Il peut servir à la fois d’opérateur d’addition (pour les
+          nombres), mais aussi d’opérateur de concaténation (pour les chaînes de
+          caractères). La concaténation, c’est le fait d’assembler plusieurs
+          chaînes de caractères en une seule. Prenons un exemple simple :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="mdQQOaq"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/mdQQOaq"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Ici, nous avons concaténé 3 chaînes de caractères dans la variable
+          nomComplet : la chaîne "Peter" contenue dans la variable prenom, la
+          chaîne " " (qui contient un espace) et enfin la chaîne "Parker"
+          contenue dans la variable nom. La variable nomComplet contient donc la
+          chaîne "Peter Parker".
+        </p>
+      </div>
+      <div>
+        <h2>L’opérateur d’affectation après concaténation « += »</h2>
+        <p>
+          Le symbole += peut aussi être utilisé pour concaténer des chaînes.
+          Quand il est utilisé avec des chaînes, il ne sert pas d’opérateur
+          d’affectation après addition mais on peut dire « d’opérateur
+          d’affectation après concaténation ». Prenons un exemple tout simple :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="vYQQyPJ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/vYQQyPJ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          La chaîne de caractères qui est placée après l’opérateur est ajoutée à
+          la fin de la chaîne. Donc la variable nom contiendra la chaîne "Peter
+          Parker".
+        </p>
+        <p>
+          Vous connaissez maintenant de nombreux opérateurs arithmétiques et
+          d’affectation.
+        </p>
+      </div>
+    </div>
+  </body>
 </html>

@@ -1,11 +1,173 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Les opérateurs logiques</title>
+  </head>
+  <body>
+    <h1>Les opérateurs logiques</h1>
+    <div>
+      <p>
+        Nous pouvons citer 3 opérateurs logiques fondamentaux en JavaScript :
+        &&, || et !. Dans cette partie, nous utiliserons uniquement des exemples
+        où les expressions renvoient un booléen.
+      </p>
+      <div>
+        <h2>L’opérateur « && »</h2>
+        <p>
+          L’opérateur && signifie littéralement « et ». Dans le cas où on
+          utilise un && au milieu de deux expressions renvoyant un booléen,
+          l’opérateur renverra true si les deux expressions renvoient true,
+          sinon, il renverra false. Donc, quand on utilise l’opérateur &&, on
+          vérifie si deux expressions sont « vraies ». Si une seule l’est,
+          alors, l’opérateur renverra false. Voyons un exemple concret :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="jOQQyzE"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/jOQQyzE"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <div>
+        <h2>L’opérateur « || »</h2>
+        <p>
+          L’opérateur || signifie littéralement « ou ». Dans le cas où on
+          utilise un || au milieu de deux expressions renvoyant un booléen,
+          l’opérateur renverra true si au moins une des deux expressions est
+          juste, sinon, il renverra false :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="ZEmmLop"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/ZEmmLop"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          L’instruction console.log(a == b || a > c) affiche dans la console
+          true car une des deux expressions renvoie true (l’expression a == b
+          est vérifiée). Si les deux expressions étaient vraies, l’instruction
+          aurait aussi affiché true.
+        </p>
+        <p>
+          En revanche, l’instruction console.log(a < c || a == c) affiche false
+          car aucune des deux expressions n’est vraie.
+        </p>
+      </div>
+      <div>
+        <h2>L’opérateur « ! »</h2>
+        <p>
+          L’opérateur ! signifie littéralement « non ». On l’utilise pour
+          renvoyer true si une expression renvoie false et inversement :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="ExOOZRX"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/ExOOZRX"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans les deux premiers console.log, on place les expressions a == b et
+          a > b entre parenthèses pour indiquer que si l’expression en entier
+          renvoie true, alors, c’est false qui sera affiché et inversement. Les
+          parenthèses permettent d’inverser le booléen renvoyé par toute
+          l’expression et pas seulement la variable qui vient tout de suite
+          après l’opérateur : !.
+        </p>
+      </div>
+      <div>
+        <h2>Utilisation de plusieurs opérateurs dans un même exemple</h2>
+        <p>
+          Les opérateurs de comparaison et les opérateurs logiques peuvent être
+          utilisés pour créer des structures plus complexes et vérifier si un
+          ensemble d’expressions sont vérifiées. Mais le principe de base reste
+          le même.
+        </p>
+        <p>
+          Les opérateurs en JavaScript n’ont plus beaucoup de secrets pour vous.
+          La documentation de MDN fournit des listes assez complètes des
+          opérateurs JS, en les agrémentant d’exemples. On les trouve sur la
+          page citée plus haut :
+          <a
+            href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Expressions_and_Operators#op%C3%A9rateurs_daffectation"
+            target="_blank"
+            rel="alternate"
+            >mdn web docs </a
+          >.
+        </p>
+        <p>
+          Cette page détaille tous les points que nous avons vus et traite
+          d’opérateurs que nous n’avons pas abordés. N’hésitez donc pas à la
+          consulter.
+        </p>
+      </div>
+    </div>
+  </body>
 </html>

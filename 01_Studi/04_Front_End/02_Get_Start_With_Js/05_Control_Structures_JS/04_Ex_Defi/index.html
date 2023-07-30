@@ -10,15 +10,16 @@
     <div>
       <div>
         <p>
-          Vous cherchez à réaliser un système vérifiant qu’un ordinateur répond
-          à différents critères. Cet ordinateur a plusieurs caractéristiques,
-          voici le script de base :
+          Vous cherchez à réaliser un programme permettant à un réparateur
+          d’ordinateurs de savoir si un modèle spécifique est pris en charge par
+          ses équipes. Chaque ordinateur à plusieurs caractéristiques. Voici
+          votre script de base :
         </p>
         <p
           class="codepen"
           data-height="300"
           data-default-tab="html,result"
-          data-slug-hash="MWzzpVr"
+          data-slug-hash="YzRRoyx"
           data-user="OpenSpirit"
           style="
             height: 300px;
@@ -33,7 +34,7 @@
         >
           <span
             >See the Pen
-            <a href="https://codepen.io/OpenSpirit/pen/MWzzpVr"> Untitled</a> by
+            <a href="https://codepen.io/OpenSpirit/pen/YzRRoyx"> Untitled</a> by
             OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
             on <a href="https://codepen.io">CodePen</a>.</span
           >
@@ -43,26 +44,30 @@
           src="https://cpwebassets.codepen.io/assets/embed/ei.js"
         ></script>
         <p>
-          La console doit afficher true si et seulement si l’ordinateur est de
-          marque « HP » ou « Acer », qu’il a un stockage supérieur ou égal à 256
-          GO et une ram supérieure ou égale à 8 GO.
+          Le réparateur ne prend en charge que les ordinateurs de marque Apple,
+          HP et Microsoft. La ram doit aussi être supérieure ou égale à 4 GO
+          pour que l’ordinateur soit pris en charge. Les ordinateurs de moins de
+          256 GO de stockage ne sont pas pris en charge.
         </p>
       </div>
-
       <div>
         <h2>Question</h2>
         <p>
-          Dans le console.log (à l’emplacement /*code Question 1*/) écrivez le
-          code permettant de réaliser ce test.
+          Construire un système permettant d’indiquer dans la console si
+          l’ordinateur est pris en charge ou non, en fonction de ces critères.
+          Tester le script en définissant les variables sur des valeurs
+          spécifiques.
         </p>
         <div>
           <h3>Solution</h3>
-          <p>Voici un code simple qui fonctionne :</p>
+          <p>
+            Voici un script qui fonctionne, en utilisant la structure if/else :
+          </p>
           <p
             class="codepen"
             data-height="300"
             data-default-tab="html,result"
-            data-slug-hash="BaGGWOL"
+            data-slug-hash="XWyyLXb"
             data-user="OpenSpirit"
             style="
               height: 300px;
@@ -77,7 +82,7 @@
           >
             <span
               >See the Pen
-              <a href="https://codepen.io/OpenSpirit/pen/BaGGWOL"> Untitled</a>
+              <a href="https://codepen.io/OpenSpirit/pen/XWyyLXb"> Untitled</a>
               by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
                 >@OpenSpirit</a
               >) on <a href="https://codepen.io">CodePen</a>.</span
@@ -93,29 +98,36 @@
       <div>
         <h2>Question</h2>
         <p>
-          Dans la suite du code (à l’emplacement /*code Question 2*/), écrivez
-          des instructions permettant d’assembler dans une chaîne la marque, le
-          nom du modèle, la ram et le processeur de l’ordinateur. La chaîne
-          pourra ressembler à « HP Pavillon, 512 GO de stockage, 16 GO de ram,
-          processeur intel core i7 ». Bien évidemment, les données ne seront pas
-          les mêmes quand vous changerez la valeur des variables.
+          Si la marque est Apple, le réparateur demande que pour plusieurs
+          processeur, l’utilisateur soit informé du temps de réparation maximum
+          :
         </p>
+        <ul>
+          <li>Intel core I7 : "Le temps de réparation est de 25 jours max"</li>
+          <li>M1 : "Le temps de réparation est de 10 jours max"</li>
+          <li>M2 : "Le temps de réparation est de 20 jours max"</li>
+          <li>
+            Autre processeur : "Le temps re réparation est de 35 jours max"
+          </li>
+          <li>
+            Pour les ordinateurs des autres marques, le temps de réparation sera
+            le même : 20 jours max. L’utilisateur devra aussi en être informé.
+          </li>
+        </ul>
         <p>
-          Ensuite, définissez une variable prix. Celle-ci contiendra le prix de
-          l’ordinateur qui sera calculé en additionnant le stockage, et la ram
-          multipliée par 20. Enfin, rajouter le prix dans la chaîne concaténée
-          pour que la chaîne ressemble à : « HP Pavillon, 512 GO de stockage, 16
-          GO de ram, processeur intel core i7, prix : {prix} euros ». Afficher
-          la chaîne dans la console.
+          Modifier le script pour que ces changements soient pris en compte.
         </p>
         <div>
           <h3>Solution</h3>
-          <p>Voici un code qui fonctionne :</p>
+          <p>
+            Voici un script qui fonctionne, en utilisant la structure if/else et
+            le switch :
+          </p>
           <p
             class="codepen"
             data-height="300"
             data-default-tab="html,result"
-            data-slug-hash="XWyyRKG"
+            data-slug-hash="qBQQzZR"
             data-user="OpenSpirit"
             style="
               height: 300px;
@@ -130,7 +142,7 @@
           >
             <span
               >See the Pen
-              <a href="https://codepen.io/OpenSpirit/pen/XWyyRKG"> Untitled</a>
+              <a href="https://codepen.io/OpenSpirit/pen/qBQQzZR"> Untitled</a>
               by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
                 >@OpenSpirit</a
               >) on <a href="https://codepen.io">CodePen</a>.</span
@@ -140,6 +152,10 @@
             async
             src="https://cpwebassets.codepen.io/assets/embed/ei.js"
           ></script>
+          <p>
+            N’hésitez pas à tester le code et à opérer des modifications pour
+            bien comprendre comment il fonctionne.
+          </p>
         </div>
       </div>
     </div>

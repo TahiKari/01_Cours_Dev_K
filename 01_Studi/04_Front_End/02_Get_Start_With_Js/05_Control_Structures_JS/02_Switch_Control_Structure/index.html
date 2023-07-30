@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La structure de contrôle switch</title>
+  </head>
+  <body>
+    <h1>La structure de contrôle switch</h1>
+    <div>
+      <div>
+        <h2>Introduction à switch</h2>
+        <p>
+          En programmation, la structure de contrôle switch existe dans de
+          nombreuses technologies. Mais qu’est-ce que c’est au juste ? La
+          dernière console de Nintendo ? Non évidemment, le terme switch peut se
+          traduire littéralement par « interrupteur » ou le verbe « changer ».
+          En programmation, la structure switch, aussi souvent appelée
+          switch/case, permet de facilement répertorier plusieurs valeurs
+          possibles renvoyées par une expression et de définir les instructions
+          pour chaque cas.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="VwVVONP"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/VwVVONP"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Prenons un exemple très simple. Nous avons une variable marque qui
+          correspond à la marque d’un téléphone et on souhaite générer un
+          console.log spécifique pour chaque marque. Voici un script qui
+          fonctionne :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="RwqqmmZ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/RwqqmmZ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans ce cas, le switch va vérifier à chaque case (à chaque cas) si
+          marque est égale à "Huawei". Si ce n’est pas le cas, elle passe au
+          traitement du case suivant. C’est donc pour le case "Huawei" que
+          l’instruction va être déclenchée, donc c’est l’instruction console.log
+          "Smartphone bon marché avec système Android;" qui est exécutée.
+        </p>
+        <p>
+          Pour faire simple, le script revient à dire : « Si la marque est
+          "Apple", afficher "Smartphone haut de gamme avec système IOS", si la
+          marque est "Samsung", afficher "Smartphone haut de gamme avec système
+          Android", etc. ». On note que la présence du mot clé break est
+          indispensable pour éviter des erreurs. Le break permet de terminer le
+          switch en cours pour passer aux instructions suivantes du script dans
+          le cas où les instructions d’un case sont exécutées. Finalement, une
+          fois qu’un case correspond à la valeur renvoyée par la variable
+          marque, les instructions du case sont exécutées et le break permet de
+          sortir du switch pour ne pas traiter les case qui peuvent être
+          présents après.
+        </p>
+        <p>
+          Maintenant, qu’est-ce qui se passe si on définit la variable marque
+          sur une marque qui n'apparaît pas dans le switch ? Par exemple, «
+          Motorala » ? Eh bien tout simplement, rien. Admettons que l’on veuille
+          qu’une instruction soit exécutée pour chaque nom de marque non défini
+          comme case dans le switch. Pour cela, il faut définir la clause
+          default.
+        </p>
+      </div>
+      <div>
+        <h2>La clause default</h2>
+        <p>
+          La clause default permet d’indiquer les instructions qui seront
+          exécutées « par défaut », c’est-à-dire dans le cas où aucun cas
+          spécifié ne correspond à la valeur renvoyée par l’expression de
+          référence. Bien qu’elle soit facultative, il est fortement préconisé
+          de l’utiliser dans un switch. Pour bien comprendre, appliquons cette
+          notion à notre exemple :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="oNQQrvB"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/oNQQrvB"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          On peut voir qu’en spécifiant la clause default, on indique quelles
+          instructions va exécuter le switch dans le cas où aucun des case ne
+          correspond à la valeur de marque.
+        </p>
+        <p>
+          On peut cependant constater que notre switch pourrait être amélioré.
+          En effet, pour les marques « Xiaomi » et « Huawei », les instructions
+          sont exactement les mêmes. Il n’y a donc pas besoin de les répéter
+          deux fois. Comment appliquer la même instruction à deux case ?
+        </p>
+      </div>
+      <div>
+        <h2>Appliquer une même suite d’instructions pour plusieurs cas</h2>
+        <p>
+          Pour appliquer une même suite d’instructions pour plusieurs cas, il
+          nous faut simplement préciser chaque case concerné avant d’écrire la
+          suite d’instructions, en respectant la syntaxe. Pour bien comprendre,
+          appliquons cette notion à notre exemple :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="qBQQzBa"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/qBQQzBa"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          On peut voir que ça fonctionne, les instructions exécutées seront les
+          mêmes pour les marques « Xiaomi » et « Huawei », à savoir :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="wvQQLvx"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/wvQQLvx"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Voilà, vous connaissez maintenant la structure switch en JavaScript.
+          La vidéo explique comment utiliser le switch, mais nous utiliserons un
+          autre exemple. Nous y reprenons la majorité des points abordés.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

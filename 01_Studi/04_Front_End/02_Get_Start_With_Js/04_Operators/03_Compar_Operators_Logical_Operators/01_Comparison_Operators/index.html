@@ -1,11 +1,201 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Les opérateurs de comparaison</title>
+  </head>
+  <body>
+    <h1>Les opérateurs de comparaison</h1>
+    <div>
+      <div>
+        <h3>Définition</h3>
+        <p>
+          Parlons maintenant des opérateurs de comparaison. Vous avez déjà
+          entendu parler des fameux booléens, les variables dont la valeur est
+          égale soit à true, soit à false. Les opérateurs de comparaison vont
+          nous permettre de comparer des valeurs et de vérifier en quelques
+          sortes des « hypothèses », en renvoyant un booléen (true si
+          l’hypothèse est validée et false si elle ne l’est pas). Les opérateurs
+          de comparaison seront donc indispensables lorsque nous utiliserons des
+          systèmes de conditions. Voyons différents opérateurs de comparaison et
+          comment ils fonctionnent :
+        </p>
+      </div>
+      <div>
+        <h2>Les opérateurs « == » et « != »</h2>
+        <p>
+          L’opérateur d’égalité == vérifie si 2 valeurs sont égales ou non. Si
+          elles le sont, l’expression renverra true, sinon false :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="NWEEdjV"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/NWEEdjV"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          On peut voir que console.log(a == b) affiche false car les 2 chaînes
+          ne sont pas égales tandis que console.log (a == c) affiche true car
+          les deux chaînes sont égales.
+        </p>
+        <p>
+          L’opérateur d’inégalité != vérifie quant à lui si 2 valeurs ne sont
+          pas égales :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="oNQQBep"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/oNQQBep"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <div>
+        <h2>Les opérateurs « === » et « !== »</h2>
+        <h3>Complément</h3>
+        <p>
+          Les opérateurs === (d’égalité stricte) et !=== (d’inégalité stricte)
+          vérifient respectivement si une valeur est égale ou inégale à une
+          autre, mais prennent aussi en compte le type de la valeur (entier,
+          booléen, chaîne de caractères, etc.). L’opérateur === vérifie si une
+          valeur est égale à une autre et si leur type sont les mêmes. Dans ce
+          cas, il renvoie true. L’opérateur !== renvoie true dans le cas où il y
+          a au moins une différence de type ou de valeur entre les 2 valeurs.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="JjeeEry"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/JjeeEry"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <div>
+        <h2>Les opérateurs « < », « > », « <= » et « >= »</h2>
+        <p>
+          Pour bien comprendre, listons et expliquons chacun de ces opérateurs :
+        </p>
+        <ul>
+          <li>
+            < : stricte infériorité. Vérifie si une valeur est strictement
+            inférieure à une autre,
+          </li>
+          <li>
+            > : stricte supériorité. Vérifie si une valeur est strictement
+            supérieure à une autre,
+          </li>
+          <li>
+            <= : infériorité. Vérifie si une valeur est inférieure ou égale à
+            une autre,
+          </li>
+          <li>
+            >= : supériorité. Vérifie si une valeur est supérieure ou égale à
+            une autre.
+          </li>
+        </ul>
+        <p>Prenons un exemple simple :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="VwVVPyx"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/VwVVPyx"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Pour chaque ligne console.log, un commentaire spécifie dans le code le
+          booléen affiché. On voit que c’est cohérent.
+        </p>
+        <p>
+          Abordons à présent les opérateurs logiques et comment ils fonctionnent
+          avec des exemples concrets.
+        </p>
+      </div>
+    </div>
+  </body>
 </html>
