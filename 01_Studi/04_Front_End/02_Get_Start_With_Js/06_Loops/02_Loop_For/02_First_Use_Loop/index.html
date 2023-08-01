@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Première utilisation de la boucle for</title>
+  </head>
+  <body>
+    <h1>Première utilisation de la boucle for</h1>
+    <div>
+      <div>
+        <h2>La boucle for</h2>
+        <h3>Définition</h3>
+        <p>
+          La boucle for est une boucle vraiment importante en programmation.
+          Pour faire simple, disons qu’on peut l’utiliser dans tous les cas où,
+          juste avant l’exécution de la boucle, le nombre d’itérations (de tours
+          de boucle) est fixé. Autrement dit, le nombre d’itérations ne changera
+          pas ou ne sera pas déterminé lors de l’exécution des itérations de la
+          boucle.
+        </p>
+      </div>
+
+      <div>
+        <h2>Première façon d’utiliser la boucle for</h2>
+        <h3>Méthode</h3>
+        <p>
+          La première manière d’utiliser la boucle for se fait avec cette
+          syntaxe :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="YzRdNve"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/YzRdNve"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>Dans les paramètres du for, nous allons spécifier :</p>
+        <ul>
+          <li>
+            <strong>Initialisation</strong> : nous allons initialiser une
+            variable qui servira de compteur à notre boucle.
+          </li>
+          <li>
+            <strong>Condition</strong> : nous allons définir la condition qui
+            déterminera le nombre d’itérations.
+          </li>
+          <li>
+            <strong>Incrémentation</strong> : nous allons définir
+            l’incrémentation de notre compteur.
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Exemple</h3>
+        <p>Pour bien comprendre, voyons un exemple simple :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="XWyopyN"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/XWyopyN"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, dans les paramètres du <code>for</code>, nous
+          initialisons le compteur <code>i</code> en le définissant sur le
+          nombre 1. Nous indiquons ensuite que la boucle devra se répéter tant
+          que <code>i</code> est inférieure ou égale à 10. Enfin, nous
+          incrémentons à chaque tour de boucle la variable i. L’instruction à
+          réitérer est l’affichage dans la console de la variable
+          <code>i</code>. On peut voir que la boucle fonctionne ainsi :
+        </p>
+        <ol>
+          <li>
+            Le programme vérifie si <code>i</code> est inférieure ou égale à 10.
+            Or <code>i</code> est égale à 1. L’expression
+            <code>i <= 10</code> renvoie donc <code>true</code>. Une première
+            itération de la boucle est lancée et la console affiche
+            <code>i</code>, donc 1.
+          </li>
+          <li>
+            Le programme vérifie si <code>i</code> est inférieure ou égale à 10.
+            Or, <code>i</code> a été incrémentée et est maintenant égale à 2.
+            L’expression <code>i <= 10</code> renvoie donc true. Une deuxième
+            itération de la boucle est lancée et la console affiche
+            <code>i</code>, donc 2.
+          </li>
+          <li>Etc.</li>
+        </ol>
+        <p>
+          Finalement, lorsque 10 tours de boucles ont été effectués, la variable
+          <code>i</code> est incrémentée et vaut 11. L’expression
+          <code>i <= 10</code> renvoie donc <code>false</code>. La boucle
+          s’arrête alors.
+        </p>
+        <p>
+          On peut constater qu’avant chaque tour de boucle, la condition est
+          testée et le résultat détermine si une nouvelle itération aura lieu ou
+          non.
+        </p>
+        <p>
+          Avant de voir un autre exemple un peu plus complexe, introduisons
+          rapidement le concept de tableau.
+        </p>
+      </div>
+
+      <div>
+        <h2>Tableau</h2>
+        <p>
+          Pour faire simple, en JavaScript, un tableau est une liste d’éléments
+          ordonnés stockés dans une variable. On utilise les crochets pour
+          stocker des valeurs dans un tableau.
+        </p>
+        <h3>Exemple</h3>
+        <p>Par exemple :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="abQPpey"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/abQPpey"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Chaque élément du tableau est accessible via son index, sachant que le
+          premier élément du tableau à pour index 0, le second 1, le troisième
+          2, etc.
+        </p>
+        <h3>Exemple</h3>
+        <p>On peut récupérer un élément de ce tableau comme ceci :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="vYQvxBz"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/vYQvxBz"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <h3>Méthode</h3>
+        <p>
+          Maintenant prenons un autre exemple de boucle
+          <code>for</code> interagissant avec un tableau :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="gOQZmOE"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/gOQZmOE"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Ici, l’objectif de notre boucle est de dresser à l’intérieur d’un
+          tableau et plus particulièrement dans notre cas faire la table de
+          multiplication d’un nombre. Nous commençons par définir la variable
+          <code>nombre</code>, puis nous déclarons un tableau (avec les
+          crochets) que nous appelons <code>table</code>.
+        </p>
+        <p>
+          Celui-ci contiendra tous les nombres de la table de
+          <code>nombre</code>. Dans le <code>for</code>, on ne change rien, car
+          on souhaite que la première valeur de <code>i</code> soit 1 et qu’il y
+          ait 10 itérations. À chaque tour de boucle, nous déclarons et
+          définissons une variable <code>resultat</code> qui stockera le produit
+          de <code>nombre</code> par <code>i</code> (qui vaudra 1 puis 2, puis
+          3, etc., jusqu’à 10).
+        </p>
+        <p>
+          On ajoute ensuite à chaque itération le résultat dans notre tableau
+          <code>table</code>. On peut voir que ce script fonctionne bien,
+          d’ailleurs, si on fait un <code>console.log</code> de la 4e valeur de
+          <code>table</code> (donc avec l’index 3), on obtient :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="PoxXpqg"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/PoxXpqg"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <p>
+        Bien évidemment, nous pourrons utiliser les boucles avec des paramètres
+        et des instructions complètement différentes, en fonction des
+        nécessités. Maintenant, voyons une autre manière d’utiliser la boucle
+        <code>for</code>.
+      </p>
+    </div>
+  </body>
+</html>

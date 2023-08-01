@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paramètres, valeur de retour et expressions de fonctions</title>
+  </head>
+  <body>
+    <h1>Paramètres, valeur de retour et expressions de fonctions</h1>
+    <div>
+      <div>
+        <p>
+          Maintenant que nous savons définir une fonction de base, voyons
+          comment passer des paramètres et quel en est l’intérêt.
+        </p>
+        <h2>Paramètres</h2>
+        <p>
+          Qu’est-ce qu’un paramètre ? C’est un nom, on peut dire une variable
+          qui est indiquée dans les parenthèses de la fonction. L’intérêt d’un
+          paramètre est qu’il permet d’importer un argument dans une fonction,
+          c’est-à-dire une valeur précise qui sera définie lors de l’appel de la
+          fonction. Pour faire simple, lorsqu’on a un paramètre d’une fonction,
+          on va pouvoir définir sa valeur lors de l’appel de la fonction. On
+          pourra donc définir une valeur différente à chaque appel. Reprenons
+          l’exemple que nous avons pris précédemment :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="poQqBMr"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/poQqBMr"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Admettons que dans cet exemple, on veuille calculer le double d’un
+          nombre passé en paramètre. Ça nous évitera d’avoir à déclarer hors de
+          la fonction une variable nombre et d’avoir à changer sa valeur à
+          chaque fois. Donc si on enlève cette variable, on obtient :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="MWzZdgO"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/MWzZdgO"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          On a placé des points d’interrogation pour indiquer les emplacements
+          où il manque une valeur. Comment faire pour initialiser un paramètre
+          qui stockera la valeur d’un nombre ? Prenons un exemple mathématique :
+        </p>
+        <code>f(x) = x * 2</code>
+        <p>
+          Ici, nous avons une fonction mathématique. On peut voir que x est un
+          paramètre de la fonction. Si on calcule f(4), alors tous les x
+          prennent la valeur 4
+        </p>
+        <code>f(4) = 4 * 2</code>
+        <p>
+          C’est le même principe pour les fonctions en programmation. On va
+          initialiser un paramètre qu’on va par exemple appeler <code>nb</code>.
+          On pourrait l’appeler <code>x</code> ou <code>a</code>, bref, lui
+          donner n’importe quel nom. Puis lors de l’appel, on spécifie
+          l’argument, c’est-à-dire la valeur que va prendre le paramètre
+          <code>nb</code> :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="zYMyQYL"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/zYMyQYL"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Nous pouvons voir que ça fonctionne et que nous pouvons appeler la
+          fonction un nombre de fois illimité en passant en paramètre le nombre
+          pour lequel le double sera calculé. Lorsque nous définissons une
+          fonction, nous pouvons passer plusieurs paramètres. Par exemple,
+          définissons une fonction permettant de calculer le périmètre d’un
+          rectangle :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="mdQaYyy"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/mdQaYyy"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Quand nous appelons notre fonction, il suffit de spécifier les
+          arguments, donc les valeurs correspondant à la largeur et à la
+          longueur, dans l’ordre correspondant au passage des paramètres :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="wvQRbBz"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/wvQRbBz"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Nous pouvons voir que les différents appels de la fonction permettent
+          d’afficher le périmètre d’un rectangle de largeur 4 et longueur 5, de
+          largeur 2 et longueur 4, etc.
+        </p>
+      </div>
+
+      <div>
+        <h2>Valeur de retour</h2>
+        <p>
+          Qu’est-ce qu’une valeur de retour ? Vous vous en rappelez, tout à
+          l’heure nous avons pris un exemple d’une fonction mathématique :
+        </p>
+        <code>f(x) = x * 2</code>
+        <p>
+          Dans ce cas, il y a un paramètre spécifié qui est x. Mais à quoi peut
+          correspondre la valeur de retour ? On peut dire que la valeur de
+          retour de cette fonction est f(x). Dans le cas où x = 4, on a :
+        </p>
+        <code>f(4) = 4 * 2 = 8</code>
+        <p>
+          Dans le cas où x = 4, la valeur de retour de la fonction sera donc 8.
+        </p>
+        <p>La valeur de retour de la fonction est donc x * 2.</p>
+        <p>
+          Jusque-là, nous n’avons pas défini de valeur de retour. Mais on
+          pourrait se demander : est-ce que les fonctions que nous avons
+          définies ont une valeur de retour ? La valeur de retour d’une fonction
+          est renvoyée par l’expression permettant d’appeler une fonction. Par
+          exemple, la valeur de retour de
+          <code>perimetreRectangle(4, 5)</code> est renvoyée par l’expression
+          <code>perimetreRectangle(4, 5)</code>.
+        </p>
+        <p>
+          Voyons donc si notre fonction a une valeur de retour en faisant un
+          <code>console</code>.log de l’expression
+          <code>perimetreRectangle(4, 5)</code>.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="dyQwEoE"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/dyQwEoE"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          On peut voir que la fonction est appelée, mais qu’elle renvoie (ou «
+          que sa valeur de retour est ») <code>undefined</code>. Notre fonction
+          n’a donc pas de valeur de retour explicite, c’est une fonction que
+          l’on peut qualifier « de procédure ». Mais imaginons qu’on veuille que
+          la valeur de retour de notre fonction soit justement le périmètre de
+          notre rectangle. Ce serait plus logique puisque c’est la valeur que
+          l’on cherche à obtenir avec la fonction
+          <code>perimetreRectangle()</code>. On peut (bien que ce ne soit pas
+          obligatoire) retirer le <code>console.log</code> affichant la chaîne
+          de caractères avec le périmètre. Pour définir la valeur de retour
+          d’une fonction, on utilise le mot clé <code>return</code> :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="dyQwEYB"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/dyQwEYB"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans ce dernier exemple, la fonction
+          <code>perimetreRectangle()</code> a pour valeur de retour la valeur de
+          la variable <code>perimetre</code>.
+        </p>
+        <p>
+          L’expression <code>perimetreRectangle(4, 5)</code> va donc renvoyer 2
+          * 4 + 2 * 5, donc 18. Comme on affiche
+          <code>perimetreRectangle(4, 5)</code> dans la console, la console
+          affiche 18. On peut tester la fonction avec de nombreux arguments
+          comme suit :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="xxQmNZm"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/xxQmNZm"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+
+      <div>
+        <h2>Utilisation du mot clé return</h2>
+        <h3>Fondamental</h3>
+        <p>
+          Le mot clé <code>return</code> met fin à l’exécution de la fonction et
+          définit la valeur de retour.
+        </p>
+        <p>
+          Voilà, vous savez maintenant utiliser le mot clé
+          <code>return</code> pour renvoyer une valeur. À noter qu’en règle
+          générale, il est préconisé de définir dans une fonction, une valeur de
+          retour. Tous les exemples que nous avons pu voir dans la première
+          partie ne sont donc pas forcément préconisés. Maintenant que vous
+          savez définir une valeur de retour, prenez donc l’habitude d’utiliser
+          le mot clé <code>return</code> dans vos fonctions
+        </p>
+      </div>
+
+      <div>
+        <h2>Créer une fonction grâce à une expression de fonction</h2>
+        <h3>Complément</h3>
+        <p>
+          Dans tous les exemples de ce cours, nous avons déclaré des fonctions
+          en utilisant une instruction (d’un point de vue syntaxique). Mais il
+          est aussi possible de créer une fonction en passant par une
+          expression. Une expression est une unité de code qui renvoie une
+          valeur. Par exemple, l’expression suivante renvoie 4.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="bGQOyeg"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/bGQOyeg"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          On peut affecter la valeur renvoyée par cette expression à une
+          variable par exemple :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="rNQogLr"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/rNQogLr"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Mais comment créer une fonction via une expression ? Voici un exemple
+          tout simple :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="JjewqKz"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/JjewqKz"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Nous pouvons voir que nous affectons à la variable
+          <code>racine</code> l’expression de notre fonction
+          <code>racineCarree()</code>. Cette fonction a simplement pour objectif
+          de renvoyer la racine du nombre passé en paramètre, grâce au
+          <code>Math.sqrt()</code>. Dans ce cas, nous créons la fonction grâce à
+          une expression de fonction. Mais nous pouvons aussi grâce à ce système
+          créer une fonction anonyme, c’est-à-dire une fonction qui n’a pas de
+          nom :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="GRwPaNo"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/GRwPaNo"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <P
+          >Dans les deux cas, nous pouvons appeler notre fonction en passant par
+          la variable racine. Par exemple :
+        </P>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="wvQRbog"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/wvQRbog"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <P>La console affiche donc 3.</P>
+        <P>
+          Voilà, vous savez maintenant déclarer une fonction en passant des
+          paramètres, en retournant une valeur et en utilisant une expression de
+          fonction.
+        </P>
+      </div>
+    </div>
+  </body>
+</html>

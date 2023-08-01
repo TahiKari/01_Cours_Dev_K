@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Utiliser for/in</title>
+  </head>
+  <body>
+    <h1>Utiliser for/in</h1>
+    <div>
+      <div>
+        <h3>Méthode</h3>
+        <p>
+          Le système <code>for/in</code> va nous permettre d’utiliser la boucle
+          <code>for</code> à travers les propriétés d’un objet. La syntaxe est
+          la suivante :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="RwqEpMz"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/RwqEpMz"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Le concept d’objet en programmation ne vous est peut-être pas familier
+          et c’est normal. Pour l’instant, sans rentrer dans les détails,
+          dites-vous qu’un objet est une entité ; un ensemble de données qui
+          contient des propriétés qui le caractérisent. Prenons un exemple :
+        </p>
+        <h3>Exemple</h3>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="dyQwvea"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/dyQwvea"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Ici, nous créons un objet que l’on appelle
+          <code>animation</code> (c’est le nom de la variable) et il est de type
+          <code>Animation</code>. Cet objet a de nombreuses propriétés, et, avec
+          la boucle <code>for</code>, on peut parcourir chacune de ces
+          propriétés pour en afficher une par une leur nom (et non leur valeur).
+          Dans les paramètres, nous déclarons la variable <code>i</code> qui
+          représentera à chaque tour de boucle une propriété dans l’objet
+          animation. On peut voir que la console affiche le nom de toutes les
+          propriétés de l’objet. Toutefois, ce concept reste peut-être un peu
+          flou. Voyons ce que cela donne si on parcourt un tableau avec cette
+          méthode :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="yLQGMqX"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/yLQGMqX"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          On peut voir que la console affiche 0, 1, 2. Pourquoi ? Tout
+          simplement parce que mon tableau a 3 propriétés correspondant aux
+          index des éléments qui le composent. En ce sens, cela pourrait être
+          intéressant d’utiliser ce système pour afficher la valeur des éléments
+          de notre tableau comme ceci :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="PoxXpdq"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/PoxXpdq"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Effectivement, cela fonctionne, la console affiche chaque valeur du
+          tableau. Cependant, il n’est pas préconisé de procéder ainsi pour
+          récupérer les valeurs d’un tableau. Pourquoi ? Tout bonnement parce
+          que le <code>in</code> permet de parcourir les propriétés du tableau. Si l’on
+          ajoute des propriétés à notre tableau (qui ne sont pas nécessairement
+          des éléments du tableau), alors la boucle <code>for</code> les parcourra aussi, ce
+          qui posera un problème (puisqu’on aura les éléments du tableau et les
+          autres propriétés). En ce sens, quand on veut parcourir un tableau, il
+          est important d’utiliser le système <code>for/of</code>.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

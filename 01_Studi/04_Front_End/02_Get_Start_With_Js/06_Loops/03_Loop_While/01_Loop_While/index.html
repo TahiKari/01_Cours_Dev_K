@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La boucle while</title>
+  </head>
+  <body>
+    <h1>La boucle while</h1>
+    <div>
+      <div>
+        <h3>Définition</h3>
+        <p>
+          À la différence de la boucle <code>for</code>, nous utiliserons en
+          général la boucle <code>while</code> quand, juste avant l’exécution de
+          la première itération de la boucle, le nombre d’itérations n’est pas
+          encore fixé. Cette règle n’est toutefois pas absolue. En réalité, dans
+          de nombreux cas où l’on utilise une boucle <code>for</code>, il est
+          également possible d’utiliser une boucle <code>while</code>. Voyons
+          comment utiliser la boucle <code>while</code>.
+        </p>
+      </div>
+
+      <div>
+        <h2>Utilisation de la boucle while</h2>
+        <h3>Méthode</h3>
+        <p>La syntaxe de la boucle <code>while</code> est :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="bGQORqQ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/bGQORqQ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          On indique simplement en paramètre du <code>while</code> la condition
+          pour qu’une itération se produise. Le programme commence par vérifier
+          si la condition renvoie <code>true</code> et si c’est le cas, elle
+          exécute les instructions de la boucle. Puis, le programme vérifie à
+          nouveau la condition et si elle renvoie <code>true</code>, alors, les
+          instructions sont à nouveau exécutées, ainsi de suite.
+        </p>
+        <p>
+          On voit que le système de <code>while</code> est assez simple à
+          comprendre. Prenons un exemple simple :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="dyQwRWR"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/dyQwRWR"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Ici, nous définissons une variable <code>nombre</code> sur la valeur
+          de 1. Puis, dans le <code>while</code>, nous passons en paramètre
+          l’expression conditionnelle <code>nombre <= 10</code>. Tant que nombre
+          sera inférieure ou égale à 10, alors la boucle continuera de
+          s’exécuter. On peut voir que dans les instructions, on commence par
+          afficher le nombre dans une chaîne concaténée, puis on lui ajoute 2 et
+          on lui retire 0,5. Cet ensemble d’instructions sera exécuté à chaque
+          itération. Toutefois, en quel sens peut-on dire que le nombre
+          d’itérations n’est pas fixé avant la première itération ?
+        </p>
+        <p>
+          Si on regarde la boucle, on peut voir que, hors instructions
+          (c’est-à-dire hors du corps de la boucle), le nombre d’itérations est
+          inconnu. Ce sont, dans cet exemple, les instructions de la boucle qui
+          permettent de déterminer le nombre d’itérations en fonction de la
+          condition (car on modifie la variable nombre dans les instructions du
+          <code>while</code>, tandis que la condition porte sur cette même
+          variable <code>nombre</code>). Dans ce cas, il est donc judicieux
+          d’utiliser la boucle <code>while</code>. À la différence, quand nous
+          utilisons la boucle <code>for</code>, le nombre d’itérations est fixé
+          dans les paramètres de la boucle (sauf si on ajoute des instructions
+          de type <code>break</code> ou <code>continue</code> que nous
+          aborderons). Pour notre <code>while</code>, la console affichera donc
+          :
+        </p>
+        <ul>
+          <li>Le nombre est : 1</li>
+          <li>Le nombre est : 2.5</li>
+          <li>Le nombre est : 4</li>
+          <li>Le nombre est : 5.5</li>
+          <li>Le nombre est : 7</li>
+          <li>Le nombre est : 8.5</li>
+          <li>Le nombre est : 10</li>
+          <li>11.5</li>
+        </ul>
+        <p>
+          On peut voir qu’après la 7e itération, le programme vérifie la valeur
+          de <code>nombre</code> qui est maintenant égale à 11.5. La variable
+          <code>nombre</code> étant supérieure à 10, le programme sort de la
+          boucle.
+        </p>
+      </div>
+
+      <div>
+        <h2>Utilisation de la boucle do/while</h2>
+        <p>
+          Comme vous avez pu le voir, lorsque l'on utilise un
+          <code>while</code>, le programme commence par vérifier la condition
+          puis, si l’expression conditionnelle renvoie <code>true</code>, il
+          lance une première itération de la boucle, sinon, aucune itération
+          n’est lancée.
+        </p>
+        <h3>Exemple</h3>
+        <p>Prenons l’exemple suivant :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="JjewJeJ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/JjewJeJ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          On peut voir dans ce script que la condition du <code>while</code> est
+          que <code>cv</code> soit strictement supérieure à 100 et inférieure ou
+          égale à 110. Concrètement, la boucle ne va jamais se lancer, car
+          <code>cv</code> est égale à 100.
+        </p>
+        <p>
+          Le programme vérifie l’expression
+          <code>cv > 100 && cv <= 110</code> et, étant donné qu’elle renvoie
+          <code>false</code>, alors aucune itération de la boucle n’est opérée.
+          Il nous faudrait donc un système qui lance une première itération de
+          la boucle avant de contrôler l’expression conditionnelle. C’est ce que
+          permet le <code>do/while</code>.
+        </p>
+        <h2>Do/while</h2>
+        <h3>Exemple</h3>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="zYMyzyN"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/zYMyzyN"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>Si on modifie notre exemple :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="VwVqWqX"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/VwVqWqX"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>Cela fonctionne et la console affiche</p>
+        <ul>
+          <li>La voiture a 100 cv</li>
+          <li>La voiture a 101 cv</li>
+          <li>La voiture a 102 cv</li>
+          <li>La voiture a 103 cv</li>
+          <li>La voiture a 104 cv</li>
+          <li>La voiture a 105 cv</li>
+          <li>La voiture a 106 cv</li>
+          <li>La voiture a 107 cv</li>
+          <li>La voiture a 108 cv</li>
+          <li>La voiture a 109 cv</li>
+          <li>La voiture a 110 cv</li>
+        </ul>
+        <p>
+          Le <code>do/while</code> permet donc d’opérer une première itération
+          de la boucle avant de vérifier la condition.
+        </p>
+      </div>
+
+      <div>
+        <h2>Éviter les boucles infinies</h2>
+        <p>Abordons maintenant une erreur à éviter, les boucles infinies.</p>
+        <p>
+          Un problème qui peut avoir lieu est celui des boucles infinies : des
+          boucles qui ne s’arrêtent jamais et qui font planter le programme. Une
+          boucle infinie a lieu quand l’expression de la condition d’un
+          <code>while</code> ne cesse jamais de renvoyer <code>true</code>,
+          c’est-à-dire qu’il n’y a aucune instruction qui va rendre cette
+          condition fausse.
+        </p>
+        <h3>Attention</h3>
+        <p>
+          Nous allons prendre un exemple mais sachez qu’il est déconseillé de
+          tester la manipulation, car cela risque de faire planter votre
+          navigateur.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="rNQowbW"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/rNQowbW"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, la condition du <code>while</code> spécifie que le
+          type de la variable <code>a</code> doit être un nombre, et que
+          <code>a</code> doit être comprise entre 100 (inclus) et 140 (inclus).
+          Étant donné que la variable <code>a</code> est égale à 120, cette
+          condition renvoie <code>true</code>. Toutefois, le problème est
+          qu’aucune instruction ne vient dans le <code>while</code> changer la
+          valeur de <code>a</code>. La condition sera alors toujours vérifiée
+          (elle renverra toujours <code>true</code>), et la boucle ne s’arrêtera
+          pas tant que le programme n’est pas stoppé. En revanche, si l’on
+          ajoute une incrémentation de la variable dans la boucle, la boucle ne
+          sera plus infinie et le code fonctionnera correctement.
+        </p>
+        <h3>Exemple</h3>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="vYQvZwa"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/vYQvZwa"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+
+      <div>
+        <h2>Utilisation de break et continue</h2>
+        <p>
+          Le mot clé <code>break</code> permet de sortir d’une boucle, tandis
+          que le mot clé <code>continu</code> permet de reprendre l’exécution
+          d’une boucle, de passer directement à l’instruction suivante.
+        </p>
+        <h3>Exemple</h3>
+        <p>
+          Prenons l’exemple où on insère une condition dans une boucle
+          <code>while</code> par exemple :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="dyQwRBm"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/dyQwRBm"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Essayons de comprendre comment fonctionne le programme. La console
+          affiche :
+        </p>
+        <ul>
+          <li>110</li>
+          <li>nv</li>
+          <li>120</li>
+          <li>130</li>
+          <li>fini</li>
+        </ul>
+        <p>
+          La variable <code>a</code> a pour valeur 110. Le
+          <code>while</code> vérifie la condition
+          <code>a >= 100 && a <= 150</code> qui renvoie <code>true</code>. Une
+          première itération de la boucle est donc lancée. La variable
+          <code>a</code> est affichée dans la console (donc 110) et le programme
+          lui ajoute 10 (<code>a</code> est maintenant égale à 120). Les deux
+          conditions vérifient si <code>a</code> est égale à 130 et si
+          <code>a</code> est égale à 140, mais ce n’est pas le cas. Le programme
+          passe à l’instruction suivante <code>console.log("nv")</code> qui
+          affiche donc « nv » dans la console.
+        </p>
+        <p>
+          Le <code>while</code> vérifie à nouveau la condition
+          <code>a >= 100 && a <= 150</code>. Elle renvoie <code>true</code>,
+          donc une nouvelle itération de la boucle est exécutée. La variable
+          <code>a</code> est affichée dans la console (donc 120) et le programme
+          lui ajoute 10 (a est maintenant égale à 130). La condition
+          <code>if</code> vérifie si <code>a</code> est égale à 130. Comme c’est
+          le cas, l’instruction du <code>if</code> est exécutée, donc continue.
+          Cette instruction permet de ne pas exécuter la suite de l’itération et
+          de passer à la prochaine itération de la boucle.
+        </p>
+        <p>
+          Le <code>while</code> vérifie à nouveau la condition
+          <code>a >= 100 && a <= 150</code>. Elle renvoie <code>true</code>,
+          donc une nouvelle itération de la boucle est exécutée. La variable
+          <code>a</code> est affichée dans la console (donc 130) et le programme
+          lui ajoute 10 (a est maintenant égale à 140). La condition
+          <code>if</code> vérifie si <code>a</code> est égale à 130, mais ce
+          n’est pas le cas, le <code>else if</code> est donc traité. Le
+          programme vérifie si <code>a</code> est égale à 140, et c’est bien le
+          cas, donc l’instruction du <code>else if</code> est exécutée,
+          c’est-à-dire le <code>break</code>. Cette instruction fait s’arrêter
+          la boucle et continue le script (après la boucle).
+        </p>
+        <p>
+          Le <code>console.log("fini")</code> est donc exécuté et la console affiche cette
+          chaîne.
+        </p>
+        <p>
+          Voilà, c’est un exemple assez basique, mais on peut voir que les instructions <code>break</code> et <code>continu</code> vont permettre de rajouter du potentiel aux boucles. Bien évidemment, ces mots clés peuvent être utilisés avec la boucle <code>for</code>.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

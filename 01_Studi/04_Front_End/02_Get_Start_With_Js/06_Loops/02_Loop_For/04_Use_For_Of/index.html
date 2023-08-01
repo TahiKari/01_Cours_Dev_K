@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Utiliser for/of</title>
+  </head>
+  <body>
+    <h1>Utiliser for/of</h1>
+    <div>
+      <div>
+        <h3>Méthode</h3>
+        <p>
+          La boucle <code>for/of</code> permet de parcourir un objet itérable et
+          de récupérer ses valeurs. C’est le cas par exemple des tableaux. Si
+          l’on reprend notre exemple précédent et que l’on cherche à afficher
+          dans la console chaque élément du tableau, on peut faire simplement :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="oNQJWjK"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/oNQJWjK"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Cela fonctionne, car à chaque tour de boucle, <code>i</code> prend la
+          valeur d’un élément de tableau, et la boucle parcourt tous les
+          éléments du tableau. Avec la boucle <code>for/of</code>, on peut donc
+          rapidement récupérer les valeurs d’un tableau.
+        </p>
+        <h3>Méthode</h3>
+        <p>
+          Modifions-la pour que notre programme permette de concaténer dans une
+          chaîne de caractères les valeurs des différents éléments du tableau :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="KKrbmgQ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/KKrbmgQ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>On peut voir que la console affiche : Apple, HP, Acer,</p>
+        <p>
+          À chaque tour de boucle, le programme ajoute à la fin de la chaîne de
+          caractères tableau la valeur de i qui contient une valeur d’un élément
+          du tableau. Tous les éléments du tableau sont parcourus.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

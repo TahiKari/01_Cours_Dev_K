@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercice défi</title>
+  </head>
+  <body>
+    <h1>Exercice défi</h1>
+    <div>
+      <div>
+        <p>
+          Vous cherchez à réaliser un script permettant de dresser la liste de
+          tous les multiples d’une liste de nombre. Vous avez un script de
+          départ :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="ZEmVvLe"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/ZEmVvLe"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Un système de boucles vous permettra d’afficher dans la console tous
+          les multiples de chaque nombre dans la liste list. Par exemple, dans
+          le cas présent, la console affichera :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="ExOGoZb"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/ExOGoZb"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          Écrire un script qui remplit ce rôle. Vous serez amenés à imbriquer
+          une boucle dans une boucle. Même si le plus conventionnel serait
+          d’utiliser 2 boucles <code>for</code>, utiliser ici une boucle
+          <code>for</code> et une boucle <code>while</code>.
+        </p>
+        <div>
+          <h3>Solution</h3>
+          <p>Voici un script qui fonctionne</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="PoxXEWr"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/PoxXEWr"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, on utilise une boucle <code>for/of</code> pour
+            parcourir les nombres du tableau, et on y imbrique une boucle
+            <code>while</code> permettant de tester chaque entier inférieur ou
+            égal au nombre de références et vérifier si c’est un multiple ou
+            non. C’est <code>compteur</code> qui prendra à chaque tour de la
+            boucle <code>while</code> la valeur d’un nombre qui sera testé pour
+            vérifier si c’est un multiple ou non.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          Réaliser le même système en remplaçant la boucle while imbriquée par
+          une boucle for.
+        </p>
+        <div>
+          <h3>Solution</h3>
+          <p>Voici un script qui fonctionne :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="yLQGpMV"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/yLQGpMV"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>Dans ce cas, on remplace la boucle <code>while</code> par une boucle <code>for</code>. Étant donné que le nombre d’itérations est déjà fixé hors de la boucle, il est plus cohérent d’utiliser une boucle <code>for</code>. D’ailleurs, le nombre de lignes de codes est moins important que dans la correction précédente.</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Utilisation et définition de fonctions</title>
+  </head>
+  <body>
+    <h1>Utilisation et définition de fonctions</h1>
+    <div>
+      <div>
+        <h2>Fonctions prédéfinies</h2>
+        <p>
+          En JavaScript et en général dans tous les langages de programmation,
+          il existe des fonctions prédéfinies. Il existe plusieurs fonctions
+          natives, que l’on peut appeler n’importe où dans un code JS. Par
+          exemple la fonction eval(). Elle permet d’évaluer un script JavaScript
+          contenu dans une chaîne de caractères. Par exemple, si nous écrivons
+          un script dans une chaîne :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="MWzZRVm"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/MWzZRVm"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Nous pouvons appeler la fonction eval() en indiquant dans les
+          parenthèses la chaîne :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="xxQmeWj"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/xxQmeWj"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        Nous pouvons voir qu’avec cette fonction, le code inscrit dans la chaîne
+        est évalué et donc exécuté. La console affiche 30. C’est un exemple tout
+        simple de fonction native. On trouve une liste des fonctions natives sur
+        la documentation Mozilla à l’adresse :
+        <a
+          href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Functions#fonctions_pr%C3%A9d%C3%A9finies"
+          target="_blank"
+          rel="alternate"
+          >developer.mozilla.org
+        </a>
+        dans la partie « Fonctions Prédéfinies ». Mais intéressons-nous à la
+        définition de « fonctions personnalisées ».
+      </div>
+
+      <div>
+        <h2>Syntaxe de la définition de fonctions</h2>
+        <p>
+          Pour définir des fonctions en JavaScript, il faut respecter cette
+          syntaxe :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="rNQobvG"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/rNQobvG"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          On utilise le mot clé function pour définir une fonction. Les
+          paramètres (dans le cas où il y en a) sont déclarés dans les
+          parenthèses, et les instructions sont définies dans les accolades.
+          Mais comment appeler notre fonction, afin d’exécuter les instructions
+          qu’elle contient ?
+        </p>
+      </div>
+
+      <div>
+        <h2>Syntaxe de l’appel d’une fonction</h2>
+        <p>
+          Pour appeler une fonction en JavaScript, on peut utiliser la syntaxe :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="bGQOJKV"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/bGQOJKV"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>Prenons un exemple simple.</p>
+      </div>
+
+      <div>
+        <h2>Première définition d’une fonction</h2>
+        <h3>Exemple</h3>
+        <p>
+          Nous souhaitons créer une fonction qui calcule le double d’un nombre
+          et qui l’affiche dans une chaîne de caractères. Nous définissons une
+          fonction que nous appellerons <code>calcDouble()</code> :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="JjewVZZ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/JjewVZZ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Nous définissons donc la fonction <code>calcDouble</code>. Mais si
+          nous exécutons ce code, il ne se passe pas grand-chose. Il faut que
+          nous appelions notre fonction pour que ses instructions soient
+          exécutées :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="PoxXgdo"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/PoxXgdo"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Nous pouvons voir que ça fonctionne, la console affiche : "Le double
+          du nombre 100 est 200". Maintenant, admettons que nous changions la
+          valeur de la variable <code>nombre</code> (nous changeons le
+          <code>const</code> en <code>let</code>) et que nous la définissions
+          sur 40 par exemple. Nous voulons à nouveau calculer le double de
+          <code>nombre</code>. Mais est-ce que nous avons besoin de réécrire les
+          instructions permettant de calculer le double de <code>nombre</code> ?
+          Non, nous n’avons qu’à appeler à nouveau la fonction
+          <code>calcDouble()</code> :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="PoxXgyo"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/PoxXgyo"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>Nous pouvons voir que ça fonctionne, la console affiche :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="bGQOJzp"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/bGQOJzp"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Nous pouvons donc appeler autant de fois que nécessaire la fonction
+          <code>calcDouble()</code>, sans avoir à écrire à chaque fois les mêmes
+          instructions.
+        </p>
+        <p>
+          Voilà, vous savez maintenant comment définir une fonction de base en
+          JavaScript.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
