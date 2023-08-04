@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercice défi</title>
+  </head>
+  <body>
+    <h1>Exercice défi</h1>
+    <div>
+      <div>
+        <p>
+          Vous cherchez à réaliser un script permettant, à l’aide d’un
+          <strong>switch</strong>, de vérifier le type d’une valeur (pour toutes
+          les valeurs primitives abordées dans ce cours). Si le type est
+          <strong>String</strong>, la console affichera : "C’est une chaîne de
+          caractères", si c’est un <strong>Number</strong>, "C’est un nombre",
+          si c’est un <strong>Bigint</strong>, "C’est un grand entier", etc. Les
+          types à référencer sont :
+        </p>
+        <ul>
+          <li><strong>number</strong></li>
+          <li><strong>bigint</strong></li>
+          <li><strong>boolean</strong></li>
+          <li><strong>string</strong></li>
+          <li><strong>symbol</strong></li>
+          <li><strong>undefined</strong></li>
+          <li><strong>null</strong></li>
+        </ul>
+        <p>Voici votre code de base :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="mdQowLw"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/mdQowLw"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          Réaliser le script en question, sans référencer le type
+          <strong>null</strong>.
+        </p>
+        <div>
+          <h3>Solution</h3>
+          <p>Voici un code qui fonctionne :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="gOQERjX"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/gOQERjX"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          Nous n’avons pas référencé le cas où <strong>variable</strong> serait
+          définie sur <strong>null</strong> car, un bug en JavaScript fait que
+          l’expression typeof <strong>null</strong> renvoie object et non
+          <strong>null</strong>. Trouver une combine pour que dans le cas ou
+          <strong>variable</strong> est <strong>null</strong>, la console
+          affiche "C’est une valeur nulle".
+        </p>
+        <div>
+          <h3>Solution</h3>
+          <p>
+            On peut modifier la clause default pour insérer une condition
+            <strong>if(variable == null)</strong> :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="rNQRwoB"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/rNQRwoB"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

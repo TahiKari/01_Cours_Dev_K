@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Les autres types primitifs</title>
+  </head>
+  <body>
+    <h1>Les autres types primitifs</h1>
+    <div>
+      <div>
+        <h2>Type Boolean</h2>
+        <p>
+          Vous connaissez déjà le type booléen. Une variable de type booléen
+          peut avoir pour valeur <strong>true</strong> ou
+          <strong>false</strong>. Donc pour définir une variable de type
+          booléen, on peut simplement définir une variable sur
+          <strong>true</strong> ou <strong>false</strong>. Par exemple :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="poQYPqp"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/poQYPqp"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Comme vous le savez, les booléens sont utilisés comme valeurs de
+          retour de conditions. Ils permettent donc de comparer les données.
+        </p>
+      </div>
+
+      <div>
+        <h2>Type String</h2>
+        <p>
+          Le type <strong>string</strong> (chaîne de caractères) permet de
+          représenter du texte. Les chaînes de caractères sont des ensembles de
+          valeurs ordonnées, et indexées. La première valeur à l’indice 0, la
+          seconde 1, etc. Pour définir une chaîne de caractères, nous pouvons
+          définir une variable sur une valeur ou un ensemble de valeurs
+          comprises entre guillemets :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="vYQPmbO"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/vYQPmbO"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Voyons un exemple de concaténation de chaînes avec l’opérateur
+          <strong>+=</strong> par exemple :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="OJaqmdb"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/OJaqmdb"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Ici ça fonctionne, on dirait qu’on modifie la chaîne "caractères".
+          Mais vous vous en rappelez, nous avons dit que les types primitifs
+          définissent des valeurs immuables, c’est-à-dire des valeurs qu’on ne
+          peut pas modifier une fois définies. Pourtant,
+          <strong>String</strong> est bien un type primitif qui définit les
+          chaînes de caractères qui sont donc des valeurs primitives.
+          "caractères" est une valeur primitive. Donc en théorie, on ne peut pas
+          modifier la valeur d’une chaîne. Mais alors comment fonctionnent les
+          opérateurs de concaténation ?
+        </p>
+        <p>
+          En réalité, la chaîne initiale n’est pas modifiée. L’opérateur
+          <strong>+=</strong> va créer une nouvelle chaîne qui concatène les
+          chaînes « caractères » et « écris ». La variable
+          <strong>a</strong> sera alors définie sur cette nouvelle chaîne, mais
+          la chaîne de départ « caractères » n’aura pas été modifiée. C’est le
+          même principe pour les opérateurs d’incrémentation ou d’affectation
+          après addition avec les <strong>numbers</strong>.
+        </p>
+        <p>
+          Il est préconisé d’utiliser les chaînes de caractères uniquement pour
+          les textes.
+        </p>
+      </div>
+
+      <div>
+        <h2>Type Symbol</h2>
+        <p>
+          Un symbole est une valeur unique et qui ne peut pas être changée. Les
+          symboles peuvent être utilisés pour créer des clés uniques ciblant une
+          propriété d’un objet, et ainsi éviter les conflits pouvant exister
+          avec des propriétés créées par d’autres instructions de code. C’est
+          peut-être un peu complexe à comprendre comme ça, mais concentrons-nous
+          sur comment créer un symbole. Pour créer un symbole, il nous faut
+          utiliser une fonction : <strong>Symbol()</strong>. Cette fonction va
+          nous permettre de créer une valeur de type <strong>Symbol</strong>.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="poQYPBa"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/poQYPBa"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          On voit qu’on crée un symbole <strong>sy1</strong> défini sur
+          <strong>Symbol('marque')</strong>. Créons un deuxième symbole que nous
+          définirons aussi sur <strong>Symbol('marque')</strong>, et comparons
+          ces valeurs :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="GRwembq"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/GRwembq"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          C’est intéressant, on définit les deux variables sur la même
+          expression, et les deux symboles ne sont pas égaux. Ça confirme bien
+          qu’un symbole à la caractéristique d’être unique.
+        </p>
+        <p>
+          Les symboles vont nous permettre de créer des clés de propriétés
+          uniques et non énumérables (ces propriétés ne seront pas répertoriées
+          lorsqu’on parcourra les propriétés d’un objet avec la boucle
+          <strong>for/in</strong>). C’est un concept peut être un peu complexe à
+          comprendre pour l’instant, mais ne vous inquiétez pas, contentez-vous
+          pour l’instant de retenir que les symboles nous serviront dans la
+          création de clés de propriétés.
+        </p>
+      </div>
+
+      <div>
+        <h2>Type Null</h2>
+        <p>
+          La valeur <strong>null</strong> est une valeur primitive représentant
+          simplement l’absence de valeurs. <strong>null</strong> doit être
+          définie pour indiquer l’absence de valeur. Par exemple, si nous
+          écrivons :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="mdQomNP"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/mdQomNP"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          La console affiche <strong>null</strong>. On peut noter un bug si on
+          cherche à afficher le type de variable :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="WNYmjVZ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/WNYmjVZ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          On peut voir que le type renvoyé n’est pas <strong>null</strong> mais
+          <strong>object</strong>. C’est un bug de JavaScript qui existe depuis
+          pas mal de temps, mais qui n’a pas été corrigé visiblement pour des
+          raisons de compatibilité.
+        </p>
+      </div>
+
+      <div>
+        <h2>Type Undefined</h2>
+        <p>
+          À la différence de <strong>null</strong>, la valeur primitive
+          <strong>undefined</strong> (définie par le type
+          <strong>undefined</strong>) est renvoyée par défaut lorsqu’on cherche
+          à récupérer une valeur non définie ou une propriété inexistante. Par
+          exemple, si nous écrivons :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="gOQERYL"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/gOQERYL"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Nous pouvons voir que c’est automatiquement ce qui est renvoyé par
+          l’expression <strong>variable</strong>, cette variable n’étant pas
+          définie. À la différence du type <strong>null</strong>, nous n’avons
+          pas besoin de définir ma variable sur <strong>undefined</strong> pour
+          qu’elle renvoie <strong>undefined</strong>, c’est l’expression
+          renvoyée par défaut par JavaScript.
+        </p>
+        <p>
+          Voilà, vous connaissez maintenant les types primitifs en JavaScript.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

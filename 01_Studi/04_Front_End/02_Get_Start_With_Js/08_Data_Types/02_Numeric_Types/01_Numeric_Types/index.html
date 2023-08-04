@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Les types numériques</title>
+  </head>
+  <body>
+    <h1>Les types numériques</h1>
+    <div>
+      <div>
+        <h2>Le type Number</h2>
+        <p>
+          Le type <code>Number</code> permet de représenter des nombres.
+          Cependant, les nombres représentables grâce au type
+          <code>Number</code> sont compris dans un intervalle précis. Les
+          nombres décimaux entre 2-1074 et 2-1024 peuvent être représentés.
+          L’intervalle comprenant les nombres entiers représentables d’une
+          manière « safe » est plus restreint. Prenons une valeur numérique et
+          affichons son type :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="bGQZqGQ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/bGQZqGQ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          On voit que la console affiche <strong>number</strong>. Donc
+          <strong>nombre</strong> est bien de type <strong>Number</strong>.
+        </p>
+        <p>
+          On peut noter que les nombres entiers représentables de manière « safe
+          » avec le type <strong>Number</strong> vont de - (253 - 1) à 253 - 1.
+          Mais que se passe-t-il si on écrit un nombre entier très grand ?
+          Voyons un exemple :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="rNQRyVO"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/rNQRyVO"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          On peut voir que la console affiche le nombre 100071992549200350. Mais
+          ce n’est pas le même nombre. Pour quelle raison ? Sans rentrer dans
+          les détails, ce problème d’arrondi est dû au fait que le nombre entier
+          est trop grand pour être représenté par le type
+          <strong>Number</strong>. Mais alors, comment représenter ce nombre ?
+          En utilisant le type <strong>Bigint</strong>.
+        </p>
+      </div>
+
+      <div>
+        <h2>Le type BigInt</h2>
+        <p>
+          Le type <strong>Bigint</strong> permet de représenter des entiers plus
+          grands que ceux représentables par le biais de
+          <strong>Number</strong>. Essayons de représenter l’entier précédent
+          avec le type <strong>Bigint</strong>. Pour cela, nous pouvons utiliser
+          un <strong>n</strong> que nous ajoutons à la fin du nombre :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="zYMbZvq"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/zYMbZvq"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>Là ça fonctionne, la console affiche : 100071992549200345n.</p>
+        <p>D’ailleurs, si on affiche le type de <strong>nombre</strong> :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="vYQPxNp"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/vYQPxNp"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          La console affiche : <strong>bigint</strong>. Le nombre est donc bien
+          de type <strong>Bigint</strong>.
+        </p>
+        <p>
+          Quand on va réaliser des opérations arithmétiques, il faudra bien
+          veiller à traiter ensemble des valeurs de même type, pour éviter les
+          erreurs. Nous pouvons voir par exemple que si nous réalisons une
+          addition d’un <strong>Bigint</strong> avec un
+          <strong>Number</strong> :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="zYMbZrB"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/zYMbZrB"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Nous pouvons voir que ce code génère une erreur due à une
+          incompatibilité de types dans une opération. On veillera donc à ce que
+          les deux opérandes d’une opération mathématique soient du même type.
+          Pour corriger ce code, nous pouvons par exemple faire de
+          <strong>b</strong> un <strong>BigInt</strong> :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="RwqdpaM"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/RwqdpaM"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          À noter que la génération de <strong>BigInt</strong> doit être
+          raisonnée, car avec de grands nombres, elle peut demander beaucoup de
+          ressources et affecter les performances du programme.
+        </p>
+      </div>
+
+      <div>
+        <h2>NaN</h2>
+        <p>
+          NaN est un terme, une propriété qu’on va retrouver quand le résultat
+          d’une opération arithmétique n’est pas un nombre. Ce terme signifie
+          littéralement « Not a Number ». Si par exemple, nous essayons de
+          multiplier un nombre par un texte :
+        </p>
+
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="LYXaWZL"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/LYXaWZL"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Un point intéressant en JS, c’est que si nous réalisons une opération
+          arithmétique avec deux nombres dont un est une chaîne de caractères,
+          JS convertit automatiquement la chaîne en nombre, et renvoie le
+          résultat de l’opération :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="mdQoWEL"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/mdQoWEL"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans ce dernier cas, l’opération renverra 124560 et non
+          <strong>NaN</strong>, puisque la chaîne « 10 » aura été convertie en
+          nombre et que le calcul aura été opéré.
+        </p>
+        <p>
+          On peut noter que <strong>NaN</strong> est une valeur assez spéciale
+          en JavaScript. En effet elle est unique, d’ailleurs, elle n’est même
+          pas égale à elle-même :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="xxQBqEq"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/xxQBqEq"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Voilà, vous connaissez maintenant les différentes valeurs primitives
+          dédiées aux nombres en JavaScript.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
