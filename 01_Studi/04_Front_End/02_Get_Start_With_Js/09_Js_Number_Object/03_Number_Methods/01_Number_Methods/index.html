@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Méthodes de Number</title>
+  </head>
+  <body>
+    <h1>Méthodes de Number</h1>
+    <p>
+      Maintenant que nous comprenons un peu mieux le concept d’objet
+      <strong>Number</strong>, parlons de quelques-unes de ses méthodes.
+    </p>
+    <p>
+      Nous pouvons distinguer deux types de méthodes : les méthodes statiques,
+      c’est-à-dire les méthodes que nous pouvons appeler directement via le mot
+      <strong>Number</strong>, et les méthodes accessibles via les objets créés
+      grâce au constructeur <strong>Number</strong>. Les objets créés grâce à un
+      constructeur sont appelés des « instances ». Donc, pour faire simple, il
+      existe :
+    </p>
+    <ul>
+      <li>
+        Les méthodes dites « statiques », que nous pouvons appeler directement
+        via le mot <strong>Number</strong>.
+      </li>
+      <li>
+        Les méthodes non statiques, que nous pouvons appeler via un objet,
+        c’est-à-dire est une instance de <strong>Number</strong>.
+      </li>
+    </ul>
+    <p>
+      Les méthodes statiques n’ont donc pas besoin d’instance de
+      <strong>Number</strong> pour être appelées. Voyons déjà quelques méthodes
+      statiques.
+    </p>
+    <div>
+      <h2>Les méthodes Number.is…()</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>Intéressons-nous à 4 méthodes statiques :</p>
+        <ul>
+          <li>
+            Number.isNaN()
+            <a
+              href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN"
+              target="_blank"
+              rel="alternate"
+              >developer.mozilla.org : Number isNaN()
+            </a>
+          </li>
+          <li>
+            Number.isFinite()
+            <a
+              href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Number/isFinite"
+              >developer.mozilla.org : Number/isFinite()
+            </a>
+          </li>
+          <li>
+            Number.isInteger()
+            <a
+              href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Number/isInteger"
+              >developer.mozilla.org : Number/isInteger()
+            </a>
+          </li>
+          <li>
+            Number.isSafeInteger()
+            <a
+              href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Number/isSafeInteger"
+              >developer.mozilla.org : Number/isSafeInteger()
+            </a>
+          </li>
+        </ul>
+      </div>
+      <p>
+        Chacune de ses méthodes va renvoyer un booléen. La première va renvoyer
+        <strong>true</strong> si l’expression passée comme argument n’est pas un
+        nombre. La seconde va renvoyer <strong>true</strong> si le nombre passé
+        en argument est fini. La troisième va renvoyer <strong>true</strong> si
+        le nombre est un entier et la quatrième si le nombre est un entier
+        représentable de manière « safe » avec <strong>Number</strong>.
+      </p>
+      <h3>Exemple</h3>
+      <div>
+        <p>Voici quelques exemples d’appel de ces méthodes statiques :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="jOQoRWK"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/jOQoRWK"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>L’objet Number.prototype</h2>
+      <p>
+        Parlons maintenant de méthodes accessibles via des objets créés via le
+        constructeur <strong>Number</strong>, donc des instances de
+        <strong>Number</strong>. Ces méthodes ne sont donc pas statiques. Pour
+        bien comprendre, il nous faut nous intéresser rapidement au concept de
+        <strong>prototype</strong>.
+      </p>
+      <p>
+        En JavaScript, chaque objet a une propriété appelée
+        <strong>prototype</strong>. Cette propriété est en fait un objet qui
+        contient les propriétés héritées par chaque instance, par chaque objet
+        de son type. Le <strong>prototype</strong> est en quelques sortes un
+        modèle pour les instances, c’est-à-dire les objets d’un type. Donc, la
+        propriété <strong>Number.prototype</strong> est un objet qui contient
+        des propriétés, dont des méthodes accessibles à toutes les instances de
+        <strong>Number</strong>, ainsi qu’à tous les objets
+        <strong>Number</strong>.
+      </p>
+      <p>
+        Il est possible d’afficher les propriétés principales de l’objet
+        <strong>Number.prototype</strong> en utilisant la méthode
+        <strong>Object.getOwnPropertyNames()</strong> :
+      </p>
+      <p
+        class="codepen"
+        data-height="300"
+        data-default-tab="html,result"
+        data-slug-hash="XWywQNL"
+        data-user="OpenSpirit"
+        style="
+          height: 300px;
+          box-sizing: border-box;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 2px solid;
+          margin: 1em 0;
+          padding: 1em;
+        "
+      >
+        <span
+          >See the Pen
+          <a href="https://codepen.io/OpenSpirit/pen/XWywQNL"> Untitled</a> by
+          OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+          on <a href="https://codepen.io">CodePen</a>.</span
+        >
+      </p>
+      <script
+        async
+        src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+      ></script>
+      <p>
+        Nous pouvons constater que la console affiche différentes propriétés
+        (qui sont en l’occurrence des méthodes) de l’objet
+        <strong>Number.prototype</strong>.
+      </p>
+      <p>
+        Ces méthodes sont donc héritées par toutes les instances de
+        <strong>Number</strong>. Nous pouvons donc accéder aux méthodes héritées
+        du prototype en écrivant :
+        <strong>nomDeLobjet.nomDeLaMethode()</strong>, JavaScript fait le reste.
+        Voyons quelques exemples de méthodes.
+      </p>
+      <h2>Les méthodes to…()</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>Voyons deux exemples de méthodes :</p>
+        <ul>
+          <li><strong>toExponential()</strong></li>
+          <li><strong>toString()</strong></li>
+        </ul>
+        <p>
+          La méthode <strong>toExponential()</strong> permet de renvoyer une
+          chaîne contenant le nombre stocké dans l’objet
+          <strong>Number</strong> avec une notation exponentielle (avec une
+          puissance). Nous pouvons passer en argument le nombre de chiffres
+          décimaux (chiffres après la virgule). Par défaut, si nous ne passons
+          pas d’arguments, la méthode considérera le nombre de chiffres décimaux
+          nécessaires pour que le nombre soit représenté. Si nous spécifions un
+          argument, nous pouvons nous attendre à ce que le résultat soit un
+          nombre arrondi.
+        </p>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p>Par exemple :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="oNQROZx"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/oNQROZx"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans le premier appel de la méthode, aucun argument n’est passé. La
+          méthode utilise le nombre de chiffres décimaux nécessaires pour
+          représenter le nombre avec la notation exponentielle (ici 4 : 3578).
+          Dans le second appel, nous passons comme argument 2. Donc, le résultat
+          contient deux chiffres décimaux : 36. Nous pouvons voir qu’il y a un
+          arrondi, le résultat est donc moins précis.
+        </p>
+        <p>
+          La méthode <strong>toString()</strong> permet quant-à-elle de renvoyer
+          une chaîne de caractères contenant la valeur du nombre de l’objet
+          <strong>Number</strong>.
+        </p>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p>Prenons un exemple :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="rNQggVe"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/rNQggVe"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Nous pouvons voir que le type de <strong>nombreChaine</strong> est
+          bien <strong>string</strong>, c’est une chaîne de caractères.
+        </p>
+      </div>
+      <h2>La méthode ValueOf</h2>
+      <h3>Méthode</h3>
+      <div>
+        Dans le dernier exemple, nous avons récupéré la valeur du nombre d’un
+        objet <strong>Number</strong> en le convertissant en chaîne de
+        caractères. Mais dans certains cas, nous voudrons récupérer la valeur de
+        notre nombre avec le type primitif <strong>Number</strong>, et non sous
+        la forme d’une chaîne de caractères.
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p>Prenons un exemple. Si nous faisons :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="Rwqmmry"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/Rwqmmry"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Nous voyons que <strong>nombreRecup</strong> est une référence vers
+          l’objet, et non vers la valeur de son nombre.
+          <strong>nombreRecup</strong> est donc un objet, et non une valeur
+          primitive de type <strong>Number</strong>. En fait, c’est la méthode
+          <strong>valueOf()</strong> du prototype qui va nous permettre de
+          récupérer la valeur du nombre, avec le type primitif
+          <strong>Number</strong>. Prenons un exemple :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="RwqmmaJ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/RwqmmaJ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Donc, avec la méthode <strong>valueOf()</strong>, nous pouvons
+          récupérer la valeur primitive qui a été enveloppée dans l’objet
+          <strong>Number</strong>. La méthode <strong>valueOf()</strong> va être
+          essentielle à utiliser dans les cas où nous voulons accéder au nombre
+          stocké dans un objet <strong>Number</strong>.
+        </p>
+      </div>
+      <p>
+        Voilà, nous venons de voir quelques méthodes accessibles via chaque
+        instance de <strong>Number</strong>.
+      </p>
+    </div>
+  </body>
+</html>

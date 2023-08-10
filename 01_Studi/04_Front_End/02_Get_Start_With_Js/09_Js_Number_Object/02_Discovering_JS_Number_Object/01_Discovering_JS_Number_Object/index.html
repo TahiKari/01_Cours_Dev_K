@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Découverte de l’objet JS Number</title>
+  </head>
+  <body>
+    <h1>Découverte de l’objet JS Number</h1>
+    <p>
+      Avant de commencer à parler spécifiquement de l’objet JS Number, faisons
+      le point sur la notion d’objet en Programmation Orientée Objet. C’est une
+      notion essentielle en programmation.
+    </p>
+    <div>
+      <div>
+        <h2>Explication du concept d’objet</h2>
+        <p>
+          Un objet est une entité qui se caractérise par un type qui le définit,
+          ainsi que des propriétés. C’est exactement le même principe que dans
+          la réalité. Prenons un objet exemple : un ordinateur, plus précisément
+          un ordinateur de la marque HP. Voici les caractéristiques de notre
+          objet :
+        </p>
+        <p>Type : Ordinateur</p>
+        <p>Propriétés :</p>
+        <ul>
+          <li>Marque = « HP »</li>
+          <li>Ram = 8</li>
+          <li>Stockage = 256</li>
+          <li>Processeur = « Intel »</li>
+          <li>Démarrage : démarrage de l’ordinateur</li>
+          <li>Extinction : extinction de l’ordinateur</li>
+        </ul>
+        <p>
+          Nous pouvons constater que notre objet est de type Ordinateur. Il a
+          plusieurs propriétés (appelées aussi attributs) qui correspondent aux
+          différentes informations caractérisant notre objet. Mais nous pouvons
+          voir que les deux dernières propriétés ne sont pas de simples valeurs,
+          ce sont des mécanismes, déclenchables via l’objet (il est possible de
+          démarrer et d’éteindre l’ordinateur).
+        </p>
+        <p>
+          De manière très similaire, nous pouvons dire que les objets ont des
+          propriétés qui peuvent être soit :
+        </p>
+        <ul>
+          <li>
+            Des variables, définies sur une valeur (appelées souvent attributs
+            en POO).
+          </li>
+          <li>
+            Des fonctions, c’est-à-dire des ensembles d’instructions qu’il est
+            possible d’appeler via notre objet. Ces fonctions (associées à des
+            objets) s’appellent des <strong>méthodes</strong>.
+          </li>
+        </ul>
+        <h3>Exemple</h3>
+        <div>
+          <p>
+            Si nous traduisons en code le descriptif de notre ordinateur, nous
+            pouvons l’écrire ainsi :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="xxQNBOa"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/xxQNBOa"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici, nous pouvons voir que nous créons un objet que nous stockons
+            via la variable <strong>ordi1</strong>. Ne vous attardez pas pour
+            l’instant sur l’expression <strong>new Object()</strong>, nous
+            aborderons ce point en temps voulu. Comprenez simplement que cette
+            instruction permet de créer un objet. Puis, nous définissons les
+            propriétés de notre objet parmi lesquelles figurent les attributs
+            (les variables), ainsi que les méthodes
+            <strong>demarrage()</strong> et <strong>extinction()</strong>. Nous
+            pouvons voir que pour définir les propriétés, nous utilisons une
+            syntaxe spécifique. Il existe toutefois d’autres moyens de procéder,
+            mais nous ne les verrons pas dans ce cours pour ne pas nous égarer.
+          </p>
+          <p>
+            Nous pouvons donc accéder aux différentes propriétés de notre objet
+            <strong>ordi1</strong>, simplement en écrivant
+            <strong>ordi1</strong> suivi d’un point « . » et du nom de la
+            propriété.
+          </p>
+        </div>
+        <h3>Exemple</h3>
+        <div>
+          <p>Prenons un exemple :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="abQrMwR"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/abQrMwR"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+        <h3>Remarque</h3>
+        <div>
+          <p>
+            Si nous affichons le type de notre objet avec :
+            <strong>console.log(typeof ordi1)</strong>, la console va afficher
+            object et non « <strong>Ordinateur</strong> ». C’est tout à fait
+            normal, nous avons construit un objet via l’expression
+            <strong>new Object()</strong>, nous faisons appel au constructeur
+            <strong>Object</strong>.
+          </p>
+        </div>
+        <p>
+          Nous verrons rapidement ce qu’est un constructeur dans les paragraphes
+          suivants. Simplement, dans notre exemple, nous n’avons pas défini de
+          sous-type <strong>Ordinateur</strong>, mais nous avons créé un objet
+          de type <strong>Object</strong>, ce qui explique le résultat de :
+          <strong>console.log(typeof ordi1)</strong>.
+        </p>
+        <p>
+          Les objets vont donc permettre de manipuler les données d’une manière
+          différente, présentant de nombreux avantages que vous découvrirez au
+          fur et à mesure de votre parcours JavaScript.
+        </p>
+      </div>
+
+      <div>
+        <h2>Introduction à l’objet Number</h2>
+        <p>
+          Maintenant que nous avons compris globalement ce qu’est un objet,
+          intéressons-nous à l’objet <strong>Number</strong>. Comme vous le
+          savez, le type primitif <strong>Number</strong> définit des valeurs
+          primitives immuables. Cependant, par défaut, un objet n’est pas
+          immuable, car il est possible de modifier ses propriétés après l’avoir
+          créé. Mais alors qu’est-ce que l’objet <strong>Number</strong> ?
+        </p>
+        <p>
+          Un objet <strong>Number</strong> est un objet qui enveloppe un type
+          primitif <strong>Number</strong>. C’est donc un objet constitué de
+          propriétés, c’est un objet muable, mais qui stocke un type primitif
+          <strong>Number</strong>. Un objet <strong>Number</strong> permet donc
+          de manipuler des nombres comme des objets. Avant de voir quelques
+          caractéristiques de l’objet <strong>Number</strong>, voyons comment
+          créer un objet <strong>Number</strong>.
+        </p>
+      </div>
+
+      <div>
+        <h2>Créer un objet Number</h2>
+        <h3>Méthode</h3>
+        <div>
+          <p>
+            Pour créer un objet <strong>Number</strong>, il va nous falloir
+            appeler une méthode dont nous avons parlé très brièvement : un
+            constructeur. Les constructeurs sont des méthodes permettant comme
+            leur nom l’indique de construire un objet.
+          </p>
+        </div>
+        <h3>Exemple</h3>
+        <div>
+          <p>
+            Pour appeler le constructeur de <strong>Number</strong>, nous
+            pouvons procéder ainsi :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="QWJRoag"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/QWJRoag"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, nous créons un objet <strong>Number</strong>, en
+            appelant le constructeur de <strong>Number</strong>. Le mot clé
+            <strong>new</strong> est indispensable. Nous passons comme argument
+            du constructeur le nombre qui sera enveloppé dans notre objet.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les valeurs possibles de Number</h2>
+        <p>
+          Un objet <strong>Number</strong> peut représenter des valeurs
+          numériques comprises dans certaines limites. Ces limites sont définies
+          dans des propriétés par défaut de <strong>Number</strong>. Pour les
+          récupérer, nous pouvons les afficher via le constructeur
+          <strong>Number</strong> :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="xxQNBYM"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/xxQNBYM"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          <strong>Number.MIN_VALUE</strong> est la valeur minimale qu’un objet
+          <strong>Number</strong> peut contenir.
+          <strong>Number.MAX_VALUE</strong> est à l’inverse la valeur maximale
+          qu’un objet <strong>Number</strong> peut contenir.
+        </p>
+      </div>
+
+      <div>
+        <h2>Opérations arithmétiques</h2>
+        <h3>Méthode</h3>
+        <div>
+          <p>
+            Nous pouvons réaliser sans problème des opérations arithmétiques
+            avec des objets <strong>Number</strong>. Pourtant, les objets ne
+            sont pas des valeurs primitives numériques. Nous ne pouvons pas
+            normalement réaliser des opérations arithmétiques entre deux objets,
+            mais uniquement entre deux valeurs numériques. Nous verrons en fin
+            de seconde partie comment JavaScript rend possibles les opérations
+            arithmétiques avec comme opérandes des objets
+            <strong>Number</strong>, comme dans cet exemple :
+          </p>
+        </div>
+        <h3>Exemple</h3>
+        <div>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="dyQErmx"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/dyQErmx"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+        <p>
+          Il est donc possible de réaliser des opérations arithmétiques très
+          facilement avec les objets <strong>Number</strong>.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
