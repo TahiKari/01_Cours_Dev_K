@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Manipulation des chaînes de caractères (strings) et des tableaux (arrays)
+    </title>
+  </head>
+  <body>
+    <h1>
+      Manipulation des chaînes de caractères (strings) et des tableaux (arrays)
+    </h1>
+    <div>
+      <p>
+        Dans cette seconde partie, un accent particulier sera mis sur les
+        manipulations des objets string et array. Pour cela, nous allons
+        insister sur l’association variable et propriété ou méthode afin
+        d’effectuer certaines actions avec nos données. Il est donc nécessaire
+        d'en savoir davantage sur les propriétés et méthodes de deux types de
+        données.
+      </p>
+      <p>
+        Les objets string sont utilisés pour représenter et manipuler des
+        chaînes de caractères, qui sont utiles pour stocker des données sous
+        forme de texte. Plusieurs opérations courantes sont disponibles pour
+        manipuler les chaînes de caractères, telles que vérifier la longueur
+        avec length, concaténer avec les opérateurs + et +=, rechercher des
+        sous-chaînes avec les méthodes <strong>includes()</strong> ou
+        <strong>indexOf()</strong>, et extraire des sous-chaînes avec la méthode
+        <strong>substring()</strong>.
+      </p>
+      <p>
+        Nous allons examiner deux méthodes : la méthode
+        <strong>slice()</strong> et la méthode <strong>split()</strong> pour
+        respectivement extraire une sous-chaîne ou découper une chaîne en
+        sous-chaînes.
+      </p>
+      <h2>
+        Extraction d’une sous-chaîne d’une chaîne et découpage d’une chaîne en
+        sous-chaînes
+      </h2>
+      <h3>Méthode</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="BaGgQjG"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/BaGgQjG"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Nous stockons une chaîne dans un objet string. Puis, nous faisons un
+          alert avec comme argument la méthode slice(7, 13) de notre objet
+          historique. Il nous est renvoyé une sous-chaîne extraite entre les
+          index 7 (non compris) et 13 compris, soit 775533. Quant à la méthode
+          split(""), rien qu’avec les simples quotes, elle va découper notre
+          chaîne de caractères en sous-chaînes et tout mettre dans un tableau de
+          49 caractères. Elle considère le caractère passé comme caractère
+          séparateur.
+        </p>
+      </div>
+      <h2>D’autres tests de manipulation de l’objet string</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Nous allons nous entraîner à concaténer et à manipuler un string avec
+          les méthodes courantes telles que <strong>charAt()</strong> ou
+          <strong>indexof(</strong>).
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="PoxrbGy"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/PoxrbGy"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans ces deux exemples, nous avons utilisé l’opérateur « + » pour
+          concaténer nos chaînes de caractères.
+        </p>
+        <p>
+          Utilisons maintenant la méthode <strong>charAt()</strong> pour
+          comprendre son fonctionnement. La méthode
+          <strong>charAt()</strong> permet de renvoyer le caractère d’une chaîne
+          pour l’index passé comme argument.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="dyQBOOZ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/dyQBOOZ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Nous avons fait un console.log et entre parenthèses nous avons utilisé
+          entre les backticks, une chaîne de caractères et l’interpolation pour
+          insérer les variables. Nous écrivons le symbole dollar avec des
+          accolades, <strong>${}</strong> à l’intérieur desquels nous plaçons
+          nos expressions. La première fois, nous avons simplement interpolé la
+          variable index. Mais la deuxième fois, nous interpolons la valeur de
+          retour de la méthode <strong>charAt()</strong> de l’objet chaîne puis
+          nous passons la variable index comme argument. Au final, nous est
+          renvoyée la phrase : le caractère à l’index 4 est e. La manipulation a
+          réussi. Parlons maintenant de la méthode <strong>indexOf()</strong>.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="bGQPBgJ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/bGQPBgJ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          L’<strong>indexOf()</strong> nous aide à trouver la position d’une
+          sous-chaîne dans une chaîne de caractères. Dans cet exemple, nous ne
+          créons pas d’objet string, mais c’est JavaScript qui créera un objet
+          string temporaire lors de l’appel de la méthode
+          <strong>indexOf()</strong>.
+        </p>
+        <p>
+          Notre première variable chaine1 contient une chaîne de caractères
+          entre des guillemets. La deuxième variable chaine2 stocke une autre
+          chaîne contenant « chien ». Quel est l’index du mot chien dans la
+          première variable ? Nous avons créé une troisième variable chaine3 et
+          l’avons défini sur la valeur de retour de chaine1.indexOf(chaine2).
+          Pour terminer par un console.log, entre parenthèses nous avons mis le
+          backticks du texte avec l’interpolation de chaine2 puis une autre
+          interpolation avec chaine3. Voilà ce que cela a donné : l’index du
+          ‘chien’ à partir du commencement est 45. La méthode
+          <strong>indexOf()</strong>permet donc de connaître l’index d’une
+          sous-chaîne dans une chaîne de caractères.
+        </p>
+      </div>
+      <h2>La manipulation d’un tableau par ses propriétés et méthodes</h2>
+      <div>
+        <p>
+          Pour connaître le nombre d'éléments d'un tableau, tout comme pour une
+          chaîne de caractères, nous utilisons la propriété
+          <strong>length</strong>. Cette propriété est de type entier et nous
+          indique le nombre d'éléments présents dans un tableau.
+        </p>
+        <p>
+          Les développeurs ont souvent recours aux boucles pour parcourir les
+          éléments d'un tableau. Par exemple, la boucle <strong>for</strong> est
+          très courante. Ainsi, si la propriété <strong>length</strong> nous
+          aide à déterminer la taille d'un tableau, la boucle
+          <strong>for</strong> est un outil plus pratique pour récupérer la
+          liste de tous les éléments du tableau.
+        </p>
+        <p>L’exemple ci-dessus nous sert d’illustration :</p>
+      </div>
+      <h2>La propriété length est utilisée dans la boucle for</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="QWJXGve"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/QWJXGve"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Nous utilisons le mot clé « of » pour parcourir chaque valeur du
+          tableau.
+        </p>
+      </div>
+      <h2>
+        L’ajout et la suppression d’un élément par les méthodes push() et pop()
+      </h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Pour ajouter ou supprimer un élément, nous pouvons utiliser
+          <strong>push()</strong> et <strong>pop()</strong>. Pour cela, nous
+          allons créer un tableau et lui appliquer ces deux méthodes.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="eYQwBEz"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/eYQwBEz"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Nous pouvons voir que <strong>push()</strong> permet d’ajouter des
+          éléments tandis que <strong>pop()</strong> supprime le dernier
+          élément.
+        </p>
+      </div>
+      <h2>Utiliser les méthodes shift() et unshift()</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="eYQwBGz"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/eYQwBGz"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Le principe est assez simple, <strong>unshift()</strong> permet de
+          rajouter un élément au début du tableau tandis que
+          <strong>shift()</strong> supprime le premier élément du tableau.
+        </p>
+      </div>
+      <h2>
+        Autres manipulations possibles avec les méthodes split(), length,
+        toString()
+      </h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Il existe de nombreuses autres méthodes pour manipuler les tableaux en
+          JS. En voici quelques-unes :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="poQXNaj"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/poQXNaj"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>Tableau multidimensionnel</h2>
+      <h3>Complément</h3>
+      <div>
+        <p>
+          Un tableau multidimensionnel est un tableau qui, comme son nom
+          l’indique, a plusieurs dimensions, par exemple, l’axe des colonnes et
+          l’axe des lignes. Créons un tableau multidimensionnel.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="rNQEWKj"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/rNQEWKj"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, nous créons un tableau à deux dimensions. Les
+          crochets imbriqués représentent des lignes. Nous avons dans cet
+          exemple deux lignes et deux colonnes. Nous cherchons à accéder à
+          l’index 1 de notre tableau, qui correspond à ["Renault", "Clio"]. Puis
+          nous cherchons à récupérer l’index 0 de ["Renault", "Clio"], qui est
+          donc la valeur « Renault ».
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

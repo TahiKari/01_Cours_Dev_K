@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Les concepts string et array</title>
+  </head>
+  <body>
+    <h1>Les concepts string et array</h1>
+    <div>
+      <h2>Le concept string en JavaScript</h2>
+      <p>
+        En langage de programmation, le terme « string » (qui signifie « chaîne
+        » en anglais) désigne une séquence de caractères. Les chaînes de
+        caractères sont considérées comme un type de données primitif en
+        programmation. En JavaScript, les chaînes de caractères peuvent être
+        représentées soit sous forme de types de données primitifs, soit sous
+        forme d'objets string.
+      </p>
+      <p>
+        Toutes les valeurs littérales placées entre des guillemets simples ('),
+        des guillemets doubles (") ou des backticks (`) sont considérées comme
+        des chaînes de caractères primitives en JavaScript.
+      </p>
+      <p>
+        La distinction entre les chaînes de caractères primitives et les objets
+        string est la suivante : en JavaScript, les chaînes de caractères
+        primitives sont des valeurs simples qui ne possèdent pas de méthodes ou
+        de propriétés associées. En revanche, les objets string sont créés en
+        utilisant le constructeur string (avec ou sans le mot-clé « new »), et
+        ils possèdent des méthodes et des propriétés spécifiques. Comme nous
+        l’avons dit, un objet string permet d’envelopper (« wrapper ») une
+        valeur primitive string. Il permet d'utiliser des méthodes et des
+        propriétés spécifiques des objets sur la valeur primitive enveloppée.
+      </p>
+      <p>Prenons un exemple pour mieux comprendre.</p>
+      <h2>La chaîne de caractères de type string passe au type objet</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="PoxrGyQ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/PoxrGyQ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>L'affichage console sera :</p>
+        <p>String</p>
+        <p>Object</p>
+        <p>Explications</p>
+        <p>
+          La première ligne crée une variable
+          <strong>str_primi</strong> contenant une chaîne de caractères
+          primitive « mandarine ». La deuxième ligne crée une variable
+          <strong>str_obj</strong> qui contient un objet string créé à partir de
+          la variable <strong>str_primi</strong>.
+        </p>
+        <p>
+          Les deux dernières lignes utilisent la fonction
+          <strong>typeof</strong> pour afficher le type de chaque variable dans
+          la console. La première ligne affichera « string », ce qui indique que
+          la variable <strong>str_primi</strong> contient une chaîne de
+          caractères primitive. La deuxième ligne affichera « object », ce qui
+          indique que la variable <strong>str_obj</strong> contient un objet
+          string.
+        </p>
+        <p>
+          Ainsi, l'exemple montre que même si les deux variables contiennent la
+          même chaîne de caractères, l'une est une chaîne de caractères
+          primitive et l'autre est un objet string.
+        </p>
+      </div>
+      <h2>
+        Comment utiliser la propriété « length » pour obtenir la longueur d'une
+        chaîne de caractères en JavaScript ?
+      </h2>
+      <div>
+        <p>
+          Les objets string en JavaScript sont des objets qui possèdent des
+          propriétés et des méthodes qui leur sont propres. Il est important de
+          les connaître pour pouvoir les utiliser efficacement. L'une des
+          propriétés principales d’un objet string est « length ». Cette
+          propriété permet de déterminer la longueur de la chaîne primitive
+          enveloppée en retournant le nombre exact de caractères qu'elle
+          contient. Mais cette propriété est aussi accessible via le type
+          primitif string. En effet, lorsque nous cherchons à accéder à une
+          méthode sur une chaîne de caractères primitive, JavaScript crée un
+          objet temporaire qui enveloppe cette chaîne, afin d’appeler cette
+          méthode. C’est ce principe qui permet d’appeler des méthodes comme
+          length sur des valeurs primitives string.
+        </p>
+        <p>
+          Il existe deux façons courantes d'utiliser la propriété « length » sur
+          une chaîne de caractères primitive. La première consiste à créer une
+          variable qui contient la chaîne de caractères, par exemple :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="yLQdaQW"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/yLQdaQW"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Ensuite, pour obtenir la longueur de la chaîne, nous utilisons la
+          propriété « length » de cette manière :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="rNQEMoN"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/rNQEMoN"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          La deuxième méthode consiste à créer une nouvelle chaîne de caractères
+          directement dans l’argument du console.log, comme ceci :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="oNQrzJB"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/oNQrzJB"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cette méthode, la nouvelle chaîne de caractères doit être placée
+          entre guillemets simples.
+        </p>
+        <p>
+          Dans les deux cas, nous obtiendrons respectivement les valeurs quatre
+          et cinq, qui correspondent à la longueur de la chaîne stockée dans la
+          variable str et celle de la nouvelle chaîne créée directement dans
+          l'argument du console.log.
+        </p>
+      </div>
+      <h2>
+        Méthodes les plus couramment utilisées pour manipuler les chaînes de
+        caractères
+      </h2>
+      <div>
+        <p>
+          Une chaîne de caractères en JavaScript possède plusieurs méthodes qui
+          permettent de la manipuler de différentes manières. Il est important
+          de connaître les méthodes les plus couramment utilisées, telles que
+          <strong>CharAt()</strong>, <strong>indexOf()</strong>,
+          <strong>lastIndexOf()</strong>, <strong>slice()</strong>,
+          <strong>split()</strong>, etc. Ces méthodes peuvent être utiles pour
+          ajouter ou extraire des éléments d'une chaîne.
+        </p>
+        <p>
+          D’abord, nous allons voir comment échapper certains caractères. Si
+          nous ne les échappons pas correctement, le navigateur peut confondre
+          ces caractères et cela peut causer des erreurs.
+        </p>
+        <p>
+          Il vous faut savoir comment les caractères sont positionnés à
+          l'intérieur d'une chaîne de caractères, car cela peut affecter le
+          fonctionnement de certaines méthodes. Nous aborderons cela plus en
+          détail lorsque nous parlerons de la manipulation de l'objet string à
+          l'aide de méthodes.
+        </p>
+      </div>
+      <h2>L’échappement de certains caractères</h2>
+      <h3>Attention</h3>
+      <div>
+        <p>
+          Des caractères sont reconnus comme une chaîne parce qu’ils sont placés
+          entre des guillemets simples ou entre des guillemets doubles. Si une
+          chaîne est entourée de guillemets simples, il peut y avoir une
+          confusion lorsque nous insérons des apostrophes, par exemple. Pour
+          l’éviter, il est nécessaire de placer le backslash avant cette
+          apostrophe pour l’échapper.
+        </p>
+      </div>
+      <h2>
+        L’échappement de l’apostrophe, des doubles guillemets et des antislashs
+      </h2>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="XWyLjGb"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/XWyLjGb"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, nous avons échappé les apostrophes en les précédant
+          d'un caractère backslash. Cela permet à JavaScript de reconnaître que
+          ces caractères font partie de la chaîne de caractères, et non pas de
+          la syntaxe du langage.
+        </p>
+      </div>
+      <h2>Comprendre le positionnement des caractères</h2>
+      <div>
+        <p>
+          Une chaîne de caractères est constituée de
+          <strong>n</strong> caractères où <strong>n</strong> représente le
+          nombre de caractères. Chaque caractère dans une chaîne de caractères
+          (string) est associé à une position numérique appelée « index ».
+          L'index du premier caractère dans la chaîne est généralement 0,
+          l'index du deuxième caractère est 1, l'index du troisième caractère
+          est 2, et ainsi de suite. Dans une chaîne de caractères composée de
+          <strong>n</strong>
+          caractères, le dernier caractère est situé à la position
+          <strong>n-1</strong>. Par exemple, si la chaîne de caractères contient
+          vingt caractères, alors le dernier caractère est situé à la position
+          19. En effet, les chaînes de caractères sont construites comme des
+          tableaux composées de différents caractères, avec un index pour chaque
+          caractère.
+        </p>
+      </div>
+      <h2>Comprendre le positionnement des caractères</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="VwVJKoz"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/VwVJKoz"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          En fin de compte, nous avons appris qu'une chaîne de caractères
+          (string) est composée d'une séquence de caractères dont nous pouvons
+          déterminer la longueur et la position individuelle. Il est important
+          de veiller à bien échapper les caractères spéciaux afin d'éviter toute
+          confusion pour le navigateur.
+        </p>
+      </div>
+      <h2>
+        Distinction entre chaînes primitives et objets string en JavaScript
+      </h2>
+      <div>
+        <p>
+          Il est essentiel de distinguer les objets string des valeurs
+          primitives string. Les valeurs littérales entre guillemets simples,
+          doubles ou backticks sont des chaînes primitives. Cependant, les
+          objets string permettent d’envelopper des valeurs primitives de type
+          string dans un objet. Comme nous l’avons vu précédemment, lorsque nous
+          utilisons une propriété comme length avec une valeur primitive string,
+          JavaScript crée automatiquement un objet temporaire string qui
+          enveloppe la valeur primitive pour donner accès à la propriété
+          appelée. Mais nous pouvons aussi directement créer un objet string qui
+          enveloppe une chaîne de caractères primitive afin d’accéder
+          constamment aux propriétés et méthodes de string. Pour cela, il va
+          falloir appeler le constructeur string.
+        </p>
+      </div>
+      <h2>Chaînes primitives et d'objets string</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="ExOBNYK"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/ExOBNYK"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans de nombreux cas, les valeurs primitives et les objets chaînes de
+          caractères peuvent être utilisés de manière interchangeable. Les
+          valeurs littérales pour les chaînes sont indiquées par des guillemets
+          simples, doubles ou des backticks. Les backticks permettent de définir
+          des littéraux de gabarits de chaînes pour interpoler des expressions à
+          l'intérieur d'une chaîne.
+        </p>
+      </div>
+      <h2>Comprendre les tableaux en JavaScript</h2>
+      <div>
+        <p>
+          En JavaScript, les tableaux (array) sont une structure de données
+          spéciale qui nous permet de stocker des collections ordonnées de
+          valeurs. À la différence des chaînes, il n'existe pas de type primitif
+          array. Les array sont des objets. Ils sont indispensables lorsque nous
+          avons besoin de stocker une liste d'éléments, tels que des noms
+          d'utilisateurs. Les tableaux nous permettent de conserver l'ordre des
+          éléments et de les manipuler facilement.
+        </p>
+        <p>
+          Pour créer un tableau en JavaScript, nous pouvons utiliser des
+          crochets et nous séparons les éléments par des virgules. Par exemple,
+          si nous voulons stocker une liste de noms d'utilisateurs, nous pouvons
+          écrire :
+        </p>
+      </div>
+      <h2>Les éléments d’un tableau</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="ZEmdBEY"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/ZEmdBEY"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, la variable <strong>utilisateurs</strong> contient
+          un tableau avec trois éléments : « John », « Peter » et « Chris ».
+          Nous pouvons accéder aux éléments du tableau en utilisant leur
+          position dans le tableau, également appelée « index ». Par exemple,
+          pour accéder au deuxième élément (qui est « Peter »), nous pouvons
+          utiliser l'index 1 :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="LYXKbYy"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/LYXKbYy"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Il est aussi possible d’appeler le constructeur array pour construire
+          un tableau :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="vYQqyYp"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/vYQqyYp"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Notre tableau est un objet qui contient plusieurs valeurs entre
+          crochets séparées par des virgules. Les objets array peuvent être
+          stockés via des variables. L’intérêt des array est que nous pouvons
+          utiliser individuellement chacune de ces valeurs. Sans tableau, chaque
+          valeur doit être attribuée à une variable, ce qui peut être fastidieux
+          si nous en avons des centaines. De plus, nous pouvons utiliser une
+          boucle pour parcourir plusieurs valeurs d’un tableau stockées dans une
+          même variable.
+        </p>
+        <p>
+          Les tableaux seront donc utiles lorsque nous stockerons plusieurs
+          données ordonnées via un même objet.
+        </p>
+      </div>
+      <h2>
+        Propriétés et méthodes utiles pour manipuler des tableaux en JavaScript
+      </h2>
+      <div>
+        <p>
+          Il est important de connaître ces méthodes de array, car elles nous
+          permettent d'ajouter, de supprimer, de trier et de manipuler les
+          éléments du tableau de manière efficace.
+        </p>
+        <p>
+          Parmi les méthodes les plus couramment utilisées, on peut citer
+          <strong>concat()</strong>, <strong>join()</strong>,
+          <strong>pop()</strong>, <strong>push()</strong>,
+          <strong>shift()</strong>, <strong>unshift()</strong>,
+          <strong>slice()</strong>, <strong>splice()</strong> et
+          <strong>reverse()</strong>. Chacune de ces méthodes peut être utilisée
+          pour résoudre des problèmes spécifiques en matière de manipulation de
+          tableaux.
+        </p>
+        <p>Pour avoir une idée de la syntaxe, voici comment procéder :</p>
+      </div>
+      <h2>La syntaxe pour utiliser une méthode</h2>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="poQXNvM"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/poQXNvM"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Ce code crée un tableau appelé « tableau » contenant les valeurs 'a',
+          'b' et 'c'. Ensuite, il crée un autre tableau appelé « autreTableau »
+          en utilisant la méthode push() qui ajoute les valeurs 'd' et 'e' à la
+          fin du tableau « tableau ». La méthode push() renvoie également la
+          nouvelle longueur du tableau, qui est stockée dans la variable
+          autreTableau.
+        </p>
+        <p>
+          Ensuite, le code utilise la fonction console.log pour afficher les
+          deux tableaux dans la console du navigateur ou de l'éditeur de code.
+          La première ligne de code affiche la nouvelle longueur du tableau «
+          autreTableau » (qui est maintenant 5), tandis que la deuxième ligne
+          affiche le tableau « tableau » mis à jour, qui contient maintenant les
+          valeurs 'a', 'b', 'c', 'd' et 'e'.
+        </p>
+      </div>
+      <h2>Ce qu’il faut retenir</h2>
+      <div>
+        <p>
+          Nous avons examiné deux concepts de base en JavaScript : les chaînes
+          de caractères (ou « string ») et les tableaux (ou « array »). Les
+          chaînes de caractères et les tableaux ont des propriétés et des
+          méthodes qui permettent de manipuler les données de manière efficace.
+        </p>
+        <p>
+          Les propriétés et méthodes associées aux chaînes de caractères et aux
+          tableaux sont très utiles pour manipuler différents types de données.
+          Les chaînes de caractères permettent de stocker des données simples,
+          comme un mot ou un texte placé entre guillemets, tandis que les
+          tableaux sont adaptés aux données plus complexes, telles qu'une
+          collection ordonnée de chaînes de caractères. En utilisant les
+          méthodes appropriées, nous pouvons facilement ajouter, supprimer,
+          trier et manipuler ces données pour répondre à nos besoins en
+          programmation.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
