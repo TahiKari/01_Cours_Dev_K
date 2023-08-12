@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Concept d’objet en POO</title>
+  </head>
+  <body>
+    <h1>Concept d’objet en POO</h1>
+    <div>
+      <p>
+        Pour rappel, un objet est une structure de données, une entité qui
+        contient des propriétés de type valeur (de simples variables définies
+        sur des valeurs), et des propriétés qu’on appelle méthodes (des
+        variables définies sur des méthodes). Une propriété est donc une paire «
+        clé / valeur », c’est-à-dire qu’elle a une clé (le nom de la propriété)
+        et une valeur (valeur ou méthode sur laquelle elle est définie).
+      </p>
+      <h2>Propriété</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="LYXKJWE"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/LYXKJWE"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, <strong>nomPropriete</strong> est la clé de la
+          propriété tandis que "<strong>valeur</strong>" est la valeur de la
+          propriété.
+        </p>
+      </div>
+
+      <div>
+        <p>
+          Les propriétés définies sur une valeur décrivent les caractéristiques
+          de l'objet, tandis que les méthodes sont des fonctions associées à
+          l'objet qui peuvent être appelées pour effectuer des actions ou des
+          opérations sur l'objet ou pour renvoyer une valeur.
+        </p>
+        <p>Si on résume, on a :</p>
+        <ul>
+          <li>Les « propriétés » qui sont définies sur une valeur.</li>
+          <li>
+            Les « méthodes » qui sont en fait des fonctions que l’on peut
+            appeler via un objet. Ce sont des propriétés qui ne sont pas
+            définies sur une simple valeur, mais sur une fonction.
+          </li>
+        </ul>
+        <p>
+          Par ailleurs, nous pouvons noter qu’une propriété peut aussi être
+          définie sur la référence d’un objet. Pour bien comprendre, cela veut
+          dire que des propriétés vont nous permettre de stocker d’autres
+          objets.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="OJaeopg"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/OJaeopg"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, nous créons un objet et nous définissons notre
+          propriété nomPropriete sur la référence de cet objet. Une propriété
+          peut donc stocker une valeur, une fonction (on parle donc de méthode)
+          ou un objet.
+        </p>
+        <p>
+          Le principe est très similaire à un objet du monde réel. Par exemple,
+          un téléphone a des caractéristiques comparables aux propriétés
+          définies sur une valeur (son stockage, sa ram, etc.), et des
+          mécanismes comparables aux méthodes (activation et désactivation du
+          mode avion, etc.).
+        </p>
+      </div>
+      <h2>Exemple d'objet avec la représentation d’un téléphone</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p>
+          Voici un exemple de code où l’on crée un objet dans lequel on définit
+          ses propriétés :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="zYMVJZQ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/zYMVJZQ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, nous définissons les propriétés de notre telephone
+          avec une syntaxe spécifique. Nous définissons des propriétés sur des
+          valeurs, et d’autres sur des méthodes. Comme nous l’avons dit, il est
+          aussi possible de définir des propriétés sur des objets. Par exemple,
+          si dans cet exemple, on définit la propriété ram sur un objet Number :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="qBQzMmE"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/qBQzMmE"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans de nombreux cas, nous serons amenés à définir des propriétés sur
+          des références d’objet.
+        </p>
+      </div>
+      <h2>Type, constructeur et instance</h2>
+      <h3>Définition</h3>
+      <div>
+        <p>
+          Chaque objet a un type. Un type définit la nature des valeurs
+          possibles d’une donnée. Le type d’un objet définit les propriétés d’un
+          objet, sa structure même. Pour créer un objet d’un certain type
+          (Number, Array, ou autre) il nous faut appeler le constructeur de ce
+          type. Les objets construits sont appelés « instances ».
+        </p>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="ZEmdMKV"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/ZEmdMKV"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        *
+        <p>Dans cet exemple, nous construisons un objet de type Number.</p>
+      </div>
+      <p>
+        En réalité, les types d’objets sont définis par ce qu’on appelle des
+        Classes. Nous n’expliquerons pas en détail dans ce cours ce que sont des
+        classes, mais pour faire simple, les classes sont comme des modèles, des
+        plans, qui contiennent toutes les instructions (les propriétés de type
+        valeur, les méthodes, le constructeur, etc.) permettant de construire un
+        objet. Par exemple, Number est une classe. Lorsque nous construisons un
+        objet de type Number, nous instancions la classe Number. Mais restons en
+        là pour l’instant avec le concept de classes que nous aborderons plus en
+        détail en temps voulu.
+      </p>
+      <h2>Propriétés statiques et propriétés d’instance</h2>
+      <div>
+        <p>
+          Nous pouvons classer l’ensemble des propriétés en deux catégories :
+        </p>
+        <ul>
+          <li>
+            Les propriétés statiques, qui sont les mêmes pour toutes les
+            instances d’un type,
+          </li>
+          <li>
+            Les propriétés d’instance, qui sont définies sur des valeurs
+            spécifiques à chaque instance.
+          </li>
+        </ul>
+        <h3>Exemple</h3>
+        <div>
+          <p>Si on reprend notre nombre de type Number :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="RwqzYgo"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/RwqzYgo"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Les méthodes statiques s’appellent donc via le nom du type (dans cet
+            exemple Number), tandis que les méthodes d’instance sont appelées
+            via la référence de l’instance (dans cet exemple nombre).
+            Maintenant, parlons des principaux objets natifs en JS.
+          </p>
+        </div>
+      </div>
+      <h2>Introduction aux objets natifs</h2>
+      <p>
+        À la différence des objets personnalisés, les objets natifs sont
+        accessibles dans n’importe quel environnement JavaScript, sans même
+        avoir le besoin d’installer une librairie. C’est le principe même d’un
+        objet natif, il est natif au langage, et donc compris dans le « Core
+        JavaScript », qui est la partie de JS définie par ECMAScript, qui
+        contient donc tous les éléments natifs de JS.
+      </p>
+    </div>
+  </body>
+</html>

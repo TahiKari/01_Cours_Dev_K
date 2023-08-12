@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Principaux objets natifs en JS</title>
+  </head>
+  <body>
+    <h1>Principaux objets natifs en JS</h1>
+    <div>
+      <h2>L’objet Object</h2>
+      <div>
+        <p>
+          Object est l’objet de base de tout objet en JavaScript. Quel que soit
+          l’objet créé, qu’il soit natif ou défini par un développeur, il
+          héritera directement ou indirectement des propriétés de base du type
+          Object. Pour construire un objet de type Object, nous pouvons appeler
+          simplement son constructeur.
+        </p>
+      </div>
+      <h2>Construire un Object</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Voici un exemple d’appel du constructeur Object. Pensons bien à
+          utiliser le mot clé « new » afin de créer une instance d’Object :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="eYQwLGX"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/eYQwLGX"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Il est aussi possible de créer un objet sans appeler directement le
+          constructeur Object() :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="zYMVJEV"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/zYMVJEV"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans ce cas, nous utilisons la « syntaxe littérale pour initialiser
+          les objets », et le constructeur Object() est appelé implicitement.
+        </p>
+        <p>
+          Voyons maintenant quelques méthodes de la classe Object, dans un
+          exemple de code :
+        </p>
+      </div>
+      <h2>Quelques méthodes de Object</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="dyQBqZM"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/dyQBqZM"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          On peut noter que toutes les méthodes prédéfinies d’instance sont
+          héritées de l’objet Object.prototype. C’est cet objet qui contient
+          initialement toutes les méthodes dont vont hériter chaque instance de
+          Object, comme toString(), ValueOf(), etc.
+        </p>
+        <p>
+          Object étant l’objet de base en JS, tous les autres types d’objets
+          (Number, Array, etc.) vont hériter des propriétés et méthodes de
+          Object. Nous pourrons donc utiliser ces méthodes avec les instances
+          des autres types d’objets.
+        </p>
+        <p>
+          Quand nous parlons « d’héritage », cela veut simplement dire qu’un
+          objet va recevoir des propriétés d’un autre objet. Dans ce cas, tous
+          les objets JS vont recevoir (donc hériter) des propriétés d’Object.
+        </p>
+      </div>
+      <h2>L’objet Boolean</h2>
+      <p>
+        Le type Boolean permet d’envelopper un booléen dans un objet. On parle
+        de type « wrapper », c’est-à-dire qu’il permet d’envelopper une valeur
+        primitive dans un objet, pour l’utiliser comme un objet.
+      </p>
+      <h2>Construire un Boolean</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Pour créer une instance de Boolean, nous pouvons appeler son
+          constructeur.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="MWzMqrZ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/MWzMqrZ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>Quelques méthodes de Boolean</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p>
+          Chaque instance de Boolean va hériter des méthodes de l’objet
+          Boolean.prototype. Les méthodes de l’objet Boolean.prototype sont
+          héritées de l’objet Object.prototype. Nous pouvons donc les appeler
+          via des instances de Boolean. Mais nous pouvons aussi appeler les
+          méthodes statiques de Object en passant comme argument des instances
+          de Boolean, comme nous aurions d’ailleurs pu le faire pour l’objet
+          Number.
+        </p>
+        <p>
+          Nous expliquerons un peu plus bas dans une vidéo le concept de
+          prototype, ne vous inquiétez pas.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="LYXKJQG"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/LYXKJQG"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>L’objet Number</h2>
+      <p>
+        Vous connaissez maintenant bien cet objet. Number est un sous-type
+        d’Object permettant de stocker une valeur primitive Number dans un
+        objet, en l’enveloppant (c’est un type « wrapper »). Il permet de
+        manipuler des nombres en passant par un objet. Number contient des
+        propriétés statiques et d’instances très utiles pour manipuler les
+        nombres.
+      </p>
+      <h2>Construire un Number</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>Pour construire un Number, nous pouvons appeler son constructeur.</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="poQXOaQ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/poQXOaQ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>Voyons quelques méthodes spécifiques de l’objet Number :</p>
+      </div>
+      <h2>Quelques méthodes de Number</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="xxQoaWb"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/xxQoaWb"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Les méthodes d’instance sont héritées de l’objet Number.prototype par
+          toutes les instances de Number.
+        </p>
+        <p>
+          Bien évidemment, nous pouvons utiliser les méthodes héritées de Object
+          comme valueOf() ou toString() avec un objet Number :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="wvQLEmy"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/wvQLEmy"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>L’objet String</h2>
+      <p>
+        En JavaScript, l'objet natif String est utilisé pour représenter et
+        manipuler des chaînes de caractères. Il permet d’envelopper une valeur
+        primitive de type String. Il faut voir les chaînes de caractères comme
+        des ensemble de symboles ordonnés. Chaque lettre correspond à la valeur
+        d’une propriété de l’objet.
+      </p>
+      <h2>Construire un objet String</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Pour créer un objet String, nous pouvons appeler son constructeur, en
+          passant comme argument la chaîne enveloppée :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="oNQrPdx"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/oNQrPdx"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Nous pouvons constater que si on appelle la méthode
+          Object.values(monObjet), un tableau contenant chaque caractère de
+          notre chaîne est renvoyé. Si nous appelons Object.keys(monObjet),
+          c’est un tableau contenant la clé de chaque propriété, chaque
+          propriété étant un indice (0, 1, 2, etc.).
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="PoxrdeJ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/PoxrdeJ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          On comprend bien en ce sens qu’une chaîne de caractères est un
+          ensemble de caractères ordonnés, qui constituent chacun une propriété.
+        </p>
+        <p>
+          Chaque instance de String hérite des méthodes de l’objet
+          String.prototype.
+        </p>
+      </div>
+      <h2>Quelques méthodes de l’objet String</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="QWJXVBV"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/QWJXVBV"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>L’objet Array</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="RwqzYEg"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/RwqzYEg"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          L’objet Array contient des méthodes statiques et d’instances
+          spécifiques que vous connaissez déjà. Les méthodes d’instance sont
+          héritées de l’objet Array.prototype.
+        </p>
+      </div>
+      <h2>Quelques méthodes de Array</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="bGQPxOK"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/bGQPxOK"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>L’objet Date</h2>
+      <h3>Méthode</h3>
+      <p>
+        L'objet natif Date en JavaScript est utilisé pour travailler avec des
+        dates et des heures. Il permet de créer des instances de date, de
+        manipuler des dates, de les afficher et de les convertir en différents
+        formats.
+      </p>
+      <h2>Construire un objet Date</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Pour construire un objet Date, il nous faut appeler son constructeur.
+          Si nous ne passons pas d’argument, l’objet Date stockera la date
+          actuelle, sinon, il stockera la date passée :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="qBQzMgN"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/qBQzMgN"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Bien évidemment, l’objet Date a des propriétés statiques et d’instance
+          spécifiques, mais nous ne les aborderons pas dans ce cours, elles
+          seront introduites en temps voulu. Cependant, Date étant aussi un
+          objet, chaque instance de Date hérite des méthodes d’instance de
+          l’objet Date.prototype. Quant à lui, Date.prototype hérite des
+          méthodes de l’objet Object.prototype. On peut donc utiliser les
+          méthodes valueOf() ou toString() par exemple, qui ont cependant un
+          comportement plus spécifique.
+        </p>
+      </div>
+      <h2>Appel de méthodes héritées de Object.prototype</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="mdQZGvB"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/mdQZGvB"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Vous pouvez tester ce code pour voir le comportement plus spécifique
+          des méthodes héritées. Nous approfondirons l’objet Date, ses
+          propriétés et méthodes dans un cours dédié.
+        </p>
+      </div>
+      <h2>L’objet Math</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p>Voici quelques exemples de méthodes de l’objet Math.</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="XWyLPGW"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/XWyLPGW"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+    </div>
+  </body>
+</html>

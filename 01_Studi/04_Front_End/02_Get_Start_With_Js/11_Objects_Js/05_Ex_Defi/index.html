@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercice défi</title>
+  </head>
+  <body>
+    <h1>Exercice défi</h1>
+    <div>
+      <p>
+        Vous travaillez dans une entreprise de e-commerce et vous chercher à
+        créer un objet représentant un produit précis. Ce produit est un
+        téléphone qui a les caractéristiques suivantes :
+      </p>
+      <ul>
+        <li>Marque : Apple</li>
+        <li>Modèle : IPhone 11</li>
+        <li>Ram : 4</li>
+        <li>Stockage : 128</li>
+        <li>Prix : 500</li>
+      </ul>
+      <p>
+        Les propriétés <strong>marque</strong> et <strong>modele</strong> seront
+        définies sur une instance de <strong>String</strong>. Les propriétés
+        <strong>ram</strong>, <strong>stockage</strong> et
+        <strong>prix</strong> seront définies sur une instance de
+        <strong>Number</strong>.
+      </p>
+      <div>
+        <h2>Question</h2>
+        <p>
+          Concevoir l’objet correspondant à ces caractéristiques en commençant
+          par appeler le constructeur Object. Vous devrez donc définir les
+          propriétés du téléphone non pas sur des valeurs primitives mais sur
+          des instances d’objets. Puis, hors de la définition de l’objet,
+          afficher la valeur primitive stockée dans la propriété marque puis
+          ram.
+        </p>
+        <div>
+          <h3>Solution</h3>
+          <p>Voici un code qui fonctionne :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="WNYqabL"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/WNYqabL"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Étant donné que nous avons défini les propriétés sur des objets, des
+            instances, on utilise la méthode valueOf() pour récupérer la valeur
+            stockée dans chaque objet.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          Vous souhaitez définir des méthodes : une méthode permettra d’ajouter
+          un montant au prix et de renvoyer le prix modifié, tandis qu’une autre
+          permettra de retirer un montant au prix et de renvoyer le prix
+          modifié. Enfin, une méthode permettra d’afficher le prix du produit.
+          Définir ces méthodes et les appeler via l’objet produit.
+        </p>
+        <div>
+          <h3>Solution</h3>
+          <p>Voici un code qui fonctionne :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="MWzMPYN"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/MWzMPYN"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            On peut voir qu’on peut appeler les méthodes définies, tout
+            fonctionne.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
