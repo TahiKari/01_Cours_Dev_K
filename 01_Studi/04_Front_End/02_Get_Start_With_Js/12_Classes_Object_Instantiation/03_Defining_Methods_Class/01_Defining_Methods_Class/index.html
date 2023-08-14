@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Définir des méthodes dans une classe</title>
+  </head>
+  <body>
+    <h1>Définir des méthodes dans une classe</h1>
+    <div>
+      <p>
+        Maintenant que nous savons définir une classe, nous allons pouvoir
+        définir des méthodes personnalisées. Pour cela, nous allons voir en
+        premier lieu comment définir des méthodes statiques, c’est-à-dire des
+        méthodes accessibles via le nom de la classe directement.
+      </p>
+      <h2>Définir une méthode statique</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          En JavaScript, définir une méthode statique revient à définir une
+          propriété statique, mais sur une fonction. Pour cela, nous allons
+          utiliser le mot clé <strong>static</strong>. Plutôt que d’utiliser la
+          syntaxe <strong>maMethode = function() {}</strong>, nous pouvons
+          utiliser le raccourci <strong>maMethode() {}</strong>. Nous n’avons
+          donc pas besoin d’utiliser le mot function.
+        </p>
+        <p>
+          Par exemple, définissons une méthode qui permet d’afficher simplement
+          une chaîne contenant une explication du concept d’ordinateur :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="JjegEVw"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/JjegEVw"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Maintenant que nous avons vu un exemple de définition de méthode
+          statique, voyons comment définir des méthodes d’instance.
+        </p>
+      </div>
+      <h2>Définir des méthodes d’instance</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Pour créer une méthode d’instance, il nous faut simplement définir
+          cette méthode sans utiliser le mot clé <strong>static</strong>. Nous
+          aurons besoin d’utiliser le mot clé <strong>this</strong> pour faire
+          référence à l’instance.
+        </p>
+        <p>
+          Pour voir un exemple, définissons une méthode permettant d’afficher
+          dans une chaîne les caractéristiques d’un ordinateur (donc d’une
+          instance d’<strong>Ordinateur</strong>).
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="yLQmgdp"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/yLQmgdp"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Nous pouvons voir que ça fonctionne, nous avons défini notre méthode
+          d’instance <strong>ficheProduit</strong>. Maintenant, définissons une
+          méthode permettant de calculer un prix de notre ordinateur. Cette
+          méthode réalisera le calcul suivant : . C’est un exemple vraiment
+          fictif.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="ExOqZqd"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/ExOqZqd"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Puis définissons une méthode qui par exemple permettra d’augmenter la
+          ram d’un ordinateur :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="OJaKpLX"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/OJaKpLX"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Voilà, nous pouvons tester le code et appeler les méthodes pour voir
+          qu’elles fonctionnent bien. Nous venons de voir pratiquement comment
+          définir des méthodes personnalisées dans une classe, pour que toutes
+          les instances en héritent.
+        </p>
+      </div>
+      <h2>Getters et Setters</h2>
+      <p>
+        Maintenant que nous savons définir des méthodes dans une classe, parlons
+        de méthodes fondamentales, les getters et les setters, et voyons comment
+        les définir via une vidéo.
+      </p>
+    </div>
+  </body>
+</html>

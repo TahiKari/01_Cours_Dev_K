@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercice défi</title>
+  </head>
+  <body>
+    <h1>Exercice défi</h1>
+    <div>
+      <p>
+        Vous êtes un vendeur d’écouteurs audio et vous cherchez à mettre au
+        point un système de e-commerce pour vendre vos produits. Les écouteurs
+        que vous vendez ont tous des propriétés communes :
+      </p>
+      <ul>
+        <li>boite = true;</li>
+        <li>nbEcouteurs = 2;</li>
+      </ul>
+      <p>En revanche, chaque produit a des propriétés spécifiques :</p>
+      <ul>
+        <li>marque; (chaîne)</li>
+        <li>sansFil; (booléen)</li>
+        <li>price; (nombre)</li>
+      </ul>
+      <div>
+        <h2>Question</h2>
+        <p>
+          Créez une classe définissant le type <strong>Ecouteur</strong>.
+          Définissez une méthode d’instance <strong>fiche()</strong> permettant
+          grâce à une boucle d’afficher les différentes propriétés (clé et
+          valeur) de l’instance d’<strong>Ecouteur</strong>. Instanciez 2 fois
+          <strong>Ecouteur</strong> pour créer deux objets différents de type
+          <strong>Ecouteur</strong>, et appelez pour chaque instance la méthode
+          <strong>fiche()</strong>.
+        </p>
+        <div>
+          <h3>Solution</h3>
+          <p>Voici une classe qui correspond à ces caractéristiques :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="RwqXVbg"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/RwqXVbg"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          Créez une classe Panier permettant de définir des objets de type
+          Panier. Cette classe ne définira pas d’attributs d’instance, nous
+          n’avons donc pas besoin de définir le constructeur, un constructeur
+          par défaut sera créé et appelé automatiquement lors de
+          l’instanciation. Définissez une propriété statique contenu qui sera
+          définie sur un tableau. Définissez trois méthodes statiques :
+        </p>
+        <ul>
+          <li>
+            Une permettant d’ajouter un écouteur au tableau (la référence de
+            l’objet)
+          </li>
+          <li>
+            Une permettant de supprimer un écouteur au tableau (la référence de
+            l’objet)
+          </li>
+          <li>
+            Une permettant d’afficher la marque de chaque produit présent dans
+            le panier
+          </li>
+        </ul>
+        <p>Appelez chaque méthode</p>
+        <div>
+          <h3>Solution</h3>
+          <p>Voici un code qui fonctionne :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="wvQVdvX"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/wvQVdvX"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

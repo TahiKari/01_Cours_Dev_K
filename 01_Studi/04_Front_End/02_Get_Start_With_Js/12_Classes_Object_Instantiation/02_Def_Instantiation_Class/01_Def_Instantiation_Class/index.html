@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Définition et instanciation d’une classe</title>
+  </head>
+  <body>
+    <h1>Définition et instanciation d’une classe</h1>
+    <div>
+      <h2>Classe</h2>
+      <p>
+        Une classe, c’est un peu comme un plan qui permet de construire autant
+        d’objets que nécessaire. Par exemple, une classe peut être comme un plan
+        d’une maison. Si on applique ce plan plusieurs fois, on peut construire
+        autant de maisons que nécessaire grâce à celui-ci. C’est exactement le
+        même principe que pour une classe. Une classe est un espace de code qui
+        définit toutes les propriétés d’un type, et donc des objets créés à
+        partir de celle-ci.
+      </p>
+      <h2>Définir une classe</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Maintenant, comment définir une classe ? La convention veut qu’une
+          classe commence toujours par une majuscule. Pour définir une classe,
+          on utilise donc cette syntaxe :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="jOQgywM"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/jOQgywM"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Pour bien comprendre, tout au long de ce cours, nous allons définir
+          une classe permettant de construire des objets de type
+          <strong>Ordinateur</strong>. Notre classe va donc définir les
+          propriétés des ordinateurs. Donc, voici notre classe :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="eYQqgRE"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/eYQqgRE"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>Cette classe va nous permettre de définir le type Ordinateur.</p>
+      </div>
+      <h2>Différents types de propriétés</h2>
+      <p>Comme vous le savez, il existe plusieurs types de propriétés.</p>
+      <p>
+        Les <strong>propriétés statiques</strong> sont des propriétés que l’on
+        appelle directement via le nom de la classe et non via une instance.
+      </p>
+      <p>
+        Les <strong>propriétés de classe</strong> sont quant à elles des
+        propriétés définies dans la classe hors du constructeur, et partagées
+        par toutes les instances de la classe. Elles sont donc accessibles via
+        les instances de la classe, et par défaut, sont définies sur la même
+        valeur, quelle que soit l’instance.
+      </p>
+      <p>
+        Les <strong>propriétés d’instance</strong> sont en revanche des
+        propriétés qui sont définies dans le constructeur de la classe, et qui
+        auront une valeur propre pour chaque instance.
+      </p>
+      <h2>Définir des propriétés statiques</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Pour créer des propriétés statiques, nous pouvons simplement les
+          définir avec le mot clé <strong>static</strong> dans notre classe.
+          Voyons-le directement en exemple :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="BaGXpdy"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/BaGXpdy"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Nous définissons une propriété statique, associée à la classe
+          <strong>Ordinateur</strong>. Nous l’écrivons en majuscule pour être
+          plus conventionnel, car c’est une propriété constante. Pour accéder à
+          sa valeur, nous pouvons procéder ainsi :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="KKrOavN"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/KKrOavN"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          On peut voir qu’on accède à la propriété statique via le nom de la
+          classe, il n’y a pas besoin de l’instancier. Voyons maintenant comment
+          créer des propriétés de classe.
+        </p>
+      </div>
+      <h2>Définir des propriétés de classe</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Pour définir une propriété de classe, il faut simplement définir une
+          propriété sur une valeur dans la classe, hors de la définition du
+          constructeur. Pour l’instant, nous n’avons pas défini de constructeur,
+          donc pas de problème, nous pouvons les définir ou nous voulons dans la
+          classe.
+        </p>
+        <p>Créons par exemple deux propriétés de classe :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="gOQVgxV"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/gOQVgxV"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, toutes les instances d’<strong>Ordinateur</strong>
+          hériteront des propriétés <strong>type</strong> et
+          <strong>clavier</strong>. Ce qui veut dire que par défaut, tous les
+          ordinateurs auront une propriété <strong>type</strong> définie sur «
+          laptop » et une propriété <strong>clavier</strong> définie sur à «
+          azerty ». Ce sont des propriétés de classe. Elles seront accessibles
+          via les instances de la classe <strong>Ordinateur</strong> et non via
+          la classe elle-même.
+        </p>
+      </div>
+      <h2>Constructeur</h2>
+      <p>
+        Le constructeur va nous permettre d’instancier notre classe, donc de
+        construire de vrais objets à partir de notre classe. Le constructeur est
+        une méthode, qui va par ailleurs permettre de définir des propriétés
+        d’instances, c’est-à-dire des propriétés dont la valeur sera spécifique
+        à chaque instance. La valeur de ses propriétés pourra être passée comme
+        argument du constructeur lors de son appel. Si nous ne définissons pas
+        de constructeur dans la classe, un constructeur par défaut sera créé et
+        appelé par JavaScript, qui ne passera aucun paramètre.
+      </p>
+      <h2>Définir un constructeur et des propriétés d’instance</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Pour définir un constructeur, il faut utiliser le mot clé
+          <strong>constructor</strong>
+          et initialiser les paramètres qui stockeront les valeurs que prendront
+          les propriétés d’instances.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="abQepLG"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/abQepLG"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Nous définissons donc notre constructeur et nous initialisons 3
+          paramètres : <strong>marque</strong>, <strong>ram</strong>, et
+          <strong>stockage </strong>. Puis nous définissons 3 propriétés
+          d’instance en utilisant le mot clé <strong>this</strong>, qui permet
+          de faire référence à l’instance et non à la classe. Nous définissons
+          donc la propriété d’instance <strong>this.marque</strong> sur la
+          valeur du paramètre <strong>marque</strong>, la propriété d’instance
+          <strong>this.ram</strong> sur la valeur du paramètre
+          <strong>ram</strong> et enfin la propriété d’instance
+          <strong>this.stockage</strong> sur la valeur du paramètre
+          <strong>stockage</strong>.
+        </p>
+      </div>
+      <h2>Instancier la classe</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Nous pouvons maintenant instancier notre classe en faisant appel au
+          constructeur. Pour cela, nous allons lors de l’appel passer comme
+          argument les valeurs correspondant à la marque, la ram et le stockage.
+          Pour appeler le constructeur, nous devons utiliser le mot clé
+          <strong>new</strong>
+          suivi de l’appel du constructeur.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="JjegEOB"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/JjegEOB"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, nous instancions deux fois
+          <strong>Ordinateur</strong>, et nous définissons les arguments qui
+          seront les valeurs de chaque attribut d’instance. On peut voir que
+          chaque ordinateur accèdera aux propriétés de classes, et aura des
+          propriétés d’instance définies sur des valeurs propres à chacune.
+          D’ailleurs, nous pouvons afficher des propriétés de classe et
+          d’instance de chaque objet :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="mdQNRqZ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/mdQNRqZ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Nous avons donc défini des propriétés de nos objets grâce à la classe
+          <strong>Ordinateur</strong>. Les classes permettent donc de définir un
+          type, dans ce cas, c’est le type <strong>Ordinateur</strong> qui est
+          défini. Pour rappel, chaque type d’objets que nous définissons est un
+          sous-type du type « racine » <strong>Object.Ordinateur</strong> est
+          donc un sous-type de <strong>Object</strong>.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
