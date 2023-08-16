@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Méthodes et formatage de dates</title>
+  </head>
+  <body>
+    <h1>Méthodes et formatage de dates</h1>
+    <div>
+      <p>
+        Maintenant que nous savons créer une date grâce au constructeur de
+        <strong>Date</strong>, voyons quelques méthodes intéressantes de
+        <strong>Date</strong> et intéressons-nous au formatage de dates.
+      </p>
+      <p>
+        Il faut savoir que, pour générer une date et une heure, JavaScript se
+        sert d’une date repère correspondant au 1er janvier 1970 à 00:00:00 UTC.
+        Pour obtenir la date et l’heure actuelle, JavaScript récupère le nombre
+        de millisecondes écoulées depuis cette date jusqu’à maintenant. Nous
+        allons d’ailleurs pouvoir le constater en appelant certaines méthodes.
+      </p>
+      <h2>Méthodes statiques de Date</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>Il existe plusieurs méthodes statiques de <strong>Date</strong>.</p>
+        <p>
+          La méthode <strong>Date.now()</strong> renvoie le nombre de
+          millisecondes écoulées depuis le 1er janvier 1970 à 00:00:00 UTC.
+        </p>
+        <p>
+          La méthode <strong>Date.parse()</strong> renvoie, quant à elle, le
+          nombre de millisecondes écoulées depuis le 1er janvier 1970 à 00:00:00
+          UTC jusqu’à la date passée comme argument sous la forme d’une
+          représentation textuelle valide.
+        </p>
+        <p>
+          La méthode <strong>Date.UTC()</strong> renvoie le nombre de
+          millisecondes écoulées depuis le 1er janvier 1970 à 00:00:00 UTC, mais
+          permet de passer comme arguments les mêmes arguments que le
+          constructeur <strong>Date()</strong>.
+        </p>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="mdabrgR"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/mdabrgR"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>Méthodes d’instances de conversion</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Chaque instance de <strong>Date</strong> hérite des méthodes de
+          l’objet <strong>Date.prototype</strong>. Parmi ces méthodes, il y’a
+          des méthodes permettant de convertir les dates dans un format
+          spécifique. Parmi ces méthodes figurent :
+        </p>
+        <ul>
+          <li>
+            <strong>toDateString()</strong> qui renvoie dans une chaîne la
+            partie « date » de la date (donc sans l’heure)
+          </li>
+          <li>
+            <strong>toTimeString()</strong> qui renvoie dans une chaîne la
+            partie « heure » de la date (donc sans la date)
+          </li>
+          <li>
+            <strong>toISOString()</strong> qui renvoie une date au format ISO
+            8601
+          </li>
+          <li>
+            <strong>toUTCString()</strong> qui renvoie une chaîne contenant la
+            date selon le fuseau horaire UTC
+          </li>
+        </ul>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p>
+          Voici un exemple pour chacune de ces quelques méthodes d’instance :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="ExGYgJB"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/ExGYgJB"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>Méthode valueOf()</h2>
+      <h3>Fondamental</h3>
+      <div>
+        <p>
+          La méthode <strong>valueOf()</strong> permet de renvoyer la valeur
+          primitive enveloppée par l’objet <strong>Date</strong>. La valeur
+          primitive enveloppée par une instance de
+          <strong>Date</strong> correspond au nombre de millisecondes écoulées
+          depuis le 1er janvier 1970 à 00:00:00 UTC, qui permet donc de
+          représenter la date.
+        </p>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p>Prenons un exemple :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="wvRwzbP"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/wvRwzbP"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>Formater une date</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Voyons maintenant comment formater une date dans une chaîne de
+          caractères. Nous allons donc définir le format d’affichage de notre
+          date et de notre heure. Pour formater notre date, nous allons utiliser
+          3 méthodes, en choisissant celle qui est la plus appropriée en
+          fonction de ce qui est souhaité :
+        </p>
+        <ul>
+          <li>
+            <strong>toLocaleDateString()</strong> : si on s’intéresse uniquement
+            à la partie « date ».
+          </li>
+          <li>
+            <strong>toLocaleTimeString()</strong> : si on s’intéresse uniquement
+            à la partie « heure ».
+          </li>
+          <li>
+            <strong>toLocalString()</strong> : si on s’intéresse aux parties «
+            date » et « heure ».
+          </li>
+        </ul>
+        <p>
+          Nous pouvons très bien appeler ces méthodes sans passer de paramètres,
+          ce qui renverra une chaîne représentant la date, l’heure où les deux,
+          mais avec le format local (propre à la région locale choisie) :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="VwqZKJa"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/VwqZKJa"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Nous pouvons constater que, avec ces méthodes, la date et l’heure sont
+          renvoyées dans un format français. En effet, c’est la locale "fr-FR"
+          qui est automatiquement prise en compte, puisqu’il s’agit du format
+          local (si votre environnement est bien paramétré en français). Nous
+          pouvons tester des formats propres à d’autres localités par exemple
+          pour le Canada qui est un autre pays francophone :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="gOZYwNW"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/gOZYwNW"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Nous pouvons constater que le format d’affichage de l’heure n’est pas
+          le même.
+        </p>
+        <p>
+          Maintenant, voyons comment formater une date en utilisant la méthode
+          <strong>toLocaleDateString()</strong>.
+        </p>
+        <p>
+          La première chose à faire, c’est de créer un objet, que nous allons
+          appeler <strong>options</strong>, qui va contenir différentes
+          propriétés indiquant le format des différentes unités de temps. Nous
+          pouvons définir les propriétés suivantes :
+        </p>
+        <ul>
+          <li>
+            <strong>weekday</strong> : pour définir si le jour de la semaine
+            doit être affiché comme un texte complet (par exemple, "lundi") ou
+            en abrégé (par exemple, "lun").
+          </li>
+          <li>
+            <strong>year</strong> : pour définir si l'année doit être affichée
+            en format numérique à 2 ou 4 chiffres, ou en format complet (par
+            exemple, "2023").
+          </li>
+          <li>
+            <strong>month</strong> : pour définir si le mois doit être affiché
+            en texte complet (par exemple, "mars") ou en abrégé (par exemple,
+            "mar").
+          </li>
+          <li>
+            <strong>day</strong> : pour définir si le jour doit être affiché en
+            format numérique avec ou sans zéro devant (par exemple, "01" ou
+            "1").
+          </li>
+          <li>
+            <strong>hour</strong> : pour définir si l'heure doit être affichée
+            avec le format 12 ou 24 heures.
+          </li>
+          <li>
+            <strong>minute</strong> : pour définir si les minutes doivent être
+            affichées avec ou sans zéro devant (par exemple, "08" ou "8").
+          </li>
+          <li>
+            <strong>second</strong> : pour définir si les secondes doivent être
+            affichées avec ou sans zéro devant (par exemple, "08" ou "8").
+          </li>
+          <li>
+            <strong>timeZoneName</strong> : pour afficher le nom de la zone
+            horaire (par exemple, "heure d'été d'Europe centrale").
+          </li>
+        </ul>
+        <p>
+          Ces propriétés peuvent être définies sur différentes valeurs selon le
+          type de propriété. Par exemple, pour la propriété
+          <strong>weekday</strong>, on peut utiliser les valeurs
+          ''<strong>long</strong>'' pour afficher le nom complet du jour de la
+          semaine, ''<strong>short</strong>'' pour l'abréviation, ou
+          ''<strong>narrow</strong>'' pour une version très courte. La valeur
+          ''<strong>numeric</strong>'' permettra pour certaines propriétés
+          d’indiquer qu’on cherche à afficher un nombre. Définissons donc
+          l’objet <strong>options</strong> :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="oNJvYvb"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/oNJvYvb"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Maintenant, nous pouvons appeler la méthode
+          <strong>toLocaleDateString()</strong> en passant 2 arguments
+          correspondant aux paramètres : <strong>locales</strong> et
+          <strong>options</strong>. Le paramètre <strong>locales</strong> permet
+          de spécifier la locale, c'est-à-dire l’option indiquant selon quelle
+          norme d’affichage doit être présentée la date. D’un pays à un autre,
+          le format d’affichage des dates et heures peut être différent. Pour
+          formater la date nous utiliserons "<strong>fr-FR</strong>", afin que
+          le formatage se fasse selon la norme française. Le paramètre
+          <strong>options</strong> permet de passer l’objet contenant les
+          options de formatage. Appelons donc notre méthode
+          <strong>toLocaleDateString()</strong> en passant les arguments :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="NWeKbKY"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/NWeKbKY"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Nous pouvons constater que ça fonctionne, nous avons une date
+          formatée, qui prend en compte la locale française et les options
+          spécifiées. Avec cette utilisation de
+          <strong>toLocaleDateString()</strong>, seulement les propriétés
+          définies dans l’objet <strong>options</strong> sont représentées dans
+          la date formatée. Par exemple, si nous avions défini uniquement la
+          propriété <strong>day</strong> :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="gOZYLOR"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/gOZYLOR"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Uniquement le jour du mois au format numérique est affiché. Voyons
+          maintenant dans une vidéo comment formater des dates et heures avec
+          les méthodes <strong>toLocaleTimeString()</strong> et
+          <strong>toLocaleString()</strong>. Le système reste le même, mais nous
+          verrons d’autres propriétés que nous pouvons définir dans l’objet
+          <strong>options</strong>.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Le constructeur Date</title>
+  </head>
+  <body>
+    <h1>Le constructeur Date</h1>
+    <div>
+      <h2>Créer une date</h2>
+      <p>
+        Pour créer une date, nous allons instancier <strong>Date</strong>, et
+        donc appeler son constructeur. Si nous ne passons pas d’arguments lors
+        de l’appel du constructeur, la date sera définie par défaut sur la date
+        et l’heure actuelles. En revanche, nous pouvons passer comme arguments
+        des informations déterminant une date précise. Nous pouvons noter que le
+        constructeur de <strong>Date</strong> définit des dates sur le fuseau
+        horaire local.
+      </p>
+      <h2>Appeler le constructeur sans passer de paramètres</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Pour commencer, instancions <strong>Date</strong> sans passer de
+          paramètres. Nous pouvons voir que la méthode
+          <strong>toString()</strong> va renvoyer une chaîne contenant la date
+          et l’heure locale dans un format spécifique :
+        </p>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="eYbOdLQ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/eYbOdLQ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Nous pouvons constater que la date et l’heure correspondent bien à la
+          date et l’heure actuelle avec le fuseau horaire local.
+        </p>
+      </div>
+      <h2>Appeler le constructeur en définissant une date précise</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Instancions <strong>Date</strong> en passant comme arguments ordonnés
+          des nombres correspondant à l’année, au mois, au jour, à l’heure et à
+          la minute.
+        </p>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="PoXYGyp"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/PoXYGyp"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Un point important, nous indiquons 11 comme mois, et la date créée est
+          en décembre. C’est normal, le paramètre
+          <strong>monthIndex</strong> commence à 0 pour janvier et va jusqu’à 11
+          pour décembre. Nous pouvons aussi passer un nombre supérieur à 11,
+          dans ce cas, le nombre de mois supplémentaires est ajouté à la
+          représentation de la date.
+        </p>
+        <p>
+          Nous aurions aussi pu indiquer les secondes, puis les millisecondes :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="KKbPgGR"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/KKbPgGR"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Mais nous aurions aussi pu ne pas indiquer d’heure, dans ce cas, une
+          heure par défaut (00:00:00) aurait été définie :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="mdabrQr"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/mdabrQr"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Nous passons donc autant d’arguments que nous voulons, l’important
+          étant qu’ils soient passés dans l’ordre suivant : année, mois, jour,
+          heures, minutes, secondes, millisecondes.
+        </p>
+      </div>
+      <h2>Appeler le constructeur en définissant une date dans une chaîne</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Il est aussi possible de définir une date précise en passant comme
+          argument du constructeur une chaîne de caractères contenant une date
+          par exemple avec le format ISO 8601 (une norme internationale pour la
+          représentation de dates et d'heures), ou avec une représentation
+          textuelle valide (comme celles renvoyées par la méthode d’instance
+          <strong>toString()</strong> de <strong>Date</strong>).
+        </p>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="zYyOKMX"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/zYyOKMX"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+    </div>
+  </body>
+</html>
