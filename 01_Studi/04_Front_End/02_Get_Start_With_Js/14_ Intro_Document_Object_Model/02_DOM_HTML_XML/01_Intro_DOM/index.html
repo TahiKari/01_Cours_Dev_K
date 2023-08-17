@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction au DOM</title>
+  </head>
+  <body>
+    <h1>Introduction au DOM</h1>
+    <div>
+      <h2>La structure du code d’une page web</h2>
+      <p>
+        Lorsqu’un navigateur affiche une page web, celui-ci interprète le code
+        qui lui est fourni. Il va ainsi interpréter le contenu avec le code
+        HTML, interpréter la mise en page avec du CSS, et permettre la gestion
+        de contenu dynamique à l’aide du PHP et du JavaScript. L’utilisateur ne
+        doit voir en face de lui qu’une interface fonctionnelle.
+      </p>
+      <p>
+        Lors de la création de votre page web, vous travaillerez dans un premier
+        temps sur des fichiers HTML et CSS afin de mettre en place toute la mise
+        en forme de celle-ci. Il vous faudra utiliser les différentes balises
+        HTML ou XML à bon escient. Dépendamment de la balise dans laquelle le
+        contenu est placé, celui-ci sera visible ou non par l’utilisateur. Par
+        exemple, du contenu écrit dans la balise
+        <strong>&lt;head&gt;</strong> servira uniquement à donner des
+        informations sur le document que vous êtes en train de rédiger. Du
+        contenu peut également être rendu invisible d’autre façon, avec un
+        attribut hidden par exemple.
+      </p>
+      <p>
+        Dans notre cas, le DOM (Document Object Model) est ce qu’on appelle une
+        « interface de programmation » (API) créée pour le HTML et le XML.
+      </p>
+      <h2>HTML</h2>
+      <h3>Définition</h3>
+      <div>
+        <p>
+          Le HTML est un langage de balisage (aussi appelé mark up language,
+          soit un langage qui permet de structurer ou de mettre en forme des
+          données en utilisant des balises) qui nécessite l’utilisation de
+          chevrons (< >). Il ne s’agit pas d’un langage dynamique. En effet, à
+          l’inverse de PHP ou de JavaScript qui vont nous permettre d’utiliser
+          des boucles ou des conditions, le HTML va simplement permettre
+          d’afficher du contenu comme des images, du texte, des liens, etc., par
+          le biais de balises spécifiques.
+        </p>
+        <p>
+          Le HTML est une série de Balises ouvrantes et contenantes. Chaque
+          balise ouvrante &lt ... &gt est jumelée avec une balise fermante &lt/
+          ... &gt qui établit la limite du contenu.
+        </p>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="VwqZEBW"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/VwqZEBW"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Chaque balise peut contenir un ou plusieurs éléments, eux-mêmes
+          balisés.
+        </p>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="OJrLBwE"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/OJrLBwE"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Une balise ouvrante pourra inclure un ou plusieurs attributs (par
+          exemple, class ou id) qui vont associer des informations, des liens,
+          des spécifications au contenu du balisage. C’est là la tâche
+          principale du html.
+        </p>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="MWZgPBN"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/MWZgPBN"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Et c’est le langage JavaScript ou le css qui vont dynamiser, embellir
+          ou animer les éléments html affichés.
+        </p>
+        <p>
+          Prenons l’exemple d’une section contenant deux div (le terme div étant
+          l’abréviation de division). La première div contient un texte, la
+          seconde une image. Le code HTML se composera alors de cette manière :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="ExGYdeP"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/ExGYdeP"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>DOM</h2>
+      <h3>Définition</h3>
+      <div>
+        <p>
+          En informatique, le DOM (pour Document Object Model) est une interface
+          de programmation permettant de représenter un document HTML ou XML
+          sous la forme d’un arbre binaire, ou arbre de nœuds. Chaque nœud
+          représente un élément du document (que ce soit une balise, un
+          attribut, un texte, etc.). Le DOM permet aux programmeurs de manipuler
+          des éléments d’un document en utilisant des langages de programmation
+          comme le JavaScript par exemple. Lorsque des modifications sont
+          effectuées sur le DOM, celles-ci sont automatiquement retransmises sur
+          le document HTML ou XML. Ainsi, le DOM permet de créer des pages Web
+          dynamiques et interactives.
+        </p>
+      </div>
+      <h2>La relation entre le HTML et le DOM</h2>
+      <p>
+        Le DOM (Document Object Model) en JavaScript sert à fournir une
+        interface de programmation pour interagir avec les éléments d’une page
+        HTML, tels que les éléments de formulaire, les images, les liens et les
+        conteneurs de texte, ce qui permet aux développeurs de modifier la
+        structure, le contenu et le style d’une page web dynamiquement, en
+        réponse aux interactions de l’utilisateur ou à d’autres événements.
+      </p>
+      <p>
+        Grâce au DOM, il est possible de créer des pages web plus interactives
+        et réactives en permettant la modification de la page en temps réel sans
+        recharger la page. En outre, le DOM permet de créer des animations et
+        des effets visuels sur la page, ce qui peut améliorer l’expérience
+        utilisateur.
+      </p>
+      <p>
+        Le DOM peut être utilisé pour diverses tâches, telles que la validation
+        de formulaire, l’ajout ou la suppression d’éléments HTML, la
+        modification de texte et d’attributs, le positionnement et le
+        dimensionnement d’éléments sur la page, ainsi que la gestion des
+        événements de la souris et du clavier.
+      </p>
+      <p>
+        En outre, le DOM est utilisé par de nombreux bibliothèques et frameworks
+        JavaScript populaires, tels que jQuery, React, Vue.js et Angular pour
+        créer des applications web plus complexes et plus avancées.
+      </p>
+      <h2>XML</h2>
+      <h3>Définition</h3>
+      <div>
+        <p>
+          Le XML est l’extension du format de balisage HTML, utilisant le même
+          principe de balises ouvrantes et fermantes, mais où les noms des
+          balises écrites dans le code sont plus libres.
+        </p>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="LYMPggx"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/LYMPggx"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>JSON</h2>
+      <h3>Définition</h3>
+      <div>
+        <p>
+          Un format a fait son apparition dans les années 2000 : le format JSON.
+          Plus facile à lire, à élaborer, et plus rapide à analyser pour un
+          ordinateur, il gère aussi certains types de données que le XML ne gère
+          pas, par exemple les données en nombres ou les valeurs booléennes. Sa
+          syntaxe est par ailleurs très proche du XML et le langage en lui-même
+          est compatible avec le langage JavaScript.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="BavBqGO"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/BavBqGO"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>L’origine du DOM</h2>
+      <p>
+        D’un point de vue technique, le DOM est une API (interface de
+        programmation) permettant la visualisation et la traduction des éléments
+        composant la page web et son affichage contenu aujourd’hui dans tous les
+        navigateurs. Il s’agit d’une standardisation et d’une optimisation qui
+        se sont faites progressivement, à partir du milieu des années 1990, avec
+        l’essor des nouvelles technologies de l’internet et du développement des
+        langages associés. Anciennement, ECMAScript, aujourd’hui connu sous
+        l’appellation de JavaScript, faisait partie de cet essor.
+      </p>
+      <p>
+        À partir du milieu des années 2000, une grande partie des DOM déployés
+        étaient compatibles avec une norme standard définie par le W3C (World
+        Wide Web Consortium), un organisme central créé à la fin des années 90
+        pour, justement, standardiser et compatibiliser les différents
+        navigateurs et les technologies associées aux navigateurs. Ces
+        évolutions et standardisations ont été portées jusqu’à récemment avec un
+        DOM dit « level 4 » (niveau 4) datant de 2015. Par ailleurs, ce DOM est
+        une API toujours en cours d’amélioration.
+      </p>
+      <p>
+        Le DOM a une histoire assez longue et tumultueuse. Les différentes
+        sociétés Mozaic, Netscape, Microsoft, étaient en compétition dans les
+        années 1990 en cherchant chacune à élaborer le navigateur le plus
+        performant. On parle d’ailleurs de guerre des navigateurs. Chaque
+        société développant ses propres standards, le problème de
+        l’incompatibilité entre les différents navigateurs s’est très rapidement
+        posé. Au début des années 2000, c’est Microsoft avec son Internet
+        Explorer (IE) qui domine le marché. Aujourd’hui, le marché est bien plus
+        concurrentiel, avec Google et son navigateur Chrome, Mozilla avec
+        Firefox, Microsoft toujours présent avec son Internet Explorer devenu
+        Edge et Apple avec Safari.
+      </p>
+      <p>
+        Aujourd’hui, le Web Browser est un produit normalisé, standardisé par le
+        W3C, avec un DOM et des outils largement compatibles entre eux.
+      </p>
+      <h2>Le DOM tree</h2>
+      <h3>Définition</h3>
+      <div>
+        <p>
+          Un DOM (Document Object Model) est une représentation hiérarchique
+          d’une page web ou d’un document XML. Le DOM tree (ou arbre DOM) est un
+          arbre de nœuds qui représente la structure d’un document HTML ou XML.
+        </p>
+        <p>
+          Chaque élément HTML est représenté par un nœud dans l’arbre DOM, qui
+          contient des informations telles que le nom de l’élément, les
+          attributs et le contenu. Les nœuds de texte, les commentaires et les
+          instructions de traitement sont également représentés dans l’arbre
+          DOM.
+        </p>
+        <p>
+          Le DOM tree permet aux développeurs web de manipuler dynamiquement le
+          contenu et la présentation d’une page web à travers JavaScript ou
+          d’autres langages de programmation. En utilisant des méthodes et des
+          propriétés du DOM, les développeurs peuvent accéder, modifier, ajouter
+          ou supprimer des éléments de la page web, et ainsi créer des
+          applications web interactives et dynamiques. Chaque élément est alors
+          représenté par un node, ou nœud.
+        </p>
+        <p>
+          Un node dans le DOM (Document Object Model) est un objet qui
+          représente un élément dans un arbre de la structure d’un document HTML
+          ou XML. Chaque élément, balise, texte, attribut, commentaire, etc. est
+          représenté sous forme d’un nœud dans l’arbre DOM.
+        </p>
+        <p>
+          Le DOM tree est une structure hiérarchique où chaque élément est un
+          nœud et est lié aux autres nœuds en fonction de sa position dans
+          l’arborescence. Le nœud racine est généralement le document lui-même,
+          suivi par les nœuds qui représentent les éléments HTML tels que les
+          balises &lthtml&gt, &lthead&gt, &ltbody&gt, &ltdiv&gt, &ltp&gt, etc.
+        </p>
+        <p>
+          Chaque nœud a des propriétés qui le caractérisent : le nom de la
+          balise, les attributs, les classes, l’ID, le contenu textuel, les
+          événements, etc. Les nœuds peuvent également avoir des enfants (nœuds
+          enfants) et des parents (nœuds parents) qui se trouvent respectivement
+          en dessous et au-dessus d’eux dans l’arborescence.
+        </p>
+        <p>
+          En somme, le DOM tree est une représentation en arbre de la structure
+          d’un document HTML ou XML, où chaque élément est représenté sous forme
+          de nœud avec des propriétés et des liens avec les autres nœuds dans
+          l’arbre. Il est constitué à sa base d’un node racine et de toute une
+          série de nodes dits « enfants » (child Nodes) qui représentent les
+          éléments, les attributs et les contenus de texte faisant partie de ce
+          « Document ».
+        </p>
+      </div>
+      <h2>Les types de nodes</h2>
+      <p>
+        En programmation web, il existe plusieurs types de nœuds (ou nodes) dans
+        le DOM (Document Object Model). Nous allons d’ailleurs voir encore les
+        principaux types de nœuds avec un exemple pour chacun d’eux.
+      </p>
+      <h2>Élément (Element node)</h2>
+      <p>
+        Ce type de nœud est le plus courant dans le DOM, représentant un élément
+        HTML. Par exemple, un élément div est représenté par un nœud de type
+        "<strong>Element</strong>".
+      </p>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="poqzxGX"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/poqzxGX"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>Attribut (attribute node)</h2>
+      <p>
+        Un attribut permet de donner des informations supplémentaires concernant
+        un élément HTML. Par exemple, une balise &ltimg /&gt peut avoir un
+        attribut "<strong>alt</strong>" permettant de donner une description
+        pour les utilisateurs ne pouvant pas afficher l’image. En DOM, les
+        attributs permettent au programmeur de manipuler les objets HTML en
+        utilisant des langages de programmation tels que JavaScript. On peut par
+        exemple utiliser des méthodes telles que "<strong>getAttribute</strong>"
+        pour lire la valeur d’un attribut, "<strong>setAttribute</strong>" pour
+        modifier la valeur d’un attribut, ou "<strong>removeAttribute</strong>"
+        pour supprimer un attribut.
+      </p>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="VwqZERM"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/VwqZERM"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>Texte (text node)</h2>
+      <p>
+        Un nœud "<strong>texte</strong>" correspond tout simplement au texte
+        contenu dans une balise. De la même façon que pour les attributs, un
+        texte peut être modifié en utilisant la DOM.
+      </p>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="mdabzgx"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/mdabzgx"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>Commentaire (comment node)</h2>
+      <p>
+        Un comment node correspond à un commentaire HTML, qui n’est donc visible
+        que dans le code par le programmeur, et qui permet de donner des
+        informations sur le programme.
+      </p>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="MWZgPdW"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/MWZgPdW"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>Type de document (document type node)</h2>
+      <p>
+        Le document type node est tout simplement la balise spécifiant du type
+        de document.
+      </p>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="oNJvaRw"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/oNJvaRw"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>Document (document node)</h2>
+      <p>
+        Le document node représente l’ensemble du document HTML ou XML, y
+        compris tous les éléments, les attributs, les "<strong
+          >text nodes</strong
+        >", les "<strong>comment nodes</strong>" et autres nœuds le composant.
+        Il est donc le nœud le plus haut dans la hiérarchie de la DOM.
+      </p>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="NWeKOVo"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/NWeKOVo"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+    </div>
+  </body>
+</html>

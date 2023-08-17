@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Le DOM Forms</title>
+  </head>
+  <body>
+    <h1>Le DOM Forms</h1>
+    <div>
+      <p>
+        L’intérêt d’une page web dynamique, c’est bien sûr d’afficher des
+        informations, mais c’est aussi de pouvoir en récolter, et de pouvoir
+        communiquer des données d’un client à un serveur. De plus en plus de
+        données sont transmises via les navigateurs notamment, de manière active
+        (l’utilisateur donne ses informations directement) ou de manière passive
+        ou transparente (à l’aide de cookies). Le développeur aura donc pour
+        travail de mettre en place des méthodes afin de récupérer des données
+        sur les visiteurs.
+      </p>
+      <p>
+        Une des meilleures façons de récupérer les données d’un visiteur de
+        manière consentie est la mise en place d’un formulaire. Dans le DOM, on
+        parle alors de DOM Forms. Le DOM Forms permettra, tout comme pour
+        l’ensemble du site, de mettre en place des formulaires dynamiques. Il
+        permet d’ajouter ou de supprimer des éléments de formulaire, de modifier
+        les attributs des éléments existants, et d’ajouter des événements pour
+        répondre aux interactions utilisateur.
+      </p>
+      <p>
+        Au niveau légal, la loi exige que le visiteur d’un site soit prévenu et
+        informé du type d’information qui peut être récupéré de manière
+        invisible et que le propriétaire du site pourra utiliser. C’est pour
+        cela que, sur chaque site, une fenêtre demande à l’utilisateur
+        d’accepter ou non les cookies utilisés par le site.
+      </p>
+      <h2>Le serveur</h2>
+      <p>
+        Un serveur, c’est une unité physique de stockage, comme un grand disque
+        dur, qui permet de stocker des millions de données, et d’y accéder de
+        manière sécurisée. C’est donc avec le serveur que le site doit faire un
+        lien lorsqu’un utilisateur remplit un formulaire sur une page web.
+      </p>
+      <h2>Fonctionnement du DOM Forms</h2>
+      <p>
+        De nombreux sites proposent à leurs utilisateurs de remplir un
+        formulaire. Ainsi, une catégorie des méthodes contenues dans le DOM est
+        adaptée à la gestion de formulaires.
+      </p>
+      <p>
+        Lorsque des informations sont entrées dans un formulaire, elles sont
+        ensuite basculées vers le serveur. Celui-ci va alors trier
+        l’information, afin de la ranger dans la case qui lui correspond.
+        Néanmoins, si une ligne entrée dans un formulaire se fait passer pour
+        une instruction au serveur, cela peut avoir des conséquences néfastes
+        (on parle alors d’injection).
+      </p>
+      <p>
+        Le DOM forms est donc équipé de méthodes, qui dès l’entrée des données
+        côté client, trient le contenu de l’information, mais aussi le type de
+        donnée, son format, sa syntaxe.
+      </p>
+      <p>
+        Le champ à remplir sera également « cerné » par un code qui filtre
+        l’information entrée par le client. Aussi ces filtres qu’on appelle des
+        « expressions régulières » (Regular Expressions ou RegEx en anglais)
+        sont-ils contenus dans le DOM (par exemple, votre mot de passe doit
+        contenir au moins 2 chiffres et 1 caractère spécial), mais peuvent-ils
+        être encore des méthodes propres à la catégorie formulaire DOM forms.
+      </p>
+      <p>
+        Il est à noter qu’afin de pouvoir communiquer des données avec un
+        serveur depuis une application web, le JavaScript n’est pas le langage
+        adapté, et on privilégiera le PHP. Le JavaScript aura seulement
+        l’objectif de rendre le formulaire dynamique pour les utilisateurs.
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Structure d’un document</title>
+  </head>
+  <body>
+    <h1>Structure d’un document</h1>
+    <div>
+      <p>
+        Ainsi, le DOM est structuré comme un arbre et, si on le compare à un
+        arbre généalogique, le « document » est le Parent de tous les éléments
+        et de tous les nodes enfants eux-mêmes contenant des éléments et des
+        nodes qui sont leurs enfants et dont ils sont les parents.
+      </p>
+      <img
+        src="02_Img/introduct-document-object-mod1_1.png"
+        alt="Image représentant le DOM"
+      />
+      <p>
+        Tous les éléments ont donc un node parent, excepté le node contenant,
+        c’est-à-dire le « document ». Celui-ci est l’élément racine, il est
+        parent de tous les autres. De même, tous les nodes ou éléments peuvent
+        avoir zéro, un ou plusieurs nodes enfants. Des éléments se situant à un
+        même niveau hiérarchique sont alors nommés des éléments frères
+        (sibling).
+      </p>
+      <h2>Création de notre document</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>Nous allons créer notre premier document en suivant ces étapes :</p>
+        <ul>
+          <li>
+            On commence par le choix du type de document. Par convention, on
+            veut qu’une page web soit établie comme un document DOCTYPE.
+            L’en-tête du document sera alors celle-ci : &lt!DOCTYPE html&gt.
+          </li>
+          <li>
+            On pourra ensuite ajouter les balises &lthtml&gt, nous permettant de
+            spécifier la nature du document.
+          </li>
+          <li>
+            Vient ensuite une partie &lthead&gt (tête du document) qui permettra
+            de donner des informations sur le document, invisibles par
+            l’utilisateur, au navigateur ou au moteur de recherche.
+          </li>
+          <li>
+            Enfin, la balise &ltbody&gt, correspondant au contenu de notre page.
+          </li>
+        </ul>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="KKbPGOO"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/KKbPGOO"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+    </div>
+  </body>
+</html>
