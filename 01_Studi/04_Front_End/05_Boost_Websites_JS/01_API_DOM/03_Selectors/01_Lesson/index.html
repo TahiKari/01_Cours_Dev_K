@@ -3,9 +3,426 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Les sélecteurs</title>
   </head>
   <body>
-    <h1></h1>
+    <h1>Les sélecteurs</h1>
+    <div>
+      <h2>Objectifs</h2>
+      <ul>
+        <li>Connaître les sélecteurs disponibles</li>
+        <li>Sélectionner des éléments du DOM</li>
+      </ul>
+      <h2>Mise en situation</h2>
+      <p>
+        Comme nous l'avons évoqué précédemment, pour manipuler le DOM, nous
+        aurons besoin de sélectionner ses éléments. Nous pourrons faire appel à
+        des méthodes de l'interface Document. Nous allons voir ici l'ensemble de
+        ces méthodes et leurs subtilités.
+      </p>
+      <h2>document.getElementsByTagName('p')</h2>
+      <p>
+        Cette méthode renvoie la liste des éléments du DOM portant le nom passé
+        en paramètre. Nous l'utiliserons pour sélectionner directement des
+        balises HTML.
+      </p>
+      <h2>element.item(0).name</h2>
+      <p>
+        La méthode item() renvoie un nœud spécifié dans un objet NodeList. Les
+        nœuds sont triés comme ils apparaissent dans le code source, et l'index
+        commence à 0. C'est-à-dire que cette méthode renvoie la valeur de
+        l'attribut name dans la balise input.
+      </p>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="zYyNGev"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/zYyNGev"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img
+          src="02_Img/getElementByTagName.jpg"
+          alt="Image selector document.getElementsByTagName('p')"
+        />
+        <p>
+          Nous obtenons une HTMLCollection, c'est-à-dire un tableau des éléments
+          &ltp&gt&lt/p&gt présents dans le DOM.
+        </p>
+      </div>
+      <h2>document.getElementById('element')</h2>
+      <p>
+        Cette méthode renvoie l'élément du DOM qui possède l'ID #element. Nous
+        l'utiliserons pour sélectionner un élément bien précis.
+      </p>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="dywNorR"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/dywNorR"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img
+          src="02_Img/getElementById.jpg"
+          alt="Image selector document.getElementById('element')"
+        />
+        <p>L'élément sélectionné est bien la balise p portant l'ID #element.</p>
+      </div>
+      <h3>Fondamental</h3>
+      <div>
+        <p>
+          Un <strong>identifiant</strong> doit être <strong>unique</strong> dans
+          une page web. Si plusieurs éléments possèdent le même ID, la méthode
+          retournera le premier élément trouvé.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="zYyNGXr"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/zYyNGXr"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img
+          src="02_Img/getElementById (1).jpg"
+          alt="Image Exemple document.getElementById"
+        />
+        <p>
+          L'élément sélectionné est le premier élément portant l'ID #element
+          trouvé.
+        </p>
+      </div>
+      <h2>document.getElementsByName('element')</h2>
+      <p>
+        Cette méthode renvoie la liste des éléments du DOM portant l'attribut
+        name passé en paramètre. Il nous sera particulièrement utile pour
+        sélectionner des éléments de formulaire.
+      </p>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="gOZgpyz"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/gOZgpyz"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img
+          src="02_Img/getElementByName.jpg"
+          alt="Image selector getElementByName"
+        />
+        <p>
+          Nous obtenons une HTMLCollection comportant les éléments ayant
+          l'attribut name="lastname".
+        </p>
+      </div>
+      <h2>document.getElementsByClassName('success')</h2>
+      <p>
+        Cette méthode renvoie la liste des éléments du DOM ayant pour attribut
+        class="success". Nous l'utiliserons pour sélectionner un ensemble
+        d'éléments qui ne sont pas forcément les mêmes balises.
+      </p>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="dywNoER"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/dywNoER"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img
+          src="02_Img/getElementByClassName.jpg"
+          alt="Image selector document.getElementsByClassName"
+        />
+        <p>
+          Nous obtenons une HTMLCollection avec les deux éléments possédant la
+          classe success.
+        </p>
+      </div>
+      <h2>document.querySelector('p.color')</h2>
+      <p>
+        Cette méthode renvoie le premier élément du DOM correspondant au
+        sélecteur CSS p.color.
+      </p>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="NWedqVe"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/NWedqVe"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img
+          src="02_Img/querySelector.jpg"
+          alt="Image selector document.querySelector"
+        />
+        <p>Nous obtenons l'élément p ayant la classe color.</p>
+        <p>
+          Il est également possible d'utiliser le sélecteur
+          document.querySelectorAll() : ce dernier va retourner cette fois-ci
+          tous les éléments qui correspondent au sélecteur CSS p.color.
+        </p>
+      </div>
+      <h3>Remarque</h3>
+      <div>
+        <p>
+          Les sélecteurs peuvent être enchaînés. Dans un soucis de performance,
+          cette technique nous permettra de préciser notre recherche dans le DOM
+          et ainsi d'éviter les recherches trop longues.
+        </p>
+      </div>
+      <h3>Attention</h3>
+      <div>
+        <p>
+          En termes de performances, nous préférerons l'utilisation des
+          sélecteurs querySelector et getElementById, car, une fois l'élément
+          trouvé, la recherche dans le DOM sera interrompue. En comparaison,
+          getElementsByClassName ou getElementsByTagName devront parcourir
+          l'ensemble du DOM afin de trouver tous les éléments correspondants.
+          Toutefois, il est préférable d'utiliser QuerySelector car il permet de
+          retourner le premier élément qui correspond à un ou plusieurs
+          sélecteurs CSS spécifiés dans la page HTML. Il s'agit du sélecteur le
+          plus utilisé en langage JavaScript. Mais pour renvoyer toutes les
+          correspondances, il faut plutôt utiliser la méthode
+          querySelectorAll().
+        </p>
+        <p>
+          D'une manière générale, la manipulation du DOM est lente et risque de
+          ralentir significativement votre application.
+        </p>
+        <p>
+          Nous éviterons par exemple les recherches trop génériques sur des
+          éléments qui reviennent souvent, tels que :
+        </p>
+        <ul>
+          <li>document.getElementsByTagName('div')</li>
+          <li>document.getElementsByClassName('maClass')</li>
+        </ul>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="WNLRvqm"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/WNLRvqm"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img
+          src="02_Img/selecteurs_enchaines.jpg"
+          alt="Image selector selecteurs enchainés"
+        />
+        <p>
+          Ici, l’enchaînement des sélecteurs getElementById et
+          getElementsByClassName nous permet de rechercher uniquement les
+          éléments ayant la classe text dans l'élément ayant l'ID #p1. La
+          recherche dans l'élément p2 n'a pas lieu.
+        </p>
+      </div>
+      <h2>Interagir avec le CSS avec .style</h2>
+      <p>
+        En JavaScript, vous pouvez parfois vouloir récupérer les styles CSS
+        appliqués à un élément par le biais des feuilles de style. Il existe
+        plusieurs façons de le faire, selon que vous souhaitez récupérer les
+        styles en ligne ou les styles rendus. La propriété DOM style est
+        utilisée pour appliquer le CSS à un élément HTML.
+      </p>
+      <h2>À retenir</h2>
+      <h3>Syntaxe</h3>
+      <div>
+        L'utilisation d'un sélecteur se fait à partir de l'élément document. Il
+        possède des méthodes que nous pouvons invoquer selon nos besoins :
+      </div>
+      <div>
+        <ul>
+          <li>
+            document.getElementById pour sélectionner un élément par son id.
+          </li>
+          <li>
+            document.getElementsByClassName pour sélectionner des éléments par
+            leur attribut class.
+          </li>
+          <li>
+            document.getElementsByName pour sélectionner des éléments par leur
+            attribut name.
+          </li>
+          <li>
+            document.getElementsByTagName pour sélectionner des éléments par
+            leur nom de balise HTML.
+          </li>
+          <li>
+            document.querySelector pour sélectionner des éléments par les
+            sélecteurs CSS.
+          </li>
+        </ul>
+      </div>
+      <h3>Complément</h3>
+      <div>
+        <a
+          href="https://developer.mozilla.org/fr/docs/Web/API/HTMLCollection"
+          target="_blank"
+          rel="alternate"
+          >HTMLCollection
+        </a>
+      </div>
+    </div>
   </body>
 </html>

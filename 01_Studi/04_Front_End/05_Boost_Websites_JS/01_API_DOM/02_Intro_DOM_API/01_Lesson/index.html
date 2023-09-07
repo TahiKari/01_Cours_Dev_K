@@ -3,9 +3,418 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Introduction à l'API DOM</title>
   </head>
   <body>
-    <h1></h1>
+    <h1>Introduction à l'API DOM</h1>
+    <div>
+      <h2>Objectifs</h2>
+      <ul>
+        <li>Savoir définir le DOM</li>
+        <li>Savoir définir un nœud</li>
+        <li>Décrire le DOM</li>
+      </ul>
+      <h2>Mise en situation</h2>
+      <p>
+        Une page web est un document HTML pouvant être affiché dans un
+        navigateur. Le DOM permet de représenter cette page sous la forme d'un
+        ensemble d'objets. On le représente généralement sous la forme d'un
+        <strong>arbre</strong> dans lequel les ramifications sont les éléments
+        HTML et CSS. Nous allons voir ici les éléments qui le composent.
+      </p>
+      <h3>Définition</h3>
+      <div>
+        <p>
+          Le <strong>DOM</strong> (pour Document Object Model) est une interface
+          de programmation pour les documents HTML et XML. Il fournit une page
+          dont les programmes peuvent modifier la structure, son style et son
+          contenu. Cette représentation du document permet de le voir comme un
+          groupe structuré (un arbre) de nœuds et d'objets possédant différentes
+          propriétés et méthodes. Fondamentalement, il relie les pages web aux
+          scripts ou langages de programmation. Il est régi par les normes de la
+          W3C.
+        </p>
+      </div>
+      <p>
+        Tous les éléments d'un document, c'est-à-dire le document lui-même, les
+        en-têtes, les blocs de contenu &ltdiv&gt<&lt/div&gt, les paragraphes
+        &ltp&gt&lt/p&gt, le style color : #FFFFFF, le texte et bien d'autres
+        font partie du DOM.
+      </p>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="OJrPBeO"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/OJrPBeO"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          La page web représentée par le code HTML ci-dessus peut être modélisée
+          par le schéma ci-dessous.
+        </p>
+        <img src="02_Img/dom.jpg" alt="Imaghe du DOM" />
+      </div>
+      <h2>Comment accéder au DOM ?</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Il n'y a rien à installer ou à télécharger pour manipuler le DOM.
+          C'est notre navigateur qui implémente un DOM pour rendre accessibles
+          nos pages web à JavaScript. Nous pouvons donc commencer à utiliser
+          l'API.
+        </p>
+        <p>
+          Les points d'entrée principaux sont les éléments
+          <strong>document</strong> et <strong>window</strong> :
+        </p>
+        <ul>
+          <li>
+            document représente le contenu de la page web, autrement dit
+            l'arborescence du DOM : nous allons grâce à lui parcourir les
+            éléments, en ajouter ou en supprimer.
+          </li>
+          <li>
+            window représente la fenêtre du navigateur, dans laquelle est chargé
+            un document.
+          </li>
+        </ul>
+      </div>
+      <h2>Window</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="abPdWbL"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/abPdWbL"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, la popup avec le message "Bonjour" sera affichée
+          quand la page web sera entièrement chargée.
+        </p>
+        <img src="02_Img/window.jpg" alt="Image Pop-up de la page chargée" />
+      </div>
+      <h2>Document</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="bGOEWNb"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/bGOEWNb"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, nous accédons à notre &ltbody&gt&lt/body&gt grâce à
+          l'élément document, puis body, puis la propriété innerHTML qui permet
+          d'afficher l'arborescence du DOM à partir de l'élément souhaité (ici,
+          body).
+        </p>
+        <img
+          src="02_Img/document.jpg"
+          alt="Image de l'arborescence du DOM a partir de l'élément souhaité (ici body)"
+        />
+      </div>
+      <h2>Qu'est-ce qu'un nœud ?</h2>
+      <div>
+        <p>
+          Un nœud (ou node) est tout simplement un élément du DOM : un texte,
+          une balise HTML, ou un attribut par exemple. Nous pourrons grâce à des
+          méthodes de l'API accéder aux nœuds, les modifier, créer des nœuds
+          frères, parents, enfants...
+        </p>
+        <img src="02_Img/noeud.jpg" alt="Imgae d'un noeud du DOM" />
+        <ul>
+          <li>
+            Nœud frère : il se situe au même niveau dans l'arborescence. <br />
+            &ltdiv&gt&ltp class="frere"&gt&lt/p&gt&ltp
+            class="frere"&gt&lt/p&gt&lt/div&gt
+          </li>
+          <li>
+            Nœud parent : il se situe un niveau au-dessus dans l'arborescence.
+            <br />
+            &ltdiv id="parent-de-p"&gt&ltp&gt&lt/p&gt&lt/div&gt
+          </li>
+          <li>
+            Nœud enfant : il se situe un niveau en dessous dans l'arborescence.
+            <br />
+            &ltdiv&ht&ltp id="enfant-de-div"&gt&lt/p&gt&lt/div&gt
+          </li>
+        </ul>
+      </div>
+      <h2>Exemple d'accès à un nœud</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="zYyrwGd"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/zYyrwGd"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Pour sélectionner le nœud portant l'attribut id="nœud", nous utilisons
+          le sélecteur getElementById(), que nous verrons en détails dans le
+          prochain chapitre.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="LYMGyVm"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/LYMGyVm"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>Affichons dans la console notre nœud et son nœud parent.</p>
+        <img src="02_Img/noeud_li.jpg" alt="Image noeud <li>" />
+      </div>
+      <h2>Explication de innerHTML, innerText et textContent</h2>
+      <h3>Méthode</h3>
+      <div>
+        <h4>Qu'est-ce que innerHTML ?</h4>
+        <p>
+          La propriété innerHTML vous permet d'obtenir ou de définir le balisage
+          HTML contenu dans une balise HTML.
+        </p>
+        <p>Exemple :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="MWZKmab"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/MWZKmab"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+
+      <div>
+        <h4>Qu'est-ce que innerText ?</h4>
+        <p>
+          innerText définit ou renvoie le contenu textuel du nœud spécifié et de
+          tous les nœuds enfants.
+        </p>
+        <p>Exemple :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="RwErVWE"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/RwErVWE"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+
+      <div>
+        <h4>Qu'est-ce que textContent ?</h4>
+        <p>
+          La propriété textContent définit ou renvoie le contenu textuel du nœud
+          spécifié, et de tous ses enfants. Si vous définissez la propriété
+          textContent, tous les nœuds enfants seront supprimés et remplacés par
+          un seul nœud Text contenant la chaîne spécifiée.
+        </p>
+        <p>Exemple :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="MWZKmKb"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/MWZKmKb"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>À retenir</h2>
+      <h3>Syntaxe</h3>
+      <div>
+        <ul>
+          <li>
+            L'accession aux éléments du DOM est rendue possible grâce à
+            l'élément document. Il s'agit de notre point d'entrée principal pour
+            toutes les manipulations que nous souhaiterons faire sur notre page
+            web : document.body, document.getElementById('id').
+          </li>
+        </ul>
+      </div>
+      <a
+        href="https://developer.mozilla.org/fr/docs/Web/API/Document_Object_Model/Introduction"
+        target="_blank"
+        rel="alternate"
+        >Définition officielle du DOM
+      </a>
+      <a href="https://www.w3c.fr/" target="_blank" rel="alternate">W3C</a>
+    </div>
   </body>
 </html>
