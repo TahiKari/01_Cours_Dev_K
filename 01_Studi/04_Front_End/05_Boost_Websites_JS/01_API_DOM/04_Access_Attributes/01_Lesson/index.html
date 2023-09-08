@@ -3,9 +3,397 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Accéder aux attributs</title>
   </head>
   <body>
-    <h1></h1>
+    <h1>Accéder aux attributs</h1>
+    <div>
+      <h2>Objectifs</h2>
+      <ul>
+        <li>
+          Vérifier qu'un élément possède des attributs ou un attribut en
+          particulier
+        </li>
+        <li>Accéder aux attributs d'un élément</li>
+      </ul>
+      <h2>Mise en situation</h2>
+      <p>
+        Pour aller plus loin dans le parcours du DOM, nous allons voir que l'API
+        DOM nous met à disposition des propriétés et méthodes pour accéder aux
+        attributs des éléments sélectionnés. Cela nous permettra, par exemple,
+        de filtrer le résultat de notre recherche.
+      </p>
+      <h2>Element.attributes</h2>
+      <p>
+        Cette propriété nous permet d'accéder à une liste d'attributs déclarés
+        dans le nœud spécifié. Nous l'utiliserons pour parser l'ensemble des
+        attributs d'une balise HTML.
+      </p>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="oNJBMdE"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/oNJBMdE"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img src="02_Img/attributes.jpg" alt="Image attributes" />
+        <p>
+          attributes nous permet d'obtenir tous les attributs du champ du
+          formulaire. Grâce à une boucle, nous pouvons accéder à chacun d'entre
+          eux.
+        </p>
+      </div>
+      <h2>Element.getAttribute('name')</h2>
+      <p>
+        Cette méthode nous renvoie la valeur de l'attribut passé en paramètre,
+        s'il existe dans le DOM. Nous l'utiliserons pour accéder à la valeur
+        d'un attribut en particulier d'un élément.
+      </p>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="yLGgqEe"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/yLGgqEe"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img src="02_Img/getAttribute.jpg" alt="Image getAttribute" />
+        <p>
+          getAttribute nous permettra de filtrer les résultats d'une recherche
+          dans le DOM. Par exemple, nous pourrons sélectionner toutes les
+          balises input d'un formulaire, sauf celles qui possèdent l'attribut
+          class="info".
+        </p>
+      </div>
+      <h2>Element.getAttributeNames()</h2>
+      <p>
+        Cette méthode nous renvoie une liste des noms d'attributs d'un élément
+        du DOM.
+      </p>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="yLGgqqe"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/yLGgqqe"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img src="02_Img/getAttributeNames.jpg" alt="Image getAttributeNames" />
+        <p>
+          getAttributeNames() nous permettra de vérifier qu'un élément possède
+          bien un attribut, par exemple qu'une balise input possède bien
+          l'attribut type.
+        </p>
+      </div>
+      <h2>Element.getAttributeNode('id')</h2>
+      <p>
+        Cette méthode nous renvoie le nœud d'attribut spécifié en paramètre.
+        Nous l'utiliserons pour accéder à un élément attribut en particulier
+        dans le DOM.
+      </p>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="QWzdBVw"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/QWzdBVw"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img src="02_Img/getAttributeNode.jpg" alt="Image getAttributeNode" />
+        <p>
+          Nous obtenons le nœud attribut id correspondant à la balise input avec
+          l'ID #lastname.
+        </p>
+      </div>
+      <h2>Element.hasAttribute('id')</h2>
+      <p>
+        Cette méthode nous renvoie une valeur booléenne (vrai ou faux) si
+        l'élément possède le nom d'attribut passé en paramètre. Nous
+        l'utiliserons pour filtrer notre résultat de recherche dans le DOM ou
+        bien pour associer des scripts à certains éléments et d'autres non.
+      </p>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="ExGZpeX"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/ExGZpeX"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img src="02_Img/hasAttribute.jpg" alt="Image hasAttribute" />
+        <p>
+          Nous obtenons tous les éléments correspondant aux balises li, sauf
+          celle qui n'a pas l'attribut class.
+        </p>
+      </div>
+      <h2>Element.hasAttributes()</h2>
+      <p>
+        Cette méthode nous renvoie une valeur booléenne (vrai ou faux) si
+        l'élément possède au moins un attribut ou aucun. Là aussi, nous pourrons
+        l'utiliser pour filtrer nos résultats de recherche dans le DOM et pour
+        associer ou non des scripts à certains éléments.
+      </p>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="oNJBMaq"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/oNJBMaq"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          La balise ul ne possède aucun attribut : hasAttributes nous renvoie
+          donc la valeur false.
+        </p>
+        <img src="02_Img/hasAttributes.jpg" alt="Image hasAttributes" />
+      </div>
+      <h3>Complément</h3>
+      <div>
+        <p>
+          L'un des intérêts de pouvoir parcourir et sélectionner les attributs
+          du DOM est d'en ajouter, de les modifier ou les supprimer. Pour ce
+          faire, nous pourrons utiliser deux méthodes de l'API :
+          setAttribute('name', 'valeur') et removeAttribute('name').
+        </p>
+        <p>
+          setAttribute nous permettra d'ajouter un nouvel attribut ou de
+          modifier un attribut existant en précisant en paramètres le nom de
+          l'attribut, puis sa valeur.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="vYvgaQV"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/vYvgaQV"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img src="02_Img/setAttribute.jpg" alt="Image setAttribute" />
+        <p>
+          removeAttribute nous permettra de supprimer un attribut en précisant
+          en paramètre son nom.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="yLGgqGJ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/yLGgqGJ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img src="02_Img/removeAttribute.jpg" alt="Image removeAttribute" />
+      </div>
+      <h2>À retenir</h2>
+      <h3>Syntaxe</h3>
+      <div>
+        <p>
+          L'accès aux attributs se fait à partir d'un élément sélectionné dans
+          le DOM :
+        </p>
+        <ul>
+          <li>
+            element.attributes : propriété permettant d'accéder à la liste
+            d'attributs d'un nœud.
+          </li>
+          <li>
+            element.getAttribute('name) : méthode permettant d'obtenir la valeur
+            de l'attribut donné pour un nœud.
+          </li>
+          <li>
+            element.getAttributeNames() : méthode permettant d'obtenir la liste
+            des noms d'attributs d'un nœud.
+          </li>
+          <li>
+            element.getAttributeNode('id') : méthode permettant d'obtenir un
+            nœud d'attribut donné.
+          </li>
+          <li>
+            element.hasAttribute('id') : méthode permettant de vérifier si un
+            nœud possède l'attribut donné.
+          </li>
+        </ul>
+      </div>
+    </div>
   </body>
 </html>

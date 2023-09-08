@@ -1,34 +1,24 @@
-// Exemple 
-/*
+// Ma solution 
+let inputText = document.getElementById('email')
 
-*/
+for(let attribut of inputText.attributes) {
+  console.log(attribut)
+}
 
-console.log("-----------------------------------------------")
+let inputTextId = inputText.getAttribute('id')
+console.log(inputTextId)
 
-// Exemple 
-/*
+let checkbox = document.getElementById('connexion')
 
-*/
+if (checkbox.hasAttribute('checked')) {
+  console.log(checkbox.getAttribute('checked'))
+  checkbox.removeAttribute('checked')
+}
 
-console.log("-----------------------------------------------")
+let form = document.querySelector('form')
 
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
+for(element of form.elements) {
+  if (!element.hasAttributes()) {
+    console.log(`Cette élément n'a pas d'attributs : ${element}`);
+  }
+}
