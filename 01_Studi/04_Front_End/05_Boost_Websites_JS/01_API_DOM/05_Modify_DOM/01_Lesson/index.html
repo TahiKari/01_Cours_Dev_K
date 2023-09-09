@@ -3,9 +3,266 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Modifier le DOM</title>
   </head>
   <body>
-    <h1></h1>
+    <h1>Modifier le DOM</h1>
+    <div>
+      <h2>Objectif</h2>
+      <ul>
+        <li>Modifier une page web</li>
+      </ul>
+      <h2>Mise en situation</h2>
+      <p>
+        Nous savons dorénavant parcourir le DOM et sélectionner des éléments. Il
+        peut être intéressant de connaître les méthodes qui vont nous permettre
+        de le modifier. Concrètement, nous pourrions réaliser une page web
+        entièrement en JavaScript grâce à l'API DOM, mais nous verrons qu'il est
+        préférable de se concentrer sur des choses utiles afin d'éviter des
+        lenteurs à notre application.
+      </p>
+      <h2>document.createElement('div')</h2>
+      <p>
+        Cette méthode nous permet de créer l'élément HTML spécifié en paramètre.
+      </p>
+      <h3>Attention</h3>
+      <div>
+        <p>
+          Elle n'ajoute pas l'élément dans le DOM : nous l'utiliserons avec
+          l'une des méthodes que nous verrons ci-dessous.
+        </p>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="OJrpMRL"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/OJrpMRL"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Nous avons créé ici un troisième élément li prêt à être ajouté à notre
+          page web.
+        </p>
+      </div>
+      <h2>Element.append()</h2>
+      <p>
+        Cette méthode nous permet d'ajouter des nœuds
+        <strong>après le dernier enfant</strong> de l'élément sur lequel elle
+        est invoquée. Nous l'utiliserons pour ajouter des éléments à notre page
+        après d'autres éléments.
+      </p>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="rNoyxMz"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/rNoyxMz"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img src="02_Img/append.jpg" alt="Image append" />
+        <p>
+          La méthode append() permet d'ajouter des éléments HTML, mais également
+          directement du texte. Ainsi, nous aurions pu remplacer li.innerText =
+          'item3' par li.append('item 3').
+        </p>
+      </div>
+      <h3>Complément</h3>
+      <div>
+        <p>
+          Il existe une méthode appendChild() permettant également d'ajouter
+          après un autre élément de la page. Contrairement à append(), elle ne
+          permet pas d'ajouter directement du texte et ne permet pas l'ajout de
+          plusieurs éléments.
+        </p>
+      </div>
+      <h2>Element.prepend('div')</h2>
+      <p>
+        Cette méthode nous permet d'ajouter des nœuds
+        <strong>avant le premier enfant</strong> de l'élément sur lequel elle
+        est invoquée. Nous l'utiliserons pour ajouter des éléments à notre page
+        avant d'autres éléments.
+      </p>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="KKbWVNg"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/KKbWVNg"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img src="02_Img/prepend.jpg" alt="Image prepend" />
+        <p>
+          À l'instar de append(), nous pouvons ajouter des éléments HTML et du
+          texte à notre page web.
+        </p>
+      </div>
+      <h2>Element.remove()</h2>
+      <p>
+        Cette méthode nous permet tout simplement de supprimer un nœud du DOM.
+      </p>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="LYMWGbJ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/LYMWGbJ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img src="02_Img/remove.jpg" alt="Image remove" />
+        <p>Nous avons supprimé l'élément portant l'ID #item2 de la liste.</p>
+      </div>
+      <h3>Complément</h3>
+      <div>
+        <p>
+          Nous pourrions avoir envie de ne pas supprimer définitivement un
+          élément du DOM : soit pour le remettre ensuite, soit pour le déplacer.
+          La méthode removeChild('child') pourra alors nous être utile. Elle va
+          supprimer le nœud enfant spécifié et nous le retourner. Nous pourrons
+          donc le stocker pour l'utiliser de nouveau plus tard.
+        </p>
+      </div>
+      <h3>Attention</h3>
+      <div>
+        <p>
+          En termes de performance, la modification du DOM peut être coûteuse.
+          Elle impose un parcours en profondeur et le déplacement d'objets par
+          rapport à d'autres, ce qui peut être lourd en fonction de la taille de
+          notre application. D'une manière générale, il faut éviter :
+        </p>
+        <ul>
+          <li>l'utilisation de l'API DOM pour écrire du CSS</li>
+          <li>l'écriture complète d'une page en JavaScript</li>
+          <li>la création d'une structure trop profonde</li>
+        </ul>
+      </div>
+      <h2>À retenir</h2>
+      <h3>Syntaxe</h3>
+      <div>
+        <p>
+          Après avoir sélectionné un élément dans le DOM, nous pouvons le
+          modifier en utilisant plusieurs méthodes de l'API DOM :
+        </p>
+        <ul>
+          <li>createElement() qui permet de créer un élément HTML.</li>
+          <li>
+            append() qui permet d'ajouter un élément HTML ou texte après un
+            autre élément du DOM.
+          </li>
+          <li>
+            prepend() qui permet d'ajouter un élément HTML ou texte avant un
+            autre élément du DOM.
+          </li>
+          <li>remove() qui permet de supprimer un élément du DOM.</li>
+        </ul>
+      </div>
+      <h3>Complément</h3>
+      <div>
+        <a
+          href="https://developer.mozilla.org/fr/docs/Web/API/Node/appendChild"
+          target="_blank"
+          rel="alternate"
+          >appendChild()
+        </a>
+        <a
+          href="https://developer.mozilla.org/fr/docs/Web/API/Node/removeChild"
+          target="_blank"
+          rel="alternate"
+          >removeChild()
+        </a>
+      </div>
+    </div>
   </body>
 </html>

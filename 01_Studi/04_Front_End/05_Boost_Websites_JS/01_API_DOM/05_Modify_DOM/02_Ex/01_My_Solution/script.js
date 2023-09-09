@@ -1,34 +1,21 @@
-// Exemple 
-/*
+// Ma solution
 
-*/
+// Ajoutez un titre h3 au-dessus de la div principale
+let contenu = document.getElementById('contenu')
 
-console.log("-----------------------------------------------")
+let h3 = document.createElement('h3')
+h3.append('Titre de la section')
+document.body.prepend(h3)
 
-// Exemple 
-/*
+// Suppression des items de la liste.
+let items = document.getElementsByTagName('li')
 
-*/
+for (item of Array.from(items)) {
+  item.remove()
+}
 
-console.log("-----------------------------------------------")
+// Inversion des paragraphes.
+let premierParagraphe = contenu.firstElementChild
+premierParagraphe.remove()
 
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
+contenu.append(premierParagraphe)
