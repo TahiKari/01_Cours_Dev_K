@@ -3,9 +3,140 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Introduction à la programmation événementielle en JavaScript</title>
   </head>
   <body>
-    <h1></h1>
+    <h1>Introduction à la programmation événementielle en JavaScript</h1>
+    <div>
+      <h2>Objectif</h2>
+      <ul>
+        <li>Comprendre la mécanique d’un évènement en javaScript</li>
+      </ul>
+      <h2>Mise en situation</h2>
+      <p>
+        En JavaScript, pour réaliser de la programmation événementielle, nous
+        serons amenés à manipuler différents objets, éléments, événements et
+        différentes fonctions. Ces notions devront nous être familières pour la
+        mise en place d'interactions entre l'utilisateur et notre application.
+        Nous parlerons alors d'interface web réactive.
+      </p>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Un événement est une action qui se produit dans le navigateur web, que
+          celui-ci vous renvoie afin que vous puissiez y répondre.
+        </p>
+        <p>
+          Par exemple, lorsque les utilisateurs cliquent sur un bouton d'une
+          page web, vous souhaiterez peut-être répondre à cet événement de
+          ’click’ en affichant une boîte de dialogue.
+        </p>
+        <p>
+          Chaque événement « click » va donc déclencher une fonction affichant
+          une boîte de dialogue.
+        </p>
+        <p>
+          Le lien entre l'événement et la fonction déclenchée qui se fait par
+          l’intermédiaire d’un gestionnaire d'événements est également appelé
+          écouteur d'événements (event listener). Il écoute l'événement et
+          s'exécute lorsque celui-ci se produit.
+        </p>
+        <p>Supposons que vous ayez le code suivant :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="eYbvXJq"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/eYbvXJq"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>Fonctionnement :</p>
+        <ul>
+          <li>
+            Première ligne : on sélectionne l’élément du DOM que l’on souhaite
+            écouter, celui qui va être à l’origine de l'événement, dans notre
+            cas le bouton.
+          </li>
+          <li>
+            Puis on crée une fonction nommée display, utilisant une méthode
+            alert()afin d’afficher une boîte de dialogue
+          </li>
+          <li>
+            Enfin on lie notre élément du DOM et la fonction à l’aide du
+            gestionnaire d'événement addEventListener(), ce gestionnaire prend
+            ici 2 paramètres, le premier le type d’évènement sur lequel il doit
+            se déclencher, ici un click et le second paramètre, le nom de la
+            fonction qu’il déclenche display.
+          </li>
+        </ul>
+        <p>Fonctionne aussi avec une fonction anonyme.</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="BavWbKx"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/BavWbKx"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>À retenir</h2>
+      <h3>Syntaxe</h3>
+      <div>
+        <p>
+          En javascript la programmation événementielle est composé au minimum
+          de trois éléments:
+        </p>
+        <ul>
+          <li>La sélection d’un élément du DOM</li>
+          <li>Une fonction</li>
+          <li>
+            Un gestionnaire d'événement pour lier l’élément du DOM et la
+            fonction à un événement.
+          </li>
+        </ul>
+      </div>
+    </div>
   </body>
 </html>
