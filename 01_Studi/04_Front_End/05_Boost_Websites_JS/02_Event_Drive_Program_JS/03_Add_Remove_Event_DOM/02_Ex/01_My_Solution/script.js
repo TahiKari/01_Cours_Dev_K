@@ -1,34 +1,34 @@
-// Exemple 
-/*
+// Ma solution
+let articleNumber = 0
 
-*/
+const shop = document.getElementById('shop')
+const btnAddArticle = document.getElementById('add')
+const btnDeleteArticle = document.getElementById('delete')
+const numberArticle = document.getElementById('number-article')
 
-console.log("-----------------------------------------------")
+const addArticle = () => {
+  articleNumber++
+  numberArticle.textContent = articleNumber
+  if (articleNumber > 0) {
+    shop.style.display = "block"
+  }
+}
 
-// Exemple 
-/*
+const deleteArticle = () => {
+  if (articleNumber > 0) {
+    articleNumber--
+    numberArticle.textContent = articleNumber
+    if (articleNumber === 0) {
+      shop.style.display = "none"
+    }
+  }
+}
 
-*/
+const goToShop = () => {
+  btnAddArticle.removeEventListener('click', addArticle)
+  btnDeleteArticle.removeEventListener('click', deleteArticle)
+}
 
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
+shop.addEventListener('click', goToShop)
+btnAddArticle.addEventListener('click', addArticle)
+btnDeleteArticle.addEventListener('click', deleteArticle)
