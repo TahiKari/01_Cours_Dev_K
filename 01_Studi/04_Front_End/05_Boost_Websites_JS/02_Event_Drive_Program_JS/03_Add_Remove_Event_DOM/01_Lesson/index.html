@@ -3,9 +3,463 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Ajouter/Supprimer un événement au DOM</title>
   </head>
   <body>
-    <h1></h1>
+    <h1>Ajouter/Supprimer un événement au DOM</h1>
+    <div>
+      <h2>Objectif</h2>
+      <ul>
+        <li>
+          Ajouter un événement à la liste des écouteurs d'événements du DOM
+        </li>
+        <li>
+          Supprimer un événement de la liste des écouteurs d'événements du DOM
+        </li>
+      </ul>
+      <h2>Mise en situation</h2>
+      <p>
+        Selon les besoins de notre application et les fonctionnalités que nous
+        aurons à développer, nous devons ajouter ou supprimer des événements.
+        Nous allons voir quelles méthodes JavaScript sont à votre disposition
+        pour manipuler des événements.
+      </p>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Pour créer un événement sur un élément du DOM, il faut commencer par
+          cibler cet élément. Comme nous l'avons vu, des méthodes sont
+          disponibles sur l'objet document, appelées des sélecteurs.
+        </p>
+        <ul>
+          <li>
+            document.getElementById('title') : renvoie l'élément de DOM qui
+            possède l'id #title. Pour rappel, un identifiant doit être unique
+            dans la page. Dans le cas de multiples éléments qui auraient le même
+            id, le navigateur affichera un warning dans la console et
+            getElementById aura un résultat imprédictible.
+          </li>
+          <li>
+            document.getElementsByName('email-input') : renvoie un tableau
+            d'éléments de DOM qui possèdent un attribut name email-input. Comme
+            le laisse supposer le nom de la méthode avec le mot "element" au
+            pluriel, dans le cas où un seul élément est trouvé par le sélecteur,
+            cet élément sera tout de même inclus dans un tableau.
+          </li>
+          <li>
+            document.getElementsByTagName('p') : renvoie un tableau d'éléments
+            de DOM qui correspondent à la balise p.
+          </li>
+          <li>
+            document.getElementsByClassName('navbar') : renvoie un tableau
+            d'éléments de DOM qui correspondent à la classe CSS navbar.
+          </li>
+        </ul>
+        <p>
+          Ces 4 méthodes sont performantes mais limitées avec des pages ou
+          applications complexes. Elles se révèlent peu souples car nécessitent
+          de faire appel à des boucles, diverses opérations algorithmiques et
+          des filtres sur les résultats obtenus pour pouvoir obtenir une liste
+          d'éléments.
+        </p>
+        <p>
+          Avec deux nouvelles fonctions introduites par l'API Selectors, la
+          syntaxe permet de faire appel aux sélecteurs CSS. On applique en
+          général ces deux méthodes à partir de la racine document.
+        </p>
+        <ul>
+          <li>
+            document.querySelector('h3.subtitle') : renvoie l'élément DOM trouvé
+            qui correspond au sélecteur CSS h3.subtitle. Ce sélecteur renverra
+            null si aucune valeur n'est trouvée. Dans le cas où le sélecteur
+            trouverait plusieurs résultats, le premier résultat trouvé sera
+            renvoyé.
+          </li>
+        </ul>
+        <p>Méthode la plus recommandée</p>
+        <ul>
+          <li>
+            document.querySelector('h3.subtitle') : renvoie le premier élément
+            DOM trouvé qui correspond au sélecteur CSS h3.subtitle. Ce sélecteur
+            renverra null si aucune valeur n'est trouvée. Dans le cas où le
+            sélecteur trouverait plusieurs résultats, le premier résultat trouvé
+            sera renvoyé.
+          </li>
+        </ul>
+        <p>Méthode la moins recommandée:</p>
+        <ul>
+          <li>
+            querySelectorAll('h3.subtitle') : retourne tous les éléments
+            satisfaisant au sélecteur h3.subtitle, dans l'ordre dans lesquels
+            ils apparaissent dans l'arbre du document.
+          </li>
+        </ul>
+        <p>
+          Le type de retour est une NodeList, qui est vide si rien n'est trouvé.
+        </p>
+      </div>
+      <h3>Fondamental</h3>
+      <div>
+        <p>
+          Les sélecteurs vont nous permettre de sélectionner un ou plusieurs
+          éléments du DOM. Il doivent être utilisés sur l'objet JavaScript
+          document, qui est le point d'entrée de notre page web.
+        </p>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="xxmdPKx"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/xxmdPKx"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h3>Complément</h3>
+      <p>Nous pouvons également enchaîner les sélecteurs :</p>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="ZEVKazw"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/ZEVKazw"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>AddEventListener</h2>
+      <p>
+        Une fois notre élément de DOM sélectionné, nous pouvons appeler la
+        méthode addEventListener() pour lui lier un événement. Comme nous
+        l'avons vu, cette méthode prend généralement deux paramètres : le type
+        d'événement et une fonction, qui sera appelée au moment du déclenchement
+        de cet événement.
+      </p>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="GRPmORm"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/GRPmORm"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <p>Paramètres obligatoires :</p>
+      <ul>
+        <li>
+          type : une chaîne de caractères représentant le type d'événement à
+          écouter (click, mouseenter, keyup, etc.).
+        </li>
+        <li>
+          listener : notre fonction JavaScript qui sera exécutée lors de
+          l'émission de l'événement.
+        </li>
+      </ul>
+      <p>Paramètres facultatifs :</p>
+      <ul>
+        <li>
+          options : un objet qui spécifie les caractéristiques de l'écouteur
+          d'événements.
+        </li>
+        <ul>
+          <li>
+            capture : un booléen indiquant le sens de propagation de l'événement
+            : parent puis élément, ou élément puis parent.
+          </li>
+          <li>
+            once : un booléen indiquant si l'événement doit être supprimé après
+            son appel, si la valeur est true alors il ne sera émis qu'une seule
+            fois.
+          </li>
+          <li>
+            passive : un booléen indiquant que l'événement ne sera jamais émis.
+          </li>
+        </ul>
+      </ul>
+      <h2>RemoveEventListener</h2>
+      <p>
+        Nous pouvons supprimer un événement en invoquant la fonction
+        removeEventListener().
+      </p>
+      <p>
+        Supprimer un eventListener quand on en a plus besoin est une excellente
+        pratique, car il peut être coûteux pour le navigateur qui doit observer
+        un nœud de DOM supplémentaire.
+      </p>
+      <p>
+        Nous devinerons aisément que, plus il y a d'éléments à charger dans le
+        DOM, plus notre page web sera lente à s'afficher.
+      </p>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="MWZmOYZ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/MWZmOYZ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <p>
+        À noter que removeEventListener prend les mêmes paramètres que la
+        fonction d'ajout. Pour réaliser la suppression, les paramètres type et
+        listener doivent obligatoirement être identiques à la création et à la
+        suppression.
+      </p>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="XWoRzJL"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/XWoRzJL"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>La délégation d'événement</h2>
+      <h3>Complément</h3>
+      <div>
+        <p>
+          La délégation d'événement est une pratique consistant à lier un
+          événement non pas sur l'élément ciblé, mais sur l'un de ses ancêtres.
+          La délégation est très utile dans le cas où nous souhaitons lier un
+          événement sur un élément de DOM qui n'existe pas encore au moment du
+          chargement de la page, comme par exemple un bouton qui serait ajouté
+          dynamiquement au DOM par une action de script. Créer un événement sur
+          cet élément à l'aide de addEventListener au chargement de la page ne
+          fonctionnera pas. Il est alors nécessaire de modifier la syntaxe de
+          addEventListener pour créer une délégation.
+        </p>
+      </div>
+      <h2>Considérez le code HTML ci-dessous</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="JjwNOYd"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/JjwNOYd"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Si nous plaçons un événement click sur la div, le clic sur le texte du
+          paragraphe &ltp&gt déclenchera l'événement, bien que ce dernier cache
+          la div. Ceci est rendu possible grâce à la délégation d'événement.
+        </p>
+        <p>
+          Imaginons que l'on souhaite définir un événement en cliquant sur l'un
+          des paragraphes de la div. Au lieu de lier autant d'événements que de
+          &ltp&gt, nous pourrons n'en définir qu'un seul et le placer
+          directement sur la div.
+        </p>
+        <p>
+          La propriété target obtient l'élément sur lequel l'événement s'est
+          produit à l'origine.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="vYvmWLg"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/vYvmWLg"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img src="02_Img/example4.png" alt="Image example4" />
+      </div>
+      <h2>À retenir</h2>
+      <h3>Syntaxe</h3>
+      <div>
+        <ul>
+          <li>
+            La méthode d'ajout d'un écouteur d'événements est la signature de
+            celui-ci. Pour le supprimer, nous devons obligatoirement renseigner
+            les mêmes paramètres.
+          </li>
+        </ul>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="rNomYxE"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/rNomYxE"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+    </div>
   </body>
 </html>
