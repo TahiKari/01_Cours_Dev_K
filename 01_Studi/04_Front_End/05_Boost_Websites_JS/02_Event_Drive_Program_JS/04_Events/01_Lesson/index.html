@@ -3,9 +3,432 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Les événements</title>
   </head>
   <body>
-    <h1></h1>
+    <h1>Les événements</h1>
+    <div>
+      <h2>Objectifs</h2>
+      <ul>
+        <li>Comprendre l'objet Event</li>
+        <li>Connaître les types d'événements existants</li>
+      </ul>
+      <h2>Mise en situation</h2>
+      <p>
+        Nous avons vu qu'un événement se fixe sur un élément de DOM et écoute
+        une action utilisateur bien précise pour exécuter du code. Nous allons
+        maintenant voir les différents types d'événements mis à notre
+        disposition par JavaScript et comment les utiliser.
+      </p>
+      <h3>Complément</h3>
+      <div>
+        <p>
+          Nous pouvons consulter l'ensemble des propriétés et méthodes dans la
+          <a
+            href="https://developer.mozilla.org/fr/docs/Web/API/Event"
+            target="_blank"
+            rel="alternate"
+            >documentation officielle</a
+          >.
+        </p>
+      </div>
+      <h2>Les types d'événements</h2>
+      <p>
+        <strong>Les événements globaux</strong> ne sont pas directement liés à
+        une interaction avec l'utilisateur, mais plutôt à une action de script.
+      </p>
+      <p>
+        L'événement load, par exemple, est automatiquement déclenché par le
+        script quand toutes les ressources de la page sont chargées (images,
+        feuille de style CSS, script JavaScript, etc.).
+      </p>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="RwEgPBW"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/RwEgPBW"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h3>Complément</h3>
+      <div>
+        <p>Voici quelques-uns de ces événements globaux :</p>
+        <ul>
+          <li>
+            offline : automatiquement déclenché quand le navigateur a perdu sa
+            connexion à Internet. Il peut servir à avertir l'utilisateur ou
+            effectuer une action de stockage local, par exemple.
+          </li>
+          <li>
+            abort : déclenché quand le chargement d'une ressource a été
+            interrompu par l'utilisateur. Il peut servir à lui indiquer quelle
+            ressource est manquante et que la page web pourra se comporter de
+            manière inattendue.
+          </li>
+          <li>
+            ended : déclenché à la fin de la lecture d'un média ou lorsque la
+            source du média ne permet plus l'envoi des données. Il peut servir à
+            indiquer à l'utilisateur la raison de l'arrêt du média.
+          </li>
+          <li>
+            success : déclenché quand une requête HTTP s'est déroulée
+            correctement. Il peut servir à afficher un message à l'utilisateur
+            pour lui indiquer le résultat de la requête.
+          </li>
+        </ul>
+        <p>
+          <strong>Les événements souris</strong> permettent d'écouter un
+          ensemble d'interactions que l'utilisateur peut faire avec sa souris.
+          Comme nous l'avons vu précédemment, l'événement click est déclenché au
+          moment de cliquer sur un élément du DOM.
+        </p>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="YzdQXOP"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/YzdQXOP"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h3>Complément</h3>
+      <div>
+        <p>Voici quelques-uns de ces événements souris :</p>
+        <ul>
+          <li>
+            click : déclenché quand l'utilisateur clique sur un élément. Il peut
+            servir à demander une confirmation de l'action à effectuer (exemple
+            : Êtes-vous sûr de vouloir supprimer cet item ?).
+          </li>
+          <li>
+            mouseenter : déclenché quand l'utilisateur pointe la souris sur un
+            élément.
+          </li>
+          <li>
+            mouseleave : déclenché quand l'utilisateur déplace le pointeur de la
+            souris en dehors d'un élément.
+          </li>
+          <li>
+            mouseup : déclenché quand l'utilisateur relâche un bouton de la
+            souris lorsqu'il se trouve sur un élément.
+          </li>
+        </ul>
+      </div>
+      <h2>Mauvaises pratiques</h2>
+      <h3>Attention</h3>
+      <div>
+        Évitez autant que possible l'utilisation des événements mouseover et
+        mouseout. Ces événements seront reçus par tous les descendants de
+        l'élément auquel ils sont liés. Ils seront donc déclenchés autant de
+        fois qu'il y a de descendants. Nous utiliserons plutôt mouseenter ou
+        mouseleave qui, eux, ne seront déclenchés que pour l'élément auquel ils
+        sont associés.
+      </div>
+      <p>
+        Les événements claviers sont liés à toute utilisation du clavier par
+        l'utilisateur. Par exemple, avec l'événement keydown, le code ci-dessous
+        sera déclenché lorsque la touche du clavier sera enfoncée.
+      </p>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="jOXwPea"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/jOXwPea"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h3>Complément</h3>
+      <div>
+        <p>Voici quelques-uns de ces événements :</p>
+        <ul>
+          <li>
+            keyup : cet événement est déclenché quand l'utilisateur relâche une
+            touche du clavier. Il peut servir à contrôler une saisie utilisateur
+            en cours.
+          </li>
+          <li>
+            keydown : cet événement est déclenché quand l'utilisateur maintient
+            enfoncée une touche du clavier. Il peut servir à interdire
+            l'utilisation d'une touche en temps réel.
+          </li>
+        </ul>
+      </div>
+      <h2>Mauvaises pratiques</h2>
+      <h3>Attention</h3>
+      <div>
+        <p>
+          L'utilisation de l'événement keypress est à proscrire, car il ne
+          fonctionne pas pour toutes les touches du clavier (Alt, Ctrl, Shift,
+          par exemple). Il est indiqué comme déprécié dans la documentation et
+          ne sera bientôt plus supporté par les navigateurs. Préférez
+          l'utilisation des événements keydown ou keyup.
+        </p>
+      </div>
+      <p>
+        Les événements de formulaires sont, par définition, liés à toutes
+        interactions avec un élément de formulaire HTML. L'événement submit est,
+        par exemple, déclenché quand un élément &ltform&gt est soumis, que ce
+        soit au clic sur un élément &ltbutton&gt ou &ltsubmit&gt, ou même par
+        une action de script.
+      </p>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="LYMLVXw"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/LYMLVXw"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>L'objet Event</h2>
+      <p>
+        L'objet Event représente un événement JavaScript. Il contient un
+        ensemble de propriétés et de méthodes communes à tous les événements.
+        Nous pourrons les manipuler à notre guise pour modifier les
+        caractéristiques de notre événement.
+      </p>
+      <p>
+        Lorsque l'événement se produit, le navigateur Web transmet un objet
+        event au gestionnaire d'événements :
+      </p>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="KKbqpbQ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/KKbqpbQ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <p>
+        Notez que l’objet event n'est accessible qu'à l'intérieur du
+        gestionnaire d'événements. Une fois que tous les gestionnaires
+        d'événements ont été exécutés, l'objet événement est automatiquement
+        détruit.
+      </p>
+      <p>En voici quelques-unes des plus utilisées :</p>
+      <p>Propriétés :</p>
+      <ul>
+        <li>Event.target : cible de l'événement</li>
+        <li>
+          Event.defaultPrevented : indique si le comportement par défaut de
+          l’interaction doit être annulé (par exemple, la validation d'un
+          formulaire, la redirection vers une autre page pour un lien)
+        </li>
+        <li>Event.bubbles : indique le sens de propagation de l'événement</li>
+      </ul>
+      <p>Méthodes :</p>
+      <ul>
+        <li>Event.createEvent() : crée un nouvel l'événement.</li>
+        <li>
+          Event.preventDefault() : annule le comportement par défaut de
+          l'événement.
+        </li>
+        <li>Event.stopPropagation() : arrête la propagation de l'événement.</li>
+      </ul>
+      <h3>Exemple</h3>
+      <div>
+        <p>
+          Pour empêcher le comportement par défaut d'un événement, vous utilisez
+          la méthode preventDefault().Par exemple, lorsque vous cliquez sur un
+          lien, le navigateur vous redirige vers l'URL spécifiée dans l'
+          attribut href :
+        </p>
+        <p>
+          Cependant, vous pouvez empêcher ce comportement en utilisant la
+          méthode preventDefault() de l’objet event.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="jOXwPJZ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/jOXwPJZ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>À retenir</h2>
+      <h3>Syntaxe</h3>
+      <div>
+        <p>
+          Comme pour la manipulation de notre page web, nous pourrons jouer avec
+          nos événements en utilisant les propriétés et méthodes de l'objet
+          Event.
+        </p>
+        <ul>
+          <li>
+            Propriétés
+            <ul>
+              <li>
+                event.target : représente l'élément qui a déclenché l'événement.
+                Elle permet de manipuler l'élément en question.
+              </li>
+              <li>
+                event.bubbles : permet de définir si un événement se propage ou
+                non. Nous pouvons nous en servir pour autoriser la propagation
+                d'un événement.
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <ul>
+          <li>
+            Méthodes
+            <ul>
+              <li>
+                event.stopPropagation() : permet d'interrompre la propagation de
+                l'événement à travers le DOM. Elle peut servir à éviter de
+                déclencher des événements plusieurs fois au cours de
+                l'exécution.
+              </li>
+              <li>
+                event.preventDefault() : permet d'annuler l'action par défaut
+                d'un événement. Elle peut servir, par exemple, à annuler l'effet
+                du clic sur lien.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
   </body>
 </html>

@@ -1,34 +1,18 @@
 // Exemple 
-/*
+let connexion = document.getElementById('connexion')
 
-*/
+const message = () => {
+  alert('Vous avez cliqué sur le boutton de connexion')
+}
 
-console.log("-----------------------------------------------")
+const setColorGreen = () => {
+  connexion.style.background = 'green'
+}
 
-// Exemple 
-/*
+const setColorRed = () => {
+  connexion.style.background = 'red'
+}
 
-*/
-
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
+connexion.addEventListener('click', message)
+connexion.addEventListener('mouseenter', setColorRed)
+connexion.addEventListener('mouseleave', setColorGreen)
