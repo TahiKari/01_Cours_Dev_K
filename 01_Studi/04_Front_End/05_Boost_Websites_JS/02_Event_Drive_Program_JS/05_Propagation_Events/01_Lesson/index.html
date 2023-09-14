@@ -3,9 +3,210 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>La propagation des événements</title>
   </head>
   <body>
-    <h1></h1>
+    <h1>La propagation des événements</h1>
+    <div>
+      <h2>Objectif</h2>
+      <ul>
+        <li>Comprendre et maîtriser la propagation des événements</li>
+      </ul>
+      <h2>Capture et bouillonnement</h2>
+      <p>
+        En JavaScript les événements sont soumis à deux phases : la phase de
+        <strong>capture</strong> et la phase de
+        <strong>bouillonnement</strong> (bubbling).
+      </p>
+      <p>
+        Lorsqu'un événement est déclenché, JavaScript parcourt l'ensemble du
+        code en partant de l’ancêtre le plus haut (html) et descend jusqu'à
+        l'élément ayant déclenché l’événement. On appelle ça la phase de
+        capture.
+      </p>
+      <p>
+        Une fois la phase de capture finie, JavaScript parcourt le code en sens
+        inverse, et ce n'est qu'à ce moment qu'il déclenche l’événement
+        lorsqu'il le croise. On appelle cette action la phase de bouillonnement.
+      </p>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="bGORxKP"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/bGORxKP"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Nous avons relié un événement click à parent et à children. Que se
+          passe t-il lorsque l'on click sur children ?
+        </p>
+        <p>
+          La première alerte qui s'affiche et celle provoquée par children. La
+          phase de <strong>capture</strong> est descendue jusqu'à l'élément
+          écoutant l'événement. Au début de la phase de
+          <strong>bouillonnement</strong>, JavaScript a exécuté l'événement.
+        </p>
+        <img src="02_Img/alert-children_1.png" alt="Image alert-children_1" />
+        <p>
+          Une deuxième alerte s'affiche. Durant la phase de
+          <strong>bouillonnement</strong>, JavaScript a exécuté l'événement
+          écouté par le parent.
+        </p>
+        <img src="02_Img/alert-parent_1.png" alt="Image alert-parent_1" />
+      </div>
+      <h2>Modifier le comportement d'un événement</h2>
+      <p>Il existe deux méthodes pour modifier ce comportement :</p>
+      <ul>
+        <li>
+          La première appartenant à l'objet Event : Event.stopPropagation(),
+        </li>
+        <li>
+          La deuxième consistant à modifier le troisième paramètre optionnel de
+          la méthode document.addEventListener().
+        </li>
+      </ul>
+      <h2>Event.stopPropagation()</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Cette méthode vient se positionner à l'intérieur de la fonction de
+          callback de l’élément écouteur. La méthode stopPropagation() va
+          annuler la phase de bouillonnement à partir du moment où le code
+          rencontrera l'instruction. Ainsi, l’événement ne remontera pas jusqu'à
+          la div parent.
+        </p>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="mdawGzQ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/mdawGzQ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>addEventListener('event', callback, capture?)</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Cette solution consiste à modifier le paramètre optionnel de la
+          méthode addEventListener() et de la passer à true. Dans ce cas, le
+          code exécutera l'événement durant la phase de capture et annulera la
+          phase de bouillonnement.
+        </p>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="rNowZQy"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/rNowZQy"> Untitled</a>
+            by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+              >@OpenSpirit</a
+            >) on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans le cas présent, on ignore la phase de bouillonnement et les
+          événements sont exécutés pendant la phase de capture. Ainsi, en
+          cliquant sur children, l'alerte parent s'affichera en premier, puis
+          l'alerte children en second. Le comportement est inversé.
+        </p>
+      </div>
+      <h2>À retenir</h2>
+      <h3>Syntaxe</h3>
+      <div>
+        <ul>
+          <li>
+            Il existe deux phases lorsqu'un événement est déclenché : la phase
+            de capture et la phase de bouillonnement.
+          </li>
+          <li>
+            La phase de capture part de l’ancêtre le plus haut vers l'élément
+            écouteur.
+          </li>
+          <li>
+            La phase de bouillonnement fait le chemin en sens inverse et exécute
+            les événements.
+          </li>
+          <li>
+            stopPropagation() permet de stopper la phase de bouillonnement.
+          </li>
+          <li>
+            Le troisième paramètre de la méthode addEventListener() délègue
+            l'exécution des événements à la phase de capture et annule la phase
+            de bouillonnement.
+          </li>
+        </ul>
+      </div>
+    </div>
   </body>
 </html>
