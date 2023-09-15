@@ -3,9 +3,184 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Les événements personnalisés</title>
   </head>
   <body>
-    <h1></h1>
+    <h1>Les événements personnalisés</h1>
+    <div>
+      <h2>Objectif</h2>
+      <ul>
+        <li>Apprendre à créer des événements personnalisés</li>
+      </ul>
+      <h2>Mise en situation</h2>
+      <p>
+        Il se peut, lors de développement futurs, que les événements natifs de
+        JavaScript ne puissent subvenir à nos besoins. Heureusement, le langage
+        nous laisse la possibilité de créer nos propres événements.
+      </p>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Deux nouvelles étapes viennent s'ajouter lors de la création d'un
+          événement personnalisé : la création de l'événement en elle-même, et
+          le déclenchement de ce dernier quand bon nous semblera. Cela pourrait
+          être au chargement de la page, ou pourquoi pas lors de l'émission d'un
+          autre événement.
+        </p>
+        <p>1/ Création avec le constructeur Event :</p>
+        <p>2/ Déclenchement programmatique de l'événement :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="jOXLyzK"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/jOXLyzK"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p>
+          Nous pouvons également ajouter des données personnalisées avec le
+          paramètre detail du constructeur CustomEvent() :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="VwqzPxj"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/VwqzPxj"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Si vous souhaitez tester ce code, il est important de vous rappeler de
+          créer le html qui va avec le script.
+        </p>
+      </div>
+      <h3>Rappel</h3>
+      <div>
+        <p>
+          De la même manière que pour les événements natifs, c'est une bonne
+          pratique de supprimer nos événements personnalisés quand nous n'en
+          n'avons plus l'utilité.
+        </p>
+      </div>
+      <h2>À retenir</h2>
+      <h3>Syntaxe</h3>
+      <div>
+        <ul>
+          <li>
+            Nous pouvons créer des événements personnalisés de deux manières
+            différentes :
+            <ul>
+              <li>Avec le constructeur Event :</li>
+            </ul>
+          </li>
+        </ul>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="VwqzPdj"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/VwqzPdj"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <ul>
+          <li>Avec le constructeur CustomEvent :</li>
+        </ul>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="GRPvrGm"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/GRPvrGm"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+    </div>
   </body>
 </html>

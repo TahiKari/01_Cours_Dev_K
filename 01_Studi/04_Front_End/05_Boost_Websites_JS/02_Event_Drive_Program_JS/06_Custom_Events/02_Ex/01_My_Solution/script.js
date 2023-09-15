@@ -1,34 +1,34 @@
-// Exemple 
-/*
+// Ma solution
 
-*/
+function highlight(elem) {
+  const bgColor = 'yellow';
+  elem.style.backgroundColor = bgColor;
 
-console.log("-----------------------------------------------")
+  // create the event
+  let event = new CustomEvent('backgroundYellow', {
+      detail: {
+          backgroundColor: bgColor
+      }
+  });
+  // dispatch the event
+  elem.dispatchEvent(event);
+}
 
-// Exemple 
-/*
+// Select the div element
+let div = document.querySelector('.note');
 
-*/
+// Add border style
+function addBorder(elem) {
+  elem.style.border = "solid 1px red";
+}
 
-console.log("-----------------------------------------------")
+// Listen to the highlight event
+div.addEventListener('backgroundYellow', function (e) {
+  addBorder(this);
 
-// Exemple 
-/*
+  // examine the background
+  console.log(e.detail);
+});
 
-*/
-
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
+// highlight div element
+highlight(div);
