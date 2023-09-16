@@ -1,34 +1,14 @@
-// Exemple 
-/*
+// Ma solution
+let allinputs = document.getElementsByClassName('inputPinkOnFocus')
 
-*/
+Array.from(allinputs).forEach(function (input) {
+  input.addEventListener('focus', event => {
+    event.target.style.background = 'pink'
+    event.target.style.color = 'blue'
+  })
 
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
+  input.addEventListener('blur', () => {
+    event.target.style.background = ''
+    event.target.style.color = ''
+  })
+})

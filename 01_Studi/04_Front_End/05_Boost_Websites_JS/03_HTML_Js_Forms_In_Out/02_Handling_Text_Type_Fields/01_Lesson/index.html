@@ -3,9 +3,288 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Manipuler les champs de type texte</title>
   </head>
   <body>
-    <h1></h1>
+    <h1>Manipuler les champs de type texte</h1>
+    <div>
+      <h2>Objectifs</h2>
+      <ul>
+        <li>Lire/écrire la valeur d'une zone de texte</li>
+        <li>Manipuler les écouteurs d'événements liés aux champs texte</li>
+      </ul>
+      <h2>Mise en situation</h2>
+      <p>
+        Notre formulaire HTML est en place, nous savons sélectionner ses
+        éléments par l'intermédiaire du DOM. Il est temps d'interagir avec ces
+        derniers. Nous allons voir comment afficher les données saisies par
+        l'utilisateur et comment écrire dans un champ texte.
+      </p>
+      <h2>Accès et modification de la valeur d'une zone de texte</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Afin d’accéder à la valeur d'une zone de texte (text ou textarea) on
+          usera de la propriété value de l'élément du DOM correspondant. En
+          modifiant value, nous serons donc capables de changer la valeur de la
+          zone de texte.
+        </p>
+        <p>
+          Nous pourrons lier deux événements spécifiques :
+          <strong>focus</strong> et <strong>blur</strong>. L’événement focus est
+          appelé lors de la mise au point tandis que l’événement blur l’est lors
+          de la perte de la mise au point.
+        </p>
+      </div>
+      <h2>Accès</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="abPyMpM"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/abPyMpM"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>Modification</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="dywzrvy"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/dywzrvy"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img src="02_Img/inputValue.jpg" alt="Image inputValue" />
+      </div>
+      <p>
+        Les événements <strong>focus</strong> et <strong>blur</strong> peuvent
+        être utilisés pour apporter des éléments d'information avant et/ou après
+        la saisie d'une valeur. Pour les mettre en place, nous allons devoir
+        créer les écouteurs d'événements associés.
+      </p>
+      <h2>Focus et blur sur une zone de texte</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="eYbEXvL"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/eYbEXvL"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img src="02_Img/focusBlur.jpg" alt="Image focusBlur" />
+        <p>
+          Pour plus de précisions concernant les écouteurs d'événements,
+          reportez-vous au cours sur la Programmation événementielle.
+        </p>
+      </div>
+      <h3>Remarque</h3>
+      <div>
+        <p>
+          Il est tout à fait possible de procéder à la modification de style
+          lors du focus par le biais du CSS. Il s’agit d’une approche plus
+          abordable de par sa facilité d’exécution.
+        </p>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p>
+          Nous retrouvons ci-dessous, un formulaire contenant une zone de saisie
+          de type texte.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="MWZvxmX"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/MWZvxmX"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          La pseudo-classe d'action CSS :focus va permettre d’assigner des
+          propriétés CSS à notre élément HTML.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="dywzrRy"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/dywzrRy"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h3>Attention</h3>
+      <div>
+        <p>
+          Gardons toujours à l'esprit que l'ajout d'écouteurs d'événements peut
+          être coûteux pour votre navigateur. De plus, l'événement
+          <strong>focus</strong> est déclenché en permanence tant que le champ
+          en question est cliqué. Attention donc aux mauvaises surprises.
+        </p>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p>
+          Nous pouvons également donner le <strong>focus</strong> à un champ, ou
+          l'enlever en invoquant sur notre élément les méthodes focus() et
+          blur().
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="OJrjqgW"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/OJrjqgW"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>À retenir</h2>
+      <h3>Syntaxe</h3>
+      <div>
+        <ul>
+          <li>
+            Pour lire ou écrire la valeur d'un champ nous utilisons la propriété
+            value de l'élément du formulaire souhaité.
+          </li>
+          <li>
+            Les événements <strong>focus</strong> et <strong>blur</strong> nous
+            permettent de lier des actions avant ou après une saisie dans une
+            zone de texte.
+          </li>
+        </ul>
+      </div>
+    </div>
   </body>
 </html>

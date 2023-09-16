@@ -2,3 +2,7 @@ html {
   height: 100%;
   width: 100%;
 }
+form input:focus {
+  background: #f7c7cf; /* Va colorer le fond en rose */
+  border-color: #af7fdd; /* Va colorer la bordure en violet */
+}
