@@ -3,9 +3,216 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Manipuler les checkbox, radio et select</title>
   </head>
   <body>
-    <h1></h1>
+    <h1>Manipuler les checkbox, radio et select</h1>
+    <div>
+      <h2>Objectif</h2>
+      <ul>
+        <li>
+          Détecter le changement d'état d'une case à cocher, d'un bouton radio
+          et d'une liste déroulante
+        </li>
+        <li>Manipuler la valeur de ces champs</li>
+        <li>Manipuler les écouteurs d'événements liés à ces champs</li>
+      </ul>
+      <h2>Mise en situation</h2>
+      <p>
+        Nous allons voir comment afficher et modifier la valeur des autres types
+        de champs présents dans un formulaire, à savoir les cases à cocher, les
+        boutons radio et les listes déroulantes.
+      </p>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Comme pour les champs de type texte, nous pourrons accéder à leur
+          valeur grâce à la propriété value de l'élément du DOM correspondant.
+          En modifiant value, nous pourrons modifier la valeur choisie.
+        </p>
+        <p>
+          Nous pourrons lier l'événement <strong>change</strong> permettant de
+          détecter la modification du choix par l'utilisateur.
+        </p>
+      </div>
+      <p>
+        Les éléments de formulaire donnant lieu à un choix de l'utilisateur ont
+        en commun l'événement <strong>change</strong>.
+      </p>
+      <h2>Application aux Checkbox</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p>
+          Ici, nous ajoutons un écouteur d'événement <strong>change</strong> à
+          notre case à cocher. De plus, pour détecter si la case est cochée ou
+          non, nous utiliserons la propriété checked de l'objet Event de
+          JavaScript.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="MWZEyrJ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/MWZEyrJ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img
+          src="02_Img/Les_formulaires_HTML_et_JavaScript.png"
+          alt="Image Les_formulaires_HTML_et_JavaScript"
+        />
+      </div>
+      <h2>Application aux boutons radio</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p>
+          Pour les boutons radio, l'utilisateur dispose de plusieurs choix de
+          réponses, mais ne peut en sélectionner qu'une. Nous devons donc placer
+          un écouteur d'événements sur chacun des choix possibles.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="OJrxNQL"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/OJrxNQL"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img src="02_Img/radio.jpg" alt="Image radio" />
+        <p>
+          Nous pouvons aussi forcer le choix en assignant une valeur à value.
+          Attention, cette option doit exister au niveau des choix utilisateurs.
+        </p>
+      </div>
+      <h2>Application aux listes déroulantes</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p>
+          De la même manière que pour les boutons radio, nous allons placer un
+          écouteur d'événement <strong>change</strong> et utiliser la propriété
+          value pour afficher le choix de l'utilisateur.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="ZEVXWxK"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/ZEVXWxK"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img src="02_Img/select.jpg" alt="Image select" />
+        <p>
+          Nous pouvons aussi forcer le choix en assignant une valeur à value.
+          Attention, cette valeur doit exister dans la liste déroulante.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="qBLPZoK"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/qBLPZoK"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img src="02_Img/selectValue.jpg" alt="Image selectValue" />
+      </div>
+      <h2>À retenir</h2>
+      <h3>Syntaxe</h3>
+      <div>
+        <ul>
+          <li>
+            Pour lire ou modifier le choix d'un utilisateur (case à cocher,
+            bouton radio, liste déroulante), nous utilisons la propriété value
+            de l'élément du formulaire souhaité.
+          </li>
+          <li>
+            Pour « écouter » les choix de l'utilisateur, nous utilisons
+            l'événement <strong>change</strong>.
+          </li>
+        </ul>
+      </div>
+    </div>
   </body>
 </html>
