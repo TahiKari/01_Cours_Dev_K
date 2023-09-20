@@ -3,18 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Défi</title>
   </head>
   <body>
-    <h1>Appliquez la notion</h1>
+    <h1>Défi</h1>
     <div>
-      <p>Vous disposez du formulaire HTML suivant :</p>
+      <p>
+        Maintenant, vous allez devoir mettre en place la validation du
+        formulaire de création de compte du site de e-commerce dont vous êtes le
+        développeur, spécialiste du JS.
+      </p>
+      <p>
+        Vous disposez du formulaire HTML suivant comme base écrite par votre
+        prédécesseur :
+      </p>
       <p
         class="codepen"
         data-height="300"
         data-theme-id="dark"
         data-default-tab="js"
-        data-slug-hash="YzdEydX"
+        data-slug-hash="PoXOZqm"
         data-user="OpenSpirit"
         style="
           height: 300px;
@@ -29,7 +37,7 @@
       >
         <span
           >See the Pen
-          <a href="https://codepen.io/OpenSpirit/pen/YzdEydX"> Untitled</a> by
+          <a href="https://codepen.io/OpenSpirit/pen/PoXOZqm"> Untitled</a> by
           OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
           on <a href="https://codepen.io">CodePen</a>.</span
         >
@@ -40,8 +48,19 @@
       ></script>
       <h2>Question</h2>
       <p>
-        Contrôlez le format de l'e-mail à l'aide de l'expression régulière
-        suivante : /^([0-9a-zA-Z].*?@([0-9a-zA-Z].*\.\w{2,4}))$/.
+        Vous commencerez par mettre en place le contrôle sur l'identifiant. Afin
+        que le formulaire puisse être valide, l'identifiant doit être
+        obligatoire.
+      </p>
+      <p>
+        Petite subtilité : n'utilisez pas l'attribut required, car un
+        utilisateur qui s'y connaît pourrait modifier la source HTML ! Il est
+        toujours préférable d'effectuer les vérifications côté JS, puis côté
+        back-end à la récupération des données.
+      </p>
+      <p>
+        Attention, l'envoi du formulaire doit être bloqué si les conditions ne
+        sont pas respectées.
       </p>
       <div>
         <h3>Solution</h3>
@@ -50,7 +69,7 @@
           data-height="300"
           data-theme-id="dark"
           data-default-tab="js"
-          data-slug-hash="PoXOPXb"
+          data-slug-hash="NWewxqX"
           data-user="OpenSpirit"
           style="
             height: 300px;
@@ -65,53 +84,7 @@
         >
           <span
             >See the Pen
-            <a href="https://codepen.io/OpenSpirit/pen/PoXOPXb"> Untitled</a> by
-            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
-            on <a href="https://codepen.io">CodePen</a>.</span
-          >
-        </p>
-        <script
-          async
-          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
-        ></script>
-        <p>
-          Cette expression régulière est assez simple, et certaines adresses
-          e-mail fonctionnelles peuvent être considérées comme non valides.
-        </p>
-        <p>
-          Si besoin, on peut se tourner vers une expression régulière plus
-          complète, comme celle disponible sur ce site :
-          <a href="https://emailregex.com/" target="_blank" rel="alternate"
-            >https://emailregex.com/
-          </a>
-        </p>
-      </div>
-
-      <h2>Question</h2>
-      <p>Contrôlez que le mot de passe comporte au moins 8 caractères.</p>
-      <div>
-        <h3>Solution</h3>
-        <p
-          class="codepen"
-          data-height="300"
-          data-theme-id="dark"
-          data-default-tab="js"
-          data-slug-hash="dywZYay"
-          data-user="OpenSpirit"
-          style="
-            height: 300px;
-            box-sizing: border-box;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid;
-            margin: 1em 0;
-            padding: 1em;
-          "
-        >
-          <span
-            >See the Pen
-            <a href="https://codepen.io/OpenSpirit/pen/dywZYay"> Untitled</a> by
+            <a href="https://codepen.io/OpenSpirit/pen/NWewxqX"> Untitled</a> by
             OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
             on <a href="https://codepen.io">CodePen</a>.</span
           >
@@ -123,7 +96,11 @@
       </div>
 
       <h2>Question</h2>
-      <p>Une fois ces conditions respectées, le formulaire peut être validé.</p>
+      <p>
+        Maintenant, ajoutez une vérification sur le mot de passe. Il est
+        obligatoire et doit comporter au moins 6 caractères pour des raisons de
+        sécurité.
+      </p>
       <div>
         <h3>Solution</h3>
         <p
@@ -131,7 +108,7 @@
           data-height="300"
           data-theme-id="dark"
           data-default-tab="js"
-          data-slug-hash="OJrOyqp"
+          data-slug-hash="NWewxqX"
           data-user="OpenSpirit"
           style="
             height: 300px;
@@ -146,7 +123,86 @@
         >
           <span
             >See the Pen
-            <a href="https://codepen.io/OpenSpirit/pen/OJrOyqp"> Untitled</a> by
+            <a href="https://codepen.io/OpenSpirit/pen/NWewxqX"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+
+      <h2>Question</h2>
+      <p>
+        Afin de s'assurer que l'utilisateur ne fasse pas d'erreurs, et que son
+        e-mail puisse être utilisé pour lui envoyer une newsletter, il va
+        falloir mettre en place une vérification sur les adresses e-mails
+        saisies : elles doivent être identiques et remplis par l'utilisateur.
+      </p>
+      <div>
+        <h3>Solution</h3>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="RwEjrWo"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/RwEjrWo"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+
+      <h2>Question</h2>
+      <p>
+        Rédigez un code regroupant tous les éléments de réponses des questions
+        précédentes ainsi qu’un événement de type submit afin de valider le
+        formulaire.
+      </p>
+      <div>
+        <h3>Solution</h3>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="JjwOGXj"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/JjwOGXj"> Untitled</a> by
             OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
             on <a href="https://codepen.io">CodePen</a>.</span
           >

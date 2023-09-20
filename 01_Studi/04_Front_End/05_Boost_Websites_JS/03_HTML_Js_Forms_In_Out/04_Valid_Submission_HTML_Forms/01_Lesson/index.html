@@ -3,9 +3,298 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Validation et soumission des formulaires HTML</title>
   </head>
   <body>
-    <h1></h1>
+    <h1>Validation et soumission des formulaires HTML</h1>
+    <div>
+      <h2>Objectif</h2>
+      <ul>
+        <li>Maîtriser l'objet formulaire du DOM</li>
+        <li>Soumettre un formulaire</li>
+        <li>Valider les données saisies</li>
+      </ul>
+      <h2>Mise en situation</h2>
+      <p>
+        Une seule règle d'or, ne jamais faire confiance à l'utilisateur. En
+        d'autres termes, vérifiez toujours les données saisies par l'utilisateur
+        avant qu’elles ne soient traitées.
+      </p>
+      <p>
+        Lors du clic sur le bouton pour soumettre le formulaire, les données
+        sont envoyées à la ressource indiquée dans l'attribut action de la
+        balise &ltform&gt.
+      </p>
+      <p>
+        Nous allons voir comment intercepter les données et valider ou invalider
+        le formulaire.
+      </p>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Avant d'être réellement soumis au serveur, un événement de type
+          <strong>submit</strong>
+          est déclenché sur l'élément du DOM correspondant au formulaire. Nous
+          pourrons le capter en ajoutant un événement et ainsi accéder aux
+          données du formulaire.
+        </p>
+        <p>
+          À partir de ce moment, la balle est dans notre camp. Nous pourrons
+          interdire certaines saisies, suggérer des données à saisir, informer
+          sur les données attendues ou bien plus encore selon nos besoins.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="JjwOYpz"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/JjwOYpz"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          L'interface Event représente un événement qui se produit dans le DOM.
+          Une fois la méthode preventDefault() rattachée à cet événement, elle
+          indique que l’action par défaut ne pourra pas être exécutée.
+        </p>
+        <p>
+          Exemple : la redirection après le clic d’un utilisateur sur un élément
+          &lta&gt peut être annulée grâce à la méthode preventDefault()
+          appliquée à l’événement.
+        </p>
+        <p>
+          L'objet formulaire du DOM possède une propriété elements qui
+          représente l'ensemble des champs de saisie sous forme d'un tableau.
+          Ces éléments possèdent eux-mêmes des propriétés pour identifier les
+          champs du formulaire :
+        </p>
+        <ul>
+          <li>name : le nom du champ,</li>
+          <li>type : le type de champ (password, text, etc.),</li>
+          <li>value : la valeur du champ, etc.</li>
+        </ul>
+      </div>
+      <h2>Accès aux champs d'un formulaire</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="JjwOYLz"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/JjwOYLz"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Pour optimiser notre code, nous pouvons ici, par exemple, parcourir
+          les éléments du tableau <strong>elements</strong> en utilisant des
+          structures itératives de type for couplées à des structures
+          conditionnelles de type if ou switch/case.
+        </p>
+      </div>
+      <h2>Soumission du formulaire</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p>
+          Le formulaire envoyé donne lieu au déclenchement d'un événement de
+          type <strong>submit</strong>.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="xxmPwjM"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/xxmPwjM"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img src="02_Img/submit.jpg" alt="Image submit" />
+        <p>
+          L'événement <strong>submit</strong> n'est là que pour nous permettre
+          d'accéder aux éléments de notre formulaire. Une fois nos vérifications
+          faites, nous pourrons stopper la soumission du formulaire en invoquant
+          la méthode preventDefault() de l'objet Event.
+        </p>
+        <p>
+          Si cette dernière n'est pas appelée, nos traitements seront appliqués,
+          puis notre formulaire envoyé au serveur.
+        </p>
+      </div>
+      <h2>Méthode submit()</h2>
+      <h3>Complément</h3>
+      <div>
+        <p>
+          L'objet formulaire du DOM possède une méthode submit() que nous
+          pouvons appeler pour soumettre un formulaire, couplée à un événement
+          <strong>click</strong> sur un bouton, par exemple. Toutefois, avec
+          cette méthode, aucun événement <strong>submit</strong> ne sera
+          déclenché et les différentes contraintes de validation (required,
+          pattern, min, etc.) que nous aurions pu mettre en place directement au
+          niveau des champs de notre formulaire ne seront pas exécutées. Nous
+          devrons réaliser toute la validation à la main.
+        </p>
+      </div>
+      <h2>Pourquoi faire valider les données par le navigateur ?</h2>
+      <p>
+        Nous pourrons ainsi gérer des erreurs de saisie avant que le formulaire
+        ne soit envoyé au serveur. Cela évitera la perte des données du
+        formulaire pour l'utilisateur et des allers-retours inutiles pour le
+        serveur.
+      </p>
+      <h2>Validation des données pendant la saisie utilisateur</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p>
+          Nous utiliserons ici l'écouteur d'événements <strong>input</strong>.
+          Il sera déclenché à chaque modification de la valeur saisie.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="qBLVOyG"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/qBLVOyG"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img src="02_Img/validation.jpg" alt="Image validation" />
+      </div>
+      <h2>Validation des données après la saisie utilisateur</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p>
+          La méthode sera sensiblement identique, seul l'écouteur d'événements
+          sera différent. Nous utiliserons ici <strong>blur</strong>.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="mdaqezV"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/mdaqezV"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img src="02_Img/validation2.jpg" alt="Image validation2" />
+      </div>
+      <h2>À retenir</h2>
+      <h3>Syntaxe</h3>
+      <div>
+        <ul>
+          <li>
+            La soumission d'un formulaire déclenche un événement
+            <strong>submit</strong>.
+          </li>
+          <li>
+            En ajoutant un écouteur d'événements, nous pourrons accéder au
+            contenu du formulaire grâce à l'objet Elements de la balise
+            &ltform&gt et valider les données pendant la saisie avec l'événement
+            <strong>input</strong> ou après la saisie avec
+            <strong>blur</strong>.
+          </li>
+        </ul>
+      </div>
+    </div>
   </body>
 </html>
