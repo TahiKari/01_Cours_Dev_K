@@ -3,9 +3,311 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Qu'est-ce qu'une classe ?</title>
   </head>
   <body>
-    <h1></h1>
+    <h1>Qu'est-ce qu'une classe ?</h1>
+    <div>
+      <h2>Objectif</h2>
+      <ul>
+        <li>Comprendre l'intérêt des classes</li>
+        <li>Déclarer une classe</li>
+        <li>Instancier un objet</li>
+      </ul>
+      <h2>Mise en situation</h2>
+      <p>
+        Tout d'abord, rappelons, de manière succincte et simplifiée, ce qu'est
+        la Programmation Orientée Objet.
+      </p>
+      <p>
+        Il s'agit d'une vision dans laquelle des éléments du monde réel sont
+        décrits par des objets du monde programmatique. Ainsi, nous pouvons
+        modéliser plus simplement les caractéristiques et les actions
+        réalisables par ces objets.
+      </p>
+      <h2>La composition des objets</h2>
+      <h3>Fondamental</h3>
+      <p>
+        Nous dirons que les objets contiennent des données, les
+        <strong>propriétés</strong>, et qu'ils décrivent un comportement, les
+        <strong>méthodes</strong>, que l'on désire leur appliquer. Ces
+        propriétés et méthodes sont généralement stockées à l'intérieur de
+        l'objet : on dit alors qu'elles sont <strong>encapsulées</strong>.
+      </p>
+      <p>
+        Tout ceci représente la définition d'un objet, et nous l'appelons
+        <strong>classe</strong>.
+      </p>
+      <p>
+        Considérons le modèle objet suivant : à partir d'un programme, nous
+        souhaitons afficher des informations concernant des voitures et leur
+        conducteur.
+      </p>
+      <h2>Jusqu'en ES5</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="OJrzmod"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/OJrzmod"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Jusqu'à la version 5 de la norme ECMAScript, les classes ne sont que
+          de simples fonctions. Elles sont appelées
+          <strong>fonction constructeur</strong>.
+        </p>
+        <p>
+          Leur syntaxe est la même qu'une fonction JavaScript classique, à la
+          seule différence que leur nom commence par une majuscule.
+        </p>
+      </div>
+      <h2>À partir d'ES6</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="JjwMNmy"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/JjwMNmy"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          À partir de la version 6 de la norme ECMAScript, le mot-clé class a
+          été introduit, ainsi que la notion de constructeur, afin de se
+          rapprocher des langages de programmation orientée objet classiques.
+        </p>
+        <p>
+          Attention toutefois, il ne s'agit que d'une simplification syntaxique,
+          les classes restent des fonctions spéciales.
+        </p>
+      </div>
+      <h2>Instancier une classe</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Maintenant que nous avons défini nos classes, comment pouvons-nous les
+          utiliser ? Nous allons les <strong>instancier</strong> grâce au
+          mot-clé <strong>new</strong>.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="poqpPQJ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/poqpPQJ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Instancier un objet revient à utiliser le mot-clé new suivi du nom de
+          la fonction constructeur que l'on souhaite utiliser, suivi d'éventuels
+          paramètres ou propriétés que nous verrons plus tard.
+        </p>
+        <p>
+          Pour finir, il est tout à fait possible d'instancier plusieurs fois
+          des objets.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="bGOaWQy"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/bGOaWQy"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>D'autres façons de faire</h2>
+      <h3>Complément</h3>
+      <div>
+        <p>
+          Il existe d'autres manières d'instancier un objet, par exemple en
+          utilisant le constructeur Object().
+        </p>
+        <p>
+          En JavaScript, tous nos objets sont en réalité des
+          <strong>Object</strong>.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="KKbZmbw"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/KKbZmbw"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans ce cas, nous ne définissons pas de classe Personne : la classe
+          Object est native à JavaScript, mais nous pouvons lui passer les
+          paramètres dont nous avons besoin.
+        </p>
+        <p>
+          Il est également possible d'utiliser la méthode create() d'Object.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="YzdYVdv"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/YzdYVdv"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Ici, personne2 possède les mêmes propriétés que personne1, et l'on
+          peut associer des valeurs.
+        </p>
+        <img src="02_Img/create.jpg" alt="Image create" />
+      </div>
+      <h2>À retenir</h2>
+      <h3>Syntaxe</h3>
+      <div>
+        <ul>
+          <li>
+            Pour déclarer une classe en ES5, on utilise des fonctions
+            constructeurs : function MaClasse(){}
+          </li>
+          <li>
+            En ES6, il est possible utiliser le mot-clé class : class
+            MaClass(){}, ce qui revient au même
+          </li>
+          <li>
+            Les noms des fonctions ou classes doivent commencer par une
+            majuscule
+          </li>
+          <li>
+            Pour instancier un nouvel objet, il est nécessaire d'utiliser le
+            mot-clé new
+          </li>
+        </ul>
+      </div>
+    </div>
   </body>
 </html>
