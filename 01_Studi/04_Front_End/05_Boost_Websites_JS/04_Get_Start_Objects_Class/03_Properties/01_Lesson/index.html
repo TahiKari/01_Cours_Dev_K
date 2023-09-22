@@ -3,9 +3,273 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Les propriétés</title>
   </head>
   <body>
-    <h1></h1>
+    <h1>Les propriétés</h1>
+    <div>
+      <h2>Objectif</h2>
+      <ul>
+        <li>Définir des propriétés</li>
+        <li>Accès aux propriétés</li>
+      </ul>
+      <h2>Mise en situation</h2>
+      <p>
+        Les <strong>propriétés</strong>, appelées aussi attributs, sont les
+        variables d'un objet. Elles sont définies ou encapsulées dans la classe
+        de l'objet. En JavaScript, nous pouvons ajouter ou supprimer des
+        propriétés n'importe quand pendant l'exécution du programme.
+      </p>
+      <h2>L'accès aux propriétés</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>Pour l'accès aux propriétés, nous distinguons deux cas :</p>
+        <ul>
+          <li>
+            Au niveau de la classe, l'accès se fait grâce au mot-clé
+            <strong>this</strong>, qui fait référence à l'objet courant.
+          </li>
+          <li>
+            En dehors de la classe, au niveau de l'objet, l'accès à une
+            propriété se fait en appelant la variable dans laquelle il est
+            instancié, suivie de "." et du nom de la propriété souhaitée.
+          </li>
+        </ul>
+      </div>
+      <h2>L'objet Voiture en ES5</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="WNLdVvj"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/WNLdVvj"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>L'objet Voiture en ES6</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="dywJxoB"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/dywJxoB"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>Définir des propriétés</h2>
+      <p>À ce niveau, nos propriétés ne possèdent pas de valeurs.</p>
+      <p>
+        Nous pouvons leur en attribuer une soit de manière statique à
+        l'intérieur de la classe, soit en passant un paramètre à notre fonction
+        constructeur.
+      </p>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="zYypgvJ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/zYypgvJ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="YzdYmwK"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/YzdYmwK"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Passer des paramètres à notre objet se fait lors de l'instanciation,
+          de la même manière que nous passons des paramètres à une fonction
+          classique.
+        </p>
+        <p>
+          Ils doivent être ensuite associés aux propriétés souhaitées à
+          l'intérieur de la classe.
+        </p>
+      </div>
+      <h2>Le typage des propriétés</h2>
+      <h3>Remarque</h3>
+      <div>
+        <p>
+          En JavaScript les propriétés ne sont pas typées, contrairement à
+          d'autres langages de programmation orientée objet.
+        </p>
+      </div>
+      <h2>La propriété prototype</h2>
+      <h3>Complément</h3>
+      <div>
+        <p>
+          Le JavaScript objet est basé sur les <strong>prototypes</strong>. Nous
+          n'entrerons pas dans le détail, mais un objet JavaScript possède,
+          comme nous venons de le voir, des propriétés spécifiques ainsi qu'une
+          propriété globale nommée
+          <a
+            href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/prototype"
+            target="_blank"
+            rel="alternate"
+            >prototype</a
+          >.
+        </p>
+        <p>
+          Celle-ci va nous permettre de définir des propriétés partagées entre
+          tous les objets d'une même classe.
+        </p>
+        <p>
+          Souvenons-nous de la propriété this.volant de notre classe Voiture.
+          Nous lui avons attribué une valeur directement à l'intérieur de la
+          classe : elle est donc identique à chaque objet.
+        </p>
+        <p>
+          La propriété prototype peut être utile pour des fonctions de
+          concaténation de chaînes de caractères ou de fonctions liées aux
+          propriétés de l'objet.
+        </p>
+        <p>Comme dans l'exemple ci-dessous</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="rNopXer"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/rNopXer"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>Résultat de l'exemple ci-dessus :</p>
+        <img src="02_Img/prototypes.jpg" alt="Image prototypes" />
+        <p>On parle dans ce cas précis d'<strong>héritage</strong>.</p>
+      </div>
+      <h2>À retenir</h2>
+      <h3>Syntaxe</h3>
+      <div>
+        <ul>
+          <li>
+            À l'intérieur d'une classe, nous déclarons et accédons aux
+            propriétés grâce au mot-clé this et on accède à la propriété de
+            cette façon : this.maPropriete
+          </li>
+          <li>
+            L'utilisation de this est importante, car les instances d'une classe
+            disposent des mêmes propriétés : il va donc nous permettre
+            d'utiliser des valeurs propres à chaque instance
+          </li>
+          <li>
+            À l'extérieur d'une classe, nous accédons aux propriétés de la
+            manière suivante : monInstance.maPropriete
+          </li>
+        </ul>
+      </div>
+    </div>
   </body>
 </html>
