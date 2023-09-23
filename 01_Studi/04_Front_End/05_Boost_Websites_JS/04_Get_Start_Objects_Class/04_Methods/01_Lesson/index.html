@@ -3,9 +3,224 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Les méthodes</title>
   </head>
   <body>
-    <h1></h1>
+    <h1>Les méthodes</h1>
+    <div>
+      <h2>Objectif</h2>
+      <ul>
+        <li>Définir des méthodes</li>
+        <li>Utilisation des méthodes</li>
+      </ul>
+      <h2>Mise en situation</h2>
+      <p>
+        À l'instar des propriétés, les méthodes sont aussi des variables d'un
+        objet. Elles sont en tout cas stockées dans des variables, mais définies
+        avec la syntaxe des fonctions. Les méthodes vont nous permettre de
+        décrire le comportement de nos objets ou de définir des actions à
+        réaliser.
+      </p>
+      <h2>Définir et accéder aux méthodes</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Une méthode est encapsulée dans une classe et stockée dans une
+          variable. On peut y accéder dans la définition de la classe avec le
+          mo-clé this.
+        </p>
+        <p>
+          En dehors de la classe, l'utilisation d'une méthode se fait en
+          appelant la variable dans laquelle est stockée notre instance, suivie
+          de "." et du nom de la méthode souhaitée, suivi des parenthèses(). Il
+          s'agit ici de la syntaxe d'appel d'une fonction classique.
+        </p>
+      </div>
+      <h2>Ajoutons des méthodes à notre objet Voiture</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p>
+          Dans la vie réelle, une voiture est faite pour rouler, et donc
+          accélérer : nous lui permettrons de le faire grâce à une méthode
+          accelere().
+        </p>
+        <p>
+          Il est tout à fait possible de lui passer des paramètres, une vitesse
+          par exemple. Ajoutons donc à nos objets une propriété vitesse.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="ExGQwLK"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/ExGQwLK"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="qBLxPYR"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/qBLxPYR"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Pour synthétiser,
+          <strong
+            >les méthodes sont des fonctions qui permettent à un objet de
+            réaliser une action</strong
+          >. Elles peuvent utiliser les propriétés de l'objet en lecture ou en
+          écriture.
+        </p>
+        <p>Résultat de l'exemple précédent :</p>
+        <img src="02_Img/methodes.jpg" alt="Image methodes" />
+      </div>
+      <h2>La syntaxe en ES6</h2>
+      <h3>Reamrque</h3>
+      <div>
+        <p>
+          En ES6, la syntaxe de définition d'une méthode diffère un peu. Il est
+          possible de nommer directement une méthode sans l'associer à une
+          variable dans la classe et s'affranchir de l'utilisation de this.
+        </p>
+      </div>
+      <h2>Définir ses méthodes dans un prototype</h2>
+      <h3>Complément</h3>
+      <div>
+        <p>Si l'on crée deux objets :</p>
+        <ul>
+          <li>voiture1 = new Voiture('1.6L', 4, 'Berline')</li>
+          <li>voiture2 = new Voiture('1.8L', 4, 'Break')</li>
+        </ul>
+        <p>Ceux-ci contiennent les propriétés et les méthodes suivantes :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="OJrQxEw"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/OJrQxEw"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Contrairement aux propriétés, les méthodes sont identiques pour chaque
+          objet. Pourtant, en l'état, on constate qu'elles sont redéfinies à
+          chaque construction d'objet.
+        </p>
+        <p>
+          Pour remédier à cela, il est possible de définir une méthode
+          directement au sein du prototype.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="jOXZGKR"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/jOXZGKR"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>À retenir</h2>
+      <h3>Syntaxe</h3>
+      <div>
+        <ul>
+          <li>
+            En ES5, une méthode est définie comme une fonction anonyme stockée
+            dans une variable this.maMethode = function() {}
+          </li>
+          <li>
+            En ES6, nous pouvons nommer directement notre méthode dans notre
+            classe maMethode() {}
+          </li>
+          <li>
+            Depuis un objet, une méthode est appelée ainsi :
+            monObjet.maMethode()
+          </li>
+        </ul>
+      </div>
+    </div>
   </body>
 </html>
