@@ -3,9 +3,287 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Installer jQuery</title>
   </head>
   <body>
-    <h1></h1>
+    <h1>Installer jQuery</h1>
+    <div>
+      <h2>Objectif</h2>
+      <ul>
+        <li>Installer jQuery</li>
+        <li>Inclure jQuery dans son projet</li>
+      </ul>
+      <h2>Mise en situation</h2>
+      <p>
+        Nous allons voir les différentes manières "d'installer" et d'utiliser
+        jQuery au sein de nos projets web. Nous trouverons les sources de la
+        librairie sur le
+        <a href="https://jquery.com/" target="_blank" rel="alternate"
+          >site officiel de jQuery.</a
+        >
+      </p>
+      <h2>Qu'est-ce qu'une librairie ?</h2>
+      <h3>Définition</h3>
+      <div>
+        <p>
+          Celles-ci étant plutôt utilisées pour implémenter des fonctionnalités
+          entre deux systèmes distincts, la frontière entre les librairies et
+          les API reste relativement mince. Elles sont à ne pas confondre avec
+          les frameworks, qui sont, eux, utilisés pour donner une architecture
+          de base à nos applications web.
+        </p>
+      </div>
+      <h2>Télécharger les sources.</h2>
+      <p>
+        Il est possible de
+        <a href="https://jquery.com/download/" target="_blank" rel="alternate"
+          >télécharger le fichier source de jQuery sur le site officiel
+        </a>
+        dans sa version classique <strong>jquery.js</strong> ou dans sa version
+        minifiée <strong>jquery.min.js</strong>.
+      </p>
+      <p>
+        Un fichier minifié a le même contenu que le fichier classique, au détail
+        près qu'un algorithme l'a parsé pour supprimer ce qui n'est pas
+        essentiel à la bonne exécution du code, comme :
+      </p>
+      <ul>
+        <li>les espaces,</li>
+        <li>les sauts de ligne,</li>
+        <li>les commentaires.</li>
+      </ul>
+      <p>
+        Un tel fichier n'est pas lisible pour nous, développeurs, mais il a le
+        mérite d'être plus léger et moins coûteux pour le chargement de nos
+        pages web.
+      </p>
+      <img
+        src="02_Img/fichier-minifie_size.jpg"
+        alt="Image fichier-minifie_size"
+      />
+      <h2>Fichier non minifié</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="QWzmNjr"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/QWzmNjr"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>Fichier minifié</h2>
+      <h3>Exemple</h3>
+      <div>
+        <img src="02_Img/fichier-minifie.jpg" alt="Imgae fichier-minifie" />
+      </div>
+      <h2>Inclure et utiliser jQuery</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Pour l'inclure dans nos propres scripts, il suffit de procéder de la
+          même manière que pour n'importe quel autre script.
+        </p>
+        <p>
+          Cependant, en vue de l'utiliser au sein des scripts suivants, il
+          faudra veiller à l'inclure avant ceux-ci.
+        </p>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="gOZerrW"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/gOZerrW"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img
+          src="02_Img/jquery-inclusion-ok.jpg"
+          alt="Image jquery-inclusion-ok"
+        />
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="jOXzqqK"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/jOXzqqK"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img
+          src="02_Img/jquery-inclusion-ko.jpg"
+          alt="Image jquery-inclusion-ko"
+        />
+      </div>
+      <h2>Utiliser JQuery via un CDN (Content Delivery Network)</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Un CDN, pour Content Delivery Network (ou Réseau de diffusion de
+          contenu), est constitué d'ordinateurs reliés en réseau à travers
+          Internet qui coopèrent afin de mettre à disposition du contenu ou des
+          données à des utilisateurs.
+        </p>
+        <p>
+          Google, par exemple, met à disposition une interface permettant de
+          diffuser du contenu. Concrètement, nous pouvons inclure une librairie
+          référencée dans un CDN via une requête HTTP.
+        </p>
+        <p>
+          Cela nous permettra de ne pas avoir à télécharger de fichiers et de
+          profiter des mises à jour de la librairie.
+        </p>
+        <p>
+          Du côté des points faibles, cela rajoute une requête HTTP à
+          l'exécution de notre page web, ce qui peut être une source de lenteur.
+        </p>
+        <p>
+          Les différents CDN sur lesquels est hébergé jQuery sont
+          <a
+            href="https://jquery.com/download/#using-jquery-with-a-cdn"
+            target="_blank"
+            rel="alternate"
+            >répertoriés ici</a
+          >
+          .
+        </p>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="ZEVxWOw"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/ZEVxWOw"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Via un CDN, une librairie est incluse de la même manière qu'un script
+          classique sauf que l'attribut src est une URL vers un autre site.
+        </p>
+      </div>
+      <h2>À retenir</h2>
+      <h3>Syntaxe</h3>
+      <div>
+        <p>Il y a deux manières d'inclure jQuery dans une page :</p>
+        <ul>
+          <li>
+            en téléchargeant le fichier, puis en l'incluant : &ltscript
+            src="jquery3.4.1.min.js"&gt
+          </li>
+          <li>
+            en l'incluant via un CDN : <br />
+            &ltscript src="https://code.jquery.com/jquery-3.6.0.min.js"
+            integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous"&gt&lt/script&gt
+          </li>
+        </ul>
+      </div>
+      <h3>Complément</h3>
+      <div>
+        <a href="https://jquery.com/" target="_blank" rel="alternate"
+          >jQuery.com</a
+        >
+        <a
+          href="https://closure-compiler.appspot.com/home"
+          target="_blank"
+          rel="alternate"
+          >Minificateur de fichier (Google)</a
+        >
+        <a
+          href="https://waytolearnx.com/2019/03/difference-entre-framework-et-librairie.html"
+          target="_blank"
+          rel="alternate"
+          >Bien différencier librairie et framework</a
+        >
+      </div>
+    </div>
   </body>
 </html>
