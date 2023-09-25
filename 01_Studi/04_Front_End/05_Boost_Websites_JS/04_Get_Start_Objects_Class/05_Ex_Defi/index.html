@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Défi</title>
+  </head>
+  <body>
+    <h1>Défi</h1>
+    <div>
+      <p>
+        Pour cet exercice final, vous allez devoir créer un petit jeu mettant en
+        scène trois joueurs.
+      </p>
+      <p>
+        Chaque joueur possède un capital de départ de points, le but étant de
+        faire perdre des points à ses adversaires en les attaquant. Le joueur
+        gardant le plus de points à la fin de la partie gagne.
+      </p>
+      <h2>Question</h2>
+      <p>Procédons par étapes.</p>
+      <p>
+        Dans un premier temps, implémentez deux classes, que vous intitulerez
+        Partie et Joueur.
+      </p>
+      <p>
+        Un Joueur dispose d'un nom, d'un prénom, d'un nombre de points valant
+        100 par défaut. On doit également pouvoir connaître son tour de jeu,
+        valant 0 par défaut.
+      </p>
+      <p>
+        Une Partie comporte des joueurs, un joueurVainqueur que l'on ne connaît
+        pas par défaut, et d'un tour.
+      </p>
+      <p>Initialisez une partie, ainsi que 3 nouveaux joueurs.</p>
+      <div>
+        <h3>Solution</h3>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="PoXQXrm"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/PoXQXrm"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+
+      <h2>Question</h2>
+      <p>Mettons en place les éléments suivants :</p>
+      <p>
+        Modifiez la classe Joueur afin d'implémenter les méthodes suivantes :
+      </p>
+      <ul>
+        <li>
+          Une méthode permettant de retourner l'identité du joueur (son nom et
+          son prénom).
+        </li>
+        <li>
+          Une méthode permettant d'afficher les points du joueur, qui appellera
+          la méthode précédente et affichera le nombre de points du joueur.
+        </li>
+        <li>
+          Une méthode permettant à un joueur d'attaquer : une attaque peut faire
+          perdre aléatoirement entre 1 et 50 points à un adversaire. Si
+          l'adversaire n'a plus de points, son total ne peut être négatif, il
+          vaudra simplement zéro. Un joueur dispose de 3 tours, chaque attaque
+          augmente le nombre de tours consommés.
+        </li>
+      </ul>
+      <p>Vous disposez de la méthode suivante :</p>
+      <p
+        class="codepen"
+        data-height="300"
+        data-theme-id="dark"
+        data-default-tab="js"
+        data-slug-hash="QWzQzXm"
+        data-user="OpenSpirit"
+        style="
+          height: 300px;
+          box-sizing: border-box;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 2px solid;
+          margin: 1em 0;
+          padding: 1em;
+        "
+      >
+        <span
+          >See the Pen
+          <a href="https://codepen.io/OpenSpirit/pen/QWzQzXm"> Untitled</a> by
+          OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+          on <a href="https://codepen.io">CodePen</a>.</span
+        >
+      </p>
+      <script
+        async
+        src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+      ></script>
+      <div>
+        <h3>Solution</h3>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="yLGvGdx"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/yLGvGdx"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+
+      <h2>Question</h2>
+      <p>Considérons désormais ces éléments supplémentaires :</p>
+      <p>
+        Définissez, pour chaque joueur, une méthode lui permettant d'effectuer
+        une "super attaque". Une super attaque est une attaque faisant perdre 10
+        points de plus.
+      </p>
+      <p>
+        Modifiez la méthode attaque() afin qu'elle accepte un second paramètre
+        "bonus". Le bonus sera cumulé à la valeur initiale de l'attaque.
+      </p>
+      <div>
+        <h3>Solution</h3>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="eYbVbwb"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/eYbVbwb"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+
+      <h2>Question</h2>
+      <p>
+        Il est temps d'implémenter la méthode permettant d'indiquer le vainqueur
+        pour une partie et de tester le bon déroulement de notre jeu
+      </p>
+      <p>
+        Écrivez une méthode vainqueur()qui parcourra l'ensemble des joueurs de
+        la partie afin de déterminer lequel dispose du plus grand nombre de
+        points. Affichez alors l'identité du vainqueur !
+      </p>
+      <p>
+        Voici le déroulement de la partie, on considère qu'un joueur peut
+        effectuer une attaque et une super attaque lors de chaque tour.
+      </p>
+      <p
+        class="codepen"
+        data-height="300"
+        data-theme-id="dark"
+        data-default-tab="js"
+        data-slug-hash="JjwpwgP"
+        data-user="OpenSpirit"
+        style="
+          height: 300px;
+          box-sizing: border-box;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 2px solid;
+          margin: 1em 0;
+          padding: 1em;
+        "
+      >
+        <span
+          >See the Pen
+          <a href="https://codepen.io/OpenSpirit/pen/JjwpwgP"> Untitled</a> by
+          OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+          on <a href="https://codepen.io">CodePen</a>.</span
+        >
+      </p>
+      <script
+        async
+        src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+      ></script>
+      <div>
+        <h3>Solution</h3>
+        <p>Vous avez dû écrire la méthode suivante :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="dywdwxY"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/dywdwxY"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>Et voici le code complet :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="vYvdvoK"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/vYvdvoK"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+    </div>
+  </body>
+</html>
