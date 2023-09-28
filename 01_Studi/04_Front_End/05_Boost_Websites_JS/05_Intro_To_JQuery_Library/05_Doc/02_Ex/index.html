@@ -3,9 +3,106 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Appliquez la notion</title>
   </head>
   <body>
-    <h1></h1>
+    <h1>Appliquez la notion</h1>
+    <div>
+      <p>
+        Vous venez de voir la
+        <a
+          href="https://api.jquery.com/addClass/#addClass-className"
+          target="_blank"
+          rel="alternate"
+          >documentation de la méthode addClass</a
+        >
+        et disposez du code suivant :
+      </p>
+      <h2>Question</h2>
+      <p>
+        En vous aidant de la documentation, identifiez comment supprimer la
+        classe content du premier paragraphe.
+      </p>
+      <div>
+        <h3>Indice</h3>
+        <p>Essayez de regarder du côté de la méthode removeClass.</p>
+      </div>
+
+      <div>
+        <h3>Indice</h3>
+        <p>
+          Dans l'exemple de la méthode addClass, on remarque une méthode last,
+          peut-être existe-t-il une méthode first ?
+        </p>
+      </div>
+
+      <div>
+        <h3>Solution</h3>
+        <p>
+          La méthode
+          <a
+            href="https://api.jquery.com/first/#first"
+            target="_blank"
+            rel="alternate"
+            >first</a
+          >
+          permet de sélectionner le premier élément, la méthode
+          <a
+            href="https://api.jquery.com/removeClass/"
+            target="_blank"
+            rel="alternate"
+            >removeClass</a
+          >
+          permet de supprimer une classe.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="OJrEPOL"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/OJrEPOL"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <p>
+        Avez-vous remarqué que, si vous exécutez d'abord la modification de CSS
+        avant de supprimer la classe, celui-ci reste pourtant appliqué ? C'est
+        normal !
+      </p>
+      <p>
+        Inspectez votre DOM. Vous remarquerez que la méthode css ajoute un
+        attribut style inline à chaque paragraphe disposant de la classe
+        content.
+      </p>
+      <p>
+        La seconde instruction demande à ce que l'on supprime la classe. Le CSS
+        n'y étant pas associé directement, il n'a pas disparu.
+      </p>
+      <img
+        src="02_Img/documentation-jquery-exo.png"
+        alt="Image documentation-jquery-exo"
+      />
+    </div>
   </body>
 </html>
