@@ -3,9 +3,335 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>L'alias $</title>
   </head>
   <body>
-    <h1></h1>
+    <h1>L'alias $</h1>
+    <div>
+      <h2>Objectif</h2>
+      <ul>
+        <li>Utiliser jQuery dans un script</li>
+        <li>Vérifier qu'il est possible de l'utiliser</li>
+      </ul>
+      <h2>Mise en situation</h2>
+      <p>
+        Une fois jQuery inclus à nos pages, il ne nous reste qu'une étape avant
+        de pouvoir utiliser ses outils. Il s'agit de faire appel à la fonction
+        jQuery().
+      </p>
+      <p>
+        Nous verrons que tout jQuery repose sur cette dernière. Il faut
+        également vérifier qu'elle est bien fonctionnelle et prête à l’emploi.
+      </p>
+      <h2>Inclure la fonction principale de jQuery</h2>
+      <h3>Methode</h3>
+      <div>
+        <p>
+          Pour utiliser les objets, propriétés et méthodes proposés par jQuery,
+          il est nécessaire d'inclure la fonction principale.
+        </p>
+        <p>
+          Le code devra obligatoirement être placé à l'intérieur de cette
+          fonction.
+        </p>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p>index.html</p>
+        <p>script.js</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="gOZeZWO"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/gOZeZWO"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Cette fonction prend comme paramètre <strong>document</strong> : il
+          s'agit simplement de la page HTML courante et plus précisément du DOM.
+        </p>
+        <p>
+          Par la suite elle écoute l'événement <strong>ready</strong>, ce qui
+          signifie que le code qui suivra ne sera exécuté qu'une fois notre page
+          entièrement chargée.
+        </p>
+        <p>Enfin, le script est placé dans une fonction anonyme.</p>
+      </div>
+      <h2>Simplifier les appels</h2>
+      <h3>Methode</h3>
+      <div>
+        <p>
+          Il existe une syntaxe relativement plus courte pour inclure jQuery :
+          $().
+        </p>
+        <p>
+          Le sigle "dollar" est <strong>un alias</strong> de la fonction jQuery.
+          Ainsi, nous pourrons écrire le code ci-dessous :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="BavrvZo"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/BavrvZo"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>D'autres façons d'appeler jQuery</h2>
+      <h3>Complément</h3>
+      <div>
+        <p>
+          Il est également possible d'utiliser des structures un peu plus
+          simplifiées pour faire appel à jQuery.
+        </p>
+      </div>
+      <h2>Sans le ready</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="XWoEogE"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/XWoEogE"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>Éviter les collisions avec une autre librairie</h2>
+      <h3>Attention</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="GRPxPvR"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/GRPxPvR"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>L'alias $ peut être utilisé par d'autres librairies JS.</p>
+        <p>
+          Afin d'éviter d'éventuels conflits entre deux librairies, nous pouvons
+          ajouter $ en paramètre de la fonction anonyme passée à jQuery.
+        </p>
+      </div>
+      <h2>Vérifier la bonne installation de jQuery</h2>
+      <h3>Methode</h3>
+      <div>
+        <p>
+          Plaçons simplement un alert() ou un console.log() à l'intérieur de la
+          fonction anonyme. Si une pop-up apparaît après le chargement de la
+          page ou qu'un message s'affiche dans notre console, c'est gagné !
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="zYyWydj"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/zYyWydj"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img src="02_Img/testjQuery.jpg" alt="Image testjQuery" />
+        <p>
+          En cas d'erreur d'inclusion de jQuery, la pop-up ou le message console
+          ne s'affichera pas et nous aurons généralement un message d'erreur
+          nous indiquant la raison.
+        </p>
+        <img src="02_Img/testjQueryKo.jpg" alt="Image testjQueryKo" /> <br />
+        <img src="02_Img/jquery-inclusion-ko.jpg" alt="Image testjQueryKo" />
+      </div>
+      <h2>Test alternatif</h2>
+      <h3>Complément</h3>
+      <div>
+        <p>
+          Pour tester jQuery, nous pouvons également tester si l'objet global
+          jQuery est inclus dans nos scripts.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="XWoEoeE"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/XWoEoeE"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img src="02_Img/autreTestjQuery.jpg" alt="Image autreTestjQuery" />
+      </div>
+      <h2>À retenir</h2>
+      <h3>Syntaxe</h3>
+      <div>
+        <ul>
+          <li>
+            La manière la plus fréquente pour initialiser jQuery est la suivante
+            : $(document).ready(function($){})
+          </li>
+          <li>Nous pouvons l'écrire plus simplement : $(function(){})</li>
+          <li>
+            Si nous intégrons d'autres librairies utilisant l'alias $ :
+            $(function($){})
+          </li>
+          <li>
+            Il est possible de tester si jQuery est prêt à l'utilisation grâce à
+            un simple alert ou console.log à l'intérieur de la fonction anonyme
+            passée à jQuery
+          </li>
+        </ul>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="WNLzLXo"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/WNLzLXo"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+    </div>
   </body>
 </html>

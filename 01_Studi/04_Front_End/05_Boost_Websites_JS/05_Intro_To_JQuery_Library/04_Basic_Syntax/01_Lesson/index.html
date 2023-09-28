@@ -3,9 +3,399 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Syntaxe de base</title>
   </head>
   <body>
-    <h1></h1>
+    <h1>Syntaxe de base</h1>
+    <div>
+      <h2>Objectif</h2>
+      <ul>
+        <li>Sélectionner un élément</li>
+        <li>Appliquer une méthode à un élément</li>
+      </ul>
+      <h2>Mise en situation</h2>
+      <p>
+        jQuery possède sa propre syntaxe. Là où JavaScript peut être verbeux,
+        jQuery est censé nous simplifier la tâche en proposant une syntaxe plus
+        intuitive et du code facile à écrire.
+      </p>
+      <p>
+        Une fois un élément du DOM sélectionné, l'objectif est de pouvoir
+        interagir avec lui, lui affecter un comportement ou modifier son aspect.
+      </p>
+      <p>Pour cela, jQuery propose un ensemble de méthodes.</p>
+      <h2>Syntaxe générale</h2>
+      <h3>Syntaxe</h3>
+      <div>
+        <ul>
+          <li>
+            $ est l'élément central. Celui-ci sera systématiquement utilisé
+            lorsque du code sera écrit avec jQuery.
+          </li>
+          <li>
+            Puis, comme en JavaScript, il est nécessaire de sélectionner
+            l'élément du DOM sur lequel agir.
+          </li>
+          <li>
+            Enfin, il faut indiquer quelle méthode utiliser afin de réaliser le
+            traitement souhaité.
+          </li>
+        </ul>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="yLGKGQp"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/yLGKGQp"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>Les selecteurs</h2>
+      <h3>Remarque</h3>
+      <div>
+        <p>
+          Par convention, comme en CSS, un sélecteur par identifiant commencera
+          toujours par "#" et un sélecteur par classe, par "." suivi du nom du
+          sélecteur.
+        </p>
+        <p>
+          Rappelons-nous que la base de l'interaction entre du code HTML et du
+          code JavaScript est le DOM. jQuery possède son propre modèle de
+          sélecteurs et a choisi d'utiliser les sélecteurs CSS.
+        </p>
+        <p>
+          De la même manière qu'en CSS, il est également possible de cibler
+          n'importe quelle balise.
+        </p>
+      </div>
+      <h2>Comparatif : JavaScript / jQuery</h2>
+      <p>
+        En JavaScript pur, pour sélectionner un élément du DOM, nous pouvons
+        utiliser la méthode querySelector.
+      </p>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="mdaxaae"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/mdaxaae"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <p>
+        Avec jQuery, nous utiliserons les sélecteurs CSS de la manière suivante
+        :
+      </p>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="LYMdMMo"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/LYMdMMo"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <p>
+        Si nous l'affichons, nous pouvons constater un objet comportant notre
+        div.
+      </p>
+      <img src="02_Img/jquery-selecteurs.jpg" alt="Image jquery-selecteurs" />
+      <h2>Différentes façons de cibler un objet</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="wvRmRVd"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/wvRmRVd"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img
+          src="02_Img/jquery-selecteurs-all.jpg"
+          alt="Image jquery-selecteurs-all"
+        />
+      </div>
+      <h2>L'appel des méthodes</h2>
+      <p>
+        Une méthode est appelée à la suite du sélecteur :
+        $('selecteur').methode().
+      </p>
+      <ul>
+        <li>
+          html('<span>exemple</span>') : permet d'inclure du code HTML dans
+          l'élément sélectionné. Équivalent d'innerHTML en JavaScript.
+        </li>
+        <li>
+          text('exemple') : permet d'inclure du texte dans l'élément
+          sélectionné. Équivalent d'innerText en JavaScript.
+        </li>
+        <li>
+          css('key', 'value') : permet d'ajouter ou modifier la valeur d'un
+          attribut CSS.
+        </li>
+        <li>
+          click() : permet d'écouter l'événement <strong>click</strong> de la
+          souris.
+        </li>
+      </ul>
+      <p>
+        Il en existe beaucoup d'autres, toutes ces méthodes sont listées dans la
+        <a href="https://api.jquery.com/" target="_blank" rel="alternate"
+          >documentation de jQuery</a
+        >.
+      </p>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="PoXRVob"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/PoXRVob"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img src="02_Img/methode.jpg" alt="Image methode" />
+      </div>
+      <h3>Attention</h3>
+      <div>
+        <p>
+          Lorsque l'on donne un argument aux méthodes html et text, celles-ci
+          permettent d'initialiser le contenu d'un sélecteur avec l'argument
+          donné en paramètre.
+        </p>
+        <p>
+          En revanche, si ces méthodes sont appelées sans argument, elles
+          permettent de récupérer le contenu du sélecteur ciblé.
+        </p>
+      </div>
+      <h2>Méthode avec fonction anonyme</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Cette syntaxe sera surtout utile lors de la mise en place d'écouteurs
+          d'événements avec jQuery.
+        </p>
+        <p>
+          Il est alors possible d'y associer un script exécuté lors du
+          déclenchement de celui-ci.
+        </p>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="WNLzPvX"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/WNLzPvX"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img src="02_Img/click.jpg" alt="Image click" />
+      </div>
+      <h2>Enchaîner les méthodes</h2>
+      <h3>Complément</h3>
+      <div>
+        <p>
+          Les méthodes peuvent être enchaînées. Ceci nous offre une facilité
+          d'écriture de nos scripts et nous permet d'associer plusieurs
+          comportements à un élément en une seule fois.
+        </p>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="KKboJdo"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/KKboJdo"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img src="02_Img/chaine.jpg" alt="Image chaine" />
+        <p>
+          Ici nous écrivons d'abord le texte "Bonjour tout le monde !" dans le
+          paragraphe puis nous lui attribuons la couleur bleue.
+        </p>
+      </div>
+      <h2>À retenir</h2>
+      <h3>Syntaxe</h3>
+      <div>
+        <ul>
+          <li>
+            Un sélecteur s'écrit avec l'alias <strong>$</strong> suivi du nom du
+            sélecteur entre parenthèses : $('#mon-selecteur')
+          </li>
+          <li>
+            Un sélecteur par identifiant commence par "<strong>#</strong>" et un
+            sélecteur par classe commence par "s<strong>.</strong>"
+          </li>
+          <li>
+            Une méthode est invoquée après le sélecteur et est séparée de
+            celui-ci par un point "." : $('#selecteur').html('<b
+              >texte en gras</b
+            >')
+          </li>
+          <li>
+            Les méthodes peuvent être invoquées à la chaîne :
+            $('#selecteur').html('<b>texte en gras</b>').css('font-size', '2em')
+          </li>
+        </ul>
+      </div>
+      <h3>Complément</h3>
+      <div>
+        <a href="https://api.jquery.com/" target="_blank" rel="alternate">Documentation de jQuery</a>
+        <a href="https://api.jquery.com/category/selectors/" target="_blank" rel="alternate">Les sélecteurs jQuery</a>
+      </div>
+    </div>
   </body>
 </html>
