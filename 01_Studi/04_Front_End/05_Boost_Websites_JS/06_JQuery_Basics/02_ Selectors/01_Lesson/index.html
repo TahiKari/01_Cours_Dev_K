@@ -3,9 +3,432 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Les sélecteurs</title>
   </head>
   <body>
-    <h1></h1>
+    <h1>Les sélecteurs</h1>
+    <div>
+      <ul>
+        <li>Sélectionner un élément</li>
+        <li>Sélectionner des éléments en profondeur</li>
+        <li>Sélectionner l'élément courant</li>
+      </ul>
+      <h2>Mise en situation</h2>
+      <p>
+        Avant toute interaction avec le DOM, il faut être capable de
+        sélectionner n'importe quel élément, qu'importe où il se trouve sur une
+        page web. Nous allons entrer dans le détail des différents principes de
+        sélection.
+      </p>
+      <h2>Syntaxe de base</h2>
+      <h3>Rappel</h3>
+      <div>
+        <p>
+          Avec jQuery, la sélection d'éléments se fait de la même façon qu'avec
+          des sélecteurs CSS.
+        </p>
+        <p>
+          Pour rappel, la syntaxe est la suivante : $('selecteur'). $ étant
+          l'alias de jQuery().
+        </p>
+        <p>
+          Une méthode est ensuite appliquée à l'élément sélectionné :
+          $('selecteur').methode().
+        </p>
+      </div>
+      <h2>Les sélecteurs</h2>
+      <p>
+        Un sélecteur par identifiant commence par "<strong>#</strong>" et un
+        sélecteur par classe commence par "<strong>.</strong>", suivi du nom du
+        sélecteur.
+      </p>
+      <p>Il est possible de sélectionner un élément par :</p>
+      <ul>
+        <li>sa balise : $('div')</li>
+        <li>son identifiant : $('#bases')</li>
+        <li>sa classe : $('.bases')</li>
+      </ul>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="wvRxPey"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/wvRxPey"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>La sélection avancéee</h2>
+      <h3>Complément</h3>
+      <div>
+        <p>
+          Pour aller plus loin, il est possible de sélectionner en profondeur
+          dans le DOM, grâce à la notion de parent, frère et enfant. Pour cela,
+          il sera possible d'appliquer deux techniques :
+        </p>
+        <ol>
+          <li>L'enchaînement des sélecteurs</li>
+          <li>Les pseudo-classes CSS</li>
+        </ol>
+        <p>
+          Pour rappel, une pseudo-classe est un mot-clé ajouté à la suite d'un
+          sélecteur. Elle permet d'inclure l'état d'un élément dans la sélection
+          et facilite certaines écritures.
+        </p>
+      </div>
+      <h2>Enchaînement des sélecteurs</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="MWZBOoL"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/MWZBOoL"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>Avec les pseudo-classes</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="qBLyVXO"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/qBLyVXO"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h3>Complément</h3>
+      <div>
+        <p>Voici quelques-unes des pseudo-classes CSS les plus célèbres :</p>
+        <ul>
+          <li>:first-child : le premier enfant</li>
+          <li>:last-child : le dernier enfant</li>
+          <li>:last-of-type : le dernier élément d'un type</li>
+          <li>:hover : au survol de l'élément</li>
+          <li>:before : avant l'élément</li>
+          <li>:after : après l'élément</li>
+          <li>nth-child(x) : enfant n° x</li>
+        </ul>
+      </div>
+      <h2>Sélection multiple</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Parfois, des méthodes devront être appliquées à des éléments
+          différents, avec des identifiants et des classes divers.
+        </p>
+        <p>
+          Au lieu de réécrire le code pour chaque élément, il est possible de
+          lister les sélecteurs en les séparant par une virgule.
+        </p>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="eYbjeEo"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/eYbjeEo"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>Le sélecteur this</h2>
+      <p>
+        Ce sélecteur permet d'agir sur l'objet courant. Soit le code suivant :
+      </p>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="gOZjXGx"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/gOZjXGx"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <p>
+        Ici, nous écrivons "Bonjour tout le monde !" dans le paragraphe de notre
+        div. Nous aurions pu écrire l'équivalent :
+      </p>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="MWZBOEL"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/MWZBOEL"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img src="02_Img/helloworld.jpg" alt="Image helloworld" />
+      </div>
+      <p>
+        L'utilisation de this n'est possible qu'à partir d'une fonction anonyme,
+        que nous passons en paramètre de la méthode utilisée.
+      </p>
+      <p>
+        this est passé en tant qu'objet à jQuery et non comme une chaîne de
+        caractères : $(this) et non pas $('this').
+      </p>
+      <h3>Attention</h3>
+      <div>
+        <p>
+          Côté performance, nous préférerons les sélecteurs par identifiant, car
+          ce dernier étant unique, il sera plus facilement ciblé dans le DOM.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="dywjZZp"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/dywjZZp"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Évitons, par exemple, les recherches trop générales sur des classes :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="GRPBOOv"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/GRPBOOv"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Utilisons plutôt la notion parent/enfant afin de cibler au mieux les
+          éléments :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="ZEVjaaZ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/ZEVjaaZ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>À retenir</h2>
+      <h3>Syntaxe</h3>
+      <div>
+        <ul>
+          <li>
+            Un sélecteur s'écrit avec l'alias <strong>$</strong> suivi du nom du
+            sélecteur entre parenthèses : $('#mon-selecteur') ou encore
+            $('balise .mon-selecteur').
+          </li>
+          <li>
+            Une sélection peut être multiple : $('selecteur1, selecteur2,
+            selecteur3').
+          </li>
+          <li>this permet de cibler l'élément courant : $(this).</li>
+        </ul>
+      </div>
+      <h3>Complément</h3>
+      <div>
+        <a href="https://api.jquery.com/" target="_blank" rel="alternate"
+          >Documentation de jQuery</a
+        >
+        <a
+          href="https://developer.mozilla.org/fr/docs/Web/CSS/Pseudo-classes"
+          target="_blank"
+          rel="alternate"
+          >Pseudo-classes</a
+        >
+      </div>
+    </div>
   </body>
 </html>
