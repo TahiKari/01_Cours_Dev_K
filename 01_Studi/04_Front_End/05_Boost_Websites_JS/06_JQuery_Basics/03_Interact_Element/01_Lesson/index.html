@@ -3,9 +3,468 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Interagir avec un élément</title>
   </head>
   <body>
-    <h1></h1>
+    <h1>Interagir avec un élément</h1>
+    <div>
+      <h2>Objectif</h2>
+      <ul>
+        <li>Récupérer le code HTML</li>
+        <li>Modifier le CSS</li>
+        <li>Parcourir une liste d'éléments</li>
+        <li>Associer des données à un élément</li>
+      </ul>
+      <h2>Mise en situation</h2>
+      <p>
+        jQuery offre une multitude de méthodes permettant de créer de
+        l'interaction. Nous allons voir les prémices de la programmation
+        événementielle, à savoir comment agir sur le code HTML et CSS, comment
+        parcourir des listes d'éléments et utiliser des données propres à
+        jQuery.
+      </p>
+      <h2>Récupérer le code HTML</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          La méthode html() permet de récupérer le code HTML d'un élément. Il
+          s'agit de la réécriture d'innerHTML de JavaScript.
+        </p>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="oNJMOLw"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/oNJMOLw"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="mdajgEx"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/mdajgEx"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h3>Attention</h3>
+      <div>
+        <p>
+          Attention, si on lui donne un argument, cette méthode servira alors à
+          remplacer du contenu HTML.
+        </p>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="mdajgrL"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/mdajgrL"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>Les éléments h3 et p seront remplacés par cette nouvelle div.</p>
+        <img src="02_Img/html.jpg" alt="Image html" />
+      </div>
+      <h2>Modifier le CSS</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          La méthode css() permet d'ajouter ou modifier les propriétés CSS d'un
+          élément. Elle prend comme paramètres le nom de la propriété CSS et sa
+          valeur.
+        </p>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="BavPEpG"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/BavPEpG"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Ici, la propriété color, avec blue comme valeur, est ajoutée à
+          l'élément HTML h3.
+        </p>
+        <img src="02_Img/hello.jpg" alt="Image hello" />
+      </div>
+      <h2>Parcourir une liste d'éléments</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Si une sélection retourne plusieurs éléments, la méthode each() permet
+          de les parcourir.
+        </p>
+        <p>
+          L'intérêt est de pouvoir récupérer les éléments un à un pour leur
+          appliquer une ou différentes méthode(s) selon les besoins.
+        </p>
+        <p>
+          Elle prend en paramètre une fonction anonyme prenant elle-même deux
+          paramètres non obligatoires :
+        </p>
+        <ul>
+          <li>index : position de l'élément dans la liste,</li>
+          <li>element : l'élément courant de la liste (équivalent à this).</li>
+        </ul>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="VwqBNWy"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/VwqBNWy"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="ZEVjZJQ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/ZEVjZJQ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, this aurait pu être remplacé par element si ce
+          dernier était passé en paramètre.
+        </p>
+      </div>
+      <h2>Associer des données à un élément</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          La méthode data() permet de créer des variables utilisables seulement
+          par jQuery. Elles ne seront en aucun cas inclues dans le DOM. Elle
+          prend comme paramètres :
+        </p>
+        <ul>
+          <li>element : l'élément pour lequel associer la variable,</li>
+          <li>key : le nom de la variable,</li>
+          <li>
+            value : la valeur de la variable (peut être une simple donnée de
+            type entier, une chaîne de caractères ou bien un tableau ou un objet
+            JavaScript).
+          </li>
+        </ul>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="yLGqrvY"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/yLGqrvY"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>Cette fois, les éléments de la liste sont vides.</p>
+        <p>Création par tableau :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="zYyLXRN"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/zYyLXRN"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>Création par objet :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="jOXpRzO"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/jOXpRzO"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img src="02_Img/data.jpg" alt="Image data" />
+        <p>
+          Dans cet exemple, la donnée languages est associée à l'élément ayant
+          l'id #content, ce qui signifie que languages ne sera disponible que
+          pour cet élément.
+        </p>
+        <p>Nous l'utilisons ensuite pour remplir les éléments de la liste.</p>
+      </div>
+      <h2>Récupérer la valeur d’un élément</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p>
+          La méthode .val() permet de récupérer la valeur d’un élément d’un
+          formulaire tels qu’un input, un select ou encore un textarea. Cette
+          méthode ne prend pas de paramètres.
+        </p>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p>Ici on récupère la valeur d’un select pour l’option “foo”</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="qBLywYV"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/qBLywYV"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>À retenir</h2>
+      <h3>Syntaxe</h3>
+      <div>
+        <ul>
+          <li>html() permet de récupérer ou d'ajouter du code HTML.</li>
+          <li>css() permet d'ajouter et modifier des propriétés CSS.</li>
+          <li>each() permet de parcourir une liste d'éléments.</li>
+          <li>data() permet d'associer des données à un élément.</li>
+          <li>val() permet de récupérer la valeur d’un élément.</li>
+        </ul>
+      </div>
+      <h3>Complément</h3>
+      <div>
+        <a
+          href="https://api.jquery.com/html/#html"
+          target="_blank"
+          rel="alternate"
+          >html()</a
+        >
+        <a
+          href="https://api.jquery.com/css/#css2"
+          target="_blank"
+          rel="alternate"
+          >css()</a
+        >
+        <a
+          href="https://api.jquery.com/each/#each-function"
+          target="_blank"
+          rel="alternate"
+          >each()</a
+        >
+        <a
+          href="https://api.jquery.com/jQuery.data/#jQuery-data-element-key-value"
+          target="_blank"
+          rel="alternate"
+          >data()</a
+        >
+        <a href="https://api.jquery.com/val/" target="_blank" rel="alternate"
+          >val()</a
+        >
+      </div>
+    </div>
   </body>
 </html>
