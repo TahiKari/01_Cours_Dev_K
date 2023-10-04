@@ -3,9 +3,184 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Ajouter, supprimer un élément</title>
   </head>
   <body>
-    <h1></h1>
+    <h1>Ajouter, supprimer un élément</h1>
+    <div>
+      <h2>Objectif</h2>
+      <ul>
+        <li>Ajouter un élément</li>
+        <li>Supprimer un élément</li>
+      </ul>
+      <h2>Mise en situation</h2>
+      <p>
+        Il existe des méthodes permettant de modifier le DOM en ajoutant de
+        nouveaux éléments, en copiant des éléments existants ou en supprimant
+        des éléments.
+      </p>
+      <h2>Ajouter un élément</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          jQuery permet l'ajout d'éléments dans le DOM grâce aux méthodes
+          append() et prepend(). Elles prennent en paramètre le nouvel élément à
+          ajouter.
+        </p>
+        <p>
+          append permet d'ajouter un élément en tant que
+          <strong>dernier enfant</strong> de l'élément cible, prepend en tant
+          que <strong>premier enfant</strong>.
+        </p>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="MWZPKvN"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/MWZPKvN"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h3>Complément</h3>
+      <div>
+        <p>
+          Il est possible d'ajouter un élément déjà existant à un autre endroit
+          de la page. Pour cela, il suffit de passer en paramètre un sélecteur à
+          la méthode utilisée.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="oNJabGZ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/oNJabGZ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+      <h2>Supprimer un élément</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          jQuery permet la suppression d'éléments dans le DOM grâce à la méthode
+          remove(). Elle prend en paramètre optionnel un élément.
+        </p>
+      </div>
+      <h3>Remarque</h3>
+      <div>
+        <p>
+          Les enfants de l'élément, ainsi que les événements et données
+          associées, seront aussi supprimés.
+        </p>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="eYbPJem"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/eYbPJem"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img src="02_Img/remove.jpg" alt="Image remove" />
+        <p>
+          La div avec l'id #remove a été supprimée du DOM, ainsi que ses
+          éléments enfants.
+        </p>
+        <p>Nous aurions aussi pu écrire : $('div').remove('#remove').</p>
+      </div>
+      <h2>À retenir</h2>
+      <h3>Syntaxe</h3>
+      <div>
+        <ul>
+          <li>
+            Les méthodes append() et prepend() servent à ajouter des éléments
+            dans le DOM.
+          </li>
+          <li>remove() sert à supprimer des éléments.</li>
+        </ul>
+      </div>
+      <h3>Complément</h3>
+      <div>
+        <a href="https://api.jquery.com/append/" target="_blank" rel="alternate"
+          >append()</a
+        >
+        <a
+          href="https://api.jquery.com/prepend/"
+          target="_blank"
+          rel="alternate"
+          >preprend()</a
+        >
+        <a href="https://api.jquery.com/remove/" target="_blank" rel="alternate"
+          >remove()</a
+        >
+      </div>
+    </div>
   </body>
 </html>

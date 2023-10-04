@@ -3,9 +3,168 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Les événements</title>
   </head>
   <body>
-    <h1></h1>
+    <div>
+      <h1>Les événements</h1>
+      <h2>Objectif</h2>
+      <ul>
+        <li>Ajouter un écouteur d'événement</li>
+        <li>Simuler un écouteur d'événement</li>
+      </ul>
+      <h2>Mise en situation</h2>
+      <p>
+        Comme en JavaScript pur, jQuery permet l'ajout d'écouteurs d'événements
+        qui seront déclenchés par le navigateur ou l'utilisateur. Il peut s'agir
+        d'un chargement de page, d'un clic sur un bouton ou encore de la
+        manipulation des champs d'un formulaire.
+      </p>
+      <h3>Remarque</h3>
+      <div>
+        <p>
+          Sans le savoir, nous avons déjà utilisé un écouteur d'événement au
+          cours des précédentes étapes de l'initiation à jQuery.
+        </p>
+        <p>
+          Lorsque nous écrivons : $(document).ready(function() {}), l'événement
+          <strong>ready</strong> est écouté. Il signifie, quand le DOM est
+          chargé, d'exécuter le script jQuery correspondant.
+        </p>
+      </div>
+      <h2>Écouter un événement</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Créer un écouteur d'événement avec jQuery est très simple : il suffit
+          d'appliquer la méthode correspondant à l'écouteur souhaité sur un
+          élément.
+        </p>
+        <p>Parmi les écouteurs les plus utilisés :</p>
+        <ul>
+          <li>click() : cliquer sur un bouton de la souris,</li>
+          <li>mousedown() : presser un bouton de la souris,</li>
+          <li>keydown(), keyup() : enfoncer, relâcher un bouton du clavier,</li>
+          <li>focus() : focaliser sur un champ de formulaire,</li>
+          <li>submit() : soumettre un formulaire.</li>
+        </ul>
+      </div>
+      <h2>Événement formulaire</h2>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="eYbPJbJ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/eYbPJbJ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Ici, l'événement <strong>focus</strong> est écouté sur le champ email
+          du formulaire. En cliquant dans le champ pour saisir, le code
+          correspondant sera exécuté.
+        </p>
+        <img src="02_Img/focus.jpg" alt="Image focus" />
+      </div>
+      <h2>Simuler un évènement</h2>
+      <h3>Complément</h3>
+      <div>
+        <p>
+          Il est possible de déclencher un événement sans attendre une action de
+          l'utilisateur grâce à la méthode trigger(). Elle prend en paramètre le
+          nom de l'événement (<strong>click, change, submit</strong>).
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="yLGReZy"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/yLGReZy"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Ici, l'écouteur <strong>submit</strong> est simulé dès le chargement
+          de la page, ce qui aura pour effet d'envoyer le formulaire sans
+          cliquer sur le bouton.
+        </p>
+        <img src="02_Img/submit.jpg" alt="Image submit" />
+      </div>
+      <h2>Arrêter la propagation</h2>
+      <h3>Complément</h3>
+      <div>
+        <p>
+          Comme en JavaScript pur, e.preventDefault() peut être utilisé pour
+          stopper le comportement par défaut de l'événement.
+        </p>
+      </div>
+      <h2>À retenir</h2>
+      <h3>Syntaxe</h3>
+      <div>
+        <ul>
+          <li>Un écouteur d'événement s'écrit : $('selecteur').click().</li>
+          <li>
+            Un événement peut être déclenché : $('selecteur').trigger('click').
+          </li>
+        </ul>
+      </div>
+      <h3>Complément</h3>
+      <div>
+        <a
+          href="https://api.jquery.com/trigger/"
+          target="_blank"
+          rel="alternate"
+          >trigger()</a
+        >
+        <a
+          href="https://api.jquery.com/event.preventDefault/#event-preventDefault"
+          target="_blank"
+          rel="alternate"
+          >e.preventDefault()</a
+        >
+      </div>
+    </div>
   </body>
 </html>

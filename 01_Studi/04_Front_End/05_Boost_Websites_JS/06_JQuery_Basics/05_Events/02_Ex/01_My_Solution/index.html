@@ -5,9 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ma solution</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
-    <script src="script.js" defer></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <script src="script.js"></script>
   </head>
   <body>
-    <h1>Ma solution</h1>
+    <div>
+      <h1>Ma solution</h1>
+
+      <section>
+        <div id="content">
+          <form id="form">
+            <label for="comment">Commentaire :</label>
+            <textarea id="comment" name="comment" cols="30"></textarea>
+          </form>
+        </div>
+        <div>
+          Commentaire saisi :
+          <p id="commentValue">Pas de commentaire</p>
+        </div>
+      </section>
+    </div>
   </body>
 </html>
