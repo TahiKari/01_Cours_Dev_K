@@ -3,9 +3,420 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>XMLHttpRequest</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1></h1>
+    <div>
+      <h1>XMLHttpRequest</h1>
+      <h2>Objectif</h2>
+      <ul>
+        <li>Comprendre le fonctionnement de l'objet XMLHttpRequest</li>
+        <li>
+          Connaître les fonctionnalités principales de l'objet XMLHttpRequest
+        </li>
+      </ul>
+      <h2>Mise en situation démo</h2>
+      <p>
+        Nous allons présenter ici les principales fonction de l'objet
+        XMLHttpRequest.
+      </p>
+      <div>
+        <h2>Initialisation de la requête</h2>
+        <h3>Syntaxe</h3>
+        <p>
+          Pour initialiser une requête, il faut d'abord créer une instance de
+          l'objet XMLHttpRequest.
+        </p>
+        <p>La méthode .open() permet l'initialisation de la requête.</p>
+        <p>
+          Elle respecte la méthode HTTP c'est-à-dire qu'elle permet d'envoyer
+          des requêtes GET ou POST (ou HEAD) classique. Avec open() on peut
+          aussi paramétrer une URL, passer des données venant d'une base de
+          données comme par exemple un login, un mot de passe, etc ... tout ça
+          de manière asynchrone.
+        </p>
+        <p>La requête est envoyée avec la méthode .send().</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="eYbbOxg"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/eYbbOxg"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+
+      <div>
+        <h3>Attention</h3>
+        <p>
+          Par défaut, la requête est asynchrone, c'est-à-dire que le script
+          continue à être exécuté, sans attendre la réponse qui sera retournée
+          via un callback.
+        </p>
+        <p>
+          C'est un comportement souhaitable dans l'immense majorité des cas.
+          Cependant, il est possible de forcer un comportement synchrone en
+          passant la valeur false au paramètre asynchrone dans l'appel de la
+          méthode.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="RwEEbvq"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/RwEEbvq"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+
+      <div>
+        <h2>Les différents états</h2>
+        <p>
+          La requête envoyée étant asynchrone, cela signifie qu'elle est
+          exécutée en parallèle avec d'autres fonctions. Il est important
+          d'avoir une fonction de callback déclenchée à la fin du traitement
+          pour récupérer le résultat de la requête.
+        </p>
+        <p>
+          En JavaScript, un callback permet à une fonction d'appeler une autre
+          fonction. Il s'agit plus précisément d'une fonction de rappel qui peut
+          être exécutée après la fin d'une autre fonction.
+        </p>
+        <p>
+          Pour cela, XHR possède un événement readystatechange qui est déclenché
+          à chaque changement d'état de l'instance.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="MWZZgxj"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/MWZZgxj"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <table>
+          <thead>
+            <tr>
+              <th>Valeur</th>
+              <th>Etat</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0</td>
+              <td>UNSENT</td>
+              <td>
+                L'objet XHR est créé, mais pas encore initialisé via la méthode
+                .open()
+              </td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>OPENED</td>
+              <td>
+                L'objet XHR est initialisé, mais la requête n'est pas envoyée
+                via la méthode .send()
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>HEADERS_RECEIVED</td>
+              <td>
+                La requête est envoyée au serveur et le HEADER de la réponse a
+                été reçu
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>LOADING</td>
+              <td>Le transfert de données est en cours</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>DONE</td>
+              <td>
+                Le transfert de données est terminé, l'opération est complète
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          Il suffit donc de tester l'état et de récupérer la réponse quand la
+          requête est terminée.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="mdaabYv"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/mdaabYv"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+
+      <div>
+        <h2>La réponse</h2>
+        <p>
+          Si la requête est complète et réussie, le retour du serveur (response)
+          sera accessible via la propriété .response de l'objet XHR.
+        </p>
+        <p>
+          La propriété .status de XHR nous renseigne sur le code HTTP de cette
+          réponse.
+        </p>
+        <p>Voici les plus courants :</p>
+        <ul>
+          <li>200 : Succès de la requête</li>
+          <li>301 : Redirection</li>
+          <li>403 : Accès refusé</li>
+          <li>404 : Adresse non trouvée</li>
+          <li>500 : Erreur serveur</li>
+        </ul>
+        <p>
+          On pourra donc tester l'état de la requête avant d’essayer de lire sa
+          réponse.
+        </p>
+      </div>
+
+      <div>
+        <h2>Requête vers une API retournant une liste de personnes</h2>
+        <h3>Exemple</h3>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="LYMMPKm"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/LYMMPKm"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>Résultat en console :</p>
+      </div>
+
+      <div>
+        <h2>Format JSON</h2>
+        <h3>Remarque</h3>
+        <p>
+          Le format de chaîne de caractères récupérée dans l'exemple précédent
+          est au format JSON, pour JavaScript Object Notation. Il s'agit d'une
+          notation permettant de représenter des informations structurées,
+          ressemblant beaucoup à ce qu'on peut écrire en JavaScript. Nous
+          n'allons pas nous attarder ici en détail sur ce format, mais sachez
+          qu'il est possible d'analyser cette chaîne de caractère et de la
+          transformer en la valeur JavaScript décrite par celle-ci grâce à
+          l'objet JSON et sa méthode parse(). Un cours est dédié à ce format.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="XWoorvg"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/XWoorvg"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Pour en revenir à notre exemple, voici comment convertir la réponse
+            reçue en JSON en un objet JavaScript :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-theme-id="dark"
+            data-default-tab="js"
+            data-slug-hash="QWzzWLj"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/QWzzWLj"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>À retenir</h2>
+        <h3>Syntaxe</h3>
+        <div>
+          <ol>
+            <li>
+              XMLHttpRequest est l'objet qui nous permet de créer, envoyer et
+              obtenir le résultat d'une requête HTTP.
+            </li>
+            <li>
+              XHR est initialisé avec la méthode .open() et la requête est
+              lancée avec la méthode .send().
+            </li>
+            <li>
+              Les propriétés .readyState et .status nous renseignent
+              respectivement sur l'état d'avancement et sur l'état de réussite
+              de la requête.
+            </li>
+            <li>
+              Une fois complète, le corps de la réponse est accessible dans la
+              propriété .response.
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div>
+        <h3>Complément</h3>
+        <div>
+          <a
+            href="https://developer.mozilla.org/fr/docs/Web/API/XMLHttpRequest"
+            target="_blank"
+            rel="alternate"
+            >MDN : XMLHttpRequest</a
+          >
+        </div>
+      </div>
+    </div>
   </body>
 </html>

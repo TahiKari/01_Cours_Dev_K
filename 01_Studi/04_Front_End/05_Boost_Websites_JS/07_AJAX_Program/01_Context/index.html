@@ -3,9 +3,64 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Contexte</title>
   </head>
   <body>
-    <h1></h1>
+    <div>
+      <h1>Contexte</h1>
+      <p><strong>Durée : 2 h </strong></p>
+      <p><strong>Environnement de travail : Visual Studio Code </strong></p>
+      <p>
+        <strong
+          >Pré-requis : Bases de JavaScript, connaissance de JSON et savoir
+          interagir avec une API
+        </strong>
+      </p>
+      <h3>Contexte</h3>
+      <div>
+        <p>
+          Dans une application web dynamique et moderne, il est essentiel de
+          pouvoir modifier ou mettre à jour les données affichées, sans pour
+          autant recharger toute la page.
+        </p>
+        <p>
+          AJAX (ou Asynchronous JavaScript And XML) est un ensemble de
+          technologies qui vont permettre des échanges rapides de données entre
+          client et serveur, sans rechargement de la page HTML.
+        </p>
+        <p>
+          Pour le web, le cas d'utilisation le plus simple est que le client (le
+          navigateur) envoie une requête http au serveur. Lorsque le serveur
+          répond, le client affiche la réponse (souvent au format HTML) à
+          l'utilisateur.
+        </p>
+        <p>
+          Utiliser AJAX permet de demander au navigateur d'envoyer une requête
+          http depuis javascript.
+        </p>
+        <p>
+          Contrairement au comportement "classique" du navigateur, la réponse à
+          cette requête doit être traitée dans le javascript. Ce qui permet par
+          exemple, de ne mettre à jour qu'une partie du DOM avec des données qui
+          viennent d'être reçues en réponse à une requête, ou d'envoyer des
+          données (d'un formulaire ou autre) sans pour autant recharger tout le
+          contenu de la page.
+        </p>
+        <p>
+          Comme il est impossible de savoir "si" et "quand" un serveur va
+          répondre à une requête on utilise dans la plupart des cas AJAX de
+          manière asynchrone. Une fois la requête envoyée, le code javascript
+          continue de s'exécuter.
+        </p>
+        <p>
+          Pour le traitement de la réponse, il va falloir créer une fonction de
+          traitement qui sera exécutée lorsque la réponse arrivera.
+        </p>
+        <p>
+          Il faut donc ajouter un listener à notre requête pour qu'il appelle
+          notre fonction de traitement au bon moment.
+        </p>
+      </div>
+    </div>
   </body>
 </html>
