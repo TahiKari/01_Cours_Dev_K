@@ -1,34 +1,12 @@
-// Exemple 
-/*
+// Ma solution
+$(document).ready(() => {
 
-*/
+  let form = $('#form')
 
-console.log("-----------------------------------------------")
+  form.on('keyup', '.element', function () {
+      $('#elementValue').html($(this).val())
+  })
 
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
+  form.prepend('<input type="text" id="lastname" name="lastname" class="element" value="" />')
+  form.prepend('<label for="lastname">Lastname :</label>')
+});

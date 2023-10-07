@@ -3,9 +3,193 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Délégation d'événement</title>
   </head>
   <body>
-    <h1></h1>
+    <div>
+      <h1>Délégation d'événement</h1>
+      <h2>Objectif</h2>
+      <ul>
+        <li>Ajouter un écouteur d'événement avec on()</li>
+        <li>Déléguer un événement</li>
+      </ul>
+      <h2>Mise en situation</h2>
+      <p>
+        La programmation événementielle réserve quelques surprises. Imaginons
+        créer un écouteur d'événement <strong>click</strong> sur les boutons de
+        notre site. Si nous rajoutons dynamiquement d'autres boutons, ceux-ci ne
+        seront pas reliés à notre écouteur.
+      </p>
+      <p>
+        Le rôle de la délégation d'événement est précisément de résoudre cette
+        problématique.
+      </p>
+      <h2>Méthode on()</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          La délégation avec jQuery implique l'utilisation d'une autre méthode
+          d'ajout d'écouteur d'événement que celle vue dans le chapitre
+          précédent. Nous utiliserons on() avec deux paramètres :
+        </p>
+        <ul>
+          <li>le nom de l'événement,</li>
+          <li>une fonction anonyme contenant le code à exécuter.</li>
+        </ul>
+        <p>Reprenons le formulaire créé précédemment.</p>
+        <img src="02_Img/on.jpg" alt="Image on" />
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="RwEeqER"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/RwEeqER"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <img src="02_Img/focus.jpg" alt="Image focus" />
+        <p>
+          De la même manière, le message d'alerte s'affichera quand le focus se
+          fera sur le champ email.
+        </p>
+      </div>
+      <h2>Délégation</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Pour déléguer un écouteur d'événement, la méthode on() accepte un
+          nouveau paramètre : l'élément sur lequel déléguer, qui se placera en
+          seconde position.
+        </p>
+        <p>
+          Considérons l'écouteur <strong>focus</strong> placé sur les éléments
+          input sans délégation.
+        </p>
+        <p>
+          Dans un premier temps, seul le champ email est présent dans le
+          formulaire.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="Jjwmewg"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/Jjwmewg"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Ajoutons dynamiquement le champ lastname grâce à preprend. Dans ce
+          cas, le message d'alerte s'affichera au focus sur le champ email, mais
+          pas sur le champ lastname.
+        </p>
+        <img src="02_Img/nodelegation.jpg" alt="Image nodelegation" />
+        <p>Avec la délégation :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="oNJaQVg"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/oNJaQVg"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Le message d'alerte s'affiche bien au focus sur le champ lastname.
+        </p>
+      </div>
+      <h3>Fondamental</h3>
+      <p>
+        Pour que la délégation fonctionne, l'écouteur a été placé sur le parent
+        direct des éléments input. <strong>$('input')</strong>.on('focus',
+        function() {}) est devenu : <strong>$('#form')</strong>.on('focus',
+        'input', function() {}).
+      </p>
+      <p>
+        Autrement dit, l'écouteur est placé sur le parent et sera délégué par
+        celui-ci aux éléments input.
+      </p>
+      <h3>Conseil</h3>
+      <div>
+        <p>
+          Pour optimiser l'exécution du script, la délégation doit se faire sur
+          le parent le plus proche non créé dynamiquement.
+        </p>
+      </div>
+      <h2>À retenir</h2>
+      <h3>Syntaxe</h3>
+      <div>
+        <ul>
+          <li>
+            Pour déléguer un écouteur d'événement, la méthode on() doit être
+            utilisée : on('event', 'element', function(){}).
+          </li>
+        </ul>
+      </div>
+      <h3>Complément</h3>
+      <div>
+        <a href="https://api.jquery.com/on/" target="_blank" rel="alternate">on()</a>
+      </div>
+    </div>
   </body>
 </html>

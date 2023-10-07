@@ -3,9 +3,186 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Les animations</title>
   </head>
   <body>
-    <h1></h1>
+    <div>
+      <h1>Les animations</h1>
+      <h2>Objectif</h2>
+      <ul>
+        <li>Animer le contenu d'une page web</li>
+      </ul>
+      <h2>Mise en situation</h2>
+      <p>
+        Par définition, une interaction provoque un effet de changement. Jusqu'à
+        maintenant, nous avons manipulé des éléments fixes, mais jQuery permet
+        également de provoquer des effets de mouvement avec les animations.
+      </p>
+      <h2>Animations natives</h2>
+      <h3>Syntaxe</h3>
+      <div>
+        <p>
+          Certaines animations sont prédéfinies par jQuery. Elles sont
+          utilisables en appliquant à un élément la méthode correspondant à
+          l'animation souhaitée.
+        </p>
+        <p>Nous noterons parmi les plus connues :</p>
+        <ul>
+          <li>
+            hide() : cache un élément en réduisant sa taille et son opacité
+          </li>
+          <li>
+            show() : montre un élément en augmentant sa taille et son opacité
+          </li>
+          <li>fadeIn() : montre un élément en augmentant son opacité</li>
+          <li>fadeOut() : cache en élément en réduisant son opacité</li>
+        </ul>
+      </div>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          Ces méthodes peuvent prendre en paramètre une durée en millisecondes.
+          Il s'agira de la durée de l'animation : $('element').hide(2000).
+        </p>
+        <p>
+          Il existe des durées prédéfinies :
+          <strong>fast = 200ms, normal = 400ms et slow = 600ms</strong>.
+        </p>
+        <p>On utilisera alors la syntaxe $('element').hide('slow').</p>
+      </div>
+      <h3>Remarque</h3>
+      <div>
+        <p>
+          Un délai peut être appliqué avant une animation grâce à la méthode
+          delay, qui prend en paramètre une durée en millisecondes :
+          $('element').delay(2000).show('fast') ;.
+        </p>
+      </div>
+      <h3>Exemple</h3>
+      <p
+        class="codepen"
+        data-height="300"
+        data-theme-id="dark"
+        data-default-tab="js"
+        data-slug-hash="ZEVqVQP"
+        data-user="OpenSpirit"
+        style="
+          height: 300px;
+          box-sizing: border-box;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 2px solid;
+          margin: 1em 0;
+          padding: 1em;
+        "
+      >
+        <span
+          >See the Pen
+          <a href="https://codepen.io/OpenSpirit/pen/ZEVqVQP"> Untitled</a> by
+          OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+          on <a href="https://codepen.io">CodePen</a>.</span
+        >
+      </p>
+      <script
+        async
+        src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+      ></script>
+      <h2>Animations personnalisées</h2>
+      <h3>Méthode</h3>
+      <div>
+        <p>
+          La méthode animate() permet de créer ses propres animations en jouant
+          sur les propriétés CSS de l'élément. Elle peut prendre jusqu'à quatre
+          paramètres :
+        </p>
+        <ul>
+          <li>
+            properties : un objet contenant les propriétés CSS et leurs valeurs
+            (obligatoire)
+          </li>
+          <li>duration : une durée (optionnel, 400 ms par défaut)</li>
+          <li>easing : le style d'animation (optionnel : swing ou linear)</li>
+          <li>
+            complete : une fonction à exécuter en fin d'animation (optionnel)
+          </li>
+        </ul>
+      </div>
+      <h3>Exemple</h3>
+      <div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="JjwmwRY"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/JjwmwRY"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans ce cas, nous avons pu décomposer la modification de largeur et
+          hauteur en deux animations.
+        </p>
+      </div>
+      <h3>Complément</h3>
+      <div>
+        <p>
+          La méthode animate peut aussi s'écrire : $('element').animate({css},
+          {options}). D'abord, les propriétés CSS et leurs valeurs, ensuite un
+          objet d'options générales, comprenant entre autres la durée et le
+          style d'animation.
+        </p>
+      </div>
+      <h3>Attention</h3>
+      <div>
+        <p>
+          Côté performance, un abus d'utilisation de la méthode animate pourrait
+          entraîner des ralentissements significatifs. Il faut la préférer pour
+          de petites animations. Une alternative peut être la librairie
+          Velocity.js, plus optimisée pour les animations lourdes.
+        </p>
+      </div>
+      <h2>À retenir</h2>
+      <h3>Syntaxe</h3>
+      <div>
+        <p>Il existe deux syntaxes pour faire appel à animate() :</p>
+        <ul>
+          <li>$('element').animate({css}, duration, easing, complete)</li>
+          <li>$('element').animate({css}, {options})</li>
+        </ul>
+        <p>
+          La première est plus courante et suffira dans la majorité des cas. La
+          seconde permet de personnaliser encore plus les animations pour des
+          besoins spécifiques.
+        </p>
+      </div>
+      <h3>Complément</h3>
+      <div>
+        <a href="v" target="_blank" rel="alternate">animate()</a>
+        <a href="http://velocityjs.org/" target="_blank" rel="alternate"
+          >velocity.js</a
+        >
+      </div>
+    </div>
   </body>
 </html>
