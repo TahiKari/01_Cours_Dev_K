@@ -3,9 +3,155 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Appliquez la notion</title>
   </head>
   <body>
-    <h1></h1>
+    <div>
+      <h1>Appliquez la notion</h1>
+      <div>
+        <h2>Question</h2>
+        <p>
+          L'administrateur d'un site scolaire doit ajouter les nouveaux élèves
+          de l'établissement au logiciel de gestion. Pour cela, il utilise une
+          interface qui lui permet de rentrer le nom de l’élève, son prénom, et
+          sa classe.
+        </p>
+        <p>
+          Informatiquement, il envoie au serveur un objet possédant les
+          propriétés firstName ,lastName , grade et numberClass.
+        </p>
+        <p>
+          La propriété firstName correspond au prénom de l’élève, lastName au
+          nom de famille, grade au niveau et numberClass au numéro de la classe.
+        </p>
+        <p>Exemple : pour Marie Dupond, en 6ème 5 :</p>
+        <div>
+          <p
+            class="codepen"
+            data-height="300"
+            data-theme-id="dark"
+            data-default-tab="js"
+            data-slug-hash="gOZZxqG"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/gOZZxqG"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+        <p>
+          Lorsque l'on clique sur le bouton <strong>Enregistrer</strong>, le
+          code appelle la fonction sendForm().
+        </p>
+        <p>
+          À l'aide du code ci-dessous, créez la fonction sendForm() qui
+          contiendra une requête AJAX, dont les caractéristiques sont :
+        </p>
+        <ul>
+          <li>
+            L'API pour enregistrer l'étudiant est https://reqres.in/api/users.
+          </li>
+          <li>
+            Comme nous envoyons et créons un nouvel objet, c'est une méthode
+            POST qui sera utilisée.
+          </li>
+          <li>Le statut d'une réponse valide est 201.</li>
+          <li>
+            Si la réponse est valide, alors ajoutez l'étudiant au tableau de la
+            page HTML ci-dessous, ainsi que dans le tableau JavaScript students.
+          </li>
+          <li>
+            Si la réponse n'est pas valide, retournez une alerte avec un message
+            d'erreur.
+          </li>
+        </ul>
+        <div>
+          <p
+            class="codepen"
+            data-height="300"
+            data-theme-id="dark"
+            data-default-tab="js"
+            data-slug-hash="PoXXKLO"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/PoXXKLO"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Solution</h2>
+        <div>
+          <p
+            class="codepen"
+            data-height="300"
+            data-theme-id="dark"
+            data-default-tab="js"
+            data-slug-hash="xxmmLew"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/xxmmLew"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

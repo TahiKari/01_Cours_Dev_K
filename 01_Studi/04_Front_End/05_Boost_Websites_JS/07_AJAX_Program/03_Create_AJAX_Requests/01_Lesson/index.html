@@ -3,9 +3,441 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Créer des requêtes AJAX</title>
   </head>
   <body>
-    <h1></h1>
+    <div>
+      <h1>Créer des requêtes AJAX</h1>
+      <div>
+        <h2>Objectif</h2>
+        <ul>
+          <li>Comprendre l'utilité d'une requête AJAX</li>
+          <li>Savoir récupérer et envoyer des données avec XMLHttpRequest</li>
+          <li>Savoir quel verbe HTTP utiliser</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Mise en situation</h2>
+        <p>
+          Pour dynamiser son site web, il est fréquent de vouloir échanger des
+          données avec un serveur et que cela soit transparent pour
+          l'utilisateur, c'est-à-dire sans recharger la page entièrement.
+        </p>
+        <p>
+          <strong>AJAX</strong> (Asynchronous JavaScript And XML) va nous
+          permettre d'envoyer des requêtes HTTP en arrière-plan, au travers de
+          l'objet XMLHttpRequest.
+        </p>
+      </div>
+
+      <div>
+        <h2>XMLHttpRequest</h2>
+        <h3>Rappel</h3>
+        <div>
+          <p>
+            XMLHttpRequest (XHR) est un objet du navigateur permettant l'envoi
+            de requêtes HTTP en asynchrone. Il est aujourd'hui implémenté par
+            tous les navigateurs web modernes.
+          </p>
+          <p>
+            Pour l'utiliser, nous devons créer une instance de l'objet
+            XMLHttpRequest, l'initialiser avec la méthode .open() et envoyer la
+            requête avec la méthode .send().
+          </p>
+          <p>
+            Étant asynchrone, il est nécessaire d'ajouter une fonction de
+            callback à l’événement readystatechange de l'instance XHR, pour
+            traiter le retour de la requête.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-theme-id="dark"
+            data-default-tab="js"
+            data-slug-hash="QWzzMvQ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/QWzzMvQ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Méthodes de requêtes HTTP</h2>
+        <p>
+          Le protocole HTTP définit un ensemble de méthodes pour qualifier
+          l'action souhaitée sur la ressource.
+        </p>
+        <p>Ces méthodes, appelées aussi Verbe HTTP, sont normées.</p>
+        <p>Voici les principales :</p>
+        <ul>
+          <li>GET : afin de récupérer des données.</li>
+          <li>
+            HEAD : réponse identique à GET, sauf que seul l'en-tête de réponse
+            sera renvoyé (le corps de la réponse sera omis). Utile pour vérifier
+            la présence d'une ressource.
+          </li>
+          <li>
+            POST : pour envoyer des données au serveur (création d'une entité).
+          </li>
+          <li>
+            PUT : pour envoyer des données au serveur (modification d'une
+            entité).
+          </li>
+          <li>DELETE : pour supprimer une entité.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>La méthode GET</h2>
+        <p>Pour récupérer une ressource, nous utiliserons la méthode GET.</p>
+        <p>
+          Si l'on veut récupérer la liste de tous les utilisateurs, la méthode
+          GET est idéale.
+        </p>
+        <div>
+          <p
+            class="codepen"
+            data-height="300"
+            data-theme-id="dark"
+            data-default-tab="js"
+            data-slug-hash="dywwzzY"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/dywwzzY"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+        <p>
+          Si, maintenant, nous voulons récupérer uniquement les utilisateurs
+          dont le prénom est <strong>François</strong>, la méthode GET est
+          toujours indiquée. Mais il faudra ajouter des paramètres à notre
+          requête.
+        </p>
+        <p>
+          Pour éviter les erreurs dues aux caractères spéciaux, il est
+          recommandé d'utiliser la fonction JavaScript encodeURIComponent().
+        </p>
+        <div>
+          <p
+            class="codepen"
+            data-height="300"
+            data-theme-id="dark"
+            data-default-tab="js"
+            data-slug-hash="ExGGvvz"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/ExGGvvz"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les méthodes POST et PUT</h2>
+        <p>
+          Pour créer et modifier une entité, les méthodes POST et PUT sont
+          indiquées.
+        </p>
+        <p>
+          Leurs fonctionnements sont identiques, si ce n'est que, pour la
+          méthode PUT, un paramètre est nécessaire pour identifier la ressource
+          à modifier au niveau du serveur (comme un ID unique, par exemple).
+        </p>
+        <p>
+          Pour envoyer les paramètres, nous n'utiliserons pas l'URL comme avec
+          la méthode GET, mais nous ajouterons ces paramètres à la méthode
+          .send().
+        </p>
+        <p>
+          Pour spécifier au serveur que des paramètres vont êtres envoyés par la
+          méthode .send(), il faut ajouter une information dans le header de la
+          requête HTTP.
+        </p>
+        <div>
+          <p
+            class="codepen"
+            data-height="300"
+            data-theme-id="dark"
+            data-default-tab="js"
+            data-slug-hash="PoXXKOm"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/PoXXKOm"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+        <p>
+          Une autre méthode, plus simple et plus évoluée, consiste à utiliser un
+          objet FormData.
+        </p>
+        <div>
+          <p
+            class="codepen"
+            data-height="300"
+            data-theme-id="dark"
+            data-default-tab="js"
+            data-slug-hash="ZEVVJaV"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/ZEVVJaV"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+        <p>Cet objet FormData pourra même servir pour l'upload de fichiers.</p>
+      </div>
+
+      <div>
+        <h2>Les erreurs</h2>
+        <p>
+          Il est important de gérer les erreurs possibles lors de l'envoi ou de
+          la réception de requêtes HTTP lorsque l'on fait de l'AJAX.
+        </p>
+        <div>
+          <p
+            class="codepen"
+            data-height="300"
+            data-theme-id="dark"
+            data-default-tab="js"
+            data-slug-hash="NWeevXy"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/NWeevXy"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+        <p>
+          Une erreur ne sera pas forcément retournée par un code HTTP :
+          XmlHttpRequest peut lui-même lever certaines erreurs.
+        </p>
+        <p>
+          Pour les traiter, il faudra utiliser un callback sur l'événement
+          'error' de l'objet XmlHttpRequest.
+        </p>
+        <div>
+          <p
+            class="codepen"
+            data-height="300"
+            data-theme-id="dark"
+            data-default-tab="js"
+            data-slug-hash="abPPyEe"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/abPPyEe"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>L'API REST</h2>
+        <h3>Conseil</h3>
+        <div>
+          <p>
+            Rest est un ensemble de recommandations auxquelles un développeur
+            doit adhérer afin de pouvoir considérer une API comme étant «
+            RESTful ». Les API REST tirent parti des méthodes HTTP vues plus
+            haut dans ce cours. Les applications côté client de l'API utilisent
+            des appels HTTPS pour :
+          </p>
+          <ul>
+            <li>Appeler une ressource avec une méthode GET,</li>
+            <li>Transmettre des données au serveur avec une méthode POST,</li>
+            <li>DELETE pour la supprimer.</li>
+          </ul>
+          <p>
+            Ces trois méthodes HTTPS sont les plus utilisées par les API RESTful
+            mais il est possible de recourir à d'autres méthodes comme HEAD,
+            PUT, PATCH, CONNECT, OPTION ainsi que TRACE.
+          </p>
+          <p>
+            De nombreux sites font appel à des API RESTful, comme Google, Amazon
+            et Twitter.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>À retenir</h2>
+        <h3>Syntaxe</h3>
+        <div>
+          <ul>
+            <li>
+              AJAX est un ensemble de technologies permettant de lancer des
+              requêtes HTTP en arrière-plan, entre autres à l'aide de l'objet
+              XMLHttpRequest (XHR).
+            </li>
+            <li>
+              Nous pourrons ainsi créer, lire, mettre à jour, et supprimer des
+              données. En anglais : Create, Read, Update, Delete
+              (<strong>C.R.U.D.</strong>).
+            </li>
+            <li>
+              XHR nous donne accès à un éventail de méthodes et de propriétés
+              qui permettront de gérer finement les données et les erreurs.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <h3>Complément</h3>
+        <div>
+          <a
+            href="https://developer.mozilla.org/fr/docs/Web/HTTP/M%C3%A9thode"
+            target="_blank"
+            rel="alternate"
+            >MDN : Méthodes de requête HTTP</a
+          >
+          <a
+            href="https://developer.mozilla.org/fr/docs/Web/API/XMLHttpRequest"
+            target="_blank"
+            rel="alternate"
+            >MDN : XMLHttpRequest</a
+          >
+          <a
+            href="https://developer.mozilla.org/fr/docs/Web/API/FormData/FormData"
+            target="_blank"
+            rel="alternate"
+            >MDN : FormData</a
+          >
+        </div>
+      </div>
+    </div>
   </body>
 </html>

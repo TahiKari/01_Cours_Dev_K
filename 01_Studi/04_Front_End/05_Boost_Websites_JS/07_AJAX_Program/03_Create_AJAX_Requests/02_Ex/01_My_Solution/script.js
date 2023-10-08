@@ -1,34 +1,40 @@
-// Exemple 
-/*
+// Ma solution
+const tbody = document.getElementById('tbody');
+const students = [];
 
-*/
+const createLine = (tbody, student) => {
+  const newRow   = tbody.insertRow();
+  let counter = 0
+  for (const key in student) {
+    const newCell  = newRow.insertCell(counter);
+    const newText  = document.createTextNode(student[key]);
+    newCell.appendChild(newText);
+    counter++
+  }
+}
 
-console.log("-----------------------------------------------")
+const sendForm = () => {
+const firstName = document.querySelector('#firstName').value
+const lastName = document.querySelector('#lastName').value
+const grade = document.querySelector('#grade').value
+const numberClass = document.querySelector('#numberClass').value
 
-// Exemple 
-/*
+const student = {id: '', firstName, lastName, grade, numberClass};
+const xhr = new XMLHttpRequest();
+xhr.open('POST', 'https://reqres.in/api/users');
 
-*/
-
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
+xhr.addEventListener('readystatechange', () => {
+if(xhr.readyState === 4) {
+if (xhr.status === 201) {
+const data = JSON.parse(xhr.response);
+student.id = data.id;
+students.push(student);
+createLine(tbody, student);
+} else {
+alert('Erreur')
+}
+}
+});
+  
+  xhr.send(student);
+}
