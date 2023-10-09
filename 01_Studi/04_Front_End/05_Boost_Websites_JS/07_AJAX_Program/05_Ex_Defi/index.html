@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Défi</title>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <div>
+      <h1>Défi</h1>
+      <div>
+        <p>
+          Maintenant que nous maîtrisons les appels <strong>AJAX</strong>, il
+          est temps de construire notre propre site. Celui-ci aura pour but
+          d'indiquer à un utilisateur les informations d'une ville en fonction
+          de sa recherche. Pour cela, nous allons utiliser l'API du gouvernement
+          :
+          <a
+            href="https://geo.api.gouv.fr/decoupage-administratif/communes#name"
+            target="_blank"
+            rel="noopener noreferrer"
+            >https://geo.api.gouv.fr/decoupage-administratif/communes#name</a
+          >
+          à la rubrique <strong>Recherche avancée</strong>.
+        </p>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          À partir du code HTML ci-dessous, construisez le code JavaScript
+          permettant de récupérer le nom d'une ville en fonction du code postal.
+          Le nom des villes sera injecté dans le Select sous forme d'option.
+          Pour cela, vous devrez respecter certaines règles.
+        </p>
+        <ul>
+          <li>
+            Vous n’êtes pas responsable des recherches erronées des utilisateurs
+            (fautes d’orthographe). Retournez un message d'erreur indiquant de
+            recommencer dans le cas où la recherche retourne un objet vide.
+          </li>
+          <li>
+            L'utilisateur devra voir :
+            <ul>
+              <li>le code postal de la ville,</li>
+              <li>
+                le/les noms de villes recherchées sous forme d'option dans le
+                select,
+              </li>
+            </ul>
+          </li>
+          <li>
+            Le code HTML vous est fourni, vous n'avez pas besoin de le modifier.
+            Il vous faudra utiliser cette structure pour afficher les
+            informations à l'écran.
+          </li>
+        </ul>
+        <p>
+          Toutes les informations nécessaires pour construire la requête vous
+          sont fournies dans la documentation de l'API.
+        </p>
+        <p>
+          Afin de vous orienter, quelques morceaux de code vous sont proposés :
+          le code HTML et la structure de la fonction stockant une commune dans
+          l'URL.
+        </p>
+        <p>En revanche, vous devrez établir :</p>
+        <ul>
+          <li>
+            Une fonction permettant de transformer le texte de la commune en
+            fonction des spécifications.
+          </li>
+          <li>
+            Une fonction permettant de créer l'objet à partir des données reçues
+            via l'API.
+          </li>
+        </ul>
+        <p>Fonction pour construire l'URL :</p>
+        <div>
+          <h2>Indice</h2>
+
+          <p>Les étapes pour réussir votre code :</p>
+          <ul>
+            <li>Effectuer une requête sur l'URL.</li>
+            <li>Récupérer la réponse dans une variable.</li>
+            <li>
+              Boucler sur cette variable pour insérer les résultats dans le
+              Select sous forme d'option.
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <p>
+            En premier lieu, rendons-nous sur la documentation de l'API pour
+            comprendre comment elle fonctionne. On peut voir des cases à cocher,
+            qui sont les différentes informations que nous voulons que l'API
+            nous retourne. Nous remarquons une URL : c'est celle que nous
+            utiliserons pour récupérer les données.
+          </p>
+          <p>
+            À partir du moment où nous avons tous les éléments en notre
+            possession, nous pouvons à présent écrire le code au complet.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

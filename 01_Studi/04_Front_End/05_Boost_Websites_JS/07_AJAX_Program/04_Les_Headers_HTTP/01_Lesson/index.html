@@ -3,9 +3,222 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Les headers HTTP</title>
   </head>
   <body>
-    <h1></h1>
+    <div>
+      <h1>Les headers HTTP</h1>
+      <div>
+        <h2>Objectifs</h2>
+        <ul>
+          <li>Connaître l'utilité d'un header HTTP</li>
+          <li>Savoir utiliser les headers HTTP</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Mise en situation</h2>
+        <p>
+          Avec le protocole HTTP, pour échanger des données entre client et
+          serveur, nous utilisons des requêtes et des réponses. Pour permettre
+          au client comme au serveur de traiter efficacement les données
+          qu'elles transportent, requêtes et réponses fournissent une série
+          d'informations complémentaires contenues dans leurs en-têtes (header
+          HTTP).
+        </p>
+        <p>
+          Un header HTTP est toujours un couple clé/valeur, et est noté
+          &ltclé&gt: &ltvaleur&gt.
+        </p>
+        <p>
+          Un certain nombre de headers HTTP existent et sont régis par
+          différentes normes. Il est cependant tout à fait possible d'utiliser
+          ses propres headers. Par convention, leurs clés seront préfixées X-.
+          Par exemple : X-API-KEY: AA1452654aa.
+        </p>
+      </div>
+
+      <div>
+        <h2>Les headers de requête HTTP</h2>
+        <p>
+          Lors de la préparation d'une requête HTTP, nous allons pouvoir ajouter
+          des informations à celle-ci via son header.
+        </p>
+        <p>
+          XMLHttpRequest nous fournit la méthode .setRequestheader() pour éditer
+          le header de la requête.
+        </p>
+        <ul>
+          <li>
+            .setRequestheader() devra être appelé après l'initialisation de la
+            requête via la méthode .open() et avant la méthode .send().
+          </li>
+          <li>
+            .setRequestheader() pourra être appelé plusieurs fois, les headers
+            se cumuleront.
+          </li>
+        </ul>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="WNLLPoL"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/WNLLPoL"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>Voici quelques exemples de headers de requête HTTP :</p>
+        <ul>
+          <li>
+            Accept : Donne au serveur une indication sur les types MIME du
+            contenu que le client sera capable de traiter.
+          </li>
+          <li>
+            Accept-Charset : Donne au serveur une indication sur l'encodage que
+            le client attend pour la réponse.
+          </li>
+          <li>
+            Accept-Language : Donne au serveur une indication sur les langues
+            acceptées que le client attend pour la réponse (Accept-Language:
+            en-US).
+          </li>
+          <li>
+            Authorization : Informations pour l'authentification HTTP
+            (Authorization: Bearer mF_9.BA6f-f.1kLM).
+          </li>
+          <li>
+            Content-Type : Type MIME du contenu du corps de la requête, utilisé
+            avec les méthodes POST et PUT.
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Les headers de réponse HTTP</h2>
+        <p>
+          Lors de la réception d'une réponse HTTP, nous allons vouloir des
+          renseignements sur les données qu'elle contient dans son corps, afin
+          de définir le meilleur traitement.
+        </p>
+        <ul>
+          <li>
+            XMLHttpRequest nous fournit plusieurs méthodes afin d’accéder aux
+            headers de la réponse.
+          </li>
+          <li>
+            .getAllResponseheaders()permet de récupérer l'ensemble des headers
+            de la réponse sous forme de string séparés par des CRLF.
+          </li>
+          <li>
+            .getResponseheader() permet de récupérer la valeur d'un header en
+            particulier, suivant sa clé.
+          </li>
+        </ul>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="ExGGrWP"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/ExGGrWP"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>Voici quelques exemples de headers de réponses HTTP :</p>
+        <ul>
+          <li>Content-Encoding : Type d'encodage de la réponse.</li>
+          <li>Content-Length : Longueur du corps de la réponse en octets.</li>
+          <li>
+            Content-Disposition : Donne au client une indication sur où afficher
+            le résultat : dans le navigateur avec la valeur inline, ou en
+            déclenchant la boîte de dialogue "Enregistrer sous..." du navigateur
+            avec attachment (Content-Disposition: attachment;
+            filename="monFichier.pdf").
+          </li>
+          <li>Content-Type : Type MIME du contenu du corps de la réponse.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Les headers généraux</h2>
+        <h3>Remarque</h3>
+        <div>
+          <p>
+            Certains headers, comme Content-Type, pourront être présents aussi
+            bien dans les requêtes que dans les réponses. Leur utilisation
+            dépendra du contexte dans lequel ils seront utilisés.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>À retenir</h2>
+        <h3>Syntaxe</h3>
+        <div>
+          <ul>
+            <li>
+              Les headers HTTP sont présents dans chaque requête et réponse. Ils
+              apportent des informations essentielles sur le contenu et sur le
+              comportement à adopter par le client et le serveur.
+            </li>
+            <li>
+              XMLHttpRequest fournit plusieurs méthodes permettant de lire et
+              d'écrire le header des requêtes et réponses.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <h3>Complément</h3>
+        <div>
+          <a
+            href="https://developer.mozilla.org/fr/docs/Web/HTTP/Headers"
+            target="_blank"
+            rel="alternate"
+            >MDN : en-têtes HTTP</a
+          >
+        </div>
+      </div>
+    </div>
   </body>
 </html>

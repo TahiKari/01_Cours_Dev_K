@@ -3,9 +3,108 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Appliquez la notion</title>
   </head>
   <body>
-    <h1></h1>
+    <div>
+      <h1>Appliquez la notion</h1>
+      <div>
+        <h2>Question</h2>
+        <p>
+          Dans le cadre d'un formulaire de connexion à une application, le
+          serveur retourne un token permettant d'identifier l'utilisateur. Ce
+          token doit être envoyé au serveur à chaque requête et le serveur
+          testera sa validité. Cela permet de s'assurer de l'identité de
+          l'utilisateur.
+        </p>
+        <p>
+          En règle générale, ce token est stocké dans le header avec la clé
+          Authorization.
+        </p>
+        <p>
+          Le code ci-dessous simule le renvoi d'un token. Une fois ce token
+          récupéré, une requête doit être envoyée au serveur pour récupérer une
+          liste d'utilisateurs.
+        </p>
+        <p>
+          Écrivez la requête qui retournera la liste d'utilisateurs en intégrant
+          le token au header, et retournez la liste des utilisateurs en console
+          :
+        </p>
+        <ul>
+          <li>Méthode : GET.</li>
+          <li>URL : https://reqres.in/api/users?page=1.</li>
+          <li>Statut valide : 200.</li>
+        </ul>
+        <p>
+          Dans ce code, pour récupérer le token, l'appel à une API est simulé
+          via une méthode setTimeout(). Cette méthode indique que le code sera
+          déclenché après que le temps indiqué ait été écoulé. Dans cet exemple,
+          2 secondes.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-theme-id="dark"
+          data-default-tab="js"
+          data-slug-hash="poqqGPX"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/poqqGPX"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <div>
+          <h3>Solution</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-theme-id="dark"
+            data-default-tab="js"
+            data-slug-hash="LYMMqLW"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/LYMMqLW"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
