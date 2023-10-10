@@ -3,9 +3,325 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Notion de synchrone, asynchrone et callback</title>
   </head>
   <body>
-    <h1></h1>
+    <div>
+      <h1>Notion de synchrone, asynchrone et callback</h1>
+      <div>
+        <h2>Objectifs</h2>
+        <ul>
+          <li>Comprendre synchrone et asynchrone</li>
+          <li>Comprendre les fonctions de rappels (callback)</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Mise en situation</h2>
+        <p>
+          Dans sa forme la plus élémentaire, JavaScript est un langage
+          synchrone, bloquant et à un seul processus, dans lequel une seule
+          opération peut être en cours à la fois. Mais les navigateurs web
+          définissent des fonctions et des API qui nous permettent d'enregistrer
+          des fonctions qui ne doivent pas être exécutées de manière synchrone,
+          mais qui doivent être invoquées de manière asynchrone lorsqu'un
+          évènement quelconque se produit (le passage du temps, l'interaction de
+          l'utilisateur avec la souris ou l'arrivée de données sur le réseau,
+          par exemple).
+        </p>
+        <p>
+          Cela signifie que vous pouvez laisser votre code faire plusieurs
+          choses en même temps sans arrêter ou bloquer votre processus principal
+        </p>
+      </div>
+
+      <div>
+        <h2>Différence : synchrone et asynchrone</h2>
+        <p>
+          En informatique, on dit que deux opérations sont synchrones lorsque la
+          seconde attend que la première ait fini son travail pour démarrer. Ce
+          qu'il faut retenir de cette définition est le concept de dépendance
+          (la notion de « synchronisation » dans la première définition donnée
+          de synchrone au-dessus) : le début de l'opération suivante dépend de
+          la complétude de l'opération précédente.
+        </p>
+        <p>
+          Au contraire, deux opérations sont qualifiées d'asynchrones en
+          informatique lorsqu'elles sont indépendantes. C'est-à-dire lorsque la
+          deuxième opération n'a pas besoin d'attendre que la première se
+          termine pour démarrer.
+        </p>
+        <p>
+          Par défaut, toute fonction définie en JavaScript est synchrone. Cela
+          veut dire que lorsqu'elle est appelée :
+        </p>
+        <ul>
+          <li>
+            Cette fonction exécute immédiatement l'intégralité de ses
+            instructions puis retourne une valeur dans la foulée ;
+          </li>
+          <li>
+            Et que le reste du programme attend la fin de l'exécution de cette
+            fonction avant de s'exécuter à son tour.
+          </li>
+        </ul>
+        <p>
+          Ainsi, quand on appelle plusieurs fonctions synchrones d'affilée, on a
+          la garantie qu'elles s'exécutent de manière séquentielle. L'une après
+          l'autre.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-theme-id="dark"
+            data-default-tab="js"
+            data-slug-hash="Vwqgzao"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/Vwqgzao"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+        <p>
+          Pour permettre l'exécution de plusieurs opérations en parallèle, sans
+          bloquer l'exécution du reste du programme, le langage JavaScript
+          fournit plusieurs manières de définir et d'appeler des fonctions
+          asynchrones.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            La méthode setTimeout() qui permet d'exécuter une fonction de rappel
+            (un callback) après un certain délai.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-theme-id="dark"
+            data-default-tab="js"
+            data-slug-hash="KKbJvMX"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/KKbJvMX"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>
+          Les fonctions de rappel, du callback au callback hell (l'enfer des
+          callbacks)
+        </h2>
+        <p>
+          Un rappel est une fonction qui est passée à une autre fonction en tant
+          qu'argument à exécuter ultérieurement. Les développeur disent que vous
+          « appelez » une fonction lorsque vous exécutez une fonction, c'est
+          pourquoi les rappels sont nommés rappels.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Un exemple de fonction qui accepte un rappel est addEventListener :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-theme-id="dark"
+            data-default-tab="js"
+            data-slug-hash="XWoOajB"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/XWoOajB"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+        <p>Vous ne voyez pas pourquoi il s'agit d'un rappel ?</p>
+        <div>
+          <p
+            class="codepen"
+            data-height="300"
+            data-theme-id="dark"
+            data-default-tab="js"
+            data-slug-hash="YzdBxpK"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/YzdBxpK"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+        <p>
+          Ici, nous avons dit à JavaScript d'écouter l'événement click sur un
+          bouton. Si un clic est détecté, JavaScript doit déclencher la fonction
+          clicked. Donc dans ce cas, clicked est le rappel tandis que
+          addEventListener est une fonction qui accepte un rappel.
+        </p>
+        <div>
+          <p
+            class="codepen"
+            data-height="300"
+            data-theme-id="dark"
+            data-default-tab="js"
+            data-slug-hash="WNLPEoj"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/WNLPEoj"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+        <p>
+          Les problèmes arrivent quand une fonction est imbriquée dans une
+          fonction, dans une fonction, dans une fonction, ...
+        </p>
+        <p>
+          Le callback hell est un phénomène où plusieurs rappels sont imbriqués
+          les uns dans les autres. Cela peut arriver lorsque vous effectuez une
+          activité asynchrone qui dépend d'une activité asynchrone précédente.
+          Ces rappels imbriqués rendent le code beaucoup plus difficile à lire.
+        </p>
+      </div>
+
+      <div>
+        <h2>
+          Exemple de code non testable mais que vous pouvez retrouver dans un
+          projet
+        </h2>
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-theme-id="dark"
+            data-default-tab="js"
+            data-slug-hash="qBLgXqw"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/qBLgXqw"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Bien heureusement, il existe d'autres solutions pour lutter contre
+            l'enfer des rappels dans les nouvelles versions de JavaScript,
+            telles que les promesses et async/wait.
+          </p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

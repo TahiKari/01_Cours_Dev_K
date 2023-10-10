@@ -1,34 +1,10 @@
-// Exemple 
-/*
+// Ma solution
 
-*/
+let mySandwich = (param1, param2, callback) => {
+  alert('Je mange un sandwich à : ' + param1 + ', ' + param2)
+  callback()
+}
 
-console.log("-----------------------------------------------")
+const endSandwich = () => { alert('Fini de manger!')  }
 
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
+mySandwich('jambon', 'fromage', endSandwich); 
