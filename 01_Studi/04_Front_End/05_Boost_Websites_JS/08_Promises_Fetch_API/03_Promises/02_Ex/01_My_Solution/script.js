@@ -1,34 +1,28 @@
-// Exemple 
-/*
+// Ma solution
 
-*/
+function askAge() {
+  return prompt('Quel âge avez-vous ?')
+}   
 
-console.log("-----------------------------------------------")
+function success() {
+  console.log('Vous êtes majeur, vous pouvez continuer votre navigation')
+}
 
-// Exemple 
-/*
+function error() {
+  console.log('Vous êtes mineur, vous allez être redirigé vers une autre page')
+}
 
-*/
+function redirectUser() {
+ // code à implémenter
+return new Promise((resolve, reject) => {
+  let age = askAge()
 
-console.log("-----------------------------------------------")
+  if (age >= 18) {
+    resolve()
+  } else {
+    reject()
+  }
+})
+}
 
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
+redirectUser().then(success, error)

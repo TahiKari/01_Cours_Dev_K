@@ -3,9 +3,290 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Les promesses</title>
   </head>
   <body>
-    <h1></h1>
+    <div>
+      <h1>Les promesses</h1>
+      <div>
+        <h2>Objectif</h2>
+        <ul>
+          <li>Découvrir ce qu'est une promesse JavaScript</li>
+          <li>Créer une promesse avec l'objet Promise</li>
+          <li>Connaître les mécanismes de base d'une promesse</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Mise en situation</h2>
+        <p>
+          Depuis la démocratisation de la norme ES6, de plus en plus d'API
+          JavaScript utilisent les promesses pour gérer leur code asynchrone. Il
+          est donc important de comprendre leur fonctionnement et de connaître
+          les avantages qu'elles apportent au développement.
+        </p>
+      </div>
+
+      <div>
+        <h2>Qu'est-ce qu'une promesse ?</h2>
+        <h3>Définition</h3>
+        <div>
+          <p>
+            Une promesse JavaScript est un objet Promise qui représente l'état
+            d'une fonction asynchrone, c'est-à-dire si l'opération asynchrone
+            est "En cours", "Valide", "En erreur".
+          </p>
+          <p>
+            Cet objet Promise va nous permettre de définir le comportement (du
+            code) à exécuter en fonction de l'état de la promesse.
+          </p>
+          <p>Une analogie simple serait celle du candidat à une élection :</p>
+          <p>Un candidat a défini que :</p>
+          <ul>
+            <li>S'il est élu, il appliquera son programme.</li>
+            <li>S'il est disqualifié, il quittera la politique.</li>
+          </ul>
+          <p>
+            Le candidat a fait une promesse sur le résultat de l'élection. Il a
+            défini les comportements pour les cas de succès, d'échec ou d'erreur
+            de cette promesse.
+          </p>
+          <p>
+            Une promesse JavaScript est bâtie exactement de la même façon. À la
+            différence que la promesse JavaScript garantit l'exécution du code.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Créer une promesse avec l'objet Promise</h2>
+        <h3>Méthode</h3>
+        <div>
+          <p>
+            Bien que le concept soit plus ancien, ES6 introduit l'objet Promise
+            qui va permettre de créer simplement des promesses, sans API
+            tierces.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-theme-id="dark"
+            data-default-tab="js"
+            data-slug-hash="JjwzovV"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/JjwzovV"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Le constructeur de Promise attend en paramètre une fonction, appelée
+            exécuteur. À cette fonction, on passera 2 arguments : resolve et
+            reject.
+          </p>
+          <p>
+            Si la fonction est un succès, on appellera resolve ; si c'est un
+            échec, on appellera reject.
+          </p>
+          <p>
+            La fonction exécuteur sera exécutée immédiatement, sans attendre que
+            l'objet soit construit.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>resolve et reject</h2>
+        <h3>Méthode</h3>
+        <div>
+          <p>
+            Les fonctions resolve() et reject() permettent de modifier l'état de
+            la promesse. Elle passera ainsi d'un état pending à un état
+            fulfilled avec resolve ou rejected avec reject.
+          </p>
+          <p>
+            Si une des fonctions resolve() ou reject() est appelée, les autres
+            appels aux fonctions resolve() ou reject() seront ignorés. Une fois
+            en état fulfilled ou rejected, une promesse ne pourra plus changer
+            d'état.
+          </p>
+          <p>
+            En pratique, il faudra créer des fonctions qui renverront des
+            promesses.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Vérifier l'identité d'un utilisateur</h2>
+        <h3>Exemple</h3>
+        <div>
+          <p>
+            On souhaite mettre en place une fonction au sein de notre
+            application qui permettra de vérifier qu'un utilisateur est bien
+            administrateur avant d'accéder à une page. Pour cela, on lui demande
+            d'indiquer son nom d'utilisateur au moyen de la fonction
+            askUsername. Il s'agira ici de notre fonction synchrone : tant que
+            l'utilisateur n'interagit pas, rien ne se passe.
+          </p>
+          <p>
+            Une fois cette réponse obtenue, on vérifie la réponse : s'il a
+            indiqué "admin", alors on considère que la promesse est résolue,
+            sinon on considère qu'elle sera rejetée.
+          </p>
+          <p>
+            Au moyen de la méthode then, que nous aborderons plus tard, on
+            indique ce qui doit être exécuté en cas de résolution ou de rejet de
+            la promesse.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-theme-id="dark"
+            data-default-tab="js"
+            data-slug-hash="poqYvZa"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/poqYvZa"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>N'hésitez pas à tester ce code, dans repl.it par exemple.</p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les propriétés d'une promesse</h2>
+        <h3>Exemple</h3>
+        <div>
+          <p>
+            L'objet Promise contient deux propriétés internes, state et result :
+          </p>
+          <ul>
+            <li>
+              La propriété state va donner une indication sur l'état de la
+              promesse : pending (en cours), fulfilled (résolue), rejected
+              (rejetée).
+            </li>
+            <li>
+              La propriété result va contenir la valeur définie par le
+              développeur comme argument de resolve() ou reject().
+            </li>
+            <img
+              src="02_Img/promise-resolve-reject.png"
+              alt="Image promise-resolve-reject"
+            />
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <h2>Appel XHR encapsulé dans une Promise</h2>
+        <h3>Exemple</h3>
+        <div>
+          <p
+            class="codepen"
+            data-height="300"
+            data-theme-id="dark"
+            data-default-tab="js"
+            data-slug-hash="gOZEbBw"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/gOZEbBw"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>À retenir</h2>
+        <h3>Syntaxe</h3>
+        <div>
+          <ul>
+            <li>
+              Avec ES6, l'objet Promise est devenu incontournable dans la
+              programmation asynchrone JavaScript.
+            </li>
+            <li>
+              L'état d'une promesse est stocké dans sa propriété state. La
+              valeur de cette propriété va permettre de définir les actions à
+              effectuer en cas de réussite (resolve) ou d'échec (reject) d'une
+              fonction asynchrone.
+            </li>
+            <li>
+              Le résultat de ces fonctions sera ensuite stocké dans la propriété
+              result.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <h3>Complément</h3>
+        <div>
+          <a
+            href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Promise"
+            target="_blank"
+            rel="alternate"
+            >L'objet Promise</a
+          >
+        </div>
+      </div>
+    </div>
   </body>
 </html>
