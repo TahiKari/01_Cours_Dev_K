@@ -3,9 +3,82 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Appliquez la notion</title>
   </head>
   <body>
-    <h1></h1>
+    <div>
+      <h1>Appliquez la notion</h1>
+      <div>
+        <p>
+          Les navigateurs récents implémentent une API appelée
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API"
+            target="_blank"
+            rel="alternate"
+            >Notification</a
+          >. Comme son nom l'indique, celle-ci permet de mettre en place un
+          système de notifications au sein d'un site web.
+        </p>
+        <p>
+          Pour pouvoir notifier l'utilisateur, il est nécessaire de requérir son
+          consentement.
+        </p>
+        <img
+          src="02_Img/notification-ask-consent.png"
+          alt="Image notification-ask-consent"
+        />
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          Pour requérir le consentement d'un utilisateur, il est possible de
+          faire appel à la fonction
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API/Using_the_Notifications_API#Getting_permission"
+            target="_blank"
+            rel="alternate"
+            >requestPermission</a
+          >: il s'agit d'une promesse.
+        </p>
+        <p>
+          À l'aide de la documentation, affichez le résultat de cette requête
+          dans la console.
+        </p>
+        <div>
+          <h2>Solution</h2>
+          <p
+            class="codepen"
+            data-height="300"
+            data-theme-id="dark"
+            data-default-tab="js"
+            data-slug-hash="mdaoQbX"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/mdaoQbX"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

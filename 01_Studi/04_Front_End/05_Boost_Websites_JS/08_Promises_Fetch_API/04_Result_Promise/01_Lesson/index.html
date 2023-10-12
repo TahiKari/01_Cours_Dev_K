@@ -3,9 +3,353 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Résultat d'une promesse</title>
   </head>
   <body>
-    <h1></h1>
+    <div>
+      <h1>Résultat d'une promesse</h1>
+      <div>
+        <h2>Objectif</h2>
+        <ul>
+          <li>Exploiter le résultat d'une promesse</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Mise en situation</h2>
+        <p>
+          Nous savons désormais que l'on instancie une promesse avec l'objet
+          Promise et que l'on gère la mise à jour de son état avec les méthodes
+          resolve et reject.
+        </p>
+        <p>
+          Nous allons désormais pouvoir aborder de façon plus détaillée
+          l'utilisation de cet objet dans le code. Comment déclencher le
+          traitement de la promesse et comment traiter les retours de celle-ci
+          quand la méthode resolve ou reject est appelée ?
+        </p>
+      </div>
+
+      <div>
+        <h2>Gérer les callbacks avec .then()</h2>
+        <h3>Méthode</h3>
+        <div>
+          <p>
+            L'objet Promise est un objet qui représente le succès ou l'échec
+            d'une opération asynchrone.
+          </p>
+          <p>
+            À ces états, il va falloir attacher des comportements, des
+            callbacks. C'est grâce à la méthode .then() de l'objet Promise qu'il
+            sera possible d'effectuer cette liaison.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-theme-id="dark"
+            data-default-tab="js"
+            data-slug-hash="KKbEGxb"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/KKbEGxb"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>La méthode .then() dispose de deux paramètres :</p>
+          <ul>
+            <li>
+              Le premier correspond à la fonction exécutée en cas de
+              <strong>succès</strong>. Celle-ci disposera d'un paramètre, ici
+              result, qui sera valorisé par l'argument transmis à la fonction
+              resolve.
+            </li>
+            <li>
+              Le second correspond à la fonction exécutée en cas
+              d'<strong>échec</strong>. Celle-ci disposera d'un paramètre, ici
+              error, qui sera valorisé par l'argument transmis à la fonction
+              reject.
+            </li>
+          </ul>
+          <p>
+            Une promesse ne pouvant pas changer d'état entre fulfilled et
+            rejected, seule l'une des deux fonctions sera exécutée.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Attraper les erreurs avec .catch()</h2>
+        <h3>Méthode</h3>
+        <div>
+          <P
+            >Il est impératif d'indiquer quel comportement adopter en cas
+            d'erreur : cela est rendu possible grâce à la méthode .catch() .
+          </P>
+          <P
+            >Cette méthode sera déclenchée par l'état rejected d'une Promise.
+          </P>
+          <p
+            class="codepen"
+            data-height="300"
+            data-theme-id="dark"
+            data-default-tab="js"
+            data-slug-hash="abPMRPv"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/abPMRPv"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Exécuter du code systématiquement avec .finally()</h2>
+        <h3>Méthode</h3>
+        <div>
+          <p>
+            Il se peut que l'on veuille exécuter du code quel que soit le
+            résultat de la Promise, c'est-à-dire qu'elle soit fulfilled ou
+            rejected.
+          </p>
+          <p>
+            Pour cela, il existe la méthode .finally(). Cette méthode n'aura
+            aucun paramètre et il sera impossible de savoir si la promesse est
+            fulfilled ou rejected.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-theme-id="dark"
+            data-default-tab="js"
+            data-slug-hash="vYvPVbJ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/vYvPVbJ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Enchaîner les méthodes</h2>
+        <h3>Méthode</h3>
+        <div>
+          <p>
+            L'utilisation des méthodes .then() , .catch() et .finally() n'est
+            pas exclusif. Ces méthodes peuvent être chaînées.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-theme-id="dark"
+            data-default-tab="js"
+            data-slug-hash="poqYxGB"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/poqYxGB"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Fonctionner de façon asynchrone</h2>
+        <h3>Complément</h3>
+        <div>
+          <p>
+            Une autre manière de résoudre les problèmes asynchrones est
+            l'utilisation des mots-clés <strong>async</strong> et
+            <strong>await</strong>.
+          </p>
+          <p>
+            Nous allons pouvoir placer le mot clé async devant une déclaration
+            de fonction (ou une expression de fonction,
+          </p>
+          <p>
+            ou encore une fonction fléchée) pour la transformer en fonction
+            asynchrone.
+          </p>
+          <p>
+            Utiliser le mot clé async devant une fonction va faire que la
+            fonction en question va toujours retourner une
+          </p>
+          <p>
+            promesse. Dans le cas où la fonction retourne explicitement une
+            valeur qui n'est pas une promesse, alors cette
+          </p>
+          <p>valeur sera automatiquement enveloppée dans une promesse.</p>
+          <p>
+            Le mot clé await est uniquement valide au sein de fonctions
+            asynchrones définies avec async.
+          </p>
+          <p>
+            Ce mot clé permet d'interrompre l'exécution d'une fonction
+            asynchrone tant qu'une promesse n'est pas résolue ou rejetée. La
+            fonction asynchrone reprend ensuite puis renvoie la valeur de
+            résolution.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-theme-id="dark"
+            data-default-tab="js"
+            data-slug-hash="bGOZmJx"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/bGOZmJx"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Utiliser la méthode then()</h2>
+        <h3>Exemple</h3>
+        <div>
+          <p
+            class="codepen"
+            data-height="300"
+            data-theme-id="dark"
+            data-default-tab="js"
+            data-slug-hash="zYybmQv"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/zYybmQv"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>À retenir</h2>
+        <h3>Syntaxe</h3>
+        <div>
+          <ul>
+            <li>
+              La méthode .then() de l'objet Promise permet de récupérer le
+              résultat d'une promesse, qu'elle soit fulfilled ou rejected.
+            </li>
+            <li>La méthode .catch() permettra de traiter les échecs.</li>
+            <li>
+              Enfin, la méthode .finally() permettra d’exécuter du code à la
+              suite d'une promesse, sans en connaître le résultat.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
