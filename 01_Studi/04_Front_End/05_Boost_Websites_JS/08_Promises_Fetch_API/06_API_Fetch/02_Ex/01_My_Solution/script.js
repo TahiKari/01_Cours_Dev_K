@@ -1,34 +1,17 @@
-// Exemple 
-/*
+// Ma solution
 
-*/
+function manageResponse(response) {
+  if(response.ok){
+     return response.json();
+  } else {
+     console.log(response.status)
+  }
+ }
+ 
+ function displayData(data) {
+   console.log(data)
+ }
 
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
+ fetch('https://reqres.in/api/users/2.')
+ .then(manageResponse)
+ .then(displayData)

@@ -3,9 +3,311 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>API Fetch</title>
   </head>
   <body>
-    <h1></h1>
+    <div>
+      <h1>API Fetch</h1>
+      <div>
+        <h2>Objectifs</h2>
+        <ul>
+          <li>Découvrir les atouts de API Fetch</li>
+          <li>Savoir utiliser API Fetch</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Mise en situation</h2>
+        <p>
+          ES6 apporte bon nombre d'évolutions majeures à JavaScript, notamment
+          les promesses. Avant ES6, les requêtes HTTP étaient faites à l'aide de
+          l'objet XmlHttpRequest, au prix d'une configuration assez lourde, avec
+          beaucoup de code à écrire et un imbrication de callbacks, possible
+          source d'erreur.
+        </p>
+        <p>
+          <a
+            href="https://developer.mozilla.org/fr/docs/Web/API/Fetch_API"
+            target="_blank"
+            rel="alternate"
+            >API Fetch</a
+          >
+          est une interface JavaScript qui va nous permettre de profiter des
+          avancées des promesses pour simplifier nos requêtes HTTP.
+        </p>
+      </div>
+
+      <div>
+        <h2>Utilisation de API Fetch</h2>
+        <h3>Méthode</h3>
+        <div>
+          <p>
+            Créer une requête avec API Fetch est assez simple et rapide. Il
+            suffit d'utiliser la méthode .fetch() qui attend une URL en
+            paramètre et qui retourne une Promise.
+          </p>
+          <p>
+            Si la requête est exécutée avec succès, la Promise sera fulfilled,
+            sinon elle sera rejected. La méthode .resolve() sera appelée avec la
+            réponse en paramètre.
+          </p>
+          <p>Par défaut, le verbe HTTP utilisé est GET.</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="ZEVNzQo"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/ZEVNzQo"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            La méthode .fetch() a un second paramètre optionnel qui va permettre
+            de passer la configuration à l'API.
+          </p>
+          <p>
+            Ce second paramètre (init) attend un objet JavaScript avec des
+            propriétés comme le verbe HTTP, les headers, le body de la requête
+            si besoin, etc.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="GRPaKZo"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/GRPaKZo"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Envoyer des données avec API Fetch : la méthode POST</h2>
+        <h3>Méthode</h3>
+        <div>
+          <p>
+            Le POST avec API Fetch est très similaire au GET, à cela près que la
+            requête va avoir un paramètre supplémentaire body correspondant aux
+            données que l'on souhaite envoyer.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="eYbaOvL"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/eYbaOvL"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Le body d'un POST avec API Fetch pourra aussi être un objet
+            FormData.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="poqmzPL"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/poqmzPL"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>API Fetch et JSON</h2>
+        <h3>Méthode</h3>
+        <div>
+          <p>
+            L'API Fetch permet d'effectuer une requête asynchrone vers une
+            ressource fournie par un serveur, et de récupérer un objet
+            JavaScript à partir des résultats obtenus lors de l'appel. Cela
+            signifie que cette API propose une méthode similaire à JSON.parse(),
+            nativement présente en JavaScript, à la différence que les données
+            obtenues via Fetch seront lues et transformées dans un type
+            JavaScript, de manière asynchrone
+          </p>
+          <p>
+            Pour obtenir un type JavaScript valide suite à un appel via l'API
+            Fetch, il faut utiliser la fonction .json(). Celle-ci retourne une
+            promesse contenant le type JavaScript correspondant à la
+            représentation structurée des résultats en JSON.
+          </p>
+        </div>
+        <h3>Exemple</h3>
+        <div>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="OJrYLjp"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/OJrYLjp"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Lorsque ce code s'exécute, un appel asynchrone est réalisé par l'API
+            Fetch vers l'URL «
+            https://www.data.gouv.fr/api/1/activity?page=1&page_size=20 ». Cela
+            se matérialise par une promesse qui contient des données au format
+            JSON.
+          </p>
+          <p>
+            À la résolution de cette promesse, l'appel à response.json() va
+            transformer de manière asynchrone les résultats en un objet
+            JavaScript à travers une nouvelle promesse, dont la résolution
+            permet d'afficher l'objet final dans la console du navigateur.
+          </p>
+        </div>
+        <h3>Attention</h3>
+        <div>
+          <p>
+            Il existe différents formalismes de données, même si JSON est le
+            format le plus populaire sur le Web. Il faut donc impérativement
+            s'assurer du format obtenu lors de la récupération des données.
+            Ainsi, afin de s'assurer de la bonne utilisation de la fonction
+            .json(), il est nécessaire que la ressource contactée soit au bon
+            format Il est en effet courant que les services mis à disposition
+            sur le Web proposent différents formalismes de données définissables
+            lors de l'appel.
+          </p>
+          <p>
+            Dans certains cas, cela se matérialise par l'ajout du paramètre
+            format=json ou du header de requête Accept. Afin de savoir comment
+            spécifier un format, il est nécessaire de consulter la documentation
+            du service ciblé avant de commencer les développements.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>À retenir</h2>
+        <h3>Syntaxe</h3>
+        <div>
+          <ul>
+            <li>
+              API Fetch permet de configurer et d'envoyer des requêtes HTTP
+              beaucoup plus simplement que l'ancien objet XmlHttpRequest.
+            </li>
+            <li>
+              API Fetch s'appuie sur le puissant mécanisme des Promises pour
+              faciliter le traitement.
+            </li>
+            <li>
+              L'API Fetch expose une fonction .json() permettant d'obtenir de
+              manière asynchrone un type JavaScript correspondant aux données
+              JSON retournées par la ressource contactée.
+            </li>
+            <li>
+              Afin d'utiliser cette fonctionnalité, il est nécessaire de
+              s'assurer au préalable que la ressource ciblée fournit des données
+              au format JSON, en consultant sa documentation.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
