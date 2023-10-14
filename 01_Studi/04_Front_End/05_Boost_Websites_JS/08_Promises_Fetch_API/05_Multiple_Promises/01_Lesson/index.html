@@ -3,9 +3,252 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Les promesses multiples</title>
   </head>
   <body>
-    <h1></h1>
+    <div>
+      <h1>Les promesses multiples</h1>
+      <div>
+        <h2>Objectifs</h2>
+        <ul>
+          <li>Comprendre le chaînage des promesses</li>
+          <li>Découvrir la composition des promesses</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Mise en situation</h2>
+        <p>
+          Une opération asynchrone est rarement exécutée de façon isolée. En
+          général, d'une action asynchrone de base va découler une série
+          d'actions, elles aussi asynchrones.
+        </p>
+        <p>
+          Il est aussi possible qu'une action dépende du résultat de plusieurs
+          méthodes asynchrones.
+        </p>
+        <p>
+          L'objet Promise contient plusieurs méthodes qui vont faciliter le
+          chaînage et la composition de promesses.
+        </p>
+      </div>
+
+      <div>
+        <h2>Enchaînement de promesses</h2>
+        <h3>Méthode</h3>
+        <div>
+          <p>
+            La méthode .then() renvoie une promesse, c'est pourquoi il est
+            possible de la chaîner avec .catch() et .finally().
+          </p>
+          <p>
+            Et puisque le retour de la méthode .then() est une promesse, rien
+            n’empêche de chaîner ce retour avec une autre méthode .then().
+          </p>
+          <p>
+            En sachant cela, il devient possible d'exécuter une série d'actions
+            dans un ordre défini.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="poqBmvd"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/poqBmvd"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>Si .then() renvoie une promesse, .catch() et .finally() aussi.</p>
+          <p>
+            Il est donc tout à fait possible de chaîner plusieurs .then(),
+            .catch() et .finally() .
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="VwqNOYo"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/VwqNOYo"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Composition de promesses</h2>
+        <p>
+          Dans certains cas, il va être nécessaire d'attendre la résolution d'un
+          ensemble de promesses pour continuer l’exécution du programme. Par
+          exemple, si l'on veut télécharger l'ensemble des fichiers d'un
+          dossier.
+        </p>
+      </div>
+
+      <div>
+        <h2>Traiter toutes les promesses avec .all()</h2>
+        <h3>Méthode</h3>
+        <div>
+          <p>
+            La méthode .all() attend en paramètre un tableau de Promise et
+            renverra une promesse en retour. Ces promesses seront jouées selon
+            leur ordre dans le tableau en paramètre.
+          </p>
+          <p>
+            La valeur retournée sera alors un tableau contenant les résultats
+            des toutes les Promises , dans l'ordre d'appel.
+          </p>
+          <p>
+            La méthode .all() sera considérée comme fulfilled si toutes les
+            promesses du tableau sont fulfilled, et inversement, comme rejected
+            si une seule des Promise est rejected.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="eYboaNK"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/eYboaNK"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>La plus rapide l'emporte</h2>
+        <h3>Complément</h3>
+        <div>
+          <p>
+            La méthode .race() attend en paramètre un tableau de Promise et
+            renverra une promesse en retour.
+          </p>
+          <p>
+            À la différence de .all() , .race() ne renverra que la promesse
+            résolue le plus rapidement.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="KKbYLdy"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/KKbYLdy"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>À retenir</h2>
+        <h3>Syntaxe</h3>
+        <div>
+          <ul>
+            <li>
+              Une promesse renvoie toujours une autre promesse. Par conséquent,
+              elles peuvent être chaînées afin de définir des logiques de
+              traitement en fonction des résultats.
+            </li>
+            <li>
+              Les promesses peuvent aussi être combinées. Pour attendre la
+              résolution d'un groupe avec .all(), ou pour ne garder que la plus
+              rapide avec .race().
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <h3>Complément</h3>
+        <div>
+          <a
+            href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide/Utiliser_les_promesses"
+            target="_blank"
+            rel="alternate"
+            >MDN : Utiliser les Promesses</a
+          >
+        </div>
+      </div>
+    </div>
   </body>
 </html>

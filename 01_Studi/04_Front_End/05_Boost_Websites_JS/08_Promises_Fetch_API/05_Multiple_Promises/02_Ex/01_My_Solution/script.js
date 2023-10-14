@@ -1,34 +1,42 @@
-// Exemple 
-/*
+// Ma solution
 
-*/
+function askUsername () {
+  return prompt("Quel est votre nom d'utilisateur ?")
+}
 
-console.log("-----------------------------------------------")
+function askMathOperation () {
+  return prompt('Combien font 2 + 2')
+}
 
-// Exemple 
-/*
+function success () {
+  console.log("Vous pouvez accéder à l'application")
+}
 
-*/
+function error () {
+  console.log('Restez où vous êtes')
+}
 
-console.log("-----------------------------------------------")
+function checkUsername () {
+  return new Promise((resolve, reject) => {
+    let userName = askUsername()
+    if ('admin' === userName) {
+      resolve()
+    } else {
+      reject()
+    }
+  })
+}
 
-// Exemple 
-/*
+function checkIfIsBot () {
+  return new Promise((resolve, reject) => {
+    let result = askMathOperation()
+    if (4 === parseInt(result)) {
+      resolve()
+    } else {
+      reject()
+    }
+  })
+}
 
-*/
-
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
+// Résolution des promesses
+Promise.all([checkUsername(), checkIfIsBot()]).then(success, error)
