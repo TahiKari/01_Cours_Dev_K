@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Défi</title>
+  </head>
+  <body>
+    <div>
+      <h1>Défi</h1>
+      <p>
+        On souhaite mettre à disposition de l'administrateur de notre site une
+        page lui permettant de récupérer l'ensemble des adresses françaises
+        correspondant à sa recherche.
+      </p>
+      <p>On dispose du code HTML et JavaScript suivant :</p>
+      <p
+        class="codepen"
+        data-height="300"
+        data-default-tab="html,result"
+        data-slug-hash="MWZdgOB"
+        data-user="OpenSpirit"
+        style="
+          height: 300px;
+          box-sizing: border-box;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 2px solid;
+          margin: 1em 0;
+          padding: 1em;
+        "
+      >
+        <span
+          >See the Pen
+          <a href="https://codepen.io/OpenSpirit/pen/MWZdgOB"> Untitled</a> by
+          OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+          on <a href="https://codepen.io">CodePen</a>.</span
+        >
+      </p>
+      <script
+        async
+        src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+      ></script>
+      <p>
+        L'accès à cette API doit être restreint au possible. Notre
+        administrateur a beau être déjà connecté au site web, on souhaite qu'il
+        décline de nouveau son identité. On souhaite également vérifier qu'il
+        n'est pas un robot en lui faisant effectuer une opération mathématique.
+      </p>
+      <div>
+        <h2>Question</h2>
+        <p>Écrivez les promesses suivantes au sein de fonctions dédiées.</p>
+        <ul>
+          <li>
+            Une première promesse demandera à l'utilisateur son nom : s'il
+            répond admin, la promesse sera résolue, sinon elle sera rejetée
+          </li>
+          <li>
+            Une seconde promesse demandera à l'utilisateur combien font 6 x 7 :
+            s'il répond 42, la promesse sera résolue, sinon elle sera rejetée
+          </li>
+        </ul>
+        <p>
+          Ces deux promesses devront toutes les deux être résolues au sein de la
+          fonction manageResearch . Si elles sont toutes les deux validées, un
+          message indiquant que l'utilisateur peut accéder à l'application sera
+          affiché en console, sinon un message indiquant "Accès refusé" sera
+          affiché.
+        </p>
+        <p>
+          La fonction manageResearch est déclenchée lorsque l'on appuie sur le
+          bouton "Rechercher".
+        </p>
+        <div>
+          <h2>Solution</h2>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="zYyQNZG"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/zYyQNZG"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+      <p>
+        Pour effectuer une recherche, on se basera sur l'API suivante :
+        <a
+          href="https://geo.api.gouv.fr/adresse"
+          target="_blank"
+          rel="alternate"
+          >https://geo.api.gouv.fr/adresse</a
+        >
+        .
+      </p>
+      <p>
+        Si l'on souhaite récupérer les résultats pour l'adresse "8 bd du port",
+        on appellera l'URL suivante :
+        <a
+          href="https://api-adresse.data.gouv.fr/search/?q=8+bd+du+port"
+          target="_blank"
+          rel="alternate"
+          >https://api-adresse.data.gouv.fr/search/?q=8+bd+du+port</a
+        >.
+      </p>
+      <p>
+        En JavaScript, il est possible d'implémenter une URL avec l'objet URL,
+        qui dispose d'une propriété
+        <a
+          href="https://developer.mozilla.org/fr/docs/Web/API/URL/search"
+          target="_blank"
+          rel="alternate"
+          >search</a
+        >. Il est possible de définir des paramètres à une requête GET au moyen
+        de l'objet
+        <a
+          href="https://developer.mozilla.org/fr/docs/Web/API/URLSearchParams"
+          target="_blank"
+          rel="alternate"
+          >URLSearchParams</a
+        >.
+      </p>
+      <div>
+        <h2>Question</h2>
+        <p>Procédons par étapes, dans un premier temps :</p>
+        <ul>
+          <li>
+            Déclarez une constante url contenant l'adresse
+            https://api-adresse.data.gouv.fr/search
+          </li>
+          <li>
+            Au sein d'une nouvelle fonction appelée searchAddress, initialisez
+            votre URL en définissant un nouvel objet de type URLSearchParam.
+            Celui-ci contiendra une propriété q dont la valeur correspondra à la
+            valeur de l'input #address
+          </li>
+        </ul>
+        <p>
+          Vous pourrez vérifier le contenu de l'objet construit grâce à
+          l'instruction suivante : console.log(url.href);.
+        </p>
+        <p>
+          La fonction searchAddress sera quant à elle appelée au sein de la
+          fonction success précédemment déclarée.
+        </p>
+        <div>
+          <h2>Solution</h2>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="GRParmy"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/GRParmy"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          Vous disposez de la fonction suivante, permettant d'afficher les
+          résultats sur votre page.
+        </p>
+        <p>
+          À l'aide de l'API Fetch, appelez l'URL que vous avez construite au
+          sein de la fonction searchAddress et appelez la fonction dont vous
+          disposez en cas de succès.
+        </p>
+        <p>
+          Vous traiterez l'affichage des erreurs en les affichant en console.
+        </p>
+        <p>
+          La méthode createTextNode() crée un nœud de texte avec le texte
+          spécifié.
+        </p>
+        <div>
+          <h2>Solution</h2>
+          <p>Voici comment la fonction searchAddress a dû être complétée :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="NWeVdgO"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/NWeVdgO"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>Voici également le script dans sa globalité :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="LYMoxjx"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/LYMoxjx"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

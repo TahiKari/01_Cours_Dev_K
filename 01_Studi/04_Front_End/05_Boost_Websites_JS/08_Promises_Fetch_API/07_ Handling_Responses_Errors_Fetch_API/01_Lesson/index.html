@@ -3,9 +3,167 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Gestion des réponses et des erreurs dans l'API Fetch</title>
   </head>
   <body>
-    <h1></h1>
+    <div>
+      <h1>Gestion des réponses et des erreurs dans l'API Fetch</h1>
+      <div>
+        <h2>Objectifs</h2>
+        <ul>
+          <li>
+            Traiter une réponse à une requête HTTP envoyée avec l'API Fetch
+          </li>
+          <li>Gérer les erreurs lors de l'utilisation de l'API Fetch</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Mise en situation</h2>
+        <p>
+          Fetch utilise le puissant mécanisme des Promises pour faciliter
+          l'écriture et le traitement des requêtes HTTP. Nous allons voir ici
+          comment utiliser les retours de l'API Fetch pour accéder à la réponse
+          d'une requête ou pour traiter les erreurs.
+        </p>
+      </div>
+
+      <div>
+        <h2>Traiter les réponses</h2>
+        <h3>Méthode</h3>
+        <div>
+          <p>
+            La méthode .fetch() renvoie une Promise, c'est donc avec la méthode
+            .then() qu'il faudra récupérer la réponse.
+          </p>
+          <p>
+            L'objet réponse passé en paramètre contient plusieurs propriétés et
+            méthodes qui vont aider au traitement :
+          </p>
+          <ul>
+            <li>
+              Response.ok : propriété qui indique si le statut HTTP est un
+              succès (entre 200 et 299)
+            </li>
+            <li>
+              Response.json() : méthode qui lit la réponse jusqu'au bout et
+              renvoie une Promise qui retourne le résultat au format JSON
+            </li>
+            <li>
+              Response.text() : méthode qui lit la réponse jusqu'au bout et
+              renvoie une Promise qui retourne le résultat au format text
+              (USVString)
+            </li>
+          </ul>
+          <p>
+            Il existe d'autres méthodes en fonction du type de la réponse
+            attendue (arrayBuffer, blob, formData). Tous fonctionneront sur le
+            même principe d'une Promise qui retourne le résultat.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="oNJRYQX"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/oNJRYQX"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Traiter les erreurs</h2>
+        <div>
+          <p>
+            La méthode .fetch() renvoie une Promise, c'est donc avec la méthode
+            .catch() qu'il faudra utiliser pour récupérer les erreurs.
+          </p>
+          <p>
+            Lors d'une requête avec l'API Fetch, les erreurs peuvent survenir de
+            deux façons :
+          </p>
+          <ul>
+            <li>
+              Soit c'est l'appel qui n'a pas fonctionné (mauvaise configuration,
+              serveur inaccessible) et c'est avec un catch que l'erreur pourra
+              être récupérée,
+            </li>
+            <li>
+              Soit l'appel a eu lieu et c'est au niveau de la réponse qu'il y a
+              une erreur.
+            </li>
+          </ul>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="NWeVbEX"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/NWeVbEX"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>À retenir</h2>
+        <h3>Syntaxe</h3>
+        <div>
+          <ul>
+            <li>
+              L'API Fetch est basée sur le mécanisme des Promises : par
+              conséquent, le traitement des réponses aux requêtes HTTP et celui
+              des erreurs se feront avec les méthodes .then() et .catch().
+            </li>
+            <li>
+              Attention à une subtilité avec les méthodes de formatage de la
+              réponse (.json(), .text()...) qui renverront une promesse avec le
+              résultat en paramètre.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
