@@ -3,9 +3,246 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>La syntaxe</title>
   </head>
+
   <body>
-    <h1></h1>
+    <div>
+      <h1>La syntaxe</h1>
+      <div>
+        <h2>Objectifs</h2>
+        <ul>
+          <li>Apprendre la syntaxe du format JSON</li>
+          <li>Découvrir des outils de validation du format</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Mise en situation</h2>
+        <p>
+          Il existe différents moyens de formaliser des données échangées. Nous
+          allons voir que le format JSON est particulièrement adapté aux
+          contraintes des développement web grâce à une syntaxe simple et
+          suffisamment généraliste pour correspondre à n'importe quel cas
+          d'utilisation. Pour cela, nous présenterons en détails les
+          spécificités de la syntaxe du format JSON, avant de présenter les
+          moyens permettant de vérifier la validité de sa structure.
+        </p>
+      </div>
+
+      <div>
+        <h2>Historique</h2>
+        <p>
+          Créée par Douglas Crockford entre 2002 et 2005, la première norme du
+          JSON est ECMA-404, publiée en octobre 2003. Elle est actuellement
+          décrite par les deux normes en concurrence : RFC 8259 de l'IETF et
+          ECMA-404 de l'ECMA.
+        </p>
+        <a
+          href="https://fr.wikipedia.org/wiki/JavaScript_Object_Notation"
+          target="_blank"
+          rel="alternate"
+          >https://fr.wikipedia.org/wiki/JavaScript_Object_Notation</a
+        >
+      </div>
+
+      <div>
+        <h2>Syntaxe</h2>
+        <p>
+          Le format JSON permet de représenter les différents types JavaScript.
+          Cette opération s'appelle la sérialisation. Voici certaines règle de
+          sérialisation pour obtenir la représentation en JSON des types les
+          plus utilisés en JavaScript :
+        </p>
+        <ul>
+          <li>
+            tableau, représenté sous la forme d'une structure de données entre
+            [], chacune séparée par une ,
+          </li>
+          <li>
+            objet représenté sous la forme d'une structure de données entre {},
+            chacune séparée par une ,
+          </li>
+          <li>booléen (true ou false)</li>
+          <li>nombre entier ou décimal</li>
+          <li>chaîne de caractères entre ""</li>
+          <li>null</li>
+        </ul>
+        <p>
+          Pour la représentation des objets, les données en elles-même suivent
+          une notation clé: valeur pour laquelle la clé doit être une chaîne de
+          caractères entre "", et la valeur peut utiliser l'une des
+          représentations suscitées.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="oNJRagm"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/oNJRagm"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>La structure de données présentée contient donc :</p>
+          <ul>
+            <li>un nombre correspondant à la clé "id",</li>
+            <li>
+              un tableau contenant les valeurs "Informatique" et "Algorithmie"
+              associées à la clé "classes",
+            </li>
+            <li>un booléen true à la clé "fullTime",</li>
+            <li>
+              un objet, répertorié à la clé "person", contenant un id avec pour
+              valeur 3, une chaîne de caractères "John Doe" associée à
+              l'attribut "fullName" et une valeur null pour l'attribut "phone".
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            Grâce à sa souplesse, le format JSON permet de représenter des
+            structures de données complexes facilement par l'encapsulation des
+            structures de données. Il est donc par exemple possible de
+            représenter un tableau d'objets au sein d'un autre objet.
+          </p>
+        </div>
+
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="KKbLGVq"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/KKbLGVq"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+
+        <div>
+          <h3>Attention</h3>
+          <p>
+            Le formalisme JSON ne prend pas en charge l'ajout de commentaires
+            dans la description des structures de données.
+          </p>
+        </div>
+        <p>
+          Afin de s'assurer que les structures JSON transmises soient valides,
+          il existe des outils en ligne permettant de valider le formalisme
+          utilisé, comme
+          <a href="https://jsonlint.com/" target="_blank" rel="alternate"
+            >https://jsonlint.com/</a
+          >
+          ou
+          <a
+            href="https://jsonformatter.curiousconcept.com/"
+            target="_blank"
+            rel="alternate"
+            >https://jsonformatter.curiousconcept.com/</a
+          >. Ces outils permettent de saisir une structure en JSON et de
+          vérifier qu'elle respecte bien les normes de syntaxe de ce format.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <img
+            src="02_Img/valid-jsonlint_1.png"
+            alt=" Image valid-jsonlint_1"
+          />
+          <p>
+            Exemple de résultat de validation de la structure JSON vue dans le
+            premier exemple sur jsonlint.com.
+          </p>
+        </div>
+
+        <div>
+          <h3>Exemple</h3>
+          <img
+            src="02_Img/valid-jsonformatter_1.png"
+            alt="Image valid-jsonformatter_1"
+          />
+          <p>
+            Exemple de résultat de validation de la structure JSON vu dans le
+            second exemple sur jsonformatter.curiousconcept.com.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>À retenir</h2>
+        <h3>Syntaxe</h3>
+        <div>
+          <ul>
+            <li>
+              Il est possible de représenter des structures de données en
+              suivant le format JSON de manière simple et rapide, grâce à sa
+              syntaxe souple et non typée.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <h3>Complément</h3>
+        <div>
+          <a
+            href="https://www.bortzmeyer.org/8259.html"
+            target="_blank"
+            rel="alternate"
+            >RFC 8259</a
+          >
+          <a
+            href="https://www.json.org/json-fr.html"
+            target="_blank"
+            rel="alternate"
+            >Présentation de JSON</a
+          >
+        </div>
+      </div>
+    </div>
   </body>
 </html>
