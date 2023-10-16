@@ -3,9 +3,283 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>JSON avec JavaScript</title>
   </head>
   <body>
-    <h1></h1>
+    <div>
+      <h1>JSON avec JavaScript</h1>
+      <div>
+        <h2>Objectif</h2>
+        <ul>
+          <li>
+            Apprendre à sérialiser et désérialiser des données au format JSON
+            grâce à JavaScript
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>L'objet JSON de JavaScript</h2>
+        <p>
+          JavaScript embarque nativement un objet permettant la gestion du
+          format JSON. Cet objet propose deux méthodes :
+        </p>
+        <ul>
+          <li>JSON.stringify() pour sérialiser des données en JSON</li>
+          <li>
+            JSON.parse() pour désérialiser des données JSON en un type
+            JavaScript
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>JSON.stringify()</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            La méthode stringify() de l'objet JSON de JavaScript prend en
+            paramètre un type JavaScript, et le sérialise en une chaîne de
+            caractères au format JSON.
+          </p>
+        </div>
+
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="zYyQmbX"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/zYyQmbX"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            L’exécution du code précédent affiche la chaîne de caractères
+            suivante dans la console du navigateur :
+            {"stadium":{"id":18,"label":"Stade de
+            France","fields":[{"id":2,"label":"Terrain de
+            foot","area":200},{"id":5,"label":"Terrain de rugby","area":null}]}}
+          </p>
+        </div>
+
+        <div>
+          <h3>Attention</h3>
+          <p>
+            Le format JSON n'acceptant pas de format date à proprement parler,
+            les données au format date de JavaScript sont traduites en chaîne de
+            caractères.
+          </p>
+        </div>
+
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="bGOPGqM"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/bGOPGqM"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Le résultat de l’exécution du code précédent montre que l'objet Date
+            de JavaScript a été traduit en chaîne de caractères lors de sa
+            transcription en JSON.
+          </p>
+          <img src="02_Img/json-date_1.png" alt="Image json-date_1" />
+        </div>
+        <p>
+          À travers l'exemple précédent, on constate que la fonction
+          JSON.stringify() de JavaScript permet d'obtenir une représentation
+          structurée au format JSON des données.
+        </p>
+      </div>
+
+      <div>
+        <h2>JSON.parse()</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            L'objet JSON de JavaScript expose une fonction permettant de
+            désérialiser une chaîne de caractères respectant un format JSON
+            valide en un type JavaScript classique. Cela signifie que les
+            données peuvent être récupérées en respectant la notation pointée de
+            JavaScript. Cette fonction est parse().
+          </p>
+        </div>
+
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="BavgaZr"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/BavgaZr"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            L'exécution du code précédent affiche la valeur de l'attribut id de
+            l'objet contenu dans l'attribut stadium de l'objet obtenu,
+            c'est-à-dire 18.
+          </p>
+        </div>
+
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            La bonne exécution de l'instruction JSON.parse() est dépendante de
+            la validité du format JSON de la chaîne de caractères passée en
+            paramètre. En effet, en cas d'invalidité de la structure de données,
+            une exception du type SyntaxError est levée. C'est pourquoi
+            l'utilisation de JSON.parse() se fait au sein d'un bloc try/catch
+            afin de permettre une gestion de l'erreur.
+          </p>
+        </div>
+
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="zYyVYjG"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/zYyVYjG"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>Le code précédent génère l'erreur suivante :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="RwEzwyL"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/RwEzwyL"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>À retenir</h2>
+        <div>
+          <h3>Syntaxe</h3>
+          <p>
+            Le langage JavaScript embarque nativement un objet JSON qui expose
+            les fonctions JSON.stringify(), pour sérialiser un type JavaScript
+            en une chaîne de caractères respectant le format JSON
+          </p>
+          <p>
+            Et JSON.parse()pour désérialiser une chaîne de caractères au format
+            JSON valide en un type JavaScript
+          </p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
