@@ -6,6 +6,179 @@
     <title>Document</title>
   </head>
   <body>
-    <h1></h1>
+    <div>
+      <h1>Utiliser la balise &ltcanvas&gt</h1>
+      <div>
+        <h2>Objectifs</h2>
+        <ul>
+          <li>Implémenter une balise HTML &ltcanvas&gt</li>
+          <li>Initialiser un canevas avec l'API Canvas</li>
+        </ul>
+        <h2>Mise en situation</h2>
+        <p>
+          L'élément &ltcanvas&gt permet de dessiner des éléments graphiques à
+          l'aide de scripts. Cet élément peut aussi recevoir tout type de média
+          (svg, image, vidéo). Nous verrons dans ce cours comment implémenter un
+          canvas et les possibilités offertes par cet élément.
+        </p>
+        <h2>La balise &ltcanvas&gt</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            La balise canvas est une balise HTML qui a deux attributs, width et
+            height. Sa taille peut être modifiée via du CSS, mais l'image sera
+            affichée selon la taille des attributs, puis transformée par la
+            suite. Cette méthode n'est pas conseillée, car cela peut déformer
+            l'image. Il faut également noter que certains navigateurs anciens ne
+            supportent pas l'élément canevas (Internet Explorer 9, par exemple).
+            Dans ce cas, on peut implémenter du contenu de repli en insérant du
+            texte ou une image entre les balises.
+          </p>
+        </div>
+
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="yLGdbdE"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/yLGdbdE"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>L'API Canvas</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Pour initialiser du contenu, il faut passer par l'<a
+              href="https://developer.mozilla.org/fr/docs/Web/HTML/Canvas"
+              target="_blank"
+              rel="noopener noreferrer"
+              >API Canvas</a
+            >. Via cette API, nous allons pouvoir initialiser un ou plusieurs
+            contextes de rendus, qui vont pouvoir être en deux ou trois
+            dimensions.
+          </p>
+          <p>
+            Le type de contexte sera le paramètre de la méthode getContext() ;.
+          </p>
+        </div>
+
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="XWoLgWG"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/XWoLgWG"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            Dans le cas où le canevas ne serait pas supporté par le navigateur,
+            ce code JavaScript retournerait une erreur. Si l'on souhaite
+            disposer de rétrocompatibilité, il vaut mieux utiliser ce code pour
+            initialiser le canevas.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="VwqJWYe"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/VwqJWYe"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>À retenir</h2>
+        <div>
+          <h3>Syntaxe</h3>
+          <ul>
+            <li>La balise canvas accepte deux attributs, width et height.</li>
+            <li>
+              La taille de l'image sera définie en fonction de la largeur et de
+              la hauteur fixées.
+            </li>
+            <li>
+              Pour initialiser un canevas, on doit lier la balise HTML à un
+              script JavaScript.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
