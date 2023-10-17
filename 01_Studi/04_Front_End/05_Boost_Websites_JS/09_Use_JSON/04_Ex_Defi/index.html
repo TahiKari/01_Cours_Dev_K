@@ -3,23 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Appliquez la notion</title>
+    <title>Défi</title>
   </head>
   <body>
     <div>
-      <h1>Appliquez la notion</h1>
+      <h1>Défi</h1>
+      <p>
+        Très souvent les applications web utilisent des API pour récupérer des
+        données au format JSON et les utilisent pour construire leurs sites.
+        Exemple lorsque vous avez un select dans un formulaire qui vous propose
+        le choix de tous les pays d'origine possibles
+      </p>
+      <p>
+        Dans notre cas, le JSON vous sera fourni dans une variable. Ce JSON est
+        composé de noms de rue.
+      </p>
       <div>
         <h2>Question</h2>
         <p>
-          Voici un objet JavaScript représentant une liste d'étudiants.
-          Convertissez-le au format JSON valide et vérifiez le JSON produit à
-          l'aide d'un des sites de validation vus précédemment.
+          L'objectif de ce défi est d'utiliser la structure HTML suivante et de
+          permettre de remplir le select dynamiquement avec les données
+          présentes dans le JSON au clic sur le bouton.
         </p>
         <p
           class="codepen"
           data-height="300"
           data-default-tab="html,result"
-          data-slug-hash="RwEzVbO"
+          data-slug-hash="zYyVwKj"
           data-user="OpenSpirit"
           style="
             height: 300px;
@@ -34,7 +44,7 @@
         >
           <span
             >See the Pen
-            <a href="https://codepen.io/OpenSpirit/pen/RwEzVbO"> Untitled</a> by
+            <a href="https://codepen.io/OpenSpirit/pen/zYyVwKj"> Untitled</a> by
             OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
             on <a href="https://codepen.io">CodePen</a>.</span
           >
@@ -44,20 +54,22 @@
           src="https://cpwebassets.codepen.io/assets/embed/ei.js"
         ></script>
         <p>
-          Dans une deuxième étape, désérialisez la chaîne de caractères obtenue
-          et tentez d'afficher le nom du premier étudiant.
+          Pensez à utiliser l'id de chaque rue pour l'attribut value de vos
+          options.
         </p>
         <div>
+          <h2>Indice</h2>
+          <p>Pensez à parse le JSON</p>
+          <img src="02_Img/json-defi.png" alt="Image json-defi" />
+        </div>
+
+        <div>
           <h2>Solution</h2>
-          <p>
-            Pour convertir un objet JavaScript au format JSON, il faut utiliser
-            la méthode stringify() de l'objet JSON.
-          </p>
           <p
             class="codepen"
             data-height="300"
             data-default-tab="html,result"
-            data-slug-hash="bGOPWGV"
+            data-slug-hash="VwqJbmN"
             data-user="OpenSpirit"
             style="
               height: 300px;
@@ -72,7 +84,7 @@
           >
             <span
               >See the Pen
-              <a href="https://codepen.io/OpenSpirit/pen/bGOPWGV"> Untitled</a>
+              <a href="https://codepen.io/OpenSpirit/pen/VwqJbmN"> Untitled</a>
               by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
                 >@OpenSpirit</a
               >) on <a href="https://codepen.io">CodePen</a>.</span
@@ -82,8 +94,6 @@
             async
             src="https://cpwebassets.codepen.io/assets/embed/ei.js"
           ></script>
-          <img src="02_Img/console-json-format_1.png" alt="Image console-json-format_1">
-          <img src="02_Img/json-validator_1.png" alt="Image json-validator_1">
         </div>
       </div>
     </div>
