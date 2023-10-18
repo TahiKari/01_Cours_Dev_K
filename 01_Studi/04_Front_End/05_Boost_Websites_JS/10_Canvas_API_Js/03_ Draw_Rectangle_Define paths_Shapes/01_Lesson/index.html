@@ -3,9 +3,427 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Dessiner des rectangles et définir des tracés et des formes</title>
   </head>
   <body>
-    <h1></h1>
+    <div>
+      <h1>Dessiner des rectangles et définir des tracés et des formes</h1>
+      <div>
+        <h2>
+          Objectif
+          <ul>
+            <li>Construire des formes géométriques</li>
+          </ul>
+        </h2>
+      </div>
+
+      <div>
+        <h2>Mise en situation</h2>
+        <p>
+          Maintenant que nous savons implémenter un canevas, nous allons voir
+          comment construire des formes géométriques et tracer des lignes.
+        </p>
+      </div>
+
+      <div>
+        <h2>Le système de coordonnées HTML</h2>
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            Les coordonnées x et y d'une page HTML se basent sur une grille dont
+            les points 0,0 se situent en haut à gauche de la page. Donc si x et
+            y sont égaux à 10, le point sera situé à 10 pixels du haut gauche de
+            la page.
+          </p>
+          <p>Un canevas fonctionne sur le même principe.</p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les rectangles</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>Il existe 3 fonctions permettant d'écrire des rectangles :</p>
+          <ul>
+            <li>
+              fillRect(x, y, width, height) qui dessine un rectangle rempli.
+            </li>
+            <li>
+              strokeRect(x, y, width, height) qui dessine un rectangle vide avec
+              contour.
+            </li>
+            <li>
+              clearRect(x, y, width, height) qui rend transparente une zone
+              rectangulaire.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <h2>Un rectangle plein</h2>
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="vYvoYjg"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/vYvoYjg"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <img
+            src="02_Img/rectangle-canevas.png"
+            alt="Image rectangle-canevas"
+          />
+        </div>
+      </div>
+
+      <div>
+        <h2>Les tracés</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Pour construire d'autres formes géométriques que des rectangles, il
+            faut les construire en reliant des points de tracés. On appelle cela
+            un trajet. Il est constitué de plusieurs segments, dont le dernier
+            point rejoint le premier. Ces segments peuvent être de toutes formes
+            (droits, incurvés, etc.).
+          </p>
+          <p>
+            Pour réaliser un trajet, il faut l'initialiser avec la fonction
+            beginPath(), et la méthode moveTo(x, y) permettra d'établir le point
+            de départ de notre forme.
+          </p>
+          <p>
+            Les fonctions les plus couramment utilisées pour construire des
+            lignes sont lineTo(x, y) qui définit une ligne droite, et arcTo(x1,
+            y1, x2, y2, radius) définissant une ligne courbe.
+          </p>
+          <p>
+            Si le dernier point n'a pas fermé notre objet, il faudra terminer la
+            forme par la fonction closePath(), qui créera une ligne droite vers
+            ce point.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="zYygYLO"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/zYygYLO"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <img src="02_Img/rectange-barre.png" alt="Image rectange-barre" />
+          <p>
+            On va pouvoir dessiner toutes sortes de figures en dessinant
+            plusieurs lignes à la suite dans le canevas. L’une des figures les
+            plus simples à créer est le triangle.
+          </p>
+          <p>
+            Pour dessiner plusieurs lignes à la suite, il suffit d’utiliser
+            plusieurs fois lineTo() : les coordonnées du point défini par la
+            première méthode lineTo() serviront de point de départ pour la ligne
+            tracée par le deuxième appel à la méthode lineTo() et etc.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="vYvoYMZ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/vYvoYMZ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <img
+            src="02_Img/carre-angle-droit.png"
+            alt="Image carre-angle-droit"
+          />
+          <p>
+            Ajout de la commande closePath() pour relier le premier et le
+            dernier point.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="jOXgOod"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/jOXgOod"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <img src="02_Img/triangle-angle-drt.png" alt="triangle-angle-drt" />
+          <p>Plusieurs tracés dans un même canvas</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="OJrKPJE"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/OJrKPJE"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <img src="02_Img/triange-et-barre.png" alt="Image triange-et-barre" />
+        </div>
+      </div>
+
+      <div>
+        <h2>arcTo()</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Construire une courbe n'est pas aisé et demandera souvent plusieurs
+            essais et un peu de pratique. La méthode arcTo(x1, y1, x2, y2,
+            radius) prend en paramètres deux points de contrôle et un radius.
+          </p>
+          <p>
+            Les points de contrôle forment un angle correspondant aux tangentes
+            des deux extrémités de la courbe. Le premier point de contrôle est
+            relié au point de départ et construit la première tangente, le
+            second point de contrôle est relié au premier et crée la deuxième
+            tangente. Le radius déterminera la courbure de l'arc.
+          </p>
+        </div>
+
+        <div>
+          <h3>Conseil</h3>
+          <p>
+            Avant de coder une forme géométrique, il peut être intéressant de la
+            dessiner sur une feuille quadrillée pour avoir les repères.
+          </p>
+        </div>
+
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            Il existe plusieurs méthodes pour créer des arcs avec l'API Canvas.
+            Ces méthodes se trouvent
+            <a
+              href="https://developer.mozilla.org/fr/docs/Tutoriel_canvas/Formes_g%C3%A9om%C3%A9triques#Arcs"
+              target="_blank"
+              rel="alternate"
+              >dans la documentation</a
+            >.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Un arc avec une flèche</h2>
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="gOZVbaz"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/gOZVbaz"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <img src="02_Img/arc-canevas.png" alt="Image arc-canevas" />
+        </div>
+      </div>
+
+      <div>
+        <h2>Les cercles</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Pour créer un cercle dans un canevas, on utilise la méthode arc(x,
+            y, rayon, angle de départ, angle de fin). Pour créer un cercle
+            entier, la valeur de l'angle de départ doit être de 0 et celle de
+            l'angle de fin égale à <strong>Math.PI * 2</strong>.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Un cercle plein dans un cercle vide</h2>
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="NWeQPRo"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/NWeQPRo"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <img src="02_Img/cercle-canevas.png" alt="Image cercle-canevas" />
+        </div>
+      </div>
+
+      <div>
+        <h2>À retenir</h2>
+        <div>
+          <h3>Syntaxe</h3>
+          <ul>
+            <li>
+              Il existe une seule forme géométrique en canevas : le rectangle.
+              Pour dessiner toute autre forme géométrique, il faudra créer un
+              tracé.
+            </li>
+            <li>
+              Il est conseillé d'écrire au préalable des formes complexes sur
+              papier quadrillé afin d'avoir une idée plus précise des différents
+              points de coordonnées.
+            </li>
+            <li>
+              Il existe plusieurs méthodes pour créer des arcs : celles-ci vous
+              sont fournies
+              <a
+                href="https://developer.mozilla.org/fr/docs/Tutoriel_canvas/Formes_g%C3%A9om%C3%A9triques#Arcs"
+                target="_blank"
+                rel="alternate"
+                >dans la documentation</a
+              >.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
