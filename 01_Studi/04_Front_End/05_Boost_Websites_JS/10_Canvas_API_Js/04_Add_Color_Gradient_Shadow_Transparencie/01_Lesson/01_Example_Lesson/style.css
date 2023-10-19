@@ -2,3 +2,29 @@ html {
   height: 100%;
   width: 100%;
 }
+
+body > div {
+  border: 1px solid;
+}
+
+div h1 {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  border: 1px solid;
+
+}
+
+div > div {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid;
+  width: 400px;
+  height: 400px;
+}
+
+

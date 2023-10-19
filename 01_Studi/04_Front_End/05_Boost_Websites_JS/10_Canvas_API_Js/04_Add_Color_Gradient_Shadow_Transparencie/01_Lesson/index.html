@@ -3,9 +3,287 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Ajouter des couleurs, dégradés, ombres et transparences</title>
   </head>
   <body>
-    <h1></h1>
+    <div>
+      <h1>Ajouter des couleurs, dégradés, ombres et transparences</h1>
+      <div>
+        <h2>Objectif</h2>
+        <ul>
+          <li>Ajouter des éléments de style à des canevas</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Mise en situation</h2>
+        <p>
+          Dans ce chapitre, nous allons appliquer des styles à nos formes :
+          couleurs, dégradés, transparences et ombrages.
+        </p>
+      </div>
+
+      <div>
+        <h2>Les couleurs</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Il existe deux méthodes pour affecter des couleurs : fillStyle qui
+            sera utilisée pour le remplissage de forme, et strokeStyle pour la
+            coloration des traits.
+          </p>
+          <p>Ces deux méthodes acceptent plusieurs nomenclatures :</p>
+          <ul>
+            <li>ctx.fillStyle = 'red';</li>
+            <li>ctx.fillStyle = '#FF0000';</li>
+            <li>ctx.fillStyle = 'rgb(255,0,0)';</li>
+            <li>ctx.fillStyle = 'rgba(255, 0, 0, 1)';</li>
+          </ul>
+          <p>
+            Pour appliquer une couleur à un trait ou une forme, il faut déclarer
+            la couleur avant la forme.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Un carré rouge</h2>
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="NWeQEPj"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/NWeQEPj"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Appliquer de la transparence</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            La transparence est une valeur comprise entre 0 et 1. Plus on se
+            rapproche de 1, plus le rendu est opaque.
+          </p>
+          <p>
+            On peut affecter de la transparence à un élément de deux façons :
+          </p>
+          <ul>
+            <li>
+              fillStyle et strokeStyle acceptent la nomenclature rgba CSS qui
+              permet de mettre la valeur de la transparence en dernier élément
+              de la fonction. Par exemple : ctx.strokeStyle = 'rgba(255, 0, 0,
+              1)';.
+            </li>
+            <li>
+              globalAlpha applique la transparence spécifiée à toutes les formes
+              futures. Il prend comme valeur celle de la transparence.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <h2>Un carré transparent à l'intérieur d'un carré rouge</h2>
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="JjwgeBj"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/JjwgeBj"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <img src="02_Img/carre-color.png" alt="Image carre-color" />
+        </div>
+      </div>
+
+      <div>
+        <h2>Les dégradés</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>Il y a deux types de dégradés : linéaires et radiaux.</p>
+          <ul>
+            <li>
+              Linaire : createLinearGradient(x1, y1, x2, y2) avec x1, y1 le
+              point de départ et x2, y2 le point d'arrivée
+            </li>
+            <li>
+              Radial : createRadialGradient(x1, y1, r1, x2, y2, r2) x, y et r
+              représentant deux cercles ayant comme centre x, y et de rayon r
+            </li>
+          </ul>
+          <p>
+            Nous pouvons assigner des couleurs aux dégradés via la méthode
+            addColorStop(position, color).
+          </p>
+          <p>
+            Le paramètre position est une valeur comprise entre 0 et 1 et
+            indique à quel moment le dégradé va évoluer.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Un carré rouge dégradé</h2>
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="eYbqQjX"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/eYbqQjX"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <img src="02_Img/degrade.png" alt="Image degrade" />
+        </div>
+      </div>
+
+      <div>
+        <h2>Les ombres</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>Les ombres comportent 4 propriétés :</p>
+          <ul>
+            <li>
+              shadowOffsetX : indique la distance horizontale sur laquelle
+              l'ombre doit s'étendre à partir de l'objet.
+            </li>
+            <li>
+              shadowOffsetY : indique la distance verticale sur laquelle l'ombre
+              doit s'étendre à partir de l'objet.
+            </li>
+            <li>shadowBlur : taille du floutage.</li>
+            <li>shadowColor : couleur de l'ombre.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <h2>Un texte avec un effet d'ombre</h2>
+        <div>
+          <h3>exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="NWeQEEY"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/NWeQEEY"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <img src="02_Img/shadow.png" alt="Image shadow" />
+        </div>
+      </div>
+
+      <div>
+        <h2>À retenir</h2>
+        <div>
+          <h3>Syntaxe</h3>
+          <ul>
+            <li>
+              Nous avons vu dans ce chapitre qu'il est assez simple d'affecter
+              du style à nos formes. Nous ne sommes limités que par notre
+              imagination.
+            </li>
+            <li>
+              Ce cours est une introduction au canevas, il vous fournit les
+              bases. La documentation canevas est assez importante et vous y
+              trouverez des compléments pour réaliser des projets plus
+              complexes.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
