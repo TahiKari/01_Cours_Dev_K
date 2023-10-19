@@ -3,9 +3,316 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Ajouter du texte et des images</title>
   </head>
   <body>
-    <h1></h1>
+    <div>
+      <h1>Ajouter du texte et des images</h1>
+      <div>
+        <h2>Objectifs</h2>
+        <ul>
+          <li>Ajouter du texte</li>
+          <li>Ajouter des images</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Mise en situation</h2>
+        <p>
+          La balise canvas permet aussi d'afficher du texte et des images. Un
+          exemple très concret de cette application est le logo de profil dans
+          un cercle. Lorsque nous sommes connectés sur un site, si nous avons
+          une photo de profil, le cercle affiche la photo ; sinon, le cercle
+          affiche nos initiales.
+        </p>
+      </div>
+
+      <div>
+        <h2>Ajouter du texte</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Dans le chapitre précédent, nous avons déjà intégré un texte pour
+            illustrer les ombrages. Ici, nous allons voir plus en profondeur les
+            différentes propriétés et comment les appliquer.
+          </p>
+          <p>Le texte d'un canevas possède 4 propriétés :</p>
+          <ul>
+            <li>font : définit la taille et le style du texte.</li>
+            <li>
+              textAlign : définit l’alignement horizontal du texte par rapport
+              aux coordonnées de celui-ci. Elle accepte 5 valeurs : start, end,
+              left, right, center.
+            </li>
+            <li>
+              textBaseline : définit l'alignement de base du texte. Elle accepte
+              top, middle, alphabetic, ideographic, bottom.
+            </li>
+            <li>
+              direction : direction du texte. Elle prend deux valeurs possibles
+              : ltr (de gauche à droite) ou rtl (de droite à gauche).
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <h2>Centrer un texte</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Pour centrer le texte, quelle que soit la taille du canevas, il faut
+            récupérer les valeurs des attributs width et height. La position x
+            du texte sera width / 2 et la position y sera height / 2.
+          </p>
+          <p>
+            Pour cela on dispose de la méthode getAttribute(), getAttribute
+            renvoie la valeur d'un attribut donné de l'élément spécifié. Si
+            l'attribut n'existe pas, la valeur renvoyée sera soit null soit ""
+            (une chaine vide) .
+          </p>
+          <p>
+            Il faudra alors affecter center à la propriété textAlign, et middle
+            à la propriété textBaseline.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Un texte centré</h2>
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="XWovQdJ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/XWovQdJ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Insérer des images</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            À présent, nous allons voir comment gérer les images avec les
+            canevas.
+          </p>
+          <p>
+            Pour insérer une image dans un canevas, il va déjà falloir se
+            procurer une référence à cette image. Généralement, on utilisera le
+            constructeur
+            <a
+              href="https://developer.mozilla.org/fr/docs/Web/API/HTMLImageElement/Image"
+              target="_blank"
+              rel="alternate"
+              >new Image()</a
+            >
+            pour créer un nouvel objet HTMLImageElement puis la propriété src
+            pour indiquer le chemin de l’image qu’on souhaite insérer. C'est
+            fonctionnellement équivalent à document.createElement('img').
+          </p>
+          <p>
+            Les images peuvent mettre un certain temps à se charger, c'est
+            pourquoi l'ajout d'images à l’intérieur d'un canevas nécessite une
+            fonction d’événement, load().
+          </p>
+          <p>
+            L'intégration de l'image se fait via la méthode drawImage(img, x, y
+            width, height) et le canevas doit être initialisé dans le callback
+            de la méthode load(). En effet, si le canevas se charge avant
+            l'image, il ne pourra pas l'afficher.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Deux méthodes d'intégration d'image</h2>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Chargement d'une fonction via l’événement onload dans le le HTML :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="gOZVJyp"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/gOZVJyp"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>Via la méthode addEventListener() :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="zYygQXa"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/zYygQXa"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Contenir une image dans un canvas</h2>
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            Pour créer un badge contenant une image, il faut que l'image se
+            limite au cadre de notre canevas. Pour cela, il existe la méthode
+            globalCompositeOperation() appelée avant et après la création du
+            cercle.
+          </p>
+          <p>Cette méthode peut prendre différente valeurs.</p>
+          <p>
+            Quatre s'appliquent par rapport au contenu que nous allons créer
+            (source) :
+          </p>
+          <ul>
+            <li>source-over (place la source au dessus).</li>
+            <li>
+              source-in (seule la source qui chevauche ce qui est déjà dessiné
+              est affichée).
+            </li>
+            <li>
+              source-out (seule la source qui ne chevauche pas ce qui est déjà
+              dessiné est affichée).
+            </li>
+            <li>
+              source-atop (la partie de la source qui chevauche ce qui est déjà
+              dessiné est affiché).
+            </li>
+          </ul>
+          <p>
+            Quatre autres vont s'appliquer par rapport aux dessins qui ont déjà
+            été faits (destination) :
+          </p>
+          <ul>
+            <li>
+              destination-over (la destination est au-dessus du nouvel objet).
+            </li>
+            <li>
+              destination-in (la destination est affichée sous le nouvel objet).
+            </li>
+            <li>
+              destination-out (seule la destination qui n'est pas chevauchée par
+              le nouvel objet est affichée).
+            </li>
+            <li>
+              destination-atop (la partie de la destination qui chevauche le
+              nouvel objet est affichée).
+            </li>
+          </ul>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="yLGmWdP"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/yLGmWdP"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+      <div>
+        <h2>À retenir</h2>
+        <div>
+          <h3>Syntaxe</h3>
+          <ul>
+            <li>
+              L'ajout de texte et d'images est relativement simple, mais
+              nécessitera souvent des algorithmes de calculs pour définir les
+              positions des éléments, quelle que soit la taille du canevas.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

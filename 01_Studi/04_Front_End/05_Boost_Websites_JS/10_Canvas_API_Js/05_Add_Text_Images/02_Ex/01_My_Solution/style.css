@@ -2,3 +2,35 @@ html {
   height: 100%;
   width: 100%;
 }
+
+body>div {
+  border: 2px solid;
+}
+
+div h1 {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+  border: 1px solid;
+
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  border: 2px solid;
+}
+
+div > div {
+  margin: auto;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid;
+  
+}
