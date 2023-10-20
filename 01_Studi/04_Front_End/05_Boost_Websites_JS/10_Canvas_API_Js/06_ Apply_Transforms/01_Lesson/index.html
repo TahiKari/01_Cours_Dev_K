@@ -6,6 +6,309 @@
     <title>Document</title>
   </head>
   <body>
-    <h1></h1>
+    <div>
+      <h1>Appliquer des transformations</h1>
+      <div>
+        <ul>
+          <li>Effectuer une translation</li>
+          <li>Effectuer des rotations</li>
+          <li>La méthode transform()</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Mise en situation</h2>
+        <p>
+          Comme en CSS3, il est possible de transformer nos canevas pour créer
+          des formes plus complexes ou des animations.
+        </p>
+      </div>
+
+      <div>
+        <h2>save() et restore()</h2>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Avant de commencer à étudier des méthodes de transformation, nous
+            allons examiner deux méthodes indispensables à la création de formes
+            plus complexes :
+          </p>
+          <ul>
+            <li>
+              save() : sauvegarde l'état du canevas dans sa globalité et
+              enregistre les états dans une pile. save() peut être appelé
+              plusieurs fois.
+            </li>
+            <li>
+              restore() : restaure le plus récent état sauvegardé. Chaque appel
+              à restore() enlève le dernier état sauvegardé et restaure tous les
+              paramètres sauvegardés.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <h2>Créer et restaurer des carrés</h2>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Voyons comment fonctionnent save() et restore() à partir d'un
+            exemple simple.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="ExrYXGB"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/ExrYXGB"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <img src="02_Img/save.png" alt="Image save" />
+        </div>
+      </div>
+
+      <div>
+        <h2>La translation</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            La translation correspond au déplacement des coordonnées de
+            l’origine. On utilise cette méthode via translate(x, y).
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Translation de deux carrés</h2>
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="abXoweo"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/abXoweo"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les rotations</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Pour effectuer une rotation, on va utiliser la méthode
+            rotate(angle). La rotation va tourner les éléments du canevas dans
+            le sens des aiguilles d'une montre, à partir du point d'origine. Les
+            rotations se cumulent : si l'on crée plusieurs rotations
+            successives, elles se cumuleront entre elles.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Du texte vertical</h2>
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="JjxPyod"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/JjxPyod"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            Les rotations modifient l’emplacement visuel du point d'origine.
+            Cela peut être assez désorientant. Pour se repérer plus facilement,
+            il peut être intéressant d'utiliser cette méthode avec translate.
+          </p>
+        </div>
+
+        <div>
+          <h2>Quelques notions de trigonométrie</h2>
+          <p>
+            En mathématiques, le cercle trigonométrique est un cercle qui permet
+            d'illustrer et de définir des notions comme celles d'angle, de
+            radian et les fonctions trigonométriques : cosinus, sinus, tangente.
+          </p>
+          <p>
+            Dans notre cas , il nous servira à travailler sur les cercles ,
+            demi-cercles, angles et les rotations. De manière très simplifiée,
+            ce cercle nous permet d’associer un angle à une valeur de Pi afin
+            d’utiliser cette valeur dans nos formules.
+          </p>
+          <img src="02_Img/trigonometrie.png" alt="Image trigonometrie" />
+          <p>Tableau issu du cercle trigonométrique.</p>
+          <img src="02_Img/tableau-trigo_1.png" alt="Image tableau-trigo_1" />
+        </div>
+      </div>
+
+      <div>
+        <h2>Une horloge</h2>
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="mdvbMew"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/mdvbMew"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>transform()</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>La méthode transform() permet de :</p>
+          <ul>
+            <li>Mettre à l'échelle,</li>
+            <li>Pivoter</li>
+            <li>Déplacer</li>
+            <li>Incliner</li>
+          </ul>
+          <p>
+            La méthode transform() prend 6 paramètres. Ces paramètres forment
+            une matrice qui correspond à celle de transformation de l'API
+            Canvas. Lorsque l'on utilise transfom(p1, p2, p3, p4, p5, p6), on
+            multiplie la matrice de transformation courante par la matrice
+            décrite par les arguments de cette méthode.
+          </p>
+          <ul>
+            <li>p1 : Échelle horizontale.</li>
+            <li>p2 : Inclinaison horizontale.</li>
+            <li>p3 : Inclinaison verticale.</li>
+            <li>p4 : Échelle verticale.</li>
+            <li>p5 : Déplacement horizontal.</li>
+            <li>p6 : Déplacement vertical.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les carrés</h2>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Reprenons l'exemple des carrés vu précédemment. Ce code fournira
+            exactement le même rendu :
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>À retenir</h2>
+        <div>
+          <h3>Syntaxe</h3>
+          <p>
+            Les transformations permettent de modifier l'état des éléments du
+            canevas. Il est possible de :
+          </p>
+          <ul>
+            <li>Déplacer l'axe d'origine,</li>
+            <li>Effectuer une rotation,</li>
+            <li>Changer d'échelle,</li>
+            <li>Incliner.</li>
+          </ul>
+          <p>
+            Il est possible de sauvegarder l'état d'un élément et de le
+            restaurer.
+          </p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

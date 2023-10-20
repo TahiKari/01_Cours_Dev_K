@@ -3,9 +3,90 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Appliquez la notion</title>
   </head>
   <body>
-    <h1></h1>
+    <div>
+      <h1>Appliquez la notion</h1>
+      <p>
+        Dans le cours, nous avons créé une horloge pour illustrer la rotation
+        couplée avec la translation. Comme vous l'aurez sûrement remarqué dans
+        l'exemple, les chiffres suivent l'angle de rotation. Dans cet exercice,
+        il va falloir remettre les chiffres dans le bon sens.
+      </p>
+      <p>
+        Rappel : nous avons effectué une translation au préalable qui a placé
+        les coordonnées (0, 0) au centre du cercle.
+      </p>
+      <p>
+        Pour construire une horloge, chaque chiffre est positionné à un angle de
+        30 ° par rapport au chiffre précédent, soit П/6. On va donc effectuer
+        une rotation de notre axe de 30 °.
+      </p>
+      <img src="02_Img/rotate-1.png" alt="Image rotate-1" />
+      <p>
+        Ensuite, nous allons effectuer une translation au croisement du cercle
+        et de l'axe des y. En effet, nous allons devoir effectuer une rotation à
+        partir de ce point pour rétablir l'angle d'écriture. Sinon cela donnera
+        le rendu de l'exemple du cours : les chiffres suivront l'axe de
+        rotation.
+      </p>
+      <p>
+        Pour connaître la position en y, il faut multiplier le rayon par
+        l'angle, soit 50 x П/3. Comme nos coordonnées (0,0) correspondent au
+        centre du cercle, la valeur de y sera négative (dans un canvas, les
+        coordonnées positives de y descendent). Donc, pour connaître la position
+        de y, il faut faire -50 x П/3.
+      </p>
+      <img src="02_Img/angle-2_1.png" alt="Image angle-2_1" />
+      <div>
+        <h2>Question</h2>
+        <p>
+          Voici le code JavaScript de création du cercle. Complétez ce code pour
+          obtenir le résultat ci-dessous :
+        </p>
+        <img src="02_Img/horloge_droite.png" alt="Image horloge_droite" />
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="poGzpKX"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/poGzpKX"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <div>
+          <h2>Indice</h2>
+          <p>
+            Une fois que vous aurez écrit l'heure, n'oubliez pas de rétablir la
+            rotation ainsi que la translation vers le centre du cercle avant de
+            commencer une nouvelle rotation de l'axe.
+          </p>
+        </div>
+
+        <div>
+          <h2>Solution</h2>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
