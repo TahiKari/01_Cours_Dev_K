@@ -3,9 +3,156 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Défi</title>
   </head>
   <body>
-    <h1></h1>
+    <div>
+      <h1>Défi</h1>
+      <p>
+        Dans le cadre d'un projet web, on vous demande de créer un badge
+        permettant de voir :
+      </p>
+      <ul>
+        <li>
+          Soit les initiales de l'utilisateur s'il n'a pas de photo de profil,
+        </li>
+        <li>Soit sa photo de profil si elle existe.</li>
+      </ul>
+      <div>
+        <h2>Question</h2>
+        <p>Créez un badge respectant ces conditions :</p>
+        <ul>
+          <li>Le badge est un cercle avec un fond gris et un texte orange,</li>
+          <li>
+            Le diamètre du cercle est égal à la hauteur et largeur du canevas,
+          </li>
+          <li>
+            La police de texte sera Arial et la taille du texte devra être égale
+            au diamètre du cercle divisé par 2.
+          </li>
+        </ul>
+        <p>
+          Créez la fonction createBadge(canvas, urlImg = null) dont les
+          paramètres sont :
+        </p>
+        <ul>
+          <li>canvas : élément canvas,</li>
+          <li>
+            urlImg : paramètre optionnel, si l'on ne met pas ce paramètre, alors
+            il sera automatiquement initialisé à null.
+          </li>
+        </ul>
+        <p>
+          Pour être sûr que votre fonction marche, il faudra tester si l'image
+          existe avant de la charger. Pour cela, voici la fonction que l'on peut
+          utiliser :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="BaMaBzb"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/BaMaBzb"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>Pour utiliser cette fonction :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="WNPNexV"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/WNPNexV"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Voici l’URL d'une image valide que vous pouvez utiliser pour vos tests
+          :
+          <a
+            href="https://fotomelia.com/wp-content/uploads/edd/2015/05/"
+            target="_blank"
+            rel="alternate"
+            >https://fotomelia.com/wp-content/uploads/edd/2015/05/</a
+          >main-fleur-paquerette-ciel-bleu-images-photos-gratuites.jpg.
+        </p>
+        <p>
+          Vous pouvez choisir les initiales que vous voulez pour vos tests :
+          ('JD', LD', 'NL').
+        </p>
+        <p>Les résultats attendus avec et sans image sont :</p>
+        <img src="02_Img/defi-canevas.png" alt="Image defi-canevas" />
+        <div>
+          <h2>Solution</h2>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="mdvdbrG"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/mdvdbrG"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

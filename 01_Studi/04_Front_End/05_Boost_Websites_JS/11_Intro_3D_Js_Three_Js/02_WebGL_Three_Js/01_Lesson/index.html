@@ -3,9 +3,311 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Le WebGL et three.js</title>
   </head>
   <body>
-    <h1></h1>
+    <div>
+      <h1>Le WebGL et three.js</h1>
+      <div>
+        <h2>Objectifs</h2>
+        <ul>
+          <li>Découvrir le WebGL</li>
+          <li>Comprendre l'utilité de three.js</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Mise en situation</h2>
+        <p>
+          Le HTML5 a été une révolution qui a changé de manière flagrante la
+          manière de créer des sites Internet. Nouveaux blocs, possibilité
+          d'ajouter simplement des sons ou des vidéos, nouveaux éléments de
+          formulaire... Ses apports sont nombreux et leurs bienfaits sont
+          indéniables.
+        </p>
+        <p>
+          Mais parmi tous ces ajouts, un en particulier permet d'étendre les
+          capacités du navigateur pour ne plus se limiter à l'affichage de sites
+          web : le canevas.
+        </p>
+      </div>
+
+      <div>
+        <h2>Canvas et WebGL</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            L'élément &ltcanvas&gt est une balise apparue en HTML5 permettant de
+            réaliser des dessins en JavaScript. Le canevas peut utiliser
+            plusieurs technologies pour créer et afficher le dessin, appelées
+            contextes de rendu (ou rendering contexts). On peut voir un contexte
+            de rendu comme une boîte à outils contenant tout ce dont JavaScript
+            a besoin pour interagir avec le canevas.
+          </p>
+          <p>
+            Il existe deux contextes principaux qui sont implémentés nativement
+            dans les navigateurs récents : <strong>Canvas2D</strong>, qui permet
+            de réaliser des dessins en 2D, et <strong>WebGL</strong>, qui permet
+            de faire de la 3D.
+          </p>
+        </div>
+
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            La forme la plus primitive qu'il est possible de faire avec Canvas2D
+            est un rectangle. Sans rentrer dans les détails, voici le code
+            nécessaire à la création d'un rectangle rouge :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="wvNvwdL"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/wvNvwdL"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <img src="02_Img/carouge.png" alt="Image carouge" />
+          <p>
+            En trois dimensions, la forme de prédilection est un triangle. Voici
+            le code nécessaire à la création d'un triangle rouge :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="dyaybze"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/dyaybze"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <img src="02_Img/trouge.png" alt="Image trouge" />
+          <p>
+            Les exemples ci-dessus permettent de mettre en évidence une
+            différence flagrante entre les deux contextes : WebGL est bien plus
+            complexe à manipuler que Canvas2D. L'ajout d'une troisième dimension
+            nécessite de gérer des éléments qui ne sont pas forcément présents
+            en 2D, comme les shaders, les buffers, les sommets...
+          </p>
+        </div>
+
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            Cela peut sembler étrange que la forme de base d'un objet 3D soit un
+            triangle, mais, en réalité, un modèle 3D est souvent composé d'un
+            assemblage de triangles (un rectangle peut être composé de deux
+            triangles).
+          </p>
+          <img src="02_Img/monkey.png" alt="Image monkey" />
+        </div>
+        <p>
+          Heureusement, il existe des librairies JavaScript permettant de
+          simplifier l'utilisation de WebGL. Nous allons voir la plus connue et
+          la plus utilisée : <strong>three.js</strong>.
+        </p>
+      </div>
+
+      <div>
+        <h2>Three.js</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Three.js est une librairie JavaScript qui permet de manipuler
+            simplement des objets en 3D. Grâce à elle, il est possible de
+            dessiner des formes primitives tridimensionnelles ou d'importer des
+            modèles 3D en quelques lignes de code, et de les afficher en
+            utilisant de nombreuses technologies de rendu, dont WebGL.
+          </p>
+          <p>
+            Elle dispose également d'outils permettant d'animer ces objets ou de
+            gérer les collisions entre eux. Il est même possible de créer des
+            environnements accessibles depuis un casque de réalité virtuelle.
+          </p>
+        </div>
+
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Pour utiliser la librairie three.js, il va d'abord falloir
+            l'importer dans le projet. Pour cela, il existe deux solutions :
+            l'utilisation d'un CDN et le téléchargement via npm.
+          </p>
+          <ul>
+            <li>
+              Un CDN (pour Content Delivery Network) est un hébergeur de
+              fichiers dont le but est de mettre du contenu à disposition de la
+              manière la plus performante possible. Au moment de l'importation
+              des outils de three.js, il faudra ainsi indiquer un lien vers le
+              fichier JavaScript distant. Le CDN recommandé par three.js est
+              unpkg.com et le lien est https://unpkg.com/three@[METTRE LA
+              VERSION ICI]/build/three.module.js. Par exemple, pour récupérer la
+              version 0.122.0, il faut utiliser le code suivant :
+            </li>
+          </ul>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="abXboVL"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/abXboVL"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Il est également possible de télécharger three.js grâce à npm, avec
+            la ligne de commande npm install --save three. Il suffira alors
+            d'importer la librairie en utilisant le code suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="wvNvwPV"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/wvNvwPV"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+
+        <div>
+          <h3>Attention</h3>
+          <p>
+            Bien que three.js ne soit composé que de JavaScript, il importe ses
+            propres modules. Il faut donc toujours utiliser type="module" dans
+            la balise de script, ce qui provoque des appels HTTP qui peuvent
+            échouer si l'application n'utilise pas de serveur web. Pour utiliser
+            cette librairie, il y a donc deux options :
+          </p>
+          <ul>
+            <li>
+              Mettre tout le code JavaScript sur l'index du site, afin d'éviter
+              les appels HTTP
+            </li>
+            <li>
+              Utiliser un serveur web, tel qu'Apache (via une solution comme
+              XAMPP, WAMP...) ou un bundler, comme Webpack. Node est déconseillé
+              par three.js.
+            </li>
+          </ul>
+          <p>
+            Pour des raisons d'accessibilité, tous les exemples montrés dans ce
+            cours sont prévus pour fonctionner en local, sans serveur web. Tout
+            le code JavaScript est donc situé entre des balises &ltscript&gt.
+            Bien entendu, ce n'est pas une bonne pratique : il est recommandé
+            d'exporter son code dans plusieurs fichiers JavaScript. N'hésitez
+            donc pas à mettre en place votre propre serveur web.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>À retenir</h2>
+        <div>
+          <h3>Syntaxe</h3>
+          <ul>
+            <li>
+              La balise HTML5 &ltcanvas&gt permet de faire du dessin en
+              JavaScript. Il existe plusieurs technologies, appelées « contextes
+              », permettant d'utiliser un canevas : Canvas2D, plus simple, mais
+              limité au dessin en deux dimensions ; et WebGL, beaucoup plus
+              complexe, mais permettant la 3D.
+            </li>
+            <li>
+              Pour simplifier le dessin en 3D, il est possible d'utiliser la
+              librairie three.js.
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Complément</h3>
+          <a href="https://threejs.org/" target="_blank" rel="alternate"
+            >Le site officiel de three.js</a
+          >
+        </div>
+      </div>
+    </div>
   </body>
 </html>

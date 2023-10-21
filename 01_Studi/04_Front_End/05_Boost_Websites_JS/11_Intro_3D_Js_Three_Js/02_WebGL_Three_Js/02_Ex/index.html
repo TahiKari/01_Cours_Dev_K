@@ -3,9 +3,151 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Appliquez la notion</title>
   </head>
   <body>
-    <h1></h1>
+    <div>
+      <h1>Appliquez la notion</h1>
+      <div>
+        <h2>Question</h2>
+        <p>
+          Le code ci-dessous permet d'afficher un objet 3D en utilisant la
+          version 0.122.0 de la librairie three.js, mais l'import de la
+          librairie a été oublié. En vous servant de vos nouvelles
+          connaissances, importez three.js en haut du code JavaScript et
+          déterminez la forme de l'objet 3D affiché.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="bGzGbmN"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/bGzGbmN"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <div>
+          <h2>Solution</h2>
+          <p>
+            Pour importer la librairie, il faut ajouter la ligne import * as
+            THREE from 'https://unpkg.com/three@0.122.0/build/three.module.js';
+            au début du code :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="xxMxKyW"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/xxMxKyW"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          Le script contient 4 variables, déclarées au début de l'exécution du
+          code :
+        </p>
+        <ul>
+          <li>
+            color, la couleur de la forme au format 0xRRVVBB, où RR est la
+            quantité de rouge, VV la quantité de vert et BB la quantité de bleu,
+            au format hexadécimal (donc de 00 à FF)
+          </li>
+          <li>xRotation, la vitesse de rotation horizontale</li>
+          <li>yRotation, la vitesse de rotation verticale</li>
+          <li>cameraZPosition, la distance de la caméra par rapport au cube</li>
+        </ul>
+        <p>
+          Modifiez ces valeurs pour avoir un cube vert foncé, tournant deux fois
+          plus vite horizontalement que verticalement et avec une caméra plus
+          éloignée.
+        </p>
+        <div>
+          <h2>Solution</h2>
+          <p>
+            Voici la déclaration des variables permettant d’effectuer les
+            modifications demandées :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="KKJKPbg"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/KKJKPbg"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Bien évidemment, votre réponse peut être correcte même si vous
+            n'avez pas ces valeurs exactes. Le plus important est d'avoir réussi
+            à trouver une nuance de vert, d'avoir compris comment éloigner la
+            caméra et d'avoir manipulé les valeurs de la rotation.
+          </p>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
