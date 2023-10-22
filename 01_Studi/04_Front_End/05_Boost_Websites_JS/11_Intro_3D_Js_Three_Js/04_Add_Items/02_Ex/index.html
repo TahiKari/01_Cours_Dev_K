@@ -3,9 +3,105 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Appliquez la notion</title>
   </head>
   <body>
-    <h1></h1>
+    <div>
+      <h1>Appliquez la notion</h1>
+      <div>
+        <h2>Question</h2>
+        <p>
+          Un client souhaiterait créer un environnement 3D ayant pour thème «
+          Vacances au bord de la plage » et aurait besoin de petits parasols en
+          3D. En vous aidant de la documentation officielle de three.js, créez
+          une scène et ajoutez-y un parasol composé d'un
+          <strong>cylindre blanc</strong>, pour faire le mât, et d'un
+          <strong>cône vert</strong>, pour faire la toile. La lumière doit
+          interagir avec chaque composant du parasol, et le mât doit refléter
+          légèrement la lumière. Voici un exemple de parasol possible :
+        </p>
+        <img src="02_Img/exo3.png" alt="Image exo3" />
+        <p>
+          La taille et les couleurs exactes sont à votre convenance : faites vos
+          propres parasols, tant qu'ils respectent les contraintes de base. Il
+          faut également que le parasol soit simple à manipuler. En déplaçant le
+          mât, la toile doit également se déplacer.
+        </p>
+        <div>
+          <h2>Indice</h2>
+          Aidez-vous de la
+          <a
+            href="https://threejs.org/docs/#api/en/geometries/CylinderGeometry"
+            target="_blank"
+            rel="alternate"
+            >documentation du cylindre</a
+          >
+          et de
+          <a
+            href="https://threejs.org/docs/index.html#api/en/geometries/ConeGeometry"
+            target="_blank"
+            rel="alternate"
+            >celle du cône</a
+          >.
+        </div>
+
+        <div>
+          <h2>Indice</h2>
+          <p>
+            Pour que le mat reflète légèrement la lumière, il faut donner à son
+            matériau une valeur de roughness inférieure à 1 : l'exemple utilise
+            0.3. Pour voir la différence, il faut zoomer sur le mât, avec une
+            source de lumière assez proche.
+          </p>
+        </div>
+
+        <div>
+          <h2>Solution</h2>
+          <p>
+            Après avoir créé la scène, la caméra et le renderer, il faut créer
+            un objet de type CylinderGeometry et un autre de type ConeGeometry.
+            Le mât doit être le parent de la toile. Pour positionner le cône
+            au-dessus du cylindre, il faut utiliser la méthode set de la
+            propriété position.
+          </p>
+          <p>
+            Les deux objets doivent utiliser un MeshStandardMaterial, et celui
+            du mât doit avoir une roughness strictement inférieure à 1. Pour que
+            les objets ne soient pas entièrement noirs, n'oubliez pas d'ajouter
+            une source de lumière, comme une PointLight.
+          </p>
+          <p>Le script complet permettant de générer l'exemple est :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="GRzROLq"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/GRzROLq"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

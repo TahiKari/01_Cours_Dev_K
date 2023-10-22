@@ -3,9 +3,405 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Scène, caméra et renderer</title>
   </head>
   <body>
-    <h1></h1>
+    <div>
+      <h1>Scène, caméra et renderer</h1>
+      <div>
+        <h2>Objectifs</h2>
+        <ul>
+          <li>Comprendre les notions de scène, de caméra et de renderer</li>
+          <li>Implémenter ces concepts en three.js</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Mise en situation</h2>
+        <p>
+          Organiser son espace 3D avec three.js peut s'apparenter à la
+          réalisation d'un film. Les objets 3D vont être nos acteurs, mais ils
+          ne se suffisent pas à eux-mêmes. Pour fonctionner, ils vont avoir
+          besoin de 3 choses : une scène sur laquelle jouer, une caméra pour les
+          filmer, puis, une fois le film tourné, il faudra le mettre sur un
+          support pour être visionné (DVD, Blu-ray, VHS, format mp4, format
+          AVI...).
+        </p>
+        <p>
+          On retrouve ces trois concepts dans de nombreux logiciels de
+          conception 3D, et three.js ne fait pas exception.
+        </p>
+      </div>
+
+      <div>
+        <h2>La scène</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Une <strong>scène</strong> est un espace 3D qui va accueillir les
+            différents éléments à afficher. Tous les objets 3D que three.js va
+            manipuler doivent être ajoutés à une scène pour être visibles. Il
+            est possible de créer plusieurs scènes, mais une seule sera affichée
+            à la fois.
+          </p>
+        </div>
+
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Pour créer une scène en three.js, il suffit d'instancier un objet de
+            type Scene. Le constructeur de cette classe ne possède pas de
+            paramètres.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="NWoWgdR"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/NWoWgdR"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Une scène étant un espace tridimensionnel, la position de chaque
+            élément qui va l'occuper sera définie par ses coordonnées sur les
+            axes x, y et z. Par défaut, les objets auront pour position (0, 0,
+            0).
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>La caméra</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            La scène seule ne sert pas si personne n'est là pour la voir. La
+            <strong>caméra</strong> permet ainsi de définir le point de vue qui
+            sera affiché dans le canevas. Si on prend, par exemple, une scène
+            contenant une maison, c'est la caméra qui va décider si le point de
+            vue est à l’intérieur ou à l’extérieur de la maison. Il existe
+            plusieurs types de caméra, mais la plus utilisée en 3D est la
+            PerspectiveCamera, qui simule la vision de l’œil humain.
+          </p>
+        </div>
+
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Pour créer une caméra, il faut instancier un objet de type
+            PerspectiveCamera. Le constructeur de cette classe possède 4
+            paramètres :
+          </p>
+
+          <ul>
+            <li>FieldOfView, le champ de vision de la caméra, en degrés.</li>
+            <li>
+              AspectRatio, le ratio largeur/hauteur de l'image finale. Ce ratio
+              est directement lié à la taille du container : en mettre un
+              différent provoquerait des effets d'étirement de l'image.
+            </li>
+            <li>
+              NearClippingPlane, la distance d'affichage minimale. Tous les
+              objets placés en dessous de cette distance de la caméra ne seront
+              pas affichés.
+            </li>
+            <li>
+              FarClippingPlane, la distance d'affichage maximale. Tous les
+              objets placés au-dessus de cette distance de la caméra ne seront
+              pas affichés.
+            </li>
+          </ul>
+          <p>
+            Un objet camera possède une propriété position contenant ses
+            coordonnées dans l'espace. Une position possède ainsi des
+            composantes x, y et z.
+          </p>
+        </div>
+
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Le code suivant permet de créer une caméra avec un champ de vision
+            de 75 degrés, dans un container prenant toute la fenêtre (dont la
+            largeur et la hauteur sont accessibles respectivement via
+            window.innerWidth et window.innerHeight) et dont la distance
+            d'affichage est entre 0.1 et 1000 :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="yLZLXxK"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/yLZLXxK"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Il est ensuite possible de modifier sa position. Par exemple, pour
+            la décaler sur la droite, il faut jouer sur l'axe des x :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="qBgBjMG"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/qBgBjMG"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            Décaler la caméra sur la droite aura pour effet de décaler tous les
+            objets du champ de vision sur la gauche de l'écran.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Le renderer</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Une fois la scène créée et la caméra placée, il va falloir capturer
+            l'image : c'est le rôle du <strong>renderer</strong>. C'est lui qui
+            va déterminer comment l'image finale sera générée. Le renderer
+            principal est WebGLRenderer, qui permet de dessiner dans un
+            &ltcanvas&gt en utilisant le WebGL.
+          </p>
+        </div>
+
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Pour créer un renderer, il suffit de créer une instance de la classe
+            WebGLRenderer, dont le constructeur possède un paramètre facultatif
+            sous forme d'objet permettant de configurer le renderer.
+          </p>
+          <p>
+            Par défaut, ce renderer crée son propre &ltcanvas&gt, dont il faut
+            définir la taille grâce à la méthode setSize, qui prend en
+            paramètres une longueur et une hauteur. Ce canevas est stocké dans
+            la propriété domElement et doit être ajouté à la page pour être
+            visible. Il est également possible d'utiliser un canevas existant en
+            renseignant la propriété canvas dans l'objet de configuration du
+            constructeur.
+          </p>
+          <p>
+            Pour dessiner l'image finale, il faut utiliser la méthode render,
+            qui prend en paramètres la scène à dessiner et la caméra à utiliser.
+          </p>
+        </div>
+
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            Dans le cas d'un rendu dans un canevas, l'« aspect ratio » de la
+            caméra doit être calculé à partir de la largeur et de la hauteur de
+            ce dernier.
+          </p>
+        </div>
+
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Si la page ne possède pas de canevas, alors il est possible de créer
+            un WebGLRenderer sans passer de paramètres au constructeur. Voici un
+            exemple de création d'un canevas de la taille de la fenêtre, et son
+            ajout dans le HTML de la page :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="xxMxrMe"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/xxMxrMe"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            En revanche, si le canevas a déjà été préparé, il suffit de le
+            passer en paramètre du constructeur :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="jOdOLxX"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/jOdOLxX"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans ce cas, il ne faut pas oublier de calculer l'aspect ratio de la
+            caméra en utilisant la largeur et la hauteur du canevas existant
+            avant de générer l'image finale avec la méthode render, sinon
+            l'image sera étirée :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="VwgwzBp"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/VwgwzBp"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Pour le moment, cet exemple n'affiche qu'un écran noir, mais il
+            servira de base aux futurs environnements 3D.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>À retenir</h2>
+        <div>
+          <h3>Syntaxe</h3>
+          <ul>
+            <li>
+              Pour créer un environnement 3D, il faut créer une scène sur
+              laquelle les objets vont être placés, une caméra qui va définir le
+              point de vue et un renderer qui va créer l'image finale. Chaque
+              élément placé sur la scène possède des coordonnées permettant de
+              définir sa position sur les axes x, y et z.
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Complément</h3>
+          <a
+            href="https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene"
+            target="_blank"
+            rel="alternate"
+            >Introduction à three.js</a
+          >
+        </div>
+      </div>
+    </div>
   </body>
 </html>

@@ -3,9 +3,109 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Appliquez la notion</title>
   </head>
   <body>
-    <h1></h1>
+    <div>
+      <h1>Appliquez la notion</h1>
+      <div>
+        <h2>Question</h2>
+        <p>
+          Le code JavaScript suivant permet d'ajouter une sphère à une scène
+          stockée dans une variable scene :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="vYbYeJa"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/vYbYeJa"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Sur une page HTML, créez un canevas d'une largeur de 300 et d'une
+          hauteur de 300. Importez ensuite la librairie three.js, puis créez les
+          éléments suivants en amont du code permettant de créer la sphère :
+        </p>
+        <ul>
+          <li>Une scène, dans une variable nommée scene.</li>
+          <li>
+            Une caméra ayant un angle de vue de 80 et une distance d'affichage
+            comprise entre 0.1 et 1000.
+          </li>
+          <li>Un renderer WebGL utilisant le canevas de la page HTML.</li>
+        </ul>
+        <p>
+          Attention : par défaut, la sphère et la caméra sont toutes les deux
+          créées aux coordonnées (0, 0, 0), donc la sphère est en dehors de la
+          distance d'affichage. Reculez donc suffisamment la caméra pour que la
+          sphère puisse être dessinée.
+        </p>
+        <p>
+          Une fois la sphère créée, demandez au renderer de dessiner l'image
+          finale.
+        </p>
+        <div>
+          <h2>Solution</h2>
+          <p>
+            La scène, la caméra et le renderer doivent être créés avant le code
+            permettant de créer la sphère. Attention, l'aspect ratio de la
+            caméra doit se baser sur le canevas existant.
+          </p>
+          <p>Le code doit se terminer par l'appel à la méthode render :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="jOdOGaE"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/jOdOGaE"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>Le rendu final est le suivant :</p>
+          <img src="02_Img/sphere.png" alt="Image sphere" />
+        </div>
+      </div>
+    </div>
   </body>
 </html>

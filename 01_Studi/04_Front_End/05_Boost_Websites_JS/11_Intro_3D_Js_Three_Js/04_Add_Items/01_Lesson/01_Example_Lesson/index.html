@@ -8,6 +8,172 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <h1>Example de la leçon</h1>
+    <div>
+      <h1>Example de la leçon</h1>
+      <div>
+        <h2>Exemple 1</h2>
+        <p>Décommenter le code dans la page html</p>
+        <!--
+            <canvas width="200" height="200" id="canvas"></canvas>
+            <script type="module">
+              import * as THREE from 'https://unpkg.com/three@0.122.0/build/three.module.js'
+
+              // Création de la scène, de la caméra et du renderer
+              let canvasElement = document.getElementById('canvas')
+              let scene = new THREE.Scene()
+              let camera = new THREE.PerspectiveCamera(
+                70,
+                canvasElement.width / canvasElement.height,
+                0.1,
+                1000
+              )
+              camera.position.z = 3
+              let renderer = new THREE.WebGLRenderer({
+                canvas: canvasElement
+              })
+
+              // Création de l'objet
+              let geometry = new THREE.BoxGeometry(1, 2, 1)
+              let material = new THREE.MeshBasicMaterial({ color: 0xff00ff })
+              let box = new THREE.Mesh(geometry, material)
+              box.position.set(-2, 0, -3)
+              // Ajout de l'objet à la scène
+              scene.add(box)
+
+              // Rendu de la scène
+              renderer.render(scene, camera)
+            </script>
+        -->
+      </div>
+
+      <div>
+        <h2>Exemple 2</h2>
+        <p>Décommenter le code dans la page html</p>
+        <!--
+            <canvas width="200" height="200" id="canvas"></canvas>
+            <script type="module">
+              import * as THREE from 'https://unpkg.com/three@0.122.0/build/three.module.js'
+
+              // Création de la scène, de la caméra et du renderer
+              let canvasElement = document.getElementById('canvas')
+              let scene = new THREE.Scene()
+              let camera = new THREE.PerspectiveCamera(
+                70,
+                canvasElement.width / canvasElement.height,
+                0.1,
+                1000
+              )
+              camera.position.z = 3
+              let renderer = new THREE.WebGLRenderer({
+              canvas: canvasElement
+              })
+
+              // Création de la boîte
+              let boxGeometry = new THREE.BoxGeometry(1, 2, 1)
+              let material = new THREE.MeshBasicMaterial({ color: 0xff00ff })
+              let box = new THREE.Mesh(boxGeometry, material)
+              // Ajout de la boîte à la scène
+              scene.add(box)
+              // On place la boîte aux coordonnées (-2, 0, -3) de la scène
+              box.position.set(-2, 0, -3)
+
+              // Création du cône
+              let coneGeometry = new THREE.ConeGeometry(1, 2)
+              let cone = new THREE.Mesh(coneGeometry, material)
+              // On ajoute le cône à la boîte
+              box.add(cone)
+              // On place le cône aux coordonnées (0, 2, 0) de la boîte.
+              // À noter qu'ici, on place le cône par rapport à la boîte et non pas à la scène.
+              cone.position.set(0, 2, 0)
+
+              // Rendu de la scène
+              renderer.render(scene, camera)
+            </script>
+        -->
+      </div>
+
+      <div>
+        <h2>Exemple 3</h2>
+        <p>Décommenter le code dans la page html</p>
+        <!--
+            <canvas width="200" height="200" id="canvas"></canvas>
+            <script type="module">
+              import * as THREE from 'https://unpkg.com/three@0.122.0/build/three.module.js'
+
+              // Création de la scène, de la caméra et du renderer
+              let canvasElement = document.getElementById('canvas')
+              let scene = new THREE.Scene()
+              let camera = new THREE.PerspectiveCamera(
+                70,
+                canvasElement.width / canvasElement.height,
+                0.1,
+                1000
+              )
+              camera.position.z = 3
+              let renderer = new THREE.WebGLRenderer({
+                canvas: canvasElement
+              })
+
+              // Création de l'objet
+              let geometry = new THREE.BoxGeometry(1, 2, 1)
+              let material = new THREE.MeshStandardMaterial({ color: 0xff00ff })
+              let box = new THREE.Mesh(geometry, material)
+              box.position.set(-2, 0, -3)
+              // Ajout de l'objet à la scène
+              scene.add(box)
+
+              // Ajout de la lumière blanche
+              let light = new THREE.PointLight(0xffffff, 1, 50)
+              light.position.set(0, 0, 0)
+              scene.add(light)
+
+              // Rendu de la scène
+              renderer.setClearColor(0xeeeeee)
+              renderer.render(scene, camera)
+            </script>
+        -->
+      </div>
+
+      <div>
+        <h2>Exemple 4</h2>
+        <p>Décommenter le code dans la page html</p>
+        <script type="module">
+          import * as THREE from 'https://unpkg.com/three@0.157.0/build/three.module.js'
+
+          let scene = new THREE.Scene()
+          let camera = new THREE.PerspectiveCamera(
+            75,
+            window.innerWidth / window.innerHeight,
+            0.1,
+            1000
+          )
+          camera.position.x = 3
+          let renderer = new THREE.WebGLRenderer()
+          renderer.setSize(window.innerWidth, window.innerHeight)
+          document.body.appendChild(renderer.domElement)
+          let box = new THREE.BoxGeometry(1, 2, 1)
+          let sphere = new THREE.SphereGeometry(0.2, 16, 16)
+
+          let basic = new THREE.MeshBasicMaterial({
+            color: '#FF0000',
+          })
+          let standard = new THREE.MeshStandardMaterial({
+            roughness: 0.3,
+          })
+          let boxMesh = new THREE.Mesh(box, standard)
+          boxMesh.position.set(4, 1, -3)
+          scene.add(boxMesh)
+
+          let sphereMesh = new THREE.Mesh(sphere, standard)
+          sphereMesh.position.set(0, -1, 0)
+          boxMesh.add(sphereMesh)
+
+          let light = new THREE.PointLight("#FFFFFF", 50, 50)
+          scene.add(light)
+          renderer.setClearColor("#FFFFFF")
+          renderer.render(scene, camera)
+        </script>
+      </div>
+    </div>
   </body>
 </html>

@@ -65,26 +65,3 @@ let canvas2 = document.getElementById('canvas2');
     gl.clear(gl.COLOR_BUFFER_BIT);
     gl.viewport(0, 0, canvas2.width, canvas2.height);
     gl.drawElements(gl.TRIANGLES, indices.length, gl.UNSIGNED_SHORT, 0);
-
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")
-
-// Exemple 
-/*
-
-*/
-
-console.log("-----------------------------------------------")

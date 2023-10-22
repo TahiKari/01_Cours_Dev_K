@@ -3,9 +3,471 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Ajouter des éléments</title>
   </head>
   <body>
-    <h1></h1>
+    <div>
+      <h1>Ajouter des éléments</h1>
+      <div>
+        <h2>Objectifs</h2>
+        <ul>
+          <li>Créer des objets 3D</li>
+          <li>Ajouter des éléments à la scène</li>
+          <li>Éclairer la scène</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Mise en situation</h2>
+        <p>
+          Pour le moment, la caméra n'a rien à filmer puisque la scène est vide.
+          Dans cette partie, nous allons voir comment créer des objets 3D et les
+          ajouter à la scène, ainsi que la gestion de l'éclairage.
+        </p>
+      </div>
+
+      <div>
+        <h2>Geometry</h2>
+        <div>
+          <h3>Geometry</h3>
+          <p>
+            La librairie three.js dispose de nombreuses formes
+            tridimensionnelles basiques : des
+            <strong>cubes</strong> (BoxGeometry), des
+            <strong>cylindres</strong> (CylinderGeometry), des
+            <strong>sphères</strong> (SphereGeometry), des
+            <strong>cônes</strong>
+            (ConeGeometry)...
+          </p>
+          <p>
+            Tous ces éléments sont des objets de type Geometry, qui représentent
+            un ensemble de points dans l'espace. Ces points seront ensuite
+            reliés entre eux pour créer les faces de l'objet final.
+          </p>
+        </div>
+
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Pour créer un objet en forme de boîte, il faut instancier une
+            BoxGeometry. Par défaut, la forme est un cube de taille 1, mais le
+            constructeur permet de définir sa largeur, sa hauteur et sa
+            profondeur :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="PoVoJBg"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/PoVoJBg"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Pour créer une sphère, il faut instancier une SphereGeometry, qui
+            prend un minimum de trois paramètres : le rayon de la sphère et le
+            nombre de segments horizontaux et verticaux. Plus le nombre de
+            segments est élevé, plus il y aura de triangles composant la sphère,
+            ce qui aura pour effet de lui donner une forme plus arrondie.
+            Attention cependant, un nombre trop élevé de triangles à rendre peut
+            nuire aux performances de la scène.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="XWOWePg"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/XWOWePg"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+
+        <div>
+          <h3>Conseil</h3>
+          <p>
+            La partie « Geometry » de la documentation, dans le menu de gauche,
+            recense toutes les géométries utilisables. La page de chaque
+            géométrie permet de retrouver les paramètres de son constructeur et
+            dispose également d'une démonstration interactive permettant de
+            modifier en direct chaque paramètre pour visualiser son rendu.
+          </p>
+          <img src="02_Img/editor.png" alt="Image editor" />
+        </div>
+      </div>
+
+      <div>
+        <h2>Material</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Un ensemble de points n'est pas suffisant pour créer un objet 3D. En
+            effet, un renderer a besoin de savoir à quoi doivent ressembler les
+            faces de l'objet : leur couleur, mais aussi leur texture, la
+            réaction qu'ils ont lorsque la lumière les frappe (réflexion et
+            réfraction), etc. Toutes ces informations sont contenues dans un
+            objet de type <strong>Material</strong>, qu'il faut appliquer à
+            l'objet.
+          </p>
+          <p>
+            Three.js possède plusieurs Material de base, comme le
+            MeshBasicMaterial, qui n'est pas affecté par la lumière ; le
+            MeshStandardMaterial, qui permet de créer des objets plus réalistes
+            et affectés par la lumière ; ou le MeshToonMaterial, qui permet de
+            donner un effet « cartoon », avec des ombres ayant un nombre limité
+            de graduations.
+          </p>
+          <p>
+            Pour créer un Material, il suffit d'instancier la classe
+            correspondante. Le constructeur de chaque Material peut recevoir un
+            objet permettant de le configurer. Les propriétés dépendent du type
+            de Material créé.
+          </p>
+        </div>
+
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Pour créer un MeshStandardMaterial, il faut utiliser le code suivant
+            :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="MWLWEzb"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/MWLWEzb"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Il est possible de renseigner certains paramètres, comme la
+            rugosité, qui permet d'avoir des objets plus ou moins réfléchissants
+            :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="qBgBPQo"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/qBgBPQo"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+
+        <div>
+          <h3>Conseil</h3>
+          <p>
+            Comme pour les Geometry, la partie Material présente tous les
+            matériaux possibles, avec une démonstration interactive permettant
+            de mieux comprendre l'effet des différents paramètres :
+          </p>
+          <img src="02_Img/editor2.png" alt="Image editor2" />
+        </div>
+      </div>
+
+      <div>
+        <h2>Mesh</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Un ensemble de Geometry et de Material est appelé Mesh. Ainsi, pour
+            appliquer un matériau à un ensemble de points, il va falloir créer
+            un objet Mesh dont le constructeur va prendre ces deux éléments en
+            paramètres.
+          </p>
+          <p>
+            Le Mesh est l'élément qui sera ajouté à la scène en dernier, grâce à
+            la méthode add de l'objet Scene. Les objets doivent être ajoutés à
+            la scène avant le rendu de l'image finale, sans quoi ils n'y
+            apparaîtront pas.
+          </p>
+          <p>
+            Par défaut, le Mesh est ajouté à la position (0, 0, 0), mais il est
+            possible de modifier son emplacement grâce à sa propriété position.
+            La méthode set permet de définir de nouvelles coordonnées, mais il
+            est également possible de modifier indépendamment les propriétés x,
+            y et z.
+          </p>
+        </div>
+
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Le code suivant permet de créer une boîte de 1x2x1, de lui appliquer
+            un matériau basique qui n'est pas affecté par la lumière, de créer
+            un Mesh à la position (-2, 0, -3) et de l'ajouter à la scène :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="wvNvrNv"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/wvNvrNv"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <img src="02_Img/rendu-2.png" alt="Image rendu-2" />
+        </div>
+
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Il est également possible d'ajouter un Mesh à l’intérieur d'un autre
+            en utilisant la méthode add. Dans ce cas, seul l'élément parent
+            devra être ajouté à la scène et tous les sous-objets seront déplacés
+            en même temps que l'objet parent. Cela permet de créer des
+            structures complexes, composées de plusieurs formes, et de pouvoir
+            les manipuler facilement.
+          </p>
+          <p>
+            À noter que, dans tous les cas, la position d'un objet dépend de son
+            parent : la position des objets ajoutés à la scène se fait par
+            rapport à l'origine de la scène, tandis que les sous-objets sont
+            placés par rapport à leur objet parent.
+          </p>
+        </div>
+
+        <div>
+          <h3>Exemple</h3>
+          <p>Ajoutons un cône au-dessus de la boîte :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="abXbLxq"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/abXbLxq"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Lumières</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Jusqu’à présent, seul le MeshBasicMaterial a été utilisé dans les
+            exemples : les autres n'afficheront qu'un écran noir. Cela
+            s'explique par le fait qu'il n'y a aucune source de lumière sur la
+            scène : elle est plongée dans l'obscurité et l'utilisation d'un
+            matériau qui réagit à la lumière ferait disparaître l'objet 3D.
+          </p>
+          <p>
+            Three.js possède plusieurs types de lumières à ajouter à la scène,
+            comme AmbientLight, qui éclaire tous les objets de la scène de
+            manière égale ; SpotLight, qui simule un projecteur ; ou PointLight,
+            qui diffuse de la lumière dans toutes les directions à partir d'un
+            point, comme un soleil ou une ampoule. Chaque lumière doit être
+            ajoutée à la scène avec add.
+          </p>
+          <p>
+            Il est également possible de définir la couleur du fond (par défaut,
+            noir) grâce à la méthode setClearColor du renderer.
+          </p>
+        </div>
+
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Reprenons l'exemple suivant en utilisant le MeshStandardMaterial,
+            pour un rendu plus réaliste. Pour cela, il faut également ajouter
+            une source de lumière, comme une PointLight : son constructeur prend
+            en paramètre une couleur (ici, blanc), une intensité et une distance
+            limite d'effet. Par souci de visibilité, la couleur est également
+            changée pour un gris clair :
+          </p>
+
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="MWLWEdp"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/MWLWEdp"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>À retenir</h2>
+
+        <div>
+          <h3>Syntaxe</h3>
+          <ul>
+            <li>
+              Pour créer un objet 3D, il faut d'abord définir sa Geometry, puis
+              son Material, afin de créer un Mesh qui pourra être ajouté à la
+              scène grâce à la méthode add.
+            </li>
+            <li>
+              Pour éclairer la scène, il faut également y ajouter un ou
+              plusieurs objets Light. Il est également possible de définir la
+              couleur de fond grâce à la méthode setClearColor du renderer.
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Complément</h3>
+          <a
+            href="https://threejs.org/docs/#api/en/geometries/SphereGeometry"
+            target="_blank"
+            rel="alternate"
+            >Un exemple de page de géométrie sur la documentation : la sphère</a
+          >
+          <a
+            href="https://threejs.org/docs/#api/en/materials/MeshStandardMaterial"
+            target="_blank"
+            rel="alternate"
+            >Un exemple de page de matériau sur la documentation : le
+            MeshStandardMaterial</a
+          >
+        </div>
+      </div>
+    </div>
   </body>
 </html>

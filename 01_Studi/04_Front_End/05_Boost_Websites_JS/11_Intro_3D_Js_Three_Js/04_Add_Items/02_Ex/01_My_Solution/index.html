@@ -8,6 +8,55 @@
     <script src="script.js" defer></script>
   </head>
   <body>
-    <h1>Ma solution</h1>
+    <div>
+      <h1>Ma solution</h1>
+      <div>
+        <canvas width="200" height="200" id="canvas"></canvas>
+        <script type="module">
+          import * as THREE from 'https://unpkg.com/three@0.122.0/build/three.module.js'
+
+          // Création de la scène, de la caméra et du renderer
+          let canvasElement = document.getElementById('canvas')
+          let scene = new THREE.Scene()
+          let camera = new THREE.PerspectiveCamera(
+            70,
+            canvasElement.width / canvasElement.height,
+            0.1,
+            1000
+          )
+          camera.position.z = 4
+          let renderer = new THREE.WebGLRenderer({
+            canvas: canvasElement
+          })
+
+          // Création du mât
+          let poleGeometry = new THREE.CylinderGeometry(0.1, 0.1, 2, 8)
+          let poleMaterial = new THREE.MeshStandardMaterial({
+            color: 0xffffff,
+            roughness: 0.3
+          })
+          let pole = new THREE.Mesh(poleGeometry, poleMaterial)
+          scene.add(pole)
+
+          // Création de la toile
+          let hessianGeometry = new THREE.ConeGeometry(1.2, 1, 8)
+          let hessianMaterial = new THREE.MeshStandardMaterial({
+            color: 0x55ff55
+          })
+          let hessian = new THREE.Mesh(hessianGeometry, hessianMaterial)
+          hessian.position.set(0, 1.5, 0)
+          pole.add(hessian)
+
+          // Lumière
+          let light = new THREE.PointLight(0xffffff, 1, 50)
+          light.position.set(0, 0, 3)
+          scene.add(light)
+
+          // Rendu de la scène
+          renderer.setClearColor(0x87cefa) // Bleu ciel au bord de la plage
+          renderer.render(scene, camera)
+        </script>
+      </div>
+    </div>
   </body>
 </html>
