@@ -3,9 +3,237 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Appliquez la notion</title>
   </head>
   <body>
-    <h1></h1>
+    <div>
+      <h1>Appliquez la notion</h1>
+      <div>
+        <h2>Question</h2>
+        <p>
+          Pour cet exercice, vous allez devoir faire une scène de pluie
+          nocturne. Sur une scène au fond bleu nuit, vous allez devoir créer une
+          pluie diluvienne dont les gouttes d'eau seront représentées par des
+          cylindres blancs utilisant un matériau qui n'est pas sensible à la
+          lumière.
+        </p>
+        <img src="02_Img/rain_1.png" alt="Image rain_1" />
+        <p>
+          Toutes les gouttes d'eau devront apparaître hors champ, au-dessus de
+          la caméra, à des coordonnées aléatoires (comprises entre 0 et 10 sur
+          les axes des x et des z) et tomber jusqu’à ce qu'elles atteignent 0
+          sur l'axe des y. Une fois atteint, la goutte devra être déplacée à de
+          nouvelles coordonnées aléatoires, au-dessus de la caméra, et ainsi de
+          suite.
+        </p>
+        <p>
+          Pour vous aider, voici une fonction JavaScript permettant de générer
+          un nombre aléatoire entre 0 et 10 :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="abXbMaQ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/abXbMaQ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <div>
+          <h2>Indice</h2>
+          <p>
+            La position de départ des gouttes doit utiliser 3 coordonnées
+            aléatoires, pour les axes x, y et z. Cependant, il faut ajouter une
+            valeur fixe à l'axe des y pour s'assurer que toutes les gouttes
+            apparaissent hors champ, tout en conservant un décalage entre les
+            gouttes.
+          </p>
+        </div>
+
+        <div>
+          <h2>Indice</h2>
+          <p>
+            Il ne suffit que d'une Geometry et d'un Material pour créer autant
+            de Mesh que l'on souhaite.
+          </p>
+        </div>
+
+        <div>
+          <h2>Indice</h2>
+          <p>
+            Vous pouvez utiliser le tableau scene.children pour parcourir toutes
+            les gouttes : il ne doit y avoir rien d'autre sur la scène (la
+            lumière n'est pas utile, puisque les gouttes ne doivent pas y être
+            sensibles).
+          </p>
+        </div>
+
+        <div>
+          <h2>Question</h2>
+          <p>
+            La première étape est de définir la position de départ de chaque
+            goutte. Pour cela, il faut créer une fonction prenant en paramètre
+            une goutte et qui règle sa position aléatoirement : chaque
+            coordonnée devra recevoir le résultat de la fonction
+            getRandomNumber(), donnée dans l'énoncé. L'axe des y devra cependant
+            être augmenté de 10 unités afin que les gouttes apparaissent hors
+            champ. Cette fonction sera appelée au moment de l'initialisation des
+            gouttes, mais aussi pour replacer les gouttes qui sont tombées hors
+            champ.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="QWYWoZg"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/QWYWoZg"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Il faut ensuite créer les gouttes. Chaque goutte est un cylindre qui
+            n'est pas sensible à la lumière : il faut donc utiliser la
+            CylinderGeometry et le MeshBasicMaterial pour créer toutes les Mesh
+            de nos gouttes.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="eYxYXPK"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/eYxYXPK"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Maintenant que les gouttes sont créées, il faut les faire tomber.
+            Pour cela, il suffit de parcourir tous les enfants de la scène et de
+            diminuer leur position sur l'axe des y. Si la position est
+            inférieure à 0, il faut replacer la goutte aléatoirement.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="Jjxjzmz"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/Jjxjzmz"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Une fois la caméra placée et le reste des éléments créé (scène,
+            renderer...), le code final est :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="MWLWxzV"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/MWLWxzV"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

@@ -3,9 +3,300 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Animer des objets</title>
   </head>
   <body>
-    <h1></h1>
+    <div>
+      <h1>Animer des objets</h1>
+      <div>
+        <h2>Objectifs</h2>
+        <ul>
+          <li>Comprendre le concept de render loop</li>
+          <li>Animer un objet 3D</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Mise en situation</h2>
+        <p>
+          Rendre une simple image, c'est déjà bien, mais animer en temps réel
+          les différents objets 3D présents sur la scène, c'est encore mieux.
+          Dans cette partie, nous allons voir comment réaliser des animations
+          simples, comme changer la position d'un objet et comment le faire
+          tourner sur lui-même.
+        </p>
+      </div>
+
+      <div>
+        <h2>La render loop</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Pour que les objets soient animés, il ne va pas falloir générer une
+            seule image, comme jusqu’à présent, mais une succession d'images. En
+            effet, une vidéo n'est qu'un ensemble d'images affichées très
+            rapidement (appelées frames), ce qui a pour effet de donner
+            l'illusion du mouvement. Pour créer une animation, il va falloir
+            faire le rendu de la scène dans une boucle. Or, une simple boucle ne
+            suffit pas : il faut également que chaque image soit rendue à un
+            intervalle constant, sinon les animations ne seront pas fluides.
+          </p>
+        </div>
+
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Pour créer une render loop, il faut utiliser une fonction récursive,
+            c'est-à-dire une fonction qui va s'appeler elle-même. Les
+            navigateurs disposent nativement d'outils permettant de gérer les
+            render loop, et l'un d'entre eux est la fonction
+            requestAnimationFrame. Celle-ci prend en paramètre une fonction à
+            appeler à chaque frame de notre animation : c'est elle qui va bouger
+            les objets, puis faire le rendu de la scène avant d'attendre la
+            prochaine frame (en appelant requestAnimationFrame).
+          </p>
+          <p>
+            Pour faire bouger un objet, il faut donc changer légèrement la
+            propriété voulue (position, rotation...) à chaque tour de boucle.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="Jjxjxjb"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/Jjxjxjb"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+
+        <div>
+          <h3>Attention</h3>
+          <p>
+            Les méthodes de rotation prennent en paramètres des radians. Pour
+            convertir des degrés en radians, il faut réaliser le calcul suivant
+            : degres * Math.PI / 180.
+          </p>
+        </div>
+
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Voici le code permettant de créer une scène en plein écran avec un
+            cône qui s'envole dans les airs en tournant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="PoVoVwa"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/PoVoVwa"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Animer les objets</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Les propriétés <strong>position</strong> et
+            <strong>rotation</strong> des Mesh permettent de faire bouger un
+            objet sur un axe de la scène. Cependant, l'objet Mesh possède
+            également des méthodes permettant d'effectuer des mouvements basés
+            sur les axes locaux de l'objet, qui dépendent donc de la rotation de
+            ce dernier.
+          </p>
+          <p>
+            Pour déplacer un Mesh sur un axe local, il est possible d'utiliser
+            les méthodes translateX, translateY et translateZ, qui prennent en
+            paramètre la distance à parcourir. Il est également possible de
+            faire bouger l'objet sur un axe personnalisé grâce à la méthode
+            translateOnAxis, qui prend en paramètres un objet Vector3, avec des
+            propriétés x, y et z indiquant l'axe à suivre, et une distance.
+          </p>
+          <p>
+            Pour faire tourner un objet sur un axe local, il est possible
+            d'utiliser rotateX, rotateY ou rotateZ, qui prennent en paramètre
+            l'angle de rotation souhaité, en radians. rotateOnAxis permet
+            également de faire tourner l'objet selon n'importe quel axe.
+          </p>
+        </div>
+
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Cette fonction permet de faire s'envoler le cône de l'exemple
+            précédent tout en le faisant tourner sur lui-même. Étant donné que
+            l'objet n'a pas une rotation de base, l'animation est équivalente à
+            la précédente.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="OJdJdMo"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/OJdJdMo"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Supprimer des objets de la scène</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Maintenant que nos objets peuvent se déplacer, il est possible que
+            certains sortent du cadre et ne soient plus visibles. Or, même hors
+            champ, ces objets continuent d'utiliser des ressources. Il est donc
+            préférable de les supprimer en utilisant la méthode remove de
+            l'objet Scene. La liste des objets de la scène est accessible depuis
+            la propriété children.
+          </p>
+        </div>
+
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Lorsque le cône est au-dessus d'une certaine limite, on le supprime
+            :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="eYxYxdp"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/eYxYxdp"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+
+        <div>
+          <h3>Attention</h3>
+          <p>
+            Il est plus performant de changer la position d'un objet plutôt que
+            de le supprimer, puis de le recréer. Si un objet est utilisé
+            plusieurs fois, il est préférable de le déplacer hors champ en
+            attendant de le réutiliser.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>À retenir</h2>
+        <div>
+          <h3>Syntaxe</h3>
+          <ul>
+            <li>
+              Une animation est composée de plusieurs frames, c'est-à-dire
+              d'images affichées successivement, suffisamment rapidement pour
+              donner une impression de mouvement. Chaque frame est générée dans
+              une render loop, c'est-à-dire une boucle qui va s'occuper de
+              bouger les objets et de calculer la prochaine image.
+            </li>
+            <li>
+              Pour manipuler des objets 3D, l'objet Mesh dispose de nombreuses
+              méthodes, comme translateX ou rotateX. Pour supprimer un objet de
+              la scène, il faut utiliser la méthode remove.
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Complément</h3>
+          <a
+            href="https://threejs.org/docs/#api/en/core/Object3D"
+            target="_blank"
+            rel="alternate"
+            >L'objet Object3D, parent des Mesh</a
+          >
+        </div>
+      </div>
+    </div>
   </body>
 </html>
