@@ -39,6 +39,401 @@
           Pour bien comprendre, nous allons créer dans notre répertoire courant
           un fichier HTML <strong>index.html</strong> comme celui-ci :
         </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="dyaPegX"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/dyaPegX"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>Un fichier <strong>destination.html</strong> :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="zYexjmg"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/zYexjmg"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a
+          href="https://replit.com/@javascript-studi/JS-Browser-BOM-Code-1"
+          target="_blank"
+          rel="alternate"
+          >Lien Replit :
+          https://replit.com/@javascript-studi/JS-Browser-BOM-Code-1</a
+        >
+        <p>
+          Et un fichier <strong>script.js</strong> qui contiendra nos scripts.
+        </p>
+      </div>
+
+      <div>
+        <h2>Ouvrir / fermer la fenêtre du navigateur web</h2>
+        <p>
+          L’objet <strong>window</strong> permet d’ouvrir une fenêtre
+          spécifique, mais aussi de fermer la fenêtre web actuelle. Pour cela,
+          nous pouvons utiliser les méthodes <strong>open()</strong> et
+          <strong>close()</strong>.
+        </p>
+        <p>Voici comment utiliser la méthode open() :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="KKJwRbG"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/KKJwRbG"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Cette ligne de code permet d’ouvrir le lien passé comme argument dans
+          une fenêtre. Cependant, en règle générale, si une fenêtre est ouverte
+          par défaut avec cette méthode, l’ouverture de la fenêtre sera bloquée
+          par le navigateur (pop-up bloqué). Pour résoudre ce problème, nous
+          pouvons par exemple déclencher l’ouverture en fonction d’un Event
+          Listener qui écoute quand le <strong>button</strong> ayant pour id
+          <strong>bouton</strong> est cliqué.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="wvNBjNm"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/wvNBjNm"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a
+          href="https://replit.com/@javascript-studi/JS-Browser-BOM-Code-2"
+          target="_blank"
+          rel="alternate"
+          >Lien Replit :
+          https://replit.com/@javascript-studi/JS-Browser-BOM-Code-2</a
+        >
+        <p>
+          Nous pouvons voir que, s’il n’y a pas de bug, la fenêtre s’ouvre bien
+          lorsque nous cliquons sur le bouton. Nous pouvons passer plusieurs
+          autres arguments, comme le nom de la fenêtre et ses options, parmi
+          lesquelles figure sa dimension (en px) :
+        </p>
+        <a
+          href="https://replit.com/@javascript-studi/JS-Browser-BOM-Code-3"
+          target="_blank"
+          rel="alternate"
+          >Lien Replit :
+          https://replit.com/@javascript-studi/JS-Browser-BOM-Code-3</a
+        >
+        <p>
+          Dans cet exemple, la fenêtre du nom de « destination » sera ouverte
+          avec une taille de 500 / 500 px (si le navigateur n’est pas en plein
+          écran). Il y a d’autres options spécifiables comme la présence de
+          scrollbars, d’une toolbar (barre de menu), etc.
+        </p>
+        <p>
+          Pour fermer la fenêtre courante, il va nous falloir appeler la méthode
+          close(). Pour cela, nous allons créer un Event Listener qui
+          déclenchera l’appel lorsque le button ayant pour id bouton2 sera
+          cliqué. Mais pour cela, il nous faut récupérer l’élément HTML de la
+          fenêtre ouverte avec le DOM de son objet window. Par ailleurs, il va
+          nous falloir créer un Event Listener qui sera appelé une fois que la
+          fenêtre « destination » sera bien ouverte pour qu’il n’y ait pas de
+          bugs. Voilà comment faire :
+        </p>
+
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="jOdExgQ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/jOdExgQ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a
+          href="https://replit.com/@javascript-studi/JS-Browser-BOM-Code-4"
+          target="_blank"
+          rel="alternate"
+          >Lien Replit :
+          https://replit.com/@javascript-studi/JS-Browser-BOM-Code-4</a
+        >
+        <p>Pour bien comprendre, détaillons les étapes :</p>
+        <ul>
+          <li>
+            Dans la fonction anonyme du premier Event Listener, nous définissons
+            une variable fenetre sur la valeur de retour de la méthode
+            window.open() correspondant à une référence vers la fenêtre qui
+            s’ouvre.
+          </li>
+          <li>
+            Puis nous définissons un Event Listener qui déclenchera une fonction
+            quand la fenetre sera chargée (évènement « load »). Dans cette
+            fonction, nous récupérons l’élément HTML ayant pour id boutton2 en
+            stockant sa référence dans la variable button2. Pour cela, nous
+            utilisons le DOM (via le mot clé document) de l’objet window dont la
+            référence est stockée dans la variable fenetre.
+          </li>
+          <li>
+            Puis, toujours dans cette fonction, nous définissons un Event
+            Listener qui déclenchera une fonction quand button2 sera cliqué.
+          </li>
+          <li>Cette dernière fonction fermera la fenêtre (fenetre.close()).</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Méthode alert()</h2>
+        <p>
+          La méthode alert() est une méthode que vous connaissez déjà bien. En
+          général, nous l’utilisons sans le mot clé window, car comme nous
+          l’avons dit, toutes les propriétés et méthodes de window peuvent être
+          utilisées sans spécifier le mot clé, étant l’objet global par défaut.
+          Cependant, c’est une bonne pratique de le spécifier afin de bien
+          mettre en avant que c’est une méthode de l’objet window.
+        </p>
+      </div>
+
+      <div>
+        <h2>Méthode alert()</h2>
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="Exrapzd"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/Exrapzd"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/JS-Browser-BOM-Code-5"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit :
+            https://replit.com/@javascript-studi/JS-Browser-BOM-Code-5</a
+          >
+          <p>
+            Dans cet exemple, une alerte se déclenche lorsque nous cliquons sur
+            le button ayant pour id bouton.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Méthode prompt()</h2>
+        <p>
+          La méthode window.prompt() permet d’afficher une fenêtre avec une
+          entrée utilisateur. La valeur passée par l’utilisateur peut être
+          récupérée très facilement en stockant la valeur de retour de l’appel
+          dans une variable. Prenons un exemple assez simple :
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="xxMbJvm"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/xxMbJvm"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/JS-Browser-BOM-Code-6
+
+          "
+            target="_blank"
+            rel="noopener noreferrer"
+            >Lien Replit :
+            https://replit.com/@javascript-studi/JS-Browser-BOM-Code-6
+          </a>
+          <p>
+            Dans cet exemple, lorsque le bouton est cliqué, un prompt est
+            affiché et l’utilisateur peut insérer un texte. La variable mot est
+            définie sur la valeur de retour du prompt. Une alerte affiche le
+            contenu de la variable mot qui contient donc la chaîne renseignée
+            par l’utilisateur. Comme second argument, nous pouvons passer la
+            chaîne qui sera renseignée par défaut dans le prompt :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="abXzaoP"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/abXzaoP"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/JS-Browser-BOM-Code-7"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit :
+            https://replit.com/@javascript-studi/JS-Browser-BOM-Code-7</a
+          >
+          <p>
+            Maintenant que nous avons vu quelques exemples de méthodes de
+            l’objet window, parlons de quelques sous-objets de window.
+          </p>
+        </div>
       </div>
     </div>
   </body>
