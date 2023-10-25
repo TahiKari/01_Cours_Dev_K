@@ -3,13 +3,97 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Exercice défi</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Exercice défi</h1>
+      <p>
+        Vous cherchez à créer un système d’authentification rapide avec un
+        identifiant et un mot de passe sans passer par un formulaire HTML.
+        L’authentification se fera via deux prompts interrogeant l’utilisateur
+        sur son identifiant et son mot de passe. Attention, ce système ne sera
+        pas du tout conventionnel ni sécurisé, c’est simplement un exemple pour
+        utiliser les notions développées.
+      </p>
+      <div>
+        <h2>Question</h2>
+        <ul>
+          <li>
+            Créez un projet avec une page connexion.html où les prompts seront
+            lancés.
+          </li>
+          <li>
+            Créez une page traitement.html ainsi que deux scripts : connexion.js
+            et traitement.js.
+          </li>
+          <li>
+            Créez une page connected.html contenant simplement un paragraphe «
+            vous êtes connectés » et une page incorrect.html avec un paragraphe
+            « l’identifiant ou mot de passe est incorrect ».
+          </li>
+          <li>
+            Importez dans connexion.html le script connexion.js et dans
+            traitement.html le script taitement.js.
+          </li>
+          <li>
+            Créez dans connexion.js le système de prompt et créez des cookies
+            stockant l’identifiant et le mot de passe à partir des entrées
+            utilisateur pendant 1 heure.
+          </li>
+        </ul>
+        <div>
+          <h2>Solution</h2>
+          <p>Voici le projet mis en place :</p>
+          <a
+            href="01_My_Solution/01_Solution/GDWFS-060-AW_-_Cas_pratique_1-20230614T100622Z-001.zip"
+            download="GDWFS-060-AW_-_Cas_pratique_1-20230614T100622Z-001"
+            >GDWFS-060-AW_-_Cas_pratique_1-20230614T100622Z-001.zip</a
+          >
+        </div>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          Utilisez l’objet window.location pour ouvrir la page traitement.html
+          depuis le script connexion.js une fois qu’un bouton connexion est
+          cliqué, en ajoutant une nouvelle entrée dans l’historique de
+          navigation. Le bouton connexion devra être créé avec JS. Créez dans
+          traitement.js un script permettant de vérifier si les informations de
+          connexion correspondent à :
+        </p>
+        <ul>
+          <li>identifiant : TonyStark</li>
+          <li>mdp : starktower</li>
+        </ul>
+        <p>
+          Si c’est bien le cas, quand un bouton « espace utilisateur » est
+          cliqué, ouvrir dans un nouvel onglet la page connected.html sinon la
+          page incorrect.html. Le bouton espace utilisateur devra être créé avec
+          JS. La fenêtre ouverte devra avoir une dimension de 400 / 400 px.
+        </p>
+        <div>
+          <h2>Solution</h2>
+          <p>
+            Voici le projet mis en place :
+            <a
+              href="01_My_Solution/01_Solution/GDWFS-060-AW_-_JS_Browser_BOM__window_-_screen_-_Location_-_History__etc_-20230919T120706Z-001.zip"
+              download="GDWFS-060-AW_-_JS_Browser_BOM__window_-_screen_-_Location_-_History__etc_-20230919T120706Z-001.zip"
+              >GDWFS-060-AW_-_JS_Browser_BOM__window_-_screen_-_Location_-_History__etc_-20230919T120706Z-001.zip</a
+            >
+          </p>
+          Lien Replit :
+          <a
+            href="https://replit.com/@javascript-studi/JS-Browser-BOM-Code-26"
+            target="_blank"
+            rel="alternate"
+            >https://replit.com/@javascript-studi/JS-Browser-BOM-Code-26
+          </a>
+        </div>
+      </div>
     </div>
   </body>
 </html>
