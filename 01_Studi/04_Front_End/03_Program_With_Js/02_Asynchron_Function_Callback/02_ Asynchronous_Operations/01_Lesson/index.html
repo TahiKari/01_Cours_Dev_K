@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Opérations asynchrones</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <h1>Opérations asynchrones</h1>
+      <div>
+        <h2>Opération asynchrone</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Une opération asynchrone est une opération qui peut être réalisée en
+            arrière-plan, tandis que le script principal continue de s’exécuter.
+            Il existe en JS plusieurs types de fonctions asynchrones. Parlons
+            par exemple de la méthode window.setTimeout().
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>setTimeout()</h2>
+        <p>
+          La méthode setTimeout() de l’objet <strong>window</strong> est une
+          méthode asynchrone. Elle permet de spécifier un nombre de
+          millisecondes avant l’exécution d’une fonction. La fonction spécifiée
+          sera donc exécutée en arrière-plan, après le délai spécifié. Ce qui
+          veut donc dire que les autres instructions du script sont exécutées,
+          mais que seule la fonction passée dans le setTimeout() sera exécutée
+          en arrière-plan (de manière asynchrone) après le délai spécifié. Les
+          autres instructions synchrones n’attendent pas que la fonction
+          asynchrone soit exécutée.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="mdvebeW"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/mdvebeW"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Fonction-asynchrone-et-callback-Code-1#script.js"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Nous comprenons que l’asynchronisme va nous permettre de réaliser
+            des tâches en arrière-plan, ce qui va être indispensable lorsque les
+            opérations sont longues, par exemple lorsque nous effectuerons des
+            requêtes HTTP, requêtes donc la performance peut dépendre du serveur
+            distant.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>async et await</h2>
+        <p>
+          <strong>async</strong> et <strong>await</strong> sont des
+          fonctionnalités introduites dans ECMAScript 2017 (ES8) pour faciliter
+          la programmation asynchrone en JavaScript.
+        </p>
+        <p>
+          Pour définir des fonctions asynchrones en JS, nous pouvons utiliser
+          async et await pour simplifier la syntaxe et rendre notre code plus
+          lisible.
+        </p>
+      </div>
+
+      <div>
+        <h2>async</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            async est utilisé pour définir une fonction asynchrone. Une fonction
+            déclarée comme asynchrone retourne une promesse qui est résolue avec
+            la valeur retournée par la fonction ou rejetée avec une erreur
+            renvoyée par la fonction.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Promesse</h2>
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            En JavaScript, une promesse est un objet qui représente une valeur
+            qui peut être disponible ou qui ne sera disponible que plus tard,
+            voire jamais. Nous les utilisons donc régulièrement pour gérer
+            l’asynchronisme dans un script. Une fonction asynchrone va donc
+            renvoyer une promesse, ce qui est très utile puisqu’elle pourra la
+            renvoyer même si l’exécution de la fonction n’est pas terminée, et
+            donc, elle pourra continuer de s’exécuter en arrière-plan.
+          </p>
+          <p>Voici la syntaxe pour utiliser <strong>async</strong> :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="rNPOBeg"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/rNPOBeg"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>await</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            await est utilisé à l’intérieur d’une fonction asynchrone pour
+            attendre l’achèvement d’une opération asynchrone. L’utilisation de
+            await suspend l’exécution de la fonction asynchrone en cours jusqu’à
+            ce que la promesse retournée soit résolue ou rejetée. Voici la
+            syntaxe de await.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="zYevOBg"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/zYevOBg"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Il est important de noter que await ne peut être utilisé que dans
+            une fonction déclarée comme asynchrone (async). De plus, await ne
+            peut être utilisé qu’avec des fonctions retournant des promesses.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>await et async</h2>
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="mdvebeW"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/mdvebeW"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Fonction-asynchrone-et-callback-Code-2"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Dans cet exemple, nous définissons une fonction un peu particulière
+            wait(). Ne nous attardons pas trop sur cette fonction, comprenons
+            simplement qu’elle sert à créer une promesse sur un setTimeout().
+            Nous y indiquons que la promesse retournée par cette fonction sera
+            résolue quand la fonction du setTimeout() sera exécutée.
+          </p>
+          <p>
+            Ensuite, nous définissons une fonction asynchrone affUsername().
+            Dans cette fonction, nous appelons la fonction wait() en passant la
+            fonction anonyme qui définit username sur PeterParker, donc après 2
+            secondes. Puis nous faisons un console.log de ('Bonjour ' +
+            username). Le problème est que le console.log est exécuté
+            directement après l’appel de la fonction wait(), mais n’attend pas
+            que la promesse de wait() soit résolue. Donc, au moment où
+            l’instruction console.log('Bonjour ' + username) sera exécutée,
+            username sera toujours définie sur "", donc la console affichera
+            "Bonjour". Il nous faut donc indiquer que nous voulons attendre la
+            résolution de la promesse de wait() avant de continuer l’exécution
+            de la fonction asynchrone affUsername(). Pour cela, il nous faut
+            utiliser await :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="wvNKwdj"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/wvNKwdj"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Fonction-asynchrone-et-callback-Code-3"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Nous pouvons voir que ça fonctionne, l’interpréteur attend que la
+            promesse de wait soit résolue avant de continuer l’exécution de la
+            fonction. La console affiche donc "Bonjour Peter Parker" après avoir
+            affiché "Connexion…". Dans tous les cas, nous pouvons constater que
+            la fonction affUsername() est bien exécutée en arrière-plan, car si
+            nous rajoutons des instructions à notre script, après l’appel de la
+            fonction, nous constaterons qu’elles seront exécutées simultanément
+            :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="VwgvZMp"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/VwgvZMp"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Fonction-asynchrone-et-callback-Code-4"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Nous pouvons constater que « Connexion de l’utilisateur » est
+            affiché dans la console avant « Bonjour PeterParker ». Ce qui nous
+            prouve bien que <strong>affUsername()</strong> est exécutée en
+            asynchrone, donc en parallèle (simultanément) des instructions
+            synchrones du script. <strong>affUsername()</strong> ne bloque donc
+            pas l’exécution du reste du script, puisqu’elle est exécutée en
+            asynchrone.
+          </p>
+          <p>
+            Nous venons donc de voir un exemple d’utilisation de
+            <strong>async</strong> et <strong>async</strong>
+            pour gérer l’asynchronisme. Ces notions seront donc indispensables
+            lorsque nous allons effectuer des commandes comme des requêtes vers
+            des serveurs HTTP.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

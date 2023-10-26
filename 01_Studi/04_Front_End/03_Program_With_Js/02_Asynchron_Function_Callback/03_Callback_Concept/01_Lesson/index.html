@@ -3,13 +3,335 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Notion de callback</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Notion de callback</h1>
+      <div>
+        <h2>Callback</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            En JavaScript, un callback (fonction de rappel) est une fonction qui
+            est passée comme argument à une autre fonction. Nous avons à de
+            nombreuses reprises utilisé des callbacks. Les callbacks sont
+            couramment utilisés dans les cas suivants :
+          </p>
+          <ul>
+            <li>
+              Les requêtes HTTP : lorsque nous effectuons une requête HTTP pour
+              récupérer des données à partir d’une API, nous pouvons utiliser
+              une fonction de rappel pour gérer la réponse de la requête et
+              mettre à jour notre interface utilisateur en conséquence.
+            </li>
+            <li>
+              Les animations : les fonctions de rappel peuvent être utilisées
+              pour animer des éléments dans une page web. Par exemple, nous
+              pouvons utiliser une fonction de rappel pour déplacer un élément
+              d’une position à une autre en plusieurs étapes.
+            </li>
+            <li>
+              Les événements utilisateur : les fonctions de rappel peuvent être
+              utilisées pour gérer des événements utilisateur tels que des clics
+              de souris ou des pressions de touches. Nous pouvons définir une
+              fonction de rappel qui soit exécutée lorsque l’utilisateur
+              effectue une action particulière. Eh oui, lorsque nous utilisons
+              des Event Listeners, la fonction passée comme argument est un
+              callback.
+            </li>
+            <li>
+              Les opérations d’E / S (Entrée / Sortie) : les fonctions de rappel
+              sont souvent utilisées pour gérer des opérations d’E / S telles
+              que la lecture ou l’écriture de fichiers. Ce sont en règle
+              générale des opérations asynchrones. Vous pouvez utiliser une
+              fonction de rappel pour traiter les données une fois qu’elles ont
+              été lues ou écrites.
+            </li>
+          </ul>
+        </div>
+        <p>
+          Donc les callbacks vont par exemple nous permettre de passer comme
+          argument lors de l’appel d’une fonction, une autre fonction qui sera
+          exécutée après une opération asynchrone, une fois que la promesse de
+          cette opération asynchrone est résolue. L’opération peut donc être
+          réalisée en asynchrone pendant que le reste du script synchrone est
+          exécuté, et au moment où elle sera terminée, une fonction en callback
+          sera appelée pour traiter par exemple les données qu’elle a
+          récupérées.
+        </p>
+      </div>
+
+      <div>
+        <h2>Premier callback</h2>
+        <div>
+          <h3>Exemple</h3>
+          <p>Reprenons l’exemple précédent pour bien comprendre.</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="gOqaOoE"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/gOqaOoE"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Fonction-asynchrone-et-callback-Code-10"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Dans cet exemple, nous définissons lors de l’appel de
+            <strong>affUsername()</strong>
+            une fonction de <strong>callback</strong> comme argument. Cette
+            fonction permettra d’afficher
+            <strong>'Bonjour ' + username</strong>, et sera donc appelée une
+            fois que l’opération asynchrone <strong>wait()</strong> sera
+            terminée. Nous aurions d’ailleurs très bien pu définir la fonction
+            passée comme callback comme une fonction nommée :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="XWOmWqg"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/XWOmWqg"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Fonction-asynchrone-et-callback-Code-11"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Nous appelons notre paramètre callback, mais nous pourrions bien
+            évidemment lui donner un nom plus explicite. Par ailleurs, nous ne
+            définissons qu’une seule fonction de callback, mais nous pourrions
+            en définir plusieurs, comme nous le verrons dans les vidéos.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>
+          Asynchronisme et callback pour une opération mathématique longue
+        </h2>
+        <p>
+          Voyons un autre exemple d’utilisation d’asynchronisme et de callback :
+          avec une opération mathématique longue.
+        </p>
+      </div>
+
+      <div>
+        <h2>Premier exemple de requête</h2>
+        <div>
+          <h3>omplément</h3>
+          <p>
+            Comme vous l’avez compris, l’asynchronisme et les callbacks vont
+            nous être particulièrement indispensables quand nous allons réaliser
+            des opérations dont le temps d’exécution est indéterminé. C’est le
+            cas des fameuses requêtes, qui sont des moyens d’interagir avec des
+            données via un serveur. Juste pour bien comprendre l’intérêt de
+            l’asynchronisme pour gérer des requêtes, prenons un exemple. Pour
+            cela, nous allons chercher à communiquer avec une API. Dans ce cas,
+            c’est une application intermédiaire qui va nous permettre d’accéder
+            à des données fournies par une plateforme d’information
+            météorologique en ligne : OpenWeatherMap. Nous allons simplement
+            pouvoir envoyer une requête à son API grâce à une clé que nous
+            pouvons obtenir en s’inscrivant sur le site
+            <a
+              href="https://openweathermap.org/"
+              target="_blank"
+              rel="alternate"
+              >OpenWeather</a
+            >. La vidéo suivante explique comment procéder :
+          </p>
+          <p>
+            Nous allons utiliser une fonction asynchrone du nom de fetch() qui
+            nous permet de réaliser des requêtes HTTP, et donc de communiquer
+            avec des API. Créons notre requête et voyons l’intérêt de
+            l’asynchronisme :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="yLZYyKK"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/yLZYyKK"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, nous définissons notre fonction recupDonnees() qui
+            va réaliser un try/catch. En JavaScript, le bloc try est utilisé
+            pour entourer une partie de code qui peut potentiellement générer
+            une erreur. Si une erreur se produit à l’intérieur du bloc try,
+            l’exécution du code est interrompue et la gestion des erreurs passe
+            au bloc catch. Le bloc catch permet de gérer l’erreur en exécutant
+            un bloc de code qui peut afficher un message d’erreur, enregistrer
+            l’erreur dans un fichier journal ou effectuer toute autre action
+            appropriée pour gérer l’erreur. Donc nous utilisons ces deux
+            instructions pour gérer une éventuelle erreur de requête.
+          </p>
+          <p>
+            Puis dans le try, nous réalisons une requête grâce à notre clé
+            fournie par le site. Nous stockons la valeur de retour de la requête
+            dans la constante response. La requête renvoie une promesse, qui
+            sera résolue quand la requête recevra une réponse. Puis nous
+            récupérons dans la constante data la réponse de l’API sous la forme
+            d’un fichier JSON. Mais il y a un problème. L’instruction const data
+            = response.json() n’attendra pas que la requête soit effectuée, ce
+            qui causera évidemment un problème. Transformons donc notre fonction
+            recupDonnees() en fonction asynchrone afin d’insérer un await. Puis,
+            appelons le callback.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="XWOmJqx"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/XWOmJqx"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Donc maintenant, toute la fonction recupDonees() sera exécutée en
+            asynchrone quand elle sera appelée. Nous pouvons maintenant définir
+            une fonction de callback qui s’exécutera quand les instructions
+            précédées d’un await seront terminées. Par exemple, une fonction
+            permettant de récupérer la température en degré Celsius, via les
+            données de OpenWeatherMap :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="qBgOEYG"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/qBgOEYG"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Fonction-asynchrone-et-callback-Code-12"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+        </div>
+        <p>
+          Bien évidemment, étant donné que nous avons mis en place une fonction
+          asynchrone, si nous rajoutons des instructions dans le reste du
+          script, elles seraient exécutées directement sans avoir à attendre que
+          recupDonnes soit terminée. D’où l’intérêt de l’asynchronisme et du
+          callback.
+        </p>
+      </div>
     </div>
   </body>
 </html>
