@@ -3,13 +3,514 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Le format JSON</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Le format JSON</h1>
+      <div>
+        <h3>Définition</h3>
+        <p>
+          JSON signifie JavaScript Object Notation. Il s’agit d’un format texte
+          brut pour stocker et transporter des données légères entre
+          ordinateurs. Il s’agit d’un langage indépendant, car dérivé de la
+          syntaxe du JavaScript object notation. Le code pour lire et générer du
+          JSON existe dans de nombreux langages de programmation.
+        </p>
+      </div>
+
+      <div>
+        <h2>Une chaîne (string) JSON</h2>
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="abXvRJo"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/abXvRJo"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Le-format-JSON-et-AJAX-Code-1#data.json"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>C’est un exemple d’objet avec 3 propriétés :</p>
+          <ul>
+            <li>name</li>
+            <li>age</li>
+            <li>car</li>
+          </ul>
+          <p>
+            Chaque propriété a sa valeur. Si on parse (analyse) la chaîne JSON
+            avec un programme JavaScript, on peut accéder aux données en tant
+            qu’objet :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="JjxYmNo"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/JjxYmNo"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Le-format-JSON-et-AJAX-Code-2"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Pourquoi utiliser JSON ? Le format JSON est syntaxiquement similaire
+            au code de création d’objets JavaScript. Pour cette raison, un
+            programme JavaScript peut facilement convertir des données JSON en
+            objets JavaScript.
+          </p>
+          <p>
+            Depuis que le format est du texte brut uniquement, les données JSON
+            peuvent facilement être envoyées entre ordinateurs et utilisées par
+            n’importe quel langage. JavaScript a une fonction intégrée pour
+            convertir les chaînes JSON en objets JavaScript, la fonction
+            JSON.parse(). JavaScript a également une fonction pour convertir un
+            objet en chaîne JSON, la fonction JSON.stringify().
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Stocker des données</h2>
+        <p>
+          Lors du stockage des données, les données doivent être dans un certain
+          format, et, quel que soit l’endroit où vous choisissez de les stocker,
+          le texte est toujours l’un des formats légaux. JSON rend possible de
+          stocker des objets JavaScript sous forme de texte.
+        </p>
+      </div>
+
+      <div>
+        <h2>Points importants à retenir</h2>
+        <div>
+          <h3>Attention</h3>
+          <p>
+            Nous pouvons recevoir du texte pur depuis un serveur et l’utiliser
+            comme un objet JavaScript, envoyer un objet JavaScript à un serveur
+            au format texte pur et travailler avec des données en tant qu’objets
+            JavaScript, sans analyse ni traductions complexes.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>La syntaxe JSON</h2>
+        <p>
+          La syntaxe JSON est un sous-ensemble de la syntaxe JavaScript. Voici
+          les 4 règles de la syntaxe :
+        </p>
+        <ul>
+          <li>Les données sont dans des paires nom/Valeur.</li>
+          <li>Les données sont séparées par des virgules.</li>
+          <li>Les accolades contiennent des objets.</li>
+          <li>Les crochets contiennent des tableaux.</li>
+        </ul>
+        <p>
+          Une paire nom/valeur se compose d’un nom de champ (entre guillemets
+          doubles), suivi de deux-points, suivi d’une valeur. Le format JSON est
+          presque identique aux objets JavaScript. Les clés doivent être des
+          chaînes, écrites avec des guillemets :
+        </p>
+      </div>
+
+      <div>
+        <h2>Une chaîne au format JSON :</h2>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="ExrVdQx"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/ExrVdQx"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+
+      <div>
+        <h2>Un objet au langage JavaScript :</h2>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="vYbNVdx"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/vYbNVdx"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>Le type de fichier pour les fichiers JSON est « .json ».</p>
+      </div>
+
+      <div>
+        <h2>Les valeurs JSON</h2>
+        <p>
+          Dans JSON, les valeurs doivent être l’un des types de données
+          suivantes :
+        </p>
+        <ul>
+          <li>Une chaîne (string)</li>
+          <li>Un nombre (number)</li>
+          <li>Un objet (object)</li>
+          <li>Un tableau (array)</li>
+          <li>Un booléen (boolean - true/false)</li>
+          <li>Null</li>
+        </ul>
+        <p>
+          Dans JavaScript, les valeurs peuvent être toutes les valeurs
+          ci-dessus, plus toute autre expression JavaScript valide, y compris
+          une fonction (function), une date (date) et undefined.
+        </p>
+      </div>
+
+      <div>
+        <h2>JSON vs XML</h2>
+        <p>
+          JSON et XML peuvent être utilisés pour recevoir des données d’un
+          serveur web. Les deux présentent des spécificités non négligeables
+          pour rédiger et transporter les données de la façon la plus claire qui
+          soit.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Les exemples JSON et XML suivants définissent tous deux un objet
+            "employees", avec un tableau de 3 employés.
+          </p>
+          <p><strong>Objet avec tableau au format JSON : </strong></p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="jOdbeze"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/jOdbeze"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Le-format-JSON-et-AJAX-Code-3#data.json"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p><strong>Objet au format XML : </strong></p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="BaMoqxr"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/BaMoqxr"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Le-format-JSON-et-AJAX-Code-4#data.xml"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Ces deux exemples mettent en avant que le JSON est comme le XML
+            parce que « autodescriptifs », hiérarchiques (valeurs dans des
+            valeurs), peuvent être analysés et utilisés par de nombreux langages
+            de programmation. Ils peuvent également être récupérés avec un
+            XMLHttpRequest.
+          </p>
+          <p>
+            Aussi, ces 2 exemples démontrent que le JSON est différent du XML
+            parce que JSON n’utilise pas de balise de fin, est plus court, plus
+            rapide à lire et écrire, et peut utiliser des tableaux.
+          </p>
+          <p>
+            Surtout, la plus grande différence est que XML doit être analysé
+            (parse) avec un analyseur (parser) XML. JSON peut être analysé par
+            une fonction JavaScript standard.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Points importants à retenir</h2>
+        <div>
+          <h3>Attention</h3>
+          <p>
+            XML est plus difficile à analyser qu’un JSON. JSON est analysé dans
+            un objet JavaScript prêt à l’emploi.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les types de données JSON</h2>
+        <p>
+          Les chaînes (strings) dans JSON doivent être écrites avec des
+          guillemets doubles. Les nombres (numbers) dans JSON doivent être un
+          entier (integer) ou une virgule flottante (floating point). Les
+          valeurs dans JSON peuvent être des objets (objects), des tableaux
+          (arrays), des booléens (boolean) true/false, ou peuvent être null.
+        </p>
+        <p><strong>number JSON:</strong> {"age":30}</p>
+        <p>object JSON :</p>
+        <p>{</p>
+        <p>"employees":{"name":"Charles", "age":30, "city":"Paris"}</p>
+        <p>}</p>
+        <p><strong>array JSON :</strong></p>
+        <p>{</p>
+        <p>"employees":["Charles", "Marie", "Pierre"]</p>
+        <p>}</p>
+        <p><strong>boolean :</strong>{"rain":true}</p>
+        <p><strong>null JSON :</strong>{"middlename":null}</p>
+        <div>
+          <h3>Attention</h3>
+          <p>
+            Les objets en tant que valeurs dans JSON doivent suivre la syntaxe
+            JSON.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>JSON.parse()/JSON.stringify()/Stocker des données</h2>
+        <p>
+          Une utilisation courante de JSON consiste à échanger des données
+          vers/depuis un serveur web. Lors de la réception de données d’un
+          serveur web, les données sont toujours une chaîne. Analysez les
+          données avec JSON.parse() et les données deviennent un objet
+          JavaScript. Aussi, convertissez un objet JavaScript en chaîne avec
+          JSON.stringify().
+        </p>
+        <p>
+          Lors du stockage des données, les données doivent être dans un certain
+          format, et, quel que soit l’endroit où vous choisissez de les stocker,
+          le texte est toujours l’un des formats légaux. JSON permet de stocker
+          des objets JavaScript sous forme de texte.
+        </p>
+        <p>Nous allons voir ces trois points dans cette vidéo.</p>
+        <p>
+          Nous venons de voir comment analyser des données JSON afin qu’ils
+          deviennent des objets JavaScript avec JSON.parse(). Aussi, nous venons
+          de voir la conversion des objets JavaScript en chaîne JSON avec
+          JSON.stringify(). Pour finir, le stockage et la récupération des
+          données avec localStorage.
+        </p>
+      </div>
+
+      <div>
+        <h2>Exceptions</h2>
+        <div>
+          <h3>Attention</h3>
+          <p>
+            Les objets date ne sont pas autorisés dans JSON. Si vous devez
+            inclure une date, écrivez-la sous forme de chaîne. Vous pouvez le
+            reconvertir en objet date ultérieurement.
+          </p>
+          <p>
+            Aussi, vous devez éviter d’utiliser les fonctions dans JSON, les
+            fonctions perdront leur portée et vous devrez utiliser eval() pour
+            les reconvertir en fonctions.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Serveur JSON</h2>
+        <p>
+          Vous pouvez faire une requête JSON au serveur en utilisant une requête
+          Ajax. Tant que la réponse du serveur est écrite au format JSON, vous
+          pouvez analyser la chaîne dans un objet JavaScript. Il faut utiliser
+          XMLHttpRequest pour obtenir des données du serveur :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="KKJdbpN"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/KKJdbpN"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Lors de l’utilisation de JSON.parse() sur JSON dérivé d’un tableau, la
+          méthode renverra un tableau JavaScript au lieu d’un objet JavaScript.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="ExrVGVQ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/ExrVGVQ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a href="https://replit.com/@javascript-studi/Le-format-JSON-et-AJAX-Code-5#car.json" target="_blank" rel="alternate">Lien Replit</a>
+      </div>
     </div>
   </body>
 </html>
