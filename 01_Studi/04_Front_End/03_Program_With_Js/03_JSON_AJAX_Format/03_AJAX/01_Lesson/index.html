@@ -3,13 +3,385 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>AJAX</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>AJAX</h1>
+      <div>
+        <h3>Définition</h3>
+        <p>
+          AJAX signifie <strong>A</strong>synchronous
+          <strong>J</strong>avascript <strong>A</strong>nd <strong>X</strong>ML.
+          Il ne s’agit pas d’un langage de programmation. C’est une combinaison
+          de requêtes (request) intégrées au navigateur et de JavaScript et HTML
+          DOM pour afficher ou utiliser les données. L’acronyme peut prêter à
+          confusion. Malgré son nom, AJAX peut transporter des données XML, mais
+          également d’autres formats de texte comme JSON ou txt.
+        </p>
+        <img
+          src="02_Img/format-json-ajax-image1_1.png"
+          alt="Image format-json-ajax-image1_1"
+        />
+        <p>
+          Source :<a
+            href="https://www.w3schools.com/"
+            target="_blank"
+            rel="alternate"
+          >
+            w3schools</a
+          >
+        </p>
+      </div>
+
+      <div>
+        <h2>Comment fonctionne AJAX ?</h2>
+        <p>Pour répondre à cette question, voici un schéma.</p>
+        <p>
+          Un événement a lieu dans le navigateur, une requête HTTP est créée et
+          envoyée au serveur. Le serveur traite la requête HTTP, génère une
+          réponse et envoie les données en retour au navigateur. Les données
+          envoyées par le serveur sont lues par JavaScript et la page est mise à
+          jour.
+        </p>
+      </div>
+
+      <div>
+        <h2>XMLHttp</h2>
+        <p>
+          La pierre angulaire d’AJAX est l’objet XMLHttpRequest. Tous les
+          navigateurs modernes le prennent en charge. Il peut être utilisé pour
+          échanger des données avec un serveur en arrière-plan. Cela signifie
+          qu’il est possible de mettre à jour des parties d’une page web, sans
+          recharger la page.
+        </p>
+        <p>
+          Aussi, il faut savoir que pour des raisons de sécurité les navigateurs
+          n’autorisent pas l’accès entre les domaines. Cela signifie que la page
+          web et le fichier XML, ou texte, qu’elle tente de charger doivent se
+          trouver sur le même serveur. Si vous souhaitez charger les fichiers
+          XML, ils doivent se trouver sur votre propre serveur.
+        </p>
+        <p>
+          Également, l’objet XMLHttpRequest peut avoir différentes méthodes.
+          Voici un tableau pour résumer ces méthodes :
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Méthode</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>new XMLHttpRequest()</td>
+              <td>Crée un nouvel objet XMLHttpRequest</td>
+            </tr>
+            <tr>
+              <td>abort()</td>
+              <td>Annule la demande en cours</td>
+            </tr>
+            <tr>
+              <td>getAllResponseHeaders()</td>
+              <td>Renvoie les informations d’en-tête</td>
+            </tr>
+            <tr>
+              <td>getResponseHeader()</td>
+              <td>Renvoie une information spécifique d’en-tête</td>
+            </tr>
+            <tr>
+              <td>open(method, url, async, user, psw)</td>
+              <td>
+                Spécifie la demande <br />
+                <br />
+
+                method : la requête de type GET ou POST <br />
+                url: l’emplacement du fichier <br />
+                async : true(asynchrone) ou false(synchrone) <br />
+                user : nom d’utilisateur facultatif <br />
+                psw : mot de passe facultatif <br />
+              </td>
+            </tr>
+            <tr>
+              <td>send()</td>
+              <td>
+                Envoie la requête au serveur Utilisé pour les requêtes GET
+              </td>
+            </tr>
+            <tr>
+              <td>send(string)</td>
+              <td>
+                Envoie la requête au serveur Utilisé pour les requêtes POST
+              </td>
+            </tr>
+            <tr>
+              <td>setRequestHeader()</td>
+              <td>Ajoute une étiquette/valeur à l’en-tête à envoyer</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          L’objet XMLHttpRequest a également différentes propriétés. Voici un
+          tableau pour les résumer :
+        </p>
+        <table>
+          <thead>
+            <tr>
+              <th>Propriété</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>onreadystatechange</td>
+              <td>
+                Définit une fonction à appeler lorsque la propriété readyState
+                change
+              </td>
+            </tr>
+            <tr>
+              <td>readyState</td>
+              <td>
+                Contient le statut de XMLHttpRequest <br />
+                <br />
+                0 : requête non initialisée <br />
+                1 : connexion au serveur établie <br />
+                2 : requête reçue <br />
+                3 : traitement en cours <br />
+                4 : requête achevée et la réponse est prête <br />
+              </td>
+            </tr>
+            <tr>
+              <td>responseText</td>
+              <td>Renvoie les données sous forme de chaîne</td>
+            </tr>
+            <tr>
+              <td>responseXML</td>
+              <td>Renvoie les données sous forme de données XML</td>
+            </tr>
+            <tr>
+              <td>status</td>
+              <td>
+                Renvoie le numéro d’état d’une requête <br />
+                <br />
+                200 : « OK » <br />
+                403 : « Forbidden » <br />
+                404 : « Not Found » <br />
+                <br />
+                Pour une liste complète, cliquez sur ce lien :
+                <a
+                  href="Pour une liste complète, cliquez sur ce lien : HTTP response status codes"
+                  target="_blank"
+                  rel="alternate"
+                  >HTTP response status codes</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>statusText</td>
+              <td>
+                Renvoie le texte d’état (par exemple « OK » ou « Not Found »)
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <h2>Envoyer une requête au serveur avec GET ou POST</h2>
+        <p>
+          Pour envoyer une requête à un serveur, nous utilisons les méthodes
+          open() et send() de l’objet XMLHttpRequest, en utilisant soit GET ou
+          POST. Il faut savoir que GET est simple et plus rapide que POST, et
+          peut être utilisé dans la plupart des cas. Pour autant, il faut
+          toujours utiliser POST lorsqu’un fichier en cache n’est pas une option
+          (mettre à jour un fichier ou une base de données sur le serveur),
+          envoyer une grande quantité de données au serveur (POST n’a pas de
+          limitation de taille), et envoyer des entrées utilisateur (qui peuvent
+          contenir des caractères inconnus). POST est plus robuste et sécurisé
+          que GET.
+        </p>
+      </div>
+
+      <div>
+        <h2>Effectuer une requête au serveur avec POST</h2>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Dans cet exemple, à partir des éléments que nous avons vus
+            au-dessus, vous devez effectuer une requête POST avec l’objet
+            XMLHttpRequest. Dans ce cas, vous allez créer un fichier .txt et le
+            "consommer". Les données du fichier .txt devront apparaître en
+            cliquant sur un bouton. Aussi, il faudra que la requête soit
+            asynchrone et ajouter la fonction "onreadystatechange". Pour cela,
+            il faudra vous référer au tableau sur les propriétés de l’objet
+            XMLHttpRequest.
+          </p>
+          <p>Explication :</p>
+          <ol>
+            <li>
+              Nous créons un fichier texte.
+              <p
+                class="codepen"
+                data-height="300"
+                data-default-tab="html,result"
+                data-slug-hash="bGzEqpd"
+                data-user="OpenSpirit"
+                style="
+                  height: 300px;
+                  box-sizing: border-box;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  border: 2px solid;
+                  margin: 1em 0;
+                  padding: 1em;
+                "
+              >
+                <span
+                  >See the Pen
+                  <a href="https://codepen.io/OpenSpirit/pen/bGzEqpd">
+                    Untitled</a
+                  >
+                  by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                    >@OpenSpirit</a
+                  >) on <a href="https://codepen.io">CodePen</a>.</span
+                >
+              </p>
+              <script
+                async
+                src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+              ></script>
+            </li>
+            <li>
+              Nous créons notre fichier HTML avec notre bouton.
+              <p
+                class="codepen"
+                data-height="300"
+                data-default-tab="html,result"
+                data-slug-hash="XWOXMKe"
+                data-user="OpenSpirit"
+                style="
+                  height: 300px;
+                  box-sizing: border-box;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  border: 2px solid;
+                  margin: 1em 0;
+                  padding: 1em;
+                "
+              >
+                <span
+                  >See the Pen
+                  <a href="https://codepen.io/OpenSpirit/pen/XWOXMKe">
+                    Untitled</a
+                  >
+                  by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                    >@OpenSpirit</a
+                  >) on <a href="https://codepen.io">CodePen</a>.</span
+                >
+              </p>
+              <script
+                async
+                src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+              ></script>
+            </li>
+            <li>
+              3 - Ensuite, nous créons notre script.
+              <p
+                class="codepen"
+                data-height="300"
+                data-default-tab="html,result"
+                data-slug-hash="eYxJvdE"
+                data-user="OpenSpirit"
+                style="
+                  height: 300px;
+                  box-sizing: border-box;
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  border: 2px solid;
+                  margin: 1em 0;
+                  padding: 1em;
+                "
+              >
+                <span
+                  >See the Pen
+                  <a href="https://codepen.io/OpenSpirit/pen/eYxJvdE">
+                    Untitled</a
+                  >
+                  by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                    >@OpenSpirit</a
+                  >) on <a href="https://codepen.io">CodePen</a>.</span
+                >
+              </p>
+              <script
+                async
+                src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+              ></script>
+              <a
+                href="https://replit.com/@javascript-studi/Le-format-JSON-et-AJAX-Code-6#index.html"
+                target="_blank"
+                rel="alternate"
+                >Lien Replit</a
+              >
+            </li>
+            <li>Voici le résultat dans le navigateur.</li>
+            <p>
+              <strong
+                >Salut, je m’appelle Charles, j’ai 34 ans et j’habite
+                Paris.</strong
+              >
+            </p>
+            <p><strong>Aussi, j’apprends AJAX. </strong></p>
+          </ol>
+        </div>
+
+        <div>
+          <h3>Attention</h3>
+          <p>
+            Les requêtes XMLHttpRequest synchrones (async = false) ne sont pas
+            recommandées parce que JavaScript va s’arrêter jusqu’à ce que la
+            réponse du serveur soit prête. Si le serveur est occupé ou lent,
+            l’application "freeze" s’arrête. C’est pour cette raison que cette
+            requête est en train d’être supprimée de la norme web.
+          </p>
+        </div>
+
+        <div>
+          <h3>Attention</h3>
+          <p>
+            Les versions d’Internet Explorer antérieures à IE 10 ne prennent pas
+            en charge l’objet XMLHttpRequest, qui est la base des requêtes AJAX.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Réponse du serveur</h2>
+        <p>
+          Dans cette vidéo, nous allons voir comment obtenir une réponse du
+          serveur à travers différents exemples.
+        </p>
+      </div>
+
+      <div>
+        <h2>Le fichier XML</h2>
+        <p>
+          AJAX peut être utilisé de façon interactive avec les fichiers XML.
+          C’est ce que nous allons voir dans cette vidéo.
+        </p>
+        <p>
+          Nous avons vu dans cette vidéo comment afficher les données d’un
+          fichier .xml sous forme de tableau. Ainsi, les possibilités pour créer
+          des applications interactives en utilisant XML, HTTP, DOM et
+          JavaScript sont vastes.
+        </p>
+      </div>
     </div>
   </body>
 </html>
