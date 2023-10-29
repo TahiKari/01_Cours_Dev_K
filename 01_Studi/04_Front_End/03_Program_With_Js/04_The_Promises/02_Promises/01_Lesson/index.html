@@ -3,13 +3,243 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Les promesses</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Les promesses</h1>
+      <p>
+        Avant tout, il est important de comprendre ce qu’est l’asynchrone pour
+        comprendre ce qu’est une promesse. Nous pouvons prendre pour cela un
+        exemple de la vie réelle.
+      </p>
+      <p>
+        Supposons que vous commandiez un repas dans un restaurant. Vous passez
+        votre commande et attendez que le repas soit préparé. Si le restaurant
+        utilisait une approche de programmation synchrone, vous seriez obligé
+        d'attendre que votre repas soit prêt avant de pouvoir passer à autre
+        chose. En attendant votre repas, vous ne pourriez rien faire, pas même
+        parler avec vos amis. Cela est fastidieux et peu pratique, surtout si le
+        temps d'attente est long.
+      </p>
+      <p>
+        Au lieu de cela, le restaurant peut utiliser une approche de
+        programmation asynchrone pour préparer votre repas en arrière-plan, tout
+        en vous permettant de continuer à discuter avec vos amis ou à lire le
+        menu. Le serveur vous informera que votre repas sera prêt bientôt et
+        vous pourrez continuer à profiter de votre soirée.
+      </p>
+      <p>
+        Cet exemple est similaire à l'utilisation de l’asynchrone. Au lieu
+        d'attendre que chaque tâche soit terminée avant de passer à la suivante,
+        l’asynchrone permet à plusieurs tâches de s'exécuter en parallèle, ce
+        qui permet de gagner du temps et de rendre les applications plus
+        réactives.
+      </p>
+      <p>
+        Dans le contexte de JavaScript, cela signifie que vous pouvez utiliser
+        l’asynchrone pour exécuter des tâches qui prennent du temps, tel que des
+        requêtes à des API distantes, sans bloquer l'interface utilisateur.
+      </p>
+      <div>
+        <h2>Qu’est-ce qu’une promesse ?</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Pour commencer, nous utilisons les promesses pour développer de
+            façon asynchrone. Une promesse (Promise) en JavaScript est un objet
+            qui représente une valeur qui peut ne pas être disponible
+            immédiatement.
+          </p>
+          <p>
+            On comprend donc que les promesses nous permettent d'exécuter des
+            tâches asynchrones, sans utiliser le système de callback (limités
+            dans certains cas).
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Créer une promesse</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="GRzoYxW"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/GRzoYxW"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Le constructeur prend une fonction de rappel avec deux arguments :
+            resolve et reject. Resolve est appelé lorsque la tâche asynchrone
+            réussit, tandis que reject est appelé lorsque la tâche échoue.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Exécuter une promesse</h2>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Maintenant que nous avons déclaré la promesse, il nous faut
+            l'exécuter. Une promesse peut être exécutée en utilisant la méthode
+            then. La méthode then permet de définir une fonction qui sera
+            appelée lorsque la promesse sera résolue avec succès. La syntaxe est
+            la suivante :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="rNPxqdR"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/rNPxqdR"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Les promesses en JavaScript peuvent être gérées à l'aide des
+            méthodes then(), catch() et finally().
+          </p>
+          <ul>
+            <li>then() : pour gérer le succès de la promesse,</li>
+            <li>catch() : pour gérer les erreurs,</li>
+            <li>
+              finally() : pour exécuter du code après que la promesse ait été
+              résolue ou rejetée.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <h2>Notre première promesse</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="VwgeExa"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/VwgeExa"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Les-promesses-Code-1#script.js"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit :
+            https://replit.com/@javascript-studi/Les-promesses-Code-1#script.js</a
+          >
+          <p>
+            Dans cet exemple, on crée une promesse qui simule une opération
+            asynchrone qui prend deux secondes pour se terminer. Ensuite, on
+            utilise les méthodes then(), catch() et finally() pour enchaîner des
+            traitements en fonction du résultat de la promesse :
+          </p>
+          <p>
+            Si la promesse est résolue avec succès, la méthode then() est
+            appelée avec la valeur de retour de la promesse en argument.
+          </p>
+          <p>
+            Si la promesse échoue, la méthode catch() est appelée avec l'erreur
+            en argument.
+          </p>
+          <p>
+            La méthode finally() est toujours appelée une fois que la promesse
+            est terminée, que ce soit avec succès ou en erreur.
+          </p>
+        </div>
+        <p><strong>Les propriétés d’une promesse </strong></p>
+        <p>L’objet promise a deux propriétés :</p>
+        <ul>
+          <li>
+            State qui a trois états possibles :
+            <ul>
+              <li>
+                pending : lorsque la promesse est en attente d'une réponse,
+              </li>
+              <li>
+                fulfilled ou resolved : lorsque la promesse est résolue avec
+                succès et renvoie une valeur,
+              </li>
+              <li>
+                rejected : lorsque la promesse a échoué et renvoie une erreur,
+              </li>
+            </ul>
+          </li>
+          <li>
+            Result, qui contient la valeur retournée par le développeur en
+            paramètre de resolve() ou reject().
+          </li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>

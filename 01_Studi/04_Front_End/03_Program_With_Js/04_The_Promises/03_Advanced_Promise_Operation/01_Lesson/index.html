@@ -3,13 +3,244 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Fonctionnement avancé des promesses</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Fonctionnement avancé des promesses</h1>
+      <div>
+        <h2>Chaînage de promesses</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Les promesses peuvent être chaînées pour exécuter plusieurs tâches
+            asynchrones en séquence. La méthode then retourne une nouvelle
+            promesse, ce qui permet de chaîner les appels. La syntaxe est la
+            suivante :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="ExrPdJx"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/ExrPdJx"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Promesse multiple</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Plusieurs promesses peuvent être exécutées simultanément à l'aide de
+            la méthode Promise.all. La méthode prend un tableau de promesses et
+            retourne une nouvelle promesse. Elle est résolue lorsqu’absolument
+            toutes les promesses du tableau sont résolues avec succès. La
+            syntaxe est la suivante :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="NWoxERE"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/NWoxERE"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            La méthode Promise.all retourne une promesse qui est résolue avec un
+            tableau de valeurs retournées par les promesses passées en argument.
+            Si toutes les promesses sont résolues avec succès, la promesse
+            retournée par Promise.all est résolue avec un tableau contenant les
+            valeurs retournées par les promesses, reprenant l'ordre dans lequel
+            elles ont été passées en argument.
+          </p>
+          <p>
+            Cependant, si l'une des promesses passées en argument est rejetée,
+            alors la promesse retournée par Promise.all est immédiatement
+            rejetée avec la raison du rejet de cette promesse. Les autres
+            promesses passées en argument ne sont pas affectées et continuent de
+            s'exécuter jusqu'à leur résolution ou leur rejet, mais leurs
+            résultats ne sont pas inclus dans le tableau de valeurs retourné par
+            Promise.all.
+          </p>
+          <p>
+            En d'autres termes, si une promesse de Promise.all échoue, la
+            promesse retournée par Promise.all est immédiatement rejetée avec la
+            raison de l'échec de cette promesse. Les autres promesses passées en
+            argument continuent de s'exécuter, mais leurs résultats ne sont pas
+            inclus dans le tableau de valeurs retourné par Promise.all.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Promesse race</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            La méthode Promise.race permet d'exécuter plusieurs promesses en
+            parallèle et de retourner la première promesse résolue ou rejetée.
+            Nous recevrons donc uniquement la promesse résolue le plus
+            rapidement.
+          </p>
+        </div>
+        <p>La syntaxe est la suivante :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="eYxJQGN"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/eYxJQGN"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+
+      <div>
+        <h2>Promesse any</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            La méthode Promise.any() permet d'exécuter plusieurs promesses en
+            parallèle et de retourner la première promesse résolue avec succès.
+            Cette méthode ignore les promesses rejetées, car son but est de nous
+            retourner la première résolue. En revanche, si toutes les promesses
+            passées en argument sont rejetées, alors la méthode Promise.any()
+            retourne une promesse rejetée avec un tableau contenant toutes les
+            raisons de rejet des promesses.
+          </p>
+        </div>
+        <p>La syntaxe de la méthode Promise.any() est la suivante :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="mdvVQBx"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/mdvVQBx"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a
+          href="https://replit.com/@javascript-studi/Les-promesses-Code-2"
+          target="_blank"
+          rel="alternate"
+          >Lien Replit :
+          https://replit.com/@javascript-studi/Les-promesses-Code-2</a
+        >
+        <p>
+          Dans cet exemple, nous avons créé un tableau « promises » contenant
+          quatre promesses, deux rejetées et deux résolues. Nous avons ensuite
+          appelé la méthode Promise.any() en passant ce tableau en argument.
+        </p>
+        <p>
+          Comme au moins une promesse a été résolue avec succès
+          (Promise.resolve('success 1')), la méthode Promise.any() retourne une
+          promesse résolue avec la valeur success 1. Nous avons ensuite utilisé
+          la méthode .then() pour afficher la valeur retournée ('success 1')
+          dans la console.
+        </p>
+        <p>
+          Si toutes les promesses passées en argument avaient été rejetées, la
+          méthode Promise.any() aurait retourné une promesse rejetée avec un
+          tableau contenant toutes les raisons de rejet des promesses (['error
+          1', 'error 2'] dans cet exemple). Nous aurions alors utilisé la
+          méthode .catch() pour gérer cette erreur et afficher le tableau de
+          raisons de rejet dans la console.
+        </p>
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            Notez que la méthode Promise.any() est une fonctionnalité
+            relativement récente, et n'est pas encore supportée par tous les
+            navigateurs. Il est donc recommandé de vérifier la compatibilité
+            avant de l'utiliser dans un projet.
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>
