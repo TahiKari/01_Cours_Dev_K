@@ -3,13 +3,592 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Introduction aux patrons de conception en JavaScript</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Introduction aux patrons de conception en JavaScript</h1>
+      <div>
+        <h3>Définition</h3>
+        <p>
+          Un patron de conception (design pattern) est une solution générale et
+          réutilisable à un problème de conception récurrent dans le
+          développement de logiciels. Un patron de conception décrit une
+          approche éprouvée pour résoudre un problème spécifique de manière
+          efficace et élégante. Ce ne sont pas des morceaux de code spécifiques
+          que l’on peut simplement copier et coller dans un projet, mais plutôt
+          des <strong>modèles abstraits</strong> qui décrivent la structure et
+          le comportement des éléments d’un système logiciel. Ils fournissent
+          des directives pour résoudre des problèmes de conception courants,
+          tels que la gestion des dépendances, la gestion des exceptions, la
+          création d’objets et la communication entre les composants.
+        </p>
+        <p>
+          Tout d’abord, les patrons de conception permettent une
+          <strong>réutilisation</strong>
+          de code. En effet, ils représentent des solutions éprouvées à des
+          problèmes courants de conception logicielle, que les développeurs
+          peuvent adapter à leurs propres besoins. De cette manière, ils évitent
+          de réinventer la roue et de créer du code redondant, ce qui est une
+          perte de temps et d’énergie.
+        </p>
+        <p>
+          Ensuite, les patrons de conception améliorent la
+          <strong>maintenabilité</strong> du code. En fournissant une structure
+          claire et cohérente aux projets, ils permettent de rendre le code plus
+          facile à comprendre, à modifier et à maintenir. Cela est
+          particulièrement important lorsque plusieurs développeurs travaillent
+          sur un même projet, car cela permet à chacun de savoir où trouver les
+          éléments nécessaires et comment les utiliser. Par conséquent,
+          l’utilisation de patrons de conception peut aider à réduire les
+          erreurs et les bogues dans le code.
+        </p>
+        <p>
+          Enfin, ils améliorent la <strong>lisibilité</strong> du code. Ils
+          fournissent des noms clairs pour les éléments du code, ainsi que des
+          structures de base, qui rendent le code plus facile à lire et à
+          comprendre. Cela peut aider les développeurs à comprendre rapidement
+          comment un élément du code est utilisé et comment il peut être modifié
+          pour répondre à leurs besoins. En conséquence, les développeurs
+          peuvent gagner du temps et de l’énergie en évitant de devoir
+          déchiffrer du code complexe et difficile à lire.
+        </p>
+      </div>
+
+      <div>
+        <h2>Définition et utilisation du Singleton</h2>
+        <p>
+          Le Singleton est un patron de conception qui garantit la création
+          d’<strong>une seule instance d’une classe</strong> dans une
+          application. Il est utilisé pour contrôler l’accès à une ressource
+          partagée, comme une base de données ou un fichier de configuration.
+          L’idée derrière le Singleton est d’assurer qu’il n’y ait qu’une seule
+          instance d’une classe, même si elle est instanciée plusieurs fois dans
+          le code. En effet, le Singleton stocke l’instance de la classe créée
+          la première fois, puis la réutilise pour toutes les instances
+          suivantes. De cette façon, il évite de créer des instances
+          supplémentaires qui pourraient entraîner des problèmes de performances
+          ou de cohérence des données.
+        </p>
+        <p>
+          Le Singleton peut être implémenté de différentes manières, mais la
+          méthode la plus courante consiste à utiliser une propriété statique
+          privée qui stocke l’instance de la classe. La classe elle-même a une
+          méthode publique statique qui permet d’obtenir cette instance. Si
+          l’instance n’existe pas, elle est créée et stockée dans la propriété
+          statique. Un exemple d’utilisation courante du Singleton est pour la
+          gestion de la connexion à une base de données. En effet, il est
+          important d’avoir une seule connexion ouverte à une base de données
+          pour éviter les conflits de données et les problèmes de performance.
+          En utilisant un Singleton pour la gestion de la connexion à la base de
+          données, les développeurs peuvent s’assurer qu’il n’y aura qu’une
+          seule connexion ouverte à la fois.
+        </p>
+        <p>
+          Cependant, l’utilisation du Singleton peut avoir des inconvénients. En
+          effet, il peut rendre le code plus difficile à tester et à maintenir,
+          car l’instance unique est partagée entre tous les utilisateurs de la
+          classe. De plus, il peut être difficile d’étendre une classe qui
+          utilise un Singleton, car il n’est pas possible de créer des
+          sous-classes qui ont des instances différentes de la classe mère.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>Voici un exemple d’implémentation du Singleton en JavaScript :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="NWoNxEr"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/NWoNxEr"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Decouverte-des-patrons-de-conception-Code-1#script.js"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Dans cet exemple, le Singleton est implémenté comme une fonction
+            anonyme auto-exécutée, qui retourne un objet avec une méthode
+            publique appelée getInstance. La méthode getInstance utilise une
+            variable instance pour stocker l’instance unique de la classe. Si
+            cette variable est nulle, la méthode createInstance est appelée pour
+            créer une nouvelle instance de la classe. La méthode createInstance
+            crée simplement un objet avec une chaîne de caractères qui indique
+            qu’il s’agit de l’instance unique de la classe. Une fois que
+            l’instance unique a été créée, elle est stockée dans la variable
+            instance et retournée par la méthode getInstance. Enfin, dans
+            l’exemple, 2 instances de la classe sont créées en appelant la
+            méthode getInstance 2 fois, puis la comparaison entre ces 2
+            instances est effectuée à l’aide de l’opérateur ‘===’. Comme prévu,
+            la comparaison renvoie « true », car les 2 instances sont
+            identiques.
+          </p>
+          <p>
+            Cette implémentation utilise une propriété privée let instance qui
+            ne peuvent pas être accédées depuis l’extérieur de la fonction
+            anonyme auto-exécutée. De cette manière, l’instance unique de la
+            classe est cachée à l’utilisateur de la classe, qui ne peut pas
+            créer de nouvelles instances ou modifier l’instance existante.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Définition et utilisation de la Factory</h2>
+        <p>
+          La Factory est un patron de conception qui permet de créer des objets
+          <strong>sans spécifier leur classe exacte</strong>. Elle fournit une
+          interface commune pour créer différents types d’objets en utilisant
+          une méthode de fabrication. Cette méthode décide quelle classe
+          d’objets créer en fonction des paramètres fournis. L’idée derrière la
+          Factory est de séparer la création d’objets de leur utilisation. En
+          effet, au lieu de créer des objets directement dans le code, la
+          Factory fournit une méthode pour créer des objets à partir d’une
+          classe abstraite ou d’une interface commune. De cette façon, les
+          développeurs peuvent créer des objets sans connaître les détails de
+          leur implémentation.
+        </p>
+        <p>
+          La Factory peut être implémentée de différentes manières. La méthode
+          la plus courante consiste à utiliser une fonction de fabrication, qui
+          prend en compte les paramètres fournis pour décider quelle classe
+          d’objets créer. Cette fonction retourne ensuite l’objet créé, qui peut
+          être utilisé dans le code. Un exemple courant d’utilisation de la
+          Factory est pour créer des objets qui partagent une même interface,
+          mais qui ont des implémentations différentes. Par exemple, dans une
+          application de traitement de paiements, la Factory peut être utilisée
+          pour créer différents types de paiements, tels que les paiements par
+          carte de crédit, les paiements par virement bancaire ou les paiements
+          par PayPal. Chaque type de paiement peut avoir une implémentation
+          différente, mais tous doivent partager une même interface, comme la
+          méthode processPayment.
+        </p>
+        <p>
+          En utilisant une Factory pour créer les objets de paiement, les
+          développeurs peuvent facilement ajouter de nouveaux types de paiement
+          à l’application, sans avoir à modifier le code existant. Ils peuvent
+          également ajouter de nouvelles implémentations pour chaque type de
+          paiement, en s’assurant que tous les objets de paiement créés
+          utilisent la même interface.
+        </p>
+        <p>
+          Cependant, l’utilisation de la Factory peut également avoir des
+          inconvénients. En effet, elle peut ajouter une complexité
+          supplémentaire au code, en introduisant une couche de création
+          d’objets qui peut être difficile à comprendre. De plus, elle peut
+          rendre le code plus difficile à tester et à maintenir, car elle peut
+          créer des dépendances supplémentaires entre les objets de
+          l’application.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>Voici un exemple d’implémentation de la Factory en JavaScript :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="YzBqwbo"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/YzBqwbo"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, la Factory est implémentée sous forme d’une classe
+            PaymentFactory. Cette classe a une méthode createPayment, qui prend
+            en compte le type de paiement fourni en paramètre pour décider
+            quelle classe d’objets de paiement créer. Dans cet exemple, 2 types
+            de paiement sont disponibles : « CreditCard » et « BankTransfer ».
+          </p>
+          <p>
+            La Factory utilise ensuite une série de conditions pour décider
+            quelle classe d’objets créer en fonction du type de paiement fourni
+            en paramètre. Dans cet exemple, la Factory crée des instances de «
+            CreditCardPayment » ou de « BankTransferPayment ».
+          </p>
+          <p>
+            Une fois les objets de paiement créés, ils peuvent être utilisés
+            pour traiter les paiements en appelant la méthode processPayment.
+            Cette méthode est implémentée de manière différente pour chaque
+            classe d’objets de paiement, mais toutes doivent être conformes à
+            l’interface commune définie par la classe Payment.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Définition et utilisation du Decorator</h2>
+        <p>
+          Le Decorator est un patron de conception qui permet de modifier le
+          comportement d’un objet en lui ajoutant de nouvelles fonctionnalités à
+          la volée, sans modifier son code source. Il permet également de
+          séparer les préoccupations en ajoutant des fonctionnalités à des
+          objets existants sans avoir à modifier leur code. L’idée derrière le
+          Decorator est de créer une classe qui enveloppe une autre classe, en
+          ajoutant des fonctionnalités supplémentaires à l’objet initial. Cette
+          classe enveloppeur, appelée « le décorateur », implémente la même
+          interface que la classe initiale, de sorte que les objets de la classe
+          initiale peuvent être utilisés avec ou sans décorateurs. Le Decorator
+          peut être implémenté de différentes manières. La méthode la plus
+          courante consiste à créer une classe abstraite ou une interface
+          commune pour les objets de la classe initiale et les décorateurs. Les
+          classes décorateurs doivent implémenter cette interface commune et
+          contenir une instance de la classe initiale. Un exemple courant
+          d’utilisation du Decorator est pour ajouter des fonctionnalités
+          supplémentaires à des objets graphiques, tels que des bordures, des
+          ombres ou des motifs.
+        </p>
+        <p>
+          Dans cet exemple, la classe initiale serait la classe de base pour les
+          objets graphiques, tels que les cercles, les carrés ou les triangles.
+          Les décorateurs pourraient ensuite ajouter des fonctionnalités
+          supplémentaires à ces objets, comme une bordure rouge ou une ombre
+          noire. En utilisant le Decorator pour ajouter des fonctionnalités à
+          des objets graphiques, il est plus facile de créer de nouveaux objets
+          avec des fonctionnalités supplémentaires, sans avoir à créer de
+          nouvelles classes d’objets graphiques. De plus, les décorateurs
+          peuvent être combinés pour créer des objets avec des fonctionnalités
+          multiples.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>Voici un exemple d’implémentation du Decorator en JavaScript :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="jOdqqOw"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/jOdqqOw"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Decouverte-des-patrons-de-conception-Code-3#script.js"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Dans cet exemple, la classe initiale est la classe Shape, qui a une
+            méthode draw qui affiche un message indiquant qu’il s’agit d’une
+            forme. 2 classes décorateurs sont ensuite créées : « BorderDecorator
+            » et « ShadowDecorator ». Chacune de ces classes prend une instance
+            de la classe initiale dans son constructeur, stockée dans une
+            propriété Shape. Chaque classe décorateur implémente également la
+            méthode draw, qui appelle la méthode draw de la classe initiale
+            stockée dans la propriété Shape, puis affiche un message
+            supplémentaire pour indiquer la fonctionnalité ajoutée. Ensuite,
+            différents objets sont créés en utilisant des combinaisons de la
+            classe initiale et des classes décorateurs. Chaque objet créé peut
+            être utilisé pour afficher un message différent en appelant sa
+            méthode draw.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Définition et utilisation du Composite</h2>
+        <p>
+          Le Composite est un patron de conception qui permet de traiter des
+          collections d’objets de manière uniforme, comme s’il s’agissait d’un
+          seul objet. Il permet également de simplifier la hiérarchie des objets
+          en créant une structure arborescente.
+        </p>
+        <p>
+          L’idée derrière le Composite est de créer une classe commune pour les
+          objets simples et les objets composés. Les objets simples ne peuvent
+          pas avoir de sous-objets, tandis que les objets composés contiennent
+          une collection d’objets simples et/ou d’autres objets composés. Les
+          objets simples et composés implémentent la même interface, de sorte
+          que les clients peuvent traiter les objets composés et les objets
+          simples de la même manière. Le Composite peut être utilisé pour
+          traiter des structures hiérarchiques, telles que des arbres ou des
+          graphes, en simplifiant leur traitement. Il peut également être
+          utilisé pour traiter des collections d’objets de manière uniforme,
+          sans avoir à vérifier si chaque objet est simple ou composé. Un
+          exemple courant d’utilisation du Composite est pour représenter des
+          documents. Dans cet exemple, un document peut être un simple document
+          texte, ou un document composé de plusieurs sous-documents, tels que
+          des tableaux, des images ou des paragraphes. Le document Composite
+          contiendra une collection de sous-documents, qui peuvent être
+          eux-mêmes des documents simples ou composés.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>Voici un exemple d’implémentation du Composite en JavaScript :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="NWoNNqp"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/NWoNNqp"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Decouverte-des-patrons-de-conception-Code-4#script.js"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Dans cet exemple, une interface commune est définie pour les objets
+            simples et les objets composés, appelée « DocumentComponent ». Cette
+            interface contient 4 méthodes : add, remove, getChild et display.
+            Les objets simples, tels que les paragraphes, étendent cette
+            interface et implémentent la méthode display. Les objets composés,
+            tels que les documents, étendent également cette interface et
+            contiennent une collection d’objets simples et/ou d’autres objets
+            composés. La classe Document représente un objet composé, qui
+            contient une collection d’objets simples et/ou d’autres objets
+            composés. Cette classe implémente les méthodes add, remove, getChild
+            et display. Les méthodes add et remove permettent d’ajouter et de
+            supprimer des objets de la collection, tandis que la méthode
+            getChild permet d’obtenir un objet à partir de sa position dans la
+            collection. La méthode display affiche le nom du document, puis
+            appelle la méthode display de chaque objet de la collection.
+            Ensuite, différents objets simples et composés sont créés et ajoutés
+            à la hiérarchie en utilisant les méthodes add et remove de la classe
+            Document. Les objets sont ensuite affichés en appelant la méthode
+            display de l’objet principal, qui affiche tous les objets ajoutés à
+            la hiérarchie.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Définition et utilisation de l’Adapter</h2>
+        <p>
+          L’Adapter est un patron de conception qui permet d’adapter une
+          interface existante pour la rendre compatible avec une autre interface
+          requise par le client. Il permet de faire communiquer des objets qui
+          ne pourraient pas autrement en raison d’incompatibilités d’interfaces.
+          Le but de l’Adapter est de convertir l’interface d’un objet en une
+          autre interface, sans modifier le code source de l’objet. Il est donc
+          utile lorsque le code source de l’objet ne peut pas être modifié, ou
+          lorsque les clients nécessitent une interface différente de celle
+          fournie par l’objet. Un exemple courant d’utilisation de l’Adapter est
+          pour adapter des bibliothèques tierces. Dans ce cas, l’Adapter peut
+          être utilisé pour adapter l’interface de la bibliothèque tierce à
+          l’interface requise par l’application. De cette manière, l’application
+          peut utiliser la bibliothèque tierce sans avoir à modifier son code
+          source. Un autre exemple d’utilisation de l’Adapter est pour adapter
+          des objets d’un format de données à un autre. Dans ce cas, l’Adapter
+          peut être utilisé pour adapter l’interface de l’objet source au format
+          de données requis par le client.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>Voici un exemple d’implémentation de l’Adapter en JavaScript :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="JjxXXGz"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/JjxXXGz"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Decouverte-des-patrons-de-conception-Code-5#script.js"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Dans cet exemple, une interface Target est définie pour représenter
+            l’interface requise par le client. L’objet existant Adaptee a une
+            interface incompatible avec celle requise par le client, et ne peut
+            donc pas être utilisé directement. L’Adapter est créé pour adapter
+            l’interface de l’Adaptee à celle requise par le client.
+          </p>
+          <p>
+            La classe Adapter hérite de la classe Target et contient une
+            référence à l’objet Adaptee. Elle implémente la méthode request de
+            l’interface Target, qui est appelée par le client. Lorsque cette
+            méthode est appelée, l’Adapter appelle la méthode specificRequest de
+            l’objet Adaptee et adapte sa réponse pour répondre à l’interface
+            requise par le client.
+          </p>
+          <p>
+            Ensuite, le client utilise l’Adaptee avec son interface incompatible
+            pour appeler la méthode specificRequest. Cette méthode retourne un
+            résultat qui ne peut pas être utilisé directement par le client.
+            Ensuite, l’Adapter est utilisé pour adapter l’interface de l’Adaptee
+            à celle requise par le client. Le client peut alors utiliser
+            l’Adapter pour appeler la méthode request de l’interface requise.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les patrons de comportement</h2>
+        <p>
+          Les patrons de comportement sont un ensemble de patrons de conception
+          qui permettent de gérer les interactions entre les objets et de
+          définir le comportement des objets en réponse à différents événements
+          ou situations. Ces patrons se concentrent sur le comportement des
+          objets plutôt que sur leur structure ou leur création. Les patrons de
+          comportement sont utilisés pour simplifier la gestion des interactions
+          entre les objets et pour réduire la complexité du code. Ils permettent
+          de définir des comportements réutilisables qui peuvent être appliqués
+          à différents objets et dans différentes situations.
+        </p>
+        <p>
+          Voici une vidéo expliquant 2 de ces patrons, Strategy et Template :
+        </p>
+        <div>
+          <h3>Complément</h3>
+          <p>Voici les codes pour Strategy et Template :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="WNPwwxO"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/WNPwwxO"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Decouverte-des-patrons-de-conception-Code-6#index.html"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="oNmxxLr" data-user="OpenSpirit" style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+            <span>See the Pen <a href="https://codepen.io/OpenSpirit/pen/oNmxxLr">
+            Untitled</a> by OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span>
+          </p>
+          <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+          <a href="https://replit.com/@javascript-studi/Decouverte-des-patrons-de-conception-Code-7#script.js" target="_blank" rel="alternate">Lien Replit</a>
+        </div>
+      </div>
     </div>
   </body>
 </html>

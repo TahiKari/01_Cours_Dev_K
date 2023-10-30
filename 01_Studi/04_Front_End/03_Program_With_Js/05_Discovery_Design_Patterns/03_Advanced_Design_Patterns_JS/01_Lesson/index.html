@@ -3,13 +3,656 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Patrons de conception avancés en JavaScript</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Patrons de conception avancés en JavaScript</h1>
+      <div>
+        <h2>MVC</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Le MVC (Modèle-Vue-Contrôleur) est un patron de conception qui
+            permet de séparer la logique de présentation, la logique métier et
+            la logique de gestion des entrées utilisateur d’une application. Il
+            permet de simplifier la conception et la maintenance d’applications
+            en divisant le code en 3 parties distinctes : le Modèle, la Vue et
+            le Contrôleur.
+          </p>
+        </div>
+        <p>
+          Le <strong>Modèle</strong> représente la logique métier de
+          l’application et les données associées. Il contient les règles de
+          validation et les opérations qui permettent de manipuler les données.
+          Le Modèle peut être utilisé pour communiquer avec la base de données
+          ou pour effectuer des opérations de calculs. La
+          <strong>Vue</strong> représente la partie de l’interface utilisateur
+          qui permet de visualiser les données. Elle est responsable de la
+          présentation des données au client. La Vue est passive et ne contient
+          aucun logique métier. Le <strong>Contrôleur</strong> représente la
+          partie de l’application qui gère les entrées utilisateur et coordonne
+          l’interaction entre la Vue et le Modèle. Il est responsable de l’envoi
+          des données du Modèle à la Vue et de la réception des entrées
+          utilisateur pour les traiter.
+        </p>
+        <p>
+          L’utilisation du MVC permet de simplifier la maintenance de
+          l’application en séparant les différentes parties du code. Cela permet
+          également de faciliter la collaboration entre les différents membres
+          de l’équipe de développement, car chaque partie du code peut être
+          modifiée sans affecter les autres parties. Lorsque l’utilisateur
+          interagit avec l’application, le Contrôleur est chargé de recevoir et
+          de traiter les entrées utilisateur. Il récupère les données du Modèle
+          et les envoie à la Vue pour les afficher. Lorsque l’utilisateur
+          modifie les données, le Contrôleur récupère ces modifications et les
+          envoie au Modèle pour les mettre à jour.
+        </p>
+        <p>
+          Le MVC est largement utilisé dans le développement web, où il est
+          souvent associé à des frameworks tels que Angular, React ou Vue.js.
+          Ces frameworks fournissent des outils pour simplifier la mise en œuvre
+          du MVC et pour automatiser certaines tâches, telles que la mise à jour
+          de la Vue en réponse aux modifications du Modèle.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>Voici un exemple d’implémentation du MVC en JavaScript :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="JjxXKdG"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/JjxXKdG"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Decouverte-des-patrons-de-conception-Code-13#script.js"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Dans cet exemple, le Modèle est représenté par la classe Model, qui
+            contient une propriété data pour stocker les données et 2 méthodes :
+            addData pour ajouter des données et getData pour récupérer les
+            données.
+          </p>
+          <p>
+            La Vue est représentée par la classe View, qui contient une méthode
+            render pour afficher les données à l’utilisateur.
+          </p>
+          <p>
+            Le Contrôleur est représenté par la classe Controller, qui contient
+            une référence au Modèle et à la Vue. Il contient également une
+            méthode addData pour ajouter des données au Modèle et mettre à jour
+            la Vue avec les nouvelles données.
+          </p>
+          <p>
+            Ensuite, le MVC est utilisé en créant une instance du Modèle, de la
+            Vue et du Contrôleur, et en utilisant le Contrôleur pour ajouter des
+            données au Modèle.
+          </p>
+          <p>
+            Lorsque addData est appelée sur le Contrôleur, elle ajoute les
+            données au Modèle en appelant addData sur le Modèle. Ensuite, elle
+            appelle render sur la Vue en passant les données mises à jour du
+            Modèle. La Vue affiche ensuite les données à l’utilisateur.
+          </p>
+        </div>
+
+        <div>
+          <h3>Méthode</h3>
+          <p>Voici une vidéo montrant comment utiliser le MVC :</p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Le patron Commande</h2>
+        <p>
+          Le patron de conception Command est un patron comportemental qui
+          permet de séparer la logique de l’invocation d’une commande de la
+          logique de sa mise en œuvre. Il encapsule une demande en tant
+          qu’objet, ce qui permet de paramétrer des méthodes avec différentes
+          demandes, d’encapsuler des demandes dans des objets pour les traiter à
+          distance et de permettre l’annulation des opérations. Le patron
+          Command est composé de 4 éléments principaux : la commande elle-même,
+          l’objet récepteur, l’invocateur et le client. La
+          <strong>commande</strong> est l’objet qui contient la demande à
+          exécuter et les paramètres nécessaires pour l’exécuter. L’objet
+          <strong>récepteur</strong> est l’objet qui contient la logique métier
+          qui sera exécutée par la commande. L’<strong>invocateur</strong> est
+          l’objet qui invoque la commande pour exécuter la demande. Le
+          <strong>client</strong>
+          est l’objet qui crée la commande et spécifie l’objet récepteur et la
+          méthode à invoquer. L’utilisation du patron Command permet de réduire
+          le couplage entre les objets, de faciliter la gestion des opérations,
+          de fournir des fonctionnalités d’annulation et de rétablissement, et
+          de fournir une base pour les opérations transactionnelles.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>Voici un exemple d’implémentation de Command en JavaScript :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="RwvrqQM"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/RwvrqQM"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Decouverte-des-patrons-de-conception-Code-14#script.js"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            La classe Receiver représente l’objet qui exécute la commande. Elle
+            contient une méthode action qui affiche simplement « Action
+            effectuée ».
+          </p>
+          <p>
+            La classe Command encapsule une commande à exécuter. Elle prend une
+            référence au Récepteur dans son constructeur et contient 2 méthodes
+            : execute qui invoque la méthode action du Récepteur, et undo qui
+            est appelée pour annuler la commande.
+          </p>
+          <p>
+            La classe Invoker contient une liste de commandes (this.commands) et
+            2 méthodes : setCommand pour ajouter des commandes à la liste et
+            executeCommands pour exécuter toutes les commandes de la liste. Elle
+            contient également une méthode undoCommands pour annuler toutes les
+            commandes dans l’ordre inverse.
+          </p>
+          <p>
+            Ensuite, 3 objets sont créés : un objet receiver de la classe
+            Receiver pour représenter l’objet qui exécute la commande, et 2
+            objets command1 et command2 de la classe Command pour encapsuler les
+            commandes à exécuter.
+          </p>
+          <p>
+            Ensuite, un objet invoker de la classe Invoker est créé pour
+            invoquer les commandes. Les 2 commandes sont ajoutées à l’invocateur
+            à l’aide de la méthode setCommand, puis toutes les commandes sont
+            exécutées à l’aide de la méthode executeCommands.
+          </p>
+          <p>
+            Enfin, toutes les commandes sont annulées dans l’ordre inverse à
+            l’aide de la méthode undoCommands.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Iterator</h2>
+        <p>
+          Le patron de conception Iterator est un patron comportemental qui
+          fournit une manière de parcourir une collection d’objets sans exposer
+          la structure interne de la collection. Il définit une interface pour
+          accéder aux éléments d’une collection de manière séquentielle, sans
+          connaître la structure interne de la collection. Le patron Iterator
+          est composé de 2 éléments principaux : l’agrégat et l’itérateur.
+          L’<strong>agrégat</strong> est l’objet qui contient les éléments à
+          parcourir, et l’<strong>itérateur</strong> est l’objet qui permet de
+          parcourir les éléments de l’agrégat. L’itérateur contient des méthodes
+          pour accéder à l’élément suivant et pour vérifier s’il reste des
+          éléments à parcourir.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Pour implémenter le patron de conception Iterator en JavaScript,
+            nous avons besoin de 2 éléments principaux : l’agrégat et
+            l’itérateur.
+          </p>
+          <p>
+            L’agrégat est l’objet qui contient les éléments à parcourir. Dans
+            cet exemple, nous allons utiliser une classe PersonCollection pour
+            représenter l’agrégat. Cette classe doit avoir une méthode
+            getIterator qui retourne un objet itérateur de type PersonIterator.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="PoVNzVx"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/PoVNzVx"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Decouverte-des-patrons-de-conception-Code-15#script.js"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            L’itérateur est l’objet qui permet de parcourir les éléments de
+            l’agrégat. Dans cet exemple, nous utilisons une classe
+            PersonIterator pour représenter l’itérateur. Cette classe doit avoir
+            une référence à la collection PersonCollection, ainsi qu’une méthode
+            hasNext pour vérifier s’il reste des éléments à parcourir, et une
+            méthode next pour accéder à l’élément suivant de la collection.
+          </p>
+          <p>
+            Ensuite, nous créons une instance de PersonCollection, ajoutons 3
+            objets Person à la collection, et obtenons un itérateur pour
+            parcourir la collection. Enfin, nous utilisons une boucle while pour
+            parcourir la collection et afficher le nom et l’âge de chaque
+            personne.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Memento</h2>
+        <p>
+          Le patron de conception Memento est un patron comportemental qui
+          permet de capturer et de restaurer l’état interne d’un objet sans
+          violer l’encapsulation. Le Memento lui-même est un objet qui stocke
+          l’état de l’objet d’origine à un moment donné, et le Caretaker est
+          l’objet qui gère la sauvegarde et la restauration de l’état à partir
+          du Memento. La définition du Memento implique la création d’un objet
+          qui stocke l’état interne d’un objet. Cet objet ne doit être
+          accessible que par l’objet lui-même (d’où la nécessité de ne pas
+          violer l’encapsulation). Le Memento doit fournir une méthode pour
+          récupérer l’état précédent de l’objet. Le Caretaker est l’objet qui
+          gère la sauvegarde et la restauration de l’état de l’objet à partir du
+          Memento. Il stocke les Mementos dans une pile et fournit des méthodes
+          pour sauvegarder l’état courant de l’objet, pour restaurer l’état de
+          l’objet à partir d’un Memento précédemment sauvegardé, et pour annuler
+          les sauvegardes précédentes.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Pour implémenter le patron de conception Memento en JavaScript, nous
+            avons besoin de 2 éléments principaux : l’objet Memento et l’objet
+            Caretaker.
+          </p>
+          <p>
+            L’objet Memento est l’objet qui stocke l’état interne de l’objet
+            d’origine à un moment donné. Dans cet exemple, nous allons utiliser
+            une classe Memento pour représenter l’objet Memento. Cette classe
+            doit avoir une méthode getState pour retourner l’état de l’objet, et
+            une méthode setState pour restaurer l’état de l’objet. L’objet
+            Caretaker est l’objet qui gère la sauvegarde et la restauration de
+            l’état à partir du Memento. Dans cet exemple, nous allons utiliser
+            une classe Caretaker pour représenter l’objet Caretaker. Cette
+            classe doit avoir une référence à l’objet d’origine dont nous
+            souhaitons sauvegarder l’état, ainsi qu’une pile de Mementos pour
+            stocker les états précédents de l’objet. Ensuite, nous pouvons créer
+            une instance de l’objet d’origine et une instance de l’objet
+            Caretaker. Nous pouvons modifier l’état de l’objet d’origine et
+            sauvegarder l’état courant en appelant la méthode save de l’objet
+            Caretaker. Nous pouvons également annuler les modifications
+            précédentes en appelant la méthode undo de l’objet Caretaker.
+          </p>
+          <p>
+            Dans cet exemple, nous créons une instance de l’objet d’origine
+            (Originator) avec un état initial, et une instance de l’objet
+            Caretaker (Caretaker) avec une référence à l’objet d’origine.
+            Ensuite, nous modifions l’état de l’objet d’origine, sauvegardons
+            l’état courant en appelant la méthode save de l’objet Caretaker, et
+            affichons l’état actuel de l’objet d’origine.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="QWYNEPe"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/QWYNEPe"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Decouverte-des-patrons-de-conception-Code-16#script.js"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+        </div>
+      </div>
+
+      <div>
+        <h2>Observable</h2>
+        <p>
+          RxJS est une bibliothèque JavaScript qui implémente le patron de
+          conception Observable. Observable est un patron de conception qui
+          permet de gérer les événements asynchrones en utilisant une approche
+          de programmation réactive.
+        </p>
+        <p>
+          L’objet Observable émet des valeurs asynchrones dans le temps, et
+          permet à des observateurs de souscrire à ces valeurs. Lorsque
+          l’Observable émet une valeur, tous les observateurs qui ont souscrit
+          reçoivent cette valeur.
+        </p>
+        <p>
+          La bibliothèque RxJS fournit une implémentation complète du patron de
+          conception Observable, avec de nombreuses méthodes pour créer,
+          combiner et manipuler des Observables.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Voici un exemple d’utilisation de RxJS pour créer un Observable qui
+            émet des nombres aléatoires toutes les secondes :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="WNPwxBV"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/WNPwxBV"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Decouverte-des-patrons-de-conception-Code-17#index.html"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Dans cet exemple, nous créons un Observable qui émet des nombres
+            aléatoires toutes les secondes. Nous utilisons la méthode Observable
+            de RxJS pour créer l’Observable, et nous passons une fonction qui
+            définit la logique de l’Observable. Dans cette fonction, nous
+            utilisons la méthode setInterval pour émettre des nombres aléatoires
+            toutes les secondes, et la méthode observer.next pour émettre chaque
+            nombre aléatoire à tous les observateurs qui ont souscrit.
+          </p>
+          <p>
+            Nous utilisons également la valeur de retour de la fonction pour
+            nettoyer les ressources lorsque l’Observable est terminé, en
+            appelant la méthode clearInterval pour arrêter l’émission de nombres
+            aléatoires. Ensuite, nous utilisons la méthode subscribe de
+            l’Observable pour souscrire à l’Observable et recevoir les valeurs
+            émises. Nous passons une fonction qui définit ce qui doit être fait
+            avec chaque valeur émise. Dans cet exemple, nous affichons
+            simplement chaque valeur dans la console.
+          </p>
+        </div>
+
+        <div>
+          <h3>Complément</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="poGybMJ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/poGybMJ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="GRzZjRw"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/GRzZjRw"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>BehaviourSubject</h2>
+        <p>
+          Un BehaviorSubject est un type spécial d’Observable provenant de la
+          bibliothèque RxJS. Il est particulièrement utile lorsque nous avons
+          besoin de partager une valeur qui peut changer au fil du temps entre
+          plusieurs observateurs.
+        </p>
+        <p>Un BehaviorSubject a 2 principales caractéristiques :</p>
+        <ul>
+          <li>
+            Il stocke la dernière valeur émise à ses observateurs et la transmet
+            immédiatement à tout nouvel observateur qui s’abonne.
+          </li>
+          <li>
+            Il permet de mettre à jour cette valeur et de l’émettre à tous les
+            observateurs actifs.
+          </li>
+        </ul>
+        <p>
+          Cela le rend particulièrement utile pour les scénarios où nous avons
+          besoin de partager une valeur qui peut changer au fil du temps, comme
+          un état partagé entre plusieurs composants dans une application.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="oNmxzgE"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/oNmxzgE"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a
+          href="https://replit.com/@javascript-studi/Decouverte-des-patrons-de-conception-Code-18#script.js"
+          target="_blank"
+          rel="alternate"
+          >Lien Replit</a
+        >
+        <p>
+          Dans cet exemple, nous créons un BehaviorSubject avec une valeur
+          initiale 'Hello'. Lorsque le premier observateur s’abonne, il reçoit
+          immédiatement cette valeur initiale. Ensuite, nous mettons à jour la
+          valeur du BehaviorSubject avec 'World' et le premier observateur
+          reçoit cette nouvelle valeur. Lorsque le deuxième observateur
+          s’abonne, il reçoit également la dernière valeur émise, qui est
+          'World'.
+        </p>
+      </div>
+
+      <div>
+        <h2>From</h2>
+        <p>
+          La fonction from est un opérateur de création qui permet de convertir
+          divers types de données en Observable. La fonction from peut accepter
+          divers types de données en entrée, notamment les tableaux, les chaînes
+          de caractères, les Promesses, les objets itérables (comme les Set ou
+          les Map), et les objets Observable-like. Lorsque from reçoit un de ces
+          types de données, il crée un Observable qui émet les éléments de la
+          collection un par un.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="xxMVEGX"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/xxMVEGX"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a href="https://replit.com/@javascript-studi/Decouverte-des-patrons-de-conception-Code-19#script.js" target="_blank" rel="alternate">Lien Replit</a>
+      </div>
     </div>
   </body>
 </html>
