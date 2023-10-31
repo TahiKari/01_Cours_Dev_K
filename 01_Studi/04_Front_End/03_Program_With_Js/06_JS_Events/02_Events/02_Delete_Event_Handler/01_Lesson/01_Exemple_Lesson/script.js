@@ -1,48 +1,13 @@
 // Exemple 1
 /*
+const button = document.querySelector('button');
 
+function handleClick(event) {
+  console.log('Bouton cliqué');
+}
+
+button.addEventListener('click', handleClick);
+
+// Supprime le gestionnaire d'événements handleClick
+button.removeEventListener('click', handleClick);
 */
-
-console.log('----------------------------------------')
-
-// Exemple 2
-/*
-
-*/
-
-console.log('----------------------------------------')
-
-// Exemple 3
-/*
-
-*/
-
-console.log('----------------------------------------')
-
-// Exemple 4
-/*
-
-*/
-
-console.log('----------------------------------------')
-
-// Exemple 5
-/*
-
-*/
-
-console.log('----------------------------------------')
-
-// Exemple 6
-/*
-
-*/
-
-console.log('----------------------------------------')
-
-// Exemple 7
-/*
-
-*/
-
-console.log('----------------------------------------')

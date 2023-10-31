@@ -3,13 +3,198 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Créer ses propres événements</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Créer ses propres événements</h1>
+      <div>
+        <p>
+          Outre les événements intégrés à JavaScript, il est également possible
+          de créer des événements personnalisés pour répondre aux besoins
+          spécifiques de votre application. Les événements personnalisés peuvent
+          être déclenchés à n'importe quel moment du code, et les écouteurs
+          d'événements peuvent leur être attachés de la même manière que pour
+          les événements intégrés.
+        </p>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Pour créer un événement personnalisé en JavaScript, vous devez
+            utiliser l'objet CustomEvent. Voici un exemple de code qui crée un
+            événement personnalisé nommé monEvenement :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="mdvPgLo"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/mdvPgLo"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Code-3-Javascript-Events-1"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+        </div>
+        <p>
+          Dans cet exemple, nous avons créé un objet CustomEvent avec le nom
+          monEvenement. Ensuite, nous avons ajouté un écouteur d'événement pour
+          cet événement personnalisé en utilisant la méthode addEventListener de
+          l'objet document. Finalement, nous avons déclenché l'événement
+          personnalisé en utilisant la méthode dispatchEvent de l'objet
+          document.
+        </p>
+        <div>
+          <h3>Complément</h3>
+          <p>
+            Il est également possible de passer des données avec l'événement
+            personnalisé en utilisant l'objet CustomEvent. Voici un exemple de
+            code qui crée un événement personnalisé nommé monEvenement avec des
+            données :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="zYeqXmP"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/zYeqXmP"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Code-4-Javascript-Events-1"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+        </div>
+        <p>
+          Dans cet exemple, nous avons créé un objet CustomEvent nommé
+          monEvenement avec l'option detail pour y inclure des données. Ensuite,
+          nous avons ajouté un écouteur d'événement pour cet événement
+          personnalisé en utilisant la méthode addEventListener de l'objet
+          document. Finalement, nous avons déclenché l'événement personnalisé en
+          utilisant la méthode dispatchEvent de l'objet document. Nous aurons
+          donc ce message dans la console : « Message reçu : Bonjour tout le
+          monde ! ».
+        </p>
+      </div>
+
+      <div>
+        <h2>Utiliser les événements depuis le HTML</h2>
+        <div>
+          <h3>Attention</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="BaMKEvy"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/BaMKEvy"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Code-5-Javascript-Events-1#index.htm"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            L'utilisation de l'attribut « onclick » (ou autre) dans les balises
+            HTML est considérée comme une technique obsolète en JavaScript. Cela
+            est dû à plusieurs raisons, notamment :
+          </p>
+          <ul>
+            <li>
+              L'attribut « onclick » mélange la logique de présentation (HTML)
+              et la logique de comportement (JavaScript), ce qui peut rendre le
+              code difficile à maintenir et à déboguer.
+            </li>
+            <li>
+              L'utilisation de l'attribut « onclick » peut conduire à des
+              problèmes de sécurité, comme l'injection de code malveillant.
+            </li>
+            <li>
+              L'ajout d'événements directement dans le code HTML limite la
+              flexibilité et la réutilisabilité du code.
+            </li>
+          </ul>
+        </div>
+        <p>
+          Au lieu d'utiliser l'attribut « onclick » dans les balises HTML, il
+          est préférable d'utiliser les écouteurs d'événements JavaScript pour
+          gérer les événements. Les écouteurs d'événements permettent une
+          séparation plus claire entre la logique de présentation et la logique
+          de comportement. Cela rend le code plus facile à maintenir, à déboguer
+          et à réutiliser.
+        </p>
+      </div>
     </div>
   </body>
 </html>

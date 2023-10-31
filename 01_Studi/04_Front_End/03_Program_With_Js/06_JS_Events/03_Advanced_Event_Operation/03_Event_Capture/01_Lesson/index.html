@@ -3,13 +3,163 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>La capture d'événements</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>La capture d'événements</h1>
+      <div>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            La capture d'événements est un mécanisme de gestion des événements
+            qui permet de gérer un événement à un niveau supérieur dans
+            l'arborescence du Document Object Model (DOM).
+          </p>
+        </div>
+        <p>
+          En règle générale, lorsque vous cliquez sur un élément dans une page
+          web, l'événement de clic est d'abord géré par l'élément lui-même (par
+          exemple là où vous avez cliqué), puis par ses parents dans
+          l'arborescence DOM, jusqu'à ce que l'événement soit propagé à
+          l'ensemble du document.
+        </p>
+        <div>
+          <h3>Méthode</h3>
+          <p>Voici le code à renseigner dans votre fichier HTML :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="wvNGbKG"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/wvNGbKG"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>Voici le code à renseigner dans votre fichier JavaScript :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="YzBqbyo"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/YzBqbyo"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Code-7-Javascript-Events-1#script.js"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+        </div>
+        <p>
+          Si nous cliquons sur le bouton, nous cliquons aussi sur le div, car le
+          div contient le bouton. Mais, dans ce cas-là, si on clique sur le
+          bouton, nous aurons en console d’abord « Enfant », puis « Parent ».
+          Car l'événement géré en premier est celui de l'élément le plus bas
+          dans le DOM (ici le button). Après cela, on remonte dans le DOM.
+        </p>
+        <div>
+          <p>
+            Avec la capture d'événements, vous pouvez gérer l'événement à un
+            niveau supérieur de l'arborescence DOM avant qu'il ne soit propagé à
+            l'élément cible. Cela signifie que vous pouvez intercepter
+            l'événement et le gérer avant qu'il n'atteigne l'élément qui a
+            déclenché l'événement. Il suffit de passer « true » au troisième
+            argument de la méthode addEventListener (capture) pour spécifier que
+            la capture doit être utilisée.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="QWYNRNp"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/QWYNRNp"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Code-8-Javascript-Events-1"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+        </div>
+        <p>
+          Dans cet exemple, si vous cliquez sur l'élément enfant, l'événement
+          sera capturé au niveau de l'élément parent avant d'être propagé à
+          l'élément enfant. Vous verrez donc « Parent » dans la console avant de
+          voir « Enfant ».
+        </p>
+        <p>
+          En résumé, la capture d'événements permet de gérer les événements à un
+          niveau supérieur de l'arborescence DOM, ce qui vous permet de les
+          intercepter et de les gérer avant qu'ils n'atteignent l'élément cible.
+        </p>
+      </div>
     </div>
   </body>
 </html>

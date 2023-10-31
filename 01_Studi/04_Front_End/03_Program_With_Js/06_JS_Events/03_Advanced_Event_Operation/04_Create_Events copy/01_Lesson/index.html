@@ -3,13 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Empêcher la propagation d'événements</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Empêcher la propagation d'événements</h1>
+      <div>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Comme nous venons de le voir, lorsqu'un événement est déclenché sur
+            un élément, il se propage aux éléments parents de l'élément. Cela
+            s'appelle la propagation d'événements. Vous pouvez empêcher la
+            propagation d'un événement en appelant la méthode stopPropagation()
+            sur l'objet Event.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="dyaMEXE"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/dyaMEXE"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Code-9-Javascript-Events-1"
+            target="_blank"
+            rel="alternate"
+            >Lien replit</a
+          >
+        </div>
+        <p>
+          Dans ce cas, si vous cliquez sur l'élément enfant, l'événement ne sera
+          pas propagé à l'élément parent. Vous verrez donc seulement « Enfant »
+          dans la console.
+        </p>
+        <p>
+          Si nous enlevons la ligne ‘event.stopPropagation();, alors nous aurons
+          dans la console « Enfant », puis « Parent ».
+        </p>
+      </div>
     </div>
   </body>
 </html>

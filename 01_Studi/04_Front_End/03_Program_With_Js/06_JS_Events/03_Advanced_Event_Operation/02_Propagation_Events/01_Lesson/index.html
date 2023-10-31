@@ -3,13 +3,62 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>La propagation des événements</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>La propagation des événements</h1>
+      <div>
+        <h2>Propagation d'événements</h2>
+        <p>
+          La propagation d'événements est le mécanisme par lequel un événement
+          se propage à travers l'arborescence DOM, de l'élément qui l'a
+          déclenché jusqu'à la racine du document.
+        </p>
+        <p>
+          Lorsqu'un événement se produit sur un élément, l'agent utilisateur (le
+          navigateur web) vérifie s'il existe un gestionnaire d'événements pour
+          cet événement sur cet élément (le addEventListener qu’on aurait pu
+          créer nous-mêmes). Si c'est le cas, il appelle ce gestionnaire
+          d'événements. Ensuite, l'agent utilisateur remonte l'arborescence DOM
+          pour vérifier si d'autres éléments ont également des gestionnaires
+          d'événements pour cet événement. Si c'est le cas, il appelle également
+          ces gestionnaires d'événements, en commençant par l'élément parent
+          immédiat de l'élément d'origine, puis en remontant jusqu'à la racine
+          du document. On va donc de l’élément le plus bas ciblé par
+          l’événement, jusqu’au plus haut, la racine.
+        </p>
+        <h2>Capture et propagation</h2>
+        <div>
+          <h3>Complément</h3>
+          <p>
+            La propagation d'événements se produit en 2 phases : la phase de
+            <strong>capture</strong> et la phase de
+            <strong>propagation</strong> (ou de bouillonnement). La phase de
+            capture se produit en premier et consiste à appeler les
+            gestionnaires d'événements des éléments parents, en descendant
+            l'arborescence DOM. Ensuite, la phase de propagation se produit, qui
+            consiste à appeler les gestionnaires d'événements des éléments
+            parents, en remontant l'arborescence DOM.
+          </p>
+          <p>
+            La propagation d'événements peut être utile pour gérer les
+            événements de manière plus globale, en ajoutant un seul gestionnaire
+            d'événements à un élément parent, plutôt que d'ajouter des
+            gestionnaires d'événements à chaque élément individuel qui a besoin
+            de traiter l'événement. Cela peut simplifier le code et le rendre
+            plus facile à maintenir.
+          </p>
+          <p>
+            Cependant, la propagation d'événements peut également rendre le code
+            plus difficile à comprendre et à déboguer, car il peut être
+            difficile de savoir quels gestionnaires d'événements seront appelés
+            en premier, en particulier dans les documents complexes.
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>

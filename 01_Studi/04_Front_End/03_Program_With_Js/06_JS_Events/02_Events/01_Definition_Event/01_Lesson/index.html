@@ -3,13 +3,91 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>La définition d’un événement</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>La définition d’un événement</h1>
+      <div>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Les événements sont des actions qui se produisent sur une page web,
+            tels que le clic d'un bouton ou la soumission d'un formulaire. En
+            JavaScript, nous pouvons détecter ces événements et y répondre en
+            exécutant une fonction. Les événements peuvent être déclenchés par
+            l'utilisateur, le navigateur ou le code JavaScript lui-même.
+          </p>
+        </div>
+        <p>
+          Il existe de nombreux types d'événements en JavaScript, tels que le
+          clic, le chargement de la page, la soumission de formulaire, le
+          déplacement de la souris, etc. Chaque type d'événement est associé à
+          un objet Event qui contient des informations sur l'événement, telles
+          que la cible de l'événement (l'élément HTML qui a déclenché
+          l'événement), le type d'événement et les données spécifiques à
+          l'événement.
+        </p>
+        <p>
+          Des événements se produisent en permanence sur une page web, mais si
+          on veut exécuter du code après un événement, on doit « écouter un
+          événement ».
+        </p>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Pour écouter un événement en JavaScript, il est possible d'utiliser
+            la méthode addEventListener(). Cette méthode prend 2 arguments : le
+            type d'événement à écouter et la fonction à exécuter lorsque
+            l'événement se produit. Voici un exemple de code qui écoute le clic
+            d'un bouton et exécute une fonction lorsque le clic se produit :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="dyaMrmW"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/dyaMrmW"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Code-1-Javascript-Events-1"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+        </div>
+        <p>
+          Dans cet exemple, la méthode querySelector() est utilisée pour
+          sélectionner le premier élément de type « button » dans le document
+          HTML. Ensuite, la méthode addEventListener() est utilisée pour écouter
+          le clic de ce bouton et exécuter une fonction anonyme qui affiche une
+          alerte avec le texte « Bouton cliqué ».
+        </p>
+      </div>
     </div>
   </body>
 </html>

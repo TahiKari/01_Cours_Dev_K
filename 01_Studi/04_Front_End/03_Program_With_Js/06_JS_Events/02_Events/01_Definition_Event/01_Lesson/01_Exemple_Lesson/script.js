@@ -1,48 +1,16 @@
 // Exemple 1
 /*
+const button = document.querySelector('button');
 
+button.addEventListener('click', () => {
+  alert('Bouton cliqué');
+});
 */
 
-console.log('----------------------------------------')
+console.log("----------------------------------------");
 
-// Exemple 2
-/*
-
-*/
-
-console.log('----------------------------------------')
-
-// Exemple 3
-/*
-
-*/
-
-console.log('----------------------------------------')
-
-// Exemple 4
-/*
-
-*/
-
-console.log('----------------------------------------')
-
-// Exemple 5
-/*
-
-*/
-
-console.log('----------------------------------------')
-
-// Exemple 6
-/*
-
-*/
-
-console.log('----------------------------------------')
-
-// Exemple 7
-/*
-
-*/
-
-console.log('----------------------------------------')
+// Exemple 2 de la vidéo
+const myButton = document.getElementById('myButton')
+myButton.addEventListener('click', () => {
+    alert("Bouton cliqué")
+})

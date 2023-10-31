@@ -3,13 +3,111 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>L’objet Event</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>L’objet Event</h1>
+      <div>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            L'objet Event en JavaScript représente un événement qui se produit
+            dans une page web, tel qu'un clic de souris, une pression de touche,
+            un chargement de page, etc. Cet objet contient des informations sur
+            l'événement, telles que le type d'événement, la cible de
+            l'événement, les coordonnées de la souris, etc. Nous recevons une
+            instance de cet objet lors du déclenchement de l’écouteur d’un
+            événement.
+          </p>
+        </div>
+        <p>Voici quelques propriétés et méthodes utiles de l'objet Event :</p>
+        <ul>
+          <li>
+            type : le type d'événement (ex.: « click », « load », « keydown »,
+            etc.),
+          </li>
+          <li>target : l'élément qui a déclenché l'événement,</li>
+          <li>currentTarget : l'élément qui gère actuellement l'événement,</li>
+          <li>
+            clientX, clientY : les coordonnées de la souris par rapport à la
+            fenêtre,
+          </li>
+          <li>
+            pageX, pageY : les coordonnées de la souris par rapport au document,
+          </li>
+          <li>
+            key : le code de la touche qui a été pressée (pour les événements de
+            type « keydown »).
+          </li>
+        </ul>
+        <p>Méthodes :</p>
+        <ul>
+          <li>
+            preventDefault() : empêche le comportement par défaut de l'événement
+            (ex.: empêche le lien de suivre son URL),
+          </li>
+          <li>
+            stopPropagation() : empêche la propagation de l'événement aux
+            parents de l'élément cible,
+          </li>
+          <li>
+            stopImmediatePropagation() : empêche la propagation de l'événement
+            aux parents de l'élément cible et empêche l'exécution d'autres
+            gestionnaires d'événements pour cet événement sur l'élément actuel.
+          </li>
+        </ul>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Voici un exemple de code JavaScript qui écoute l'événement keyup
+            pour détecter quand l'utilisateur a appuyé sur la touche « Entrée »
+            :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="RwvaOOm"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/RwvaOOm"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Code-6-Javascript-Events-1"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            On utilise ici la variable Event, qui est une instance de la classe
+            Event. Depuis cette variable, on peut récupérer la propriété « key
+            », soit la touche sur laquelle l’utilisateur a cliqué.
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>

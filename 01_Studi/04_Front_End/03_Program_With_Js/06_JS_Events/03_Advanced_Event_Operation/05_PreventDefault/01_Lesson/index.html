@@ -3,13 +3,118 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>PreventDefault</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>PreventDefault</h1>
+      <div>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Supposons que vous avez un formulaire d'inscription sur votre site
+            web. Le formulaire comprend des champs pour le nom, l'adresse e-mail
+            et le mot de passe, ainsi qu'un bouton « S'inscrire ».
+          </p>
+          <p>
+            Lorsqu'un utilisateur remplit le formulaire et clique sur le bouton
+            « S'inscrire », vous voulez effectuer une validation de formulaire
+            pour vous assurer que les données sont correctes avant de les
+            envoyer au serveur. Pour cela, vous pouvez écouter l'événement de
+            clic du bouton « S'inscrire » et empêcher le comportement par défaut
+            du formulaire en utilisant event.preventDefault().
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="BaMKemQ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/BaMKemQ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici, la fonction de gestionnaire d'événements sera appelée chaque
+            fois que l'utilisateur cliquera sur le bouton « S'inscrire ». La
+            méthode event.preventDefault() empêchera la soumission du formulaire
+            par défaut.
+          </p>
+          <p>
+            Vous pouvez alors ajouter du code pour valider les données du
+            formulaire. Par exemple, vous pouvez vérifier si l'adresse e-mail
+            est valide ou si le mot de passe est suffisamment sécurisé. Si les
+            données sont valides, vous pouvez les envoyer au serveur via une
+            requête AJAX.
+          </p>
+          <p>
+            Vous pouvez également utiliser des événements pour fournir des
+            commentaires en temps réel à l'utilisateur lorsqu'il remplit le
+            formulaire. Par exemple, vous pouvez ajouter un événement d'entrée
+            pour le champ d'adresse e-mail, qui déclenche une fonction de
+            gestionnaire d'événements pour vérifier si l'adresse e-mail est
+            valide ou non.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="LYqNoOK"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/LYqNoOK"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans ce cas, la fonction de gestionnaire d'événements sera appelée
+            chaque fois que l'utilisateur saisira quelque chose dans le champ
+            d'adresse e-mail. Vous pouvez alors ajouter du code pour vérifier si
+            l'adresse e-mail est valide ou non et fournir un feedback en temps
+            réel à l'utilisateur, par exemple en changeant la couleur du champ
+            en fonction de sa validité.
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>
