@@ -3,13 +3,423 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Installation de TypeScript</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Installation de TypeScript</h1>
+      <div>
+        <h2>Introduction</h2>
+        <p>
+          Dans cette partie, nous allons procéder à l’installation du
+          compilateur TypeScript. Pas de contrainte au niveau du système
+          d’exploitation, il est possible de l’utiliser sous Windows, Mac ou
+          Linux.
+        </p>
+        <p>
+          L’installation n’est pas obligatoire si vous souhaitez travailler sur
+          des runtimes (environnements d’exécutions) qui supportent nativement
+          TypeScript, comme Deno ou Bun, ou directement sur le Playgroud de
+          TypeScript
+          <a
+            href="https://www.typescriptlang.org/play"
+            target="_blank"
+            rel="alternate"
+            >typescriptlang</a
+          >.
+        </p>
+      </div>
+
+      <div>
+        <h2>Comment exécuter du code JavaScript ?</h2>
+        <p>
+          Avant de voir comment installer et compiler TypeScript, nous allons
+          d’abord voir comment exécuter du code JavaScript et où l’exécuter.
+        </p>
+        <p>
+          Le code JavaScript peut être exécuté dans différents types
+          d’environnements. On peut l'exécuter soit dans un navigateur comme
+          Chrome, Brave, le playground de TypeScript ou bien sur un runtime
+          comme Node.js.
+        </p>
+      </div>
+
+      <div>
+        <h2>Exécuter du code JavaScript sur un navigateur</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            En ce qui concerne le premier cas, c'est-à-dire les navigateurs, il
+            suffit de lancer votre navigateur, et de faire un clic droit sur le
+            navigateur, puis cliquer sur « Inspecter ». Vous pouvez également
+            utiliser le raccourci clavier en appuyant sur la touche « F12 ». Ces
+            étapes sont valables pour tous les navigateurs.
+          </p>
+          <p>
+            À première vue, nous avons beaucoup d’éléments - ce qui nous
+            intéresse, c’est uniquement la console. Cliquez donc sur console. La
+            console s’ouvre, nous pouvons tester l’exécution de notre code.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="rNPLYaP"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/rNPLYaP"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Introduction-et-installation-de-TypeScript-Code-5"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Nous voyons bien qu’il nous renvoie notre valeur, donc, notre code
+            fonctionne.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Exécuter du code JavaScript sur le Playground</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons voir comment l’exécuter sur le Playground de TypeScript.
+            Il suffit de cliquer sur le lien suivant :
+            <a
+              href="https://www.typescriptlang.org/play"
+              target="_blank"
+              rel="alternate"
+              >typescriptlang</a
+            >
+            pour se rendre sur le Playground, puis d’insérer notre code et de
+            cliquer sur « run ».
+          </p>
+          <p>
+            Notez que le Playground est principalement utilisé pour compiler du
+            code TypeScript en JavaScript, mais il sert aussi à exécuter du code
+            JavaScript.
+          </p>
+        </div>
+        <p>
+          Maintenant que nous avons vu comment exécuter notre code sur un
+          navigateur et un playground, voyons comment l’exécuter sur un runtime
+          ou un environnement d’exécution. Nous allons utiliser Node.js comme
+          runtime.
+        </p>
+      </div>
+
+      <div>
+        <h2>Qu'est-ce que Node.js ?</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Node.js est un runtime ou un environnement d’exécution JavaScript
+            côté serveur, qui permet d'exécuter du code JavaScript en dehors
+            d'un navigateur. Node.js nous permet de développer des applications
+            côté serveur, des outils en ligne de commande, des scripts
+            automatisés et bien plus encore.
+          </p>
+          <p>
+            Il comprend une bibliothèque de modules intégrée, ce qui facilite le
+            développement d'applications en offrant un accès à une grande
+            variété de fonctionnalités. Il est souvent utilisé pour la création
+            de serveurs web, mais il peut également être utilisé pour créer des
+            applications de bureau, des applications mobiles, des jeux, etc.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Exécuter du code JavaScript sur un runtime</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Pour pouvoir utiliser Node.js, nous allons devoir l’installer. Pour
+            l’installer, il suffit de se rendre sur le site officiel de Node.js
+            et de télécharger la version la plus récente, idéalement de
+            télécharger la version stable, puis exécuter.
+          </p>
+          <p>
+            Mais avant, vérifions que Node.js s’est installé sur votre
+            ordinateur en tapant la commande suivante : node -v. Cette commande
+            nous donne aussi la version de Node.js installée. Une fois Node.js
+            installé, nous pouvons procéder à l’exécution de notre code.
+          </p>
+          <p>Prenons le même code que tout à l’heure pour le test :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="BaMzmKw"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/BaMzmKw"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>Si le code s’exécute, cela veut dire qu’il n’y a aucune erreur.</p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Comment installer le compilateur TypeScript ?</h2>
+        <p>
+          Maintenant que nous avons vu comment exécuter du JavaScript, nous
+          allons voir comment exécuter du TypeScript. Si nous essayons d’emblée
+          de compiler le code TypeScript, cela ne fonctionnera pas, car nous
+          devons d'abord installer un compilateur Typescript.
+        </p>
+      </div>
+
+      <div>
+        <h2>Qu'est-ce qu'un compilateur TypeScript ?</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Un compilateur TypeScript est un package NPM qui prend du code écrit
+            en TypeScript et le traduit en code JavaScript (compréhensible par
+            un navigateur web ou par un environnement d'exécution JavaScript
+            comme Node.js). Il offre également des fonctionnalités avancées
+            telles que la génération automatique de fichiers, la transformation
+            de code basée sur des décorateurs, des options de configuration
+            flexibles et bien plus encore.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Qu'est-ce qu'un NPM ?</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            NPM signifie Node Package Manager ou gestionnaire de packages pour
+            node, c’est une collection gigantesque de packages JavaScript
+            (environ 2 millions de packages).
+          </p>
+          <p>
+            Il a au moins 17 millions d’utilisateurs à travers le monde, ce qui
+            n’est pas négligeable. Son but, d’après ses fondateurs, est de
+            rendre le développement avec JavaScript plus rapide et plus sûr.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Installer NPM</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Voyons comment installer ce gestionnaire de packages NPM. Si nous
+            nous rendons sur le site de NPM
+            <a
+              href="https://docs.npmjs.com/downloading-and-installing-node-js-and-npm"
+              target="_blank"
+              rel="alternate"
+              >npmjs</a
+            >
+            Docs, il est écrit qu’il faut d’abord installer Node.js, et NPM est
+            intégré lors de l’installation.
+          </p>
+          <p>
+            Comme nous avons déjà installé Node.js, NPM devrait également être
+            installé. Node.js installe automatiquement NPM car il s'agit d'un
+            package manager qui est souvent utilisé en conjonction avec Node.js
+            pour installer des modules et des packages tiers. Pour vérifier si
+            NPM s’est installé ou non, nous entrons la commande suivante dans un
+            terminal : npm -v.
+          </p>
+          <p>
+            Nous pouvons voir que NPM a bien été installé, car la version
+            installée est affichée dans le terminal. Si NPM n’est pas installé,
+            il est possible de l’installer en écrivant la commande suivante dans
+            le terminal : npm install -g npm. Il est recommandé de le faire même
+            s’il est déjà installé pour éviter de causer des bugs d’autorisation
+            d’accès lors de l’utilisation des packages NPM.
+          </p>
+          <p>
+            Maintenant que nous avons installé NPM, nous pouvons désormais
+            installer le package de compilation de TypeScript. Pour ce faire, il
+            suffit d’exécuter la commande suivante : npm install -g typescript
+            (-g signifie Global). Notez bien que nous avons installé TypeScript
+            en global, mais nous pouvons très bien l’installer en local. Pour
+            l’installer en local, il suffit de taper cette commande dans le
+            terminal : npm install typescript --save-dev. Il est parfois
+            préférable de l’installer en local lorsque nous avons plusieurs
+            projets avec des versions différentes.
+          </p>
+          <p>
+            Pour ce qui nous concerne, nous avons plusieurs projets, mais avec
+            les mêmes versions. De ce fait, il est plus simple d’installer en
+            global, d’autant plus que nous passons d’un projet à un autre.
+          </p>
+          <p>
+            Pour tester si le compilateur TypeScript a bien été installé, nous
+            allons exécuter la commande suivante : tsc -v, cela permet également
+            de voir la version (-v pour version).
+          </p>
+          <p>
+            Maintenant que tout est bien installé, nous pouvons faire la
+            compilation de notre code TypeScript. Pour ce faire, il suffit de
+            taper notre code TypeScript dans l’IDE ou l’éditeur de texte, et de
+            saisir cette commande : tsc sur le terminal, suivie du nom de
+            fichier TypeScript que nous souhaitons compiler. Exemple : tsc
+            test1.ts (le .ts n’est pas obligatoire)
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="ZEwOavN"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/ZEwOavN"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            Nous sommes obligé d’apprendre à exécuter du code JavaScript pour
+            coder avec Typescript, car nous devons compiler le code Typescript
+            vers JavaScript pour pouvoir l’exécuter sur un navigateur, ou sur un
+            environnement d’exécution comme Node.js. Cependant, si nous
+            utilisons un environnement d’exécution qui supporte nativement
+            TypeScript (comme Deno, Bun, etc.), il n’y a plus besoin de suivre
+            ces étapes. De plus, si vous travaillez sur des frameworks frontend
+            qui supportent nativement Typescript comme Angular, il n’y aura pas
+            besoin de compiler.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Compilation de projet TypeScript</h2>
+        <p>
+          Nous avons vu comment exécuter du code JavaScript, ensuite nous avons
+          installé le compilateur TypeScript, puis nous avons compilé du code
+          TypeScript. Nous allons maintenant compiler un projet TypeScript.
+        </p>
+      </div>
+
+      <div>
+        <h2>Comment compiler un projet TypeScript ?</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Compiler un projet TypeScript en projet JavaScript, c’est comme
+            compiler un fichier ou un code TypeScript en JavaScript, sauf que
+            cette fois-ci, nous compilons plusieurs fichiers en même temps. Pour
+            ce faire, il faut créer un fichier tsconfig.json qui permet de
+            spécifier les différentes options pour dire au compilateur comment
+            compiler le projet.
+          </p>
+          <p>
+            Voici un exemple de fichier tsconfig.json qui permet de spécifier
+            les options de compilation :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="KKJMyLL"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/KKJMyLL"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Pour compiler le projet, il suffit de taper la commande tsc dans le
+            terminal, le dossier contenant les fichiers JavaScript sera généré.
+          </p>
+          <p>
+            Notez bien qu’on a encore beaucoup d'options de configuration, mais
+            ici, nous nous sommes limité au plus simple.
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>

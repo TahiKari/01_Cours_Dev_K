@@ -3,13 +3,518 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Historique</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Historique</h1>
+      <div>
+        <h2>Qu'est-ce que TypeScript ?</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            TypeScript est un superset ou un sur-ensemble de JavaScript, ce qui
+            veut dire que JavaScript est un sous-ensemble de TypeScript. Pour
+            être plus précis, TypeScript est comme le JavaScript, sauf qu’il
+            possède un typage en plus. On peut aussi le définir comme une
+            version améliorée de JavaScript.
+          </p>
+          <p>
+            Il a été élu
+            <a
+              href="https://insights.stackoverflow.com/survey/2020#most-loved-dreaded-and-wanted"
+              target="_blank"
+              rel="alternate"
+              >The 2nd most loved programming language sur StackOverflow
+              developer survey en 2020</a
+            >, et
+            <a
+              href="https://survey.stackoverflow.co/2022/#technology-most-loved-dreaded-and-wanted"
+              target="_blank"
+              rel="alternate"
+              >troisième des Most Wanted Programming Language en 2022</a
+            >.
+          </p>
+          <p>
+            TypeScript a été développé en 2010 par Microsoft, afin de pallier
+            les limitations qu'avait JavaScript lors du développement de projets
+            d'envergure. Il a d’abord été utilisé pour des projets internes à
+            Microsoft avant d’être disponible mondialement en 2012. Depuis, de
+            nouvelles versions sont sorties. En 2013 sort TypeScript 0.9,
+            TypeScript 1.0 a été publié en 2014, puis, TypeScript 2.0 en 2016,
+            TypeScript 3.0 a été publié en 2018, la version 4 est sortie en
+            février 2021. La version la plus récente est la version 5 sortie en
+            mars 2023.
+          </p>
+        </div>
+        <p>
+          Ceci est un bref historique pour vous remettre dans le contexte.
+          Maintenant, nous allons comprendre l’intérêt d’apprendre ce langage.
+          Qu'a-t-il de si particulier ? JavaScript n’est-il pas mieux ?
+        </p>
+      </div>
+      <div>
+        <h2>Pourquoi apprendre TypeScript ?</h2>
+        <p>
+          JavaScript est de loin le langage le plus utilisé si on en croit les
+          statistiques. Il possède une communauté très forte, et existe depuis
+          plusieurs années que ce soit sur les navigateurs ou encore sur les
+          serveurs. Alors pourquoi utiliser TypeScript ?
+        </p>
+        <p>
+          En effet, JavaScript a beaucoup de mérites, cependant, il a aussi
+          beaucoup de lacunes, notamment pour le développement de grands
+          projets.
+        </p>
+        <p>
+          Pourquoi les grands projets ? Les grands projets demandent plus de
+          rigueur, et ça, c'est le talon d’Achille de JavaScript. De plus, pour
+          la cohésion des équipes qui travaillent sur le projet, documenter le
+          code tout au long de développement n’est pas automatique sur
+          JavaScript. De plus, JavaScript est trop permissif et difficile à
+          déboguer. Il est tout de même important de rappeler que JavaScript
+          reste le langage de programmation le plus couramment utilisé pour le
+          développement d’application. De plus, il est nécessaire de compiler
+          les applications développées en TypeScript vers JavaScript pour
+          pouvoir les exécuter, ce qui rend ce langage incontournable.
+        </p>
+        <p>Comment TypeScript peut-il pallier ces lacunes ?</p>
+        <p>
+          TypeScript est considéré comme une version améliorée de JavaScript, ce
+          qui n’est pas faux, étant donné qu’il élimine les défauts cités
+          précédemment, tout en gardant ce qu’il y a de meilleur dans
+          JavaScript.
+        </p>
+        <p>
+          Voici une liste non exhaustive des
+          <strong>avantages</strong>avantages de TypeScript :
+        </p>
+        <ul>
+          <li>
+            Compatibilité parfaite avec JavaScript : il suffit de changer
+            l’extension .ts en .js pour avoir un fichier JavaScript, et
+            vice-versa.
+          </li>
+          <li>
+            TypeScript peut être transpilé en JavaScript : ce qui veut dire que
+            tout ce que JavaScript peut faire, TypeScript peut le faire aussi.
+          </li>
+          <li>
+            Toutes les librairies JavaScript peuvent être utilisées pour
+            TypeScript.
+          </li>
+          <li>
+            Il est possible de créer une librairie avec TypeScript et de
+            l'exporter pour l’utiliser avec JavaScript.
+          </li>
+          <li>
+            TypeScript peut aussi être flexible comme son homologue JavaScript :
+            en ajoutant un typage dynamique.
+          </li>
+          <li>
+            Couche de sécurité avec le typage : à l’instar de Java et C++,
+            TypeScript est un langage fortement typé, ce qui lui fait gagner en
+            popularité auprès de la communauté Java et C++.
+          </li>
+          <li>
+            TypeScript est un langage multi-paradigmes (nous pouvons faire de la
+            programmation fonctionnelle, comme de la programmation orientée
+            objet).
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>TypeScript Vs JavaScript</h2>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Comme mentionné précédemment, connaître JavaScript n’est pas une
+            obligation, cependant, avoir des bases en JavaScript vous sera d’une
+            grande utilité. Si nous regardons bien le code ci-dessous, nous
+            comprendrons pourquoi.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="wvNWrpo"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/wvNWrpo"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Introduction-et-installation-de-TypeScript-Code-1"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="JjxKrMx"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/JjxKrMx"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans le cas de déclaration d’objets comme ci-dessus, il n’y a aucune
+            différence entre TypeScript et JavaScript, mis à part le
+            point-virgule. Dans la déclaration des variables, c'est aussi
+            identique. Voir l’exemple ci-dessous :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="ZEwOXrx"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/ZEwOXrx"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="abXZLqQ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/abXZLqQ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            JavaScript est un langage <strong>dynamique</strong>, ce qui
+            signifie qu'il est très souple dans la façon dont il vous permet de
+            définir et d'utiliser les variables. Dans l’exemple ci-dessous, nous
+            avons déclaré 2 variables sans assigner de type comme sur
+            TypeScript.
+          </p>
+          <p>
+            Ce qui veut dire que vous pouvez décider de créer une variable et de
+            lui affecter une chaîne de caractères, puis de réaffecter à cette
+            même variable un nombre, sans avoir de message d’erreur. Voir
+            l’exemple ci-dessous.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="KKJMXoX"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/KKJMXoX"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Introduction-et-installation-de-TypeScript-Code-3"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Certains développeurs diront que ceci est plutôt un avantage, mais
+            cela peut causer beaucoup de confusion. Et pour être plus précis, la
+            nature dynamique de JavaScript nous permet de faire virtuellement
+            tout ce qu’on veut, et donc de faire toutes les erreurs possibles et
+            imaginables aussi.
+          </p>
+          <p>
+            Si nous prenons un autre exemple, il y a au moins une erreur par
+            ligne de code dans l’exemple ci-dessous, et les erreurs
+            n'apparaissent qu’après exécution.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="vYbKejE"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/vYbKejE"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Introduction-et-installation-de-TypeScript-Code-4"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Si nous laissons ce code tel quel dans notre application, il risque
+            de causer quantité de problèmes sans pouvoir déterminer la source
+            des erreurs. En d'autres termes, notre application ne fonctionnera
+            pas, et nous n’aurons pas la moindre idée de l’origine de l’erreur.
+            Ce genre de problème peut faire perdre un temps considérable.
+          </p>
+          <p>
+            Nous parlons de JavaScript pour justement comprendre les avantages
+            de TypeScript. TypeScript, par exemple, ne laissera pas passer ce
+            genre d’erreurs. Comme nous le voyons sur la capture d’écran
+            ci-dessous :
+          </p>
+          <img
+            src="02_Img/introduct-instal-typescrip-im1_1.png"
+            alt="Image introduct-instal-typescrip-im1_1"
+          />
+          <p>
+            Comment ? En fait, TypeScript ajoute un typage statique fort, ce qui
+            fait de lui un langage fortement typé, contrairement à JavaScript
+            qui est un langage faiblement typé, voire non typé. Cela lui permet
+            de vérifier le code au moment de la compilation et non pas à
+            l’exécution.
+          </p>
+        </div>
+      </div>
+      <div>
+        <h2>Les avantages et les inconvénients</h2>
+        <p>
+          Afin de mettre au clair les avantages ainsi que les inconvénients de
+          TypeScript et JavaScript, voici une liste de leurs quelques atouts et
+          limitations :
+        </p>
+        <p><strong>Avantages :</strong></p>
+        <table>
+          <thead>
+            <tr>
+              <th>TypeScript</th>
+              <th>JavaScript</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <ul>
+                  <li>
+                    Détection des erreurs de compilation : TypeScript est un
+                    langage typé, ce qui lui permet de détecter les erreurs
+                    avant l’exécution.
+                  </li>
+                  <li>
+                    Il améliore la maintenabilité et la lisibilité du code (un
+                    atout majeur pour les grands projets).
+                  </li>
+                  <li>
+                    Il intègre la programmation orientée objet : il prend en
+                    charge les concepts tels que les interfaces, l'héritage, les
+                    classes, etc.
+                  </li>
+                  <li>
+                    Il peut être utilisé pour le côté serveur et le côté client.
+                  </li>
+                  <li>
+                    Il prend en charge aussi bien le typage statique que le
+                    typage dynamique (avec type any).
+                  </li>
+                  <li>Il peut utiliser les Bibliothèques de JavaScript.</li>
+                  <li>Débogage plus facile.</li>
+                  <li>Prise en charge par les IDE les plus populaires.</li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    Aucune installation n’est nécessaire : pas besoin
+                    d'installer quoi que ce soit, on peut coder et tester
+                    directement sur la console du navigateur.
+                  </li>
+                  <li>
+                    Il convient aux apprentis (petites applications, facile à
+                    tester, etc.).
+                  </li>
+                  <li>
+                    Il peut être utilisé pour le côté client et le côté serveur
+                    (avec node.js).
+                  </li>
+                  <li>Facile à utiliser pour le côté client.</li>
+                  <li>Exécution rapide (compilation non requise).</li>
+                  <li>Offre une flexibilité avec le typage dynamique.</li>
+                  <li>Syntaxe simple.</li>
+                  <li>Fonctionne sur tous les navigateurs.</li>
+                  <li>
+                    Il peut être utilisé pour le côté serveur et côté client.
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p><strong>Inconvénients :</strong></p>
+        <table>
+          <thead>
+            <tr>
+              <th>TypeScript</th>
+              <th>JavaScript</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <ul>
+                  <li>Il nécessite d’être installé.</li>
+                  <li>
+                    Les fichiers TypeScript(.ts) doivent être convertis
+                    (transpilés) en fichiers JavaScript(.js) avant exécution.
+                  </li>
+                  <li>
+                    Il met plus de temps pour s'exécuter à cause de la
+                    compilation.
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>Les erreurs ne sont détectées qu’après exécution.</li>
+                  <li>
+                    Trop permissif : les erreurs ne sont pas détectées, même
+                    après exécution.
+                  </li>
+                  <li>Ne convient qu’aux petits projets.</li>
+                  <li>Difficile à déboguer.</li>
+                  <li>Complexe pour le côté serveur.</li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          Notez bien que les inconvénients de TypeScript n’ont pas vraiment
+          d’impact sur la qualité du code, nous avons juste une étape en plus à
+          faire, qui est la <strong>compilation</strong>.
+        </p>
+        <p>
+          Cependant, si nous travaillons sur un autre runtime que Node.js, comme
+          Deno ou Bun, par exemple, plus besoin de faire une compilation pour
+          exécuter notre code ; ces derniers supportent nativement TypeScript.
+          Plus loin dans le cours, nous allons voir ensemble les runtimes Deno
+          et Node.js plus en détail.
+        </p>
+        <p>
+          De plus, beaucoup de frameworks frontend sont développés avec
+          TypeScript comme Angular, Vue, Nest, etc. Nous avons aussi plusieurs
+          runtimes qui ont émergé, qui support nativement TypeScript, tels que
+          Bun, Deno, etc.
+        </p>
+      </div>
     </div>
   </body>
 </html>

@@ -1,0 +1,19 @@
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+table {
+  width: 60%;
+}
+
+table, th, td {
+  border: 1px solid black;
+}
+
+th {
+  background-color: rgb(170, 175, 175);
+}
+
