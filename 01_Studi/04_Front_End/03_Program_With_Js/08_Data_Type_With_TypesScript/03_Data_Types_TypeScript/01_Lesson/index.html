@@ -3,13 +3,1022 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Les types de données en TypeScript</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Les types de données en TypeScript</h1>
+      <div>
+        <p>
+          En JavaScript, il existe principalement deux catégories de types, les
+          types primitifs et les types référence. TypeScript est un sur-ensemble
+          de JavaScript, donc, ces types sont aussi valables en TypeScript.
+        </p>
+        <p>
+          Les types de référence, également appelés types d’objet, sont des
+          types plus complexes qui représentent des valeurs composées ou des
+          objets. Les types de référence incluent des tableaux, des fonctions,
+          des objets littéraux et des instances de classe.
+        </p>
+        <p>
+          Les types primitifs sont des types de base qui représentent les
+          valeurs simples. Nous allons les voir plus en détail dans la suite du
+          cours.
+        </p>
+      </div>
+
+      <div>
+        <h2>Les types primitifs</h2>
+        <p>
+          Le typage primitif se réfère aux types de données de base disponibles
+          dans TypeScript, tels que les nombres, les chaînes de caractères, les
+          booléens, les symboles, null et undefined. Toutes les valeurs que nous
+          pouvons créer ou manipuler vont appartenir à l’un de ces six types de
+          base. Voici la liste de ces six types avec un exemple :
+        </p>
+        <ol>
+          <li>
+            Nombre “number” : représente les nombres (décimaux, entiers, etc.).
+            <p
+              class="codepen"
+              data-height="300"
+              data-default-tab="html,result"
+              data-slug-hash="jOdMWeE"
+              data-user="OpenSpirit"
+              style="
+                height: 300px;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid;
+                margin: 1em 0;
+                padding: 1em;
+              "
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/OpenSpirit/pen/jOdMWeE">
+                  Untitled</a
+                >
+                by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                  >@OpenSpirit</a
+                >) on <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+            <script
+              async
+              src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+            ></script>
+          </li>
+          <li>
+            Chaîne de caractère “string” : représente les chaînes de caractère
+            (valeurs de texte).
+            <p
+              class="codepen"
+              data-height="300"
+              data-default-tab="html,result"
+              data-slug-hash="eYxdJPB"
+              data-user="OpenSpirit"
+              style="
+                height: 300px;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid;
+                margin: 1em 0;
+                padding: 1em;
+              "
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/OpenSpirit/pen/eYxdJPB">
+                  Untitled</a
+                >
+                by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                  >@OpenSpirit</a
+                >) on <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+            <script
+              async
+              src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+            ></script>
+          </li>
+          <li>
+            Booléen “boolean” : représente les valeurs booléennes true ou false.
+            <p
+              class="codepen"
+              data-height="300"
+              data-default-tab="html,result"
+              data-slug-hash="VwgKeEd"
+              data-user="OpenSpirit"
+              style="
+                height: 300px;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid;
+                margin: 1em 0;
+                padding: 1em;
+              "
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/OpenSpirit/pen/VwgKeEd">
+                  Untitled</a
+                >
+                by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                  >@OpenSpirit</a
+                >) on <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+            <script
+              async
+              src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+            ></script>
+          </li>
+          <li>
+            Nul/vide “null” : représente l’absence de valeur ou la nullité.
+            <p
+              class="codepen"
+              data-height="300"
+              data-default-tab="html,result"
+              data-slug-hash="vYbXLVz"
+              data-user="OpenSpirit"
+              style="
+                height: 300px;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid;
+                margin: 1em 0;
+                padding: 1em;
+              "
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/OpenSpirit/pen/vYbXLVz">
+                  Untitled</a
+                >
+                by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                  >@OpenSpirit</a
+                >) on <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+            <script
+              async
+              src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+            ></script>
+          </li>
+          <li>
+            Indéfini “undefined” : représente une valeur indéfinie (n’a pas de
+            valeur) ou une variable qui n’a pas été initialisée.
+            <p
+              class="codepen"
+              data-height="300"
+              data-default-tab="html,result"
+              data-slug-hash="KKJgVrd"
+              data-user="OpenSpirit"
+              style="
+                height: 300px;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid;
+                margin: 1em 0;
+                padding: 1em;
+              "
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/OpenSpirit/pen/KKJgVrd">
+                  Untitled</a
+                >
+                by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                  >@OpenSpirit</a
+                >) on <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+            <script
+              async
+              src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+            ></script>
+          </li>
+          <li>
+            Symbole “symbol” : représente un type de données unique et immuable
+            qui peut être utilisé comme clé ou pour représenter des identifiants
+            pour les propriétés dans les objets.
+            <p
+              class="codepen"
+              data-height="300"
+              data-default-tab="html,result"
+              data-slug-hash="XWOjXyM"
+              data-user="OpenSpirit"
+              style="
+                height: 300px;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid;
+                margin: 1em 0;
+                padding: 1em;
+              "
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/OpenSpirit/pen/XWOjXyM">
+                  Untitled</a
+                >
+                by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                  >@OpenSpirit</a
+                >) on <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+            <script
+              async
+              src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+            ></script>
+          </li>
+        </ol>
+        <p>
+          Il est important de bien distinguer ces différents types de données,
+          car elles sont manipulées différemment en fonction de leur type. Par
+          exemple, nous ne pouvons pas effectuer des opérations arithmétiques
+          avec des chaînes de caractères, ou utiliser des méthodes de tableau
+          avec un objet, etc.
+        </p>
+      </div>
+
+      <div>
+        <h2>Le type de données number</h2>
+        <p>
+          En TypeScript, le type de données number est utilisé pour représenter
+          les nombres, qu’ils soient entiers ou décimaux. Il peut être utilisé
+          pour stocker des nombres tels que - 12, 1.618, 5_000, etc. Noteze que
+          le “_ “ est utilisé pour rendre les longs chiffres plus lisibles
+          (exemple : 5_000_000=5000000).
+        </p>
+        <p>
+          Les opérations mathématiques standards telles que l’addition, la
+          soustraction, la multiplication et la division peuvent être effectuées
+          sur les variables de type number. En outre, TypeScript prend en charge
+          d’autres fonctionnalités mathématiques telles que les fonctions
+          trigonométriques, les logarithmes et les fonctions exponentielles.
+        </p>
+        <p>Voici un exemple d’utilisation du type de données number :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="WNPGrLN"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/WNPGrLN"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, nous avons déclaré trois variables avec le type
+          number. La variable altitude est initialisée à 300, la variable
+          température est initialisée à 27.5, et la variable totale est
+          initialisée à la somme de température et altitude. Comme altitude,
+          température et totale sont des variables de type number, TypeScript
+          effectuera l’opération après une vérification de type.
+        </p>
+        <p>
+          TypeScript vérifie le type de chaque variable avant que le code ne
+          soit exécuté, ce qui permet d’identifier et de corriger les erreurs de
+          typage avant qu’elles ne se produisent. Cependant, il ne prend pas en
+          compte la nature des variables ou leur signification dans le contexte
+          de l’application.
+        </p>
+        <p>
+          Dans l’exemple donné, TypeScript vérifie que toutes les variables sont
+          de type number et effectue l’opération de somme entre température et
+          altitude, sans considérer si cette opération a un sens dans le
+          contexte de l’application. Par exemple, si altitude représente la
+          profondeur sous-marine et température représente la température de
+          l’air, il est peu probable que la somme ait une signification utile
+          dans ce contexte.
+        </p>
+      </div>
+
+      <div>
+        <h2>Le type de données string</h2>
+        <p>
+          En TypeScript, le type de données "string" représente les chaînes de
+          caractères, c’est-à-dire toutes sortes de séquences de caractères. Les
+          chaînes de caractères sont utilisées pour stocker et manipuler du
+          texte dans une application. Elles sont couramment utilisées pour
+          stocker des informations, telles que des noms d’utilisateur, des
+          adresses e-mail, des numéros de téléphone, des messages, des
+          descriptions ou tout autre texte. Les chaînes de caractères sont
+          définies en entourant le texte de guillemets doubles (" ") ou de
+          guillemets simples (' ').
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="JjxRGxM"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/JjxRGxM"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, nom est initialisé avec une chaîne de caractères
+          'Victor Hugo', téléphone est initialisé avec une autre chaîne de
+          caractères “+3366666666”, et titre est initialisé encore avec une
+          autre chaîne de caractères "Quatre-vingt-treize".
+        </p>
+      </div>
+
+      <div>
+        <h2>Le type de données boolean</h2>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="mdvrVva"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/mdvrVva"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, "estActif" est initialisée à true et "estConnecte"
+          est initialisée à false. Les valeurs booléennes sont souvent utilisées
+          dans les expressions conditionnelles pour décider quel code doit être
+          exécuté, ou représenter l’état d’un utilisateur, d’un système, d’une
+          fonction, etc.
+        </p>
+      </div>
+
+      <div>
+        <h2>Le type de données null</h2>
+        <p>
+          En TypeScript, "null" représente l’absence de valeur ou la nullité. Il
+          s’agit d’un type de données qui indique explicitement qu’une variable
+          n’a pas de valeur définie.
+        </p>
+        <p>
+          Par exemple, si nous déclarons une variable en TypeScript et ne lui
+          affectons pas de valeur, sa valeur par défaut sera "undefined".
+          Cependant, si nous affectons explicitement la valeur "null" à une
+          variable, cela signifie que nous l’avons intentionnellement définie
+          comme n’ayant pas de valeur.
+        </p>
+        <p>
+          Voici un exemple de déclaration de variable en TypeScript avec une
+          valeur null :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="NWoRxmW"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/NWoRxmW"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, la variable "variableNulle" est déclarée comme ayant
+          le type "null", et sa valeur est explicitement définie comme "null".
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>Voyons un exemple plus concret.</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="QWYKyRb"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/QWYKyRb"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Types-de-donnees-avec-TypeScript-Code-8#index.ts"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Dans cet exemple, nous avons une variable de température qui peut
+            contenir soit à un nombre (la température en degrés Celsius), soit à
+            la valeur null (si la température n’est pas disponible). Nous avons
+            également une fonction "getTemperature" qui retourne la température
+            ou null si elle n’est pas disponible.
+          </p>
+          <p>
+            Dans la suite du code, nous appelons la fonction "getTemperature" et
+            assignons sa valeur de retour à la variable de température. Nous
+            vérifions ensuite si la température n’est pas nulle avant de
+            l’afficher. Si la température est nulle, nous affichons un message
+            indiquant que la température n’est pas disponible.
+          </p>
+          <p>
+            Cet exemple montre comment utiliser "null" en TypeScript pour
+            représenter l’absence de valeur ou la nullité, et comment vérifier
+            si une variable est nulle avant de l’utiliser pour éviter des
+            erreurs.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Le type de données undefined</h2>
+        <p>
+          En TypeScript, "undefined" est une valeur qui représente une variable
+          qui n’a pas été initialisée ou qui n’a pas de valeur définie.
+        </p>
+        <p>
+          Lorsqu’une variable est déclarée, mais non initialisée, sa valeur est
+          "undefined" par défaut. Par exemple :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="MWLjywJ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/MWLjywJ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          De même, si une fonction ne retourne pas explicitement de valeur, sa
+          valeur de retour sera "undefined". Par exemple :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="RwvGaPd"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/RwvGaPd"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Il est important de vérifier si une variable est undefined avant de
+          l’utiliser pour éviter des erreurs. Voici un exemple de code qui
+          montre comment vérifier si une variable est undefined :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="eYxdZpR"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/eYxdZpR"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a
+          href="https://replit.com/@javascript-studi/Types-de-donnees-avec-TypeScript-Code-9#index.ts"
+          target="_blank"
+          rel="alternate"
+          >Lien Replit</a
+        >
+        <p>
+          Dans cet exemple, nous vérifions si la variable "myVariable" n’est pas
+          undefined avant de l’utiliser. Si elle n’est pas undefined, nous
+          affichons sa valeur. Sinon, nous affichons un message indiquant que la
+          variable n’a pas de valeur définie.
+        </p>
+        <p>
+          Notez bien que "null" est différent de "undefined" en TypeScript.
+          "undefined" indique qu’une variable n’a pas été initialisée ou n’a pas
+          de valeur définie, tandis que "null" indique explicitement qu’une
+          variable n’a pas de valeur.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Voici un exemple concret d’utilisation de "undefined" en TypeScript
+            :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="QWYKNNN"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/QWYKNNN"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Types-de-donnees-avec-TypeScript-Code-10#index.ts"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Dans cet exemple, nous avons une variable de température qui peut
+            contenir soit un nombre (la température en degrés Celsius), soit la
+            valeur undefined (si la température n’est pas disponible). Nous
+            avons également une fonction "getTemperature" qui retourne la
+            température ou undefined si elle n’est pas disponible.
+          </p>
+          <p>
+            Dans la suite du code, nous appelons la fonction "getTemperature" et
+            assignons sa valeur de retour à la variable de température. Nous
+            vérifions ensuite si la température n’est pas undefined avant de
+            l’afficher. Si la température est undefined, nous affichons un
+            message indiquant que la température n’est pas disponible.
+          </p>
+          <p>
+            Cet exemple montre comment utiliser "undefined" en TypeScript pour
+            représenter une variable qui n’a pas été initialisée ou qui n’a pas
+            de valeur définie, et comment vérifier si une variable est undefined
+            avant de l’utiliser pour éviter des erreurs.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Le type de données symbol</h2>
+        <p>
+          En TypeScript, un symbole est un type de données primitif, unique et
+          immuable qui peut être utilisé comme une clé pour les propriétés dans
+          les objets. Les symboles sont créés en appelant la fonction globale
+          Symbol() avec une chaîne de caractères en option comme description.
+          Chaque symbole créé est unique, même si sa description est identique à
+          celle d’un autre symbole.
+        </p>
+        <p>
+          Les symboles sont souvent utilisés pour créer des propriétés privées
+          dans les objets ou pour étiqueter des types, car ils ne peuvent pas
+          être accidentellement écrasés ou modifiés par d’autres parties du
+          code. Cela permet de fournir des informations supplémentaires à
+          l’analyseur statique de TypeScript.
+        </p>
+        <p>Voici quelques exemples d’utilisation de symboles en JavaScript :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="VwgKaKq"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/VwgKaKq"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a
+          href="https://replit.com/@javascript-studi/Types-de-donnees-avec-TypeScript-Code-11#index.ts"
+          target="_blank"
+          rel="alternate"
+          >Lien Replit</a
+        >
+        <p>
+          En utilisant des symboles pour étiqueter les types, nous pouvons
+          fournir des informations supplémentaires à l’analyseur statique de
+          TypeScript pour aider à détecter les erreurs potentielles dès la phase
+          de compilation.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Voici un exemple d’utilisation de symboles en TypeScript. Supposons
+            que nous ayons une application de création de formulaires
+            dynamiques. Nous avons plusieurs types de champs de formulaire, tels
+            que "texte", "nombre", "date", etc. Nous voulons étiqueter chaque
+            champ de formulaire avec un symbole représentant son type, afin de
+            pouvoir valider les entrées de formulaire lors de la soumission.
+            Voici comment nous pouvons le faire :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="bGzwpop"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/bGzwpop"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Types-de-donnees-avec-TypeScript-Code-12#index.ts"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Dans cet exemple, nous avons créé un symbole fieldTypeSymbol pour
+            représenter le type de champ de formulaire, puis nous l’avons
+            utilisé pour étiqueter chaque champ de formulaire avec son type
+            correspondant. Nous avons ensuite créé une fonction
+            validateFormField qui utilise le symbole pour valider chaque champ
+            de formulaire en fonction de son type.
+          </p>
+          <p>
+            L’utilisation de symboles nous permet de créer une interface plus
+            robuste et plus sûre pour notre application de formulaire dynamique,
+            car les types de champ de formulaire ne peuvent pas être facilement
+            modifiés ou falsifiés par d’autres parties du code.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les types spécieux</h2>
+        <p>
+          En plus des types primitifs et des types référence, TypeScript offre
+          également quelques types spéciaux qui ont des utilisations
+          particulières. Voici quelques-uns des types spéciaux les plus
+          couramment utilisés en TypeScript :
+        </p>
+        <ul>
+          <li>
+            any : représente n’importe quel type et désactive la vérification de
+            type pour une variable, une fonction ou un objet.
+          </li>
+          <li>
+            unknown : représente un type de données inconnu. Contrairement à
+            any, il ne permet pas d’effectuer des opérations sur une variable de
+            type unknown sans d’abord vérifier le type de la valeur.
+          </li>
+          <li>
+            void : représente l’absence de valeur. Il est généralement utilisé
+            pour les fonctions qui ne retournent rien.
+          </li>
+          <li>
+            never : représente un type qui ne peut jamais se produire. Il est
+            souvent utilisé pour les fonctions qui lancent des erreurs ou qui
+            bouclent indéfiniment.
+          </li>
+        </ul>
+        <p>
+          Ces types spéciaux sont utiles dans certaines situations, mais ils
+          doivent être utilisés avec précaution pour éviter les erreurs de
+          typage.
+        </p>
+      </div>
+
+      <div>
+        <h2>Le type any</h2>
+        <p>
+          Le type any est une exception dans le système de typage de TypeScript,
+          car il permet à une variable d’avoir n’importe quel type de données,
+          comme dans JavaScript. Il est généralement utilisé lorsque le type
+          d’une valeur est inconnu, peut contenir une valeur de n’importe quel
+          type, ou complexe à décrire. Cependant, l’utilisation excessive du
+          type any peut entraîner une perte de sécurité de type, ce qui peut
+          rendre le code plus difficile à maintenir et à déboguer. Il est donc
+          recommandé d’utiliser le type any avec parcimonie et de privilégier
+          les types de données spécifiques chaque fois que possible.
+        </p>
+        <p>
+          Voici des exemples pour illustrer la différence entre un type primitif
+          et le type any en TypeScript :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="vYbXKNL"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/vYbXKNL"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a
+          href="https://replit.com/@javascript-studi/Types-de-donnees-avec-TypeScript-Code-13#index.ts"
+          target="_blank"
+          rel="alternate"
+          >Lien Replit</a
+        >
+        <p>
+          Dans cet exemple, la variable myNumber est déclarée comme étant de
+          type number, ce qui signifie qu’elle ne peut contenir que des nombres.
+          Si nous essayons d’assigner une chaîne de caractères à cette variable,
+          cela générera une erreur de compilation.
+        </p>
+        <p>
+          En revanche, la variable myAny est déclarée comme étant de type any,
+          ce qui signifie qu’elle peut contenir n’importe quel type de données.
+          Ainsi, nous pouvons assigner une chaîne de caractères à cette variable
+          sans générer d’erreur de compilation.
+        </p>
+        <p>
+          Cependant, le type any peut également causer des problèmes s’il est
+          utilisé de manière abusive, car il peut masquer des erreurs de type et
+          rendre le code moins sûr et plus difficile à comprendre.
+        </p>
+        <p>
+          Le type any se comporte comme du code JavaScript, voici un exemple
+          pour illustrer ça :
+        </p>
+        <a
+          href="https://replit.com/@javascript-studi/Types-de-donnees-avec-TypeScript-Code-14#index.ts"
+          target="_blank"
+          rel="alternate"
+          >Lien replit</a
+        >
+        <p>
+          Cette déclaration indique que la variable "myVariable" peut être de
+          n’importe quel type. Nous pouvons ensuite affecter n’importe quelle
+          valeur à cette variable, sans que TypeScript ne génère d’erreur de
+          type. Et si nous essayons d’appeler une méthode ou d’accéder à une
+          propriété qui n’existe pas sur l’objet stocké dans "myVariable",
+          TypeScript ne peut pas détecter cette erreur de type. Toutefois, si
+          nous n’affectons pas de type, mais une valeur, un message d’erreur
+          s’affichera comme dans l’exemple ci-dessus.
+        </p>
+      </div>
+
+      <div>
+        <h2>Le type unknown</h2>
+        <p>
+          En TypeScript, le type "unknown" est utilisé pour indiquer une
+          variable ou une expression dont le type est inconnu ou incertain, mais
+          avec une sémantique différente de celle de "any". Il peut être utilisé
+          pour les situations où le type de la valeur est inconnu, mais doit
+          être vérifié avant son utilisation, ce qui le rend plus sûr que any.
+        </p>
+        <p>
+          Donc, la principale différence entre "any" et "unknown" est que
+          "unknown" est un type sûr, alors que "any" est un type non sûr. En
+          d’autres termes, une variable de type "unknown" ne peut pas être
+          assignée à une variable de type plus spécifique sans une vérification
+          de type appropriée. Alors qu’une variable de type "any" peut être
+          assignée à n’importe quelle variable sans vérification de type. Si
+          nous utilisons le même exemple que tout à l’heure nous pouvons voir la
+          différence :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="QWYKEEQ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/QWYKEEQ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a
+          href="https://replit.com/@javascript-studi/Types-de-donnees-avec-TypeScript-Code-15#index.ts"
+          target="_blank"
+          rel="alternate"
+          >Lien replit</a
+        >
+        <p>
+          Si nous essayons d’appeler une méthode ou d’accéder à une propriété
+          qui n’existe pas sur l’objet stocké dans "myVariable", TypeScript
+          génère une erreur de type. Pour utiliser la variable de type "unknown"
+          de manière sûre, nous devons d’abord vérifier son type avant de
+          l’utiliser.
+        </p>
+      </div>
     </div>
   </body>
 </html>

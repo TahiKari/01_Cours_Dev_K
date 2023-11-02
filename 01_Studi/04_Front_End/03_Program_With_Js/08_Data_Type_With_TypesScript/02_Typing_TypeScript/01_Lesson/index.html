@@ -3,13 +3,503 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Le typage en TypeScript</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Le typage en TypeScript</h1>
+      <div>
+        <h2>Introduction</h2>
+        <p>
+          Avant d’aborder les différents types de données en TypeScript, il est
+          important de rappeler que TypeScript est un superset de JavaScript.
+          Par conséquent, les types de données que nous allons voir sont
+          également valables en JavaScript.
+        </p>
+        <p>
+          La différence est que TypeScript fournit une vérification de type lors
+          de la compilation, ce qui permet de détecter les erreurs de type à
+          l’avance et de rendre le code plus robuste.
+        </p>
+      </div>
+
+      <div>
+        <h2>Typage statique vs typage dynamique</h2>
+        <p>
+          Pour commencer, essayons de comprendre la différence entre le typage
+          statique et le typage dynamique. Mais avant de rentrer dans le vif du
+          sujet, rappelons les intérêts d’utiliser TypeScript, en plus de
+          JavaScript.
+        </p>
+        <p>
+          Mais avant cela, rappelons ce qu’est un typage. Le typage, c’est
+          l’association d’un type à une variable, une constante, une fonction,
+          etc. Il existe deux types de typage, le typage dynamique et le typage
+          statique.
+        </p>
+      </div>
+
+      <div>
+        <h2>Typage dynamique</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Le typage dynamique, aussi appelé typage faible, est un typage sur
+            lequel les types des variables sont déterminés à l’exécution du
+            programme. Qu’est-ce que cela veut dire ? Cela veut dire qu’une même
+            variable peut être de différents types au cours de l’exécution du
+            programme. Les langages de programmation qui utilisent un typage
+            dynamique sont par exemple : Python, Ruby, PHP et JavaScript.
+          </p>
+          <p>
+            Le typage dynamique est plus flexible et permet une écriture de code
+            plus rapide, mais peut rendre le code plus difficile à maintenir et
+            à déboguer en raison des erreurs de typage qui ne sont détectées
+            qu’à l’exécution.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Typage dynamique</h2>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Faisons la démonstration, déclarons une variable x, à laquelle est
+            attribuée une valeur y sans lui assigner de type. Maintenant, si
+            nous demandons au programme quel est le type de x, il le devinera.
+            De plus, en JavaScript, si nous assignons une autre valeur z d’un
+            autre type, il va lui assigner le nouveau type.
+          </p>
+          <p>
+            En effet, le type est deviné lors de l’exécution, ce qui fait que le
+            type des variables n’est pas fixe, il peut être modifié le long du
+            code.
+          </p>
+        </div>
+
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="poGEjwO"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/poGEjwO"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Types-de-donnees-avec-TypeScript-Code-1#index.html"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+        </div>
+      </div>
+
+      <div>
+        <h2>Définition du typage statique</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Le typage statique, en revanche, est un système de typage où les
+            types des variables sont déterminés lors de leur déclaration. Cela
+            signifie que les types des variables doivent être déclarés
+            explicitement par le développeur. Les langages de programmation qui
+            utilisent le typage statique sont par exemple : Java, C#, C++ et
+            TypeScript.
+          </p>
+          <p>
+            Le typage statique a l’avantage de permettre une détection plus
+            précoce des erreurs de typage, ce qui peut rendre le code plus
+            robuste et plus facile à maintenir. Cependant, il peut être plus
+            verbeux et plus contraignant pour le programmeur, car il doit
+            spécifier explicitement les types de données.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Typage statique</h2>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Dans l’exemple suivant, nous allons voir que le programme va
+            détecter une erreur dans le code.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="ExrgVEY"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/ExrgVEY"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Types-de-donnees-avec-TypeScript-Code-2#index.ts"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Comme nous le voyons dans l’exemple, ajouter le typage rend le code
+            plus lisible, plus stable, ce qui donne un code de meilleure
+            qualité.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Pourquoi le typage dynamique peut-il être un inconvénient ?</h2>
+        <p>
+          Le typage dynamique en JavaScript a certainement des avantages, en
+          effet, il assure la flexibilité et la simplicité, qui peuvent aider à
+          développer rapidement une application.
+        </p>
+        <p>
+          Cependant, le typage dynamique rend la détection des erreurs plus
+          difficile, car les erreurs sont détectées non pas à la compilation,
+          mais à l’exécution. Cela peut entraîner des problèmes de performances
+          et de sécurité, puisque les erreurs peuvent ne pas être détectées
+          avant que le code ne soit déployé et exécuté.
+        </p>
+        <p>
+          De plus, la complexité croissante des applications, plus
+          particulièrement côté client, rend difficile la gestion des grandes
+          bases de code qui utilisent le typage dynamique. Cela peut entraîner
+          des problèmes de maintenance et de débogage, car les développeurs
+          peuvent avoir du mal à comprendre comment les différents composants
+          interagissent et comment les erreurs sont propagées. Voici un exemple
+          simple d’une simple erreur qui peut causer des bugs.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="PoVGPeJ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/PoVGPeJ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a
+          href="https://replit.com/@javascript-studi/Types-de-donnees-avec-TypeScript-Code-3#index.html"
+          target="_blank"
+          rel="alternate"
+          >Lien Replit</a
+        >
+        <p>
+          Dans l’exemple ci-dessus, nous comprenons à quel point cela peut être
+          bloquant dans une application, de faire une erreur aussi simple, sans
+          qu’elle soit détectée. C’est une erreur qui semble simple, mais
+          difficile à déboguer.
+        </p>
+        <p>
+          Si nous reprenons le même exemple avec un langage typé statiquement
+          comme TypeScript, il détectera facilement ces erreurs, lors de la
+          compilation au lieu de l’exécution.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="oNmzjPL"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/oNmzjPL"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a
+          href="https://replit.com/@javascript-studi/Types-de-donnees-avec-TypeScript-Code-4#index.ts"
+          target="_blank"
+          rel="alternate"
+          >Lien Replit</a
+        >
+        <p>
+          L’exemple ci-dessus montre l’intérêt du typage, et comment cela peut
+          améliorer significativement la qualité de notre code, et nous faire
+          gagner en efficacité. C’est pourquoi il est plus pertinent d’adopter
+          le typage statique. Cela nous permet de pallier ces problèmes, tout en
+          restant compatibles avec les navigateurs web modernes.
+        </p>
+      </div>
+
+      <div>
+        <h2>Inconvénients de typage en JavaScript</h2>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            En JavaScript, lorsqu’une variable est déclarée et qu’une valeur lui
+            est assignée, le type de la variable est déterminé par le type de la
+            valeur assignée. C’est ce qu’on appelle l’inférence de type.
+          </p>
+          <p>
+            Par exemple, si nous déclarons une variable x et qu’on lui attribue
+            la valeur 10, JavaScript comprendra que la variable x est de type
+            nombre “number”, car la valeur assignée est un nombre.
+          </p>
+          <p>
+            Nous pouvons déterminer le type de la variable en tapant l’opérateur
+            “typeof”, ou bien en survolant la variable, l’IDE affiche les
+            informations concernant cette variable.
+          </p>
+          <p>Voici un exemple de code pour illustrer cela :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="gOqwaBX"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/gOqwaBX"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Types-de-donnees-avec-TypeScript-Code-5#script.js"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Cependant, il est important de noter que le typage est dynamique en
+            JavaScript, ce qui signifie que le type d’une variable peut être
+            modifié à tout moment. Par exemple, nous pouvons assigner une valeur
+            de type “string” à une variable qui avait auparavant une valeur de
+            type “number”. Cela peut causer des erreurs et des comportements
+            inattendus, c’est pourquoi il est important d’être conscient du type
+            de chaque variable que nous utilisons dans notre code. Nous pouvons
+            reprendre notre exemple pour illustrer cela.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="xxMEwQw"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/xxMEwQw"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Types-de-donnees-avec-TypeScript-Code-6#script.js"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            De plus, les objets en JavaScript ont un typage dynamique, ce qui
+            signifie que leur structure peut être modifiée à tout moment en
+            ajoutant ou en supprimant des propriétés. Cela peut rendre la
+            programmation en JavaScript plus flexible, mais cela peut également
+            rendre la détection d’erreurs plus difficile, car les propriétés
+            peuvent être ajoutées ou supprimées de manière inattendue.
+          </p>
+          <p>
+            Par exemple, nous pouvons créer un objet en JavaScript et ajouter
+            des propriétés à celui-ci à tout moment. Voici un exemple de code :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="PoVGPxE"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/PoVGPxE"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Types-de-donnees-avec-TypeScript-Code-7#script.js"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Dans l’exemple ci-dessus, nous créons un objet stagiaire qui
+            contient les propriétés nom et age. Nous pouvons accéder aux
+            propriétés de l’objet en utilisant la notation
+            nomObjet.nomPropriété. Par exemple, stagiaire.nom retourne la valeur
+            "Lola".
+          </p>
+          <p>
+            Ensuite, nous ajoutons une nouvelle propriété adresse à l’objet
+            stagiaire en utilisant la notation nomObjet.nomPropriété = valeur
+            (stagiaire.adresse = "12 Avenue de la Victoire";). Nous pouvons
+            ensuite accéder à cette nouvelle propriété en utilisant
+            stagiaire.adresse.
+          </p>
+          <p>
+            Ce qui peut rendre le code encore plus confus et la détection
+            d’erreurs plus difficile. Par exemple, si une propriété de l’objet
+            stagiaire est supprimée, des erreurs inattendues peuvent survenir
+            dans le reste du code.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Solution apportée par TypeScript</h2>
+        <p>
+          En TypeScript, contrairement à JavaScript, la vérification de type est
+          effectuée dès le début de développement, ce qui nous permet de
+          détecter les anomalies liées au typage de manière précoce dans le
+          processus de développement. Ce qui signifie que lorsque nous écrivons
+          notre code en TypeScript, le compilateur vérifie que les types de
+          données utilisés sont corrects et cohérents, et signale une erreur si
+          ce n’est pas le cas.
+        </p>
+        <p>
+          Cette vérification de type précoce peut aider à éviter les erreurs de
+          typage qui peuvent se produire à l’exécution et réduire
+          considérablement le nombre d’erreurs au fur et à mesure que nous
+          avançons dans le projet.
+        </p>
+        <p>
+          En plus de détecter les erreurs de typage, la vérification de type
+          précoce peut également aider à améliorer la lisibilité et la
+          maintenabilité du code en fournissant une documentation claire des
+          types de données utilisés dans le code. Cela peut faciliter la
+          collaboration entre les développeurs et permettre à d’autres personnes
+          de comprendre rapidement et facilement notre code.
+        </p>
+      </div>
     </div>
   </body>
 </html>
