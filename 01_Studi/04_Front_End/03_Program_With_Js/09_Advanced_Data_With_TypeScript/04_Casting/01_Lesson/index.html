@@ -3,13 +3,219 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Le casting</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Le casting</h1>
+      <div>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Le casting est une opération de conversion de type de données d'une
+            variable en un autre type de données. En TypeScript, comme dans de
+            nombreux autres langages de programmation, il est possible
+            d'effectuer des opérations de casting sur les variables.
+          </p>
+          <p>
+            Il existe 2 types de castings en TypeScript : le casting
+            <strong>implicite</strong>
+            et le casting <strong>explicite</strong>.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Le casting implicite</h2>
+        <p>
+          Le casting implicite est automatiquement effectué par le compilateur
+          lorsqu'il est possible de convertir implicitement un type en un autre
+          type. Par exemple, si vous ajoutez une chaîne de caractères à un
+          nombre, TypeScript convertit automatiquement le nombre en une chaîne
+          de caractères pour concaténer les 2.
+        </p>
+        <p>Exemple de casting implicite :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="GRzjzBK"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/GRzjzBK"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+
+      <div>
+        <h2>Le casting explicite</h2>
+        <p>
+          Le casting explicite, en revanche, nécessite que le développeur
+          spécifie explicitement le type de données dans lequel il souhaite
+          convertir une variable. Cela se fait en utilisant l'opérateur as ou en
+          utilisant des crochets d'angle <>.
+        </p>
+        <p>Exemple de casting explicite avec l'opérateur as :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="abXmXjj"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/abXmXjj"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>Exemple de casting explicite avec des crochets d'angle <> :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="wvNzNbz"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/wvNzNbz"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Il est important de noter que le casting explicite peut entraîner des
+          erreurs s'il est utilisé de manière incorrecte ou si le type de
+          données d'origine ne peut pas être converti en un autre type de
+          données. Il est donc conseillé de l'utiliser avec précaution et de
+          vérifier que les types de données sont compatibles avant d'effectuer
+          un casting.
+        </p>
+      </div>
+
+      <div>
+        <h2>Le casting implicite et explicite</h2>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Voici un exemple qui illustre l'utilisation du casting implicite et
+            explicite avec des tableaux et des fonctions en TypeScript.
+          </p>
+          <p>
+            Supposons que nous ayons un tableau de nombres et que nous voulions
+            appliquer une fonction qui multiplie chaque nombre par un facteur
+            donné. Cependant, la fonction que nous voulons utiliser prend en
+            entrée un tableau de nombres sous forme de chaîne de caractères et
+            renvoie un tableau de nombres sous forme de chaîne de caractères.
+          </p>
+          <p>
+            Pour résoudre ce problème, nous devons utiliser le casting explicite
+            pour convertir le tableau de nombres en tableau de chaînes de
+            caractères avant d'appeler la fonction. Puis utiliser le casting
+            implicite pour convertir le tableau de chaînes de caractères
+            résultant en un tableau de nombres.
+          </p>
+          <p>Voici le code correspondant :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="KKJgJjv"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/KKJgJjv"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, nous avons d'abord converti le tableau de nombres
+            en un tableau de chaînes de caractères en utilisant la méthode map
+            et la méthode toString. Nous avons ensuite appelé la fonction
+            multiplierNombres avec le tableau de chaînes de caractères en
+            utilisant le casting explicite as string[].
+          </p>
+          <p>
+            La fonction a renvoyé un tableau de chaînes de caractères
+            représentant les résultats de la multiplication, que nous avons
+            ensuite converti en un tableau de nombres en utilisant la méthode
+            map et la méthode Number, suivie du casting implicite as number[].
+          </p>
+          <p>
+            En résumé, le casting explicite et le casting implicite sont des
+            techniques utiles pour manipuler des données de différents types en
+            TypeScript, mais il est important de les utiliser avec précaution
+            pour éviter les erreurs de type.
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>

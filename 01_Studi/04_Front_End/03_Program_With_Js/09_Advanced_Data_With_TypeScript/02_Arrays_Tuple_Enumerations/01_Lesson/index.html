@@ -3,13 +3,946 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Les tableaux, les tuples et les énumérations</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Les tableaux, les tuples et les énumérations</h1>
+      <div>
+        <h2>Les tableaux (arrays)</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Les tableaux sont des structures de données qui permettent de
+            stocker une collection d'éléments du même type. Les tableaux en
+            TypeScript sont similaires aux tableaux en JavaScript, mais
+            TypeScript offre un typage fort qui permet de s'assurer que les
+            éléments du tableau sont du bon type.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Déclaration et initialisation de tableaux</h2>
+        <p>
+          En TypeScript, les tableaux sont déclarés en spécifiant le type de
+          données des éléments du tableau suivi de []. Par exemple, un tableau
+          contenant des nombres entiers peut être déclaré de la manière suivante
+          :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="yLZaRZz"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/yLZaRZz"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Notez que le type de données des éléments du tableau est number, suivi
+          de [] (number[]) pour indiquer que c'est un tableau de nombres,
+          contenant les éléments 1, 2, 3, 4 et 5.
+        </p>
+        <p>
+          TypeScript permet également de définir des tableaux à plusieurs
+          dimensions en utilisant des tableaux imbriqués :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="mdvrzoy"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/mdvrzoy"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+
+      <div>
+        <h2>Accès aux éléments du tableau</h2>
+        <p>
+          Les éléments du tableau peuvent être accédés en utilisant des index
+          numériques, comme ceci :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="WNPGamp"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/WNPGamp"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Ici, nous accédons au deuxième élément du tableau (2) en utilisant
+          l'index 1.
+        </p>
+      </div>
+
+      <div>
+        <h2>Tableaux de types génériques</h2>
+        <p>
+          Il est également possible de définir des tableaux de types génériques
+          en TypeScript, ce qui permet de définir des tableaux qui contiennent
+          des éléments de types différents. Par exemple, un tableau qui contient
+          une chaîne de caractères et un nombre peut être défini de la manière
+          suivante :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="poGExBW"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/poGExBW"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Notez que nous avons utilisé le type Array&ltstring | number&gt au
+          lieu de string[] ou number[] pour indiquer que le tableau peut
+          contenir des éléments de type string ou number.
+        </p>
+      </div>
+
+      <div>
+        <h2>Tableaux utilisés pour une application de gestion des tâches</h2>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Supposons que nous ayons une application qui doit stocker une liste
+            de tâches à faire pour un utilisateur. Nous pouvons utiliser un
+            tableau pour stocker ces tâches :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="MWLjPdQ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/MWLjPdQ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous pouvons ensuite parcourir ce tableau pour afficher chaque tâche
+            à faire :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="jOdMejL"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/jOdMejL"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Si nous avons besoin d'une collection de valeurs homogènes, on
+            utilise un tableau générique. Mais si nous avons besoin de stocker
+            une séquence de valeurs hétérogènes de manière ordonnée et que le
+            nombre d'éléments est fixe, on utilise un tuple.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les tuples</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Les tuples sont des types de données spécifiques à TypeScript, qui
+            permettent de stocker une séquence d'éléments de même type ou de
+            types différents. Les tuples peuvent être utilisés pour représenter
+            des données structurées comme une paire de coordonnées (x, y), un
+            enregistrement de données avec différents champs (nom, âge, adresse,
+            etc.).
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Déclaration de tuples</h2>
+        <p>
+          Les tuples sont déclarés en spécifiant les types de données des
+          éléments à l'intérieur de crochets [], séparés par des virgules. Par
+          exemple, un tuple qui contient une chaîne de caractères et un nombre
+          peut être déclaré de la manière suivante :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="WNPGYNO"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/WNPGYNO"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+
+      <div>
+        <h2>Initialisation de tuples</h2>
+        <p>
+          Les tuples peuvent être initialisés en affectant des valeurs
+          correspondantes aux éléments de tuple. La syntaxe est similaire à
+          celle utilisée pour les tableaux :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="dyapQyx"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/dyapQyx"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Ici, myTuple est un tuple contenant une chaîne de caractères (string)
+          et un nombre (number). Notez que le nombre d'éléments dans le tuple
+          doit correspondre au nombre de types de données spécifiés dans la
+          déclaration de tuple. Dans l'exemple ci-dessus, nous avons spécifié 2
+          types de données (string et number) dans la déclaration de tuple, donc
+          la longueur de notre tuple doit être 2.
+        </p>
+      </div>
+
+      <div>
+        <h2>Accès aux éléments de tuples</h2>
+        <p>
+          On peut accéder aux éléments d'un tuple en utilisant des index
+          numériques. Par exemple, pour accéder au premier élément d'un tuple
+          myTuple, nous utiliserions la syntaxe myTuple[0]. Pour accéder au
+          deuxième élément, nous utiliserions myTuple[1], et ainsi de suite.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="dyapQPx"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/dyapQPx"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Notez que TypeScript permet également de décomposer un tuple en
+          plusieurs variables séparées, ce qui peut rendre le code plus lisible
+          :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="bGzwQdq"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/bGzwQdq"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Ici, nous avons décomposé le tuple myTuple en 2 variables séparées,
+          myString et myNumber, qui contiennent respectivement la chaîne de
+          caractères 'Hello' et le nombre 20.
+        </p>
+      </div>
+
+      <div>
+        <h2>Tuples utilisés pour stocker des informations</h2>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Supposons maintenant que nous avons besoin de stocker à la fois le
+            nom et l'adresse e-mail d'un utilisateur. Nous pouvons utiliser un
+            tuple pour stocker ces informations :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="MWLjzaG"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/MWLjzaG"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous pouvons ensuite utiliser ces informations pour envoyer un
+            e-mail de bienvenue à l'utilisateur :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="YzBGRwP"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/YzBGRwP"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Tableaux de tuples</h2>
+        <p>
+          Il est également possible de définir des tableaux de tuples en
+          TypeScript. Pour déclarer un tableau de tuples, nous utilisons la
+          syntaxe [] pour déclarer un tableau, et la syntaxe de tuple pour
+          déclarer chaque élément du tableau.
+        </p>
+        <p>
+          Ici, myString contient la chaîne de caractères 'Hello' et myNumber
+          contient le nombre 20. TypeScript permet également de définir des
+          tableaux de tuples :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="YzBGRqP"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/YzBGRqP"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Notez que la longueur de chaque tuple doit correspondre à la longueur
+          de la déclaration de tuple de tableau. Dans l'exemple ci-dessus, nous
+          avons déclaré un tableau de tuples de type [string, number][], donc
+          chaque élément du tableau doit être un tuple avec exactement 2
+          éléments : une chaîne de caractères et un nombre.
+        </p>
+      </div>
+
+      <div>
+        <h2>Tableaux de tuples utilisés pour stocker des informations</h2>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Supposons que nous ayons besoin de stocker des informations sur
+            plusieurs utilisateurs, y compris leur nom, leur adresse e-mail et
+            leur numéro de téléphone. Nous pouvons utiliser un tableau de tuples
+            pour stocker ces informations pour chaque utilisateur :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="rNPMQeq"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/rNPMQeq"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous pouvons ensuite parcourir ce tableau pour afficher les
+            informations de chaque utilisateur :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="mdvrQEP"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/mdvrQEP"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Le code sera plus lisible si nous utilisons des interfaces pour
+            décrire les informations de chaque utilisateur. Pour avoir une idée,
+            voici un exemple :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="ExrgOyr"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/ExrgOyr"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous pouvons ensuite parcourir ce tableau pour afficher les
+            informations de chaque utilisateur de manière plus claire :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="ExrgOgr"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/ExrgOgr"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les énumérations (enums)</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Les énumérations sont aussi des types de données spécifiques à
+            TypeScript, elles n'existent pas en JavaScript. Elles permettent de
+            définir un ensemble de valeurs nommées. Les énumérations sont
+            souvent utilisées pour représenter des constantes qui ont une
+            signification particulière.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Déclaration d’une énumération</h2>
+        <p>
+          Une énumération qui représente les jours de la semaine peut être
+          définie de la manière suivante :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="eYxdQBP"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/eYxdQBP"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, nous avons défini une énumération DaysOfWeek qui
+          contient 7 valeurs numériques nommées. Les valeurs numériques sont
+          automatiquement assignées par défaut, commençant à 0 et s'incrémentant
+          de 1 pour chaque valeur suivante. Ainsi, DaysOfWeek.Monday a la valeur
+          0, DaysOfWeek.Tuesday a la valeur 1, et ainsi de suite.
+        </p>
+      </div>
+
+      <div>
+        <h2>Utilisation d'une énumération</h2>
+        <p>
+          Les valeurs d'une énumération peuvent être utilisées de la même
+          manière que les constantes en JavaScript. Par exemple, pour utiliser
+          DaysOfWeek.Monday, nous pouvons l'écrire simplement comme ceci :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="GRzjwrj"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/GRzjwrj"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Ici, nous avons déclaré une variable today de type DaysOfWeek, qui
+          contient la valeur DaysOfWeek.Monday.
+        </p>
+      </div>
+
+      <div>
+        <h2>Assignation de valeurs personnalisées</h2>
+        <p>
+          Il est également possible de spécifier des valeurs numériques
+          personnalisées pour chaque élément d'une énumération :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="ZEwpmKq"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/ZEwpmKq"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+
+      <div>
+        <h2>Énumérations utilisées pour une application de pizzeria</h2>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Supposons maintenant que nous ayons besoin d'une énumération pour
+            représenter les différents types de pizzas dans notre application de
+            commande de pizza :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="OJdRagm"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/OJdRagm"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous pouvons utiliser cette énumération pour stocker le type de
+            pizza commandé par un utilisateur :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="zYeKMzb"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/zYeKMzb"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous pouvons ensuite utiliser cette information pour préparer la
+            commande de pizza :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="poGEQrK"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/poGEQrK"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
     </div>
   </body>
 </html>

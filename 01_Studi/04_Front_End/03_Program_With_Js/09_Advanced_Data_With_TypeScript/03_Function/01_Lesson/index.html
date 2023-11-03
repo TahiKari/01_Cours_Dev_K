@@ -3,13 +3,923 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Les fonctions (functions)</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Les fonctions (functions)</h1>
+      <div>
+        <h2>Les fonctions</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Les fonctions sont des blocs de code réutilisables qui effectuent
+            une tâche spécifique, qui peuvent être appelés à partir d'autres
+            parties du programme. En TypeScript, nous pouvons définir une
+            fonction en utilisant le mot-clé function, suivi du nom de la
+            fonction, des paramètres entre parenthèses et du corps de la
+            fonction entre accolades.
+          </p>
+        </div>
+
+        <div>
+          <h3>Exemple</h3>
+          <p>Voici un exemple simple de fonction qui ajoute 2 nombres :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="NWoReYm"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/NWoReYm"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, nous déclarons une fonction add qui prend 2
+            paramètres (a et b) de type number et qui renvoie un résultat de
+            type number. À l'intérieur de la fonction, nous utilisons
+            l'opérateur « + » pour ajouter les 2 paramètres et renvoyer le
+            résultat à l'aide du mot-clé return.
+          </p>
+          <p>
+            Nous pouvons appeler cette fonction en passant 2 nombres en
+            arguments :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="VwgKqxy"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/VwgKqxy"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Paramètres optionnels</h2>
+        <p>
+          Il est possible de rendre un paramètre optionnel en le faisant suivre
+          d'un point d'interrogation « ? ». Dans ce cas, le paramètre ne sera
+          pas obligatoire lors de l'appel de la fonction.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="KKJgbeP"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/KKJgbeP"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, nous déclarons une fonction greet qui prend un
+          paramètre optionnel name de type string. Si le paramètre est présent,
+          la fonction affiche un message de salutation personnalisé. Sinon, elle
+          affiche simplement un message de salutation générique.
+        </p>
+        <p>Nous pouvons appeler cette fonction avec ou sans argument :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="abXmPKp"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/abXmPKp"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+
+      <div>
+        <h2>Paramètres par défaut</h2>
+        <p>
+          Il est également possible de définir une valeur par défaut pour un
+          paramètre en le faisant suivre d'un signe égal « =» et de la valeur
+          par défaut. Dans ce cas, si aucun argument n'est passé pour ce
+          paramètre, il prendra la valeur par défaut.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="wvNzRxO"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/wvNzRxO"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, nous déclarons une fonction greet qui prend un
+            paramètre name de type string avec une valeur par défaut de « Monde
+            ». Si aucun argument n'est passé pour « name », la fonction affiche
+            un message de salutation générique avec le mot « Monde ».
+          </p>
+          <p>Nous pouvons appeler cette fonction avec ou sans argument :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="ZEwpVMQ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/ZEwpVMQ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Fonctions avec des types de retour complexes</h2>
+        <p>
+          Il est également possible de définir des types de retour complexes
+          pour les fonctions en TypeScript. Par exemple, une fonction peut
+          renvoyer un tableau, un objet ou une fonction.
+        </p>
+      </div>
+
+      <div>
+        <h2>Fonctions renvoyant un tableau</h2>
+        <p>
+          Une fonction peut renvoyer un tableau en spécifiant le type
+          Array&ltT&gt ou T[] comme type de retour, où « T » est le type des
+          éléments du tableau.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Voici un exemple de fonction qui renvoie un tableau de chaînes de
+            caractères :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="rNPMoqL"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/rNPMoqL"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, la fonction getColors renvoie un tableau de
+            chaînes de caractères. Nous utilisons le type string[] pour
+            spécifier que la fonction renvoie un tableau de chaînes de
+            caractères.
+          </p>
+          <p>
+            Nous pouvons appeler cette fonction et stocker le résultat dans une
+            variable :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="YzBGdJa"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/YzBGdJa"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Fonctions renvoyant un objet</h2>
+        <p>
+          Une fonction peut également renvoyer un objet en spécifiant le type de
+          l'objet comme type de retour.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Voici un exemple de fonction qui renvoie un objet représentant une
+            personne :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="XWOjoyN"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/XWOjoyN"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, la fonction getPerson renvoie un objet avec 2
+            propriétés : « name » de type string et « age » de type number. Nous
+            utilisons un type d'objet littéral pour spécifier le type de retour
+            de la fonction.
+          </p>
+          <p>
+            Nous pouvons appeler cette fonction et stocker le résultat dans une
+            variable :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="qBgaLLP"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/qBgaLLP"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Fonctions renvoyant une fonction</h2>
+        <p>
+          Enfin, une fonction peut renvoyer une autre fonction en spécifiant le
+          type de la fonction comme type de retour.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="bGzwOOy"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/bGzwOOy"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, la fonction getMultiplier prend un paramètre «
+            factor » de type number et renvoie une fonction qui prend un
+            paramètre « x » de type number et renvoie le produit de « x » et de
+            « factor ». Nous utilisons le type (x: number) => number pour
+            spécifier que la fonction renvoyée prend un paramètre de type number
+            et renvoie un résultat de type number.
+          </p>
+          <p>
+            Nous pouvons appeler cette fonction et stocker le résultat dans une
+            variable :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="qBgaLgP"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/qBgaLgP"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, nous appelons la fonction getMultiplier avec un
+            argument de 2, ce qui renvoie une fonction qui multiplie par 2. Nous
+            stockons cette fonction dans la variable multiplyBy2. Nous appelons
+            ensuite cette fonction avec un argument de 3, ce qui renvoie 6.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Fonctions anonymes</h2>
+        <p>
+          En TypeScript, il est possible de définir des fonctions anonymes, qui
+          sont des variantes de la syntaxe traditionnelle des fonctions.
+        </p>
+        <p>
+          Une fonction anonyme est une fonction qui n'a pas de nom. Elle est
+          définie comme une expression et peut être stockée dans une variable ou
+          passée comme argument à une autre fonction.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Voici un exemple de fonction anonyme qui prend deux paramètres a et
+            b de type number et renvoie leur somme :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="BaMLvMb"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/BaMLvMb"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, nous définissons une fonction anonyme en utilisant
+            la syntaxe function(a: number, b: number): number. Nous stockons
+            cette fonction dans la variable sum. Cette fonction prend 2
+            paramètres a et b de type number et renvoie leur somme de type
+            number.
+          </p>
+          <p>
+            Nous pouvons appeler cette fonction en utilisant le nom de la
+            variable qui la contient :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="JjxRwzr"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/JjxRwzr"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Les fonctions anonymes peuvent être utiles dans des situations où
+            nous avons besoin d'utiliser la fonction seulement une fois. Cela
+            rend le code plus lisible en évitant d'avoir une fonction définie
+            quelque part dans le code qui n'est utilisée qu'une seule fois. En
+            outre, les fonctions anonymes peuvent être utilisées comme arguments
+            de fonctions, ce qui peut être pratique pour des opérations comme le
+            tri ou le filtrage de tableaux.
+          </p>
+          <p>
+            Cependant, si les fonctions sont trop complexes ou imbriquées. Il
+            est préférable de définir des fonctions nommées séparées pour une
+            meilleure lisibilité.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Fonctions fléchées</h2>
+        <p>
+          En TypeScript, il est aussi possible de définir des fonctions
+          fléchées, qui sont également des variantes de la syntaxe
+          traditionnelle des fonctions.
+        </p>
+        <p>
+          Une fonction fléchée est une version plus concise de la syntaxe des
+          fonctions. Elle utilise une flèche (=>) pour séparer les paramètres de
+          la fonction de son corps.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Voici un exemple de fonction fléchée qui prend 2 paramètres a et b
+            de type number et renvoie leur somme :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="GRzjPLw"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/GRzjPLw"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, nous définissons une fonction fléchée en utilisant
+            la syntaxe (a: number, b: number): number => a + b. Cette fonction
+            prend 2 paramètres a et b de type number et renvoie leur somme de
+            type number.
+          </p>
+          <p>
+            Nous pouvons appeler cette fonction de la même manière qu'une
+            fonction anonyme :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="eYxdbad"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/eYxdbad"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Les fonctions fléchées peuvent également être utilisées pour des
+            fonctions à un seul paramètre :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="xxMEmNL"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/xxMEmNL"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, nous définissons une fonction fléchée qui prend un
+            paramètre x de type number et renvoie le double de x.
+          </p>
+          <p>
+            Il est recommandé d'utiliser les fonctions fléchées lorsque la
+            fonction ne nécessite pas d'accéder à this. Cela est dû au fait que
+            les fonctions fléchées capturent automatiquement la valeur de this
+            de l'environnement dans lequel elles ont été créées, contrairement
+            aux fonctions ordinaires qui ont leur propre valeur de this. De
+            plus, les fonctions fléchées sont souvent plus courtes et plus
+            lisibles que les fonctions ordinaires, ce qui les rend très utiles
+            pour les fonctions de rappel ou les fonctions qui retournent une
+            fonction.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Fonctions anonymes et fonctions fléchées</h2>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Voici un exemple qui utilise des fonctions anonymes et des fonctions
+            fléchées :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="yLZaGde"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/yLZaGde"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, nous avons un tableau de nombres que nous
+            utilisons pour illustrer l'utilisation de fonctions anonymes et de
+            fonctions fléchées.
+          </p>
+          <p>
+            La première ligne utilise la méthode filter pour filtrer les nombres
+            pairs du tableau numbers. Nous utilisons une fonction anonyme pour
+            définir le critère de filtrage. Cette fonction prend un paramètre «
+            n » qui représente chaque élément du tableau et renvoie un booléen
+            indiquant si « n » est pair ou non.
+          </p>
+          <p>
+            La deuxième ligne utilise la méthode map pour calculer le carré de
+            chaque nombre dans le tableau numbers. Nous utilisons une fonction
+            fléchée pour définir la transformation à appliquer à chaque élément
+            du tableau. Cette fonction prend un paramètre « n » qui représente
+            chaque élément du tableau et renvoie le carré de « n ».
+          </p>
+          <p>
+            Enfin, nous utilisons la fonction console.log pour afficher les
+            tableaux evenNumbers et squaredNumbers dans la console.
+          </p>
+          <p>
+            Cet exemple montre comment les fonctions anonymes et les fonctions
+            fléchées peuvent être utilisées pour effectuer des opérations sur
+            des tableaux en TypeScript de manière concise et lisible.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Fonctions génériques</h2>
+        <p>
+          En TypeScript, les fonctions génériques sont des fonctions qui peuvent
+          travailler avec différents types de données sans connaître à l'avance
+          ces types. Cela permet de réutiliser le code de manière plus flexible
+          et d'éviter les répétitions.
+        </p>
+        <p>
+          Pour définir une fonction générique, on utilise le mot-clé function
+          suivi d'un nom de fonction et des chevrons <> contenant le ou les
+          types génériques. Ces types génériques sont utilisés pour définir les
+          paramètres et le type de retour de la fonction.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Voici un exemple de fonction générique qui retourne un tableau
+            inversé :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="ExrgrYX"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/ExrgrYX"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, le type générique « T » est utilisé pour définir
+            le type des éléments du tableau passé en paramètre et le type de
+            retour de la fonction. La méthode reverse() est appliquée sur le
+            tableau, qui est ensuite retourné.
+          </p>
+          <p>
+            On peut ensuite utiliser cette fonction avec différents types de
+            données, par exemple :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="LYqRqPQ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/LYqRqPQ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, la fonction inverserTableau() est appelée avec 2
+            tableaux de types différents, un tableau de nombres et un tableau de
+            chaînes de caractères.
+          </p>
+          <p>
+            Les fonctions génériques permettent ainsi de rendre le code plus
+            flexible et plus réutilisable en évitant les répétitions de code
+            pour différentes combinaisons de types de données.
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>
