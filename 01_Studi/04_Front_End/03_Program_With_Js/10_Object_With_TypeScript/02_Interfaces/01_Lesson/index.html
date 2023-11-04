@@ -3,13 +3,543 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Interfaces</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Interfaces</h1>
+      <div>
+        <h2>Concept d’interface en TypeScript</h2>
+        <p>
+          En TypeScript, les interfaces sont des structures qui permettent de
+          définir des contrats pour les types de données. Elles décrivent la
+          forme que doit prendre un objet et les types des propriétés qu’il doit
+          contenir. Les interfaces peuvent également décrire des fonctions, des
+          classes et des types génériques.
+        </p>
+        <p>
+          Voici un exemple simple d’interface avec des propriétés et des
+          méthodes :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="LYqbbdJ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/LYqbbdJ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Cette interface Person décrit les propriétés et méthodes d’un objet
+          qui représente une personne. Elle indique que chaque objet de ce type
+          doit avoir une propriété name de type string, une propriété age de
+          type number et une méthode sayHello() qui ne prend pas de paramètres
+          et ne renvoie rien (void).
+        </p>
+        <p>
+          Cette interface peut être utilisée pour définir des variables ou des
+          paramètres de fonction qui doivent correspondre à la forme de l’objet
+          décrit par l’interface. Elle peut également être utilisée pour créer
+          des classes qui implémentent cette interface et fournissent une
+          implémentation pour la méthode sayHello().
+        </p>
+      </div>
+
+      <div>
+        <h2>Définir la structure d’objet en utilisant une interface</h2>
+        <p>
+          Voici un exemple de définition de structure d’objet en utilisant une
+          interface :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="NWobbMx"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/NWobbMx"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, l’interface Produit est utilisée pour définir la
+          structure d’un objet représentant un produit. L’objet tshirt respecte
+          cette structure en incluant les propriétés nom, prix, description
+          (optionnelle) et disponible.
+        </p>
+      </div>
+
+      <div>
+        <h2>Les alias</h2>
+        <p>
+          Un alias de type en TypeScript permet de créer un nouveau nom pour un
+          type existant. Cela permet de simplifier la lecture et l’écriture de
+          types complexes et répétitifs en leur donnant un nom plus court et
+          plus explicite.
+        </p>
+        <p>
+          Il est possible de créer des alias de types en utilisant le mot-clé
+          type. Ces alias de types peuvent être utilisés pour simplifier la
+          syntaxe des types et les rendre plus lisibles. Voici un exemple :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="YzBppLB"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/YzBppLB"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, nous avons créé un alias de type Age pour le type
+          number. Nous avons ensuite utilisé cet alias pour la propriété age de
+          l’interface Person. Cela rend la syntaxe de l’interface plus concise
+          et plus lisible.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Les alias de types peuvent également être utilisés pour définir des
+            types génériques. Voici un exemple :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="JjxbbZB"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/JjxbbZB"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, nous avons créé un alias de type Pair qui prend
+            deux paramètres de type T et U et renvoie un objet avec deux
+            propriétés first de type T et second de type U. Nous avons ensuite
+            créé un objet pair qui correspond à cet alias de type en spécifiant
+            les types string et number pour les paramètres T et U.
+          </p>
+          <p>
+            Les alias de types permettent de simplifier la syntaxe des types et
+            les rendre plus lisibles. Ils peuvent être utilisés pour définir des
+            types génériques ou pour créer des interfaces qui référencent des
+            types existants. Les interfaces, quant à elles, permettent de
+            décrire les propriétés et méthodes d’un objet et de s’assurer que
+            les variables et paramètres qui y font référence correspondent à
+            cette description.
+          </p>
+        </div>
+      </div>
+      <div>
+        <h2>Interface VS Alias</h2>
+        <p>
+          Les interfaces et les alias de types sont deux fonctionnalités
+          importantes de TypeScript pour définir des types. Voici quelques-unes
+          de leurs particularités.
+        </p>
+        <h3>Les interfaces peuvent être étendues</h3>
+        <p>
+          Les interfaces peuvent être étendues, tandis que les alias de types ne
+          peuvent pas l’être. Cela signifie qu’il est possible de définir une
+          interface qui hérite des propriétés d’une autre interface en utilisant
+          l’opérateur extends, mais cela n’est pas possible avec un alias de
+          type.
+        </p>
+      </div>
+      <div>
+        <h2>L’opérateur extends</h2>
+        <div>
+          <h3>Complément</h3>
+          <p>
+            L’opérateur extends permet de créer une classe enfant (ou
+            sous-classe) qui hérite des propriétés et des méthodes de la classe
+            parent (ou super-classe). Cela permet de réutiliser le code existant
+            et de créer des classes plus spécifiques en ajoutant ou en modifiant
+            des fonctionnalités.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="KKJNNxa"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/KKJNNxa"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, l’interface Dog étend l’interface Animal pour
+            ajouter une propriété breed.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les interfaces peuvent définir des propriétés et des méthodes</h2>
+        <p>
+          Les interfaces peuvent définir des propriétés et des méthodes, tandis
+          que les alias de types ne peuvent définir que des types simples ou des
+          types génériques. Cela signifie qu’il est possible d’ajouter des
+          méthodes à une interface, mais cela n’est pas possible avec un alias
+          de type.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="PoVbbyo"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/PoVbbyo"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, l’interface Person définit une méthode sayHello().
+        </p>
+      </div>
+
+      <div>
+        <h2>Les interfaces sont utilisées pour décrire la forme d’un objet</h2>
+        <p>
+          Les interfaces sont souvent utilisées pour décrire la forme d’un
+          objet, en définissant les propriétés et les méthodes qu’il doit avoir.
+          Cela permet de s’assurer que les objets respectent une structure
+          cohérente et cohésive dans une application.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="eYxBBbe"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/eYxBBbe"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a
+          href="https://replit.com/@javascript-studi/Lobjet-avec-TypeScript-Code-1"
+          target="_blank"
+          rel="alternate"
+          >Lien Replit</a
+        >
+        <p>
+          Dans cet exemple, l’interface Person est utilisée pour décrire la
+          forme d’un objet qui doit avoir une propriété name de type string, une
+          propriété age de type number et une méthode sayHello qui ne prend
+          aucun argument et ne renvoie rien.
+        </p>
+      </div>
+
+      <div>
+        <h2>
+          Les alias de types sont utilisés pour créer des noms plus lisibles
+        </h2>
+        <p>
+          Quant aux alias de types, ils sont souvent utilisés pour créer des
+          noms plus lisibles pour des types complexes ou génériques. Par
+          exemple, au lieu d’utiliser un type générique comme Map&ltstring,
+          number&gt, on peut créer un alias de type pour, tel que type NumberMap
+          = Map&ltstring, number&gt. Cela rend le code plus lisible et facile à
+          comprendre, surtout lorsqu’on utilise le même type à plusieurs
+          endroits dans le code.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="MWLbbLv"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/MWLbbLv"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a
+          href="https://replit.com/@javascript-studi/Lobjet-avec-TypeScript-Code-2"
+          target="_blank"
+          rel="alternate"
+          >Lien Replit</a
+        >
+        <p>
+          Dans cet exemple, un alias de type NumberMap est créé pour le type
+          générique Map&ltstring, number&gt. Cela permet d’utiliser un nom plus
+          clair pour ce type dans le code. Ensuite, un objet myMap de type
+          NumberMap est créé à partir d’une instance de Map et des éléments y
+          sont ajoutés et récupérés à l’aide de la méthode set et de la méthode
+          get.
+        </p>
+      </div>
+
+      <div>
+        <h2>Les interfaces peuvent être implémentées par des classes</h2>
+        <p>
+          Les interfaces peuvent être implémentées par des classes, tandis que
+          les alias de types ne peuvent pas l’être. Cela signifie qu’il est
+          possible de définir une classe qui implémente une interface, mais cela
+          n’est pas possible avec un alias de type.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="gOqLLEb"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/gOqLLEb"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a
+          href="https://replit.com/@javascript-studi/Lobjet-avec-TypeScript-Code-3"
+          target="_blank"
+          rel="alternate"
+          >Lien Replit</a
+        >
+        <p>
+          Dans cet exemple, une interface Animal est définie pour décrire la
+          forme d’un objet qui doit avoir une propriété name de type string et
+          une méthode speak qui renvoie une chaîne de caractères. Ensuite, une
+          classe Dog est définie qui implémente l’interface Animal en ayant une
+          propriété name et une méthode speak qui renvoie la chaîne de
+          caractères « Woof! ». Enfin, un objet myDog de type Animal est créé à
+          partir d’une instance de Dog et la méthode speak est appelée sur cet
+          objet pour renvoyer la chaîne de caractères « Woof! ».
+        </p>
+        <p>
+          Les interfaces sont plus flexibles et peuvent être implémentées par
+          des classes, tandis que les alias de types sont plus simples et sont
+          souvent utilisés pour définir des noms plus lisibles pour des types
+          complexes. Les interfaces sont également plus adaptées aux
+          bibliothèques ou aux frameworks qui nécessitent des types structurés
+          et des signatures de méthode spécifiques, tandis que les alias de
+          types sont plus adaptés aux types d’union, aux types imbriqués et aux
+          types génériques.
+        </p>
+      </div>
+
+      <div>
+        <h2>
+          Les interfaces peuvent être utilisées pour décrire des types
+          génériques
+        </h2>
+        <p>
+          Les interfaces peuvent également être utilisées pour décrire des types
+          génériques, qui sont des types qui prennent des paramètres de type.
+          Cela peut être utile pour créer des fonctions et des classes
+          génériques qui peuvent travailler avec différents types de données.
+          Voici un exemple :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="rNPWWbJ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/rNPWWbJ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a
+          href="https://replit.com/@javascript-studi/Lobjet-avec-TypeScript-Code-4"
+          target="_blank"
+          rel="alternate"
+          >Lien Replit</a
+        >
+        <p>
+          Dans cet exemple, nous avons défini une interface générique Pair qui
+          décrit une paire de valeurs de types différents T et U. Nous avons
+          ensuite créé un objet pair qui correspond à cette interface en
+          spécifiant les types string et number pour les paramètres T et U.
+          Enfin, nous avons accédé aux propriétés first et second de l’objet
+          pair pour afficher leurs valeurs dans la console.
+        </p>
+      </div>
     </div>
   </body>
 </html>

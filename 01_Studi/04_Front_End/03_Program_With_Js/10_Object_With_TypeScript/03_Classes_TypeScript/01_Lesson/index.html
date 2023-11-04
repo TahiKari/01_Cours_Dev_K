@@ -3,13 +3,591 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Classes en TypeScript</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Classes en TypeScript</h1>
+      <div>
+        <p>
+          Les classes en TypeScript sont une façon de créer des objets complexes
+          en utilisant la syntaxe de classe familière de la Programmation
+          Orientée Objet (POO). Les classes sont souvent utilisées pour créer
+          des objets qui ont des propriétés et des méthodes, ce qui les rend
+          très utiles pour la modélisation d’entités du monde réel dans le code.
+        </p>
+      </div>
+
+      <div>
+        <h2>Implémentation de classes en TypeScript</h2>
+        <p>
+          En TypeScript, les classes peuvent être implémentées de la même
+          manière que dans d’autres langages de programmation orientés objet,
+          tels que Java ou C#. Les classes sont définies à l’aide du mot-clé «
+          class », suivi du nom de la classe et de l’accolade ouvrante pour
+          définir le corps de la classe. Voici un exemple de classe simple en
+          TypeScript :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="zYeoNRb"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/zYeoNRb"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, nous avons une classe Car qui a trois propriétés :
+          make, model, et year. La classe a également un constructeur qui prend
+          ces trois propriétés en tant que paramètres et les affecte aux
+          propriétés correspondantes de l’objet. Enfin, la classe a une méthode
+          drive qui affiche un message décrivant la voiture en train de
+          conduire.
+        </p>
+      </div>
+
+      <div>
+        <h2>Instanciation de classes (création d’objets)</h2>
+        <p>
+          L’instanciation de classes consiste à créer une nouvelle instance ou
+          objet à partir de la classe. La classe est comme un modèle ou un plan
+          pour l’objet, et l’instanciation crée une copie de ce modèle avec ses
+          propres valeurs de propriétés et de méthodes. En TypeScript,
+          l’instanciation se fait à l’aide du mot-clé « new » suivi du nom de la
+          classe et de ses paramètres de constructeur si nécessaire :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="oNmYBdg"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/oNmYBdg"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Maintenant, nous avons une instance de la classe Car qui a les
+          propriétés make, model et year définies avec les valeurs passées dans
+          le constructeur.
+        </p>
+        <p>
+          Nous pouvons ensuite appeler les méthodes de la classe et accéder aux
+          propriétés de la voiture :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="mdvORLr"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/mdvORLr"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a
+          href="https://replit.com/@javascript-studi/Lobjet-avec-TypeScript-Code-5"
+          target="_blank"
+          rel="alternate"
+          >Lien Replit</a
+        >
+        <p>
+          Dans cet exemple, nous créons une instance de la classe Car en passant
+          « Tesla », « Model S », et « 2022 » au constructeur. Ensuite, nous
+          appelons la méthode drive de l’objet pour afficher un message.
+        </p>
+      </div>
+
+      <div>
+        <h2>Les constructeurs en TypeScript</h2>
+        <p>
+          En TypeScript, un constructeur est une méthode spéciale d’une classe
+          qui est appelée lorsqu’une nouvelle instance de cette classe est
+          créée. La fonction du constructeur est d’initialiser les propriétés de
+          l’objet nouvellement créé et de définir son état initial.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Le constructeur est défini dans la classe à l’aide du mot-clé «
+            constructor ». Il peut prendre des paramètres, qui sont utilisés
+            pour fournir des valeurs initiales aux propriétés de l’objet. Par
+            exemple :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="XWONpqO"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/XWONpqO"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, la classe Person a un constructeur qui prend deux
+            paramètres, nom et age, qui sont utilisés pour initialiser les
+            propriétés nom et age de l’objet nouvellement créé.
+          </p>
+          <p>
+            Lorsqu’une instance d’une classe est créée, le constructeur est
+            automatiquement appelé pour initialiser les propriétés de l’objet.
+            Par exemple :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="MWLbJXq"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/MWLbJXq"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+
+          <p>
+            Dans cet exemple, une nouvelle instance de la classe Person est
+            créée avec les valeurs nom et age définies sur « Jordan » et 30,
+            respectivement. Le constructeur est appelé automatiquement pour
+            initialiser les propriétés de l’objet.
+          </p>
+          <p>
+            Les constructeurs peuvent également être hérités par les
+            sous-classes en utilisant le mot-clé « super ». Cela permet aux
+            sous-classes d’appeler le constructeur de la classe parent pour
+            initialiser les propriétés héritées en plus de leurs propres
+            propriétés. Par exemple :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="VwgmPBe"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/VwgmPBe"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, la classe Employe hérite de la classe Person et a
+            également une propriété salaire. Le constructeur de Employe prend
+            les mêmes paramètres que celui de Person, mais utilise également
+            super(nom, age) pour appeler le constructeur de Person et
+            initialiser les propriétés héritées.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les méthodes statiques dans une classe</h2>
+        <p>
+          Les classes en TypeScript peuvent également avoir des méthodes
+          statiques, qui sont des méthodes qui appartiennent à la classe plutôt
+          qu’à une instance spécifique de la classe. Voici un exemple :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="RwvoKYG"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/RwvoKYG"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a
+          href="https://replit.com/@javascript-studi/Lobjet-avec-TypeScript-Code-6"
+          target="_blank"
+          rel="alternate"
+          >Lien Replit</a
+        >
+        <p>
+          Dans cet exemple, nous avons une classe MathUtils qui a une méthode
+          statique add. Cette méthode prend deux paramètres numériques et
+          retourne leur somme. Nous appelons ensuite la méthode statique
+          directement sur la classe elle-même, plutôt que sur une instance de la
+          classe.
+        </p>
+      </div>
+
+      <div>
+        <h2>L’héritage en TypeScript</h2>
+        <p>
+          L’héritage est un concept clé de la programmation orientée objet, qui
+          permet de créer une classe à partir d’une autre classe existante. En
+          TypeScript, on peut utiliser le mot-clé « extends » pour définir une
+          classe qui hérite d’une autre classe. Rappelons que l’opérateur
+          extends permet de créer des classes enfant qui hérite des propriétés
+          et des méthodes de la classe parent, afin d’éviter la duplication de
+          code (boilerplate code).
+        </p>
+        <p>
+          Voici un exemple de classe parente Animal avec une propriété name et
+          une méthode makeSound() :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="vYbygVK"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/vYbygVK"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Ensuite, nous pouvons créer une classe enfant Dog qui étend la classe
+          parente Animal et ajoute une méthode bark :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="QWYGdZm"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/QWYGdZm"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Maintenant, nous pouvons créer une instance de Dog et accéder à ses
+          propriétés et méthodes. Dans cet exemple, la classe Dog hérite de la
+          propriété name et de la méthode makeSound() de la classe Animal. La
+          classe Dog ajoute ensuite sa propre méthode bark() pour représenter
+          une fonctionnalité spécifique à un chien.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="rNPWjqR"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/rNPWjqR"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a
+          href="https://replit.com/@javascript-studi/Lobjet-avec-TypeScript-Code-7"
+          target="_blank"
+          rel="alternate"
+          >Lien Replit</a
+        >
+        <p>
+          Lorsque l’on crée une instance de la classe Dog avec new
+          Dog('Flipper'), la propriété name est initialisée avec la valeur «
+          Flipper » grâce au constructeur de la classe Animal. On peut ensuite
+          appeler la méthode bark() de Dog et la méthode makeSound() héritée de
+          Animal.
+        </p>
+        <p>
+          Dans cet exemple, la classe Dog hérite de la classe Animal. Cela
+          signifie que Dog a accès aux propriétés et aux méthodes définies dans
+          Animal, comme la propriété name et la méthode makeSound(). La classe
+          Dog définit également sa propre méthode bark(), qui n’est pas présente
+          dans Animal.
+        </p>
+      </div>
+
+      <div>
+        <h2>Implémentation d’interface en TypeScript</h2>
+        <p>
+          L’implémentation d’interface en TypeScript est un moyen de définir un
+          contrat entre une classe et une interface, afin de garantir que la
+          classe implémente toutes les propriétés et méthodes requises par
+          l’interface.
+        </p>
+        <p>Voici un exemple :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="BaMQpGw"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/BaMQpGw"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, nous avons une interface Animal qui définit les
+          propriétés et méthodes que toute classe Animal doit implémenter.
+          Ensuite, nous avons une classe Cat qui implémente l’interface Animal.
+          La classe Cat doit donc avoir une propriété name de type string, une
+          propriété numberOfLegs de type number, et une méthode makeSound qui ne
+          prend pas d’arguments et ne retourne rien.
+        </p>
+        <p>
+          En utilisant une interface pour définir le contrat entre la classe et
+          l’interface, nous pouvons garantir que la classe implémente toutes les
+          propriétés et méthodes requises par l’interface, ce qui rend le code
+          plus sûr et plus facile à maintenir.
+        </p>
+        <div>
+          <h3>Attention</h3>
+          <p>
+            En TypeScript, il est possible de définir une classe qui implémente
+            plusieurs interfaces. Cela permet de définir les propriétés et
+            méthodes de la classe en utilisant les contrats définis par les
+            interfaces, ce qui offre une grande flexibilité et facilite la
+            réutilisation du code.
+          </p>
+          <p>
+            L’avantage de l’implémentation de classe avec des interfaces est
+            qu’elle offre une grande flexibilité et facilite la réutilisation du
+            code. Si d’autres classes doivent également implémenter les mêmes
+            interfaces, elles peuvent simplement les implémenter et utiliser les
+            mêmes propriétés et méthodes définies dans les interfaces, sans
+            avoir besoin de réécrire le code.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Implémentation d’interface VS Héritage en TypeScript</h2>
+        <div>
+          <h3>Attention</h3>
+          <p>
+            L’héritage permet à une classe enfant de prendre en charge les
+            propriétés et les méthodes d’une classe parente, tandis que
+            l’implémentation d’une interface dans une classe implique que la
+            classe implémente toutes les propriétés et méthodes définies dans
+            l’interface.
+          </p>
+          <p>
+            L’héritage est une relation « est un » (par exemple, un chat est un
+            animal), tandis que l’implémentation d’interface est une relation «
+            peut faire » (par exemple, une classe « robot » peut implémenter
+            l’interface « déplacer »).
+          </p>
+          <p>
+            En termes de syntaxe, l’héritage utilise le mot-clé « extends » pour
+            définir la relation parent-enfant, tandis que l’implémentation
+            d’interface utilise le mot-clé « implements » pour indiquer que la
+            classe implémente une interface donnée.
+          </p>
+          <p>
+            Si nous voulons créer une nouvelle classe qui est basée sur une
+            classe existante, l’héritage est probablement le meilleur choix.
+            Cela nous permet de réutiliser le code existant et de le modifier
+            pour répondre à vos besoins spécifiques. Si nous voulons simplement
+            décrire la forme d’un objet sans nous soucier de son implémentation,
+            une interface est probablement le meilleur choix. Cela nous permet
+            de spécifier les propriétés et les méthodes que nous attendons d’un
+            objet sans avoir à nous soucier de la façon dont cet objet est
+            implémenté.
+          </p>
+          <p>
+            Aussi, il est important de noter qu’il est possible d’hériter que
+            d’une seule classe, mais nous pouvons implémenter plusieurs
+            interfaces, ce qui permet de rendre le code plus réutilisable et
+            plus facile à maintenir.
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>

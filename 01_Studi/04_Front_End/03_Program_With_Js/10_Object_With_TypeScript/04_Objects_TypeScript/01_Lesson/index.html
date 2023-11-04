@@ -3,13 +3,455 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Les objets en TypeScript</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Les objets en TypeScript</h1>
+      <div>
+        <p>
+          En TypeScript, les objets sont des structures de données complexes qui
+          contiennent des propriétés et des méthodes. Les propriétés sont des
+          variables qui stockent des données, tandis que les méthodes sont des
+          fonctions qui effectuent des actions sur ces données.
+        </p>
+      </div>
+
+      <div>
+        <h2>Déclaration d’objet en TypeScript</h2>
+        <p>
+          En TypeScript, on peut déclarer un objet en utilisant une notation
+          littérale d’objet, qui consiste à énumérer les propriétés et leurs
+          valeurs entre accolades, comme dans l’exemple suivant :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="VwgmpdM"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/VwgmpdM"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a
+          href="https://replit.com/@javascript-studi/Lobjet-avec-TypeScript-Code-8"
+          target="_blank"
+          rel="alternate"
+          >Lien Replit</a
+        >
+        <p>
+          Dans cet exemple, nous avons créé un objet person qui contient trois
+          propriétés : name, age et greeting. La propriété greeting est une
+          méthode qui affiche un message de salutation en utilisant les valeurs
+          des propriétés name et age.
+        </p>
+      </div>
+
+      <div>
+        <h2>Définir la structure d’objet en utilisant une interface</h2>
+        <p>
+          En TypeScript, les interfaces sont utilisées pour définir la structure
+          d’un objet et les types de ses propriétés. Cela permet de s’assurer
+          que les objets que nous créons ou que nous manipulons ont les
+          propriétés requises, avec les types appropriés.
+        </p>
+        <p>
+          Nous pouvons définir la structure de l’objet en utilisant une
+          interface. Pour utiliser une interface pour définir la structure d’un
+          objet, nous devons définir une interface qui décrit les propriétés de
+          l’objet, ainsi que leurs types.
+        </p>
+        <p>
+          Supposons que nous ayons un code TypeScript qui définit une interface
+          Person avec des propriétés name et age de type string et number,
+          respectivement, et une méthode greeting qui ne prend pas de paramètres
+          et ne renvoie rien (void) :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="NWobpBJ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/NWobpBJ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Nous pouvons utiliser cette interface pour définir un objet person qui
+          correspond à la structure Person. Nous pouvons le faire en déclarant
+          une variable person de type Person et en initialisant ses propriétés
+          avec des valeurs de type string et number, respectivement, et en
+          définissant la méthode greeting avec une fonction anonyme qui utilise
+          console.log pour afficher un message de salutation :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="XWONMPd"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/XWONMPd"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Maintenant, si nous voulons appeler la méthode greeting de l’objet
+          person, nous pouvons simplement utiliser la notation « . » (point)
+          pour accéder à la méthode.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="abXBJaB"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/abXBJaB"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a
+          href="https://replit.com/@javascript-studi/Lobjet-avec-TypeScript-Code-9#index.ts"
+          target="_blank"
+          rel="alternate"
+          >Lien Replit</a
+        >
+        <p>
+          Lorsque nous appelons cette méthode, nous verrons le message de
+          salutation dans la console, qui indique « Hello, my name is John and I
+          am 30 years old. ». Dans cet exemple, nous avons déclaré une interface
+          Person qui décrit la structure de l’objet. Ensuite, nous avons créé un
+          objet person en utilisant cette interface.
+        </p>
+        <p>
+          En utilisant une interface pour décrire les types de paramètres de
+          fonctions ou de méthodes, nous pouvons nous assurer que les paramètres
+          passés ont les propriétés requises, avec les types appropriés.
+        </p>
+      </div>
+
+      <div>
+        <h2>Création d’objets à partir d’une classe</h2>
+        <p>
+          En TypeScript, les classes sont utilisées pour créer des objets qui
+          partagent une structure et des comportements communs. Pour créer un
+          objet à partir d’une classe, nous devons instancier la classe en
+          utilisant le mot-clé « new ».
+        </p>
+        <p>Création de la classe Person :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="XWONMxd"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/XWONMxd"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, nous avons créé une classe Person qui contient deux
+          propriétés (name et age). La classe a également un constructeur qui
+          prend deux paramètres (name et age), et qui initialise les propriétés
+          de la classe avec ces valeurs. La classe a également une méthode
+          sayHello() qui affiche un message de salutation en utilisant les
+          propriétés name et age.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="wvNoJYR"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/wvNoJYR"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Lobjet-avec-TypeScript-Code-10"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Dans cet exemple, nous avons créé un objet person à partir de la
+            classe Person en utilisant le mot-clé « new ». Nous avons passé les
+            valeurs « John » et 30 au constructeur de la classe pour initialiser
+            les propriétés de l’objet. Ensuite, nous avons appelé la méthode
+            sayHello() de l’objet pour afficher un message de salutation en
+            utilisant les propriétés de l’objet.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Objets imbriqués en TypeScript</h2>
+        <p>
+          En TypeScript, il est possible de définir des objets imbriqués,
+          c’est-à-dire des objets qui ont des propriétés qui sont elles-mêmes
+          des objets. Voici un exemple pour illustrer cela.
+        </p>
+        <p>
+          Supposons que nous ayons une interface Address qui définit les
+          propriétés d’une adresse :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="WNPopYB"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/WNPopYB"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Nous pouvons ensuite utiliser cette interface comme type de propriété
+          pour une interface Person qui définit les propriétés d’une personne, y
+          compris une propriété address qui est un objet de type Address :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="zYeoZyK"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/zYeoZyK"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Nous pouvons alors créer un objet person qui correspond à cette
+          structure en spécifiant les propriétés name, age et address, comme
+          suit :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="WNPopLB"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/WNPopLB"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Nous pouvons accéder aux propriétés de l’objet person à l’aide de la
+          notation « . » (point), comme dans l’exemple suivant :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="MWLbpLw"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/MWLbpLw"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a
+          href="https://replit.com/@javascript-studi/Lobjet-avec-TypeScript-Code-11"
+          target="_blank"
+          rel="alternate"
+          >Lien Replit</a
+        >
+        <p>
+          Dans cet exemple, nous avons ajouté une propriété address à l’objet
+          person. La propriété address contient un autre objet avec des
+          propriétés de type adresse. Nous pouvons accéder aux propriétés de
+          l’objet imbriqué en utilisant un point.
+        </p>
+        <p>
+          Dans cet exemple, person.address.city accède à la propriété city de
+          l’objet address qui est une propriété de l’objet person.
+        </p>
+      </div>
     </div>
   </body>
 </html>
