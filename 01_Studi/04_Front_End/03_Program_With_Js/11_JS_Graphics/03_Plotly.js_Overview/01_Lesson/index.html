@@ -3,13 +3,402 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Présentation de Plotly.js</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Présentation de Plotly.js</h1>
+      <div>
+        <p>
+          Autre librairie spécialisée dans la création de graphiques :
+          Plotly.js.
+        </p>
+      </div>
+
+      <div>
+        <h2>Installer Plotly.js</h2>
+        <p>
+          Comme Chart.js, Plotly.js est une librairie qui viendra vous aider à
+          enrichir vos pages de graphiques responsives et dynamiques. Cette
+          librairie est aussi open source. L’une des grandes différences se
+          situera dans les modalités d’installation.
+        </p>
+        <p>
+          De plus, elle a la caractéristique d’être disponible pour de nombreux
+          langages de programmation.
+        </p>
+        <p>
+          Il y a bien entendu la possibilité d’installer Plotly.js via NPM. Pour
+          cela il est nécessaire d’ouvrir votre terminal et de taper la commande
+          suivante :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="poGNOjQ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/poGNOjQ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Elle s’installe aussi via le cdn, ainsi que via le repos de GitHub.
+          Ces démarches ayant été vues en amont avec l’introduction de Chart.js,
+          il est plus important de voir la dernière façon d’installer cette
+          librairie, via webpack.
+        </p>
+      </div>
+
+      <div>
+        <h2>Webpack pour l’installation de Plotly.js dans un projet HTML</h2>
+        <div>
+          <h3>Conseil</h3>
+          <p>
+            Dans le cadre de l’installation de Plotly.js, un élément de
+            différenciation existe avec Chart.js : il est possible d’installer
+            Plotly.js via webpack.
+          </p>
+          <p>
+            La procédure sera donc un peu plus complexe si vous souhaitez
+            utiliser webpack pour installer cette librairie, néanmoins, une fois
+            maîtrisée, elle est assez simple à mettre en place.
+          </p>
+        </div>
+
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            L’installation via webpack nécessite un certain nombre de démarches,
+            la première est l’installation de <strong>ify-loader</strong> en
+            utilisant npm.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="YzBpOqN"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/YzBpOqN"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            L’installation de cette dépendance devrait vous donner le visuel
+            suivant :
+          </p>
+          <img
+            src="02_Img/javascript-graphics-image4_1.png"
+            alt="Image javascript-graphics-image4_1"
+          />
+          <p>
+            <strong>Ify -loader</strong> téléchargé, il sera nécessaire
+            d’installer webpack dans votre projet :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="mdvOGEw"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/mdvOGEw"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Si l’installation s’est bien déroulée, vous devriez avoir le visuel
+            suivant :
+          </p>
+          <p>
+            Enfin, vous devrez configurer webpack en ajoutant un script à votre
+            webpack.config.json. Il vous sera donc nécessaire d’ajouter le code
+            ci-dessous.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="KKJNxMr"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/KKJNxMr"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les impératifs : une balise HTML pour le départ</h2>
+        <p>
+          Comme pour Chart.js, la première démarche est la création d’un fichier
+          HTML. Entre les 2 balises <strong>&ltbody&gt&lt/body&gt</strong>, il
+          est nécessaire de mettre une balise
+          <strong>&ltdiv&gt&lt/div&gt</strong>.
+        </p>
+        <div>
+          <h3>Méthode</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="OJdboRQ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/OJdboRQ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Cette &ltdiv&gt installée, il sera nécessaire de créer notre fichier
+            Javascript sur lequel l’ensemble des données sera injecté.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="ZEwBMpN"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/ZEwBMpN"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Code-2-JavaScript-Graphics#index.html"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+        </div>
+
+        <div>
+          <h3>Conseil</h3>
+          <p>
+            <strong>Plotly.newPlot(graphDiv, data, layout)</strong>; cette
+            classe est un impératif dans Plotly.js : elle s’introduit toujours
+            dans une &ltdiv&gt. Elle contient l’ensemble des éléments du
+            graphiques, comme les données, le titre, l’axe des x et des y, etc.
+          </p>
+          <p>
+            La variable layout est incluse dans un objet, l’objet layout servira
+            à stocker des variables comme le titre, le départ à zéro du
+            graphique, etc.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Comment configurer les options du graphique</h2>
+        <p>
+          Il est possible de paramétrer l’ensemble du graphique pour obtenir un
+          rendu correspondant à nos attentes. La librairie comptant plus de 40
+          types de graphiques, il est plus intéressant de s’attarder sur la
+          méthode pour ajouter une ou plusieurs options. Pour cela, il sera
+          nécessaire de déclarer une variable qui dans un objet contiendra les
+          options voulues, telle que le nom, le responsive, etc. Observez le
+          code ci-dessous, il a pour objectif de permettre un zoom et un scroll.
+        </p>
+        <div>
+          <h3>Méthode</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="poGNORG"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/poGNORG"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Code-3-JavaScript-Graphics#index.html"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            La mise en place des options se fait dans une variable « Layout »,
+            dans l’exemple au-dessus, il s’agit de l’option scroll et zoom mais
+            la démarche serait la même avec des aspects responsifs.
+          </p>
+        </div>
+
+        <div>
+          <h3>Exemple</h3>
+          <p>Voici un exemple de projet avec Plotly.js.</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="yLZVxMr"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/yLZVxMr"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Code-4-JavaScript-Graphics"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            L’utilisation de ces morceaux de codes vous permettront de réaliser
+            votre premier graphique en ligne avec Plotly.js.
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>
