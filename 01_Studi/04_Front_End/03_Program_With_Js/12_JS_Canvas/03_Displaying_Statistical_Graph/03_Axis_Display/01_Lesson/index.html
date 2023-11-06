@@ -3,13 +3,527 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Affichage des axes</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Affichage des axes</h1>
+      <div>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            La première partie de l’algorithme pour réaliser un graphique
+            statistique est de créer les axes de ce dernier.
+          </p>
+          <p>
+            Créons donc 2 fonctions jumelles qui seront vides pour l’instant,
+            mais que nous appellerons createAxeX() et createAxeY().
+          </p>
+          <p>
+            Ces 2 fonctions prendront les mêmes paramètres suivants qui
+            permettront de personnaliser les axes :
+          </p>
+          <ul>
+            <li>marks : nombre de mesure à afficher sur l’axe,</li>
+            <li>scale : échelle de valeurs des mesures,</li>
+            <li>unit : unité de mesure de l’axe (optionnel),</li>
+            <li>label : nom de l’axe (optionnel).</li>
+          </ul>
+          <p>
+            Voici donc à quoi devraient ressembler les 2 fonctions avec tous ces
+            éléments :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="KKJazJg"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/KKJazJg"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Concentrons-nous maintenant sur l’axe des abscisses, donc sur la
+            méthode createAxeX().
+          </p>
+          <p>
+            Nous allons en premier lieu dessiner en un trait l’axe, qui fera
+            toute la largeur du Canvas avec une marge de 50 px. Pour connaître
+            les dimensions du Canvas, l’API contient les attributs
+            ctx.canvas.width et ctx.canvas.height.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="rNPjMQa"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/rNPjMQa"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+
+        <div>
+          <h3>Attention</h3>
+          <p>
+            Pour observer le résultat, n’oubliez pas d’appeler dans le script la
+            méthode createAxeX() après l’avoir définie.
+          </p>
+        </div>
+
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Maintenant que cet axe s’affiche, ajoutons-y son label. Étant un
+            paramètre optionnel, il faut donc placer ce code dans un if
+            conditionnel.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="PoVWGxe"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/PoVWGxe"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Vous pouvez tester le bon fonctionnement en ajoutant des paramètres
+            factices lors de l’appel de la fonction comme dans l’exemple
+            ci-dessous.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="WNPRGYL"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/WNPRGYL"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/JavaScript-Canvas-Code-7#script.js"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+        </div>
+
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            Dans le code précédent, nous utilisons l’attribut de l’API
+            ctx.textAlign qui permet de définir l’alignement du texte,
+            c’est-à-dire si celui-ci doit être centré, aligné à gauche ou aligné
+            à droite.
+          </p>
+        </div>
+
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Il ne nous reste plus qu’à afficher les mesures sur l’axe. Le nombre
+            des mesures à placer est défini par le paramètre marks, tandis que
+            l’échelle de chacune de ces mesures est définie par scale.
+          </p>
+          <p>
+            Nous allons donc nous servir d’une boucle for et d’un peu de logique
+            mathématique pour décider de comment placer ces mesures.
+          </p>
+          <p>
+            Tout d’abord, voici la boucle qui nous permettra d’itérer pour le
+            nombre de mesures à placer :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="wvNgzRY"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/wvNgzRY"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cette boucle, ajoutons un calcul qui va nous permettre de
+            définir la distance en pixel entre chaque mesure. Cette distance est
+            calculée grâce à la taille de l’axe, soit ctx.canvas.width - 100 (le
+            100 correspond à la marge en pixel), taille que nous divisons par le
+            nombre de mesures :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="eYxgdxm"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/eYxgdxm"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            En dessous du calcul de la distance, nous pouvons directement
+            ajouter le code qui dessinera le trait des mesures :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="abXpmXZ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/abXpmXZ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Il ne nous reste plus qu’à afficher la valeur de la mesure en texte,
+            sans oublier qu’il y a l’unité de la mesure à prendre en compte,
+            étant optionnelle.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="RwvKGvx"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/RwvKGvx"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Il ne nous reste plus qu’à essayer cette méthode en l’appelant ainsi
+            avec ces paramètres :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="BaMpLMO"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/BaMpLMO"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/JavaScript-Canvas-Code-8#script.js"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>Vous devriez ainsi obtenir le résultat visuel suivant :</p>
+          <img
+            src="02_Img/repl-it-javascript-canvas-ima3_1.png"
+            alt="Image repl-it-javascript-canvas-ima3_1"
+          />
+        </div>
+
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Avant de passer à la suite, il nous faut aussi reproduire la même
+            fonction, mais pour l’axe Y.
+          </p>
+          <p>
+            Le concept sera le même, néanmoins il n’existe pas de méthode dans
+            l’API Canvas qui permette d’écrire du texte verticalement, ce qui
+            est nécessaire étant donné que l’axe Y est vertical. Voici donc une
+            fonction que vous pouvez ajouter. En l’utilisant, vous pourrez
+            écrire verticalement exactement de la même manière que la méthode
+            fillText().
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="oNmBzOw"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/oNmBzOw"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Vous possédez désormais tous les éléments pour réaliser la méthode
+            createAxeY() par vous-même, ce à quoi nous vous encourageons afin de
+            mieux prendre en main l’API Canvas.
+          </p>
+          <p>
+            Voici le résultat que vous devriez obtenir en adaptant la fonction
+            pour l’axe Y :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="BaMpLEq"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/BaMpLEq"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Essayons maintenant d’appeler les méthodes de création des axes avec
+            les paramètres ci-dessous :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="ZEwLpNY"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/ZEwLpNY"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/JavaScript-Canvas-Code-9#script.js"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Ainsi, le résultat obtenu devrait visuellement correspondre à cet
+            exemple :
+          </p>
+          <img
+            src="02_Img/repl-it-javascript-canvas-ima4_1.png"
+            alt="Iamge repl-it-javascript-canvas-ima4_1"
+          />
+        </div>
+      </div>
     </div>
   </body>
 </html>

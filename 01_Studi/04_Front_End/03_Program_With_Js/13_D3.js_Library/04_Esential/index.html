@@ -3,13 +3,49 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Essentiel</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Essentiel</h1>
+      <div>
+        <p>
+          D3.js est une bibliothèque JavaScript populaire utilisée pour la
+          manipulation et la visualisation de données sur le Web. Elle offre de
+          nombreux avantages, notamment sa flexibilité et sa puissance, qui en
+          font un outil idéal pour créer des graphiques interactifs et des
+          visualisations de données dynamiques.
+        </p>
+        <p>
+          Pour commencer à travailler avec D3.js, nous devons d'abord
+          initialiser l'espace de dessin. Cela peut être réalisé en créant un
+          élément SVG (Scalable Vector Graphics) dans le DOM avec la méthode
+          select() pour sélectionner le &ltbody&gt et append() pour y ajouter le
+          &ltsvg&gt, et en spécifiant sa largeur, sa hauteur et ses marges avec
+          la méthode attr(). L'élément SVG sert de conteneur pour la réalisation
+          de graphiques et de cartes.
+        </p>
+        <p>
+          Une fois l'espace de dessin prêt, nous pouvons ajouter nos données au
+          graphique avec la méthode data(), ce qui a pour effet de créer une
+          liste de données et de leur attribuer des éléments vides. La méthode
+          enter() est généralement utilisée pour récupérer la liste des éléments
+          vides et y placer les éléments avec la méthode append().
+        </p>
+        <p>
+          Pour afficher les données correctement, nous devons les mettre à
+          l'échelle en fonction de l'espace de dessin disponible. D3.js fournit
+          des méthodes pour calculer automatiquement les échelles en fonction
+          des valeurs des données, comme les méthodes scaleLinear() ou
+          scaleBand() par exemple. Une fois que les échelles sont définies, nous
+          pouvons ajouter des axes pour représenter les valeurs sur les axes X
+          et Y du graphique. Les méthodes de création d’axes sont au nombre de 4
+          dans D3.js et ne varient que dans l’orientation de l’axe, comme
+          axisBottom() pour un axe dirigé vers le bas.
+        </p>
+      </div>
     </div>
   </body>
 </html>

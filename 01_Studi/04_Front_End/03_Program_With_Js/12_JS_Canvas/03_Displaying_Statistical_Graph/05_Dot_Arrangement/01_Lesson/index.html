@@ -3,13 +3,267 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Disposition des points</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Disposition des points</h1>
+      <div>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous possédons tout le nécessaire pour placer les points sur le
+            graphique, nous allons maintenant pouvoir finalement créer la
+            fonction qui s’en occupera.
+          </p>
+          <p>
+            Appelons cette fonction placePoints(), celle-ci prendra en paramètre
+            points, le tableau des points, et marks_x, scale_x, marks_y, scale_y
+            qui sont les mêmes valeurs données lors de la création des axes, et
+            dont nous avons besoin pour placer correctement nos points à
+            l’échelle.
+          </p>
+          <p>Voici le prototype de fonction correspondant aux consignes :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="BaMpQLb"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/BaMpQLb"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Par ergonomie, au sein de la fonction nous allons créer 2 variables
+            scale_x et scale_y qui seront les échelles dont nous avons besoin
+            pour adapter les coordonnées natives au graphique.
+          </p>
+          <p>
+            La valeur maximale de chaque axe est calculable en multipliant le
+            nombre de mesures marks et l’échelle des mesures scale ensemble, et
+            en divisant cette valeur par la taille en pixel de l’axe, nous
+            obtenons l’échelle pour transformer la coordonnée native en
+            coordonnées adaptées au graphique.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="KKJaNNw"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/KKJaNNw"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous allons ensuite ajouter une boucle « forEach » qui va itérer à
+            travers chaque point du tableau, ce sera donc la boucle pour placer
+            les points.
+          </p>
+          <p>
+            La première chose que nous devons accomplir dans cette boucle va
+            être de calculer les coordonnées mises à l’échelle. Nous allons donc
+            créer en même temps que la boucle 2 variables en son sein qui
+            représenteront les coordonnées transformées.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="XWOpNNN"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/XWOpNNN"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            En prenant en compte la marge, l’inversion de l’axe Y et la mise à
+            l’échelle avec les variables transform_x et transform_y, le résultat
+            des coordonnées adaptées au graphique devrait correspondre au calcul
+            suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="GRzrNNY"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/GRzrNNY"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Utilisons ces coordonnées avec la méthode arc() que nous avions
+            précédemment vue, ainsi nous pouvons ajouter le code suivant qui
+            dessinera sur le graphique les points à chaque itération :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="QWYdGdL"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/QWYdGdL"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Enfin, voici la ligne que nous allons taper pour afficher nos points
+            :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="yLZgVgY"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/yLZgVgY"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/JavaScript-Canvas-Code-11#script.js"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Les valeurs étant aléatoires, il serait complexe de vérifier
+            correctement le bon fonctionnement de la disposition des points.
+            Néanmoins, le code peut être considéré valide si le résultat est
+            semblable à celui-ci dessous :
+          </p>
+          <img
+            src="02_Img/repl-it-javascript-canvas-ima5_1.png"
+            alt="Image repl-it-javascript-canvas-ima5_1"
+          />
+        </div>
+
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            N’oubliez pas que la disposition des points dépend des limitations
+            fournies en paramètres à la fonction generatePoints().
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>

@@ -3,13 +3,182 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Génération des points</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Génération des points</h1>
+      <div>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous avons réussi à afficher les axes du graphique, il ne nous reste
+            donc plus qu’à placer des points dessus.
+          </p>
+          <p>
+            Mais pour l’instant, nous n’avons toujours pas de données qui
+            correspondent à des points à placer, nous allons donc nous occuper
+            d’implémenter une fonction utilitaire générant aléatoirement ces
+            points.
+          </p>
+          <p>
+            Nommons cette fonction generatePoints(), son premier paramètre est
+            size, soit la taille du tableau de point généré, suivi de x_min,
+            x_max, y_min, y_max qui correspondent à la délimitation des
+            coordonnées des points, et finalement color, qui sera la couleur du
+            point lorsque nous afficherons.
+          </p>
+          <p>
+            Voici donc ce à quoi la définition de la méthode correspond en
+            suivant les consignes précédentes :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="GRzrNoX"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/GRzrNoX"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous souhaitons créer un tableau de points, et itérer avec le
+            paramètre size pour ajouter le bon nombre de points dans le tableau.
+          </p>
+          <p>
+            Initialisons la variable qui jouera le rôle du tableau, et créons la
+            boucle for où nous générerons le point à chaque boucle :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="WNPRorq"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/WNPRorq"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Il ne nous reste plus qu’à ajouter dans la boucle un point avec des
+            coordonnées aléatoire et la couleur attribuée en paramètre.
+          </p>
+          <p>
+            Pour générer aléatoirement les coordonnées, servons-nous de la
+            fonction Math.random() de JavaScript, qui nous renvoie un nombre
+            décimal aléatoire entre 0 et 1.
+          </p>
+          <p>
+            Voici le code permettant d’ajouter un point en adaptant la fonction
+            Math.random() afin de correspondre aux délimitations fournies en
+            paramètres :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="rNPjWeL"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/rNPjWeL"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Avec cela, la fonction est complète, il ne nous reste plus qu’à
+            l’appeler afin de récupérer les points générés dans une variable.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="oNmBYxo"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/oNmBYxo"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a href="https://replit.com/@javascript-studi/JavaScript-Canvas-Code-10#script.js" target="_blank" rel="alternate">Lien Replit</a>
+        </div>
+      </div>
     </div>
   </body>
 </html>

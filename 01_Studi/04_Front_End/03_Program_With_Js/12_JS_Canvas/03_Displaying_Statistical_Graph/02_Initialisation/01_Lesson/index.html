@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Initialisation</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <h1>Initialisation</h1>
+      <div>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons tout d’abord mettre en place les fondations. En créant
+            un espace de travail avec le template HTML de Replit, par défaut 3
+            fichiers ont été créés : « index.html », « script.js » et «
+            style.css ».
+          </p>
+          <p>
+            Dirigeons-nous donc dans le fichier « index.html », et modifions-y
+            le &ltbody&gt afin d’y ajouter le &ltcanvas&gt et de charger «
+            script.js ».
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="jOdyqvq"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/jOdyqvq"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+
+        <div>
+          <h3>Attention</h3>
+          <p>
+            Il est important que le script soit chargé après le &ltcanvas&gt,
+            autrement lorsque nous souhaiterions récupérer le &ltcanvas&gt dans
+            le script, celui-ci ne sera pas encore existant.
+          </p>
+        </div>
+
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Désormais, nous ne devrions plus avoir besoin d’interagir avec le
+            code HTML, il ne nous reste plus qu’à récupérer le &ltcanvas&gt et
+            son API en JavaScript. Donc dans le fichier « script.js », mettons
+            en place le code suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="eYxgZPW"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/eYxgZPW"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+
+        <div>
+          <h3>Conseil</h3>
+          <p>
+            Il est considéré comme une bonne pratique en Web d’utiliser l’outil
+            « inspecter » de votre navigateur sur le résultat afin de vérifier
+            le bon fonctionnement du code mise en place.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

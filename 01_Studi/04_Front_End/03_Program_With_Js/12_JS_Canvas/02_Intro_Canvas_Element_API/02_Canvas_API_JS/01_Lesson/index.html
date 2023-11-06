@@ -3,13 +3,350 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>API Canvas en JavaScript</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>API Canvas en JavaScript</h1>
+      <div>
+        <p>
+          Tout d’abord, avant d’en apprendre plus sur l’API Canvas, il ne faut
+          pas oublier les méthodes JavaScript que fournissent l’élément
+          &ltcanvas&gt.
+        </p>
+        <p>
+          En dehors des méthodes communes à tous les éléments HTML, les méthodes
+          JS que le &ltcanvas&gt possède sont au nombre de 4 :
+        </p>
+        <ul>
+          <li>
+            getContext(contextId, options) : renvoie le contexte de dessin du
+            Canvas, ce qui correspond à son API pour dessiner. Le paramètre
+            contextId permet de spécifier l’API désiré (« 2d », « bitmaprenderer
+            », « webgl », « webgl2 », or « webgpu »), le paramètre options est
+            un objet non obligatoire.
+          </li>
+          <li>
+            toDataURL(type, quality) : renvoie l’URL de l’image du Canvas. Les 2
+            paramètres sont optionnels, le premier est le type de l’image (par
+            défaut : PNG) et le deuxième, quality, est la qualité désirée en
+            décimale entre 0 et 1.
+          </li>
+          <li>
+            toBlob(callback, type, quality) : fonctionne comme toDataURL, mais
+            au lieu d’une URL il renvoie un objet Blob correspondant au fichier
+            de l’image du Canvas. Il possède 1 paramètre en plus qui est une
+            fonction callback qui sera appelée après avoir généré le Blob.
+          </li>
+          <li>
+            transferControlToOffscreen() : méthode avancée négligeable dans ce
+            contexte, renvoie un nouvel objet Canvas dit « offscreen » qui ne
+            dépend plus du DOM.
+          </li>
+        </ul>
+        <p>
+          L’API du &ltcanvas&gt est récupérable en JavaScript grâce à la méthode
+          getContext() de cet élément.
+        </p>
+        <p>
+          Comme dit précédemment, en fonction du paramètre type de cette
+          méthode, nous pouvons récupérer plusieurs API différentes, par exemple
+          avec le type « webgl », nous obtiendrons logiquement l’API WebGL pour
+          dessiner sur le Canvas.
+        </p>
+        <p>
+          Néanmoins, celle qui nous intéresse sera juste l’API du type « 2d »
+          qui permet simplement de dessiner des formes en 2d.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Voici en exemple ci-dessous l’usage de la méthode getContext() pour
+            récupérer l’API :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="dyaNPmv"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/dyaNPmv"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/JavaScript-Canvas-Code-4#script.js"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+        </div>
+        <p>
+          L’API Canvas possède de nombreuses méthodes qui sont répartissables en
+          plusieurs catégories, néanmoins nous allons juste nous concentrer sur
+          les notions essentielles et basiques pour dessiner sur le Canvas.
+        </p>
+        <p>
+          Une de ces catégories de méthode, qui est sans aucun doute la plus
+          essentielle et basique, est celle des « Path ».
+        </p>
+        <p>
+          Un « Path » dans l’API correspond à un chemin, mais plus précisément à
+          une liste de points et de vecteurs, qui forment ce fameux chemin.
+        </p>
+        <p>
+          Voici les méthodes principales qui permettent de manipuler les « Path
+          » de l’API :
+        </p>
+        <ul>
+          <li>beginPath() : ouvre un nouveau chemin.</li>
+          <li>
+            moveTo(x, y) : ajoute un nouveau point au chemin sans le connecter
+            au précédent point.
+          </li>
+          <li>
+            lineTo(x, y) : ajoute un nouveau point au chemin en le connectant au
+            précédent point sous forme de ligne. (Crée donc un vecteur qui
+            connecte le point précédent et le nouveau point).
+          </li>
+          <li>
+            closePath() : connecte le premier et le dernier point en ligne.
+          </li>
+          <li>
+            stroke() : dessine les contours des chemins (soit les connexions
+            entre les points).
+          </li>
+          <li>
+            fill() : dessine l’intérieur des chemins (soit l’espace créé par la
+            connexion de plusieurs points).
+          </li>
+        </ul>
+        <p>
+          Dessiner une ligne avec un Path correspond donc à ouvrir un chemin à
+          un point A, et ajouter un vecteur jusqu’à un point B.
+        </p>
+        <p>
+          Voyons avec un exemple : comment nous pouvons dessiner 2 lignes
+          parallèles, ainsi qu’un triangle.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="gOqgbzv"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/gOqgbzv"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/JavaScript-Canvas-Code-5#index.html"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Ce code permet de dessiner simplement 2 lignes parallèles. Ainsi,
+            nous obtenons le résultat visuel suivant :
+          </p>
+          <img
+            src="02_Img/repl-it-javascript-canvas-ima1.png"
+            alt="Image repl-it-javascript-canvas-ima1"
+          />
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="oNmBgyZ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/oNmBgyZ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/JavaScript-Canvas-Code-6#script.js"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Si nous ajoutons le code ci-dessus, un triangle sera dessiné à côté
+            des lignes parallèles :
+          </p>
+          <img
+            src="02_Img/repl-it-javascript-canvas-ima2_1.png"
+            alt="Image 02_Img/repl-it-javascript-canvas-ima2_1"
+          />
+        </div>
+
+        <div>
+          <h3>Conseil</h3>
+          <p>
+            N’hésitez pas à manipuler les valeurs et à utiliser par vous-même
+            les méthodes vues précédemment pour bien comprendre leurs
+            fonctionnements.
+          </p>
+        </div>
+        <p>
+          Nous venons de voir les méthodes pour dessiner manuellement les
+          contours des formes dans le Canvas. Néanmoins, si nous souhaitons
+          réaliser des formes complexes, se limiter aux méthodes moveTo() et
+          lineTo() risque de rendre la tâche ardue et fastidieuse.
+        </p>
+        <p>
+          Bien heureusement, au lieu de se contenter de connecter des points en
+          ligne droite, l’API Canvas 2D possède aussi certaines méthodes afin de
+          réaliser des formes plus spécifiques :
+        </p>
+        <ul>
+          <li>
+            fillRect(),strokeRect(),clearRect() : ces méthodes permettent
+            respectivement de dessiner un rectangle rempli, les contours d’un
+            rectangle, et d’effacer une partie du Canvas sous forme de
+            rectangle. Elles prennent toutes les mêmes paramètres x, y, width et
+            height qui correspondent aux coordonnées ainsi qu’aux dimensions du
+            rectangle.
+          </li>
+          <li>
+            rect() : fonctionne comme les méthodes précédentes, mais au lieu de
+            dessiner un rectangle, l’ajoute sous forme de chemin au Path actuel.
+          </li>
+          <li>
+            fillText(), strokeText() : respectivement dessine du texte et
+            dessine les contours du texte grâce aux paramètres text, x et y qui
+            correspondent respectivement au texte et à ses coordonnées.
+          </li>
+          <li>
+            arc() : ajoute un cercle ou un arc sous forme de chemin au Path
+            actuel grâce aux paramètres suivants : x, y, radius, startAngle,
+            endAngle qui correspondent respectivement aux coordonnées du centre,
+            au rayon du cercle, et les mesures de l’angle de l’arc en radians
+            (pour un cercle, startAngle et endAngle doivent donc avoir une
+            différence de 2 * pi). Cette méthode possède aussi un 5e paramètre
+            optionnel, counterclockwise, qui détermine la direction de dessin de
+            l’arc.
+          </li>
+        </ul>
+        <div>
+          <h3>Complément</h3>
+          <p>
+            Il existe d’autres méthodes permettant de dessiner des formes dans
+            l’API, comme quadraticCurveTo(), bezierCurveTo() ou arcTo() qui
+            reposent sur des concepts géométriques complexes.
+          </p>
+          <p>
+            Néanmoins, ces méthodes étant assez avancées et non essentielles,
+            elles ne relèvent pas de notre contexte d’apprentissage.
+          </p>
+        </div>
+        <p>
+          La dernière notion essentielle de l’API est celle du
+          <strong>style</strong> de cette dernière.
+        </p>
+        <p>
+          Grâce à certaines variables attributs qu’elle contient, nous pouvons
+          styliser le trait de dessin de l’API en les modifiants :
+        </p>
+        <ul>
+          <li>strokeStyle : couleur du contour du dessin.</li>
+          <li>fillStyle : couleur de remplissage du dessin.</li>
+          <li>
+            shadowOffsetX : distance de décalage de l’ombre du trait en X.
+          </li>
+          <li>
+            shadowOffsetY : distance de décalage de l’ombre du trait en Y.
+          </li>
+          <li>shadowBlur : niveau de flou de l’ombre.</li>
+          <li>shadowColor : couleur de l’ombre.</li>
+          <li>font : paramètre de la police de texte.</li>
+        </ul>
+        <div>
+          <h3>Attention</h3>
+          <p>
+            Si vous souhaitez modifier le style du dessin sans affecter ce qui a
+            été précédemment dessiné, il est impératif de commencer un nouveau
+            Path avec la méthode beginPath(), car le style s’appliquera à
+            l’entièreté du Path actuel.
+          </p>
+        </div>
+
+        <div>
+          <h3>Conseil</h3>
+          <p>
+            Si vous souhaitez vous renseigner plus en détail sur l’API,
+            n’hésitez pas à vous rendre sur
+            <a
+              href="https://developer.mozilla.org/fr/docs/Web/API/CanvasRenderingContext2D"
+              target="_blank"
+              rel="alternate"
+              >MDN Web Docs</a
+            >
+            ou à faire des recherches avec les mots-clés «
+            CanvasRenderingContext2D API ».
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>

@@ -3,13 +3,184 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>L’élément <canvas> en HTML</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>L’élément &ltcanvas&gt en HTML</h1>
+      <div>
+        <h2>Définition</h2>
+        <p>
+          Tout d’abord, il est important de savoir que le &ltcanvas&gt est un
+          élément HTML de la catégorie « embedded content » ou « contenu intégré
+          » en français. Cela signifie que cet élément est utilisé pour importer
+          ou insérer une ressource dans votre document HTML, d’autres exemples
+          d’éléments de type « Contenu intégré » sont &ltimg&gt, &ltaudio&gt ou
+          &ltvideo&gt.
+        </p>
+        <div>
+          <h3>Conseil</h3>
+          <p>
+            Si vous souhaitez en savoir plus sur les différentes catégories de
+            contenu des éléments HTML, n’hésitez pas à vous rendre sur
+            <a
+              href="https://developer.mozilla.org/fr/docs/Web/HTML/Content_categories"
+              target="_blank"
+              rel="alternate"
+              >MDN Web Docs</a
+            >
+            pour vous renseigner, ou à faire une recherche avec les mots-clés «
+            content categories HTML » ou « catégories de contenu HTML ».
+          </p>
+        </div>
+
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="jOdyEmQ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/jOdyEmQ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/JavaScript-Canvas-Code-1#index.html"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Ci-dessus, on peut voir l’exemple d’un usage basique de l’élément
+            &ltcanvas&gt.
+          </p>
+          <p>
+            Celui-ci possède donc les attributs communs à tous les éléments HTML
+            comme id, title, ou bien lang.
+          </p>
+          <p>Mais il possède spécifiquement en addition 2 attributs :</p>
+          <ul>
+            <li>width : la largeur en pixel de l’élément</li>
+            <li>height : la hauteur en pixel de l’élément</li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            Il est important de noter que &ltcanvas&gt doit impérativement
+            posséder une balise fermante &lt/canvas&gt en addition,
+            contrairement à ses confrères de la catégorie contenu de flux comme
+            &ltimg&gt ou &ltaudio&gt.
+          </p>
+          <p>
+            La raison de la présence d’une balise fermante est à cause du
+            contenu « fallback ».
+          </p>
+        </div>
+        <p>
+          La notion de contenu « fallback » en informatique correspond à une
+          solution alternative, notamment dans notre contexte, à un contenu qui
+          remplacera le &ltcanvas&gt si celui-ci ne marche pas ou n’est pas
+          compatible avec le navigateur.
+        </p>
+        <p>
+          Ici, le contenu « fallback » à insérer dans les balises &ltcanvas&gt
+          peut être du simple texte ou un autre élément HTML, comme démontré
+          dans les 2 exemples ci-dessous.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="MWLJYvR"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/MWLJYvR"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/JavaScript-Canvas-Code-2#index.html"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="oNmBgGY"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/oNmBgGY"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a href="https://replit.com/@javascript-studi/JavaScript-Canvas-Code-3#index.html" target="_blank" rel="alternate">Lien Replit</a>
+        </div>
+      </div>
     </div>
   </body>
 </html>

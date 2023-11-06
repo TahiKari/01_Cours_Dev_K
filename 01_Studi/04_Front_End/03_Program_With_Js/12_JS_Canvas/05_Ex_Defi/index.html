@@ -3,13 +3,77 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Ma solution</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Ma solution</h1>
+      <div>
+        <p>
+          Vous avez un projet important à rendre pour votre école : il s’agit
+          d’un graphique linéaire pour afficher des données stockées en JSON, à
+          réaliser en HTML/JavaScript avec l’API Canvas. Bien heureusement, un
+          de vos précédents projets était de réaliser un nuage de points avec
+          données aléatoires, et vous avez l’autorisation de réadapter le code
+          utilisé.
+        </p>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          En dehors de l’initialisation, quelles seront les différentes étapes
+          de votre algorithme pour réaliser le graphique linéaire ?
+        </p>
+        <div>
+          <h2>Solution</h2>
+          <p>
+            Tout d’abord, il faut charger les données du JSON, et les adapter
+            pour pouvoir les utiliser dans l’algorithme. Le format des données
+            est ce qui définira le paramétrage des fonctionnalités de
+            l’algorithme.
+          </p>
+          <p>
+            L’étape suivante est de créer et de dessiner les axes sur le
+            &ltcanvas&gt, il est important de déduire les mesures et l’échelle
+            des axes en fonction des données chargées.
+          </p>
+          <p>
+            Il faut finalement placer les points sur le graphique, en ayant
+            préalablement trié les points par ordre sur l’axe des abscisses afin
+            de pouvoir les connecter dans l’ordre.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          Comment comptez-vous réadapter votre précédent graphique nuage de
+          points pour en faire un graphique linéaire avec l’API Canvas ?
+        </p>
+        <div>
+          <h2>Solution</h2>
+          <p>
+            Les données qui étaient générées aléatoirement avec la fonction
+            generatePoints() doivent être chargées en utilisant les
+            fonctionnalités JSON de JavaScript.
+          </p>
+          <p>
+            La suite est de reprendre les fonctions de création des axes, pour
+            faire la connexion entre les données chargées et les mesures qui
+            seront déduites avec les données.
+          </p>
+          <p>
+            La dernière fonction à modifier est celle plaçant les points, la
+            méthode arc() dessinant un point est désormais négligeable, et peut
+            être remplacée ou couplée avec la méthode lineTo() pour ajouter des
+            connexions entre chaque point qui se suivent.
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>

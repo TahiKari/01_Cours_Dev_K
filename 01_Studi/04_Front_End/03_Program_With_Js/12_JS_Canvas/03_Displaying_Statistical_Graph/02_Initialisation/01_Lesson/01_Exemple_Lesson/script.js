@@ -1,7 +1,6 @@
 // Exemple 1
-/*
-
-*/
+const canvasElement = document.getElementById('graph')
+const ctx = canvasElement.getContext('2d')
 
 console.log('----------------------------------------')
 
