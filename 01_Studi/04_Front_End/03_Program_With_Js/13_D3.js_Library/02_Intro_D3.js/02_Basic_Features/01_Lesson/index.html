@@ -3,13 +3,127 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Les fonctionnalités basiques</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Les fonctionnalités basiques</h1>
+      <div>
+        <p>
+          D3 possède de nombreuses fonctionnalités qui sont essentielles pour
+          réaliser des tâches basiques.
+        </p>
+        <p>
+          La première étape dans toute utilisation de D3 est de récupérer un
+          élément avec les méthodes d3.select() et d3.selectAll(). Celles-ci
+          fonctionnent comme getElement(), mais l’élément renvoyé contiendra
+          additionnellement des fonctions de l’API D3. C’est pourquoi il est
+          essentiel de s’en servir.
+        </p>
+        <p>
+          La différence entre d3.select() et d3.selectAll() vient simplement du
+          nombre. La première nous renvoie le premier élément satisfaisant les
+          conditions, tandis que la deuxième renvoie une liste contenant tous
+          les éléments, ce qui permet aux fonctions de l’API de s’appliquer à
+          tous ces éléments.
+        </p>
+        <p>
+          Nous pouvons par ailleurs utiliser ces méthodes récursivement sur les
+          éléments obtenus.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="dyaNaYz"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/dyaNaYz"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/La-librairie-D3js-Code-1#index.html"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+        </div>
+        <p>
+          Une fois ces éléments récupérés, nous avons à notre disposition
+          plusieurs méthodes pour les créer et modifier :
+        </p>
+        <ul>
+          <li>
+            attr(name, value) : applique l’attribut name avec la valeur value à
+            l’élément parent.
+          </li>
+          <li>
+            append(name) : ajoute dans l’élément parent un élément correspondant
+            à name (exemple : 'div' pour une &ltdiv&gt).
+          </li>
+          <li>
+            data(data) : associe virtuellement les données data à l’élément
+            parent, et leur crée des emplacements vides dans ce dernier.
+          </li>
+          <li>
+            enter() : à utiliser récursivement avec data(), récupère les
+            emplacements vides dans la sélection d’entrée.
+          </li>
+          <li>
+            merge(list) : fusionne la sélection d’entrée avec la sélection
+            fournie en paramètre et renvoie la nouvelle sélection, souvent
+            utilisé pour mettre à jour une sélection.
+          </li>
+          <li>
+            exit() : renvoie une sélection d’éléments n’étant plus associés à
+            des données, souvent utilisé avec .remove() qui supprime ces
+            éléments du DOM.
+          </li>
+        </ul>
+        <p>
+          Pour résumer simplement le fonctionnement des sélections dans D3, il
+          existe 3 sortes de sélections générées lors de l’utilisation de data()
+          :
+        </p>
+        <ul>
+          <li>
+            La sélection d’<strong>entrée</strong> qui contient des éléments
+            vides associés à des données, c’est-à-dire qu’il n’y a pas d’élément
+            correspondant dans le DOM.
+          </li>
+          <li>
+            La sélection de <strong>mise à jour</strong> qui contient les
+            éléments associés à des données et à des éléments dans le DOM.
+          </li>
+          <li>
+            La sélection de <strong>sortie</strong> qui contient les éléments
+            associés à des éléments dans le DOM, mais à aucune donnée.
+          </li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>

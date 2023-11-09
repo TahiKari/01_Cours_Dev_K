@@ -3,13 +3,187 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Les fonctions avancées</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Les fonctions avancées</h1>
+      <div>
+        <p>
+          Créer un graphique avec un SVG entraîne des complexités mathématiques,
+          notamment à cause de l’échelle entre les dimensions de l’espace de
+          dessin et celles des valeurs statistiques.
+        </p>
+        <p>
+          C’est pour résoudre ces problèmes que la librairie D3 a été pensée,
+          nous avons à notre disposition plusieurs fonctions de mise à l’échelle
+          :
+        </p>
+        <ul>
+          <li>scaleLinear() : crée une échelle linéaire.</li>
+          <li>scaleOrdinal() : crée une échelle ordinale.</li>
+          <li>
+            scaleBand() : crée une échelle de bandes, répartit les valeurs en
+            catégories qui correspondent à ces bandes et leur attribue une marge
+            et un padding adapté.
+          </li>
+          <li>scaleLog() : crée une échelle logarithmique.</li>
+          <li>
+            scaleQuantize() : crée une échelle quantifiée, c’est-à-dire avec des
+            index de catégorie.
+          </li>
+        </ul>
+        <p>
+          Ces 5 fonctions prennent toutes les mêmes paramètres en entrée, domain
+          qui correspond au domaine des valeurs d’entrée et range qui correspond
+          à la portée des valeurs de sortie. Celles-ci renvoient ainsi une
+          fonction en retour à utiliser pour mettre à l’échelle une valeur
+          donnée.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="OJdWdjd"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/OJdWdjd"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/La-librairie-D3js-Code-2#index.html"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Il est d’ailleurs aussi possible de définir le domain et la range à
+            l’initialisation et après grâce aux méthodes membres du même nom :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="gOqgqGQ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/gOqgqGQ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/La-librairie-D3js-Code-3#index.html"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            En complément au module des méthodes de mise à l’échelle, il existe
+            aussi un module pour la création d’axes.
+          </p>
+          <p>
+            D3.js nous épargne l’effort manuel de création des axes et de la
+            configuration des mesures sur ces derniers grâce aux 4 méthodes
+            suivantes : axisBottom(), axisTop(), axisLeft() et axisRight().
+          </p>
+          <p>
+            Ces fonctions sont fondamentalement les mêmes, elles permettent
+            toutes de créer un axe en leur fournissant en paramètre une fonction
+            scale obtenue avec les méthodes précédemment vues, elles se
+            différencient seulement dans la direction de l’axe indiquée dans
+            leur nommage.
+          </p>
+          <p>
+            En retour, une autre fonction nous est donnée : il faudra utiliser
+            celle-ci sur un élément SVG avec la méthode call() pour dessiner
+            l’axe.
+          </p>
+        </div>
+
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="eYxgxez"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/eYxgxez"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/La-librairie-D3js-Code-4#index.html"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <img
+            src="02_Img/repl-it-librairie-d3-js-image3_1.png"
+            alt="Image repl-it-librairie-d3-js-image3_1"
+          />
+        </div>
+      </div>
     </div>
   </body>
 </html>

@@ -3,13 +3,319 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>La mise à l’échelle et les axes</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>La mise à l’échelle et les axes</h1>
+      <div>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Les bandes des données sont affichées sur le SVG, mais elles se
+            superposent indistinctement, nous allons donc mettre en place la
+            mise à l’échelle des données avec les dimensions du SVG pour pouvoir
+            positionner correctement les bandes.
+          </p>
+          <p>
+            Commençons donc par créer la fonction de mise à l’échelle de bandes
+            sur l’axe X. Pour les données sur cet axe, nous utilisons des
+            string, nous ne pouvons donc pas donner la portée à la méthode de
+            mise à l’échelle.
+          </p>
+          <p>
+            Néanmoins, nous pouvons utiliser un tableau contenant toutes les
+            string en paramètre, D3.js s’occupera automatiquement d’attribuer
+            chaque string à une position.
+          </p>
+          <p>
+            Complétons le code suivant en définissant nous-même la range valide
+            :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="eYxvwVG"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/eYxvwVG"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Enchaînons avec l’axe Y cette fois-ci, mais utilisons la méthode de
+            mise à l’échelle linéaire. Les données sur cet axe étant numériques,
+            nous pouvons fournir la portée en paramètre. Complétons cette
+            fois-ci le domain de l’échelle :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="JjxWQpB"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/JjxWQpB"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Il est temps de mettre à jour la partie de notre code qui ajoute les
+            bandes au SVG, nous possédons maintenant les fonctions nécessaires
+            pour en définir la taille et les coordonnées.
+          </p>
+          <p>
+            Les calculs pour l’axe Y peuvent paraître contre-intuitifs.
+            Néanmoins, pour la mise à l’échelle, nous avons dû fournir une
+            portée de sortie inverse, car l’axe Y du SVG est inversé, nous
+            devons donc aussi inverser les calculs lors de la taille des bandes.
+          </p>
+          <p>
+            Définissons dans le code suivant les positions en utilisant une
+            fonction anonyme et les méthodes de mise à l’échelle respectives
+            pour obtenir les bonnes valeurs :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="PoVprRo"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/PoVprRo"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/La-librairie-D3js-Code-5#script.js"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <img
+            src="02_Img/repl-it-librairie-d3-js-image4_1.png"
+            alt="Image repl-it-librairie-d3-js-image4_1.png"
+          />
+          <p>
+            Il ne nous reste plus qu’à ajouter les axes pour compléter notre
+            graphique. Nous allons à nouveau commencer par nous occuper de l’axe
+            X :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="rNPyEdY"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/rNPyEdY"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Avec la fonction de mise à l’échelle et axisBottom(), nous avons
+            récupéré la méthode à utiliser pour créer l’axe. Servons-nous-en
+            afin de le positionner sur le SVG :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="oNmZrqQ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/oNmZrqQ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/La-librairie-D3js-Code-6#script.js"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <img
+            src="02_Img/repl-it-librairie-d3-js-image5_1.png"
+            alt="Image repl-it-librairie-d3-js-image5_1"
+          />
+          <p>
+            Réitérons le processus pour l’axe Y, mais en utilisant la méthode
+            tickFormat() de l’axe pour modifier le label affiché afin d’y
+            ajouter l’unité de mesure.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="WNPpqJx"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/WNPpqJx"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Pour la touche finale, nous allons afficher le nom des axes. Pour
+            l’axe Y, il faudra prendre soin d’appliquer une rotation verticale
+            sur le texte, n’oublions pas de prendre en compte cette rotation
+            lorsque nous définirons les coordonnées de cet axe.
+          </p>
+          <p>
+            Pour définir le texte, vous pourrez directement utiliser la méthode
+            text() au lieu d’utiliser un attribut.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="MWLpMGv"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/MWLpMGv"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/La-librairie-D3js-Code-7#script.js"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <img
+            src="02_Img/repl-it-librairie-d3-js-image6_1.png"
+            alt="Image repl-it-librairie-d3-js-image6_1"
+          />
+        </div>
+      </div>
     </div>
   </body>
 </html>

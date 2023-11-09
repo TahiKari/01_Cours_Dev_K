@@ -3,13 +3,146 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>L'initialisation</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>L'initialisation</h1>
+      <div>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons tout d’abord mettre en place les fondations en créant un
+            espace de travail avec le template HTML de Replit. Par défaut, 3
+            fichiers ont été créés : « index.html », « script.js » et «
+            style.css ».
+          </p>
+          <p>
+            Dirigeons-nous donc dans le fichier « index.html », et modifions-y
+            le &ltheader&gt afin d’y charger la librairie D3.js avec une balise
+            &ltscript&gt.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="MWLpdrY"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/MWLpdrY"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Il nous faut aussi ajouter une balise &ltscript&gt dans le
+            &ltbody&gt afin de charger le code du « script.js » :
+          </p>
+        </div>
+
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous n’avons plus besoin d’interagir avec le code HTML à partir de
+            maintenant, dirigeons-nous dans le fichier « script.js » où nous
+            allons commencer à coder notre algorithme.
+          </p>
+          <p>
+            Tout d’abord, nous allons commencer par créer quelques variables
+            globales pour définir les dimensions ainsi que la marge du graphique
+            au sein du SVG.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="JjxWqZN"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/JjxWqZN"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous allons ensuite ajouter à notre body un SVG avec les dimensions
+            précédentes. Ce SVG étant notre graphique, il nous faut le récupérer
+            dans une variable que nous nommerons graph, à vous de compléter le
+            code suivant pour définir les dimensions du SVG :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="bGzqyKZ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/bGzqyKZ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Vous remarquez la présence additionnelle de append('g'), cela permet
+            grâce à D3.js de créer un groupe, ainsi toutes les modifications
+            apportées à graph seront répercutées sur les futurs éléments ajoutés
+            à ce groupe.
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>
