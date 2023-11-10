@@ -1,48 +1,10 @@
 // Exemple 1
-/*
 
-*/
+// Cacher un élément avec un effet de fondu
+$('p').fadeOut();
 
-console.log('----------------------------------------')
+// Afficher un élément avec un effet de fondu
+$('div').fadeIn();
 
-// Exemple 2
-/*
-
-*/
-
-console.log('----------------------------------------')
-
-// Exemple 3
-/*
-
-*/
-
-console.log('----------------------------------------')
-
-// Exemple 4
-/*
-
-*/
-
-console.log('----------------------------------------')
-
-// Exemple 5
-/*
-
-*/
-
-console.log('----------------------------------------')
-
-// Exemple 6
-/*
-
-*/
-
-console.log('----------------------------------------')
-
-// Exemple 7
-/*
-
-*/
-
-console.log('----------------------------------------')
+// Modifier la hauteur d'un élément avec une animation
+$('button').animate({ height: '200px' }); 

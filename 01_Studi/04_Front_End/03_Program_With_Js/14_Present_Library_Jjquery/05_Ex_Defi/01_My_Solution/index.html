@@ -4,12 +4,70 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ma solution</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
       <h1>Ma solution</h1>
+      <div>
+        <header>
+          <h1>Mon site e-commerce</h1>
+          <nav>
+            <ul>
+              <li><a href="#">Accueil</a></li>
+              <li><a href="#">Produits</a></li>
+              <li><a href="#">Panier</a></li>
+              <li><a href="#">Contact</a></li>
+            </ul>
+          </nav>
+        </header>
+
+        <main>
+          <div id="categories">
+            <button data-category="product">Tous les produits</button>
+            <button data-category="clothes">Vêtements</button>
+            <button data-category="electronics">Electronique</button>
+            <button data-category="books">Livres</button>
+          </div>
+
+          <div id="products">
+            <div class="product clothes">
+              <h2>Chemise</h2>
+              <p>Prix : 29,99€</p>
+            </div>
+            <div class="product electronics">
+              <h2>Téléviseur</h2>
+              <p>Prix : 499,99€</p>
+            </div>
+            <div class="product books">
+              <h2>Romans</h2>
+              <p>Prix : 9,99€</p>
+            </div>
+            <div class="product clothes">
+              <h2>Pantalon</h2>
+              <p>Prix : 39,99€</p>
+            </div>
+            <div class="product electronics">
+              <h2>Ordinateur portable</h2>
+              <p>Prix : 899,99€</p>
+            </div>
+            <div class="product books">
+              <h2>Livres pour enfants</h2>
+              <p>Prix : 4,99€</p>
+            </div>
+          </div>
+        </main>
+
+        <footer>
+          <p>Tous droits réservés</p>
+        </footer>
+      </div>
     </div>
   </body>
 </html>

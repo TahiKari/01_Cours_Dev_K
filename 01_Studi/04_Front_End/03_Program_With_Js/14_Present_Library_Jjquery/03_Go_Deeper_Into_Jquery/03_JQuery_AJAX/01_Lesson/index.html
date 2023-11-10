@@ -3,13 +3,162 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>JQuery et AJAX</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>JQuery et AJAX</h1>
+      <div>
+        <h2>Les requêtes Ajax</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Les requêtes AJAX (Asynchronous JavaScript and XML) permettent de
+            communiquer avec un serveur web en arrière-plan, sans avoir à
+            recharger la page entière. Cela permet de charger du contenu
+            dynamiquement et d'améliorer l'expérience utilisateur en évitant des
+            rechargements de page inutiles. La bibliothèque jQuery fournit une
+            interface simplifiée pour effectuer des requêtes AJAX de manière
+            asynchrone. Dans ce cours, nous allons voir comment utiliser jQuery
+            pour effectuer des requêtes AJAX et mettre à jour dynamiquement le
+            contenu de notre page.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>$.ajax()</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            La méthode $.ajax() peut être utilisée pour récupérer des données
+            d'un serveur. Voici un exemple de code qui effectue une requête GET
+            pour récupérer des données au format JSON :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="GRzmyam"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/GRzmyam"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Le code utilise la méthode "ajax" de jQuery qui prend un objet de
+            configuration comme paramètre construit comme ceci :
+          </p>
+          <ul>
+            <li>
+              "url" : c'est l'URL à partir de laquelle les données doivent être
+              récupérées.
+            </li>
+            <li>
+              "dataType" : c'est le type de données que l'on s'attend à recevoir
+              en réponse. Dans ce cas, il est défini sur "json" car les données
+              sont au format JSON.
+            </li>
+            <li>
+              "success" : c'est une fonction de rappel qui est appelée lorsque
+              la requête AJAX réussit et renvoie des données. La réponse de la
+              requête est passée à cette fonction en tant que paramètre (ici, la
+              réponse est stockée dans la variable "data").
+            </li>
+            <li>
+              "error" : c'est une fonction de rappel qui est appelée lorsque la
+              requête AJAX échoue. Les détails de l'erreur sont passés à cette
+              fonction en tant que paramètres. Les trois paramètres sont :
+              <ul>
+                <li>
+                  "jqXHR" : c'est un objet qui représente la requête AJAX qui a
+                  échoué. On peut l'utiliser pour obtenir des informations sur
+                  la requête, telles que le statut de la réponse HTTP et le
+                  message d'erreur renvoyé par le serveur.
+                </li>
+                <li>
+                  "textStatus" : c'est une chaîne de caractères qui décrit le
+                  type d'erreur qui s'est produit. Les valeurs possibles sont
+                  "timeout", "error", "abort" et "parsererror".
+                </li>
+                <li>
+                  "errorThrown" : c'est une chaîne de caractères qui contient un
+                  message d'erreur détaillé. Cette valeur dépend du type
+                  d'erreur qui s'est produit.
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <p>
+            Il faut savoir que cette manière de faire les requêtes Ajax est très
+            courante. Si vous faites dans votre vie professionnelle du JQuery,
+            vous verrez ce genre de requête.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les callbacks avec $.Ajax</h2>
+        <div>
+          <h3>Complément</h3>
+          <p>
+            La méthode $.Ajax() de jQuery permet également d'utiliser des
+            callbacks pour gérer les résultats de la requête. Voici un exemple
+            de code qui utilise les callbacks beforeSend, complete, success et
+            error :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="qBgmped"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/qBgmped"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
     </div>
   </body>
 </html>

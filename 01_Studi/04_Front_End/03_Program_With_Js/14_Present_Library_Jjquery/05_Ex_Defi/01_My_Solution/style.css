@@ -4,3 +4,97 @@ html {
   margin: 0;
   padding: 0;
 }
+
+body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            display: inline-block;
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        #categories {
+            margin-bottom: 20px;
+        }
+
+        #categories button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        #categories button:hover {
+            background-color: #666;
+        }
+
+        #products {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            width: 200px;
+            background-color: #eee;
+            padding: 20px;
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+
+        .product h2 {
+            margin-top: 0;
+        }
+
+        .product p {
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .clothes {
+            border: 1px solid blue;
+        }
+
+        .electronics {
+            border: 1px solid green;
+        }
+
+        .books {
+            border: 1px solid orange;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }

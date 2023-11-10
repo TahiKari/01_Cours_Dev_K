@@ -4,12 +4,49 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exemple de la leçon</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <!-- Inclusions d’un fichier CSS que nous écrirons à la main  -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
       <h1>Exemple de la leçon</h1>
+      <div>
+        <h2>Exemple 1</h2>
+        <!--
+            <p id="mon-id">Je suis le paragraphe qui contient l'id #mon-id</p>
+            <p class="ma-classe">
+              Je suis le paragraphe qui contient la classe .ma-classe
+            </p>
+            <div>Je suis la div</div>
+        -->
+
+        <!-- 
+            Inclusion , fichiers Javascript toujours juste avant la fermeture de la balise body
+        -->
+        <!-- 
+            Ce code permet d'intégrer la lib jquery peut se mettre dans le head
+        -->
+        <!--
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        -->
+        <!-- 
+            Nous écrirons notre code dans un fichier script.js peut se mettre dans le head mais ne pas oublier d'utiliser l'attribut defer pour que ce script soit utiliser en differé c'est a dire après l'xecution de la page entière et des autres script si il y en a.
+        -->
+        <!--
+            <script src="script.js"></script>
+        -->
+      </div>
+
+      <div>
+        <h2>Exemple 2</h2>
+        <div>
+          Je suis le premier enfant de body
+          <div>Je suis un enfant</div>
+        </div>
+        <div>Je suis le second enfant de body</div>
+      </div>
     </div>
   </body>
 </html>
