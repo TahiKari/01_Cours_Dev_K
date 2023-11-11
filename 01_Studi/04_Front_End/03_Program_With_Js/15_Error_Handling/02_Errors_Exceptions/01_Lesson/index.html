@@ -3,13 +3,321 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Les erreurs et exceptions</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Les erreurs et exceptions</h1>
+      <div>
+        <div>
+          <h2>Fondamental</h2>
+          <p>
+            En JavaScript, les <strong>erreurs</strong> sont un type d’objet
+            créé à l'aide de la syntaxe new Error(). Elles sont traitées comme
+            des objets et peuvent être retournées ou placées dans des variables.
+            L'exécuteur JavaScript lui-même renvoie des erreurs.
+          </p>
+          <p>
+            Une <strong>exception</strong> est une erreur levée. Elle peut être
+            levée par le contexte d’exécution ou par le code avec le mot-clé
+            throw, et ne peut plus être manipulée. Elle met ainsi fin aux
+            contextes d'exécution les uns après les autres en remontant, jusqu'à
+            afficher une erreur dans la console. Elle peut être interceptée avec
+            try, et l'erreur qu'elles remontent peut être manipulée via catch
+            (exception). C’est ce que nous verrons dans ce cours.
+          </p>
+          <p>
+            En d’autres termes, une erreur est un danger qui pourrait arriver.
+            La classe Error nous donnera un outil pour gérer l’erreur si elle se
+            produit. Quand l’erreur se produit, on l’appelle « exception ».
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les erreurs de syntaxe</h2>
+        <p>
+          Les erreurs de syntaxe se produisent lorsqu'une instruction est
+          incorrecte syntaxiquement. Elles sont souvent signalées par des
+          messages d'erreur dans la console du navigateur.
+          <strong
+            >Pour corriger une erreur de syntaxe, il faut modifier votre
+            code</strong
+          >.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>Exemple de code avec une erreur de syntaxe :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="KKJmOVq"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/KKJmOVq"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/La-Gestion-derreur-Code-1#index.html"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            L'erreur dans ce code est une parenthèse manquante après le if. Le
+            message d'erreur dans la console sera :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="MWLmNyO"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/MWLmNyO"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les erreurs d'exécution</h2>
+        <p>
+          Les erreurs d'exécution se produisent lorsqu'une instruction ne peut
+          pas être exécutée correctement. Elles peuvent être causées par des
+          valeurs incorrectes ou inattendues.
+          <strong
+            >Pour corriger une erreur d'exécution, il faut modifier votre
+            code</strong
+          >.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>Exemple de code avec une erreur d'exécution :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="OJdmKXM"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/OJdmKXM"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/La-Gestion-derreur-Code-2#index.html"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Le problème ici est dû au fait que la méthode toUpperCase ne peut
+            pas être appelée sur un nombre. Le message d'erreur dans la console
+            sera :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="MWLmNeO"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/MWLmNeO"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les erreurs tierces</h2>
+        <p>
+          Les erreurs de bibliothèque se produisent lorsque nous utilisons une
+          bibliothèque tierce qui ne fonctionne pas correctement ou qui renvoie
+          des erreurs. Ces erreurs peuvent être difficiles à diagnostiquer, car
+          elles sont souvent liées à la bibliothèque et non à votre code.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>Exemple de code avec une erreur de bibliothèque :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="LYqywZa"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/LYqywZa"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/La-Gestion-derreur-Code-3#index.html"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Dans cet exemple, nous utilisons la bibliothèque « moment.js » pour
+            manipuler des dates. Nous tentons d'utiliser la méthode format, mais
+            elle génère une erreur. Dans ce cas, il est important de consulter
+            la documentation de la bibliothèque et de vérifier que nous
+            utilisons correctement ses méthodes.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les erreurs de réseau</h2>
+        <p>
+          Les erreurs de réseau se produisent lorsqu'une requête réseau ne peut
+          pas être exécutée correctement. Elles peuvent être causées par une
+          connexion lente, une erreur de serveur ou un serveur inaccessible. Ce
+          sont des erreurs très fréquentes, il est donc fondamental de savoir
+          les gérer.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>Exemple de code avec une erreur de réseau :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="QWYveKv"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/QWYveKv"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/La-Gestion-derreur-Code-4#index.html"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Dans cet exemple, nous utilisons la méthode fetch pour récupérer des
+            données à partir d'une API en ligne. Si la requête échoue pour une
+            raison quelconque, le bloc catch s'exécutera et affichera un message
+            d'erreur dans la console.
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>

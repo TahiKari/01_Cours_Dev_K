@@ -3,13 +3,241 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Gérer les erreurs en JavaScript</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Gérer les erreurs en JavaScript</h1>
+      <div>
+        <h2>Try…catch</h2>
+        <p>
+          La structure try...catch permet d'exécuter une instruction tout en
+          gérant les erreurs potentielles. Le bloc try contient le code à
+          exécuter, tandis que le bloc catch contient le code à exécuter en cas
+          d'erreur.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>Exemple de code avec try...catch :</p>
+        </div>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="BaMRXWL"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/BaMRXWL"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a
+          href="https://replit.com/@javascript-studi/La-Gestion-derreur-Code-5#index.html"
+          target="_blank"
+          rel="alternate"
+          >Lien Replit</a
+        >
+        <p>
+          On voit ici que le bloc try contient 2 instructions. La première
+          affecte la valeur 10 à la variable x. La deuxième essaie de convertir
+          la valeur de x en majuscules, ce qui provoque une erreur. Le bloc
+          catch capture l'erreur et affiche un message personnalisé dans la
+          console.
+        </p>
+      </div>
+
+      <div>
+        <h2>throw</h2>
+        <p>
+          La structure throw permet de générer une erreur personnalisée. Elle
+          est souvent utilisée pour signaler des erreurs spécifiques à
+          l'application.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>Exemple de code avec throw :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="OJdmKBp"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/OJdmKBp"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/La-Gestion-derreur-Code-6#index.html"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Dans cet exemple, nous avons une fonction diviser qui effectue une
+            division entre 2 nombres. Si la valeur de b est égale à 0, nous
+            lançons une erreur personnalisée avec throw. Lorsque la fonction
+            diviser est appelée dans le bloc try, elle lève une erreur, car la
+            valeur de b est 0. Le bloc catch capture l'erreur et affiche un
+            message personnalisé dans la console.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les erreurs personnalisées</h2>
+        <p>
+          Il est important de noter que throw peut générer n'importe quelle
+          erreur, pas seulement une instance de Error. Nous pouvons également
+          créer des classes personnalisées qui étendent la classe Error pour
+          définir des erreurs personnalisées avec des propriétés et des méthodes
+          spécifiques à notre application.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>Exemple de code avec une classe d'erreur personnalisée :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="poGPMqK"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/poGPMqK"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/La-Gestion-derreur-Code-7#index.html"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Nous avons créé une classe d'erreur personnalisée AgeInvalideError
+            qui étend la classe Error. Nous avons ajouté une propriété name et
+            une propriété date pour ajouter des informations supplémentaires à
+            l'erreur. Dans la fonction verifierAge, si l'âge est inférieur à 18,
+            nous lançons une erreur personnalisée en utilisant notre classe
+            AgeInvalideError. Dans le bloc catch, nous vérifions si l'erreur est
+            une instance de AgeInvalideError, et si c'est le cas, nous affichons
+            des informations supplémentaires sur l'erreur.
+          </p>
+          <p>
+            En utilisant throw, nous pouvons personnaliser la gestion des
+            erreurs dans notre application et fournir des informations
+            supplémentaires pour aider à diagnostiquer les problèmes.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>finally</h2>
+        <p>
+          La structure finally permet d'exécuter du code quels que soient les
+          résultats des blocs try et catch. Elle est souvent utilisée pour
+          libérer des ressources.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>Exemple de code avec finally :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="YzBVmgw"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/YzBVmgw"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/La-Gestion-derreur-Code-8#index.html"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            On voit ici que le bloc finally contient une instruction qui
+            s'exécutera quoi qu'il arrive, que ce soit après le bloc try ou le
+            bloc catch.
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>
