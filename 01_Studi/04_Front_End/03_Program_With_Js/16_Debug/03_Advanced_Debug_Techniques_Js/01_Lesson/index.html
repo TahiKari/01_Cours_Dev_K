@@ -3,13 +3,404 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Techniques avancées de debug en JavaScript</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Techniques avancées de debug en JavaScript</h1>
+      <div>
+        <h2>Utiliser la console JavaScript pour le debug</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            La console JavaScript est un outil puissant qui vous permet de
+            débugger votre code en affichant des messages, des erreurs et des
+            variables dans la console du navigateur. Voici comment l'utiliser :
+          </p>
+          <ul>
+            <li>
+              <strong>Ouvrir la console</strong> : la console peut être ouverte
+              en appuyant sur la touche F12 ou en cliquant avec le bouton droit
+              de la souris et en sélectionnant "Inspecter l'élément" dans le
+              menu contextuel.
+            </li>
+            <li>
+              <strong>Afficher des messages dans la console</strong> : vous
+              pouvez afficher des messages de débug en utilisant la méthode
+              console.log(). Par exemple, si vous voulez afficher la valeur
+              d'une variable "x", vous pouvez taper console.log(x); dans la
+              console et la valeur de "x" sera affichée dans la console.
+            </li>
+            <li>
+              <strong>Afficher des erreurs dans la console</strong> : si votre
+              code génère une erreur, vous pouvez afficher l'erreur dans la
+              console en utilisant la méthode console.error(). Par exemple, si
+              vous voulez afficher une erreur "Erreur de syntaxe" pour une ligne
+              de code spécifique, vous pouvez taper console.error('Erreur de
+              syntaxe sur la ligne 10'); dans la console et l'erreur sera
+              affichée dans la console.
+            </li>
+            <li>
+              <strong>Utiliser les autres méthodes de la console</strong> : en
+              plus de console.log() et console.error(), la console JavaScript
+              dispose d'autres méthodes qui peuvent être utiles pour le debug,
+              telles que console.info(), console.warn() et console.table(). Vous
+              pouvez les utiliser en fonction de vos besoins pour afficher des
+              informations supplémentaires dans la console.
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            Ce cours est sur le debug en JS, il n'y a donc pas besoin de HTML
+            particulier, car on présente uniquement des bouts de code en
+            JavaScript, qui n'interagissent pas avec le HTML.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Utiliser le console.log() pour corriger un problème</h2>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Supposons que vous avez un code JavaScript qui ne fonctionne pas
+            comme prévu et que vous ne savez pas exactement où se trouve le
+            problème. Vous pouvez utiliser console.log pour afficher des
+            messages dans la console du navigateur pour comprendre où le code
+            échoue.
+          </p>
+          <p>
+            Par exemple, supposons que vous ayez une fonction qui doit ajouter
+            deux nombres et retourner le résultat. Le code ressemble à ceci :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="GRzENad"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/GRzENad"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans ce cas, vous vous attendez à ce que la fonction "addNumbers"
+            retourne 5. Cependant, lorsque vous exécutez ce code, vous obtenez
+            un résultat "23" au lieu de 5. Vous ne savez pas où se trouve le
+            problème.
+          </p>
+          <p>
+            Pour comprendre où le code échoue, vous pouvez ajouter des
+            console.log pour afficher les valeurs des variables à différentes
+            étapes de l'exécution :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="bGzRByO"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/bGzRByO"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Maintenant, lorsque vous exécutez le code, vous verrez les valeurs
+            de "a", "b" et "result" dans la console. Vous pouvez utiliser ces
+            informations pour déterminer que le problème est que la variable "b"
+            est une chaîne de caractères au lieu d'un nombre. Vous pouvez
+            ensuite corriger le code en convertissant "b" en nombre avant de
+            l'ajouter à "a" :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="VwgWmJM"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/VwgWmJM"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Maintenant, lorsque vous exécutez le code, vous obtenez un résultat
+            correct de 5.
+          </p>
+          <p>
+            Nous pouvons le voir dans cet exemple, l'utilisation de console.log
+            est un excellent moyen de comprendre ce qui se passe dans le code
+            JavaScript et de résoudre les problèmes de débogage.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Point d’arrêt</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Les points d'arrêt (ou breakpoints en anglais) sont des marqueurs
+            que vous placez à des endroits spécifiques de votre code JavaScript
+            pour suspendre temporairement l'exécution du code. Cela vous permet
+            d'examiner l'état du programme à ce moment-là, d'examiner les
+            valeurs des variables, de parcourir les étapes et de résoudre les
+            problèmes.
+          </p>
+          <p>
+            En d'autres termes, les points d'arrêt sont un outil de débogage qui
+            vous permet de suspendre l'exécution du code JavaScript à un moment
+            précis et vous aide à comprendre ce qui s'est passé à ce moment-là.
+            Lorsque vous atteignez un point d'arrêt, vous pouvez examiner l'état
+            de l'application à ce stade, y compris les valeurs des variables et
+            des fonctions en cours d'exécution.
+          </p>
+          <p>
+            Les points d'arrêt sont souvent utilisés pour résoudre des problèmes
+            dans le code JavaScript, en particulier lorsque des erreurs ou un
+            comportement inattendu se produisent dans l'application. En
+            utilisant des points d'arrêt correctement placés, les développeurs
+            peuvent décomposer le code en éléments plus petits et plus faciles à
+            gérer pour mieux comprendre et résoudre les problèmes.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Utiliser les points d'arrêt pour le debug</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>Voici comment les utiliser :</p>
+          <ul>
+            <li>
+              <strong>Placer des points d'arrêt</strong> : vous pouvez placer
+              des points d'arrêt via plusieurs méthodes
+              <ul>
+                <li>
+                  En cliquant sur la marge de gauche dans l'éditeur de code,
+                </li>
+                <li>En plaçant le mot ''debugger;'' dans votre code.</li>
+              </ul>
+            </li>
+            <li>
+              Utiliser le débogueur pour naviguer dans votre code : une fois que
+              vous avez placé des points d'arrêt, vous pouvez utiliser le
+              débogueur pour naviguer dans votre code pas à pas et inspecter les
+              variables et les objets. Vous pouvez utiliser les boutons de
+              contrôle du débogueur pour exécuter votre code ligne par ligne,
+              sauter des lignes, et reprendre l'exécution de votre code.
+            </li>
+            <li>
+              Examiner les valeurs des variables à différents points dans votre
+              code : lorsque vous êtes en mode débogage, vous pouvez inspecter
+              les valeurs des variables à différents points dans votre code.
+              Vous pouvez utiliser la fenêtre "Variables" du débogueur pour
+              afficher les valeurs actuelles des variables et des objets, ainsi
+              que pour modifier leur valeur à la volée.
+            </li>
+          </ul>
+          <p>
+            En utilisant les points d'arrêt, vous pouvez suspendre l'exécution
+            de votre code à un point donné et inspecter les variables et les
+            objets pour détecter et corriger les erreurs de manière efficace.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>
+          Résoudre le même problème que précédemment, mais avec des points
+          d’arrêts
+        </h2>
+        <div>
+          <h3>Exemple</h3>
+          <p>Pour rappel, voici le code présentant une erreur :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="PoVjWod"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/PoVjWod"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Pour comprendre où le code échoue, vous pouvez ajouter un point
+            d'arrêt à l'intérieur de la fonction addNumbers pour suspendre
+            l'exécution à ce point. Pour ajouter un point d'arrêt, cliquez
+            simplement sur le numéro de ligne correspondant dans l'éditeur de
+            code ou utilisez le raccourci clavier F9.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="wvNegvR"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/wvNegvR"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Maintenant, lorsque vous exécutez le code, l'exécution sera
+            suspendue lorsque le code atteint le point d'arrêt. À partir de là,
+            vous pouvez examiner les valeurs des variables à ce moment-là et
+            déterminer où se trouve le problème.
+          </p>
+          <p>
+            Dans la console du navigateur, vous pouvez également utiliser des
+            commandes pour examiner l'état de l'application à ce moment-là,
+            telles que la commande "watch" pour surveiller la valeur d'une
+            variable ou la commande "step" pour exécuter la prochaine
+            instruction. En haut de navigateur, vous avez aussi des flèches qui
+            vous permettent de poursuivre l’exécution du processus.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Utiliser les outils externes de debug</h2>
+        <div>
+          <h3>Complément</h3>
+          <p>
+            En plus des outils de debug intégrés aux navigateurs web, il existe
+            des outils externes qui peuvent vous aider à débugger votre code
+            JavaScript de manière plus avancée. Voici quelques exemples :
+          </p>
+          <ul>
+            <li>
+              <strong>JSFiddle</strong> : une application web qui vous permet de
+              tester et de débugger votre code JavaScript en ligne, avec la
+              possibilité de partager votre code avec d'autres développeurs.
+            </li>
+            <li>
+              <strong>Chrome DevTools</strong> : un ensemble d'outils de
+              développement web intégrés au navigateur Google Chrome, qui
+              comprend un débogueur, une console JavaScript, un inspecteur de
+              code source, un profiler, et bien plus encore.
+            </li>
+            <li>
+              <strong>Firebug</strong> : une extension de navigateur pour
+              Firefox qui fournit un ensemble d'outils de développement web, y
+              compris un débogueur, une console JavaScript, un inspecteur de
+              code source, un profiler, et bien plus encore.
+            </li>
+            <li>
+              <strong>Visual Studio Code</strong> : un éditeur de code gratuit
+              et open source qui prend en charge le debug pour de nombreuses
+              langues de programmation, y compris JavaScript. Vous pouvez
+              utiliser Visual Studio Code pour déboguer votre code JavaScript en
+              utilisant des points d'arrêt et une console intégrée.
+            </li>
+          </ul>
+          <p>
+            En utilisant des outils externes de debug, vous pouvez améliorer
+            votre processus de développement web en accédant à des
+            fonctionnalités avancées telles que le partage de code en ligne,
+            l'analyse de performances, et une interface de débogage plus riche.
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>

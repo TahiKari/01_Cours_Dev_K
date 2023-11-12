@@ -3,13 +3,214 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Introduction au debug en JavaScript</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Introduction au debug en JavaScript</h1>
+      <div>
+        <h2>Lire les messages</h2>
+        <div>
+          <h3>Fondamental</h3>
+          <p>
+            Avant même d’apprendre à débugger, il est fondamental de prendre le
+            temps de lire et d’analyser les messages d’erreurs. Parfois, notre
+            application ne fonctionne pas, on ne comprend pas, mais on ne prend
+            pas le temps de lire ces messages très importants. Or, il est
+            essentiel de prendre le temps de lire et d'analyser ces messages,
+            car ils fournissent des informations précieuses sur votre
+            problématique. Vous pourriez rapidement trouver le problème dans le
+            code, car ils fournissent des indices sur la nature de l'erreur,
+            l'emplacement de celle-ci et, souvent, des suggestions pour la
+            résoudre.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Qu'est-ce que le debug ?</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Le debug est le processus de détection et de correction des erreurs
+            dans un programme informatique. En JavaScript, cela signifie
+            détecter et corriger les erreurs dans votre code qui peuvent
+            empêcher votre application web de fonctionner correctement.
+          </p>
+          <p>
+            Le debug peut être effectué à différentes étapes du développement
+            web, notamment lors de la phase de développement, de test et de
+            déploiement. Les développeurs peuvent utiliser différents outils et
+            techniques de debug pour détecter et corriger les erreurs dans leur
+            code.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>
+          Pourquoi est-il important de savoir déboguer son code JavaScript ?
+        </h2>
+        <p>
+          Le debug est une <strong>compétence essentielle</strong> pour tout
+          développeur web, car cela peut vous aider à économiser du temps et de
+          l'argent en évitant des erreurs coûteuses qui pourraient ne pas être
+          détectées avant le lancement d’une application. Le debug est également
+          important pour garantir la sécurité et la fiabilité de votre
+          application.
+        </p>
+        <p>
+          Si votre code contient des erreurs, cela peut entraîner des problèmes
+          pour les utilisateurs de votre application web. Par exemple, une
+          erreur de syntaxe peut empêcher le chargement de votre application,
+          une erreur de référence peut causer des problèmes de fonctionnement,
+          et une erreur de logique peut affecter les résultats de votre
+          application. En détectant et en corrigeant ces erreurs, vous pouvez
+          garantir que votre application fonctionne correctement et offre une
+          expérience utilisateur optimale.
+        </p>
+      </div>
+
+      <div>
+        <h2>Les outils de debug intégrés aux navigateurs web</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            La plupart des navigateurs web modernes, comme Google Chrome,
+            Firefox et Safari, disposent d'outils de debug intégrés pour
+            JavaScript qui peuvent vous aider à détecter et à corriger les
+            erreurs dans votre code. Voici trois outils :
+          </p>
+          <ul>
+            <li>
+              La <strong>console JavaScript</strong> est un outil puissant qui
+              vous permet d'afficher des messages, des erreurs et des variables
+              dans la console du navigateur. Vous pouvez utiliser la console
+              pour afficher des messages de debug, des erreurs et des
+              avertissements, ainsi que pour exécuter du code JavaScript
+              directement dans la console.
+            </li>
+            <li>
+              Le <strong>débogueur</strong> est un outil qui vous permet de
+              naviguer dans votre code pas à pas, de mettre des points d'arrêt,
+              d'inspecter les variables et les objets, et de surveiller
+              l'exécution de votre code en temps réel. Vous pouvez utiliser le
+              débogueur pour détecter et corriger les erreurs de manière
+              efficace.
+            </li>
+            <li>
+              Le <strong>profilage</strong> est un outil qui vous permet
+              d'analyser les performances de votre application web en détectant
+              les goulots d'étranglement et les problèmes de performance. Vous
+              pouvez utiliser le profilage pour optimiser le temps de chargement
+              de votre application et améliorer l'expérience utilisateur.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <h2>L'objet console</h2>
+        <div>
+          <h3>Complément</h3>
+          <p>Tableau des méthodes de l'objet console en JavaScript :</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Méthode</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>console.log()</td>
+                <td>Affiche des messages dans la console du navigateur.</td>
+              </tr>
+              <tr>
+                <td>console.info()</td>
+                <td>Affiche des informations dans la console du navigateur.</td>
+              </tr>
+              <tr>
+                <td>console.error()</td>
+                <td>
+                  Affiche des messages d'erreur dans la console du navigateur.
+                </td>
+              </tr>
+              <tr>
+                <td>console.warn()</td>
+                <td>
+                  Affiche des messages d'avertissement dans la console du
+                  navigateur.
+                </td>
+              </tr>
+              <tr>
+                <td>console.clear()</td>
+                <td>Efface la console du navigateur.</td>
+              </tr>
+              <tr>
+                <td>console.table()</td>
+                <td>
+                  Affiche des données dans un tableau dans la console du
+                  navigateur.
+                </td>
+              </tr>
+              <tr>
+                <td>console.time()</td>
+                <td>Démarre un minuteur dans la console du navigateur.</td>
+              </tr>
+              <tr>
+                <td>console.timeEnd()</td>
+                <td>Arrête un minuteur dans la console du navigateur.</td>
+              </tr>
+              <tr>
+                <td>console.trace()</td>
+                <td>
+                  Affiche une trace de la pile d'appels dans la console du
+                  navigateur.
+                </td>
+              </tr>
+              <tr>
+                <td>console.assert()</td>
+                <td>
+                  Vérifie une condition et affiche un message d'erreur dans la
+                  console du navigateur en cas d'échec
+                </td>
+              </tr>
+              <tr>
+                <td>console.group()</td>
+                <td>
+                  Crée un groupe dans la console du navigateur pour afficher des
+                  messages connexes.
+                </td>
+              </tr>
+              <tr>
+                <td>console.groupEnd()</td>
+                <td>Ferme le groupe courant dans la console du navigateur.</td>
+              </tr>
+              <tr>
+                <td>console.count()</td>
+                <td>
+                  Compte le nombre de fois que cette méthode a été appelée dans
+                  la console du navigateur.
+                </td>
+              </tr>
+              <tr>
+                <td>console.profile()</td>
+                <td>
+                  Démarre un profilage dans la console du navigateur pour
+                  mesurer les performances de votre application.
+                </td>
+              </tr>
+              <tr>
+                <td>console.profileEnd()</td>
+                <td>Arrête le profilage dans la console du navigateur.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </body>
 </html>

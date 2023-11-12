@@ -3,13 +3,203 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Exercice défi</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Exercice défi</h1>
+      <div>
+        <p>
+          Vous venez d’être embauché comme développeur dans une petite
+          entreprise, car l’ancien développeur a démissionné. Seulement, le
+          développeur avait commencé le formulaire de contact, mais il ne
+          fonctionne pas, il reste encore des bugs à résoudre, et c’est là que
+          vous intervenez.
+        </p>
+        <p>Voici le code HTML :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="LYqLxZz"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/LYqLxZz"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>Et voici le JavaScript :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="YzBQNWa"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/YzBQNWa"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p><strong>Voici le mail de votre supérieur : </strong></p>
+        <p>Objet : Problème à corriger dans le formulaire de contact</p>
+        <p>Cher développeur,</p>
+        <p>
+          Je suis ravi de voir que vous travaillez sur notre formulaire de
+          contact pour notre site web. Cependant, nous avons reçu des
+          commentaires de la part des utilisateurs signalant des problèmes avec
+          le formulaire. Voici le problème à corriger :
+        </p>
+        <p>
+          Je n’ai aucun retour quand je clique sur le bouton, quoi que je fasse,
+          je n’ai aucun message…
+        </p>
+        <p>
+          Je vous encourage à travailler rapidement sur ces problèmes pour que
+          notre formulaire de contact soit entièrement fonctionnel. N'hésitez
+          pas à me contacter si vous avez des questions ou des préoccupations.
+        </p>
+        <p>Cordialement,</p>
+        <div>
+          <h2>Solution</h2>
+          <p>Les erreurs à corriger :</p>
+          <p>Correction des getElementById des inputs</p>
+          <ul>
+            <li>“#emailInput” par “#email”</li>
+            <li>“#nameInput” par “#name”</li>
+            <li>“#messageInput” par “#message”</li>
+          </ul>
+          <p>Code avec correction :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="yLZXgaN"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/yLZXgaN"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p><strong>Voici le mail de retour de votre supérieur : </strong></p>
+        <p>Objet : RE : Problème corrigé dans le formulaire de contact</p>
+        <p>Cher développeur,</p>
+        <p>
+          Merci, effectivement, cela fonctionne mieux, en revanche, il me reste
+          toujours un problème :
+        </p>
+        <p>
+          Les champs de saisie peuvent être soumis même s'ils sont vides. Nous
+          devons nous assurer que les utilisateurs remplissent tous les champs
+          requis avant de soumettre le formulaire.
+        </p>
+        <p>
+          Tenez-moi au courant quand ce problème sera réglé, pour que nous
+          puissions déployer au plus vite les modifications.
+        </p>
+        <p>Cordialement,</p>
+        <div>
+          <h2>Solution</h2>
+          <p>L’erreur à corriger :</p>
+          <p>
+            Correction de l'utilisation incorrecte de l'opérateur "&&" en
+            remplaçant par l'opérateur "||" dans la condition de vérification de
+            la saisie des champs
+          </p>
+          <p>Code avec correction :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="VwgWPKX"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/VwgWPKX"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
     </div>
   </body>
 </html>
