@@ -3,13 +3,204 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Le guide de style Airbnb</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Le guide de style Airbnb</h1>
+      <div>
+        <p>
+          Le guide de style Airbnb est un ensemble de règles et de
+          recommandations pour écrire du code JavaScript clair, cohérent et
+          facile à lire. Il est utilisé par de nombreuses entreprises et
+          développeurs pour maintenir la qualité du code et améliorer la
+          lisibilité et la maintenabilité. Il est, comme son nom l’indique, créé
+          par Airbnb.
+        </p>
+        <p>
+          Il est publié sur GitHub sous la forme d’un référentiel open source
+          (GitHub) et est conçu pour être utilisé avec un outil appelé ESLint,
+          qui est un linter JavaScript qui peut identifier et signaler certaines
+          erreurs dans votre code. Il est accessible aussi via ce lien :
+          <a
+            href="https://airbnb.io/javascript/"
+            target="_blank"
+            rel="alternate"
+            >Airbnb JavaScript Style Guide</a
+          >.
+        </p>
+        <p>
+          En utilisant le guide de style Airbnb avec ESLint, les développeurs
+          peuvent vérifier leur code en temps réel pour s’assurer qu’il respecte
+          les normes de codage et les bonnes pratiques recommandées par Airbnb.
+          Cela permet de maintenir la qualité du code, d’améliorer la lisibilité
+          et la maintenabilité, et de réduire les erreurs et les bogues.
+        </p>
+        <p>
+          Le JavaScript style guide Airbnb couvre différents aspects : la
+          déclaration de variables, la gestion des erreurs, la structure des
+          fichiers, les fonctions, les classes, les chaînes de caractères, les
+          tableaux, les objets, et bien plus encore. Le guide de style Airbnb
+          fournit également des exemples de code pour illustrer les conventions
+          de codage recommandées.
+        </p>
+        <p>
+          Ainsi, les bonnes pratiques en JavaScript sont essentielles pour
+          maintenir la qualité du code, améliorer la lisibilité et la
+          maintenabilité, et réduire les erreurs et les bogues. Le guide de
+          style Airbnb est un outil utile pour maintenir la qualité du code en
+          fournissant des règles et des conventions de codage claires et
+          cohérentes. Bien que l’utilisation du guide de style Airbnb puisse
+          avoir quelques inconvénients, les avantages l’emportent largement sur
+          les inconvénients, en particulier pour les équipes de développement
+          travaillant sur de grands projets.
+        </p>
+      </div>
+
+      <div>
+        <h2>ESLint</h2>
+        <div>
+          <h3>Complément</h3>
+          <p>
+            ESLint est un outil d’analyse statique de code open source qui
+            permet de détecter et de signaler les problèmes de code JavaScript,
+            tels que les erreurs de syntaxe, les erreurs de style et les
+            problèmes liés à la qualité du code. Le but principal de cet outil
+            est d’aider les développeurs à écrire du code JavaScript propre,
+            cohérent et sans erreurs.
+          </p>
+          <p>
+            ESLint utilise un système de règles configurables pour vérifier
+            votre code et vous fournir des rapports sur les problèmes
+            rencontrés. Vous pouvez configurer ces règles en fonction de vos
+            préférences ou des normes de votre équipe de développement. En
+            outre, vous pouvez étendre les fonctionnalités d’ESLint en utilisant
+            des plugins ou en écrivant vos propres règles personnalisées.
+          </p>
+          <p>
+            L’intégration d’ESLint dans votre flux de travail de développement
+            peut vous aider à maintenir la qualité du code, à détecter les
+            erreurs potentielles avant l’exécution et à faciliter la
+            collaboration entre les membres de l’équipe en favorisant un style
+            de code cohérent.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Comment utiliser ESLint</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Installez ESLint : pour installer ESLint, vous devez utiliser un
+            gestionnaire de paquets tel que npm ou yarn (<a
+              href="https://eslint.org/docs/latest/use/getting-started"
+              target="_blank"
+              rel="alternate"
+              >ESLint</a
+            >
+            ). Si vous utilisez npm, vous pouvez installer ESLint en exécutant
+            la commande suivante dans votre terminal :
+          </p>
+          <p><code>npm init @eslint/config</code></p>
+          <p>
+            Exécutez ESLint : une fois que vous avez configuré ESLint, vous
+            pouvez exécuter ESLint en utilisant la commande suivante dans votre
+            terminal :
+          </p>
+          <p><code>npx eslint yourfile.js</code></p>
+          <p>Où « yourfile.js » est le fichier que vous souhaitez analyser.</p>
+          <p>
+            Vous pouvez également exécuter ESLint sur plusieurs fichiers en même
+            temps en spécifiant des patterns de fichiers :
+          </p>
+          <p><code>npx eslint "src/**/*.js"</code></p>
+          <p>
+            Cette commande exécutera ESLint sur tous les fichiers .js dans le
+            dossier src et ses sous-dossiers.
+          </p>
+        </div>
+      </div>
+      <div>
+        <h2>Un retour de ESLint</h2>
+        <div>
+          <h3>Exemple</h3>
+          <p>Si vous avez un fichier JS avec :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="zYezLOq"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/zYezLOq"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Les-bonnes-pratique-de-la-programmation-avec-JS-Code-1"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p>
+            Lorsque vous exécutez ESLint sur ce fichier avec la configuration
+            par défaut, vous obtenez le retour suivant :
+          </p>
+          <p>
+            <code
+              >2:7 error 'a' is assigned a value but never used no-unused-vars
+            </code>
+            <code>
+              3:7 warning '_b' is defined but never used no-unused-vars
+            </code>
+          </p>
+          <p>
+            Cela indique qu’il y a 2 erreurs, l’une pour la variable a qui est
+            toujours inutilisée, et une alerte pour la variable _b qui est
+            définie, mais jamais utilisée, en fonction de la configuration des
+            règles.
+          </p>
+          <p>
+            Vous allez pouvoir ensuite configurer votre ESLint, pour vérifier ou
+            non certaines erreurs. Par exemple, en ajoutant la règle 'no-var',
+            ESLint avertira chaque fois que vous déclarez une variable avec le
+            mot clé var, ce qui est une mauvaise pratique. Avec le même code
+            JavaScript, nous aurions donc ce retour :
+          </p>
+          <p>
+            <code>
+              2:3 Unexpected var, use let or const instead. (no-var)
+            </code>
+            <code>
+              3:3 Unexpected var, use let or const instead. (no-var)
+            </code>
+            <code
+              >3:7 '_b' is assigned a value but never used. (no-unused-vars)
+            </code>
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>

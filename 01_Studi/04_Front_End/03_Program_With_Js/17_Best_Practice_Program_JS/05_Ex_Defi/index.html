@@ -3,13 +3,213 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Exercice défi</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Exercice défi</h1>
+      <div>
+        <p>
+          Vous êtes développeur dans une entreprise, et vous recevez cet e-mail
+          de votre leader technique.
+        </p>
+        <p>
+          Objet : refactoring fichier JS pour se conformer aux bonnes pratiques
+        </p>
+        <p>Bonjour,</p>
+        <p>
+          J’espère que vous allez bien. Nous avons récemment identifié un
+          fichier JavaScript dans notre codebase qui ne suit pas les bonnes
+          pratiques de codage. Nous aimerions que vous corrigiez ce fichier en
+          suivant les directives ci-dessous.
+        </p>
+        <p>Le fichier en question présente plusieurs problèmes :</p>
+        <ul>
+          <li>
+            Il utilise var pour déclarer des variables au lieu de let ou const,
+          </li>
+          <li>Il y a des boucles imbriquées,</li>
+          <li>Il utilise une boucle for-in pour parcourir un tableau.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          Votre mission consiste à revoir le fichier et à apporter les
+          modifications nécessaires pour le mettre en conformité avec nos
+          standards de développement.
+        </p>
+        <p>Voici le contenu du fichier HTML et du fichier JS concernés :</p>
+        <p>index.html et script.js</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="XWOgPNE"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/XWOgPNE"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          N’hésitez pas à me contacter si vous avez des questions ou besoin de
+          clarifications. Une fois les modifications effectuées, merci de
+          soumettre vos changements pour revue.
+        </p>
+        <p>Cordialement</p>
+        <div>
+          <h3>Solution</h3>
+          <ul>
+            <li>
+              Remplacer var par const pour déclarer les variables immuables
+              (data, resultElement).
+            </li>
+            <li>
+              Remplacer la boucle for-in par la méthode forEach() pour parcourir
+              le tableau data.
+            </li>
+            <li>
+              Utiliser la méthode every() au lieu d’une boucle pour vérifier si
+              tous les éléments du tableau ont été traités.
+            </li>
+          </ul>
+          <p>Code corrigé :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="WNPOgRo"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/WNPOgRo"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Les-bonnes-pratique-de-la-programmation-avec-JS-Code-7#script.js"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+        </div>
+      </div>
+      <p>
+        Vous êtes développeur dans une entreprise de vente de vêtements et de
+        chaussures en ligne et votre responsable vous confie une mission.
+      </p>
+      <div>
+        <h2>Question</h2>
+        <p>
+          Votre responsable vous annonce que l’un des stagiaires du département
+          avait commencé à rédiger du code pour afficher une liste de produits
+          et leur prix avant la fin de sa période de stage. Toutefois, après un
+          rapide coup d’œil, vous vous apercevez que ce code ne respecte pas les
+          bonnes pratiques de la programmation en JavaScript.
+        </p>
+        <p>Votre mission va donc être de corriger le code suivant :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="gOqRdmb"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/gOqRdmb"> Untitled</a>
+            by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+              >@OpenSpirit</a
+            >) on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <div>
+          <h2>Solution</h2>
+          <p>Voici le résultat attendu :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="qBgjMrQ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/qBgjMrQ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a href="https://replit.com/@javascript-studi/Les-bonnes-pratique-de-la-programmation-avec-JS-Code-8#script.js" target="_blank" rel="alternate">Lien Replit</a>
+        </div>
+      </div>
     </div>
   </body>
 </html>

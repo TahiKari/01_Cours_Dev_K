@@ -3,13 +3,469 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Quelques bonnes pratiques en JavaScript</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Quelques bonnes pratiques en JavaScript</h1>
+      <div>
+        <h2>Utiliser const et let au lieu de var</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Il est recommandé d’utiliser const et let pour déclarer les
+            variables en JavaScript, plutôt que var. Les variables déclarées
+            avec const ne peuvent pas être réaffectées et les variables
+            déclarées avec let peuvent être réaffectées. En revanche, les
+            variables déclarées avec var ont une portée de fonction et peuvent
+            être réaffectées. Voici un exemple :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="XWOgBzp"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/XWOgBzp"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Utiliser des fonctions fléchées</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Les fonctions fléchées sont une nouvelle syntaxe pour définir des
+            fonctions en JavaScript. Elles ont l’avantage de rendre le code plus
+            concis et plus facile à lire. Voici un exemple :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="VwgWByx"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/VwgWByx"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Utiliser les templates strings</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Les templates strings sont une nouvelle syntaxe pour créer des
+            chaînes de caractères en JavaScript. Elles permettent d’incorporer
+            des expressions JavaScript dans une chaîne de caractères. Voici un
+            exemple :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="LYqLBQQ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/LYqLBQQ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Éviter les boucles for-in pour les tableaux</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Il est recommandé d’éviter les boucles for-in pour parcourir les
+            tableaux en JavaScript, car elles peuvent engendrer des erreurs. Il
+            est préférable d’utiliser des boucles for-of ou forEach. Voici un
+            exemple :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="poGwZLg"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/poGwZLg"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Les-bonnes-pratique-de-la-programmation-avec-JS-Code-2#script.js"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="zYezLjw"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/zYezLjw"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Les-bonnes-pratique-de-la-programmation-avec-JS-Code-3#script.js"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+        </div>
+      </div>
+
+      <div>
+        <h2>Éviter les fonctions constructeurs</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Il est recommandé d’éviter les fonctions constructeurs pour créer
+            des objets en JavaScript, car elles peuvent engendrer des erreurs.
+            Il est préférable d’utiliser des classes ou des objets littéraux.
+            Voici un exemple :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="oNmwMQy"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/oNmwMQy"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Utiliser les méthodes Array</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Les méthodes Array sont des méthodes intégrées qui permettent de
+            manipuler les tableaux en JavaScript. Il est recommandé de les
+            utiliser plutôt que de parcourir les tableaux avec des boucles.
+            Voici des exemples de méthodes Array utiles :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="GRzEXKb"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/GRzEXKb"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Les-bonnes-pratique-de-la-programmation-avec-JS-Code-4#script.js"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+        </div>
+      </div>
+
+      <div>
+        <h2>Éviter les boucles imbriquées</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Il est recommandé d’éviter les boucles imbriquées en JavaScript, car
+            elles peuvent ralentir les performances de l’application. Il est
+            préférable d’utiliser des méthodes Array comme map, filter ou reduce
+            pour éviter les boucles imbriquées. Voici un exemple :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="vYbZzYP"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/vYbZzYP"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Les-bonnes-pratique-de-la-programmation-avec-JS-Code-5#script.js"
+            target="_blank"
+            rel="alternate"
+            >Lien Replit</a
+          >
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="LYqLJEJ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/LYqLJEJ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <a
+            href="https://replit.com/@javascript-studi/Les-bonnes-pratique-de-la-programmation-avec-JS-Code-6#script.js"
+            target="_blank"
+            rel="alternta"
+            >Lien Replit</a
+          >
+        </div>
+      </div>
+
+      <div>
+        <h2>Éviter les évaluations en cascade</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Il est recommandé d’éviter les évaluations en cascade en JavaScript,
+            car elles peuvent rendre le code difficile à lire et à maintenir. Il
+            est préférable d’utiliser des méthodes Array ou des fonctions pour
+            simplifier le code. Voici un exemple :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="LYqLJVg"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/LYqLJVg"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+
+        <div>
+          <h3>Complément</h3>
+          <p>
+            Voici une liste plus exhaustive des bonnes pratiques en JavaScript :
+            <a
+              href="https://developer.mozilla.org/fr/docs/MDN/Writing_guidelines/Writing_style_guide/Code_style_guide/JavaScript"
+              target="_blank"
+              rel="alternate"
+              >developer.mozilla.org</a
+            >.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les extensions</h2>
+        <div>
+          <h3>Complément</h3>
+          <p>
+            Beaucoup d’extensions existent pour nous signaler les erreurs
+            directement depuis l’éditeur de code. Elles vous seront très
+            pratiques, car elles vous éviteront de devoir taper les commandes
+            ESlint en console. L’extension ESLint développée par Microsoft
+            pourra par exemple vous aider sur VS Code, car elle soulignera le
+            code présentant des erreurs en rouge.
+          </p>
+          <img
+            src="02_img/bonne-pratiq-programmat-js-im1_1.png"
+            alt="Image bonne-pratiq-programmat-js-im1_1"
+          />
+        </div>
+      </div>
     </div>
   </body>
 </html>
