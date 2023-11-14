@@ -3,13 +3,508 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Projet : Memory game</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Projet : Memory game</h1>
+      <div>
+        <h2>Création du plateau</h2>
+        <p>
+          Dans un cadre professionnel, il y a peu de chances que vous deviez
+          réaliser un memory. Cependant, cette mécanique en JavaScript pourra
+          vous être utile, notamment pour des applications web, où des règles
+          métiers doivent être gérées côté front.
+        </p>
+      </div>
+
+      <div>
+        <h2>Les règles du memory</h2>
+        <div>
+          <h3>Fondamental</h3>
+          <p>
+            Avant de commencer la réalisation de ce jeu, il faut évidemment
+            connaître les règles. Les voici :
+          </p>
+          <ul>
+            <li>
+              Le jeu se compose de cartes disposées face cachée sur une surface.
+              Chaque carte est une image ou un symbole identique à une autre
+              carte du jeu. Ainsi, toutes les cartes sont associées en paires.
+            </li>
+            <li>
+              Lors de chaque tour, le joueur retourne 2 cartes de son choix sur
+              la face visible.
+            </li>
+            <li>
+              Si les 2 cartes retournées forment une paire (c'est-à-dire
+              qu'elles ont la même image ou le même symbole), le joueur les
+              garde et continue à jouer en retournant 2 autres cartes.
+            </li>
+            <li>
+              Si les 2 cartes retournées ne forment pas une paire, elles sont de
+              nouveau retournées face cachée.
+            </li>
+            <li>
+              Le jeu continue jusqu'à ce que toutes les paires de cartes aient
+              été trouvées.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <h2>Créer le projet</h2>
+        <p>
+          Cette partie du cours nous montrera comment créer le projet sur Visual
+          Studio Code et comment créer les fichiers qui seront nécessaires au
+          bon fonctionnement de notre jeu de memory.
+        </p>
+        <ol>
+          <li>Créez un dossier appelé « MemoryGame ».</li>
+          <li>Ouvrez ce dossier avec VS Code.</li>
+          <li>Créez un fichier « index.html ».</li>
+          <li>
+            Créez le contenu de base du fichier HTML. Pour cela, vous pouvez
+            utiliser un raccourci VS Code. Tapez « ! » dans le fichier HTML, et
+            cliquez sur tabulation sur votre clavier. Vous avez une base de
+            document HTML déjà créé.
+          </li>
+          <li>Créez un fichier « style.css » et un fichier « script.js ».</li>
+          <li>Appelez ces 2 fichiers depuis votre HTML</li>
+          <li>Ajoutez un H1.</li>
+        </ol>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="eYxELmv"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/eYxELmv"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a
+          href="https://replit.com/@javascript-studi/Code-1-Projet-Memory-game-1#index.html"
+          target="_blank"
+          rel="alternate"
+          >Lien Replit</a
+        >
+      </div>
+
+      <div>
+        <h2>Créer la zone de jeu en HTML et CSS</h2>
+        <p>
+          Nous allons devoir créer notre zone de jeu dans le HTML, et injecter
+          les cartes dans cette zone de jeu. Nous créons donc un div vide dans
+          notre HTML. Il aura pour identifiant game-board.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="abXyaOV"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/abXyaOV"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Notre zone de jeu devra répondre à un style bien particulier. Nous
+          voulons des cartes de 100 px par 100 px. Nous pouvons donc ajouter ce
+          CSS pour que notre zone de jeu réagisse bien à l’ajout des cartes.
+          Nous ajoutons une police et un text-center sur le body pour que le
+          titre soit plus esthétique. Vous pourrez, si vous le souhaitez,
+          définir une couleur de background et choisir une police plus
+          originale.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="jOdLvbW"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/jOdLvbW"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a
+          href="https://replit.com/@javascript-studi/Code-2-Projet-Memory-game-1/"
+          target="_blank"
+          rel="alternate"
+          >Lien Replit</a
+        >
+        <p>
+          Maintenant que notre zone de jeu est créée, il nous faut injecter dans
+          cette zone de jeu nos différentes cartes.
+        </p>
+      </div>
+
+      <div>
+        <h2>Création d’une cartes en JS</h2>
+        <p>
+          Pour commencer, nous allons créer une méthode permettant de créer une
+          carte et de l'ajouter à notre zone de jeu. Depuis le JavaScript, nous
+          allons créer le HTML de la carte et nous allons l'injecter dans notre
+          div#game-board pour l'afficher dans la page.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="VwgzGvG"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/VwgzGvG"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a
+          href="https://replit.com/@javascript-studi/Code-3-Projet-Memory-game-1"
+          target="_blank"
+          rel="alternate"
+          >Lien Replit</a
+        >
+        <p>
+          Nous voulons donc créer une méthode createCard prenant en paramètre la
+          valeur de l'URL de l'image et retournant l’objet HTML de cette carte.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="oNmePLM"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/oNmePLM"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a
+          href="https://replit.com/@javascript-studi/Code-4-Projet-Memory-game-1"
+          target="_blank"
+          rel="alternate"
+          >Lien Replit</a
+        >
+      </div>
+
+      <div>
+        <h2>Créer plusieurs cartes</h2>
+        <p>
+          Maintenant que nous avons créé une carte, il va falloir créer le jeu
+          complet, donc 16 cartes. Pour commencer, nous avons besoin d'images
+          pour nos cartes. Nous allons utiliser le site picsum.photos, qui est
+          un site proposent des photos libres de droits. Vous pourriez utiliser
+          vos propres images en passant le chemin d’accès à votre image au lieu
+          de l’URL vers picsum.photos. Voici un tableau comprenant 8 URL
+          d’images destinées à notre jeu du memory :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="mdvMGmY"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/mdvMGmY"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Maintenant, il nous faut parcourir ce tableau pour créer nos 16
+          cartes. Étant donné que nos images sont en double, il va falloir créer
+          2 images par URL du tableau. Notre tableau contient 8 éléments, en
+          dupliquant ces éléments, nous aurons nos 16 éléments.
+        </p>
+        <p>
+          Pour commencer, nous créons donc une méthode retournant le tableau
+          card, mais dupliqué.
+        </p>
+        <p>Voici cette méthode :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="abXyawY"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/abXyawY"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Maintenant que nous pouvons dupliquer ce tableau d’URL, il est
+          possible, pour les 16 URL générées dans ce nouveau tableau, de créer
+          16 cartes en HTML et de les ajouter à notre gameboard.
+        </p>
+        <p>Voici le code qui réalise cela :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="oNmePwa"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/oNmePwa"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a
+          href="https://replit.com/@javascript-studi/Code-5-Projet-Memory-game-1"
+          target="_blank"
+          rel="alternate"
+          >Lien Replit</a
+        >
+      </div>
+
+      <div>
+        <h2>Mélanger un tableau</h2>
+        <p>
+          Nos cartes sont maintenant affichées sur notre page web, mais elles
+          ont toujours la même disposition. Le jeu est donc trop facile,
+          l'utilisateur va vite se rendre compte que les cartes sont
+          positionnées de manière logique, et donc il trouvera toutes les paires
+          aisément. Il nous faut mélanger nos cartes avant de les positionner.
+        </p>
+        <p>
+          Par conséquent, avant de parcourir le tableau allCards pour ajouter
+          toutes les cartes, il faut mélanger ce même tableau.
+        </p>
+        <p>
+          Il faut créer une méthode shuffle permettant de mélanger un tableau.
+        </p>
+        <p>Voici le code modifié :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="rNPzZYY"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/rNPzZYY"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a
+          href="https://replit.com/@javascript-studi/Code-6-Projet-Memory-game-1"
+          target="_blank"
+          rel="alternate"
+          >Lien Replit</a
+        >
+        <p>
+          La fonction shuffleArray permet de mélanger aléatoirement les éléments
+          d'un tableau passé en paramètre. Nous utilisons ici la fonction sort
+          de JavaScript, qui trie les éléments du tableau selon un ordre donné.
+          Dans ce cas, la fonction de tri utilise une fonction de comparaison
+          qui retourne un nombre aléatoire entre - 0,5 et 0,5. Cela signifie que
+          pour chaque paire d'éléments, la fonction de comparaison retournera un
+          nombre positif ou négatif de manière aléatoire, ce qui entraînera un
+          ordre de tri aléatoire pour les éléments. On aura donc un tableau
+          mélangé aléatoirement !
+        </p>
+      </div>
+
+      <div>
+        <h2>Masquer les cartes</h2>
+        <p>
+          Maintenant que les cartes sont bien positionnées, il faut les masquer
+          à l'utilisateur pour qu'il puisse les deviner. Cette opération, nous
+          allons la faire en CSS.
+        </p>
+        <p>Voici le code CSS permettant de masquer les cartes :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="abXyajj"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/abXyajj"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a
+          href="https://replit.com/@javascript-studi/Code-7-Projet-Memory-game-1"
+          target="_blank"
+          rel="alternate"
+          >Lien Replit</a
+        >
+      </div>
     </div>
   </body>
 </html>

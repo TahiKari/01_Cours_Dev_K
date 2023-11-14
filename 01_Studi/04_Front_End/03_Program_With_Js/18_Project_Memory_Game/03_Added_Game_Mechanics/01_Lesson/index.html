@@ -3,13 +3,424 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Projet : Memory game</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Projet : Memory game</h1>
+      <div>
+        <h2>Ajout de la mécanique de jeu</h2>
+      </div>
+
+      <div>
+        <h2>Retourner une carte</h2>
+        <p>
+          Maintenant que toutes les cartes sont positionnées et cachées,
+          l'objectif est de pouvoir afficher l'image lorsque l'on clique dessus.
+          Pour cela, on peut gérer une classe en CSS que l'on nommera flip.
+          Cette classe, ajoutée à une carte, permettra d'afficher l'image. On va
+          donc mettre l’opacité du card-content à 1.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="oNmePaV"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/oNmePaV"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Maintenant que le CSS est géré, on peut ajouter la classe flip sur une
+          carte lorsque l'on clique dessus. On crée donc une méthode contenant
+          le code à exécuter lorsque l'événement Click est déclenché sur une
+          carte.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="ZEwJMmv"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/ZEwJMmv"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans la méthode createCard(cardUrl), on ajoute l'écouteur d'événements
+          pour gérer le clic sur chaque Card.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="KKJvxbq"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/KKJvxbq"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a
+          href="https://replit.com/@javascript-studi/Code-8-Projet-Memory-game-1"
+          target="_blank"
+          rel="alternate"
+          >Lien Replit</a
+        >
+      </div>
+
+      <div>
+        <h2>Vérifier les correspondances</h2>
+        <p>
+          Nous avançons dans le jeu : maintenant que nous pouvons afficher des
+          cartes, nous voulons chercher à vérifier si nous avons trouvé une
+          paire de cartes.
+        </p>
+        <p>
+          Pour cela, nous allons avoir besoin de stocker les 2 cartes qui sont
+          actuellement visibles. Nous créons donc une variable selectedCards qui
+          sera un tableau contenant les 2 cartes retournées en jeu. Lorsque nous
+          cliquons sur une carte, nous ajoutons donc cette carte à la variable
+          selectedCards.
+        </p>
+        <p>
+          Si au clic sur une carte, la variable selectedCards contient 2 cartes,
+          nous pouvons comparer les 2 data attributes data-value. 2 cas
+          possibles :
+        </p>
+        <ul>
+          <li>
+            Si les 2 sont équivalents, eh bien nous avons trouvé une paire. On
+            ajoute la classe matched à ces éléments, on supprime leurs event
+            listener, et on vide la variable selectedCards.
+          </li>
+          <li>
+            Si ce n’est pas le cas, nous nous sommes trompés. On retire donc la
+            classe flip à ces 2 éléments pour les remettre en jeu, et on vide la
+            variable selectedCards.
+          </li>
+        </ul>
+        <p>CSS ajouté :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="ExrvdVG"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/ExrvdVG"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>Code JavaScript complet à ce stade du projet :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="LYqjgpK"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/LYqjgpK"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a
+          href="https://replit.com/@javascript-studi/Code-9-Projet-Memory-game-1"
+          target="_blank"
+          rel="alternate"
+          >Lien Replit</a
+        >
+      </div>
+
+      <div>
+        <h2>Gestion du timing</h2>
+        <p>
+          Maintenant que nous gérons les paires de cette application, on se rend
+          compte qu'il y a un problème. Lorsque l'on clique sur une deuxième
+          carte qui ne correspond pas à la première, la deuxième carte n'a pas
+          le temps de s'afficher puisqu'elle est masquée immédiatement. Il faut
+          donc mettre un délai entre le moment où on clique sur la carte et le
+          moment où on vérifie. Pour cela, il est possible d'utiliser la méthode
+          setTimeout.
+        </p>
+        <p>Méthode onCardClick(e) modifiée :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="gOqxBPM"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/gOqxBPM"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a
+          href="https://replit.com/@javascript-studi/Code-10-Projet-Memory-game-1"
+          target="_blank"
+          rel="alternate"
+          >Lien Replit</a
+        >
+      </div>
+
+      <div>
+        <h2>Gérer la victoire du joueur</h2>
+        <p>
+          À l’heure actuelle, notre jeu du memory fonctionne. Il ne nous reste
+          plus qu’à gérer le moment où le joueur a trouvé toutes les paires, et
+          donc a gagné la partie.
+        </p>
+        <p>Il existe plusieurs solutions pour cela, nous pourrions :</p>
+        <ul>
+          <li>
+            Avoir un compteur de paires trouvées, et l’incrémenter à chaque fois
+            qu’on trouve une paire. S’il y a x paires à trouver, et que le
+            compteur vaut x, on a gagné.
+          </li>
+          <li>
+            À chaque paire trouvée, vérifier s’il reste des cartes sans la
+            classe matched. S’il n’existe pas de carte n’ayant pas la classe
+            matched, c’est gagné.
+          </li>
+          <li>
+            Avoir un compteur de paires à trouver, et le décrémenter à chaque
+            paire trouvée. Si on arrive à 0, on a gagné.
+          </li>
+          <li>Il existe d’autres possibilités.</li>
+          <p>
+            Pour ce cours, nous allons réaliser la deuxième option, le but est
+            de récupérer via le sélecteur CSS les cartes qui ne possèdent pas la
+            classe matched : .card:not(.matched).
+          </p>
+          <p>
+            À chaque fois que nous trouvons une paire, nous faisons un
+            queryselectorAll pour récupérer ces cartes. Si on en récupère 0, on
+            peut dire à l’utilisateur que c’est gagné.
+          </p>
+          <p>Voici le code à ajouter lorsqu’on a trouvé une paire :</p>
+        </ul>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="oNmeaxv"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/oNmeaxv"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a
+          href="https://replit.com/@javascript-studi/Code-11-Projet-Memory-game-1"
+          target="_blank"
+          rel="alternate"
+          >Lien Replit</a
+        >
+      </div>
+
+      <div>
+        <h2>Ajouter des animations pour rendre le jeu plus agréable</h2>
+        <p>
+          Le jeu est fonctionnel, mais ce serait plus agréable à utiliser si les
+          cartes se retournaient avec une animation, comme si on retournait de
+          vraies cartes. Plusieurs options existent pour obtenir ce rendu. Nous
+          pouvons faire cela facilement en CSS, avec transform: rotateY(180deg).
+        </p>
+        <p>
+          Le passage de transform: rotateY(0deg) à transform: rotateY(180deg)
+          simule le retournement d’une carte. Pour que l’animation soit visible,
+          il faudra aussi ajouter une transition.
+        </p>
+        <p>Voici le code à ajouter :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="WNPEawZ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/WNPEawZ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>Voici le code final de notre application :</p>
+        <p>index.html, style.css et script.js</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="BaMdqLW"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/BaMdqLW"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <a
+          href="https://replit.com/@javascript-studi/Code-12-Projet-Memory-game-1"
+          target="_blank"
+          rel="alternate"
+          >Lien Replit</a
+        >
+      </div>
     </div>
   </body>
 </html>
