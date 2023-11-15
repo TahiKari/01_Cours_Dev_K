@@ -3,13 +3,161 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Qu'est-ce qu'une SPA ?</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Qu'est-ce qu'une SPA ?</h1>
+      <div>
+        <h2>Objectif</h2>
+        <ul>
+          <li>Comprendre le modèle MPA</li>
+          <li>Comprendre le modèle SPA</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Mise en situation</h2>
+        <p>
+          Une application SPA (pour Single Page Application) est une application
+          web, composée de HTML, CSS et JavaScript, qui ne contient qu'une seule
+          page. En réalité, ce nom peut être trompeur : il est préférable de
+          s'imaginer qu'une SPA ne contient en réalité qu'un seul fichier HTML,
+          le fichier <strong>index.html</strong>. Pour autant, notre site ou
+          application peut proposer plusieurs pages, au sens où un utilisateur
+          l'entend. Mais alors, comment ça fonctionne ?
+        </p>
+      </div>
+      <div>
+        <h2>Fonctionnement classique d'une application web</h2>
+        <p>
+          Dans une application web classique, le fonctionnement est le suivant :
+        </p>
+        <img src="02_Img/mpa-lifecycle.png" alt="Image mpa-lifecycle" />
+        <p>
+          Le client – c'est-à-dire l'utilisateur à travers son navigateur –
+          effectue une requête initiale vers le serveur. Par défaut, le serveur
+          va renvoyer en réponse à cette requête du code HTML à afficher. Dans
+          le cas de cette requête initiale, c'est le fichier
+          <strong>index.html</strong>.
+        </p>
+        <p>
+          Chaque requête suivante, qu'il s'agisse du clic sur un lien ou de
+          l'envoi d'un formulaire par exemple, va déclencher une nouvelle
+          requête vers le serveur qui va répondre avec du nouveau contenu HTML
+          représentant la ressource demandée.
+        </p>
+        <p>
+          Chaque nouvelle requête vers le serveur entraîne alors un rechargement
+          complet de la page pour pouvoir afficher le nouveau contenu HTML
+          présent dans la réponse. C'est ce qu'on appelle une MPA (ou Multiple
+          Page Application), puisque chaque requête va afficher un nouveau
+          contenu HTML, une nouvelle "page".
+        </p>
+      </div>
+
+      <div>
+        <h2>Fonctionnement d'une SPA</h2>
+        <p>En SPA, le fonctionnement est un peu différent.</p>
+        <img src="02_Img/spa.png" alt="Image spa" />
+        <p>
+          On retrouve la requête initiale vers le serveur qui retourne bien du
+          contenu HTML, le contenu de notre index.html, qui représentera notre
+          single page.
+        </p>
+        <p>
+          Toutes les requêtes qui seront effectuées par la suite sont des
+          requêtes HTTP un peu spéciales : ce sont des requêtes AJAX, pour
+          Asynchronous JavaScript and XML. Celles-ci sont traitées en
+          arrière-plan par JavaScript de manière asynchrone. Le serveur va alors
+          répondre non pas avec du code HTML, mais avec des données au format
+          XML (comme le dit l’acronyme AJAX), ou au format JSON, ce dernier
+          étant plus largement adopté de nos jours.
+        </p>
+        <p>
+          XML et JSON sont des formats de données standardisés qui permettent de
+          structurer un ensemble complexe de données. Ils sont conçus pour avoir
+          une très bonne compatibilité avec d'autres systèmes, et peuvent
+          s'interfacer très facilement avec d'autres langages. JSON en
+          particulier est dérivé de la notation objet de JavaScript, ce qui
+          permet de passer très facilement des données d'un format JSON à JS,
+          pour qu'elles puissent être traitées.
+        </p>
+        <p>
+          Une requête AJAX ne va pas automatiquement déclencher un rechargement
+          de page. Il est possible depuis JavaScript de lire la réponse d'une
+          telle requête et de récupérer les données contenues dans cette réponse
+          pour les traiter (toujours en JavaScript). Grâce à l'API DOM, il est
+          alors très facile de déclencher la mise à jour d'une portion de page
+          pour afficher les données reçues.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="PoVJQvK"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/PoVJQvK"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Cet exemple, écrit pour le moment en JavaScript vanilla, représente
+            une requête AJAX et une mise à jour de la liste des produits
+            contenant le résultat JSON de la requête. Nous n'avons pas eu besoin
+            de recharger la page : nous avons seulement manipulé le DOM pour
+            afficher notre liste de produits à l'écran. Ce mécanisme est au cœur
+            du fonctionnement d'une application SPA.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>À retenir</h2>
+        <div>
+          <h3>Syntaxe</h3>
+          <ul>
+            <li>
+              Une application web standard est ce qu'on appelle une MPA ou
+              Multiple Page Application. Dans ce modèle, chaque requête vers le
+              serveur va recharger la page pour afficher le HTML contenu dans la
+              réponse.
+            </li>
+            <li>
+              En mode SPA, les requêtes suivant la requête initiale sont des
+              requêtes AJAX, qui ne rechargent pas la page et qui renvoient des
+              données au format JSON ou XML. Dans ce mode, on simule l'existence
+              de plusieurs pages dans notre application en faisant modifier le
+              DOM à React pour donner l'impression à l'utilisateur qu'il vient
+              de se rendre sur une nouvelle section. En réalité, il verra la
+              page index.html tout au long de sa navigation.
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </body>
 </html>

@@ -3,13 +3,264 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Qu'est-ce que React ?</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Qu'est-ce que React ?</h1>
+      <div>
+        <h2>Objectifs</h2>
+        <ul>
+          <li>Comprendre les paradigmes de React</li>
+          <li>Comprendre le data-binding</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Mise en situation</h2>
+        <p>
+          React est une bibliothèque JavaScript développée par Facebook et
+          maintenue dans le cadre du programme
+          <a
+            href="https://opensource.facebook.com/"
+            target="_blank"
+            rel="alternate"
+            >Facebook Open Source</a
+          >.
+        </p>
+        <p>
+          React est considéré comme un framework JavaScript MVVM, comme on l'a
+          vu un peu plus tôt. C'est un outil qui peut être utilisé pour
+          construire des applications de type MPA ou SPA, bien qu'il soit pensé
+          avant tout pour permettre le développement de SPA.
+        </p>
+      </div>
+
+      <div>
+        <h2>Data-binding</h2>
+        <p>
+          Pour parler plus en détails de ce fonctionnement, React permet de
+          créer un binding unidirectionnel des données vers le DOM. Voyons tout
+          de suite comment afficher une variable dans le HTML.
+        </p>
+      </div>
+
+      <div>
+        <h2>One-way data-binding</h2>
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="OJdxZNG"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/OJdxZNG"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Cette syntaxe permet de lier la variable pageTitle à notre DOM en
+            l'incluant dans la balise h1 : c'est ce qu'on appelle une
+            interpolation de variable. On voit que le binding est
+            unidirectionnel (one-way data-binding), c'est-à-dire que la variable
+            impacte le DOM (le contenu de la variable est ajouté au DOM), mais
+            une modification du DOM (comme le fait de supprimer la balise h1) ne
+            changera pas le contenu de la variable.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Two-way data-binding</h2>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Il est également possible de créer un binding bidirectionnel
+            (two-way data-binding). Imaginons par exemple une variable firstname
+            et un champ de texte qui permettrait d'éditer cette variable.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="dyaVeXe"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/dyaVeXe"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Le champ de texte est vide pour le moment. Commençons par créer un
+            binding unidirectionnel pour lier la variable firstname à l'input et
+            pouvoir afficher son contenu en valeur par défaut du champ.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="PoVJezL"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/PoVJezL"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            On remarque qu'on utilise la même syntaxe que pour l'interpolation,
+            avec des accolades. Mais, cette fois-ci, c'est pour injecter le
+            contenu d'une variable dans un attribut d'un élément HTML, comme la
+            value de notre input.
+          </p>
+          <img
+            src="02_Img/one_way_databinding.jpg"
+            alt="Image one_way_databinding"
+          />
+          <p>
+            À ce stade, si nous modifions manuellement le contenu de l'input,
+            les modifications ne seront pas répercutées sur la variable. Pour
+            cela, nous devons créer une seconde liaison, le two-way
+            data-binding. Nous allons écouter les modifications du champ de
+            texte : pour cela, nous nous servirons de l'attribut onChange, qui
+            va permettre l'ajout de l'événement JavaScript change sur notre
+            élément input.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="WNPZJRb"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/WNPZJRb"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous déclenchons dans notre événement onChange la fonction
+            handleChange, qui va automatiquement contenir l'objet correspondant
+            à l'événement. Nous avons créé cette fonction handleChange, qui va
+            prendre en paramètre l'événement et qui assigne la nouvelle valeur
+            contenue dans le champ (récupérée grâce à event.target.value) dans
+            la variable firstname.
+          </p>
+        </div>
+
+        <div>
+          <h3>Attention</h3>
+          <p>
+            Cet exemple permet de comprendre le fonctionnement du data-binding
+            en React, mais le code présenté ci-dessus n'est pas tout à fait
+            correct. Nous verrons un peu plus tard comment remplacer la
+            déclaration de la variable firstname et l'assignation de la nouvelle
+            valeur dans la méthode handleChange pour obtenir un code valide.
+          </p>
+        </div>
+        <p>
+          Ce mécanisme de data-binding est au cœur du fonctionnement de React et
+          il est important de comprendre ce modèle, qui diffère fortement des
+          frameworks comme jQuery, qui permet d'accéder directement au DOM. Ici,
+          c'est React qui contrôle cette liaison.
+        </p>
+      </div>
+
+      <div>
+        <h2>À retenir</h2>
+        <div>
+          <h3>Syntaxe</h3>
+          <ul>
+            <li>
+              React est un framework JavaScript qui prend en charge la couche
+              ViewModel du modèle MVVM. Dans une application React, il est
+              possible de créer un one-way data-binding pour lier simplement des
+              données au DOM, que ce soit pour afficher une variable ou dans
+              l'attribut d'un élément HTML (c'est ce qu'on appelle
+              l'interpolation).
+            </li>
+            <li>
+              Il est aussi possible de lier les données au DOM et d'écouter les
+              événements en provenance du DOM pour modifier les données en
+              conséquence : c'est le two-way data-binding.
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </body>
 </html>

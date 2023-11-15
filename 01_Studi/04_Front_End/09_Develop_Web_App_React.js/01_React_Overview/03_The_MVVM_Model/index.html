@@ -3,13 +3,210 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Le modèle MVVM</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Le modèle MVVM</h1>
+      <div>
+        <h2>Objectifs</h2>
+        <ul>
+          <li>
+            Comprendre le modèle MVVM et ses différences par rapport au modèle
+            MVC
+          </li>
+          <li>Comprendre ce que représente un Model</li>
+          <li>Comprendre ce que représente une View</li>
+          <li>Comprendre ce que représente une ViewModel</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Rappel MVC</h2>
+        <p>
+          Nous avons déjà pu aborder le modèle MVC quand nous avons parlé de
+          Symfony et du PHP.
+        </p>
+        <img src="02_Img/mvc.png" alt="Image mvc" />
+        <p>
+          MVC, pour Model View Controller, représente une architecture de code
+          visant à séparer les responsabilités de l'application web en trois
+          entités distinctes : le Model qui gère l'accès et le format des
+          données, la View qui gère l'affichage à l'écran et la partie
+          interface, et le Controller qui est en charge de la logique métier et
+          qui fait office de passe-plat entre le Model et la View.
+        </p>
+        <p>
+          Pour faciliter la compréhension et pour caricaturer un peu, imaginons
+          le MVC comme une entreprise. Au sein de celle-ci, on retrouve une
+          hiérarchie bien en place.
+        </p>
+        <p>
+          <strong>Modèle (Model)</strong> : On le voit comme l’administrateur.
+          Il va gérer les communications avec une source de données comme les
+          bases de données.
+        </p>
+        <p>
+          <strong>Vue (View)</strong> : Au niveau de l’entreprise, on va le voir
+          comme le service marketing. Il va gérer la présentation de notre site.
+        </p>
+        <p><strong>Contrôleur (Controller) </strong>:</p>
+        <p>
+          On va considérer le Contrôleur comme le CEO de l’entreprise. Il va
+          donner les directives en général. Au niveau du code, si on appelle une
+          route, on va alors solliciter le Contrôleur qui gère la route en
+          question.
+        </p>
+        <p>
+          Pour une route /login, on va par exemple appeler le LoginController
+          qui va donner les directives à la <strong>Vue</strong> pour afficher
+          la page de connexion. Lorsqu'on va essayer de se connecter, c'est
+          toujours le LoginController qui va donner les directives, mais cette
+          fois-ci, il va donner les directives à notre Modèle qui lui,
+          communique avec la base de données.
+        </p>
+        <p>
+          <strong>Le Controller</strong> va effectuer une requête POST avec les
+          identifiants et demander au Modèle de vérifier si les identifiants en
+          question existent bel et bien en Base De Données (BDD) .
+        </p>
+        <p>
+          Si le <strong>Modèle</strong> ne trouve pas les identifiants en BDD,
+          le Controller va demander cette fois-ci à la Vue d'afficher un message
+          d'erreur par exemple.
+        </p>
+        <p>
+          Si au contraire, les identifiants existent dans la base de données, le
+          <strong>Modèle</strong> va retourner au
+          <strong>Controller</strong> qu'il a bien trouvé les données et le
+          <strong>Controller</strong> va cette fois-ci demander à la
+          <strong>Vue</strong>
+          d'afficher par exemple le panel d'administration.
+        </p>
+      </div>
+
+      <div>
+        <h2>Introduction du MVVM</h2>
+        <p>
+          Les librairies JavaScript front-end modernes, comme React ou Vue.js,
+          sont basés sur le modèle MVVM, pour Model View ViewModel.
+        </p>
+        <img src="02_Img/mvvm.png" alt="Image mvvm" />
+        <p>
+          On retrouve deux composants communs avec le modèle MVC. Le Model est,
+          là encore, en charge de la gestion des données et des formats de
+          données. Le Model est également responsable de porter la logique
+          métier qui serait gérée par le front-end. La couche View est quant à
+          elle responsable de gérer l'affichage et les styles.
+        </p>
+        <p>Le pattern MVVM :</p>
+        <ul>
+          <li>
+            <strong>Modèle</strong> (Model) : le
+            <strong>Modèle</strong> contient les données. Généralement, ces
+            données proviennent d’une Base De Données ou d’un service externe
+            comme une API.
+          </li>
+          <li>
+            <strong>Vue</strong> (View) : la <strong>Vue</strong> correspond à
+            ce qui est affiché (la page web dans notre cas). La Vue contient les
+            différents composants graphiques (boutons, liens, listes) ainsi que
+            le texte. Elle représente les composants de l’interface utilisateur
+            tels que CSS, jQuery, HTML, etc. La Vue ne contient jamais de
+            données et n’en manipulent aucune directement.
+          </li>
+          <li>
+            <strong>Vue-Modèle</strong> (ViewModel) : ce composant fait le lien
+            entre le <strong>Modèle</strong> et la <strong>Vue</strong>. Il
+            s’occupe de gérer les liaisons de données et les éventuelles
+            conversions. C’est ici qu’intervient le <strong>binding</strong>. Il
+            est responsable de l’affichage des méthodes, commandes et autres
+            fonctions qui aident à maintenir l’état de la <strong>Vue</strong>,
+            à manipuler le <strong>Modèle</strong> à la suite des actions sur la
+            Vue et à déclencher les événements dans la Vue elle-même.
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Qu’est-ce que le binding ?</h2>
+        <p>
+          Le binding est un mécanisme qui permet de faire des liaisons entre des
+          données de manière dynamiques. Ce qui veut dire que si A et B sont
+          lié, le fait de modifier A va être répercuté sur B et inversement.
+        </p>
+        <p>
+          Ce pattern (MVVM) a spécialement été conçu pour améliorer la
+          séparation entre les données et la vue qui les affichent. Le lien
+          entre la vue et le modèle de données est fait par des mécanismes de
+          binding.
+        </p>
+      </div>
+
+      <div>
+        <h2>Le Virtual DOM</h2>
+        <p>
+          Qu'est-ce que le Virtual DOM ? Le DOM est une API navigateur qui peut
+          être très lente pour un gros volume de nœuds de DOM ou un gros volume
+          de modifications à apporter. Il faut imaginer les éléments de DOM de
+          la page comme un arbre et en fonction de l'opération qu'on effectue :
+          par exemple, si on supprime un élément de DOM, nous aurons besoin de
+          scanner tous les éléments enfants de notre élément cible dans l'arbre
+          de DOM, ce qui peut être assez long.
+        </p>
+        <p>
+          La solution trouvée par les frameworks comme React, c'est le Virtual
+          DOM. C'est une copie de l'ensemble de l'arbre de DOM réalisé en
+          JavaScript. Le traitement de données en JS est beaucoup plus rapide :
+          quand une ou plusieurs modifications de données viennent impacter le
+          DOM, React va rassembler ces modifications dans un batch et les
+          appliquer sur le Virtual DOM. Une fois que tous les traitements du
+          batch sont effectués, React va comparer le Virtual DOM au véritable
+          DOM de la page, et va reproduire les modifications sur le DOM en
+          faisant le moins d'opérations possibles.
+        </p>
+        <p>
+          Cet usage maîtrisé de l'API DOM permet à ce type de framework d'être
+          très performant pour traiter un grand nombre de nœuds de DOM.
+        </p>
+      </div>
+
+      <div>
+        <h2>Organisation d'une application MVVM</h2>
+        <p>
+          Contrairement au modèle MVC, que ce soit en utilisant React ou Vue.js,
+          les différentes couches ne vont pas se matérialiser sous la forme de
+          différents fichiers. React est un framework organisé en composants. On
+          verra plus en détails ce qu'est un composant plus tard, mais les trois
+          couches, Model View et ViewModel vont le plus souvent se retrouver
+          toutes les trois liées au cœur d'un même fichier de composant. Il est
+          tout de même important de comprendre la différence entre ces trois
+          couches pour appréhender au mieux le fonctionnement interne d'un
+          framework comme React.
+        </p>
+      </div>
+
+      <div>
+        <h2>À retenir</h2>
+        <div>
+          <h3>Syntaxe</h3>
+          <p>
+            Le modèle MVC (Model View Controller) est utilisé principalement sur
+            les framework back-end pour séparer les responsabilités d'une
+            application en trois type de fichiers. Les librairies JavaScript
+            modernes tels que React ou Vue.js reposent sur un autre modèle, le
+            modèle MVVM (Model View ViewModel). Les composantes Model et View
+            ont a peu près le même rôle que dans le modèle MVC, mais la couche
+            ViewModel est propre à ce type de librairies et sert de couche de
+            binding entre les données et le DOM. Dans le cas de React, le DOM
+            n'est pas manipulé directement, on passe par l'intermédiaire d'un
+            VirtualDOM qui servira à synchroniser les mutations sur le DOM de la
+            manière la plus rapide et performante possible.
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>
