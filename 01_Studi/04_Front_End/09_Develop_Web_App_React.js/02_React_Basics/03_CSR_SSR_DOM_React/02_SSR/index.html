@@ -3,13 +3,125 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Le SSR</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Le SSR</h1>
+      <div>
+        <h2>Qu’est-ce que le SSR ?</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Le SSR (Server-Side Rendering) est une technique de rendu de pages
+            web qui permet au serveur de générer le code HTML complet d'une page
+            web et de le renvoyer au navigateur de l'utilisateur. Cette
+            technique est utilisée pour améliorer les performances et
+            l'expérience utilisateur des sites web, notamment en réduisant les
+            temps de chargement des pages.
+          </p>
+          <p>
+            Le SSR diffère du rendu côté client (CSR), dans lequel le navigateur
+            du client doit télécharger le code HTML de base, puis exécuter du
+            code JavaScript pour générer le contenu final. Avec le SSR, le
+            serveur génère le HTML final et le renvoie directement au
+            navigateur, ce qui peut réduire le temps de chargement initial de la
+            page et améliorer la convivialité pour les utilisateurs ayant une
+            connexion Internet lente ou limitée.
+          </p>
+          <p>
+            En résumé, le SSR est une technique de rendu de pages web qui permet
+            de générer le contenu HTML côté serveur, avant de le renvoyer au
+            navigateur de l'utilisateur, améliorant ainsi les performances et
+            l'expérience utilisateur des sites web.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Le SSR avec React</h2>
+        <p>
+          ReactDOMServer est une partie de la bibliothèque React qui permet de
+          rendre des composants React côté serveur. Il fournit des méthodes qui
+          permettent de générer du HTML ou du SVG à partir de composants React,
+          afin qu'ils puissent être pré-rendus avant d'être envoyés au
+          navigateur.
+        </p>
+        <p>
+          Dans le contexte de React, le SSR est généralement implémenté à l'aide
+          de bibliothèques tierces telles que Next.js ou Gatsby.js. Ces
+          bibliothèques prennent en charge le rendu côté serveur de React, en
+          générant le HTML côté serveur avant de l'envoyer au navigateur.
+        </p>
+        <p>Le processus de SSR avec React se déroule en plusieurs étapes :</p>
+        <ul>
+          <li>
+            Le navigateur effectue une demande pour une page web, qui est reçue
+            par le serveur.
+          </li>
+          <li>
+            Le serveur détermine quelle page web doit être rendue, en fonction
+            de l'URL de la demande.
+          </li>
+          <li>
+            La bibliothèque de SSR (comme Next.js ou Gatsby.js) récupère les
+            données nécessaires à partir de l'API ou de la base de données, puis
+            rend l'application React côté serveur.
+          </li>
+          <li>
+            Le HTML généré est renvoyé au navigateur, qui peut alors l'afficher.
+          </li>
+        </ul>
+        <p>
+          Une fois que le navigateur a reçu le HTML, il charge le JavaScript de
+          l'application React et hydrate la page, ce qui permet à l'application
+          de fonctionner en tant qu'application web normale.
+        </p>
+        <p>
+          En utilisant le SSR avec React, les avantages incluent une
+          amélioration de la performance, une meilleure accessibilité pour les
+          moteurs de recherche, et une expérience utilisateur plus rapide et
+          plus fiable. Cependant, il peut y avoir des coûts de développement
+          supplémentaires pour la mise en place du SSR, et il est important de
+          comprendre les limites et les avantages de cette technique avant de
+          l'utiliser pour votre application React.
+        </p>
+        <div>
+          <h3>Complément</h3>
+          <p>
+            Voici les liens des bibliothèques mentionnés dans la vidéo (la
+            documentation est uniquement en anglais pour les deux premiers).
+          </p>
+          <ul>
+            <li>
+              <a
+                href="https://nextjs.org/docs/advanced-features/react-18/streaming"
+                target="_blank"
+                rel="alternate"
+                >NEXT</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.gatsbyjs.com/docs/reference/config-files/gatsby-ssr/"
+                target="_blank"
+                rel="alternate"
+                >Gatsby</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://fr.reactjs.org/docs/react-dom.html#:~:text=Le%20module%20react%2Ddom%20fournit,besoin%20d'utiliser%20ce%20module"
+                target="_blank"
+                rel="alternate"
+                >ReactDOM</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </body>
 </html>

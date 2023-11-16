@@ -3,13 +3,122 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Exercice défi</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="https://unpkg.com/react@VersionNumber/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@VersionNumber/umd/react-dom.production.min.js"></script>
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Exercice défi</h1>
+      <div>
+        <p>
+          Vous travaillez pour une jeune entreprise qui souhaite utiliser React
+          pour développer votre application web. Pour commencer, vous devez
+          décider si vous allez utiliser le CSR ou le SSR pour le rendu de
+          l’application. L’entreprise veut une application fluide et interactive
+          pour les utilisateurs.
+        </p>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          Décrivez brièvement les avantages et les inconvénients du CSR et du
+          SSR. Expliquez ensuite quelle approche vous avez choisie et pourquoi.
+        </p>
+        <div>
+          <h2>Solution</h2>
+          <p>
+            L'avantage principal du CSR est le chargement initial de
+            l'application rapide, car seule une page HTML minimale est envoyée
+            au navigateur. Ensuite, le JavaScript est utilisé pour rendre
+            l'application interactive et dynamique. Cependant, le principal
+            inconvénient du CSR est que cela peut entraîner un temps de
+            chargement plus long pour les pages contenant une grande quantité de
+            contenu.
+          </p>
+          <p>
+            Le SSR, quant à lui, est une technique de rendu dans laquelle le
+            code JavaScript est exécuté sur le serveur pour créer la page web.
+            Cette approche peut réduire le temps de chargement initial de
+            l'application, car le serveur peut générer une page HTML complète
+            avec le contenu de l'application. Cependant, le principal
+            inconvénient du SSR est que cela peut entraîner une complexité
+            accrue de la mise en place et de la maintenance de l'application.
+          </p>
+          <p>
+            Pour ce travail, j'ai choisi d'utiliser le CSR pour le rendu de mon
+            application. Cela est dû au fait que je veux une application qui
+            soit rapide et interactive pour les utilisateurs, avec des temps de
+            chargement aussi courts que possible.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          Expliquez comment importer la bibliothèque React via CDN et décrivez
+          les avantages que cette méthode d’import peut apporter à votre
+          application.
+        </p>
+        <div>
+          <h2>Solution</h2>
+          <p>
+            Pour importer React via CDN (Content Delivery Network), vous pouvez
+            simplement ajouter le lien de la bibliothèque React fourni par le
+            CDN à la balise script de votre page HTML :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="oNmowdY"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/oNmowdY"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Remplacez “<a
+              href="https://unpkg.com/react@VersionNumber/umd/react.production.min.js"
+              target="_blank"
+              rel="alternate"
+              >VersionNumber</a
+            >” par la version de React que vous souhaitez utiliser.
+          </p>
+          <p>
+            L'avantage de l'utilisation de React via CDN est que vous n'avez pas
+            besoin de télécharger ou d'installer la bibliothèque sur votre
+            serveur. Le CDN s'occupera de la distribution de la bibliothèque à
+            partir de serveurs répartis dans le monde entier, ce qui peut
+            accélérer le chargement de votre application pour les utilisateurs
+            qui se trouvent loin de votre serveur.
+          </p>
+          <p>De plus, le CDN peut fournir des avantages de sécurité.</p>
+        </div>
+      </div>
     </div>
   </body>
 </html>

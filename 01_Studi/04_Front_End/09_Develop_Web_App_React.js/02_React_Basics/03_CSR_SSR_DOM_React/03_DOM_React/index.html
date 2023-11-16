@@ -3,13 +3,104 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Le DOM et React</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Le DOM et React</h1>
+      <div>
+        <h2>Le DOM</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Le DOM (Document Object Model) est une structure de données,
+            hiérarchique en arbre qui représente la structure HTML de votre page
+            web. Le DOM est utilisé pour représenter et manipuler les éléments
+            de la page web en JavaScript.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Le Virtual DOM</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Le Virtual DOM est une copie légère du DOM qui est créée et stockée
+            en mémoire par React. Lorsqu'un composant React est mis à jour, le
+            Virtual DOM est mis à jour en premier lieu, plutôt que le DOM réel.
+            Le Virtual DOM est ensuite comparé à la version précédente du
+            Virtual DOM pour déterminer les changements qui ont été effectués.
+            Enfin, seulement les parties du DOM qui ont été modifiées sont mises
+            à jour dans le navigateur, plutôt que de recréer le DOM entier.
+          </p>
+          <p>
+            Cela permet à React d'être beaucoup plus rapide que les autres
+            frameworks JavaScript, car il réduit le nombre de mises à jour du
+            DOM, ce qui est l'une des tâches les plus coûteuses pour un
+            navigateur. De plus, en utilisant le Virtual DOM, React peut rendre
+            les mises à jour de l'interface utilisateur de manière plus
+            efficace, offrant ainsi une expérience utilisateur plus agréable.
+          </p>
+          <p>
+            Le Virtual DOM est une fonctionnalité clé de React qui permet de
+            minimiser les mises à jour du DOM et d'améliorer les performances
+            des applications web. C'est l'un des nombreux avantages de
+            l'utilisation de React pour le développement d'applications web
+            modernes.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>
+          Différenciation entre Javascript Natif et React pour la manipulation
+          du DOM
+        </h2>
+        <p>
+          JavaScript et React ont des approches différentes dans la manipulation
+          du DOM.
+        </p>
+        <p>
+          En JavaScript, pour manipuler le DOM, il faut sélectionner les
+          éléments en utilisant des méthodes telles que getElementById,
+          querySelector ou getElementsByClassName, puis modifier les propriétés
+          de ces éléments, telles que innerHTML, style ou textContent. La
+          manipulation du DOM avec JavaScript peut devenir verbeuse et
+          compliquée, surtout lorsque la structure de la page devient plus
+          complexe.
+        </p>
+        <p>
+          En revanche, React utilise une approche plus déclarative pour
+          manipuler le DOM. Plutôt que de manipuler directement le DOM, React
+          utilise le Virtual DOM. Chaque fois que l'état de l'application
+          change, React crée une nouvelle représentation du Virtual DOM, puis la
+          compare à la version précédente pour détecter les différences. Il met
+          ensuite à jour uniquement les parties du DOM qui ont été modifiées.
+        </p>
+        <p>
+          Cette approche de la manipulation du DOM rend le code plus simple,
+          plus lisible et plus facile à maintenir.
+        </p>
+        <p>
+          En somme, les principales différences entre JavaScript et React
+          concernant la manipulation du DOM sont les suivantes :
+        </p>
+        <ul>
+          <li>
+            JavaScript manipule le DOM directement, tandis que React utilise une
+            représentation virtuelle du DOM appelée Virtual DOM.
+          </li>
+          <li>
+            La manipulation du DOM avec JavaScript peut entraîner des
+            performances atténuées en raison de la nécessité de mettre à jour
+            toute la page, tandis que React optimise les performances en ne
+            mettant à jour que les parties du DOM qui ont changé.
+          </li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>

@@ -3,13 +3,411 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Implémentation de React via un CDN</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Implémentation de React via un CDN</h1>
+      <div>
+        <h2>Qu’est-ce qu’un CDN ?</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Avant d’aborder les fonctionnalités de bases de React à partir d’un
+            CDN, il est important de rappeler ce qu’est un CDN (Content Delivery
+            Network). Il s’agit d’un réseau de serveurs informatiques répartis
+            géographiquement dans le monde entier, conçu pour fournir rapidement
+            des contenus (tels que des images, des vidéos, des scripts, etc.) à
+            des utilisateurs finaux.
+          </p>
+          <p>
+            Lorsqu’un utilisateur demande un contenu à partir d’un site web, le
+            CDN va identifier le serveur le plus proche géographiquement pour
+            fournir le contenu demandé, ce qui permet de réduire le temps de
+            chargement du contenu et d’améliorer l’expérience utilisateur.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>React et CDN</h2>
+        <p>
+          Il est justifié d’utiliser le CDN fourni pour l’utilisation de React
+          dans le but d’optimiser les performances de votre application web.
+        </p>
+        <p>
+          Les CDN offrent de nombreux avantages pour la distribution de la
+          bibliothèque React. Tout d'abord, ils permettent un accès rapide aux
+          fichiers optimisés pour une utilisation simple, ce qui réduit le temps
+          de chargement de l'application pour les utilisateurs finaux. De plus,
+          en hébergeant les fichiers sur plusieurs serveurs, les CDN assurent
+          une disponibilité élevée, réduisant ainsi le risque de temps d'arrêt.
+        </p>
+        <p>
+          Les CDN offrent également la possibilité de mettre en cache les
+          fichiers, que ce soit sur les serveurs du CDN ou sur le navigateur de
+          l'utilisateur, permettant ainsi de réduire le temps de chargement des
+          pages et d'améliorer la performance globale de l'application. De plus,
+          certains CDN offrent des fonctionnalités de sécurité telles que la
+          détection et la prévention des attaques DDoS ou des attaques par
+          injection de code malveillant, assurant ainsi une sécurité accrue.
+        </p>
+        <p>
+          Enfin, les CDN permettent des mises à jour rapides de la bibliothèque
+          React. Lorsqu'une nouvelle version est publiée, le CDN peut rapidement
+          la distribuer aux utilisateurs finaux, sans qu'ils aient besoin de
+          télécharger les fichiers à nouveau.
+        </p>
+      </div>
+
+      <div>
+        <h2>Fonctionnalités de React</h2>
+        <p>
+          Nous allons aborder les différentes fonctionnalités de bases de React
+          qui sont utilisables via l’utilisation du CDN React et React DOM.
+        </p>
+        <p>
+          L’un des concepts clés de React est celui des composants. Les
+          composants sont les éléments de base de React, et peuvent être de type
+          classe ou fonction. Ils sont également réutilisables et peuvent être
+          imbriqués pour créer des interfaces utilisateur complexes.
+        </p>
+        <p>
+          Ces derniers ont la possibilité d’utiliser le JSX, qui est une
+          extension de syntaxe permettant d’écrire du code HTML dans du code
+          JavaScript. Cela facilite la création d’interfaces utilisateur. Nous
+          pouvons utiliser JSX en se servant du CDN de React, mais vous devez
+          inclure Babel dans votre projet qui est un outil de compilation de
+          code JavaScript, qui permettra de transpiler votre code JSX en
+          JavaScript pur.
+        </p>
+        <p>
+          L’état et les propriétés sont également deux concepts clés de React.
+          L’état est un objet qui contient des données qui peuvent être
+          modifiées dans un composant. Les propriétés sont des données qui sont
+          transmises d’un composant parent à un composant enfant. Ces deux
+          concepts sont très importants pour la gestion des données et pour la
+          communication entre les différents composants.
+        </p>
+        <p>
+          React DOM fournit des méthodes pour manipuler le DOM de manière
+          efficace. Vous pouvez ajouter, supprimer ou modifier des éléments du
+          DOM en utilisant les méthodes fournies par React DOM. Cela permet de
+          créer des interfaces utilisateur dynamiques et réactives.
+        </p>
+        <p>
+          Enfin, vous pouvez écouter les événements du navigateur et définir des
+          gestionnaires d’événement en React. Les événements sont une façon
+          d’interagir avec l’utilisateur et de modifier l’interface utilisateur
+          en réponse aux actions de l’utilisateur.
+        </p>
+      </div>
+
+      <div>
+        <h2>Implémentation du CDN</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons voir comment implémenter le CDN de React et React DOM
+            pour accéder aux fonctionnalités vues précédemment. Je vous invite à
+            créer une structure HTML de base et à insérer les balises suivantes
+            dans votre balise &lthead&gt :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="oNmoWyK"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/oNmoWyK"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans le lien du CDN inscrit dans notre balise script, 18 correspond
+            à la version de la dépendance chargée, il est possible de remplacer
+            ce chiffre pour accéder à une version spécifique.
+          </p>
+          <p>
+            Sachez qu’il est tout à fait envisageable de retarder l’exécution du
+            script et ainsi le chargement de la bibliothèque React jusqu’à la
+            fin du chargement du document, en ajoutant simplement l’attribut
+            “defer” à la balise correspondante.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Créer un noeud « root »</h2>
+        <h3>Méthode</h3>
+        <p>
+          Nous allons ensuite créer un nouveau nœud dans le body de notre
+          structure HTML auquel nous allons attribuer un id nommé « root ».
+        </p>
+        <p>
+          Le noeud « root » dans une application React est le point d’entrée
+          principal de l’application. Il s’agit d’un élément DOM unique où React
+          insère le contenu d’application.
+        </p>
+        <p>
+          Lorsqu’une application React est rendue, elle crée une hiérarchie
+          d'éléments de l’interface utilisateur appelée « l’arbre de composants
+          ». Le nœud « root »est l’élément racine de cet arbre, à partir duquel
+          tous les autres éléments et composants sont créés et rendus.
+        </p>
+        <p>
+          Dans la plupart des cas, le nœud « root »est un élément &ltdiv&gt vide
+          qui est créé dans le fichier HTML de l’application. Cependant, il peut
+          également être un autre élément HTML, en fonction des besoins de
+          l’application.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="MWLOmBG"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/MWLOmBG"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+
+      <div>
+        <h2>Créer un fichier JavaScript App.js</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons maintenant créer un fichier JavaScript nommé App.js, ce
+            nom est généralement utilisé pour définir le composant principal de
+            l’application. Ce composant englobe tous les autres composants de
+            l’application et son rôle principal est de définir la structure
+            générale de l’application.
+          </p>
+          <p>
+            En somme, le fichier App.js est donc un point d’entrée crucial dans
+            l’application React.
+          </p>
+          <p>
+            Nous allons inclure ce fichier dans une balise script à la suite de
+            celle présente pour React dans notre fichier HTML.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="bGzYWxW"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/bGzYWxW"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Utilisation d’App.js</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Maintenant, nous sommes en mesure d’utiliser React pour afficher
+            notre application dans le navigateur. Pour y parvenir, nous devons
+            utiliser la fonction render() de ReactDOM pour spécifier l'élément
+            que nous souhaitons afficher et fournir le point d’entrée HTML que
+            nous avons créé précédemment, à savoir « root ».
+          </p>
+          <p>
+            Toutefois, il est important de noter que nous ne pouvons pas
+            intégrer directement des éléments HTML dans notre application React.
+            Nous devons plutôt utiliser JSX, une extension de syntaxe qui nous
+            permet d’écrire du code HTML. Mais nous pouvons également créer
+            dynamiquement un élément HTML en utilisant la fonction
+            React.createElement().
+          </p>
+          <p>Dans le fichier App.js nous pouvons écrire le code suivant :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="vYbWmVN"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/vYbWmVN"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ce code utilise la bibliothèque React pour créer un élément HTML en
+            utilisant la fonction React.createElement().
+          </p>
+          <p>Cette fonction prend trois arguments :</p>
+          <ul>
+            <li>
+              Le premier argument est le nom de l’élément HTML que l’on souhaite
+              créer, dans ce cas “h1”.
+            </li>
+            <li>
+              Le deuxième argument est un objet, qui peut être utilisé pour
+              définir des attributs HTML ou des propriétés spéciales de React.
+              Dans ce cas, un objet vide est passé, car il n’y a pas de
+              propriétés définies pour cet élément.
+            </li>
+            <li>
+              Le troisième argument est le contenu de l’élément, qui est une
+              chaîne de caractères contenant le texte 'Hello React !'.
+            </li>
+          </ul>
+          <p>
+            Ensuite, le code utilise la fonction ReactDOM.createRoot() pour
+            créer un point d’entrée pour le rendu de l’application dans
+            l’élément DOM avec l’ID « root ».
+          </p>
+          <p>
+            L’appel à createRoot() renvoie un objet root qui peut être utilisé
+            pour rendre notre élément en appelant la méthode render().
+          </p>
+          <p>
+            En résumé, ce code crée un élément &lth1&gt avec le texte 'Hello
+            React !' et l’affiche dans le document HTML dans l'élément qui porte
+            l’ID « root ».
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Environnement de production</h2>
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            Il est important de noter que l’utilisation du CDN dans un
+            environnement de production doit se réaliser avec une autre version
+            que celle fournie dans l’exemple précédent, qui est dédiée
+            uniquement à l’environnement de développement.
+          </p>
+          <p>
+            Dans un environnement de production, on va plutôt utiliser les
+            versions suivantes :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="vYbWZLX"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/vYbWZLX"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Fonctionnalités avancées</h2>
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            Notez cependant que cette méthode ne permet pas d’utiliser toutes
+            les fonctionnalités avancées de React et qu’il est généralement
+            recommandé d’utiliser un système de construction comme Webpack ou
+            Vite pour construire des applications React plus complexes.
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>

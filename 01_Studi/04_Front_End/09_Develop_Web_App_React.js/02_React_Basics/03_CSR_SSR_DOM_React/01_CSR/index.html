@@ -3,13 +3,66 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Le CSR</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Le CSR</h1>
+      <div>
+        <h2>Qu’est-ce que le CSR ?</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Le CSR (Client Side Rendering) est une technique de développement
+            web qui permet de générer une application web dans le navigateur de
+            l'utilisateur plutôt que sur le serveur.
+          </p>
+          <p>
+            Concrètement, cela signifie que lorsque l'utilisateur demande une
+            page, le serveur renvoie le code JavaScript de l'application ainsi
+            qu'un squelette HTML, puis le navigateur se charge de générer la
+            page finale, en utilisant le code JavaScript pour récupérer les
+            données à afficher et construire l'interface utilisateur.
+          </p>
+          <p>
+            Le CSR est souvent utilisé pour des applications web complexes et
+            interactives, car il permet d'avoir une expérience utilisateur plus
+            fluide et rapide, en évitant les rechargements de page complets à
+            chaque interaction.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Le CSR avec React</h2>
+        <p>Le principe de base du CSR avec React est le suivant :</p>
+        <p>
+          Lorsque l'utilisateur accède à une page web, le navigateur envoie une
+          requête au serveur pour récupérer le code HTML de la page. Au lieu de
+          générer ce code HTML côté serveur, React charge un script JavaScript
+          qui va se charger de générer dynamiquement le HTML, à partir des
+          données récupérées côté serveur.
+        </p>
+        <p>
+          Lorsque le script JavaScript est chargé, il crée un arbre de
+          composants React qui correspond à la vue de la page. Ce processus
+          implique souvent une ou plusieurs requêtes supplémentaires au serveur,
+          pour récupérer les données nécessaires à l'affichage de la page.
+        </p>
+        <p>
+          Une fois que l'arbre de composants est créé et que les données sont
+          récupérées, React se charge de générer le HTML correspondant. Le HTML
+          ainsi généré est ensuite envoyé au navigateur, qui l'affiche à
+          l'utilisateur.
+        </p>
+        <p>
+          Le principal avantage du CSR avec React est que le chargement initial
+          de la page est rapide, car le serveur n'a pas à générer le HTML côté
+          serveur.
+        </p>
+      </div>
     </div>
   </body>
 </html>
