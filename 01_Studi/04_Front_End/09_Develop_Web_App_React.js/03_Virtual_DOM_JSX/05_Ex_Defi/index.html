@@ -3,13 +3,146 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Exercice défi</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Exercice défi</h1>
+      <div>
+        <p>
+          Supposons que nous souhaitons créer un composant qui génère toutes les
+          5 secondes un nombre aléatoire compris entre 0 et 100 et afficher ce
+          nombre dans le navigateur via JSX. Cependant, si ce nombre est
+          inférieur à 50, nous souhaitons plutôt voir s’afficher un message nous
+          indiquant que le nombre généré est trop faible.
+        </p>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          Créez le composant qui génère un nombre aléatoire entre 0 et 100 et
+          affichez ce nombre dans le navigateur.
+        </p>
+        <div>
+          <h2>Solution</h2>
+          <p>
+            Nous pouvons construire notre composant en utilisant le code suivant
+            :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="OJdzqPR"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/OJdzqPR"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici, nous importons les hooks « useState » et « useEffect » de
+            React, qui sont utilisés pour instancier l'état du composant et
+            déclencher un « setInterval » après le premier rendu du composant
+            qui va modifier la valeur du state toutes les 5 secondes.
+          </p>
+          <p>
+            Par ailleurs, dans la fonction cleanup de « useEffect », nous
+            supprimons l'intervalle de temps créé lorsque le composant est
+            démonté du DOM.
+          </p>
+          <p>
+            Notez que l’utilisation du hook « useState » nous permet
+            d’instancier un état dans notre composant qui est une valeur
+            dynamique.
+          </p>
+          <p>
+            Ensuite, l’utilisation du hook « useEffect » nous permet ici
+            d'appeler sa fonction callback lorsque le composant est monté la
+            première fois. Lorsque le composant sera démonté du DOM, la fonction
+            contenue dans son return sera appelée.
+          </p>
+          <p>
+            Ce Hook permet de reproduire le comportement des méthodes de cycle
+            de vie « componentDidMount » et « componentWillUnmount ».
+          </p>
+          <p>
+            Enfin nous utilisons les accolades pour insérer cette valeur
+            dynamique dans notre JSX (number).
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          Effectuer un rendu conditionnel pour retourner un paragraphe JSX qui
+          informe que la valeur du nombre aléatoire est trop faible lorsqu'il
+          est inférieur à 50.
+        </p>
+        <div>
+          <h2>Solution</h2>
+          <p>
+            Nous pouvons effectuer ce rendu conditionnel avec le code suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="ZEwvPYo"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/ZEwvPYo"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici nous utilisons JavaScript pour effectuer une condition, si le
+            state « number » possède une valeur inférieur à 50, dans ce cas nous
+            retournons le JSX qui contient notre paragraphe.
+          </p>
+          <p>Sinon, le JSX qui affiche le nombre aléatoire est retourné.</p>
+        </div>
+      </div>
     </div>
   </body>
 </html>
