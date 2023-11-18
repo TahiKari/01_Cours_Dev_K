@@ -9,7 +9,9 @@
     "mongodb": "^5.1.0",
     "openai": "^4.19.0",
     "plotly.js": "^2.27.0",
-    "react-dayjs": "^0.3.2"
+    "react": "^18.2.0",
+    "react-dayjs": "^0.3.2",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@types/node": "^18.15.5",
