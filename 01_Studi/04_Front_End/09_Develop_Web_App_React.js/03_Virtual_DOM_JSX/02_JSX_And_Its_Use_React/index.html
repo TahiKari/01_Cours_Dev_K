@@ -3,13 +3,638 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Le JSX et son utilisation dans React</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Le JSX et son utilisation dans React</h1>
+      <div>
+        <h2>Qu’est-ce que le JSX ?</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Le JSX est une extension de syntaxe pour JavaScript, souvent
+            utilisée dans les frameworks de développement web comme React. Le
+            JSX permet de décrire de manière déclarative l'interface utilisateur
+            d'une application en combinant du code JavaScript avec des éléments
+            HTML.
+          </p>
+          <p>
+            Concrètement, le JSX ressemble à une syntaxe HTML dans laquelle des
+            balises peuvent être imbriquées les unes dans les autres. Le code
+            peut être exécuté directement dans un navigateur, car il est
+            transpilé en JavaScript par un compilateur approprié.
+          </p>
+          <p>
+            Le JSX offre un certain nombre d'avantages par rapport aux méthodes
+            traditionnelles de manipulation du DOM en JavaScript. Il permet
+            notamment de créer des composants réutilisables, en les décrivant de
+            manière claire et simple. Il permet également de faciliter la
+            maintenance du code en évitant les manipulations directes du DOM,
+            qui peuvent être coûteuses en termes de performances.
+          </p>
+          <p>
+            Lien vers la documentation JSX de React :
+
+            <a
+              href="https://fr.reactjs.org/docs/jsx-in-depth.html"
+              target="_blank"
+              rel="alternate"
+              >reactjs</a
+            >
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les différences entre le HTML et le JSX</h2>
+        <p>
+          HTML et JSX sont 2 langages de balisage utilisés dans le développement
+          web pour créer des interfaces utilisateur. Bien qu'ils partagent de
+          nombreuses similitudes, il existe également des différences
+          importantes entre eux.
+        </p>
+        <p>
+          Tout d'abord, HTML est un langage de balisage standard utilisé depuis
+          longtemps dans le développement web, tandis que JSX est une extension
+          de la syntaxe JavaScript. HTML est généralement utilisé pour créer des
+          pages web statiques, tandis que JSX est utilisé dans le développement
+          d'applications web dynamiques en utilisant des bibliothèques telles
+          que React.
+        </p>
+        <p>
+          De plus, le HTML utilise des attributs d'élément pour spécifier les
+          propriétés des éléments, tandis que le JSX utilise des props pour
+          transmettre des données à des composants. Par exemple, dans HTML, vous
+          pourriez avoir un élément de lien avec un attribut href pour spécifier
+          l'URL vers laquelle il doit pointer :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="vYbpLNW"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/vYbpLNW"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          En JSX, vous utiliseriez plutôt une prop pour transmettre la même
+          information :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="rNPpxxO"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/rNPpxxO"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Une autre différence majeure est que le JSX permet l'utilisation de
+          JavaScript pour la manipulation de l'interface utilisateur. Par
+          exemple, vous pouvez utiliser des expressions JavaScript pour rendre
+          dynamiques les contenus et les styles des éléments :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="poGpggM"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/poGpggM"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          En HTML, vous devriez utiliser des classes CSS pour appliquer des
+          styles aux éléments.
+        </p>
+        <p>
+          Enfin, les outils de développement pour JSX offrent des
+          fonctionnalités telles que la vérification statique des types, la
+          création de composants réutilisables et l'intégration étroite avec les
+          bibliothèques de React. HTML, quant à lui, ne dispose pas de ces
+          fonctionnalités.
+        </p>
+        <p>
+          Bien que HTML et JSX soient tous 2 des langages de balisage utilisés
+          dans le développement web, ils présentent des différences majeures en
+          termes de syntaxe, de fonctionnalités et d'utilisation. HTML est
+          utilisé principalement pour créer des pages web statiques, tandis que
+          JSX est utilisé dans le développement d'applications web dynamiques
+          avec React et permet l'utilisation de JavaScript pour la manipulation
+          de l'interface utilisateur.
+        </p>
+      </div>
+
+      <div>
+        <h2>Les règles de base de JSX</h2>
+        <p>
+          Pour utiliser correctement JSX, les balises doivent être fermées de
+          manière appropriée, soit par une balise fermante, soit par une balise
+          d'auto-fermeture. En outre, les éléments peuvent avoir des attributs
+          qui définissent leurs propriétés et leur comportement, définis en
+          utilisant la syntaxe clé-valeur.
+        </p>
+        <p>
+          L'un des avantages de JSX est qu'il permet l'insertion d'expressions
+          directement dans les éléments en utilisant des accolades {}. Les
+          expressions peuvent être des variables, des fonctions, des opérations
+          mathématiques, ou n'importe quel code qui peut être évalué en
+          JavaScript.
+        </p>
+        <p>
+          Les composants sont un autre élément clé de JSX, et permettent aux
+          développeurs de créer des éléments réutilisables qui encapsulent un
+          ensemble de fonctionnalités. Les composants peuvent être créés en
+          utilisant des classes ou des fonctions, et peuvent être imbriqués pour
+          créer des interfaces utilisateur complexes.
+        </p>
+      </div>
+
+      <div>
+        <h2>La syntaxe de JSX</h2>
+        <p>
+          JSX permet aux développeurs d'écrire des éléments HTML comme s'ils
+          écrivaient du code JavaScript.
+        </p>
+        <p>Voici un exemple de syntaxe JSX :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="eYxyJzN"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/eYxyJzN"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, &lth1&gt est un élément HTML qui est défini à
+          l'intérieur de JavaScript en utilisant la syntaxe JSX.
+        </p>
+        <p>Les éléments JSX peuvent contenir des attributs, comme ceci :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="LYqeGZy"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/LYqeGZy"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, l'élément &ltimg /&gt contient les attributs src et
+          alt, qui sont définis à l'intérieur de l'élément à l'aide de la
+          syntaxe JSX.
+        </p>
+        <p>
+          Les éléments JSX peuvent également contenir du texte, comme ceci :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="abXEdmB"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/abXEdmB"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>Dans cet exemple, l'élément</p>
+        <p>
+          contient le texte « Hello, world! » qui est défini à l'intérieur de
+          l'élément à l'aide de la syntaxe JSX.
+        </p>
+        <p>Les éléments JSX peuvent également être imbriqués, comme ceci :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="mdvpVrL"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/mdvpVrL"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, l'élément &ltdiv&gt contient 2 éléments enfants :
+          &lth1&gt et &ltp&gt. Les éléments JSX sur plusieurs lignes doivent
+          être enveloppés dans une paire de parenthèses.
+        </p>
+        <p>
+          Enfin, la syntaxe JSX peut également inclure des expressions
+          JavaScript, comme ceci :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="QWYayKR"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/QWYayKR"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>Dans cet exemple, l'élément</p>
+        <p>
+          contient une expression JavaScript {name}, qui contient une chaîne de
+          caractère qui sera insérée dans l'élément lorsqu'il est rendu.
+        </p>
+      </div>
+
+      <div>
+        <h2>Le fonctionnement du JSX</h2>
+        <p>
+          Techniquement, lorsqu'un navigateur rencontre du code JSX, il ne peut
+          pas l'interpréter directement, car il n'est pas du HTML valide.
+        </p>
+        <p>
+          Le code JSX doit d'abord être transformé en code JavaScript. Cela se
+          fait généralement à l'aide d'un compilateur tel que Babel, qui est
+          capable de convertir le code JSX en code JavaScript valide.
+        </p>
+        <p>
+          Lorsque le code JSX est transpilé, chaque élément JSX est transformé
+          en une fonction JavaScript qui crée et retourne un objet représentant
+          cet élément. Les propriétés de l'élément sont passées sous forme
+          d'objet, et les enfants de l'élément sont passés sous forme de
+          paramètres.
+        </p>
+        <p>Par exemple, le code JSX suivant :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="YzBYwpY"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/YzBYwpY"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>Sera transformé en code JavaScript équivalent :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="bGzaEBz"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/bGzaEBz"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          L'objet retourné par React.createElement() est ensuite utilisé pour
+          créer l'élément DOM correspondant, qui peut ensuite être ajouté à la
+          page web.
+        </p>
+        <p>
+          Notez que nous avons utilisé le mot-clé « className » pour définir la
+          classe de notre élément « h1 », car le mot-clé « class »
+          habituellement utilisé dans HTML est un mot-clé réservé en JavaScript.
+        </p>
+        <p>Dans React nous devons utiliser « className ».</p>
+      </div>
+
+      <div>
+        <h2>Les événements associés aux éléments JSX</h2>
+        <p>
+          L'ajout d'événements à des éléments JSX est essentiel pour créer des
+          applications Web interactives. Pour ajouter un événement à un élément
+          JSX, il faut suivre une syntaxe spécifique. Tout d'abord, il faut
+          définir une fonction de rappel JavaScript qui sera exécutée lorsque
+          l'événement se produit. Ensuite, cette fonction de rappel peut être
+          associée à un élément JSX en utilisant l'attribut d'événement
+          approprié, tel que « onClick » pour un clic de souris.
+        </p>
+        <p>
+          Par exemple, après avoir défini une fonction de rappel appelée «
+          handleClick », vous pouvez l'associer à un bouton JSX en utilisant
+          l'attribut « onClick ».
+        </p>
+      </div>
+
+      <div>
+        <h2>Gestion des attributs</h2>
+        <p>
+          Les attributs sont des propriétés que l'on peut assigner à un élément
+          dans JSX. Ils peuvent contenir des valeurs de différents types, tels
+          que des chaînes de caractères, des nombres, des booléens ou des
+          fonctions. Les attributs sont utilisés pour définir des comportements
+          ou des styles pour un élément.
+        </p>
+        <p>
+          La gestion des attributs dans JSX est similaire à celle dans HTML. Les
+          attributs sont définis en utilisant la syntaxe suivante :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="xxMpZqq"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/xxMpZqq"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, nous avons 2 attributs définis pour un élément
+          bouton : className et onClick. Le premier attribut, className, est
+          utilisé pour appliquer une classe CSS à l'élément. Le deuxième
+          attribut, onClick, est utilisé pour définir une fonction à exécuter
+          lorsque l'utilisateur clique sur le bouton.
+        </p>
+        <p>
+          Il est important de noter que dans JSX, les noms d'attributs sont
+          exprimés en « camelCase » plutôt que « kebab-case ». Par exemple,
+          l'attribut class en HTML devient className en JSX, et l'attribut
+          tab-index en HTML devient tabIndex en JSX.
+        </p>
+        <p>
+          En outre, les attributs peuvent également être passés sous forme
+          d'objets à l'aide de la syntaxe « {...attributs} ». Cette technique
+          est souvent utilisée pour transmettre des attributs dynamiques à des
+          composants React.
+        </p>
+      </div>
+
+      <div>
+        <h2>Utilisation avancée des expressions JavaScript</h2>
+        <p>
+          Les expressions JavaScript peuvent également être utilisées pour des
+          opérations plus complexes. Par exemple, vous pouvez utiliser des
+          expressions conditionnelles pour afficher différents éléments HTML en
+          fonction de la valeur d'une variable.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="wvNpMJN"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/wvNpMJN"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, une expression conditionnelle est utilisée pour
+          afficher un bouton « Se connecter » si la variable « isLogged » est
+          fausse, et un bouton « Se déconnecter » si la variable est vraie.
+        </p>
+        <p>
+          En outre, les expressions JavaScript peuvent également être utilisées
+          pour appeler des fonctions et manipuler les données avant de les
+          afficher dans les éléments HTML. Cela peut être utile pour formater
+          les données ou effectuer des calculs avant de les afficher dans
+          l'interface utilisateur.
+        </p>
+      </div>
+
+      <div>
+        <h2>Les composants dans le JSX</h2>
+        <p>
+          L'instanciation d'un composant dans du JSX consiste à créer une
+          nouvelle instance d'un composant React et à l'insérer dans le DOM.
+          Pour cela, il est nécessaire d'importer le composant que l'on souhaite
+          instancier.
+        </p>
+        <p>
+          Ensuite, il suffit d'utiliser la syntaxe &ltNomDuComposant/&gt pour
+          instancier le composant, que ce soit dans le contenu d'un autre
+          composant ou directement dans le code JSX. Si des propriétés doivent
+          être passées au composant, il est possible de le faire en ajoutant des
+          attributs à la balise d'instanciation.
+        </p>
+        <p>
+          Il est important de noter que chaque instance de composant créée par
+          l'instanciation est indépendante des autres. Cela signifie que les
+          propriétés passées à une instance particulière n'affectent pas les
+          autres instances du même composant.
+        </p>
+      </div>
     </div>
   </body>
 </html>
