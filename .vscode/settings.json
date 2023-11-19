@@ -107,7 +107,7 @@
     "editor.wordWrap": "bounded",
     // Permet de zoomer
     "editor.wordWrapColumn": 95,
-    "window.zoomLevel": 1,
+    "window.zoomLevel": 0,
     "editor.rulers": [95],
     "editor.fontVariations": false,
     "editor.fontWeight": "normal",
