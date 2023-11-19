@@ -3,13 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Exercice défi</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Exercice défi</h1>
+      <div>
+        <p>
+          Supposons que vous ayez besoin de créer une application web. Vous avez
+          décidé d'utiliser Node.js pour la partie back-end de l'application.
+        </p>
+        <div>
+          <h2>Question</h2>
+          <p>
+            Vous devez créer un dossier et initialisez un projet Node.js en
+            créant un fichier package.json avec NPM. Comment procédez-vous ?
+          </p>
+          <div>
+            <h2>Solution</h2>
+            <p>
+              Pour créer un dossier, vous pouvez le faire manuellement via votre
+              gestionnaire de fichier ou vous pouvez utiliser la commande mkdir
+              dans le terminal ou l'invite de commande, par exemple :
+            </p>
+            <p>mkdir mon-projet</p>
+            <p>
+              Ensuite, accédez au dossier que vous venez de créer et utilisez la
+              commande npm init pour initialiser un nouveau projet Node.js et
+              créer un fichier package.json :
+            </p>
+            <p>cd mon-projet</p>
+            <p>npm init</p>
+            <p>
+              Vous pouvez suivre les instructions de l'assistant pour renseigner
+              les informations relatives à votre projet ou bien choisir
+              d’utiliser la commande npm init -y pour générer un fichier
+              package.json par défaut sans avoir à renseigner les informations
+              relatives au projet.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <h2>Question</h2>
+          <p>
+            Installez une dépendance à votre projet (par exemple Express) et
+            utilisez NPM pour vérifier l'installation et la version de cette
+            dépendance.
+          </p>
+          <div>
+            <h2>Solution</h2>
+            <p>
+              Pour installer une dépendance, vous pouvez utiliser la commande
+              npm install suivie du nom de la dépendance, par exemple :
+            </p>
+            <p>npm install express</p>
+            <p>
+              Cela va télécharger et installer la dernière version d'Express et
+              ajouter une entrée correspondante dans votre fichier package.json.
+            </p>
+            <p>
+              Pour vérifier que la dépendance est bien installée et connaître sa
+              version, vous pouvez utiliser la commande npm list. Cela va
+              afficher toutes les dépendances de votre projet, avec leur nom et
+              leur version.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

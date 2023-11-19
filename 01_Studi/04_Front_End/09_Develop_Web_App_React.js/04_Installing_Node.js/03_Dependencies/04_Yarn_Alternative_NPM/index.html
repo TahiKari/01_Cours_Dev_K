@@ -3,13 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Yarn, une alternative à NPM</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Yarn, une alternative à NPM</h1>
+      <div>
+        <p>
+          Yarn est un gestionnaire de paquets pour JavaScript créé par Facebook.
+          Il a été publié en 2016 et vise à améliorer la vitesse et la fiabilité
+          des installations de paquets par rapport à NPM, le gestionnaire de
+          paquets JavaScript par défaut.
+        </p>
+        <p>
+          Yarn utilise un fichier de configuration appelé yarn.lock pour
+          garantir que les versions de paquets installées sont les mêmes sur
+          toutes les machines. Cela garantit une reproductibilité cohérente de
+          l'environnement de développement.
+        </p>
+        <p>
+          De plus, Yarn utilise une architecture de cache distribuée pour
+          accélérer les installations et les mises à jour de paquets en stockant
+          les fichiers téléchargés dans un cache local. Lorsqu'un package est
+          installé, Yarn vérifie d'abord le cache local pour voir s'il existe
+          déjà. Si c'est le cas, il est immédiatement utilisé. Sinon, Yarn le
+          télécharge depuis le registre de paquets et le stocke dans le cache
+          local pour une utilisation future.
+        </p>
+        <p>
+          Yarn prend également en charge les workspaces, qui permettent aux
+          développeurs de gérer plusieurs packages au sein d'un même projet. Les
+          workspaces permettent de partager facilement du code entre différents
+          packages, ce qui facilite la maintenance et la collaboration sur de
+          grands projets.
+        </p>
+        <p>
+          Vous trouverez toute la documentation sur
+          <a
+            href="https://chore-update--yarnpkg.netlify.app/fr/docs"
+            target="_blank"
+            rel="alternate"
+            >Yarn</a
+          >.
+        </p>
+      </div>
     </div>
   </body>
 </html>

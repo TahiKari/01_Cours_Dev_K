@@ -3,13 +3,146 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>package.json et package-lock.json</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>package.json et package-lock.json</h1>
+      <div>
+        <h2>package.json</h2>
+        <p>
+          Le fichier package.json est un élément clé de tout projet Node.js, car
+          il contient des informations importantes sur les dépendances, les
+          scripts, les métadonnées et les configurations associées au projet.
+          Les dépendances sont les modules Node.js, les bibliothèques tierces ou
+          les autres projets liés, utilisés dans le projet. Le fichier
+          package.json permet de décrire les dépendances du projet, leur version
+          et les contraintes de version. Cela garantit que les dépendances sont
+          installées correctement et que le projet fonctionne sans problème.
+        </p>
+        <p>
+          Les scripts sont un autre aspect important du fichier package.json,
+          car ils permettent d'automatiser les tâches courantes du projet,
+          telles que la construction, les tests ou le déploiement. Les scripts
+          peuvent être exécutés à l'aide de la commande npm run
+          &ltscript-name&gt, et ils sont souvent utilisés pour simplifier les
+          tâches répétitives dans le projet.
+        </p>
+        <p>
+          En plus des dépendances et des scripts, le fichier package.json peut
+          également contenir des métadonnées sur le projet, telles que son nom,
+          sa description, sa version, son auteur, sa licence, etc. Ces
+          informations peuvent être utilisées par d'autres outils pour
+          identifier et traiter le projet, et elles sont souvent utiles pour le
+          partage et la collaboration entre les membres de l'équipe.
+        </p>
+        <p>
+          Le fichier package.json peut également contenir des configurations
+          pour différents outils ou bibliothèques utilisés dans le projet, par
+          exemple, les outils de construction, les préprocesseurs CSS, les
+          transpileurs de code JavaScript, etc. Cela permet d'adapter le projet
+          à différentes situations et besoins.
+        </p>
+        <p>
+          Enfin, le fichier package.json peut également définir des scripts à
+          exécuter automatiquement après l'installation du package. Par exemple,
+          les scripts peuvent être utilisés pour configurer l'environnement de
+          développement après l'installation des dépendances, ou pour effectuer
+          d'autres tâches de configuration.
+        </p>
+        <p>
+          En résumé, le fichier package.json est un fichier important dans les
+          projets Node.js car il permet de décrire les dépendances, les scripts,
+          les métadonnées et les informations relatives au projet. Il est
+          utilisé pour automatiser les tâches courantes, garantir que les
+          dépendances sont correctement installées, et faciliter le partage et
+          la distribution du projet.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>Voici un exemple de fichier package.json :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="abXqmKB"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/abXqmKB"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>package-lock.json</h2>
+        <p>
+          Le fichier package-lock.json est un fichier qui est créé
+          automatiquement lorsque vous utilisez le gestionnaire de paquets NPM
+          pour installer des packages pour votre projet Node.js.
+        </p>
+        <p>
+          Ce fichier est un élément clé lors de l'installation de packages pour
+          un projet, car il permet de verrouiller les versions des packages et
+          de leurs dépendances.
+        </p>
+        <p>
+          En effet, grâce à ce fichier, les versions exactes de chaque package
+          sont enregistrées, ce qui évite les problèmes de compatibilité qui
+          pourraient survenir si des versions différentes étaient installées sur
+          différentes machines. Pour cela, le fichier est utilisé par NPM pour
+          installer rapidement les packages avec les mêmes versions exactes sur
+          toutes les machines, garantissant ainsi une installation
+          reproductible.
+        </p>
+        <p>
+          De plus, le fichier package-lock.json est également utilisé pour
+          détecter les changements de versions. En effet, il est automatiquement
+          mis à jour lorsque de nouveaux packages sont installés ou que les
+          packages existants sont mis à jour. Cela permet de détecter les
+          changements de versions et d'empêcher l'installation de versions
+          incompatibles ou obsolètes. Ainsi, le fichier garantit que les
+          versions installées sont les plus récentes et les plus appropriées
+          pour le projet.
+        </p>
+        <p>
+          En outre, le fichier package-lock.json peut être utilisé pour garantir
+          la sécurité des packages installés. En effet, NPM peut analyser les
+          packages installés et signaler les vulnérabilités détectées dans le
+          fichier package-lock.json. De cette manière, le fichier permet de
+          s'assurer que les versions des packages installés ne contiennent pas
+          de vulnérabilités connues, ce qui renforce la sécurité du projet.
+        </p>
+        <p>
+          En résumé, le fichier package-lock.json est un élément clé pour
+          assurer la reproductibilité et la sécurité de l'installation des
+          dépendances de votre projet Node.js. Il enregistre les versions
+          exactes des packages et de leurs dépendances, permet une installation
+          rapide et reproductible, détecte les changements de versions et peut
+          garantir la sécurité de votre projet.
+        </p>
+      </div>
     </div>
   </body>
 </html>

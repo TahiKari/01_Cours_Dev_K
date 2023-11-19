@@ -26,6 +26,251 @@
           Nous allons installer NPM par la même occasion mais nous aurons
           l’opportunité d’aborder NPM en profondeur dans la suite du cours.
         </p>
+        <video width="500" height="400" controls>
+          <source src="02_Video/01_Lecteur_studi.mp4" type="video/mp4" />
+        </video>
+        <p>
+          Nous allons suivre ensemble étape par étape le procédé pour
+          l’installation de Node.js et NPM sur Windows, puis sur MacOS et enfin
+          sur Ubuntu.
+        </p>
+      </div>
+
+      <div>
+        <h2>Récupération du fichier d’installation pour Windows</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Ouvrez un navigateur web et accédez au site officiel de
+            <a
+              href="https://nodejs.org/en/download"
+              target="_blank"
+              rel="alternate"
+              >Node.js</a
+            >.
+          </p>
+          <p>
+            Notez qu’il est possible d'accéder à deux versions disponibles (LTS
+            et Current) depuis les onglets respectifs.
+          </p>
+          <p>
+            Sur la page de téléchargement, cliquez sur le bouton «
+            <strong>Windows Installer</strong> » pour télécharger le fichier
+            d'installation pour Windows.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Installation du fichier téléchargé sur Windows</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Double-cliquez sur le fichier téléchargé pour ouvrir l'assistant
+            d'installation. Cliquez ensuite sur « <strong>Oui</strong> » pour
+            autoriser l'application à apporter des modifications à votre
+            ordinateur puis cliquez sur « <strong>Next</strong> » pour commencer
+            l'installation.
+          </p>
+          <p>
+            Choisissez l'emplacement d'installation ou utilisez l'emplacement
+            par défaut, puis cliquez sur « <strong>Next</strong> ».
+          </p>
+          <p>
+            Laissez actif l’ensemble des composants suggérés pour
+            l’installation, notamment NPM, puis cliquer sur «
+            <strong>Next</strong> ». Cochez la case «
+            <strong>Automatically install the necessary tools</strong> » pour
+            installer les outils de compilation, puis cliquez à nouveau sur «
+            <strong>Next</strong> ».
+          </p>
+          <p>
+            Cliquez enfin sur « <strong>Installer</strong> » pour commencer
+            l'installation. Attendez que l'installation soit terminée, puis
+            cliquez sur « <strong>Finish</strong> » pour quitter l'assistant
+            d'installation.
+          </p>
+          <p>
+            Node.js et NPM sont désormais installés sur votre système
+            d’exploitation Windows.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Récupération du fichier d’installation pour MacOS</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons maintenant suivre ensemble étape par étape le procédé
+            pour l’installation de Node.js et NPM sur MacOS.
+          </p>
+          <p>
+            Ouvrez un navigateur web et accédez au site officiel de
+            <a
+              href="https://nodejs.org/en/download"
+              target="_blank"
+              rel="alternate"
+              >Node.js</a
+            >.
+          </p>
+          <p>
+            Sur la page de téléchargement, cliquez sur le bouton «
+            <strong>macOS Installer</strong> » pour télécharger le fichier
+            d'installation pour MacOS.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Installation du fichier téléchargé sur MacOS</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Double-cliquez sur le fichier téléchargé pour ouvrir l'assistant
+            d'installation. Cliquez sur « <strong>Continuer</strong> » dans la
+            première fenêtre de l'assistant d'installation. Lisez et acceptez
+            les termes de la licence, puis cliquez sur «
+            <strong>Continuer</strong> ». Cliquez sur «
+            <strong>Installer</strong> » pour commencer l'installation.
+            Saisissez votre mot de passe d'administrateur si nécessaire, puis
+            cliquez sur « <strong>Installer le logiciel</strong> ».
+          </p>
+          <p>
+            Attendez que l'installation soit terminée, puis cliquez sur «
+            <strong>Fermer</strong>
+            » pour quitter l'assistant d'installation.
+          </p>
+          <p>
+            Node.js et NPM sont désormais installés sur votre système
+            d’exploitation MacOS.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>
+          Ouverture du terminal et mise à jour système avant installation sur
+          Ubuntu
+        </h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons maintenant suivre ensemble étape par étape le procédé
+            pour l’installation de Node.js et NPM sur Ubuntu.
+          </p>
+          <p>
+            Ouvrez un terminal en appuyant sur la combinaison de touche Ctrl +
+            Alt + T. Avant d'installer Node.js, il est recommandé de mettre à
+            jour votre système Ubuntu pour obtenir les dernières mises à jour de
+            sécurité. Vous pouvez le faire en utilisant la commande suivante :
+          </p>
+          <code>sudo apt update && sudo apt upgrade -y</code>
+          <p>
+            Installez curl, un outil de transfert de données qui sera utilisé
+            pour télécharger le paquet de Node.js, en tapant la commande
+            suivante :
+          </p>
+          <code>sudo apt install curl</code>
+          <p>
+            Pour installer la dernière version de Node.js, ajoutez le PPA de
+            NodeSource à votre système en tapant la commande suivante :
+          </p>
+          <code
+            >curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+            &&\ sudo apt-get install -y nodejs</code
+          >
+          <p>Ou en root :</p>
+          <code
+            >curl -fsSL https://deb.nodesource.com/setup_18.x | bash - &&\
+            apt-get install -y nodejs</code
+          >
+        </div>
+
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            Cette commande installe Node.js version 18.x. Si vous souhaitez
+            installer une autre version, modifiez simplement le numéro de
+            version dans l'URL ci-dessus. Notez que cette version est compatible
+            avec Ubuntu 20.04 et les versions plus récentes. Les informations
+            relatives à la compatibilité sont disponibles sur ce repository
+            <a
+              href="https://github.com/nodesource/distributions"
+              target="_blank"
+              rel="alternate"
+              >Github</a
+            >.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>
+          Ouverture du terminal et vérification de l’installation de Node.js
+        </h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons maintenant vérifier l’installation de Node.JS et NPM sur
+            votre appareil. Pour cela, ouvrez un terminal.
+          </p>
+          <p>
+            Voici la méthode pour ouvrir le terminal selon votre système
+            d’exploitation :
+          </p>
+          <ul>
+            <li>
+              Sur <strong>Windows</strong> : appuyez sur la combinaison de
+              touches Windows + R de votre clavier pour ouvrir la boîte de
+              dialogue « Exécuter », puis tapez « <strong>cmd</strong> » et
+              appuyez sur la touche Entrée. Vous pouvez également ouvrir un
+              terminal en cliquant avec le bouton droit sur le bouton «
+              <strong>$Démarrer</strong>
+              » de Windows, puis en sélectionnant « <strong>v</strong> » dans le
+              menu.
+            </li>
+            <li>
+              <strong>Sur MacOS</strong> : appuyez sur la combinaison de touches
+              Cmd + espace pour ouvrir SpotLight, tapez «
+              <strong>Terminal</strong> » et appuyez sur la touche Entrée.
+            </li>
+            <li>
+              <strong>Sur Ubuntu</strong> : appuyez sur la combinaison de
+              touches Ctrl + Alt + T.
+            </li>
+          </ul>
+          <p>
+            Pour vérifier l’installation de Node.js, dans votre terminal tapez
+            la commande suivante : node -v.
+          </p>
+          <p>
+            Cette commande va afficher la version de Node.js installée sur votre
+            système. Si Node.js est correctement installé, vous devriez voir une
+            version numérique, telle que « v19.7.0 ». Si vous obtenez un message
+            d'erreur, cela signifie que Node.js n'est pas installé sur votre
+            système ou que l'installation a échoué.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Vérification de l’installation de NPM</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Pour vérifier l’installation de NPM, dans votre terminal tapez la
+            commande suivante : npm -v
+          </p>
+          <p>
+            Cette commande va afficher la version de NPM installée sur votre
+            système, telle que « 9.5.0 ». Si vous voyez un message d’erreur, NPM
+            n’est pas installé correctement sur votre système.
+          </p>
+          <video width="500" height="400" controls>
+            <source src="02_Video/02_Lecteur_studi.mp4" type="video/mp4" />
+          </video>
+        </div>
       </div>
     </div>
   </body>

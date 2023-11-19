@@ -3,13 +3,280 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>NPM et NPX</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>NPM et NPX</h1>
+      <div>
+        <h2>Qu’est-ce que NPM ?</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            NPM (Node Package Manager) est un gestionnaire de packages pour
+            Node.js. C'est un outil en ligne de commande qui permet d'installer,
+            de mettre à jour et de gérer des packages Node.js, ainsi que leurs
+            dépendances. Les packages sont des bibliothèques de codes
+            réutilisables, qui peuvent être utilisées pour ajouter des
+            fonctionnalités à une application Node.js ou ajouter certains
+            package Node accessibles via le système.
+          </p>
+          <p>
+            NPM a été initialement créé pour faciliter la gestion des
+            dépendances dans les projets Node.js, mais il est aujourd'hui
+            largement utilisé comme un outil de distribution de packages pour la
+            communauté Node.js. Il contient un grand nombre de packages open
+            source, qui sont accessibles à tous les développeurs Node.js.
+          </p>
+          <p>
+            En résumé, NPM est un outil essentiel pour les développeurs Node.js.
+            Il permet de gérer les packages et les dépendances de manière
+            efficace, de publier des packages pour la communauté Node.js, et de
+            configurer facilement les projets Node.js.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Définition des cas d’utilisations de NPM</h2>
+        <p>
+          NPM offre de nombreuses possibilités aux développeurs dans le
+          développement de leur projet Node.js.
+        </p>
+        <p>
+          Tout d'abord, il permet l'installation de packages externes déjà
+          existants et testés par la communauté, offrant ainsi une grande
+          variété de fonctionnalités pour enrichir l'application. De plus, il
+          permet également la gestion des dépendances entre ces packages en
+          spécifiant les versions de chaque package pour assurer leur
+          compatibilité.
+        </p>
+        <p>
+          Les développeurs peuvent également exécuter des scripts définis dans
+          leur package.json pour automatiser certaines tâches telles que la
+          compilation de code ou le lancement de tests. NPM offre également la
+          possibilité de publier ses propres packages sur le registre NPM, ce
+          qui facilite leur utilisation par d'autres développeurs. La gestion
+          des versions des packages installés est également possible pour
+          assurer la stabilité et la fonctionnalité de l'application. NPM
+          permet, en outre, une collaboration entre les développeurs en
+          partageant facilement les dépendances et les scripts utilisés dans le
+          projet. Enfin, il facilite la création de projets open source en
+          fournissant un registre centralisé pour la distribution et la gestion
+          de packages.
+        </p>
+      </div>
+
+      <div>
+        <h2>Liste des différentes commandes de NPM</h2>
+        <p>
+          Nous allons maintenant lister les commandes les plus fréquentes liées
+          à NPM et décrire leurs fonctionnalités respectives :
+        </p>
+        <ul>
+          <li>
+            npm init : cette commande permet de créer un fichier package.json
+            pour un nouveau projet Node.js.
+          </li>
+          <li>
+            npm install : cette commande permet d'installer les dépendances
+            définies dans le fichier package.json dans le dossier node_modules.
+            Si aucun fichier package.json n'est présent, l’exécution de cette
+            commande entraînera une erreur.
+          </li>
+          <li>
+            npm install &ltpackage&gt : cette commande permet d'installer un
+            package spécifique. Par exemple, « npm install express » installera
+            la dernière version d'Express.
+          </li>
+          <li>
+            npm install --save-dev &ltpackage&gt : cette commande permet
+            d'installer un package spécifique et de l'ajouter aux dépendances
+            développement du projet.
+          </li>
+          <li>
+            npm install –save-prod &ltpackage&gt : cette commande permet
+            d’installer un package spécifique et de l’ajouter aux dépendances de
+            production du projet
+          </li>
+          <li>
+            npm install --global &ltpackage&gt : cette commande permet
+            d'installer un package globalement sur votre système, plutôt que de
+            l'installer localement pour un projet spécifique.
+          </li>
+          <li>
+            npm update : cette commande permet de mettre à jour tous les
+            packages à leur dernière version compatible.
+          </li>
+          <li>
+            npm update &ltpackage&gt : cette commande permet de mettre à jour un
+            package spécifique à sa dernière version compatible.
+          </li>
+          <li>
+            npm uninstall &ltpackage&gt : cette commande permet de désinstaller
+            un package spécifique.
+          </li>
+          <li>
+            npm search &ltpackage&gt : cette commande permet de rechercher un
+            package spécifique dans le registre NPM.
+          </li>
+          <li>
+            npm run &ltscript&gt : cette commande permet d'exécuter un script
+            spécifique défini dans le fichier package.json.
+          </li>
+          <li>
+            npm list : cette commande affiche la liste de toutes les dépendances
+            installées localement pour le projet.
+          </li>
+          <li>
+            npm init -y : cette commande permet de créer un fichier package.json
+            par défaut sans prompt.
+          </li>
+          <li>
+            npm audit : cette commande permet de vérifier les vulnérabilités de
+            sécurité connues pour les dépendances du projet.
+          </li>
+          <li>
+            npm ci : cette commande permet d'installer les dépendances du projet
+            à partir d'un fichier lock.json, qui garantit que les mêmes versions
+            sont installées sur chaque machine. Il est recommandé d'utiliser
+            cette commande pour les environnements de production.
+          </li>
+        </ul>
+        <p>
+          Ces commandes sont les plus courantes dans NPM, mais il y en a
+          beaucoup d'autres. Vous pouvez trouver plus de détails sur les
+          commandes NPM dans la documentation officielle de NPM.
+        </p>
+        <p>
+          Lien de la documentation officielle de NPM :
+          <a href="https://docs.npmjs.com/" target="_blank" rel="alternate"
+            >nmp Docs</a
+          >
+        </p>
+      </div>
+
+      <div>
+        <h2>Nuance entre l’installation globale et locale</h2>
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            Lorsqu'on parle de la nuance entre local et global avec NPM, on fait
+            généralement référence à la portée des packages installés.
+          </p>
+          <p>
+            Les packages locaux sont installés dans le répertoire de travail
+            courant du projet. Ils sont spécifiques au projet et ne peuvent être
+            utilisés que dans le contexte de ce projet. Lorsque vous exécutez
+            une commande npm install dans le répertoire de travail du projet,
+            les packages sont installés localement par défaut, sauf si vous
+            utilisez l'option -g (ou --global) pour installer les packages de
+            manière globale.
+          </p>
+          <p>
+            Les packages globaux, quant à eux, sont installés sur le système
+            d'exploitation et peuvent être utilisés par tous les projets du
+            système. Lorsque vous installez un package globalement, il est
+            installé dans un emplacement commun à tous les projets, qui est
+            généralement le répertoire d'installation de Node.js. Vous pouvez
+            installer un package globalement en utilisant la commande npm
+            install -g.
+          </p>
+          <p>
+            L'utilisation de packages globaux doit être réservée aux cas où vous
+            avez besoin d'un package dans plusieurs projets sur votre système.
+            Dans la plupart des cas, il est recommandé d'installer les packages
+            localement pour éviter les conflits de version et pour maintenir la
+            portabilité du projet. Il est également important de noter que les
+            packages globaux sont accessibles en ligne de commande, alors que
+            les packages locaux ne le sont pas forcément.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Qu’est-ce que NPX ?</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            NPX est un outil de ligne de commande (CLI) pour Node.js qui permet
+            d'exécuter des packages Node.js sans avoir besoin de les installer
+            localement sur votre ordinateur. Cela signifie que vous pouvez
+            exécuter des commandes Node.js spécifiques à un package, sans avoir
+            à installer ce package globalement sur votre système.
+          </p>
+          <p>
+            Concrètement, lorsque vous installez Node.js sur votre ordinateur,
+            il vient avec le gestionnaire de packages NPM qui vous permet
+            d'installer des packages Node.js. Cependant, certaines tâches
+            nécessitent l'installation de packages qui ne sont pas nécessaires
+            pour votre application, mais plutôt pour un usage ponctuel. C'est là
+            qu'intervient NPX.
+          </p>
+          <p>
+            NPX est livré avec NPM, il est donc installé automatiquement lorsque
+            vous installez Node.js.
+          </p>
+          <p>
+            NPX est utile pour exécuter des scripts spécifiques à un package,
+            tels que des scripts de test ou des scripts de build, sans avoir à
+            installer globalement ces packages. En utilisant NPX, vous pouvez
+            exécuter ces scripts directement à partir de votre terminal.
+          </p>
+          <p>
+            En résumé, NPX est un outil pratique pour exécuter des packages
+            Node.js spécifiques sans avoir besoin de les installer globalement
+            sur votre système. Cela vous permet de gagner du temps et de
+            l'espace sur votre disque dur, tout en vous assurant que vous
+            utilisez toujours la dernière version d'un package.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Exemple de cas d’utilisation de NPX</h2>
+        <p>
+          NPX est un outil pratique qui offre plusieurs fonctionnalités pour
+          travailler efficacement avec des packages Node.js et des scripts NPM.
+        </p>
+        <p>
+          Pour exécuter un script NPX sans l'installer localement, vous pouvez
+          utiliser la commande npx my-package my-script. Cette commande permet
+          d'exécuter le script my-script qui est inclus dans le package
+          my-package, sans avoir besoin de l'installer localement sur votre
+          machine. Cela peut être particulièrement utile si vous n'avez besoin
+          d'exécuter le script qu'une seule fois.
+        </p>
+        <p>
+          Si vous avez besoin d'exécuter un script avec une version spécifique
+          de Node.js, vous pouvez utiliser la commande npx --node-arg=12.18.3
+          my-script. Cette commande vous permet de spécifier la version
+          souhaitée de Node.js pour exécuter le script.
+        </p>
+        <p>
+          NPX peut également être utilisé pour exécuter des outils de
+          développement tels que Create React App, en utilisant la commande npx
+          create-react-app my-app. Cette commande permet de créer un nouveau
+          projet React en utilisant Create React App, sans avoir besoin de
+          l'installer localement.
+        </p>
+        <p>
+          Si vous souhaitez tester un package avant de l'installer localement,
+          vous pouvez utiliser la commande npx my-package. Cette commande permet
+          d'exécuter temporairement le package et de vérifier son fonctionnement
+          avant de l'installer sur votre machine.
+        </p>
+        <p>
+          Enfin, si vous avez besoin d'exécuter un script dans un environnement
+          isolé, vous pouvez utiliser la commande npx npm install. Cette
+          commande permet d'installer les dépendances nécessaires dans un
+          environnement temporaire, sans affecter votre système de fichiers. NPX
+          supprime automatiquement tous les fichiers temporaires une fois que le
+          script est terminé.
+        </p>
+      </div>
     </div>
   </body>
 </html>

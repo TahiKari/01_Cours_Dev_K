@@ -3,13 +3,163 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Projet Node.js</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Projet Node.js</h1>
+      <div>
+        <h2>Vérification de Node.js et NPM</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons maintenant initialiser un projet Node.js. Vous pouvez
+            suivre les étapes ci-dessous.
+          </p>
+          <p>
+            Assurez-vous que Node.js et NPM sont installés sur votre ordinateur.
+            Vous pouvez mettre en application la méthode vue précédemment dans
+            le cours pour effectuer la vérification.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Initialiser le projet</h2>
+        <div>
+          <h3>Méthode</h3>
+          <ul>
+            <li>
+              Créez un dossier pour votre projet. Vous pouvez le faire en
+              utilisant l'invite de commande ou l'explorateur de fichiers de
+              votre système d'exploitation.
+            </li>
+            <li>
+              Ouvrez ce dossier avec votre éditeur de code puis ouvrez le
+              terminal de votre éditeur de code.
+            </li>
+            <li>
+              Initialisez le projet Node.js en exécutant la commande suivante :
+              npm init -y.
+            </li>
+          </ul>
+          <p>
+            Cette commande crée un fichier package.json avec des valeurs par
+            défaut sans vous demander de remplir des champs. Cette approche est
+            plus rapide car elle vous évite d'avoir à répondre aux questions,
+            mais elle vous donne moins de contrôle sur le contenu de votre
+            fichier package.json.
+          </p>
+          <p>
+            Si vous exécutez la commande npm init, le terminal vous guide à
+            travers une série de questions pour remplir les champs du fichier
+            package.json, tels que le nom du projet, la version, la description,
+            l'auteur, les dépendances, etc. Cette approche vous permet de
+            personnaliser les options de votre package.json.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Installation d’une dépendance</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Installez les dépendances dont votre projet a besoin. Vous pouvez le
+            faire en utilisant la commande suivante : npm install &ltnom de la
+            dépendance&gt.
+          </p>
+          <p>
+            Pour l’exemple du cours, nous allons installer la dépendance
+            express, vous pouvez utiliser la commande suivante : npm install
+            express.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Créer un fichier index.js</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Créez un fichier index.js ou tout autre nom que vous souhaitez pour
+            votre fichier principal. Dans ce fichier, vous pouvez écrire le code
+            suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="dyadpBd"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/dyadpBd"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ce code JavaScript simple, va tout simplement inscrire « Hello
+            Node.js ! » dans la console, deux secondes après l'exécution.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Exécuter le projet</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Exécutez votre projet en utilisant la commande node &ltnom du
+            fichier&gt. Par exemple, si votre fichier principal s'appelle «
+            index.js », vous pouvez utiliser la commande suivante : node
+            index.js.
+          </p>
+          <p>
+            Vous devriez voir s’afficher « Hello Node.js ! » dans la console de
+            votre éditeur de code.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Dépendance présente dans le fichier package.json</h2>
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            Si vous prenez le temps d’ouvrir le fichier package.json, vous
+            devriez voir dans les dépendances : « Express.js », la dépendance
+            que nous avons installée via NPM.
+          </p>
+          <p>
+            Bien sûr, il y a beaucoup plus à apprendre sur Node.js et la façon
+            de créer des projets plus complexes, mais cela vous donne un point
+            de départ solide.
+          </p>
+          <video width="500" height="400" controls>
+            <source src="02_Video/Lecteur - studi.mp4">
+          </video>
+        </div>
+      </div>
     </div>
   </body>
 </html>
