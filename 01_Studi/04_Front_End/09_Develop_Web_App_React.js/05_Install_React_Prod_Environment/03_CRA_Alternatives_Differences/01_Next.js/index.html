@@ -3,13 +3,215 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Next.js</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Next.js</h1>
+      <div>
+        <h2>Présentation de Next.js</h2>
+        <p>
+          Next.js est un framework open-source pour React qui simplifie la
+          création d'applications web avec React en ajoutant des fonctionnalités
+          et des optimisations pour les applications SSR (Server-Side
+          Rendering), les applications de pré-rendu et les applications
+          hybrides. Tout d'abord, il offre la fonctionnalité de Server-Side
+          Rendering (SSR) qui permet de rendre les applications côté serveur,
+          générant ainsi le contenu côté serveur et l'envoyant au client, ce qui
+          améliore les performances et l'expérience utilisateur.
+        </p>
+        <p>
+          En outre, Next.js vous permet également de pré-générer les pages de
+          votre application à l'avance, ce qui est connu sous le nom de
+          pré-rendu. Le pré-rendu permet aux pages de l'application de charger
+          plus rapidement, ce qui améliore également l'expérience utilisateur.
+          Next.js dispose également d'un système de routage intégré, ce qui
+          facilite la création de liens entre les différentes pages de votre
+          application.
+        </p>
+        <p>
+          De plus, Next.js offre plusieurs optimisations de performance, telles
+          que l'optimisation des images, la mise en cache et la réduction de la
+          taille des fichiers, qui améliorent la vitesse de chargement de votre
+          application. Ces optimisations de performance peuvent avoir un impact
+          significatif sur l'expérience utilisateur et peuvent aider à améliorer
+          la rétention des utilisateurs.
+        </p>
+        <p>
+          Enfin, Next.js s'intègre facilement avec d'autres outils populaires
+          tels que Redux, CSS Modules et TypeScript. Cette intégration facilite
+          le développement d'applications web plus complexes, offrant ainsi une
+          expérience utilisateur plus riche et plus engageante.
+        </p>
+      </div>
+
+      <div>
+        <h2>Initialiser un nouveau projet React avec Next.js</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Initialiser un nouveau projet React avec Next.js en utilisant la
+            commande suivante dans votre terminal :
+          </p>
+          <code>npx create-next-app@latest </code>
+          <p>
+            La version sur le point d’être installée nous est spécifiée dans le
+            terminal, suivie d’une demande de confirmation. Appuyez sur 'Entrée'
+            pour procéder à l’installation.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Spécifier le nom du projet</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Le nom de votre projet nous est demandé, nous allons écrire dans le
+            terminal le nom que l’on souhaite donner au projet, 'mon-projet'
+            sera utilisé comme exemple pour le cours.
+          </p>
+          <p>Nous devons appuyer sur 'Entrée' pour valider le nom choisi.</p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Préférences pour notre projet</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous pouvons choisir d’utiliser TypeScript dans notre projet, par
+            défaut, l’utilisation de TypeScript est choisie dans le terminal.
+          </p>
+          <p>
+            Nous allons utiliser JavaScript dans le contexte du cours. Pour
+            cela, déplacez le curseur avec les flèches directionnelles sur 'No'
+            et appuyez sur 'Entrée' pour valider la sélection.
+          </p>
+          <p>
+            Nous pouvons ensuite choisir d’utiliser ESLint pour notre projet.
+            ESLint est un outil d'analyse statique de code JavaScript qui permet
+            de détecter les erreurs de syntaxe, les problèmes de style et les
+            problèmes de programmation dans un code JavaScript. Il peut être
+            utilisé pour aider les développeurs à écrire du code plus clair,
+            plus cohérent et plus facilement maintenable, en leur fournissant
+            des suggestions de corrections automatiques ou manuelles. Nous
+            allons confirmer son utilisation dans notre projet en sélectionnant
+            'Yes' et en appuyant sur 'Entrée'.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Utilisation du dossier src</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Ensuite, on nous demande si on souhaite utiliser un répertoire
+            'src/' avec ce projet.
+          </p>
+          <p>
+            Le répertoire 'src/' est généralement utilisé pour stocker les
+            fichiers source de votre application, tels que les fichiers
+            JavaScript, les fichiers CSS, etc. Lorsque vous utilisez le
+            répertoire 'src/', tous vos fichiers source seront organisés dans un
+            seul endroit, ce qui peut rendre la navigation et la maintenance de
+            votre code plus faciles.
+          </p>
+          <p>
+            Cependant, l'utilisation d'un répertoire 'src/' n'est pas
+            obligatoire, et certains projets peuvent préférer utiliser une autre
+            structure de répertoire. Si vous choisissez de ne pas utiliser le
+            répertoire 'src/', vos fichiers source peuvent être stockés
+            directement dans le répertoire racine du projet ou dans d'autres
+            répertoires que vous créez vous-même.
+          </p>
+          <p>
+            En fin de compte, le choix d'utiliser ou non un répertoire 'src/'
+            dépend de vos préférences personnelles et de la structure de votre
+            projet.
+          </p>
+          <p>
+            Dans le contexte du cours, nous allons choisir d’utiliser le
+            répertoire 'src/' en sélectionnant 'Yes' et en appuyant sur
+            'Entrée'.
+          </p>
+          <p>
+            Ensuite, nous pouvons choisir de ne pas utiliser le répertoire
+            'app/' décrit comme expérimental en sélectionnant 'No' et en
+            appuyant sur 'Entrée'.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Alias d’importation</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous sommes ensuite invités à configurer des alias d'importation
+            pour votre projet. Un alias d'importation est un raccourci pour un
+            chemin d'importation plus long et plus complexe.
+          </p>
+          <p>
+            Par exemple, vous pouvez avoir un composant appelé "Button" dans
+            votre projet qui se trouve dans le dossier
+            "components/Button/Button.js". Plutôt que d'importer ce composant
+            avec un chemin d'importation long et fastidieux comme
+            "../../../components/Button/Button", vous pouvez créer un alias
+            d'importation qui vous permet d'importer le composant avec un chemin
+            d'importation plus court et plus facile à comprendre comme
+            "components/Button".
+          </p>
+          <p>
+            Dans le contexte du cours, nous n’allons pas définir d’alias
+            d’importation et simplement appuyer sur 'Entrée' pour débuter
+            l’initialisation de notre projet.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Lancer l’application</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Notre application est maintenant créée avec Next, nous allons
+            accéder au dossier créé en utilisant la commande suivante :
+          </p>
+          <code>cd mon-projet </code>
+          <p>
+            Ici 'mon-projet' correspond au nom du projet que nous avons défini
+            précédemment.
+          </p>
+          <p>
+            Ensuite, nous allons utiliser la commande suivant pour lancer notre
+            application :
+          </p>
+          <code>npm run dev </code>
+          <p>
+            Cela va lancer votre application sur le port 3000. Vous pouvez
+            accéder à votre application en ouvrant votre navigateur et en
+            visitant l'URL
+            <a href="http://localhost:3000/" target="_blank" rel="alternate"
+              >http://localhost:3000</a
+            >.
+          </p>
+          <p>
+            Vous venez de créer une base d'application React en utilisant
+            Next.js. Vous pouvez maintenant ajouter des fonctionnalités à votre
+            application en créant des pages et en ajoutant des composants React.
+          </p>
+          <video width="500" height="400" controls>
+            <source
+              src="02_Video/Next.js [Installation d'un environnement de production React.mp4"
+              type="video/mp4"
+            />
+          </video>
+        </div>
+      </div>
     </div>
   </body>
 </html>

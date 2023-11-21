@@ -3,13 +3,296 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Create React App et fonctionnalités</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Create React App et fonctionnalités</h1>
+      <div>
+        <h2>Introduction à CRA</h2>
+        <p>
+          La création de projets en utilisant Create React App (CRA) est une
+          méthode populaire pour commencer à développer des applications React.
+          CRA est un outil officiel de Facebook pour créer des applications
+          React prêtes à l'emploi avec un ensemble de fonctionnalités telles que
+          le hot reloading, le bundling optimisé, la gestion des assets, le
+          support du CSS préprocesseur, etc.
+        </p>
+        <p>
+          Dans cette partie, nous allons découvrir comment mettre en place un
+          projet en utilisant CRA, installer des packages et comprendre
+          l'architecture de base fournie.
+        </p>
+      </div>
+
+      <div>
+        <h2>Un template</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Dans le contexte de CRA, un template est une base de code
+            préconfigurée pour un type d'application spécifique. Dans le cas de
+            CRA il s’agit d’une application React avec des fonctionnalités de
+            routage déjà intégrées. Un template peut également inclure des
+            packages préinstallés de dépendances et des configurations de build
+            spécifiques pour faciliter la création d'applications web. En
+            utilisant un template, vous pouvez gagner du temps en évitant de
+            créer une application à partir de zéro, en vous concentrant plutôt
+            sur la personnalisation du template pour répondre à vos besoins
+            spécifiques.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Initialisation d’un projet avec CRA</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Pour créer une nouvelle application React via CRA, deux méthodes
+            s’offrent à nous. Nous pouvons utiliser NPM ou NPX :
+          </p>
+          <div>
+            <code>npx create-react-app mon-projet</code>
+            <p>
+              Cette commande utilise npx pour exécuter la commande
+              create-react-app qui est installée localement sur votre système
+              via npm.
+            </p>
+            <p>
+              Lorsque vous exécutez cette commande, elle télécharge et installe
+              automatiquement la dernière version de create-react-app et utilise
+              celle-ci pour générer une nouvelle application React nommée
+              mon-projet.
+            </p>
+          </div>
+
+          <div>
+            <code>npm init react-app mon-projet</code>
+            <p>
+              Cette commande utilise npm pour créer une nouvelle application
+              React en utilisant le modèle react-app, qui est installé
+              localement sur votre système via npm. Ce modèle contient les
+              fichiers de configuration nécessaires pour créer une nouvelle
+              application React, y compris les dépendances et les scripts
+              nécessaires pour exécuter l'application.
+            </p>
+          </div>
+          <p>
+            L’utilisation de NPX est recommandée pour créer une nouvelle
+            application React, car elle utilise create-react-app qui est
+            maintenue par l'équipe de développement de React. En revanche,
+            l’utilisation de NPM est une option alternative qui utilise un
+            modèle non maintenu par l'équipe de développement de React.
+          </p>
+          <p>
+            Après quelques instants, CRA aura créé une nouvelle structure de
+            répertoires pour votre projet, avec tous les fichiers de
+            configuration et les dépendances nécessaires pour exécuter une
+            application React.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Compréhension de l'architecture</h2>
+        <p>
+          Une fois que nous avons créé notre projet, examinons l'architecture
+          fournie par CRA.
+        </p>
+        <p>
+          Le répertoire du projet React est organisé de manière à faciliter la
+          gestion des fichiers et des dépendances.
+        </p>
+        <p>
+          Le dossier 'node_modules' contient tous les packages installés pour le
+          projet, tandis que le dossier public contient les fichiers statiques
+          de l'application, comme le fichier index.html. Ce dernier sert de
+          point d'entrée pour l'application.
+        </p>
+        <p>
+          Le répertoire 'src' contient quant à lui le code source de
+          l'application. Le fichier index.js est le point d'entrée de
+          l'application React, tandis que le fichier App.js contient le
+          composant racine de l'application. Ces fichiers sont essentiels pour
+          le fonctionnement de l'application.
+        </p>
+        <p>
+          Le fichier '.gitignore' est également présent dans le répertoire du
+          projet. Ce fichier est utilisé pour exclure les fichiers et les
+          dossiers qui ne doivent pas être versionnés avec Git. Cette exclusion
+          est importante pour éviter d'encombrer le dépôt avec des fichiers
+          inutiles.
+        </p>
+        <p>
+          Le fichier 'package.json' est également présent dans le répertoire du
+          projet. Il contient les dépendances du projet et les scripts pour
+          exécuter des tâches. C'est un fichier essentiel pour la gestion des
+          dépendances du projet.
+        </p>
+        <p>
+          Enfin, le répertoire du projet contient également un fichier
+          'README.md' qui sert de documentation pour le projet. Ce fichier est
+          important pour comprendre le fonctionnement de l'application et les
+          instructions pour l'utiliser.
+        </p>
+        <p>
+          Un dernier fichier, 'package-lock.json', est présent dans le
+          répertoire du projet. Ce fichier contient la version exacte de chaque
+          package installé. Cette information est importante pour assurer la
+          compatibilité entre les différentes versions des packages et éviter
+          les conflits lors de l'exécution de l'application.
+        </p>
+      </div>
+
+      <div>
+        <h2>Compréhension du template de base</h2>
+        <p>
+          Le projet créé par CRA contient un template de base qui peut être
+          modifié en fonction des besoins. Ce template de base inclut un
+          ensemble de fonctionnalités prêtes à l'emploi. Par exemple, il
+          contient un composant racine 'App.js' qui est responsable du rendu de
+          l'application. De plus, il comprend un fichier 'index.js' qui
+          initialise l'application React. Le fichier 'index.html' est également
+          présent et est utilisé comme point d'entrée pour l'application.
+        </p>
+        <p>
+          La feuille de style CSS est prise en charge dans le template de base,
+          avec des modules CSS pour une meilleure organisation. Le support des
+          tests avec Jest et React Testing Library est également inclus, ce qui
+          est important pour garantir la qualité du code.
+        </p>
+        <p>
+          Par ailleurs, nous pouvons retrouver le fichier “App.test.js” dans
+          notre template qui correspond au fichier de test de notre composant
+          principal “App.js”
+        </p>
+        <p>
+          Le hot reloading est un autre avantage offert par l'architecture
+          fournie par CRA. Il permet des modifications en temps réel du code, ce
+          qui accélère le processus de développement et facilite les tests.
+          Enfin, il convient de noter que l'architecture fournie par CRA suit
+          les meilleures pratiques de développement, ce qui permet de créer des
+          applications React évolutives et maintenables.
+        </p>
+        <p>
+          En résumé, l'utilisation de CRA pour créer un projet permet de gagner
+          du temps dans la configuration initiale et de se concentrer sur le
+          développement des fonctionnalités de l'application. Le template de
+          base fourni inclut toutes les fonctionnalités nécessaires pour
+          démarrer rapidement un projet React, tout en garantissant une
+          architecture solide et conforme aux normes de l'industrie.
+        </p>
+      </div>
+
+      <div>
+        <h2>Qu’est-ce que la transcompilation ?</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            La transcompilation est un processus de transformation du code
+            source écrit dans un langage de programmation vers un autre langage
+            de programmation. Dans le contexte de développement React avec
+            Babel, le transcompilation consiste à convertir le code source écrit
+            en langage JSX (un langage de balisage pour React) en code
+            JavaScript standard, afin que ce dernier puisse être interprété par
+            les navigateurs web.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les packages installés avec CRA</h2>
+        <p>
+          Lorsque vous créez une nouvelle application React à l'aide de Create
+          React App (CRA), plusieurs packages sont automatiquement installés
+          pour vous aider à démarrer rapidement. Nous allons expliquer et
+          détailler les packages installés avec CRA.
+        </p>
+        <p>
+          Tout d'abord, CRA installe un certain nombre de dépendances de
+          développement, qui sont des outils qui vous aident à créer et à
+          développer votre application.
+        </p>
+        <p>
+          Parmi ces dépendances, on trouve Babel, un compilateur JavaScript qui
+          vous permet d'écrire du code moderne et de le transpiler pour le
+          rendre compatible avec les navigateurs plus anciens. Ensuite, il y a
+          Webpack, un outil qui compile votre code JavaScript et le bundle pour
+          l'exécution dans un navigateur. Les plugins webpack suivants sont
+          également installés : html-webpack-plugin, qui génère automatiquement
+          un fichier HTML contenant une balise script pour inclure votre bundle
+          JavaScript, et webpack-dev-server, qui fournit un serveur de
+          développement local avec prise en charge du hot-reloading pour une
+          expérience de développement plus rapide.
+        </p>
+        <p>
+          En plus des dépendances de développement, CRA installe également
+          plusieurs packages de production pour vous aider à créer des
+          applications React robustes. Tout d'abord, il installe React et
+          ReactDOM, qui sont les bibliothèques principales pour la création
+          d'interfaces utilisateur en React. Ensuite, il y a react-scripts, un
+          ensemble de scripts de développement et de production qui facilitent
+          la construction, le test et le déploiement de votre application.
+        </p>
+        <p>
+          En outre, CRA installe également quelques autres packages utiles, tels
+          que prop-types, qui vous permet de définir les types de propriétés
+          attendues pour les composants React, et node-sass et sass-loader, qui
+          vous permet de travailler avec des fichiers SCSS pour la feuille de
+          style de votre application.
+        </p>
+        <p>
+          En résumé, lorsque vous créez une nouvelle application React avec CRA,
+          vous obtenez un ensemble complet d'outils et de packages pour vous
+          aider à démarrer rapidement et à créer des applications robustes et de
+          haute qualité en React.
+        </p>
+        <video width="500" height="400" controls>
+          <source
+            src="02_Video/Create React App et fonctionnalités [Installation d'un envir.mp4"
+            type="video/mp4"
+          />
+        </video>
+      </div>
+
+      <div>
+        <h2>Les commandes de base pour notre projet</h2>
+        <p>
+          Le template CRA contient des commandes préconfigurées pour vous aider
+          à démarrer rapidement avec votre projet React.
+        </p>
+        <p>
+          Nous allons lister les commandes de base et leurs fonctionnalités :
+        </p>
+        <ul>
+          <li>
+            npm start ou yarn start : cette commande démarre l'application en
+            mode développement. Elle ouvre une fenêtre du navigateur avec votre
+            application React, qui sera rechargée automatiquement à chaque
+            modification du code.
+          </li>
+          <li>
+            npm run build ou yarn build : cette commande crée une version de
+            production de votre application React. Elle regroupe tous les
+            fichiers JavaScript et CSS nécessaires en un seul fichier optimisé
+            pour une utilisation en production.
+          </li>
+          <li>
+            npm test ou yarn test : cette commande exécute les tests unitaires
+            de votre application React. Elle vous permet de vérifier que toutes
+            les fonctionnalités de votre application fonctionnent correctement.
+          </li>
+        </ul>
+        <p>
+          En résumé, les commandes de base fournies avec le template CRA vous
+          permettent de démarrer rapidement avec votre projet React, de créer
+          des versions de production optimisées, d'exécuter des tests unitaires
+          et de personnaliser la configuration en fonction de vos besoins.
+        </p>
+      </div>
     </div>
   </body>
 </html>
