@@ -19,5 +19,14 @@
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.29.0",
     "mocha": "^10.2.0"
-  }
+  },
+  "name": "01_cours_dev_k",
+  "version": "1.0.0",
+  "main": "test1.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
