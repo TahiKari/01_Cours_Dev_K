@@ -3,13 +3,138 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Importation et exportation des composants</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Importation et exportation des composants</h1>
+      <div>
+        <h2>
+          Les meilleures pratiques pour l’importation et l’exportation de
+          composants
+        </h2>
+        <p>
+          L’importation et l’exportation de composants dans React sont des
+          éléments clés pour la création d’applications efficaces et modulaires.
+          Pour importer un composant, il est important de respecter la
+          convention d’exportation par défaut, en utilisant l’instruction «
+          export default » pour le composant que l’on souhaite exporter. Il est
+          également important d’organiser les fichiers de composants de manière
+          cohérente, en utilisant des dossiers pour les composants apparentés.
+        </p>
+        <p>
+          En ce qui concerne l’exportation de composants, il est préférable de
+          n’exporter qu’un seul composant par fichier, afin de garantir une
+          meilleure réutilisabilité et une maintenance plus facile.
+        </p>
+        <p>
+          Il est également recommandé d’utiliser des noms de composants
+          explicites et de qualité pour une meilleure lisibilité et une
+          meilleure compréhension du code.
+        </p>
+      </div>
+
+      <div>
+        <h2>Import d’un composant dans notre application</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons apprendre comment importer notre composant « Header.js »
+            dans un composant parent, qui est le fichier « App.js ». Ce fichier
+            englobe l’ensemble de notre application React.
+          </p>
+          <p>
+            Pour ce faire, dans le fichier « App.js », écrivez le code suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="RwvMXMV"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/RwvMXMV"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous avons importé notre composant « Header.js » dans notre
+            composant « App.js » et l’avons retourné sous forme d’une balise
+            auto-fermante dans notre application.
+          </p>
+          <p>
+            Nous pouvons maintenant voir notre composant « Header.js »
+            s’afficher dans le navigateur.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Composants imbriqués</h2>
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            Dans notre cas, nous avons utilisé une balise auto-fermante pour
+            notre composant « Header.js », car il ne contient pas de contenu.
+            Toutefois, il est tout à fait possible d’imbriquer un composant dans
+            un autre en utilisant une balise d’ouverture et de fermeture.
+          </p>
+          <p>
+            Par exemple, si nous avions un composant dédié à notre titre et un
+            composant pour notre logo, le code pourrait être formulé comme suit
+            :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="oNmqKdL"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/oNmqKdL"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
     </div>
   </body>
 </html>

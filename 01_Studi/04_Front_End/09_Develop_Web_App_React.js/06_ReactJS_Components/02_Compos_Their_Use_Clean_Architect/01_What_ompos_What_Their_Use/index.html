@@ -3,13 +3,160 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Qu’est-ce qu’un composant et quelle est leur utilité ?</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Qu’est-ce qu’un composant et quelle est leur utilité ?</h1>
+      <div>
+        <h2>Qu’est-ce qu’un composant React ?</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Un composant React est une unité de base réutilisable de l’interface
+            utilisateur (UI) dans une application React. Il s’agit d’une
+            fonction JavaScript ou d’une classe qui encapsule une partie de
+            l’interface utilisateur, tels un bouton, un champ de saisie, une
+            liste ou une zone de texte.
+          </p>
+          <p>
+            Les composants React sont conçus pour être modularisés et isolés, ce
+            qui permet de les utiliser facilement dans différents contextes de
+            l’application. Ils peuvent être imbriqués les uns dans les autres
+            pour créer des interfaces utilisateur plus complexes, et ils sont
+            gérés par React, qui gère leur état et leur rendu.
+          </p>
+          <p>
+            Les composants React peuvent avoir un état interne, qui peut être
+            modifié en réponse aux actions de l’utilisateur ou à des événements
+            de l’application, et ils peuvent également recevoir des données en
+            entrée, appelées « props », qui leur permettent de s’adapter à
+            différents scénarios d’utilisation.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Utilité et avantages d’un composant React</h2>
+        <p>
+          L’utilité d’un composant React réside dans sa capacité à permettre aux
+          développeurs de créer des interfaces utilisateur flexibles, réactives
+          et modulaires. En utilisant des composants React, les développeurs
+          peuvent séparer la logique métier de l’interface utilisateur, ce qui
+          facilite la maintenance et la réutilisation du code. Cela permet
+          également une meilleure gestion de la complexité, car les développeurs
+          peuvent travailler sur des composants individuels plutôt que sur une
+          interface utilisateur complète.
+        </p>
+        <p>
+          Les avantages des composants React sont nombreux. Tout d’abord, ils
+          permettent une réutilisabilité du code et une facilité de maintenance.
+          Les composants peuvent être utilisés à plusieurs endroits dans une
+          application, ce qui réduit la quantité de code nécessaire pour créer
+          des interfaces utilisateur complexes.
+        </p>
+        <p>
+          De plus, les composants React sont faciles à tester, car ils sont
+          isolés du reste de l’application. Les tests unitaires peuvent être
+          effectués sur des composants individuels sans avoir besoin de tester
+          toute l’interface utilisateur. Cela permet une meilleure couverture de
+          test et une détection plus rapide des erreurs.
+        </p>
+        <p>
+          Enfin, les composants React offrent une grande flexibilité et une
+          réactivité à l’utilisateur. Les composants peuvent être mis à jour en
+          temps réel en réponse aux actions de l’utilisateur, ce qui crée une
+          expérience utilisateur plus agréable et plus engageante.
+        </p>
+      </div>
+
+      <div>
+        <h2>Création d’un environnement React</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons créer notre premier composant React en commençant par
+            initialiser un environnement React. Pour cela, nous tapons la
+            commande « npx create-react-app mon-projet » dans le terminal de
+            notre éditeur de code. Cette commande crée un dossier appelé «
+            mon-projet » dans lequel nous pouvons commencer à développer avec
+            React. Nous supprimerons certains éléments inutiles fournis par CRA
+            par défaut pour le besoin du cours.
+          </p>
+          <p>
+            Dans notre dossier « src » nous pouvons ouvrir le fichier « App.js »
+            et supprimer l’ensemble du contenu de la fonction App et également
+            supprimer l’import du logo.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Création d’un composant</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous pouvons maintenant créer un dossier nommé « components » dans
+            notre dossier « src » qui va accueillir les différents composants de
+            notre application.
+          </p>
+          <p>
+            Nous allons ensuite créer un fichier « Header.js » dans notre
+            fichier « components », ce fichier va contenir un header pour notre
+            application React, nous pouvons inscrire le code suivant dans ce
+            fichier :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="zYeWVKW"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/zYeWVKW"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Export default</h2>
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            En utilisant l’instruction « export default », nous pouvons
+            maintenant importer le composant dans un autre fichier en utilisant
+            n’importe quel nom que nous souhaitons. Notez que si nous avions
+            exporté le composant sans utiliser l’instruction « export default »,
+            nous aurions besoin d’importer le composant en utilisant son nom
+            exact.
+          </p>
+          <video width="500" height="400" controls>
+            <source src="02_Video/Qu’est-ce qu’un composant et quelle est leur utilité Compo.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
     </div>
   </body>
 </html>

@@ -3,13 +3,125 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Parent-enfant et l’importation de sous-composants</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Parent-enfant et l’importation de sous-composants</h1>
+      <div>
+        <h2>
+          Comment les composants parent et enfant fonctionnent-ils ensemble dans
+          une architecture modulaire ?
+        </h2>
+        <p>
+          Dans React, les composants sont organisés hiérarchiquement en une
+          structure parent-enfant. Le composant parent est celui qui englobe les
+          composants enfants. Il est responsable de la gestion de leur état et
+          de la transmission des données entre les différents composants.
+        </p>
+        <p>
+          Les composants enfants, quant à eux, sont des éléments qui sont
+          contenus dans le composant parent. Ils reçoivent des données du
+          composant parent et peuvent renvoyer des informations à ce dernier.
+          Les composants enfants peuvent également avoir leurs propres enfants,
+          créant ainsi une structure hiérarchique de composants imbriqués.
+        </p>
+        <p>
+          La communication entre les composants parent et enfant se fait par la
+          transmission de données via les propriétés (ou « props » en anglais).
+          Les propriétés sont des objets qui contiennent des données que le
+          composant parent transmet à ses enfants. Les enfants peuvent ensuite
+          utiliser ces données pour rendre leur propre contenu.
+        </p>
+        <p>
+          Par exemple, considérons un composant parent qui affiche une liste de
+          noms d’utilisateurs. Le composant parent va transmettre les noms
+          d’utilisateurs sous forme de propriétés aux composants enfants
+          responsables de l’affichage des noms. Les enfants peuvent ensuite
+          utiliser ces propriétés pour afficher les noms dans la liste.
+        </p>
+        <p>
+          L’architecture modulaire de React est basée sur la notion de
+          composants parent-enfant. Les composants parents contiennent des
+          composants enfants, qui reçoivent des données via les propriétés et
+          renvoient des informations au composant parent. Cette approche permet
+          de créer des interfaces utilisateur complexes et dynamiques en
+          utilisant des composants réutilisables et indépendants les uns des
+          autres.
+        </p>
+        <p>Par exemple nous pourrions avoir le code suivant :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="ExrEqJV"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/ExrEqJV"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, le composant parent « ListeUtilisateurs » crée un
+          tableau utilisateurs et transmet ses valeurs au composant enfant «
+          ListeNoms » via la propriété utilisateurs. Le composant enfant utilise
+          ensuite ces propriétés pour afficher la liste des noms d’utilisateurs
+          dans un élément ul.
+        </p>
+      </div>
+
+      <div>
+        <h2>
+          Les avantages de ne pas importer les sous-composants de l’enfant dans
+          le parent
+        </h2>
+        <p>
+          Lors de la composition des composants dans une application React, il
+          peut être tentant d’importer les sous-composants d’un composant parent
+          directement dans le parent lui-même. Cependant, il y a plusieurs
+          avantages à éviter cette pratique et à conserver les sous-composants
+          en tant que composants distincts.
+        </p>
+        <p>
+          Tout d’abord, la séparation des sous-composants du parent rend le code
+          plus facile à lire et à comprendre. Lorsque les sous-composants sont
+          importés directement dans le parent, le code peut devenir encombré et
+          difficile à déchiffrer. En gardant les sous-composants en tant que
+          composants distincts, chaque composant est plus facile à comprendre et
+          à maintenir.
+        </p>
+        <p>
+          Enfin, la séparation des sous-composants peut améliorer les
+          performances de l’application. Lorsque les sous-composants sont
+          importés directement dans le parent, cela peut entraîner un
+          encombrement de l’arbre des composants, ce qui peut ralentir
+          l’application. En gardant les sous-composants en tant que composants
+          distincts, l’arbre des composants peut rester plus léger et
+          l’application peut fonctionner plus rapidement. La séparation des
+          sous-composants du parent rend le code plus facile à lire et à
+          comprendre, facilite la réutilisation des composants et peut améliorer
+          les performances de l’application.
+        </p>
+      </div>
     </div>
   </body>
 </html>

@@ -3,13 +3,183 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Exercice défi</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Exercice défi</h1>
+      <div>
+        <p>
+          Supposons que nous voulions créer un footer pour notre application et
+          l’instancier dans notre composant « App.js », juste après le composant
+          « Header.js » que nous avons déjà créé. Ce composant de footer devrait
+          contenir un autre composant, qui sera un bouton.
+        </p>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          Créez un composant « Footer.js » qui contient un paragraphe, puis
+          retournez-le dans notre composant « App.js » pour pouvoir le
+          visualiser dans le navigateur.
+        </p>
+        <div>
+          <h2>Solution</h2>
+          <p>Le code de notre composant pourrait ressembler à ceci :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="abXGbvY"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/abXGbvY"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici nous avons un cas d’utilisation qui démontre qu’il n’est pas
+            nécessaire d’utiliser les parenthèses dans notre « return » dans le
+            cas ou n’avons qu’un seul élément JSX à retourner.
+          </p>
+          <p>
+            Et dans notre fichier « App.js », nous pourrions l’utiliser avec le
+            code suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="dyaeyYQ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/dyaeyYQ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          Enfin, vous devez créer un nouveau composant « Button.js » qui sera
+          intégré à notre composant « Footer.js »
+        </p>
+        <div>
+          <h2>Solution</h2>
+          <p>Notre composant Button.js pourrait être codé de cette manière :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="yLZjLeM"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/yLZjLeM"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Et ensuite nous pourrions utiliser ce nouveau composant dans notre
+            composant « Footer.js » en l’utilisant de cette manière :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="ExrLxPQ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/ExrLxPQ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Voici un schéma qui représente l’architecture Parent/Enfant de notre
+            application :
+          </p>
+          <img
+            src="02_Img/composants-reactjs-image1_1.png"
+            alt="Image composants-reactjs-image1_1"
+          />
+        </div>
+      </div>
     </div>
   </body>
 </html>

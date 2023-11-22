@@ -3,13 +3,254 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Introduction au JSX</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Introduction au JSX</h1>
+      <div>
+        <h2>Qu’est-ce que le JSX ?</h2>
+        <p>
+          Le JSX est une extension de syntaxe pour JavaScript, qui permet
+          d’écrire des balises HTML directement dans le code JavaScript. Cette
+          technologie a été introduite par Facebook dans le cadre de la
+          bibliothèque React, mais elle peut également être utilisée avec
+          d’autres frameworks et bibliothèques de JavaScript.
+        </p>
+        <p>
+          Avec le JSX, il est possible d’écrire des composants React sous forme
+          de balises HTML, ce qui facilite grandement la création d’interfaces
+          utilisateur. Au lieu d’écrire des fonctions qui génèrent du code HTML
+          en JavaScript, on peut écrire directement du HTML dans le code
+          JavaScript. Le JSX permet ainsi de créer des composants plus lisibles
+          et plus facilement compréhensibles, car ils ressemblent beaucoup plus
+          à du code HTML.
+        </p>
+        <p>
+          Le JSX est également très flexible et permet d’utiliser des
+          expressions JavaScript dans les balises HTML. Cela signifie que l’on
+          peut utiliser des variables, des fonctions et des opérateurs
+          JavaScript dans les balises HTML, ce qui permet de créer des
+          interfaces utilisateur dynamiques et interactives.
+        </p>
+        <p>
+          Cependant, le JSX nécessite un préprocesseur pour être utilisé dans
+          les navigateurs. Le plus souvent, Babel est utilisé pour compiler le
+          code JSX en JavaScript valide pour les navigateurs. Il est donc
+          important de bien configurer son environnement de développement pour
+          pouvoir utiliser le JSX correctement.
+        </p>
+      </div>
+
+      <div>
+        <h2>
+          Comment utiliser le JSX pour retourner du code HTML dans les
+          composants fonctionnels ?
+        </h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons maintenant utiliser JSX pour retourner du code HTML dans
+            le composant « Header.js » que nous avons créé précédemment. Notre «
+            Header.js » va contenir un titre ainsi que le logo de React qui est
+            déjà présent dans notre application React générée par CRA.
+          </p>
+          <p>Inscrivons le code suivant dans notre fichier « Header.js » :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="vYbRqQE"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/vYbRqQE"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous avons importé le logo de React en utilisant le fichier SVG
+            fourni par CRA. Nous l’avons nommé « React Logo » et avons spécifié
+            son chemin d’accès.
+          </p>
+          <p>
+            Nous avons utilisé le mot clé « return » pour retourner du JSX, qui
+            est une extension de syntaxe qui permet d’écrire du code HTML-like
+            en JavaScript.
+          </p>
+          <p>
+            Par ailleurs, lorsque vous voulez retourner plusieurs éléments JSX à
+            la fois, dans ce cas, vous devez englober les éléments dans des
+            parenthèses pour les regrouper. Si vous ne retournez qu’un seul
+            élément JSX, vous n’avez pas besoin d’utiliser des parenthèses, vous
+            pouvez simplement inscrire votre élément JSX à la suite du « return
+            ».
+          </p>
+          <p>
+            Ensuite, dans notre composant « Header.js », nous avons retourné du
+            JSX contenant une balise « header » qui inclut une balise « h1 »
+            ainsi qu’une balise « img ».
+          </p>
+          <p>
+            Notre balise « h1 » contient le titre « Les composants React ».
+            Quant à notre balise « img », elle ne contient aucun contenu direct,
+            nous avons donc utilisé une balise auto-fermante. Nous avons
+            simplement spécifié l’attribut « src » avec pour valeur « ReactLogo
+            », qui correspond au logo que nous avons importé précédemment.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Styliser notre composant</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons créer un dossier nommé « styles » dans le répertoire «
+            src ». Ce dossier contiendra une feuille de style pour notre
+            composant.
+          </p>
+          <p>
+            Ensuite, nous allons créer un fichier appelé « header.css » dans le
+            dossier « styles ». Ce fichier contiendra le code suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="oNmqrVK"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/oNmqrVK"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Le fichier « header.css » contient quelques règles CSS basiques qui
+            appliquent une taille définie, un affichage en mode flex et une
+            couleur de fond à une classe nommée « headerContainer ».
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Attribution de la classe a notre Header</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            En HTML standard, il est courant d’attribuer une classe à un élément
+            à l’aide de l’attribut « class ». Toutefois, en JSX, l’attribution
+            d’une classe diffère légèrement. L’attribut à spécifier est «
+            className ».
+          </p>
+          <p>
+            La raison en est que « class » est un mot réservé en JavaScript, ce
+            qui signifie qu’il ne peut pas être utilisé pour définir des
+            propriétés d’objet.
+          </p>
+          <p>
+            Nous allons maintenant importer le fichier CSS dans notre composant
+            et attribuer notre classe au « header » de notre composant «
+            Header.js » en utilisant le code suivant :
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Lancer notre application React</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons maintenant lancer l’application pour voir s’afficher le
+            contenu de notre composant dans le navigateur.
+          </p>
+          <p>
+            Pour cela, dans le terminal de notre éditeur de code nous tapons la
+            commande suivante :
+          </p>
+          <code>cd mon-projet</code>
+          <p>
+            Cette commande nous permet d’accéder au dossier qui contient notre
+            application.
+          </p>
+          <p>
+            Enfin nous utilisons la commande suivante pour lancer l’application
+            :
+          </p>
+          <code>npm start </code>
+          <p>
+            Nous avons lancé l’application dans le navigateur, mais nous ne
+            pouvons pas voir notre composant « Header.js », car nous ne l’avons
+            pas encore utilisé dans notre application.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Encapsulation du JSX dans un seul élément</h2>
+        <p>
+          Lorsque vous utilisez JSX, vous devez encapsuler tous vos éléments
+          HTML dans un seul élément parent. Cela est nécessaire pour que le
+          compilateur JSX puisse transformer correctement le code HTML en
+          JavaScript.
+        </p>
+        <p>
+          En effet, le compilateur JSX ne peut pas traiter plusieurs éléments
+          HTML contigus comme du code valide. Il s’attend à ce que tous les
+          éléments soient encapsulés dans un seul élément parent.
+        </p>
+        <p>
+          Dans la plupart des cas, les éléments sont encapsulés dans une div,
+          mais lorsque la création d’un nœud n’est pas nécessaire, un fragment
+          est utilisé.
+        </p>
+        <p>
+          Un fragment est simplement une syntaxe abrégée pour créer un élément
+          qui n’a pas de balise parent. Cela vous permet d’encapsuler plusieurs
+          éléments HTML sans ajouter un élément inutile à votre arbre DOM.
+        </p>
+        <p>
+          Pour utiliser un fragment, vous pouvez utiliser la syntaxe
+          &lt&gt…&lt/&gt ou &ltReact.Fragment&gt…&lt/React.Fragment&gt.
+        </p>
+      </div>
     </div>
   </body>
 </html>
