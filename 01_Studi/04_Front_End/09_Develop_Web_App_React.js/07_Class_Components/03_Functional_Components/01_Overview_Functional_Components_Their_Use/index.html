@@ -3,13 +3,110 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>
+      Présentation des composants fonctionnels et de leur utilisation
+    </title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Présentation des composants fonctionnels et de leur utilisation</h1>
+      <div>
+        <h2>Qu’est-ce qu’un composant fonctionnel ?</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Les composants fonctionnels sont très utiles, car ils sont simples à
+            écrire et à comprendre, ce qui les rend souvent préférables aux
+            composants de classe plus complexes. Ils sont également plus
+            performants, car ils nécessitent moins de ressources système.
+          </p>
+          <p>
+            Ils peuvent également être utilisés en combinaison avec les hooks de
+            React, tels que « useState », « useEffect » et « useRef », pour
+            ajouter des fonctionnalités supplémentaires à un composant.
+          </p>
+          <p>
+            En résumé, les composants fonctionnels sont des fonctions JavaScript
+            simples qui renvoient des éléments React et sont utiles pour créer
+            des composants simples et performants dans une application React.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>
+          Gestion de l’état et des propriétés dans les composants fonctionnels
+        </h2>
+        <p>
+          Dans un composant fonctionnel React, les propriétés et l'état sont
+          gérés de manière différente.
+        </p>
+        <p>
+          Les propriétés sont des données qui sont passées en tant qu'arguments
+          de fonction au composant. Les propriétés sont utilisées pour
+          configurer le comportement du composant et déterminer la façon dont il
+          sera rendu à l'écran. Les propriétés sont utilisées en lecture seule,
+          donc elles ne peuvent pas être modifiées à l'intérieur du composant.
+        </p>
+        <p>
+          L'état est géré à l'aide du hook « useState », qui permet de déclarer
+          une variable d'état et une fonction de mise à jour pour cette
+          variable. L'état est modifiable par le composant lui-même,
+          contrairement aux propriétés. Les changements d'état entraînent des
+          réaffichages de l'interface utilisateur, ce qui permet de rendre des
+          interfaces dynamiques.
+        </p>
+        <p>
+          En utilisant les propriétés et l'état de manière appropriée, les
+          composants fonctionnels React peuvent être rendus plus flexibles et
+          réutilisables. Les propriétés sont utilisées pour passer des données
+          de l'extérieur d'un composant vers l'intérieur, tandis que l'état est
+          utilisé pour stocker des données à l'intérieur d'un composant et pour
+          les mettre à jour en réponse à des événements utilisateur ou à des
+          changements de données.
+        </p>
+      </div>
+
+      <div>
+        <h2>Le cycle de vie dans un composant fonctionnel</h2>
+        <p>
+          Le cycle de vie des composants fonctionnels est un concept important
+          en React, car il décrit comment un composant fonctionnel interagit
+          avec le DOM et avec les autres composants de l'application au fil du
+          temps.
+        </p>
+        <p>
+          Le cycle de vie des composants fonctionnels est composé de plusieurs
+          phases, chacune déclenchée par un événement spécifique. Les phases du
+          cycle de vie comprennent le montage, la mise à jour et le démontage.
+        </p>
+        <p>
+          La méthode « useEffect » est utilisée pour déclencher les différentes
+          phases d'un composant fonctionnel dans le DOM, cependant, les
+          opérations qui sont effectuées au cours de ces phases dépendent des
+          paramètres, des dépendances et du nombre d'appels.
+        </p>
+        <p>
+          Lors de la phase de montage, « useEffect » est appelé une seule fois
+          après le rendu initial du composant, et le développeur peut y
+          effectuer des opérations initiales telles que la récupération de
+          données, la configuration d'écouteurs d'événements, l'initialisation
+          d'un état ou la connexion à une API. Au cours de la phase de mise à
+          jour, « useEffect » est appelé à chaque rendu du composant en réponse
+          à des changements de propriétés ou d'état, et le développeur peut y
+          effectuer des opérations telles que la mise à jour des données, la
+          modification de l'interface utilisateur ou la connexion à une API.
+          Enfin, lors de la phase de démontage, « useEffect » est appelé lorsque
+          le composant est retiré du DOM.
+        </p>
+        <p>
+          Au cours de cette phase, le développeur peut effectuer des opérations
+          de nettoyage, telles que la suppression d'écouteurs d'événements,
+          l'annulation de la connexion à une API ou la libération de ressources.
+        </p>
+      </div>
     </div>
   </body>
 </html>

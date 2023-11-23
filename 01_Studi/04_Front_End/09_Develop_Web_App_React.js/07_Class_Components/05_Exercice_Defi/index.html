@@ -3,13 +3,148 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Exercice défi</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Exercice défi</h1>
+      <div>
+        <p>
+          Supposons que notre application nécessite un nouveau composant de type
+          classe qui sera un composant enfant du composant « ClassComponent.js »
+          que nous avons créé ensemble. Ce composant doit recevoir les données
+          de notre compteur et les afficher à l'intérieur de lui-même. En outre,
+          chaque fois que les données reçues seront mises à jour, le composant
+          devra retourner dans la console la valeur actuelle du compteur.
+        </p>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          Créez ce composant et faites en sorte que les données reçues
+          s’affichent dans notre application.
+        </p>
+        <div>
+          <h2>Solution</h2>
+          <p>Pour créer ce composant, nous pouvons écrire le code suivant :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="rNPvvzP"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/rNPvvzP"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ensuite nous pouvons importer et retourner ce composant enfant dans
+            notre composant « ClassComponent.js ».
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="xxMjjLv"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/xxMjjLv"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Les données de notre compteur sont maintenant transférées vers notre
+            composant enfant et ces données sont traitées et affichées depuis le
+            composant enfant.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          Depuis notre composant enfant, inscrivez dans la console un message
+          qui indique la valeur du compteur à chaque fois que celui-ci est mis à
+          jour.
+        </p>
+        <div>
+          <h2>Solution</h2>
+          <p>
+            Pour inscrire dans la console un message qui indique la valeur du
+            compteur à chaque mise à jour, nous pouvons utiliser le code suivant
+            dans notre composant enfant avant la méthode render() :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="oNmddGX"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/oNmddGX"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
     </div>
   </body>
 </html>

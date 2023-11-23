@@ -3,13 +3,427 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Le cycle de vie des composants de type classe dans React</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Le cycle de vie des composants de type classe dans React</h1>
+      <div>
+        <h2>Qu’est-ce qu’un cycle de vie dans React ?</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Un cycle de vie (ou lifecycle en anglais) dans React fait référence
+            à une série d'étapes qu'un composant React traverse depuis sa
+            création jusqu'à sa destruction. Ces étapes sont déclenchées par des
+            événements internes du composant, tels que la mise à jour de l'état
+            ou la réception de nouvelles propriétés (props).
+          </p>
+          <p>
+            Les cycles de vie sont importants, car ils permettent aux
+            développeurs de contrôler et de manipuler le comportement du
+            composant à chaque étape de son cycle de vie. Ils permettent
+            également d'exécuter des actions spécifiques à chaque étape du cycle
+            de vie, telles que l'initialisation des données, la mise à jour de
+            l'affichage ou la suppression des ressources inutiles.
+          </p>
+          <p>
+            En React, il y a 3 catégories de cycles de vie : le montage
+            (mounting), la mise à jour (updating) et le démontage (unmounting).
+            Le cycle de vie de montage se produit lorsqu'un composant est créé
+            pour la première fois. Le cycle de vie de mise à jour se produit
+            lorsque les propriétés ou l'état du composant sont modifiés. Le
+            cycle de vie de démontage se produit lorsque le composant est
+            supprimé de l'interface utilisateur.
+          </p>
+          <p>
+            Chacune de ces catégories de cycle de vie a plusieurs étapes
+            spécifiques qui correspondent à différents moments du cycle de vie.
+            Les développeurs peuvent utiliser ces étapes pour contrôler le
+            comportement du composant et exécuter des actions spécifiques à
+            chaque étape.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les méthodes de React.Component</h2>
+        <p>
+          React.Component propose plusieurs méthodes pour gérer les composants
+          dans une application React.
+        </p>
+        <p>
+          Tout d'abord, la méthode « render » est la méthode principale de tout
+          composant React. Elle est obligatoire et doit renvoyer un élément
+          React ou null.
+        </p>
+        <p>
+          Ensuite, la méthode « constructor » permet d'initialiser l'état du
+          composant et de lier des méthodes à l'objet « this ». Cette méthode
+          n'est pas obligatoire, mais elle est souvent utilisée pour initialiser
+          les valeurs de l'état.
+        </p>
+        <p>
+          La méthode « componentWillMount » est une méthode qui était utilisée
+          dans React avant la version 16.3. Elle était appelée juste avant que
+          le composant ne soit rendu pour la première fois dans le DOM. Cette
+          méthode était souvent utilisée pour initialiser l'état du composant ou
+          pour effectuer des appels à des API externes pour récupérer des
+          données nécessaires à l'affichage du composant. Cependant, cette
+          méthode a été dépréciée dans la version 16.3 et remplacée par les
+          méthodes « getDerivedStateFromProps » et « componentDidMount », qui
+          offrent une gestion plus claire et plus prévisible de l'état du
+          composant.
+        </p>
+        <p>
+          Cette méthode « componentDidMount » est appelée une fois que le
+          composant est monté dans le DOM. Cette méthode est souvent utilisée
+          pour effectuer des appels API ou pour initialiser des bibliothèques
+          tierces.
+        </p>
+        <p>
+          La méthode « componentDidUpdate » est appelée chaque fois que le
+          composant est mis à jour. Cette méthode est souvent utilisée pour
+          mettre à jour l'état du composant en fonction des nouvelles propriétés
+          ou de l'état actuel.
+        </p>
+        <p>
+          La méthode « shouldComponentUpdate » permet de déterminer si le
+          composant doit être mis à jour ou non. Cette méthode est souvent
+          utilisée pour améliorer les performances en évitant des mises à jour
+          inutiles. Cette méthode renvoie une valeur booléenne qui indique si la
+          mise à jour doit être effectuée ou non. Par exemple, nous pouvons
+          comparer la valeur d’un état précédent avec la valeur actuelle de
+          celui-ci dans notre méthode et retourner « true » si nous souhaitons
+          mettre à jour le composant ou « false » si nous ne souhaitons pas le
+          mettre à jour.
+        </p>
+        <p>
+          La méthode « componentWillUnmount » est appelée juste avant que le
+          composant ne soit démonté du DOM. Cette méthode est souvent utilisée
+          pour nettoyer les ressources ou les événements associés au composant
+          ou sauvegarder un état avant démontage du composant.
+        </p>
+        <p>
+          Enfin, la méthode « setState » permet de mettre à jour l'état du
+          composant. Cette méthode est souvent utilisée en réponse à des
+          événements utilisateur ou pour mettre à jour l'état en fonction des
+          nouvelles propriétés.
+        </p>
+        <p>
+          La méthode « forceUpdate » est également disponible pour forcer le
+          composant à se mettre à jour, mais elle est généralement déconseillée,
+          car elle peut causer des problèmes de performances.
+        </p>
+        <p>
+          En résumé, les méthodes de React.Component peuvent être utilisées de
+          manière complémentaire pour gérer l'état, les événements et le rendu
+          des composants dans une application React. Chacune de ces méthodes
+          offre une fonctionnalité spécifique pour aider à créer des composants
+          performants et bien organisés.
+        </p>
+      </div>
+
+      <div>
+        <h2>Le cycle de vie des composants de type classe</h2>
+        <p>
+          Nous allons maintenant examiner en détail le cycle de vie des
+          composants de type classe dans React.
+        </p>
+        <p>
+          Le cycle de vie des composants de type classe dans React peut être
+          divisé en 3 phases principales : la phase de montage, la phase de mise
+          à jour et la phase de démontage.
+        </p>
+        <ul>
+          <li>
+            <strong>Phase de montage : </strong>
+            <p>
+              La phase de montage commence lorsque le composant est créé et
+              inséré dans le DOM pour la première fois. Dans cette phase, le
+              composant passe par plusieurs étapes :
+            </p>
+            <ul>
+              <li>
+                constructor : la première méthode qui est appelée lors de la
+                création d'un composant de type classe est le constructeur.
+                C'est l'endroit où vous pouvez initialiser l'état et lier les
+                méthodes de la classe.
+              </li>
+              <li>
+                getDerivedStateFromProps : cette méthode est appelée juste après
+                le constructeur. Elle permet de mettre à jour l'état du
+                composant en fonction des nouvelles propriétés.
+              </li>
+              <li>
+                render : la méthode render est la seule méthode obligatoire dans
+                un composant de type classe. Elle renvoie une description de ce
+                qui doit être affiché à l'écran.
+              </li>
+              <li>
+                componentDidMount : cette méthode est appelée immédiatement
+                après que le composant a été inséré dans le DOM. C'est un bon
+                endroit pour effectuer des appels à des API externes ou pour
+                ajouter des événements à des éléments du DOM.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Phase de mise à jour : </strong>
+            <p>
+              La phase de mise à jour commence lorsque les propriétés ou l'état
+              d'un composant changent. Dans cette phase, le composant passe par
+              plusieurs étapes :
+            </p>
+            <ul>
+              <li>
+                getDerivedStateFromProps : cette méthode est appelée à nouveau
+                lorsque les propriétés changent. Elle permet de mettre à jour
+                l'état du composant en fonction des nouvelles propriétés.
+              </li>
+              <li>
+                shouldComponentUpdate : cette méthode est appelée avant que le
+                composant ne soit mis à jour. Elle permet de déterminer si le
+                composant doit être mis à jour ou non.
+              </li>
+              <li>
+                render : la méthode render est appelée à nouveau pour mettre à
+                jour la vue.
+              </li>
+              <li>
+                componentDidUpdate : cette méthode est appelée après que la vue
+                ait été mise à jour. C'est un bon endroit pour effectuer des
+                actions qui ont besoin de la vue mise à jour, telles que
+                l'animation ou la manipulation du DOM.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Phase de démontage : </strong>
+            <p>
+              La phase de démontage commence lorsque le composant est supprimé
+              du DOM. Dans cette phase, le composant passe par une seule étape :
+            </p>
+            <p>
+              componentWillUnmount : Cette méthode est appelée juste avant que
+              le composant ne soit supprimé du DOM. C'est un bon endroit pour
+              nettoyer les ressources qui ont été créées dans «
+              componentDidMount ».
+            </p>
+          </li>
+        </ul>
+        <p>
+          En conclusion, les composants de type classe dans React ont un cycle
+          de vie bien défini qui passe par 3 phases : la phase de montage, la
+          phase de mise à jour et la phase de démontage.
+        </p>
+      </div>
+
+      <div>
+        <h2>Instancier le « constructor » de notre composant</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons maintenant explorer et mettre en place les différentes
+            méthodes de cycle de vie dans un composant de type classe. Nous
+            pouvons écrire le code suivant dans notre composant juste avant la
+            méthode « render » :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="dyaedeJ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/dyaedeJ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <video width="500" height="400" controls>
+            <source src="02_Video" type="video/mp4" />
+          </video>
+          <p>
+            Ici nous avons initialisé un état dans la méthode « constructor » de
+            notre composant, cet objet possède une propriété « count » avec une
+            valeur de 0.
+          </p>
+          <p>L'objet de l'état est créé avec l'opérateur « this.state ».</p>
+          <p>
+            L'état « count » peut être utilisé pour stocker des informations qui
+            peuvent être modifiées au cours du cycle de vie de la classe. Les
+            modifications de l'état doivent être effectuées à l'aide de la
+            méthode « setState » pour garantir que l'interface utilisateur
+            reflète correctement les modifications.
+          </p>
+          <p>
+            L'objet « props » est également reçu en paramètre et est transmis au
+            parent de la classe via l'appel « super(props) ».
+          </p>
+          <p>
+            Le mot-clé « super() » est utilisé dans un constructeur pour appeler
+            le constructeur de la classe parente. Lorsqu’une classe hérite d’une
+            autre classe, elle peut vouloir utiliser les propriétés et méthodes
+            de la classe parente. Dans ce cas, il est souvent nécessaire
+            d’appeler le constructeur de la classe parente avant d’initialiser
+            les propriétés spécifiques à la sous-classe.
+          </p>
+          <p>
+            Ici, super(props) nous permet de récupérer la propriété props de
+            React.Component qui récupère les propriétés envoyées par le
+            composant parent.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>La méthode « componentDidMount »</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Ensuite, juste après la méthode constructor nous pouvons inscrire le
+            code suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="GRzdQPw"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/GRzdQPw"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici, la méthode « componentDidMount » sera appelée lorsque le
+            composant sera complètement monté.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>La méthode « componentDidUpdate »</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>Ensuite nous pouvons rajouter à la suite le code suivant :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="WNPJMPe"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/WNPJMPe"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici, la méthode « componentDidUpdate » est appelée à chaque fois que
+            le composant est mis à jour, c'est-à-dire à chaque fois que l’état
+            ou les propriétés du composant changent. Dans notre cas, nous
+            n’avons pas encore défini de mise à jour donc le « console.log » ne
+            se lancera pas.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>La méthode « componentWillUnmount »</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>Enfin nous pouvons inscrire le code suivant :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="LYqmQqQ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/LYqmQqQ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Enfin, ici la méthode « componentWillUnmount » est appelée juste
+            avant que le composant ne soit démonté du DOM.
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>

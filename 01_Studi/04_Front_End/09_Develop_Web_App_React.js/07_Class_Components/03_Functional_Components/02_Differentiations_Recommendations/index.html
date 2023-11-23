@@ -3,13 +3,268 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Différenciations et recommandations</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Différenciations et recommandations</h1>
+      <div>
+        <h2>Différences avec les composants de type classe</h2>
+        <p>
+          Depuis la version 16.8 de React, les composants de type fonctionnel
+          ont été améliorés avec l'introduction des hooks, ce qui leur permet de
+          gérer l'état interne et les événements du cycle de vie de
+          l'application de manière plus efficace. Cela a considérablement réduit
+          les différences entre les composants de type classe et les composants
+          de type fonctionnel.
+        </p>
+        <p>
+          Avant l'introduction des hooks, les composants de type classe étaient
+          souvent considérés comme plus puissants que les composants de type
+          fonctionnel, car ils étaient les seuls à pouvoir gérer l'état interne
+          de l'application et les événements du cycle de vie. Les composants de
+          type fonctionnel, quant à eux, étaient principalement utilisés pour
+          les composants simples qui n'avaient pas besoin de ces
+          fonctionnalités.
+        </p>
+        <p>
+          Cependant, avec l'introduction des hooks, les composants de type
+          fonctionnel ont maintenant accès à des fonctions telles que «
+          useState() », « useEffect() » et « useContext() », qui leur permettent
+          de gérer l'état interne, les effets secondaires et les données
+          partagées dans l'application. Cela rend les composants de type
+          fonctionnel plus polyvalents qu'auparavant, car ils peuvent désormais
+          gérer les mêmes fonctionnalités que les composants de type classe.
+        </p>
+        <p>
+          Il y a encore quelques différences subtiles entre les composants de
+          type classe et les composants de type fonctionnel, même avec
+          l'introduction des hooks. Par exemple, les composants de type classe
+          ont encore accès à des méthodes de cycle de vie telles que «
+          componentDidMount() » et « componentDidUpdate() », tandis que les
+          composants de type fonctionnel n'ont pas de méthodes de cycle de vie
+          équivalentes.
+        </p>
+        <p>
+          Cependant, pour la plupart des cas d'utilisation, les hooks
+          fournissent maintenant toutes les fonctionnalités dont les
+          développeurs ont besoin pour créer des composants fonctionnels
+          complexes.
+        </p>
+        <p>
+          En effet, « useEffect » possède un équivalent direct à la méthode «
+          componentDidMount » et un équivalent indirect à la méthode «
+          componentDidUpdate », cependant aucune solution n'existait pour «
+          shouldComponentUpdate » pendant longtemps, aujourd’hui cela est
+          possible grâce à « React Memo ».
+        </p>
+      </div>
+
+      <div>
+        <h2>
+          Pourquoi les développeurs de React recommandent l'utilisation des
+          composants fonctionnels
+        </h2>
+        <p>
+          Les hooks offrent une alternative plus simple et plus efficace à
+          l'utilisation des HOC (Higher Order Components) ou du Render Props
+          pour la réutilisation de la logique entre les composants. Ils
+          permettent également de mieux séparer les préoccupations en permettant
+          de diviser la logique d'un composant en plusieurs hooks, chaque hook
+          étant responsable d'une tâche spécifique.
+        </p>
+        <p>
+          En utilisant les hooks, les composants fonctionnels peuvent désormais
+          bénéficier de la gestion de l'état et du cycle de vie, ce qui était
+          auparavant une fonctionnalité exclusive aux composants de classe. Cela
+          rend les composants fonctionnels encore plus simples et plus faciles à
+          comprendre et à maintenir.
+        </p>
+        <p>
+          En outre, les hooks ont permis de créer des bibliothèques et des
+          outils tiers qui peuvent être utilisés avec les composants
+          fonctionnels, offrant ainsi une plus grande flexibilité et un plus
+          grand choix d'options pour les développeurs de React.
+        </p>
+        <p>
+          En résumé, les développeurs de React recommandent l'utilisation des
+          composants fonctionnels, car l'introduction des hooks offre une
+          alternative plus simple et plus efficace à la gestion de l'état et du
+          cycle de vie dans les composants, tout en permettant une meilleure
+          séparation des préoccupations et une plus grande flexibilité.
+        </p>
+      </div>
+
+      <div>
+        <h2>Avantages en termes de performance et de lisibilité du code</h2>
+        <p>
+          Les composants fonctionnels de React présentent plusieurs avantages en
+          termes de performance, de lisibilité du code, de facilité de test et
+          de maintenance.
+        </p>
+        <p>
+          Tout d'abord, en termes de performance, les composants fonctionnels
+          sont souvent plus performants que les composants de classe en raison
+          de leur empreinte mémoire plus petite et de leur exécution plus
+          rapide. En outre, l'utilisation du mot-clé « this » dans les
+          composants de classe peut entraîner des temps de liaison plus longs,
+          tandis que les composants fonctionnels n'ont pas besoin de cette
+          syntaxe.
+        </p>
+        <p>
+          En termes de lisibilité du code, les composants fonctionnels sont
+          souvent plus clairs et plus concis que les composants de classe. Les
+          composants fonctionnels ne nécessitent pas l'utilisation de la syntaxe
+          constructor ou render(), ce qui les rend plus faciles à comprendre
+          pour les développeurs qui ne sont pas familiers avec React. Aussi, le
+          cycle de vie est similaire pour ces 2 types de composant, et «
+          useEffect » de par sa configuration moins parlante est souvent
+          considéré comme plus complexe.
+        </p>
+        <p>
+          Les composants fonctionnels sont souvent plus faciles à tester que les
+          composants de classe, car ils ne nécessitent pas de création
+          d'instances et peuvent être testés directement. Cela simplifie le
+          processus de test et réduit le temps nécessaire pour tester les
+          composants.
+        </p>
+        <p>
+          Enfin, en termes de maintenance, les composants fonctionnels sont plus
+          simples et moins sujets aux erreurs que les composants de classe. Ils
+          ne nécessitent pas non plus l'utilisation de « this.setState », qui
+          peut être difficile à gérer dans des applications plus complexes.
+        </p>
+        <p>
+          En somme, les composants fonctionnels de React offrent des avantages
+          significatifs en termes de performance, de lisibilité du code, de
+          facilité de test et de maintenance. Ils sont souvent préférables aux
+          composants de classe dans les applications plus petites ou plus
+          simples, et sont une option attrayante pour les développeurs qui
+          cherchent à améliorer l'efficacité de leur code.
+        </p>
+      </div>
+
+      <div>
+        <h2>Création d’un composant fonctionnel</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons maintenant créer un composant fonctionnel et mettre en
+            place la même chose que ce que nous avons pu réaliser avec notre
+            composant de type classe.
+          </p>
+          <p>Cela peut être effectué avec le code suivant :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="yLZjjJE"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/yLZjjJE"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici nous utilisons 2 hooks, « useEffect » et « useState », pour
+            gérer l'état local du composant et pour exécuter des actions à
+            différents moments du cycle de vie du composant.
+          </p>
+          <p>
+            Le hook « useState » est utilisé pour initialiser l'état local du
+            composant. La variable d'état « count » est initialisée à partir de
+            la propriété « props.initialValue ». La fonction « setCount » peut
+            être appelée pour mettre à jour la valeur de count.
+          </p>
+          <p>
+            Le hook « useEffect » est utilisé pour exécuter des actions à
+            différents moments du cycle de vie du composant. La première
+            fonction fléchée passée à « useEffect » est appelée lors de la
+            montée du composant et affiche dans la console que le composant est
+            monté. La fonction de retour retournée par « useEffect » est appelée
+            lorsque le composant est démonté et affiche dans la console que le
+            composant va être démonté. L'argument vide « [] » passé à «
+            useEffect » indique que cette fonction ne doit être exécutée qu'une
+            seule fois lors de la montée initiale du composant.
+          </p>
+          <p>
+            La deuxième fonction fléchée passée à « useEffect » est appelée
+            chaque fois que la valeur de « count » est mise à jour et affiche
+            dans la console que « count » a été mis à jour. Le tableau « [count]
+            » passé à « useEffect » indique que cette fonction ne doit être
+            exécutée que lorsque la valeur de count est modifiée.
+          </p>
+          <p>
+            Par ailleurs, il est important de préciser que nous pouvons accéder
+            à notre fonction « handleClick », à notre « count » ou encore aux
+            props du composant, sans avoir à utiliser le mot-clé « this », ce
+            qui facilite grandement le développement et la lisibilité du code.
+            Nous pouvons également constater que la quantité de code à écrire
+            pour le même résultat est considérablement réduite en utilisant les
+            composants fonctionnels.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Instanciation du composant fonctionnel</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous pouvons maintenant instancier notre nouveau composant
+            fonctionnel dans notre composant « App.js »
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="dyaeeNo"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/dyaeeNo"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
     </div>
   </body>
 </html>

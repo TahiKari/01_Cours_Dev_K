@@ -3,13 +3,350 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>L’état et les propriétés dans les composants de type classe</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>L’état et les propriétés dans les composants de type classe</h1>
+      <div>
+        <h2>
+          Utilisation de l'état et des propriétés dans les composants de type
+          classe
+        </h2>
+        <p>
+          L'utilisation de l'état et des propriétés dans les composants est une
+          des fonctionnalités les plus importantes de React, car elle permet de
+          créer des composants dynamiques et interactifs.
+        </p>
+        <p>
+          L'état d'un composant est un objet qui représente l'état interne du
+          composant, c'est-à-dire les données qui changent au fil du temps en
+          fonction des interactions de l'utilisateur ou des mises à jour de
+          données externes. L'état est initialisé dans la méthode constructor()
+          du composant, en créant un objet avec les propriétés que l'on souhaite
+          stocker dans ce dernier. Pour modifier l'état, on utilise la méthode
+          setState(), qui prend en paramètre un objet représentant les
+          modifications à apporter à l'état. L'appel à setState() déclenche la
+          mise à jour du composant, ce qui peut entraîner la réexécution de la
+          méthode render() si cela est jugé nécessaire par React.
+        </p>
+        <p>
+          Les propriétés d'un composant sont des valeurs passées au composant
+          par son parent. Ces valeurs sont immuables, c'est-à-dire qu'elles ne
+          peuvent pas être modifiées par le composant lui-même. Les propriétés
+          sont passées au composant via ses arguments, qui sont accessibles dans
+          la méthode render() du composant. Les propriétés sont souvent
+          utilisées pour personnaliser le comportement du composant en fonction
+          de son contexte.
+        </p>
+        <p>
+          L'utilisation de l'état et des propriétés dans les composants de type
+          classe permet de créer des composants dynamiques et interactifs. Par
+          exemple, on peut utiliser l'état pour stocker l'état d'une checkbox,
+          et les propriétés pour déterminer si la checkbox est activée ou
+          désactivée en fonction des préférences de l'utilisateur. De même, on
+          peut utiliser les propriétés pour transmettre des données à un
+          composant de type classe, et l'état pour stocker des données
+          temporaires qui doivent être mises à jour en fonction des interactions
+          de l'utilisateur.
+        </p>
+        <p>
+          En résumé, l'utilisation de l'état et des propriétés dans les
+          composants React de type classe est une fonctionnalité essentielle
+          pour créer des composants dynamiques et interactifs. L'état permet de
+          stocker les données qui changent au fil du temps, tandis que les
+          propriétés permettent de personnaliser le comportement du composant en
+          fonction de son contexte.
+        </p>
+        <p><strong>Voir video</strong></p>
+      </div>
+
+      <div>
+        <h2>Implémentation et gestion d’un événement</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons maintenant gérer l’état de notre composant et voir
+            comment il réagit aux modifications. Pour cela nous pouvons créer un
+            bouton dans le JSX de notre composant et spécifiant une fonction
+            callback, qui sera exécutée lorsque ce bouton est cliqué.
+          </p>
+          <p>
+            Nous allons également ajouter un paragraphe supplémentaire pour
+            afficher la valeur du compteur :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="OJdZvOV"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/OJdZvOV"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Création de la fonction d’incrémentation du compteur</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous pouvons maintenant créer la fonction « handleClick » dans notre
+            composant avant la méthode « render », qui va incrémenter le
+            compteur à chaque clique sur notre bouton. Inscrivons le code
+            suivant après la méthode « componentWillUnmount » :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="PoVeRQw"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/PoVeRQw"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici, nous mettons à jour l’état du composant en incrémentant la
+            valeur de « count » lorsque la fonction « handleClick » est appelée.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>S’informer du changement de l’état</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            En passant par la méthode « componentDidUpdate » nous pouvons nous
+            informer sur le changement d’état en indiquant le code suivant dans
+            notre méthode :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="jOdxzzB"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/jOdxzzB"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici, nous récupérons, via les paramètres, la valeur de l’état avant
+            la mise à jour du composant dans la méthode « componentDidUpdate »
+            puis nous la comparons à la nouvelle valeur du compteur dans notre
+            état, si la valeur est différente nous pouvons voir s’afficher dans
+            la console un message qui indique que la valeur de « count » a
+            changé.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Mise en place de propriétés dans notre composant</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons maintenant mettre en application un exemple pour
+            illustrer l’utilisation des props dans notre composant de type
+            classe. Dans le fichier « App.js » qui est un composant fonctionnel,
+            nous allons instancier un état via le hook « useState » ainsi qu’une
+            fonction qui permet de modifier cet état et passer les deux à notre
+            composant de type classe en tant que propriétés. Cela peut être
+            réalisé avec le code suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="WNPJzKR"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/WNPJzKR"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous avons également effectué un rendu conditionnel avec « if ».
+            Ici, si notre state est modifié et possède une valeur supérieure ou
+            égale à 10, notre composant fonctionnel cessera de rendre notre
+            composant de type classe et va rendre à la place une « div » qui
+            contient la chaîne de caractère « Compteur arrivé à 10 ». Par la
+            même occasion la méthode « componentWillUnmount » de notre composant
+            de type classe sera appelée, inscrivant dans la console que le
+            composant va être démonté.
+          </p>
+          <p>
+            Par ailleurs, nous avons passé à notre composant de type classe deux
+            propriétés, la première « initialValue » avec comme valeur l’état de
+            notre composant fonctionnel et la seconde correspond à la fonction
+            qui met à jour l’état de notre composant fonctionnel.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Utilisation des propriétés dans notre composant de type classe</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous pouvons désormais accéder aux propriétés passées dans notre
+            composant de type classe dans le constructor du composant, ou en
+            dehors en passant par le mot-clé « this ».
+          </p>
+          <p>
+            Nous allons maintenant utiliser la valeur de la propriété «
+            initialValue » comme valeur initiale de notre « count » et utiliser
+            la fonction « updateState » lorsque la valeur de notre compteur
+            arrive à 10. Pour effectuer cela nous allons écrire le code suivant
+            dans le constructor :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="ZEwoxMv"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/ZEwoxMv"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous pouvons également inscrire le code suivant dans la fonction «
+            handleClick » pour déclencher l’appel de notre fonction présente
+            dans les props du composant lorsque le compteur est supérieur ou
+            égal à 10 :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="xxMjWay"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/xxMjWay"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
     </div>
   </body>
 </html>

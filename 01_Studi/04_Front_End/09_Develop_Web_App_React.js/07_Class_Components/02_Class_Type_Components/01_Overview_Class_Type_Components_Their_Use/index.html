@@ -3,13 +3,156 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>
+      Présentation des composants de type classe et de leur utilisation
+    </title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Présentation des composants de type classe et de leur utilisation</h1>
+      <div>
+        <h2>Qu’est-ce qu’un composant de type classe ?</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Un composant de type classe dans React est une classe JavaScript qui
+            étend la classe React.Component. Ce composant est défini en
+            utilisant la syntaxe de classe ES6 et peut avoir un état interne
+            (state) et des propriétés (props). Il implémente une méthode «
+            render() » qui retourne un élément de React qui décrit l'interface
+            utilisateur à afficher. Ce composant peut également définir d'autres
+            méthodes pour gérer les événements et les mises à jour de l'état.
+            Les composants de type classe ont été la première façon de créer des
+            composants React avant l'introduction des composants de type
+            fonction.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Contexte d’utilisation des composants de type classe</h2>
+        <p>
+          L’utilisation des composants de type classe dans React se justifie par
+          plusieurs raisons. Tout d'abord, les composants de classe offrent une
+          structure claire pour organiser la logique d'interface utilisateur et
+          le code de rendu associé. Ils peuvent également être utilisés pour
+          encapsuler l'état de l'application, ce qui permet de simplifier la
+          gestion de la complexité du code.
+        </p>
+        <p>
+          En outre, les composants de classe React permettent une séparation
+          claire entre la logique d'interface utilisateur et la logique de
+          gestion de l'état, ce qui facilite la maintenance et la réutilisation
+          du code. Les développeurs peuvent ainsi créer des composants de base
+          qui encapsulent la logique d'interface utilisateur et les utiliser
+          dans d'autres composants plus complexes.
+        </p>
+        <p>
+          Enfin, les composants de classe React permettent de simplifier la
+          gestion des événements et des interactions utilisateur. Les
+          développeurs peuvent créer des méthodes de classe qui répondent aux
+          événements de l'utilisateur, ce qui permet de gérer facilement les
+          interactions de l'utilisateur avec l'interface utilisateur.
+        </p>
+        <p>
+          En somme, les composants de classe dans React offrent une structure
+          claire pour organiser la logique d'interface utilisateur et permettent
+          une séparation claire entre la logique d'interface utilisateur et la
+          gestion de l'état. Ils permettent également de simplifier la gestion
+          des événements et des interactions utilisateur.
+        </p>
+      </div>
+
+      <div>
+        <h2>Mise en place d’un composant de type classe</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Après avoir initialisé un environnement React avec CRA, nous créons
+            un dossier « components » dans le répertoire « src ». Nous pouvons
+            maintenant créer un fichier « ClassComponent.js » dans notre dossier
+            components.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="KKJRQzL"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/KKJRQzL"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici nous importons la bibliothèque React, qui est nécessaire pour
+            accéder à la classe « Component » de React.
+          </p>
+          <p>
+            Notez qu’il est possible de déstructurer l’import en utilisant la
+            ligne de code suivante :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="abXGqZZ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/abXGqZZ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Notre composant « ClassComponent.js » hérite de la classe «
+            Component » de React, ce qui signifie qu'elle peut utiliser les
+            méthodes et les propriétés de cette classe pour gérer l'état et les
+            actions de ce composant.
+          </p>
+          <p>
+            La méthode « render » est obligatoire dans les composants React de
+            type classe. Cette méthode retourne notre contenu JSX.
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>
