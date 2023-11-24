@@ -3,13 +3,475 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Les techniques avancées pour passer les props avec React</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Les techniques avancées pour passer les props avec React</h1>
+      <div>
+        <h2>Qu’est que le spread operator ?</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Le « spread operator » (ou opérateur de diffusion en français) est
+            un opérateur de syntaxe, utilisé en JavaScript et d'autres langages
+            de programmation modernes, qui permet de « disséminer » (ou « étaler
+            ») les éléments d'un objet itérable (tel qu'un tableau ou une chaîne
+            de caractères) dans un autre objet.
+          </p>
+          <p>
+            En utilisant l'opérateur de diffusion, nous pouvons facilement
+            concaténer deux tableaux, copier les propriétés d'un objet dans un
+            autre objet, ou encore créer une copie d'un objet itérable avec une
+            ou plusieurs de ses propriétés modifiées.
+          </p>
+          <p>
+            L'opérateur de diffusion est représenté par trois points de
+            suspension ( " ... ") placés devant l'objet itérable à étaler.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Création d’un nouveau composant « Button.js »</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons maintenant illustrer l’utilisation du spread operator.
+          </p>
+          <p>
+            Imaginons que nous ayons besoin que notre bouton soit un composant
+            indépendant de notre composant " Card.js " :
+          </p>
+          <p>
+            Créons un nouveau fichier " Button.js " dans le dossier “components”
+            et inscrivons le code suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="OJdEJoV"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/OJdEJoV"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>
+          Import et création d’une instance de notre composant « Button.js »
+        </h2>
+        <div>
+          <h3>Méthode</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="WNPyNYo"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/WNPyNYo"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici, nous utilisons le spread operator pour transmettre toutes les
+            props de " Card.js " à son composant enfant " Button.js ". De cette
+            façon, " Button.js " hérite de toutes les props de " Card.js ".
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Utilisation des props dans le composant « Button.js »</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Grâce au spread operator, nous avons maintenant accès à l’ensemble
+            des props transmises a " Card.js " dans notre composant " Button.js
+            ". Nous pouvons donc les utiliser de cette manière :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="OJdEJdM"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/OJdEJdM"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici, nous avons accédé aux props transmises par le spread operator
+            et les avons utilisées en assignant la prop " createNewColor " qui
+            correspond à notre fonction, pour générer une nouvelle couleur lors
+            de l'événement « onClick ».
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Qu’est-ce que la déstructuration ?</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            En React, la déstructuration (ou « destructuring » en anglais) est
+            une technique qui permet d'extraire des valeurs d'un objet ou d'un
+            tableau et de les affecter à des variables distinctes, en utilisant
+            une syntaxe simplifiée.
+          </p>
+          <p>
+            La déstructuration est couramment utilisée en React pour extraire
+            des propriétés d'objets ou des éléments de tableaux, afin de les
+            utiliser dans la création de composants.
+          </p>
+          <p>
+            Lorsqu'on utilise la déstructuration pour les props dans un
+            composant React, cela permet d'extraire les données spécifiques qui
+            nous intéressent des props et de les stocker dans des variables
+            distinctes. Cela rend la lecture du code plus facile et permet
+            d'éviter d'avoir à utiliser à plusieurs reprises l'objet props.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>
+          Utilisation de la déstructuration en conjonction avec le spread
+          operator.
+        </h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons reprendre nos composants fonctionnels et appliquer la
+            déstructuration pour rendre notre code plus lisible. Dans le
+            composant " Card.js ", nous pouvons mettre en place le destructuring
+            de cette manière :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="xxMzxBy"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/xxMzxBy"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous avons décomposé l’objet props en variables distinctes ( id,
+            rgbValue) en utilisant la syntaxe de déstructuration. Ainsi, nous
+            avons pu extraire les données spécifiques à notre composant et les
+            utiliser dans celui-ci.
+          </p>
+          <p>
+            Notez que nous avons pu utiliser le spread operator en conjonction
+            avec le destructuring, en spécifiant « ...otherProps » qui contient
+            les props que nous n'avons pas déstructurées dans notre composant "
+            Card.js ".
+          </p>
+          <p>
+            Puis nous passons « ...otherProps » à notre instance de « Button.js
+            ».
+          </p>
+          <p>
+            Dans ce cas bien précis, « ...otherProps » ne contient que la prop "
+            createNewColor ", l’utilisation du spread operator n’est pas
+            réellement nécessaire, mais cet exemple permet d’illustrer
+            l’utilisation du destructuring en conjonction avec le spread
+            operator.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Destructuration des props du composant « Button.js »</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons également déstructurer les props de notre composant "
+            Button.js " de cette manière :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="Vwgdwoo"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/Vwgdwoo"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Gestion des props dans un composant de type classe</h2>
+        <p>
+          Dans un composant de type classe React, les props sont passées en tant
+          que paramètres lors de la création de l'instance du composant et
+          peuvent être accessibles via « this.props ».
+        </p>
+        <p>
+          Par exemple, si vous avez un composant parent qui rend un composant
+          enfant " Message.js ", vous pouvez passer une props " text " au
+          composant Message pour afficher un message personnalisé.
+        </p>
+        <p>
+          Dans ce cas, la props " text " est accessible dans le composant "
+          Message.js " via « this.props.text ».
+        </p>
+        <p>
+          Dans certaines situations, vous aurez besoin d'accéder aux props dans
+          le constructeur du composant. Pour cela, vous pouvez passer les props
+          au constructeur en tant que paramètre et appeler " super(props) " pour
+          permettre au composant de bénéficier des fonctionnalités du
+          constructeur de sa classe parente.
+        </p>
+      </div>
+
+      <div>
+        <h2>Créer un composant de type classe</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons maintenant aborder la gestion des props dans les
+            composants de type classe.
+          </p>
+          <p>
+            Dans le dossier « components », nous pouvons créer une nouveau
+            fichier " ClassCardComponent.js "
+          </p>
+          <p>Nous pouvons inscrire dans ce fichier le code suivant :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="ZEwRYYo"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/ZEwRYYo"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans un composant de type classe, nous pouvons accéder à l'objet
+            props dans le corps de la classe via le mot-clé « this ».
+          </p>
+          <p>
+            Notez que si nous avions eu besoin d'accéder aux props dans le
+            constructor de notre composant, il aurait fallu passer l’objet props
+            en paramètre du constructor et l’appeler " super(props) ".
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>
+          Création de l’instance du composant de type classe et passage des
+          props
+        </h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous pouvons maintenant instancier notre composant de type classe
+            dans notre composant " App.js " et lui passer les différentes props
+            dont il a besoin :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="gOqKbpr"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/gOqKbpr"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Utilisation du destructuring dans un composant de type classe</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons maintenant mettre en application le destructuring de nos
+            props dans le composant " ClassCardComponent.js " :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="KKJewpy"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/KKJewpy"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Le destructuring dans notre composant de type classe nous permet
+            d'accéder directement aux props, sans passer par le mot-clé « this »
+            ou l’objet props.
+          </p>
+          <p>Notre code est devenu plus lisible et maintenable.</p>
+        </div>
+      </div>
     </div>
   </body>
 </html>

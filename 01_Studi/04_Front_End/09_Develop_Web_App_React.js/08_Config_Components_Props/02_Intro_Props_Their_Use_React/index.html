@@ -3,13 +3,683 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Introduction aux Props et leur utilisation dans React</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Introduction aux Props et leur utilisation dans React</h1>
+      <div>
+        <h2>Qu'est-ce qu'une prop ?</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Une prop (abréviation de « property ») est un mécanisme clé dans la
+            bibliothèque JavaScript React. Il s'agit d'une donnée qui est passée
+            en tant que paramètre d'un composant React lors de sa création, et
+            qui peut être utilisée à l'intérieur de ce composant pour contrôler
+            son rendu et son comportement.
+          </p>
+          <p>
+            Les props sont une façon de passer des données à des composants
+            React afin de les configurer et de les personnaliser. Ils permettent
+            de rendre les composants plus réutilisables et plus flexibles, et
+            sont une partie essentielle de la programmation avec React.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>L’utilité des props dans React</h2>
+        <p>
+          Les props sont utilisées pour fournir des informations à un composant
+          enfant depuis un composant parent. Cela permet aux développeurs de
+          créer des composants réutilisables qui peuvent être configurés avec
+          différentes données, sans avoir à dupliquer le code.
+        </p>
+        <p>
+          Par exemple, si vous avez un composant " Button.js " qui doit afficher
+          du texte différent en fonction de l'endroit où il est utilisé, vous
+          pouvez utiliser des props pour passer le texte en tant que paramètre
+          au composant. Ainsi, chaque instance du composant Button peut avoir un
+          texte différent.
+        </p>
+        <p>
+          Les props peuvent également être utilisées pour fournir des fonctions
+          de rappel aux composants enfants. Par exemple, si vous avez un
+          composant " Liste.js " qui contient plusieurs éléments, vous pouvez
+          passer une fonction de rappel à chaque élément via une prop. Lorsque
+          l'utilisateur clique sur un élément, il peut appeler la fonction de
+          rappel pour effectuer une action spécifique, telle que supprimer
+          l'élément de la liste.
+        </p>
+        <p>
+          Enfin, les props peuvent être utilisées pour transmettre des objets
+          entiers entre les composants. Par exemple, si vous avez un composant "
+          Profil.js " qui doit afficher les informations d'un utilisateur, vous
+          pouvez transmettre l'objet utilisateur complet en tant que prop. Le
+          composant Profil peut alors extraire les informations pertinentes de
+          l'objet pour les afficher.
+        </p>
+        <p>
+          Les props sont un mécanisme important pour transmettre des données
+          entre des composants dans React. Ils permettent de créer des
+          composants réutilisables et configurables, de fournir des fonctions de
+          rappel pour les événements et de transmettre des objets entiers entre
+          les composants.
+        </p>
+      </div>
+
+      <div>
+        <h2>Quel type de données peut-on passer via les props ?</h2>
+        <p>
+          React permet de passer différents types de données via les props. Les
+          données de type « string » sont des chaînes de caractères qui
+          permettent de transmettre du texte, comme le titre d'une page via un
+          composant " Titre.js ".
+        </p>
+        <p>
+          Les données de type « number » sont des nombres qui peuvent être
+          utilisés pour transmettre des valeurs numériques, par exemple le prix
+          d'un produit via un composant " Prix.js ".
+        </p>
+        <p>
+          Les données de type « boolean » sont des valeurs binaires « true » ou
+          « false » qui peuvent être utilisées pour transmettre des informations
+          binaires, comme l'état d'une case à cocher via un composant "
+          Checkbox.js ".
+        </p>
+        <p>
+          Les données de type « array » sont des tableaux de valeurs qui
+          permettent de transmettre des collections de données, comme une liste
+          d'éléments via un composant " Liste.js ".
+        </p>
+        <p>
+          Les données de type « object » sont des objets JavaScript qui peuvent
+          être utilisés pour transmettre des données plus complexes, par exemple
+          un objet contenant les valeurs d'un formulaire via un composant "
+          Formulaire.js ".
+        </p>
+        <p>
+          Enfin, les fonctions peuvent également être passées en tant que props,
+          permettant aux composants enfants de déclencher des actions dans le
+          composant parent. Par exemple, un composant " Button.js " peut
+          recevoir une fonction en tant que prop pour déclencher une action
+          lorsque le bouton est cliqué. Elles peuvent aussi transmettre des
+          composants et du JSX.
+        </p>
+      </div>
+
+      <div>
+        <h2>Mise en place d’un environnement CRA</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons initier un environnement de développement React via CRA
+            en tapant la commande suivante dans le terminal de notre éditeur de
+            code :
+          </p>
+          <code>npx create-react-app mon-projet </code>
+        </div>
+      </div>
+
+      <div>
+        <h2>Nettoyage et création d’un composant fonctionnel</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous pouvons maintenant accéder au composant " App.js " et supprimer
+            l’intégralité du contenu de la fonction « App » ainsi que les
+            différents imports. Le contenu que nous supprimons correspond aux
+            éléments de la page de présentation du template de base de CRA.
+          </p>
+          <p>
+            Ensuite, nous allons créer un dossier " components " dans le
+            répertoire " src " qui va accueillir nos différents composants.
+          </p>
+          <p>
+            Enfin, nous pouvons créer un nouveau fichier " Card.js " et inscrire
+            le code suivant dans notre nouveau fichier :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="xxMzxKX"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/xxMzxKX"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ce code créera un composant Card qui aura pour contenu une div et un
+            titre h1 avec le texte « Carte numéro : »
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>
+          Création d’une instance et transmission de données via les props
+        </h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons maintenant créer une instance de notre composant "
+            Card.js " dans le composant parent " App.js " et lui attribuer une
+            prop « id » :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="KKJeKKd"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/KKJeKKd"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            En premier lieu, nous avons importé notre composant " Card.js " dans
+            son composant parent " App.js ", ensuite nous avons retourné une
+            instance de ce composant en lui passant une prop « id » qui possède
+            une valeur de 1.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Récupération de la prop et utilisation de la donnée</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons maintenant récupérer la prop « id » que nous avons
+            passée à notre composant enfant " Card.js " et utiliser cette donnée
+            pour afficher le numéro de la carte. Cela peut être effectué via le
+            code suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="bGzKGEb"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/bGzKGEb"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous avons accédé au props de notre composant, en spécifiant l’objet
+            « props » dans les paramètres de la fonction, puis nous avons accédé
+            à cet objet et à sa propriété « id » pour retourner sa valeur dans
+            notre « h1 ».
+          </p>
+          <p>
+            Nous pourrions créer une nouvelle instance de notre composant en
+            spécifiant une prop « id » différente, nous aurions le même
+            composant qui porte un autre numéro :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="MWLXWKb"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/MWLXWKb"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Cet exemple illustre la ré-usabilité des composants, et la
+            possibilité de personnalisation via les props.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>
+          Création d’un state et passage du state en tant que prop à l’enfant
+        </h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons initier un state dans notre composant parent " App.js "
+            et passer ce state en tant que prop à notre composant enfant "
+            Card.js ". Ce state aura pour valeur une couleur sous la forme RGB
+            que nous attribuerons ensuite en tant que couleur de fond à notre
+            composant " Card.js "
+          </p>
+          <p>
+            Nous utiliserons donc le hook " useState " pour initialiser le state
+            de notre composant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="KKJeKgz"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/KKJeKgz"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici nous avons passé via un prop " rgbValue " notre state " rgbValue
+            " qui contient une couleur rgb comme valeur initiale.
+          </p>
+        </div>
+
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            La méthode " setRgbValue " sert à modifier la valeur de notre state.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Récupération de la prop et utilisation de la donnée</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons maintenant récupérer la prop " rgbValue " dans notre
+            composant enfant " Card.js " et l’utiliser comme valeur pour le «
+            background-color » de la « div » de notre composant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="KKJeKaM"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/KKJeKaM"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici nous avons utilisé la méthode « inline style » pour passer un
+            objet qui contient la propriété « backgroundColor » qui comporte
+            notre prop " rgbValue " à la « div » de notre composant.
+          </p>
+          <p>
+            Nous pouvons désormais voir la couleur de fond de notre composant "
+            Card.js " qui provient de son composant parent.
+          </p>
+          <p><strong>Voir video</strong></p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Création d’une fonction pour générer une couleur aléatoire</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Créons maintenant une fonction dans notre composant " App.js " qui
+            génère une couleur aléatoire. Nous allons ensuite passer cette
+            fonction en tant que prop à notre composant " Card.js " pour ensuite
+            utiliser cette fonction depuis notre composant enfant.
+          </p>
+          <p>
+            Voici la fonction que nous allons écrire dans notre composant "
+            App.js " et utiliser pour générer une couleur aléatoire :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="abXKbJq"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/abXKbJq"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Les couleurs RGB contiennent des valeurs respectives pour « red », «
+            green » et « blue » qui peuvent aller de 0 à 255. Ici, notre
+            fonction génère une valeur aléatoire entre 0 et 255 pour chacune des
+            valeurs « rgb ».
+          </p>
+          <p>
+            Ensuite, en utilisant " setRgbValue " nous modifions la valeur du
+            state de notre composant, en passant la couleur de sortie de notre
+            fonction.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>
+          Passage de la fonction en tant que prop à notre composant enfant
+        </h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous pouvons maintenant passer notre fonction qui génère une couleur
+            aléatoire à notre composant via le code suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="GRzGRWa"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/GRzGRWa"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici, nous avons créé une nouvelle prop nommée " createNewColor " qui
+            contient notre fonction " createRandomColor "
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Utilisation de la fonction dans le composant enfant</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous pouvons désormais accéder à notre fonction depuis les props
+            dans notre composant enfant " Card.js "
+          </p>
+          <p>
+            Nous allons créer un bouton dans notre composant et appeler notre
+            fonction pour générer une nouvelle couleur de fond à notre
+            composant, lorsqu’un clic sur le bouton est déclenché :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="yLZELbg"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/yLZELbg"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous avons maintenant la possibilité d'accéder et d'appeler la
+            fonction passée depuis notre composant parent vers l’enfant via les
+            props.
+          </p>
+          <p>
+            Nous pouvons constater que la couleur de fond de notre composant
+            change lorsqu’un clic sur notre bouton est effectué.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Utilisation de props.children</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            En React, la propriété « props.children » est souvent utilisée pour
+            transmettre des éléments enfants à un composant parent. Cette
+            propriété permet à un composant parent de contenir et de manipuler
+            les éléments enfants de ses composants enfants.
+          </p>
+          <p>
+            La propriété « props.children » est généralement utilisée pour les
+            cas où un composant parent a besoin de contenir un contenu générique
+            qui peut varier en fonction du composant enfant.
+          </p>
+          <p>
+            Par exemple, nous pourrions écrire le code suivant dans « App.js » :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="WNPyNOr"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/WNPyNOr"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici, nous avons passé un élément « h1 » en tant qu'élément enfant à
+            notre composant « Card.js ».
+          </p>
+          <p>
+            Nous pouvons maintenant accéder à cet élément via « props.children »
+            dans notre composant « Card.js » :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="rNPKNwz"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/rNPKNwz"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici nous avons utilisé « props.children » pour afficher le contenu
+            enfant passé précédemment à notre composant « Card.js ».
+          </p>
+          <p>
+            Grâce à « props.children », le composant « Card.js » peut être
+            utilisé avec du contenu arbitraire à l'intérieur, ce qui le rend
+            plus flexible et réutilisable.
+          </p>
+          <p>
+            Dans notre cas, « props.children » contient simplement l'élément h1
+            contenant le texte « Ceci est une carte ».
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>
