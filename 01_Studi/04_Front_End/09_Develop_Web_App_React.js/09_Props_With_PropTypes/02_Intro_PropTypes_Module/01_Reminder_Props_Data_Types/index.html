@@ -3,13 +3,93 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Rappel sur les props et les types de données</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Rappel sur les props et les types de données</h1>
+      <div>
+        <h2>Qu'est-ce qu'une prop ?</h2>
+        <div>
+          <h3>Rappel</h3>
+          <p>
+            Les props sont un élément fondamental de l'architecture de React,
+            permettant aux développeurs de transmettre des données d'un
+            composant parent à un composant enfant. En effet, lors de la
+            création d'une application React, il est souvent nécessaire de
+            personnaliser les différents composants pour qu'ils fonctionnent
+            correctement. Les props sont donc utilisées pour fournir aux
+            composants les données dont ils ont besoin pour accomplir leur
+            tâche.
+          </p>
+          <p>
+            Concrètement, les props sont définies sous forme d'attributs sur un
+            composant lors de son utilisation. Ainsi, lorsqu'un composant est
+            appelé dans le code de l'application, les développeurs peuvent
+            spécifier les différentes props qu'ils souhaitent passer en leur
+            attribuant une valeur. Ces props peuvent être de natures variées,
+            telles que des chaînes de caractères, des nombres, des objets ou
+            même des fonctions.
+          </p>
+          <p>
+            L'utilisation des props est particulièrement utile pour rendre les
+            composants réutilisables, car elles permettent de configurer leur
+            comportement en fonction du contexte dans lequel ils sont utilisés.
+            En effet, en passant des props différentes à un même composant, il
+            est possible d'obtenir des résultats différents, ce qui permet de
+            l'adapter à différentes situations.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Pourquoi est-il important de valider les props ?</h2>
+        <p>
+          La validation des props est un élément important du développement
+          d'une application React. Elle garantit que les données passées à un
+          composant sont correctes et cohérentes. Une validation incorrecte des
+          props peut entraîner des erreurs dans l'application, des comportements
+          inattendus et une mauvaise expérience utilisateur. Par conséquent, il
+          est crucial de valider les props de manière appropriée pour assurer la
+          qualité et la fiabilité de l'application.
+        </p>
+        <p>
+          Heureusement, en utilisant PropTypes, vous pouvez définir les types de
+          données attendus pour chaque prop et vérifier que les données passées
+          à un composant sont conformes aux attentes. Cela permet de réduire les
+          erreurs potentielles et d'améliorer la maintenance du code. PropTypes
+          permet également d'améliorer la lisibilité du code en facilitant la
+          compréhension des données attendues par un composant.
+        </p>
+        <div>
+          <h3>Fondamental</h3>
+          <p>
+            L'utilisation de PropTypes permet de garantir que les données
+            passées aux composants sont conformes aux attentes et contribue
+            ainsi à la qualité et à la fiabilité de l'application.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>
+          Comprendre les types de données des props et comment les valider avec
+          PropTypes
+        </h2>
+        <p>
+          Les types de données couramment utilisés dans les props comprennent
+          les chaînes de caractères, les nombres, les booléens, les tableaux et
+          les objets.
+        </p>
+        <p>
+          Cependant, les types de données complexes tels que les objets peuvent
+          nécessiter une validation plus poussée pour s'assurer que toutes les
+          propriétés requises sont présentes et que leurs types de données sont
+          corrects.
+        </p>
+      </div>
     </div>
   </body>
 </html>

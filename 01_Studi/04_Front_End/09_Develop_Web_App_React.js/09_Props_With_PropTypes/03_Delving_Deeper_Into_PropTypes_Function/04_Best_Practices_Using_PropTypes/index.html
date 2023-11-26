@@ -3,13 +3,48 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Bonnes pratiques pour l'utilisation de PropTypes</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Bonnes pratiques pour l'utilisation de PropTypes</h1>
+      <div>
+        <p>
+          Pour éviter les erreurs courantes liées à l'utilisation de PropTypes,
+          il est important d’avoir conscience de certaines bonnes pratiques :
+        </p>
+        <ul>
+          <li>
+            Utilisez toujours les PropTypes pour valider les types de données
+            passés à vos composants. Cela permet de s'assurer que les données
+            sont conformes aux attentes et évite les erreurs liées à des données
+            incorrectes.
+          </li>
+          <li>
+            Vérifiez que les valeurs par défaut et les types de données des
+            props correspondent. Si vous avez défini des valeurs par défaut pour
+            certaines props, assurez-vous qu'elles correspondent bien aux types
+            de données attendus.
+          </li>
+          <li>
+            Évitez de définir des valeurs par défaut pour des props qui doivent
+            être obligatoires. Cela peut conduire à des erreurs si les
+            utilisateurs ne passent pas les données requises à votre composant.
+          </li>
+          <li>
+            Évitez de définir des validations trop restrictives pour vos props.
+            Cela peut limiter la flexibilité de votre composant et rendre son
+            utilisation plus difficile pour les développeurs qui l'utilisent.
+          </li>
+          <li>
+            Évitez de définir des validations trop légères pour vos props. Cela
+            peut conduire à des erreurs de type de données et à des
+            comportements inattendus dans votre application.
+          </li>
+        </ul>
+      </div>
     </div>
   </body>
 </html>

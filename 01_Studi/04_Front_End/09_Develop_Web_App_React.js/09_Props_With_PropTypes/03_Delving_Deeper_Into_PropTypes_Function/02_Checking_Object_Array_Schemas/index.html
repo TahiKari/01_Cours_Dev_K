@@ -3,13 +3,145 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Vérification des schémas d'objet et de tableau</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Vérification des schémas d'objet et de tableau</h1>
+      <div>
+        <p>
+          Lorsque nous avons affaire à des tableaux d'objets, il est important
+          de vérifier non seulement le type de tableau, mais également le type
+          et la forme de chaque objet dans le tableau.
+        </p>
+        <p>
+          Pour valider un tableau qui contient des objets, nous pouvons utiliser
+          PropTypes.arrayOf() en lui passant en argument un objet représentant
+          le schéma des propriétés attendues pour chaque objet. Cet objet peut
+          être créé avec la méthode PropTypes.shape() en définissant les
+          propriétés attendues et leur type.
+        </p>
+        <p>
+          Voici un exemple qui illustre comment valider un tableau d'objets avec
+          PropTypes :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="XWOYoBO"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/XWOYoBO"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, nous définissons un schéma d'objet avec la méthode
+          PropTypes.shape() en spécifiant les propriétés id, name et age et leur
+          type attendu. Ensuite, nous utilisons la méthode PropTypes.arrayOf()
+          pour valider le tableau myArrayOfObjects en lui passant le schéma
+          d'objet défini précédemment.
+        </p>
+        <p>
+          Ainsi, grâce à cette vérification, nous pouvons nous assurer que le
+          tableau passé à notre composant contient des objets conformes au
+          schéma attendu.
+        </p>
+        <div>
+          <h3>Méthode</h3>
+          <p>Voir vidéo</p>
+        </div>
+      </div>
+
+      <div>
+        <h2>
+          Code utilisé dans le screencast « mise en place d’une vérification de
+          tableau contenant des objets »
+        </h2>
+        <div>
+          <h3>Complément</h3>
+          <p>Pour le composant App.js :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="xxMzmQv"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/xxMzmQv"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>Pour le composant TodoList.js :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="dyaKwwY"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/dyaKwwY"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
     </div>
   </body>
 </html>

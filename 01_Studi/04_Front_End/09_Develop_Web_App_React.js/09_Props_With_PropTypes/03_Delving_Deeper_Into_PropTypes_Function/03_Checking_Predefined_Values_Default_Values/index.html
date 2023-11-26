@@ -3,13 +3,140 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>
+      Vérification des valeurs pré-définies et des valeurs par défaut
+    </title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Vérification des valeurs pré-définies et des valeurs par défaut</h1>
+      <div>
+        <h2>Vérifier des valeurs pré-définies</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Lorsque vous définissez une prop, il peut être utile de vérifier que
+            sa valeur correspond à une liste prédéfinie de valeurs.
+            PropTypes.oneOf() est un validateur qui vous permet de définir une
+            liste de valeurs autorisées pour une prop. Par exemple, si vous avez
+            une prop color qui doit être rouge, vert ou bleu, vous pouvez
+            utiliser PropTypes.oneOf() pour valider que la valeur est bien l'une
+            de ces trois options.
+          </p>
+          <p>
+            Voici un exemple simple qui utilise PropTypes.oneOf() pour valider
+            une prop status qui doit être « en attente », « en cours » ou «
+            terminé » :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="gOqKZqm"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/gOqKZqm"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, la prop status est validée pour s'assurer qu'elle
+            correspond à l'une des trois chaînes de caractères définies dans le
+            tableau passé à PropTypes.oneOf(). Si la prop status est définie
+            avec une valeur autre que « en attente », « en cours » ou « terminé
+            », une erreur sera affichée dans la console du navigateur.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Définir des valeurs par défaut</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Lorsque vous créez un composant React, vous pouvez définir des
+            valeurs par défaut pour certaines de ses props en utilisant la
+            propriété defaultProps. Cela permet de s'assurer que si une prop
+            n'est pas fournie, le composant ne va pas planter ou afficher un
+            comportement inattendu.
+          </p>
+        </div>
+
+        <div>
+          <h3>Attention</h3>
+          <p>
+            Veillez à ne pas mettre de valeur par défaut sur une prop
+            obligatoire, car cela peut masquer des erreurs de programmation et
+            donner des résultats inattendus, si la valeur par défaut est
+            différente de ce que le composant attend réellement (nom
+            d’utilisateur, identifiant, etc.).
+          </p>
+        </div>
+
+        <div>
+          <h3>Méthode</h3>
+          <p>Voici un exemple de composant utilisant defaultProps :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="VwgdqRe"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/VwgdqRe"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, la prop text est définie avec une valeur par
+            défaut de « Hello, world! » en utilisant defaultProps. La prop est
+            également validée avec propTypes pour s'assurer qu'elle est toujours
+            de type string.
+          </p>
+          <p>
+            Si text n'est pas passée en tant que prop, la valeur « Hello, world!
+            » sera utilisée comme valeur par défaut.
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>

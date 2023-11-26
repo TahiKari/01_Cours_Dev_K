@@ -3,13 +3,206 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Présentation de PropTypes</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Présentation de PropTypes</h1>
+      <div>
+        <h2>Mise en place</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            PropTypes est devenue une fonctionnalité populaire et essentielle
+            pour la validation des données passées aux composants React. Depuis
+            la version 15.5 de React, PropTypes a été déplacé dans un module
+            externe nommé prop-types. Pour qu’il soit installé dans votre
+            projet, vous avez deux solutions :
+          </p>
+          <ul>
+            <li>
+              Si vous avez utilisé la commande create-react-app pour débuter
+              votre application, prop-types est déjà installé dans les
+              dépendances.
+            </li>
+            <li>
+              Dans le cas contraire, il vous faudra l’installer avec cette
+              commande :
+            </li>
+          </ul>
+          <code>npm install --save prop-types</code>
+          <p>
+            Maintenant vous pouvez importer PropTypes dans votre composant de
+            cette manière :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="abXKPJP"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/abXKPJP"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Enfin, vous pouvez définir les types de données attendus pour chaque
+            prop dans un bloc statique propTypes en utilisant la syntaxe
+            PropTypes.typeDeDonnee :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="VwgdqbZ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/VwgdqbZ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, nous avons défini les types de données attendus
+            pour les props nom, age et estConnecte. Le type de donnée pour nom
+            est une chaîne de caractères, le type de donnée pour age est un
+            nombre et le type de donnée pour estConnecte est un booléen. Notez
+            également que nous avons ajouté le validateur isRequired à chaque
+            prop pour indiquer que ces props sont obligatoires, si elles ne sont
+            pas fournies au composant une erreur s'affiche dans la console du
+            navigateur.
+          </p>
+          <p>
+            Pour finir, voici le composant complet dans lequel nous utilisons
+            les props validés que nous avons vu précédemment :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="PoVaXmz"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/PoVaXmz"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Et voilà, le type des props de votre composant est désormais
+            vérifié, vous pouvez tester votre composant en l’important et en lui
+            passant des props d’un autre type que celui attendu :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="qBgKLjG"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/qBgKLjG"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Vous remarquerez que l’attribut age a volontairement été complété
+            avec une chaîne de caractères alors que nous attendons un nombre.
+          </p>
+          <p>
+            Si une donnée non conforme est passée à un composant avec des
+            PropTypes, React affichera un message d'erreur dans la console du
+            navigateur indiquant le type de l'erreur et l'emplacement exact où
+            elle a été détectée. C’est très pratique pour traiter les bugs. On
+            évite également ainsi les oublis.
+          </p>
+        </div>
+
+        <div>
+          <h3>Attention</h3>
+          <p>
+            Lorsque vous utilisez PropTypes dans votre application React, les
+            messages d'erreur ne s'affichent que dans l'environnement de
+            développement, car cela pourrait potentiellement divulguer des
+            informations sensibles sur votre application ou sur les données
+            utilisateur. Il aurait également un impact sur les performances de
+            votre application en production.
+          </p>
+          <p>Voir Vidéo</p>
+        </div>
+      </div>
     </div>
   </body>
 </html>

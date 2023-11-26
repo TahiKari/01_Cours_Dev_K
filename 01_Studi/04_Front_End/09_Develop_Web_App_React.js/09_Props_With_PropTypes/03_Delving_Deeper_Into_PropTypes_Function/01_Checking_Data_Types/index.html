@@ -3,13 +3,172 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Vérification des types de données</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Vérification des types de données</h1>
+      <div>
+        <div>
+          <h3>Attention</h3>
+          <p>
+            Jusque-là, nous avons utilisé un composant classe dans notre
+            exemple, les exemples suivants utilisent des composants
+            fonctionnels.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Vérifier les types de données simples</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Pour vérifier les types de données simples tels que les chaînes de
+            caractères et les nombres, nous pouvons utiliser les validateurs
+            fournis par PropTypes. Par exemple, pour valider une prop qui doit
+            être une chaîne de caractères, nous pouvons utiliser le validateur
+            string, comme ceci :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="YzBvdLy"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/YzBvdLy"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, nous avons défini une prop maProp qui doit être
+            une chaîne de caractères. Si une autre valeur est passée à cette
+            prop, une erreur sera générée dans la console en mode de
+            développement.
+          </p>
+          <p>
+            Nous pouvons également utiliser d'autres validateurs fournis par
+            PropTypes pour valider les autres types de données simples, tels que
+            number pour les nombres ou bool pour les booléens.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Vérifier les types de données complexes</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            La validation des props peut être plus complexe lorsque les props
+            sont des objets. Dans ce cas, il est important de s'assurer que
+            l'objet possède toutes les propriétés requises et que leurs types
+            sont corrects.
+          </p>
+          <p>
+            Pour valider les schémas d'objet avec PropTypes, vous pouvez
+            utiliser la méthode shape(). Cette méthode permet de définir un
+            schéma d'objet qui spécifie les types de données attendus pour
+            chaque propriété de l'objet.
+          </p>
+          <p>Pour un objet, voici un exemple :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="OJdErEp"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/OJdErEp"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, nous utilisons PropTypes.shape pour spécifier la
+            structure attendue de l'objet monObjet. Nous indiquons que cet objet
+            doit comporter deux propriétés titre et description de type string.
+          </p>
+          <p>
+            Pour valider un tableau simple avec PropTypes, nous pouvons utiliser
+            PropTypes.arrayOf qui permet de spécifier le type de données attendu
+            pour chaque élément du tableau. Par exemple, pour valider un tableau
+            de chaînes de caractères, nous pouvons écrire :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="QWYxzxa"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/QWYxzxa"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici, PropTypes.arrayOf(PropTypes.string) indique que chaque élément
+            du tableau doit être une chaîne de caractères. Si un élément n'est
+            pas une chaîne de caractères, une erreur sera affichée dans la
+            console en mode développement.
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>
