@@ -3,13 +3,588 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Utilisation du CSS avec React</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Utilisation du CSS avec React</h1>
+      <div>
+        <h2>Les différentes façons d’utiliser CSS avec React</h2>
+        <p>
+          Il y a différentes méthodes pour utiliser le CSS dans React et cela
+          dépend des besoins spécifiques de votre projet. Voici quelques-unes
+          des options les plus courantes :
+        </p>
+        <ul>
+          <li>
+            Premièrement, vous pouvez utiliser du CSS en ligne en ajoutant
+            directement les styles dans l’attribut style d’un élément. Cela peut
+            être pratique pour des modifications ponctuelles ou simples, mais
+            cela peut vite devenir fastidieux si vous devez modifier plusieurs
+            éléments.
+          </li>
+          <li>
+            Deuxièmement, vous pouvez utiliser un fichier CSS externe. Pour
+            cela, créez un fichier CSS séparé et importez-le dans votre
+            composant React. Vous pouvez ensuite utiliser les classes ou les ID
+            définis dans votre fichier CSS pour styliser vos éléments. Cette
+            méthode est pratique pour des projets plus importants avec des
+            styles réutilisables.
+          </li>
+          <li>
+            Troisièmement, les modules CSS sont une option pour définir des
+            styles spécifiques à un composant, en évitant les conflits de nom de
+            classe avec d’autres composants. Cette méthode implique de définir
+            des noms de classe avec un suffixe unique dans votre fichier CSS,
+            puis d’importer ce fichier en tant que module dans votre composant
+            React. Vous pouvez ensuite utiliser les classes définies dans le
+            module CSS pour styliser vos éléments.
+          </li>
+        </ul>
+        <p>
+          La méthode que vous choisirez pour utiliser CSS dans React dépendra de
+          vos préférences personnelles, ainsi que des besoins spécifiques de
+          votre projet. Les styles en ligne peuvent être pratiques pour des
+          modifications ponctuelles, les fichiers CSS externes peuvent être plus
+          pratiques pour des projets plus importants, tandis que les modules CSS
+          peuvent être utiles pour éviter les conflits de nom de classe entre
+          les différents composants.
+        </p>
+      </div>
+
+      <div>
+        <h2>Initialisation d’un projet React</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons dès à présent initier un projet React pour mettre en
+            applications les différentes méthodes pour styliser les composants.
+            Dans le terminal de notre éditeur de code, nous pouvons taper la
+            commande suivante pour créer un fichier « package.json » :
+          </p>
+          <code>npm init -y</code>
+          <p>
+            Nous pouvons maintenant installer les différentes dépendances de
+            React via la commande suivante :
+          </p>
+          <code>npm install react react-dom react-scripts</code>
+          <p>
+            Enfin, nous pouvons spécifier dans les scripts du fichier «
+            package.json », le script « dev », qui va nous permettre de lancer
+            le serveur de développement :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="rNPrOoG"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/rNPrOoG"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>
+          Création des dossiers et fichiers principaux de notre application
+        </h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons maintenant créer un dossier « public » qui va contenir
+            un fichier « index.html » dans lequel nous pouvons instancier une
+            structure HTML de base, et créer une “div” qui porte l’id « root ».
+          </p>
+          <p>C’est dans ce nœud que notre application React sera générée.</p>
+          <p>
+            Ensuite, nous créons un dossier « src », dans lequel nous ajoutons
+            un fichier « index.js » qui contiendra le code suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="dyajGba"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/dyajGba"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Création du composant principal « App.js »</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons maintenant créer le composant « App.js » que nous avons
+            importé et rendu dans le fichier « index.js » :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="yLZqeYo"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/yLZqeYo"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Enfin, nous pouvons lancer notre application en tapant la commande
+            suivante dans le terminal de notre éditeur de code :
+          </p>
+          <code>npm run dev</code>
+        </div>
+      </div>
+
+      <div>
+        <h2>Utilisation de l’attribut style</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            L’attribut « style » en React est utilisé pour appliquer des styles
+            CSS à des éléments spécifiques de votre application React. Cet
+            attribut est utilisé de manière similaire à la façon dont il est
+            utilisé dans le HTML traditionnel, mais avec quelques différences.
+            En HTML, les styles sont définis sous forme d’attributs séparés,
+            tels que « style = "color: red; font-size : 16px; ». En JSX, les
+            styles sont définis comme un objet JavaScript dans l’attribut «
+            style ». Nous allons styliser notre composant « App.js » avec le
+            code suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="QWYByEp"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/QWYByEp"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici, nous avons créé un objet « styles » et passé cet objet à
+            l’attribut style de la « div » de notre composant.
+          </p>
+          <p>
+            Notez qu’il est possible de passer l’objet directement à l’attribut
+            sans passer par une variable.
+          </p>
+          <p>
+            L’ensemble des propriétés doivent être écrites en camelCase, et les
+            valeurs associées à ces propriétés doivent être passées en tant que
+            chaîne de caractères.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Avantages et inconvénients de l’utilisation du inline-style</h2>
+        <p>
+          Le inline-style est une méthode populaire pour appliquer des styles
+          CSS aux éléments HTML dans React. Cependant, comme avec toutes les
+          techniques de programmation, l’utilisation de l’inline-style présente
+          des avantages et des inconvénients qu’il est important de prendre en
+          compte.
+        </p>
+        <p>
+          D’une part, l’utilisation du inline-style offre une grande flexibilité
+          en permettant de définir des styles spécifiques à chaque élément. Cela
+          permet d’avoir un contrôle précis sur l’apparence des éléments dans
+          l’interface utilisateur. De plus, étant donné que les styles sont
+          définis directement dans les éléments, il est facile de les modifier
+          et de les ajuster au besoin. Cela peut être particulièrement utile
+          lorsque l’on travaille avec des éléments qui nécessitent des styles
+          différents selon le contexte. Enfin, définir les styles directement
+          dans les éléments peut améliorer les performances globales de
+          l’application, car le navigateur n’a pas besoin de parcourir
+          l’ensemble du document HTML pour appliquer les styles.
+        </p>
+        <p>
+          D’autre part, l’utilisation du inline-style peut rendre difficile la
+          séparation de la logique et de la présentation, mélangeant ainsi ces
+          deux aspects. Cela peut rendre le code plus difficile à maintenir et à
+          comprendre, en particulier pour les développeurs qui ne sont pas
+          familiers avec l’application. De plus, l’inline-style peut rendre
+          difficile la réutilisation du code, car les styles sont liés
+          directement à un élément spécifique. Cela peut rendre la tâche de mise
+          à jour des styles dans toute l’application plus difficile et
+          chronophage. Enfin, l’inline-style peut être moins approprié pour les
+          styles complexes qui nécessitent des fonctions avancées telles que les
+          mixins et les variables. Cela peut rendre la tâche de gestion des
+          styles plus difficile et compliquée.
+        </p>
+        <p>
+          L’utilisation du inline-style dans React présente des avantages en
+          termes de flexibilité et de performance, mais peut également présenter
+          des inconvénients en termes de maintenabilité et de réutilisabilité du
+          code. Il est donc important de peser les avantages et les
+          inconvénients avant de décider d’utiliser ou non cette méthode. En
+          définitive, le choix de l’utilisation du inline-style dépendra des
+          besoins spécifiques de l’application.
+        </p>
+      </div>
+
+      <div>
+        <h2>Importer une feuille de style externe</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Tout d’abord nous créons un dossier « styles » dans le répertoire «
+            src » qui va contenir notre fichier « App.css » :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="BaMPjZL"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/BaMPjZL"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ensuite, pour importer une feuille de style externe dans un
+            composant React, il suffit d’importer le fichier CSS dans le
+            composant à l’aide d’import.
+          </p>
+          <p>
+            Puis, les classes définies dans la feuille de style peuvent être
+            appliquées aux éléments JSX du composant en utilisant la propriété
+            className. Il est important de noter que la propriété className doit
+            être utilisée plutôt que la propriété class pour définir les classes
+            CSS dans les éléments JSX :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="XWOBXqy"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/XWOBXqy"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>
+          Avantages et inconvénients de l’utilisation d’une feuille de style
+          externe
+        </h2>
+        <p>
+          L’utilisation de feuilles de style externes dans React présente son
+          lot d’avantages et d’inconvénients. D’une part, les avantages incluent
+          la réutilisabilité des styles sur plusieurs pages ou composants, la
+          séparation des préoccupations entre la logique de présentation et
+          l’application, ainsi que l’amélioration des performances en réduisant
+          la taille du fichier CSS téléchargé.
+        </p>
+        <p>
+          D’autre part, les inconvénients de l’utilisation de feuilles de style
+          externes comprennent la portée des styles qui peut causer des
+          conflits, la spécificité CSS qui peut rendre difficile la modification
+          des styles spécifiques, ainsi que la gestion des dépendances qui peut
+          entraîner des retards de chargement. Malgré ces inconvénients,
+          l’utilisation de feuilles de style externes peut s’avérer bénéfique
+          pour styliser les composants React, à condition de prendre en compte
+          les différentes implications et de les gérer de manière adéquate.
+        </p>
+      </div>
+
+      <div>
+        <h2>Utilisation de modules CSS</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Les modules CSS sont une méthode efficace pour organiser les styles
+            dans une application React. En utilisant les modules CSS, vous
+            pouvez créer des classes de style spécifiques à un composant
+            individuel, ce qui empêche les styles de se propager à l’ensemble de
+            l’application.
+          </p>
+          <p>
+            Tout d’abord nous allons créer un nouveau fichier CSS dans le
+            dossier « styles » qui portera le nom suivant : «
+            children.module.css ». Ici, nous ajoutons l’extension « .module.css
+            » au nom du fichier CSS pour indiquer à React que nous utilisons des
+            modules CSS.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="vYbaLVL"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/vYbaLVL"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ensuite, nous allons créer un nouveau composant « Children.js » et
+            utiliser notre module CSS.
+          </p>
+          <p>
+            Pour importer les styles dans notre composant, nous allons utiliser
+            l’instruction « import » suivie du nom du fichier CSS.
+          </p>
+          <p>
+            Puis, nous pouvons utiliser les noms de classe définis dans le
+            fichier CSS en utilisant l’objet « styles » que nous avons importés
+            :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="vYbaLvL"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/vYbaLvL"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            En utilisant les modules CSS dans React, vous pouvez organiser vos
+            styles de manière plus efficace et éviter les conflits de noms de
+            classe dans votre application. En créant des classes de style
+            spécifiques à chaque composant, vous pouvez également améliorer la
+            maintenabilité et la lisibilité de votre code.
+          </p>
+          <p>
+            Notez que lorsque nous allons « build » notre application pour la
+            production, le nom de classe ne sera plus « childrenDiv », mais une
+            ID unique telle que « UHj78DS », cela permet d’éviter les conflits
+            de style entre les différents éléments HTML.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Avantages et inconvénients de l’utilisation des modules CSS</h2>
+        <p>
+          Les modules CSS offrent de nombreux avantages pour les développeurs
+          travaillant sur des applications React. Tout d’abord, l’utilisation de
+          modules CSS permet l’isolation des styles de chaque composant React
+          grâce à la création de fichiers CSS séparés pour chaque composant.
+          Cela évite les problèmes de collision de noms de classe et facilite la
+          maintenance du code. En outre, les modules CSS permettent une
+          réutilisation efficace du code en permettant l’utilisation de styles
+          définis pour un composant à travers différents composants, ce qui
+          permet de gagner du temps et de maintenir une cohérence visuelle sur
+          l’ensemble de l’application. Enfin, la maintenance du code est
+          facilitée grâce à la capacité des modules CSS à permettre la
+          localisation rapide des styles associés à un composant spécifique.
+          Cela facilite également la refonte de l’application en modifiant
+          simplement les styles des composants concernés.
+        </p>
+        <p>
+          Cependant, l’utilisation de modules CSS peut également présenter des
+          inconvénients pour les développeurs React. Tout d’abord, l’utilisation
+          de modules CSS peut nécessiter une certaine courbe d’apprentissage
+          pour les développeurs qui ne sont pas familiers avec cette approche,
+          ce qui peut prendre du temps pour apprendre les nouvelles conventions
+          et les nouvelles syntaxes. De plus, l’utilisation de modules CSS peut
+          ajouter une surcharge de travail pour les développeurs en créant des
+          fichiers CSS supplémentaires pour chaque composant. Cela peut
+          également rendre l’ensemble du projet plus complexe en ajoutant de
+          nouveaux fichiers et en augmentant le nombre de dépendances. Enfin,
+          l’utilisation de modules CSS peut entraîner une légère baisse des
+          performances en raison de la complexité des fichiers CSS générés et
+          des dépendances supplémentaires. Cela peut également augmenter le
+          temps de chargement de l’application.
+        </p>
+      </div>
+
+      <div>
+        <h2>Utilisation de plusieurs solutions en même temps</h2>
+        <p>
+          Il est important de noter qu’il est tout à fait possible de combiner
+          ces différentes solutions pour utiliser CSS dans React. En effet, vous
+          pouvez utiliser des styles en ligne pour des modifications
+          ponctuelles, des fichiers CSS externes pour des styles réutilisables
+          et des modules CSS pour éviter les conflits de noms de classes entre
+          les différents composants.
+        </p>
+        <p>
+          Par exemple, vous pouvez utiliser un fichier CSS externe pour définir
+          des styles communs à plusieurs composants, et utiliser des styles en
+          ligne pour des modifications spécifiques à un élément. Vous pouvez
+          également utiliser des modules CSS pour définir des styles spécifiques
+          à un composant tout en utilisant des fichiers CSS externes pour les
+          styles communs.
+        </p>
+        <p>
+          En utilisant différentes méthodes de manière combinée, vous pouvez
+          bénéficier des avantages de chaque méthode tout en évitant leurs
+          inconvénients. Cela vous permet également de personnaliser votre
+          utilisation de CSS dans React en fonction des besoins spécifiques de
+          votre projet. Combiner les différentes méthodes pour utiliser le CSS
+          dans React peut être une solution pratique et efficace pour styliser
+          vos composants de manière complète et éviter les conflits de noms de
+          classes, mais cela peut aussi créer un problème de cohérence dans
+          votre code ainsi que dans l’apparence graphique globale de votre
+          application et créer des effets de bords.
+        </p>
+      </div>
     </div>
   </body>
 </html>

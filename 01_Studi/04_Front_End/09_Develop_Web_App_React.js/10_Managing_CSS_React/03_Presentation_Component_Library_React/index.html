@@ -3,13 +3,409 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Présentation d’une bibliothèque de composant pour React</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Présentation d’une bibliothèque de composant pour React</h1>
+      <div>
+        <h2>
+          Avantages et inconvénients d’utiliser une bibliothèque de composant
+        </h2>
+        <p>
+          L’utilisation d’une bibliothèque de composants dans React peut offrir
+          des avantages, mais également des inconvénients.
+        </p>
+        <p>
+          D’une part, l’utilisation d’une bibliothèque de composants peut offrir
+          des avantages considérables. En effet, cela permet de gagner du temps
+          en réutilisant des composants préconstruits plutôt que de les créer à
+          partir de zéro. De plus, les bibliothèques de composants offrent une
+          cohérence visuelle et fonctionnelle dans toute l’application, car les
+          mêmes composants sont utilisés à plusieurs endroits. Cela peut
+          améliorer l’expérience utilisateur et la qualité de l’application.
+        </p>
+        <p>
+          Les bibliothèques de composants sont également souvent créées et
+          maintenues par des développeurs expérimentés, ce qui signifie que les
+          composants sont bien testés et de haute qualité. Cela peut aider à
+          réduire les bugs et les problèmes de compatibilité. Les bibliothèques
+          de composants sont souvent évolutives, ce qui signifie qu’elles
+          peuvent être facilement adaptées pour répondre aux besoins spécifiques
+          de l’application. Cela peut aider à améliorer la flexibilité et la
+          capacité d’adaptation de l’application.
+        </p>
+        <p>
+          D’autre part, l’utilisation d’une bibliothèque de composants peut
+          également présenter des inconvénients. Tout d’abord, les bibliothèques
+          de composants peuvent être assez volumineuses, ce qui peut affecter
+          les performances de l’application en ralentissant le temps de
+          chargement de la page et en augmentant la consommation de bande
+          passante. De plus, les bibliothèques de composants peuvent avoir des
+          limitations de personnalisation, ce qui peut rendre difficile la
+          personnalisation de certains aspects des composants pour répondre aux
+          besoins spécifiques de l’application. Enfin, l’utilisation d’une
+          bibliothèque de composants peut rendre l’application dépendante de
+          cette bibliothèque, ce qui peut rendre les mises à jour de la
+          bibliothèque difficiles et risquées.
+        </p>
+        <p>
+          Nous pouvons donc dire qu’il est important de peser soigneusement les
+          avantages et les inconvénients avant de décider d’utiliser une
+          bibliothèque de composants dans une application React.
+        </p>
+      </div>
+
+      <div>
+        <h2>Présentation de MUI</h2>
+        <p>
+          La bibliothèque Material UI est une collection de composants React
+          conçue pour faciliter la création d’interfaces utilisateur élégantes
+          et cohérentes. Basée sur le design system de Google, Material UI offre
+          une variété de composants préconstruits pour des éléments tels que des
+          boutons, des formulaires, des menus et des icônes.
+        </p>
+        <p>
+          La bibliothèque se distingue par son approche axée sur la facilité
+          d’utilisation et la personnalisation. Les développeurs peuvent
+          facilement intégrer ces composants dans leurs applications React
+          existantes, et les personnaliser pour s’adapter aux besoins
+          spécifiques de leur projet. Material UI offre également une grande
+          variété de thèmes, permettant aux développeurs de créer des interfaces
+          utilisateur cohérentes avec la charte graphique de leur entreprise ou
+          de leur marque.
+        </p>
+        <p>
+          En plus de sa bibliothèque de composants, Material UI offre également
+          des fonctionnalités avancées telles que des animations et des
+          transitions, ainsi qu’une documentation détaillée et des exemples
+          pratiques pour aider les développeurs à tirer le meilleur parti de la
+          bibliothèque. La bibliothèque Material UI peut vous aider à créer des
+          interfaces utilisateur élégantes et fonctionnelles en toute
+          simplicité.
+        </p>
+      </div>
+
+      <div>
+        <h2>Installer MUI dans notre application</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons utiliser la dernière version disponible de MUI
+            (5.11.15). Pour installer la bibliothèque Material UI, nous pouvons
+            utiliser la commande suivante :
+          </p>
+          <code>npm install @mui/material @emotion/react @emotion/styled </code>
+          <p>Voici quelques précisions sur les dépendances installées :</p>
+          <ul>
+            <li>
+              « @mui/material » est une bibliothèque de composants React qui
+              fournit des composants prédéfinis pour construire des interfaces
+              utilisateur modernes et responsives.
+            </li>
+            <li>
+              « @emotion/react » est une bibliothèque qui fournit une API pour
+              écrire des styles en utilisant la syntaxe CSS dans des composants
+              React.
+            </li>
+            <li>
+              « @emotion/styled » est une bibliothèque qui permet de styliser
+              des composants React en utilisant la syntaxe CSS.
+            </li>
+          </ul>
+          <p>
+            Enfin, Material UI est conçu pour utiliser une font-family
+            particulière (Roboto) que nous pouvons installer via npm avec la
+            commande suivante :
+          </p>
+          <code>npm install @fontsource/roboto </code>
+          <p>
+            Nous pouvons également utiliser la font via le CDN de Google, en
+            passant cette balise dans la balise &lthead&gt de notre fichier «
+            index.html » :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="yLZqOyR"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/yLZqOyR"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Importez les composants MUI</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous pouvons désormais commencer à utiliser les composants de la
+            bibliothèque MUI.
+          </p>
+          <p>
+            Pour cela, vous devez importer les composants dont vous avez besoin
+            dans votre fichier source. Nous allons ajouter le code suivant au
+            début de notre composant « Children.js » :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="zYeLqxV"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/zYeLqxV"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici, nous importons le composant « Button » de la bibliothèque
+            Material UI.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Utilisez notre composant MUI</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous pouvons maintenant utiliser notre « Button » comme n’importe
+            quel autre composant React en l’ajoutant à notre code. Nous allons
+            instancier ce composant dans notre « Children.js » :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="RwvBaPK"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/RwvBaPK"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous pouvons désormais voir s’afficher le « Button » dans notre
+            composant.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Personnalisation du composant MUI</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Il est possible de personnaliser notre « Button » en passant des
+            attributs à sa balise d’instanciation fournis par MUI :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="KKJBzpx"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/KKJBzpx"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici, le premier attribut est « variant », qui est défini comme «
+            contained ». Cela signifie que le bouton aura un arrière-plan coloré
+            avec un contour. C’est une option courante pour les boutons qui ont
+            besoin de se démarquer sur une page.
+          </p>
+          <p>
+            Le deuxième attribut est « color », qui est défini comme « success
+            ». Cela signifie que le bouton aura une couleur personnalisée, qui
+            correspond à la couleur verte par défaut.
+          </p>
+          <p>
+            Ensuite, le troisième attribut est « size », qui est défini comme «
+            large ». Cela signifie que le bouton aura une taille plus grande que
+            la taille par défaut.
+          </p>
+          <p>
+            Enfin, l’attribut « disabled » spécifie que le bouton est désactivé
+            et ne peut pas être cliqué par l’utilisateur.
+          </p>
+          <p>
+            Notez que vous pouvez retrouver ces différentes variantes dans la
+            documentation du composant :
+            <a
+              href="https://mui.com/material-ui/react-button/"
+              target="_blank"
+              rel="alternate"
+              >MUI</a
+            >
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Utilisation des événements sur les composants MUI</h2>
+        <p>
+          Il est tout à fait possible d’utiliser les événements sur les
+          composants fournis par la bibliothèque de composants MUI, en procédant
+          de la même manière qu’avec les composants créés par nos propres
+          moyens. Par exemple, pour ajouter un événement qui déclenche une
+          fonction « handleClick » au clic de notre bouton, nous pourrions
+          utiliser le code suivant :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="NWoBNXL"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/NWoBNXL"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+
+      <div>
+        <h2>Méthodes de personnalisation différentes</h2>
+        <p>
+          Une autre façon de personnaliser les composants MUI consiste à
+          utiliser les styles personnalisés. Chaque composant MUI peut être
+          stylisé en utilisant les propriétés CSS standard ou les classes
+          personnalisées. Pour appliquer un style personnalisé à un composant,
+          il suffit de créer un objet de style et de le passer au composant en
+          tant qu’attribut « style ». De plus, MUI fournit un système de thème
+          qui permet de personnaliser les couleurs et les polices dans
+          l’ensemble de l’interface utilisateur de manière cohérente.
+        </p>
+        <p>
+          Enfin, pour les besoins de personnalisation plus avancés, il est
+          possible de créer des variantes de composants personnalisées. Une
+          variante personnalisée est une version modifiée d’un composant MUI
+          existant, qui utilise une logique et des styles personnalisés pour
+          créer une apparence et un comportement différents. Les variantes
+          personnalisées sont créées en étendant un composant existant et en
+          modifiant son comportement et son apparence à l’aide de JavaScript et
+          de CSS.
+        </p>
+      </div>
+
+      <div>
+        <h2>Documentation et recommandation</h2>
+        <p>
+          Il existe de nombreux composants fournis par Material UI, vous pouvez
+          vous rendre sur la documentation de la bibliothèque en visitant l’URL
+          suivant pour découvrir l’ensemble des possibilités proposées :
+        </p>
+        <a
+          href="https://mui.com/material-ui/getting-started/overview/"
+          target="_blank"
+          rel="alternate"
+          >MUI</a
+        >
+        <p>
+          Notez que dans certains cas, il est préférable de ne pas utiliser de
+          bibliothèques tierces et de créer vous-même les composants de votre
+          application, afin d’augmenter la flexibilité de ceux-ci ainsi que
+          faciliter leur personnalisation.
+        </p>
+      </div>
     </div>
   </body>
 </html>
