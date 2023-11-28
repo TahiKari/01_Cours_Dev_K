@@ -1,4 +1,4 @@
-import Children from './Children.js'
+import Children from './components/Children.js'
 import './styles/App.css'
 
 export default function App () {

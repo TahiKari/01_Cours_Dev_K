@@ -3,13 +3,365 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Extension de composition de styles et animer les composants</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Extension de composition de styles et animer les composants</h1>
+      <div>
+        <h2>
+          Étendre les styles d’un composant préexistant avec styles intégrés
+        </h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Pour étendre les styles d’un composant avec styles intégrés déjà
+            existant, vous pouvez utiliser la méthode styled() sur le composant.
+            Cela vous permet d’ajouter ou de remplacer des styles sans modifier
+            le composant d’origine.
+          </p>
+          <p>
+            Voici un exemple d’extension des styles d’un composant Button
+            existant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="poGZBvR"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/poGZBvR"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>
+          Étendre les styles d’un composant préexistant avec styles intégrés
+        </h2>
+        <p>
+          Dans cet exemple, nous avons créé le nouveau composant LargeButton en
+          étendant le composant Button existant. Le LargeButton hérite des
+          styles de Button et ajoute une taille de police plus grande.
+        </p>
+      </div>
+
+      <div>
+        <h2>Combinaison de plusieurs composants avec styles intégrés</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Il est possible de combiner plusieurs composants avec styles
+            intégrés en imbriquant les éléments directement dans les définitions
+            de style. Cette approche permet d’appliquer des styles spécifiques
+            lorsque « un composant se trouve au sein d’un autre », autrement
+            dit, lorsque nos éléments sont imbriqués. Cette technique permet
+            d’élaborer des designs plus complexes et sophistiqués tout en
+            conservant une structure claire et organisée.
+          </p>
+          <p>
+            Voici un exemple de combinaison de deux composants stylisés,
+            Container et CustomParagraph :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="NWoBmGx"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/NWoBmGx"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, nous avons défini un style spécifique pour le
+            composant CustomParagraph lorsqu’il est imbriqué dans le composant
+            Container. Le paragraphe prend la couleur rouge lorsqu’il est à
+            l’intérieur du Container, sinon il conserve sa couleur bleue par
+            défaut.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Animer les composants avec styles intégrés</h2>
+        <p>
+          Les animations CSS et les transitions sont des techniques permettant
+          d’ajouter des effets visuels dynamiques aux éléments HTML lors de
+          changements d’état ou d’événements spécifiques. Les transitions sont
+          utilisées pour animer les changements de propriétés CSS, tandis que
+          les animations CSS sont définies avec des « keyframes » pour créer des
+          séquences d’animation plus complexes.
+        </p>
+      </div>
+
+      <div>
+        <h2>
+          Utilisation des keyframes, animations et transitions avec
+          Styled-components
+        </h2>
+        <p>
+          Avec Styled-components, vous pouvez intégrer des animations CSS et des
+          transitions directement dans les définitions de style de vos
+          composants.
+        </p>
+      </div>
+
+      <div>
+        <h2>Transitions</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Pour ajouter une transition à un composant stylisé, il faut définir
+            la propriété transition dans les styles du composant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="gOqjyPY"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/gOqjyPY"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, nous avons ajouté une transition à la propriété
+            background-color du composant CustomBox. Lorsque l’utilisateur
+            survole le composant, la couleur de fond change progressivement de
+            bleu à rouge.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Animation</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Pour ajouter des animations CSS à un composant stylisé, vous pouvez
+            utiliser la fonction keyframes de styled-components pour définir les
+            keyframes de l’animation. Ensuite, appliquez l’animation aux styles
+            du composant en utilisant la propriété animation :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="yLZqreb"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/yLZqreb"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, nous avons créé une animation fadeIn à l’aide de
+            la fonction keyframes de styled-components. Nous avons ensuite
+            appliqué cette animation au composant CustomBox en utilisant la
+            propriété animation. Le composant s’affiche progressivement en
+            passant de transparent à opaque en 2 secondes.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Introduction aux thèmes dans styled-components</h2>
+        <p>
+          La thématisation permet d’avoir un ensemble cohérent de styles et de
+          couleurs pour une application. Styled-components offre une solution
+          intégrée pour la gestion de thèmes, facilitant la création et
+          l’application de thèmes à vos composants.
+        </p>
+        <p>Voir vidéo</p>
+      </div>
+
+      <div>
+        <h2>Utilisation du composant ThemeProvider</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Le composant ThemeProvider de styled-components est utilisé pour
+            fournir un thème à tous les composants enfants. Pour définir un
+            thème, il faut créer un objet JavaScript contenant les valeurs de
+            style, puis passez cet objet en tant que prop theme au ThemeProvider
+            :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="poGZBye"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/poGZBye"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Accès aux valeurs du thème dans les composants stylisés</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Lorsqu’il s’agit de personnaliser vos composants stylisés en
+            fonction du thème, il est nécessaire d’utiliser l’interpolation de
+            fonction pour accéder aux props du composant. En effet, les valeurs
+            spécifiques du thème se trouvent sous la clé theme de ces props.
+            Cela vous permet de modifier l’apparence de vos composants en
+            fonction du thème actif.
+          </p>
+          <p>
+            Dans l’exemple suivant, nous définissons deux composants distincts,
+            Wrapper et Button, dans un fichier appelé MyButton.jsx. Ces
+            composants sont stylisés en utilisant les valeurs du thème. Notez
+            comment nous utilisons l’interpolation de fonction pour accéder aux
+            props du thème :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="JjxBVXB"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/JjxBVXB"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, nous avons utilisé les valeurs du thème pour
+            définir les couleurs de fond et de texte du composant Wrapper ainsi
+            que du composant Button. Grâce à l’interpolation de fonction, les
+            composants ont accès aux valeurs du thème fourni par le
+            ThemeProvider.
+          </p>
+          <p>
+            En résumé, la thématisation avec styled-components simplifie la
+            gestion des styles globaux et cohérents dans une application React.
+            Utilisez le composant ThemeProvider pour fournir un thème et accédez
+            aux valeurs du thème dans vos composants stylisés grâce à
+            l’interpolation de fonction.
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>

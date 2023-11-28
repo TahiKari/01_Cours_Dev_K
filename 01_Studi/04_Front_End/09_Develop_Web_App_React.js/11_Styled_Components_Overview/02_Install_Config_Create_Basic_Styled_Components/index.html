@@ -9,7 +9,299 @@
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>
+        Installation, configuration et création de composants stylisés de base
+      </h1>
+      <p>Voir vidéo</p>
+      <div>
+        <h2>Installation et import de la librairie</h2>
+        <div>
+          <h3>Méthode</h3>
+          <h4>Installer la librairie avec npm</h4>
+          <p>
+            Pour utiliser cette librairie, vous devez d’abord l’installer dans
+            votre projet, vous pouvez utiliser npm ou Yarn qui sont deux
+            gestionnaires de paquets populaires. Pour commencer, ouvrez un
+            terminal et accédez au répertoire de votre projet. Exécutez la
+            commande suivante pour installer styled-components (la dernière
+            version en date de la librairie lors de la rédaction de ce cours est
+            la version v6.0.0-rc.2) :
+          </p>
+          <code>npm install styled-components@latest</code>
+          <h4>Installer la librairie avec Yarn</h4>
+          <p>
+            Si vous préférez utiliser Yarn, ouvrez un terminal, accédez au
+            répertoire de votre projet et exécutez la commande suivante :
+          </p>
+          <code>yarn add styled-components@latest</code>
+          <p>
+            Une fois la librairie installée, vous pouvez l’importer dans les
+            fichiers de votre projet où vous souhaitez créer des composants
+            stylisés. Pour importer styled-components, ajoutez la ligne suivante
+            en haut de votre fichier JavaScript comme n’importe quelle
+            importation :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="oNmMaqz"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/oNmMaqz"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Création de composants stylisés de base</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Comme nous l’avons vu avant la librairie styled-components utilise
+            le concept de CSS-in-JS, c’est-à-dire que vous pouvez utiliser votre
+            CSS directement dans des variables.
+          </p>
+          <p>
+            Pour créer un composant stylisé à partir d’un élément HTML, vous
+            pouvez appeler la fonction styled avec le nom de l’élément souhaité.
+            Par exemple, pour créer un composant basé sur un élément &lth1&gt,
+            vous pouvez appeler styled.h1. Ensuite vous définissez les styles
+            CSS entre des accents graves (``).
+          </p>
+          <p>
+            Par exemple pour créer un composant Title stylisé, vous pouvez
+            écrire :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="poGZxVG"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/poGZxVG"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Création de composants stylisés de base</h2>
+        <ul>
+          <li>
+            <strong>const Title</strong> : cela déclare une nouvelle variable
+            constante appelée « Title ». Cette variable va contenir le composant
+            stylisé que nous allons créer avec styled-components.
+          </li>
+          <li>
+            <strong>styled.h1</strong> : c’est la fonction fournie par la
+            bibliothèque styled-components qui crée un composant stylisé basé
+            sur un élément HTML &lth1&gt. La fonction styled.h1 attend les
+            styles CSS que vous souhaitez appliquer à l’élément &lth1&gt. Vous
+            pouvez faire de même avec n’importe quelle balise telle que
+            &ltsection&gt, &ltdiv&gt, &ltp&gt, pour ne citer que ceux-là.
+          </li>
+        </ul>
+        <p>
+          Les accents graves (``) sont les « balises » que vous utiliserez pour
+          entourer vos styles CSS.
+        </p>
+        <p>
+          Pour finir, vous définissez votre CSS que vous voulez appliquer à
+          votre composant.
+        </p>
+        <p>
+          Pour utiliser ce composant 'Title' dans votre application, il suffit
+          de l’ajouter comme n’importe quel autre composant React :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="PoVByxR"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/PoVByxR"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+
+      <div>
+        <h2>Adapter les styles avec les props</h2>
+        <p>Voir video</p>
+        <p>
+          Afin de personnaliser les styles des composants, nous pouvons
+          transmettre des props à ces composants. Il suffit d’ajouter les props
+          comme attributs lors de l’utilisation du composant. Par exemple, pour
+          un composant Button, nous pouvons lui passer une prop primary pour
+          déterminer si le bouton doit être affiché en tant que bouton principal
+          ou secondaire.
+        </p>
+        <p>
+          En ajoutant la prop primary à notre bouton principal, sans valeur
+          associée, elle prendra automatiquement la valeur true. Cette
+          particularité des props en React nous permet de faire une distinction
+          claire entre les boutons primaires et secondaires :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="zYeLmyG"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/zYeLmyG"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+
+      <div>
+        <h2>
+          Appliquer des styles conditionnels avec l’interpolation de fonction
+        </h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Pour appliquer des styles conditionnels en fonction des props, nous
+            pouvons utiliser l’interpolation de fonction dans les modèles de
+            chaîne de caractères étiquetés. L’interpolation de fonction est
+            définie par « ${} » et permet d’insérer une expression JavaScript à
+            l’intérieur de la chaîne de caractères.
+          </p>
+          <p>
+            Prenons l’exemple d’un composant Button avec une prop primary. Nous
+            pouvons adapter les styles du bouton en fonction de la valeur de
+            cette prop en utilisant l’interpolation de fonction :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="NWoBePx"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/NWoBePx"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, nous utilisons l’interpolation de fonction pour
+            déterminer la couleur de fond et la couleur de texte du bouton en
+            fonction de la prop primary. Si la prop primary est vraie, le bouton
+            aura un fond bleu et un texte blanc, sinon il aura un fond blanc et
+            un texte bleu. De même, nous utilisons l’interpolation de fonction
+            pour modifier les styles du bouton lorsqu’il est survolé.
+          </p>
+          <p>
+            Vous remarquerez aussi le « & » avant le :hover, le & est un
+            sélecteur parent dans styled-components. Il représente le composant
+            lui-même dans le contexte des styles. En l’utilisant avec des
+            pseudo-classes ou pseudo-éléments comme le 'hover', vous indiquez
+            que les styles associés doivent être appliqués directement sur le
+            composant.
+          </p>
+          <p>
+            En utilisant l’interpolation de fonction pour appliquer des styles
+            conditionnels, vous pouvez créer des composants avec styles intégrés
+            qui s’adaptent dynamiquement en fonction des besoins de votre
+            application React.
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>

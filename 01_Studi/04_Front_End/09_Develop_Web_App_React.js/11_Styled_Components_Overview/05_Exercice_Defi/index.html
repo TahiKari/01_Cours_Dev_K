@@ -3,13 +3,125 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Exercice défi</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Exercice défi</h1>
+      <div>
+        <p>
+          Vous êtes un développeur travaillant sur un projet React pour créer
+          une application web. Votre équipe a décidé d’utiliser la bibliothèque
+          styled-components pour gérer les styles des composants React. Votre
+          tâche est de créer et personnaliser un composant stylisé en utilisant
+          les fonctionnalités de styled-component.
+        </p>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          Créez un composant stylisé Button basé sur un élément HTML button avec
+          les propriétés CSS suivantes : couleur de fond bleu, texte blanc et
+          bordure arrondie de 5 pixels. Veuillez fournir uniquement le code du
+          composant stylisé.
+        </p>
+        <div>
+          <h2>Solution</h2>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="WNPKBoz"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/WNPKBoz"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, un composant stylisé nommé Button est créé en
+            utilisant la fonction styled.button de la bibliothèque
+            Styled-components, le composant créé sera basé sur un élément HTML
+            button. Le modèle de chaînes de caractères délimité par les accents
+            graves (``) contient les propriétés CSS pour ce composant demandées
+            dans l’exercice.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          Modifiez le composant Button créé précédemment pour qu’il puisse
+          recevoir une prop primary qui, lorsqu’elle est définie à true, change
+          de couleur de fond en vert et la couleur du texte en blanc. Utilisez
+          l’interpolation de fonction pour appliquer ces styles conditionnels en
+          fonction de la valeur de la prop primary. Veuillez fournir uniquement
+          le code du composant stylisé.
+        </p>
+        <div>
+          <h2>Solution</h2>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="oNmMRBj"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/oNmMRBj"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, le composant stylisé Button est modifié pour
+            accepter une prop primary. L’interpolation de fonction est utilisée
+            pour appliquer des styles conditionnels en fonction de la valeur de
+            cette prop. Les propriétés CSS sont définis à l’intérieur des
+            accents graves (``) avec l’interpolation de fonction. Pour la
+            propriété background-color si la prop primary est définie sur true,
+            la couleur de fond du bouton devient verte, sinon elle reste bleue.
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>
