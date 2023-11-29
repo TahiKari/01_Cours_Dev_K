@@ -3,13 +3,117 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Exercice défi</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Exercice défi</h1>
+      <div>
+        <p>
+          Supposons que vous souhaitez enregistrer dans une nouvelle variable la
+          valeur du state de votre FunctionComponent.js et mettre à jour la
+          valeur enregistrée lorsque votre state est égal à 5. Au-delà de cette
+          valeur, vous ne voulez plus modifier la valeur enregistrée.
+        </p>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          Créez un nouveau state dans votre composant fonctionnel qui aura comme
+          valeur initiale un booléen.
+        </p>
+        <div>
+          <h2>Solution</h2>
+          <p>
+            Pour créer un nouveau state avec un booléen comme valeur initiale,
+            nous pouvons utiliser le code suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="zYeJdop"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/zYeJdop"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          Utilisez le hook useMemo pour stocker la valeur du state de manière à
+          ce que la valeur stockée soit mise à jour lorsque votre state possède
+          une valeur de 5.
+        </p>
+        <div>
+          <h2>Solution</h2>
+          <p>
+            Pour stocker dans une variable la valeur du state et modifier la
+            valeur stockée lorsque notre state possède une valeur de 5, nous
+            pouvons utiliser notre état boolean et modifier sa valeur dans le
+            hook useEffect lorsque la props reçue dans notre composant possède
+            une valeur de 5.
+          </p>
+          <p>
+            Cela va déclencher la mise à jour de la valeur stockée dans useMemo
+            :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="LYqJjbJ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/LYqJjbJ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
     </div>
   </body>
 </html>

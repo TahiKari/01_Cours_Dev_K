@@ -3,13 +3,378 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Les Hooks et le cycle de vie des composants fonctionnels</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Les Hooks et le cycle de vie des composants fonctionnels</h1>
+      <div>
+        <h2>Qu’est qu’un Hook ?</h2>
+        <p>
+          Un Hook est une fonction qui permet à un composant fonctionnel de
+          React d’utiliser des fonctionnalités de React normalement réservées
+          aux composants de classe. Les Hooks ont été introduits dans React
+          version 16.8 pour faciliter le partage de logique entre les
+          composants, rendre le code plus lisible et faciliter la réutilisation.
+        </p>
+        <p>
+          Les Hooks permettent aux développeurs d’ajouter des fonctionnalités à
+          un composant fonctionnel sans avoir besoin de transformer ce composant
+          en une classe.
+        </p>
+      </div>
+
+      <div>
+        <h2>Le cycle de vie dans un composant fonctionnel</h2>
+        <p>
+          Les composants fonctionnels en React diffèrent des composants de type
+          classe en ce qui concerne leur cycle de vie. Contrairement aux
+          composants de type classe, les composants fonctionnels n’ont pas de
+          méthode de cycle de vie définie.
+        </p>
+        <p>
+          Cependant, il est possible de simuler le comportement des méthodes de
+          cycle de vie dans les composants fonctionnels en utilisant les hooks.
+          Les hooks sont des fonctions qui permettent aux composants
+          fonctionnels de gérer leur état interne et leur comportement.
+        </p>
+        <p>
+          En utilisant des hooks, les composants fonctionnels peuvent être aussi
+          puissants et flexibles que les composants de type classe en termes de
+          gestion du cycle de vie.
+        </p>
+      </div>
+
+      <div>
+        <h2>Utilité et cas d’usage de useState()</h2>
+        <p>
+          Le hook useState est l’un des hooks les plus fondamentaux de React,
+          qui permet à un composant de React de gérer et de mettre à jour son
+          propre état interne. En d’autres termes, il permet à un composant de
+          stocker des données qui peuvent être modifiées et utilisées pour
+          mettre à jour l’interface utilisateur.
+        </p>
+        <p>
+          Ce hook prend un argument initial et renvoie un tableau contenant deux
+          éléments : la première valeur est la valeur courante de l’état, et la
+          seconde est une fonction qui permet de modifier cette valeur. Lorsque
+          la fonction de modification est appelée, React réexécute le composant
+          avec la nouvelle valeur de l’état, ce qui peut entraîner la mise à
+          jour de l’interface utilisateur.
+        </p>
+        <p>
+          Il est particulièrement utile pour les composants qui ont besoin de
+          stocker et de mettre à jour des données à mesure que l’utilisateur
+          interagit avec eux. Par exemple, un composant de formulaire pourrait
+          utiliser le hook useState pour stocker les valeurs de saisie de
+          l’utilisateur et les mettre à jour au fur et à mesure que
+          l’utilisateur tape.
+        </p>
+        <p>
+          En résumé, le hook useState est un outil puissant qui permet à un
+          composant de React de stocker et de mettre à jour son propre état
+          interne, ce qui peut être utilisé pour rendre des interfaces
+          utilisateur dynamiques et réactives.
+        </p>
+      </div>
+
+      <div>
+        <h2>Implémentation et utilisation de useState()</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Vous pouvez maintenant créer un composant de type fonctionnel nommé
+            FunctionComponent.js et utiliser le hook useState pour instancier un
+            état à votre composant.
+          </p>
+          <p>Cela peut être effectué avec le code suivant :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="abXawBm"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/abXawBm"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici nous utilisons le hook useState de React pour initialiser un
+            état local state avec une valeur initiale égale à la valeur de la
+            propriété value passée au composant en tant que props. La fonction
+            setState() est également définie pour mettre à jour l’état state.
+          </p>
+          <p>
+            Ensuite, la méthode return() du composant fonctionnel retourne un
+            élément JSX « h1 » qui affiche la valeur de l’état state. À chaque
+            fois que l’état state est mis à jour en appelant la fonction
+            setState(), la valeur est affichée de nouveau dans l’élément « h1 ».
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Instanciation du composant fonctionnel</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Vous pouvez maintenant créer une instance de notre composant
+            fonctionnel dans le composant App.js, en supprimant le composant de
+            type classe instancié précédemment, et en passant l’instance du
+            composant fonctionnel à la place :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="zYeJzpo"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/zYeJzpo"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>Voir vidéo</p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Utilité et cas d’usage de useEffect()</h2>
+        <p>
+          Le hook useEffect est un autre hook important de React, qui permet à
+          un composant de gérer les effets secondaires de ses mises à jour. Les
+          effets secondaires comprennent des actions telles que la récupération
+          de données depuis une API, la mise à jour de l’interface utilisateur
+          en réponse à des événements, ou la modification de l’état global de
+          l’application.
+        </p>
+        <p>
+          Ce hook prend deux arguments : la première est une fonction qui
+          contient le code à exécuter pour gérer l’effet secondaire, et la
+          seconde est un tableau d’éléments qui détermine quand l’effet
+          secondaire doit être déclenché. Le tableau peut contenir des valeurs
+          qui dépendent de l’état ou des propriétés du composant, ce qui permet
+          de déclencher l’effet secondaire uniquement lorsque ces valeurs
+          changent.
+        </p>
+        <p>
+          Il est particulièrement utile pour les composants qui ont besoin de
+          récupérer ou de mettre à jour des données à partir d’une source
+          externe, ou pour les composants qui doivent modifier l’interface
+          utilisateur en réponse à des événements. Par exemple, un composant de
+          liste de tâches pourrait utiliser le hook useEffect pour récupérer les
+          tâches à partir d’une API et les afficher dans l’interface
+          utilisateur.
+        </p>
+        <p>
+          En résumé, ce hook est un outil puissant qui permet à un composant de
+          React de gérer les effets secondaires de ses mises à jour, ce qui peut
+          être utilisé pour récupérer des données, modifier l’interface
+          utilisateur, ou gérer l’état global de l’application.
+        </p>
+      </div>
+
+      <div>
+        <h2>Implémentation et utilisation de useEffect()</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons maintenant voir comment mettre en application la même
+            chose que vous aviez pu réaliser avec les méthodes de cycle de vie
+            de votre composant de type classe.
+          </p>
+          <p>
+            Vous avez besoin d’avoir un retour dans la console lorsque votre
+            composant est monté, lorsqu’il est mis à jour et quand il est
+            démonté du DOM.
+          </p>
+          <p>
+            Par ailleurs, vous allez mettre à jour le state de votre composant
+            FunctionComponent.js à chaque fois que la props value est modifiée
+            depuis le composant parent App.js.
+          </p>
+          <p>Cela peut être effectué avec le code suivant :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="ZEwMyoW"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/ZEwMyoW"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici vous utilisez deux fois le hook useEffect() de React pour gérer
+            les effets de montée, de mise à jour et de démontage du composant.
+            Le premier useEffect() est appelé lors de la montée du composant et
+            ne dépend d’aucune variable, car il doit être exécuté une seule
+            fois. Il affiche le message « composant monté » dans la console et
+            renvoie une fonction de nettoyage qui sera exécutée lors du
+            démontage du composant et affichera le message « composant va être
+            démonté » dans la console.
+          </p>
+          <p>
+            Le deuxième hook useEffect() est appelé à chaque mise à jour du
+            composant et dépend de la propriété value passée au composant en
+            tant que props. À chaque mise à jour, il affiche le message «
+            composant mis à jour » dans la console et met également à jour
+            l’état state en utilisant la valeur actuelle de la propriété value
+            passée au composant en tant que props.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Utilité et cas d’usage de useMemo()</h2>
+        <p>
+          Le hook useMemo est un hook de performance de React qui permet
+          d’optimiser les composants en évitant les recalculs inutiles. Il
+          permet de stocker en mémoire des valeurs calculées et de les récupérer
+          rapidement lorsque cela est nécessaire, plutôt que de les recalculer à
+          chaque fois que le composant est rendu.
+        </p>
+        <p>
+          Ce hook prend deux arguments : la première est une fonction qui
+          calcule la valeur à stocker en mémoire, et la seconde est un tableau
+          d’éléments qui détermine quand la valeur doit être recalculée. Le
+          tableau peut contenir des valeurs qui dépendent de l’état ou des
+          propriétés du composant, ce qui permet de recalculer la valeur
+          uniquement lorsque ces valeurs changent.
+        </p>
+        <p>
+          Il est particulièrement utile pour les composants qui ont besoin de
+          calculer des valeurs coûteuses en temps ou en ressources, ou pour les
+          composants qui doivent afficher des listes ou des tableaux de données.
+          Par exemple, un composant de graphique pourrait utiliser le hook
+          useMemo pour stocker en mémoire les données de graphique calculées à
+          partir des données brutes, de manière à ce que le calcul ne soit
+          effectué qu’une seule fois lorsque les données brutes changent.
+        </p>
+        <p>
+          En résumé, le hook useMemo est un outil puissant qui permet
+          d’optimiser les composants en évitant les calculs inutiles, ce qui
+          peut être utilisé pour améliorer les performances des composants qui
+          effectuent des calculs coûteux.
+        </p>
+      </div>
+
+      <div>
+        <h2>Implémentation et utilisation de useMemo()</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Vous allez importer le hook useMemo et l’utiliser pour mémoriser le
+            résultat d’un calcul.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="xxMarJL"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/xxMarJL"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici, le hook useMemo est utilisé pour optimiser les performances en
+            évitant de recalculer la valeur de memoValue à chaque rendu de
+            composant. useMemo permet de stocker une valeur calculée à l’avance
+            jusqu’à ce qu’une dépendance change, auquel cas la valeur est
+            recalculée.
+          </p>
+          <p>
+            Dans cet exemple, memoValue est calculé en ajoutant 10 à la valeur
+            de state. En utilisant useMemo, la valeur de memoValue ne sera
+            recalculée que si la dépendance change. Cela évite de recalculer la
+            valeur de memoValue à chaque fois que le composant est rendu.
+          </p>
+          <p>
+            Cela peut être utile pour des calculs coûteux ou des opérations de
+            transformation de données, où il est souhaitable de ne pas effectuer
+            le calcul à chaque rendu du composant.
+          </p>
+          <p>Voir vidéo</p>
+        </div>
+      </div>
     </div>
   </body>
 </html>
