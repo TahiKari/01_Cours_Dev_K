@@ -3,13 +3,435 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Reducers combinés</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Reducers combinés</h1>
+      <div>
+        <h2>Combiner les reducers</h2>
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            Lorsque votre application devient plus grande et plus complexe, il
+            peut devenir nécessaire de diviser votre état en plusieurs parties
+            pour une gestion plus modulaire. C'est là que la combinaison de
+            plusieurs reducers entre en jeu.
+          </p>
+          <p>
+            La combinaison de plusieurs reducers dans une application Redux
+            permet de diviser la logique de gestion de l'état en plusieurs
+            parties distinctes, appelées "sous-états" ou "sous-ensembles
+            d'état". Chaque reducer est responsable de gérer un sous-état
+            spécifique et expose un état partiel à l'ensemble de l'application.
+          </p>
+          <p>
+            Cela permet une organisation claire et une séparation des
+            préoccupations au niveau de la gestion de l'état. Chaque reducer
+            peut se concentrer sur une partie spécifique de l'application, ce
+            qui facilite la maintenance et la compréhension du code.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Création d’un nouveau reducer</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons créer un “reducer” qui va permettre de générer une
+            couleur aléatoire pour la couleur de fond de notre application.
+          </p>
+          <p>
+            Créez un fichier “colorReducer.js” dans le dossier “reducers”, ce
+            fichier va contenir le code suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="RwvebXg"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/RwvebXg"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous avons créé un objet "initialState" qui contient la couleur RGB
+            initiale, que nous avons passée en paramètre de notre colorReducer.
+          </p>
+          <p>
+            Le reducer prend en compte un type d'action : "COLOR_CHANGED" qui
+            génère une nouvelle couleur aléatoire et met à jour la valeur de
+            notre état avec cette nouvelle couleur. Si l'action reçue ne
+            correspond pas au type spécifié, l'état reste inchangé.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Création d’un nouveau bouton pour déclencher l’action</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons maintenant créer un nouveau bouton dans notre fichier
+            “index.html” afin de pouvoir déclencher par la suite un événement
+            qui va dispatcher notre action :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="GRzYRKM"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/GRzYRKM"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Création d’une nouvelle action</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous pouvons désormais créer l’action qui va se déclencher lors du
+            clic de notre nouveau bouton dans le fichier “index.js” contenu dans
+            le dossier “actions” :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="VwgEyed"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/VwgEyed"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Lors du clic sur le bouton qui possède l’id “randColor”, nous
+            utilisons la méthode “dispatch” de notre store afin de transmettre
+            une action contenant le type “COLOR_CHANGED”.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Utilisation de “combineReducers”</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Maintenant que nous avons nos deux "reducers" et leurs actions
+            respectives, nous avons besoin d'un moyen de les transmettre à notre
+            "store".
+          </p>
+          <p>
+            Actuellement, seul le reducer "counterReducer" est transmis à la
+            méthode "createStore" de Redux.
+          </p>
+          <p>
+            En effet, nous devons combiner nos deux "reducers" et transmettre le
+            résultat de cette combinaison à la méthode "createStore". Pour cela,
+            nous pouvons créer un nouveau fichier "reducers.js" dans le dossier
+            "reducers" qui contiendra le code suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="jOdeYqP"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/jOdeYqP"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici, nous avons importé la méthode "combineReducers" de Redux, ainsi
+            que les deux reducers que nous avons créés précédemment.
+          </p>
+          <p>
+            Enfin, nous exportons "rootReducer" qui comprend une combinaison de
+            nos deux reducers grâce à l'utilisation de "combineReducers".
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Transmission du rootReducer à notre store</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous pouvons maintenant importer notre “rootReducer” et le
+            transmettre à la méthode “createStore” dans notre fichier “store.js”
+            :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="mdvzpPQ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/mdvzpPQ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Mise à jour de l’interface utilisateur</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous avons désormais accès à la couleur contenue dans notre store
+            via la méthode “getState” dans le fichier “main.js”.
+          </p>
+          <p>
+            Dans notre fonction “render”, nous pouvons attribuer cette couleur à
+            la propriété CSS “backgroundColor” du body de notre page :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="gOqBoME"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/gOqBoME"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Vous pouvez noter que nous avons utilisé le destructuring afin
+            d’extraire l’objet “color” ainsi que l’objet “counter” qui sont les
+            sous-ensembles d’état de notre store, puis nous mettons à jour les
+            éléments de l’interface utilisateur avec les valeurs récupérées.
+          </p>
+          <p>
+            Désormais, la couleur initiale de notre état est attribuée au
+            background du body, et est modifiée à chaque clic sur le bouton.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Charge utile d’une action</h2>
+        <p>
+          Dans Redux, une action est un objet JavaScript qui décrit un événement
+          qui s'est produit dans l'application. Le principe de payload se
+          rapporte à une propriété spécifique de l'objet action appelée
+          "payload".
+        </p>
+        <p>
+          Le payload est généralement utilisé pour transporter des données
+          supplémentaires avec une action. Il contient les informations
+          pertinentes associées à l'action en cours, telles que les données à
+          mettre à jour dans le store Redux.
+        </p>
+      </div>
+
+      <div>
+        <h2>Transmettre la couleur en tant que payload</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous pouvons transmettre la couleur générée aléatoirement en tant
+            que charge utile de notre action, pour cela nous pouvons ajouter le
+            code suivant dans notre fichier “index.js” contenu dans le dossier
+            “actions” :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="poGxpRy"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/poGxpRy"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici nous passons la variable “randomColor” qui contient notre
+            couleur aléatoire dans la propriété “payload” de notre action.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Utilisation de la charge utile dans le reducer</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous pouvons maintenant attribuer la charge utile de notre action
+            dans notre colorReducer pour mettre à jour l’état :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="YzBJYNJ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/YzBJYNJ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
     </div>
   </body>
 </html>

@@ -3,13 +3,130 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Installation de Redux</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Installation de Redux</h1>
+      <div>
+        <h2>Application native</h2>
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            Dans ce cours, nous allons utiliser Redux dans une application
+            native, sans utiliser de framework ou de bibliothèque tierces.
+          </p>
+          <p>
+            En effet, il est désormais suggéré d'utiliser Redux sous sa forme
+            moderne, qui comprend l'utilisation d'extensions supplémentaires
+            telles que "Redux Toolkit" pour simplifier son implémentation et son
+            utilisation, ou encore "React-redux" dans le cas où l'on utilise
+            Redux dans une application React.
+          </p>
+          <p>
+            Néanmoins, pour une compréhension complète du fonctionnement de
+            Redux, il est préférable d'aborder son apprentissage en commençant
+            par les fondamentaux, comme il est conseillé dans la documentation
+            officielle.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Configuration de l'environnement de développement</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Avant de pouvoir commencer à utiliser Redux, il est important de
+            configurer correctement votre environnement de développement.
+            Assurez-vous préalablement d'avoir Node.js installé sur votre
+            machine. Node.js est nécessaire pour exécuter les commandes npm ou
+            yarn et installer les dépendances nécessaires.
+          </p>
+          <p>
+            Commencez par créer un nouveau répertoire pour votre projet.
+            Ensuite, ouvrez le terminal de votre éditeur de code et placez-vous
+            dans ce répertoire.
+          </p>
+          <p>
+            Nous allons utiliser le bundler "Vite" pour initialiser un projet
+            dans ce cours, mais vous pouvez choisir celui qui vous convient le
+            mieux, comme Webpack, ou encore initialiser votre projet "from
+            scratch".
+          </p>
+          <p>
+            Dans le terminal, écrivez la commande suivante pour initialiser un
+            nouveau projet "Vite" avec npm :
+          </p>
+          <code>npm init vite</code>
+          <p>Ou avec yarn :</p>
+          <code>yarn create vite</code>
+          <p>
+            Nous spécifions le nom de notre projet, ensuite nous précisons que
+            nous allons utiliser React et JavaScript.
+          </p>
+          <p>
+            Après avoir indiqué les différents paramètres de notre projet,
+            celui-ci sera initialisé et contiendra l'architecture de base de
+            Vite dans un environnement de développement natif.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Installation des dépendances Redux via npm ou yarn</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Maintenant que votre projet est initié, vous pouvez installer Redux.
+          </p>
+          <p>
+            Nous allons accéder au dossier de notre application en écrivant la
+            commande suivante dans le terminal de notre éditeur :
+          </p>
+          <code>cd mon-projet</code>
+          <p>
+            Ensuite, utilisez l'une des commandes suivantes dans votre terminal,
+            en fonction de l'outil de gestion de paquets que vous utilisez :
+          </p>
+          <p>Avec npm :</p>
+          <code>npm install redux</code>
+          <p>Avec yarn :</p>
+          <code>yarn add redux</code>
+        </div>
+      </div>
+
+      <div>
+        <h2>Mise en place de la structure de base</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Maintenant que vous avez installé la dépendance de Redux, vous
+            pouvez commencer à mettre en place une structure de base pour
+            accueillir Redux dans votre application.
+          </p>
+          <p>
+            Dans le répertoire "src" de votre projet, créez un dossier "redux"
+            qui contiendra les sous-répertoires suivants : "actions", "reducers"
+            et "store".
+          </p>
+          <p>
+            Le répertoire "actions" contiendra les fichiers pour vos actions
+            spécifiques.
+          </p>
+          <p>
+            Dans le répertoire "reducers", nous allons créer des fichiers
+            individuels pour chaque “reducer” que nous souhaitons mettre en
+            place.
+          </p>
+          <p>
+            Enfin, dans le répertoire "store", créez un fichier "store.js" dans
+            lequel vous allez configurer et exporter le store Redux.
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>

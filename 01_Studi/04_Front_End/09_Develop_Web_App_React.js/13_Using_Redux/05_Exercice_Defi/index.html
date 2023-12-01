@@ -3,13 +3,163 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Exercice défi</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Exercice défi</h1>
+      <div>
+        <p>
+          En se basant sur notre application actuelle, imaginons avoir besoin
+          d’une nouvelle fonctionnalité qui permette d’incrémenter notre
+          compteur d’un nombre entier aléatoire entre 0 et 10.
+        </p>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          Créer un nouveau bouton qui génère une nouvelle action au clic qui
+          envoie un nombre entier aléatoire entre 0 et 10 à notre reducer, le
+          reducer doit interpréter l’action et mettre à jour notre compteur.
+        </p>
+        <div>
+          <h2>Solution</h2>
+          <p>
+            Nous pouvons d’abord créer le nouveau bouton dans le fichier
+            “index.html” :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="VwgEQoK"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/VwgEQoK"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Créer un nouvel événement qui va générer le nombre aléatoire et
+            envoyer une nouvelle action à notre reducer :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="NWoOyQM"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/NWoOyQM"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous pouvons désormais réceptionner l’action dans le reducer, afin
+            de la traiter et modifier la valeur de l’état :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="ZEwqrgP"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/ZEwqrgP"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          Utilisez l’outil Redux DevTools afin de s’informer sur la valeur du
+          nombre aléatoire reçue par la charge utile de notre action et rétablir
+          l’état de notre store à l'état précédent l’action.
+        </p>
+        <div>
+          <h2>Solution</h2>
+          <p>
+            Après avoir incrémenter le compteur avec notre nouveau bouton, nous
+            pouvons accéder à l’outil Redux DevTools afin d’inspecter l’action
+            qui vient d’être transmise à notre reducer :
+          </p>
+          <img
+            src="02_Img/utilisation-redux-image1_1.png"
+            alt="Image utilisation-redux-image1_1"
+          />
+          <p>
+            Ici, nous pouvons observer que la charge utile de notre action a
+            transmis un nombre qui a une valeur de 10.
+          </p>
+          <p>
+            Nous pouvons retourner à l'état initial de notre application en
+            appuyant sur le bouton reset, nous pouvons également nous déplacer à
+            un moment précis de l’application en sélectionnant une action
+            spécifique puis sur le bouton “Jump” pour nous transporter au moment
+            où cette action vient de s'exécuter.
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>

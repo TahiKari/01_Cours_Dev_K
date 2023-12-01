@@ -3,13 +3,35 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Introduction au middleware</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Introduction au middleware</h1>
+      <div>
+        <h2>Qu’est qu’un middleware ?</h2>
+        <p>
+          Dans le contexte de Redux, un middleware est une fonction qui agit
+          comme une couche intermédiaire entre les actions que vous envoyez à
+          Redux et le moment où elles atteignent le reducer. Il intervient dans
+          le flux de données de Redux et permet d'ajouter des fonctionnalités
+          supplémentaires aux actions, telles que la gestion asynchrone, la
+          journalisation ou la manipulation des actions avant qu'elles
+          n'atteignent le reducer.
+        </p>
+        <p>
+          Concrètement, lorsque vous envoyez une action à Redux à l'aide de la
+          fonction dispatch, le middleware a la possibilité de l'intercepter
+          avant qu'elle ne soit traitée par le reducer. Il peut alors effectuer
+          des opérations sur cette action, comme la transformation, l'annulation
+          ou la création de nouvelles actions. Il peut également exécuter des
+          tâches asynchrones, telles que des appels réseau, avant de relâcher
+          l'action modifiée ou une autre action.
+        </p>
+        <p>Voir la vidéo</p>
+      </div>
     </div>
   </body>
 </html>

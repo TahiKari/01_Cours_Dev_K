@@ -3,13 +3,465 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Les principes de base de Redux</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Les principes de base de Redux</h1>
+      <div>
+        <h2>Le concept de store dans Redux</h2>
+        <p>
+          Dans Redux, le store est un objet central qui contient l'état global
+          de l'application. Il joue un rôle essentiel dans la gestion de l'état
+          et offre des fonctionnalités clés pour accéder à l'état, le mettre à
+          jour et s'abonner aux changements.
+        </p>
+      </div>
+
+      <div>
+        <h2>Création du store</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Pour créer le store dans Redux, dans le fichier “store.js”, vous
+            devez importer la fonction “createStore” fournie par Redux.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="BaMOgVv"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/BaMOgVv"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous avons utilisé la fonction “createStore” pour créer le store et
+            nous passerons notre reducer en tant que paramètre de cette
+            fonction.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>L’utilisation de CreateStore</h2>
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            En effet, ici nous utilisons createStore pour initier le store de
+            Redux, cette méthode peut apparaître comme dépréciée, car il est
+            recommandé d’utiliser configureStore depuis la version 4.2, il
+            s’agit d’une nouvelle manière d’écrire du Redux, grâce à
+            l'utilisation de Redux Toolkit. Cependant, il est essentiel de
+            savoir mettre en place Redux avec la méthode originale avant
+            d’apprendre à utiliser Redux Toolkit.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Utilisation des reducers</h2>
+        <p>
+          Les reducers sont des fonctions pures qui spécifient comment l'état de
+          l'application est modifié en réponse à une action. Chaque reducer
+          traite une action spécifique en fonction de son type et retourne une
+          nouvelle version de l'état.
+        </p>
+        <p>
+          En utilisant les reducers, vous pouvez maintenir un état cohérent et
+          prévisible dans votre application Redux. Ils permettent de séparer la
+          logique de mise à jour de l'état de l'application du reste de la
+          logique métier.
+        </p>
+      </div>
+
+      <div>
+        <h2>Création du premier reducer</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons créer un fichier “counterReducer.js” dans notre dossier
+            “reducers” et y écrire notre premier reducer :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="oNmPKGa"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/oNmPKGa"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous avons créé un objet "initialState" qui contient la valeur
+            initiale de notre compteur, que nous avons passé en paramètre de
+            notre counterReducer.
+          </p>
+          <p>
+            Le reducer prend en compte deux types d'actions :
+            "COUNTER_INCREMENTED" pour incrémenter le compteur de 1 et
+            "COUNTER_DECREMENTED" pour le décrémenter de 1. L'état est mis à
+            jour en fonction de l'action reçue, et si l'action ne correspond à
+            aucun des types spécifiés, l'état reste inchangé.
+          </p>
+          <p>
+            Notez que nous exportons notre reducer afin de pouvoir le
+            transmettre à notre fonction "createStore" du fichier "store.js" :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="rNPZXYY"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/rNPZXYY"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Accès au state</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Vous pouvez maintenant accéder à l'état actuel de notre store en
+            utilisant la méthode "getState". Cette méthode renvoie l'état actuel
+            du store, qui peut être utilisé pour afficher les données
+            nécessaires.
+          </p>
+          <p>
+            Nous allons importer notre “store” dans notre composant principal
+            "main.js" et y accéder en utilisant cette méthode :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="xxMavpz"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/xxMavpz"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les vues dans Redux</h2>
+        <p>
+          Dans Redux, les vues sont des composants qui extraient les données
+          nécessaires du store et les utilisent pour afficher l'interface
+          utilisateur.
+        </p>
+        <p>
+          Grâce à cette connexion, les vues peuvent accéder à l'état du store et
+          se mettre à jour automatiquement lorsque l'état change. Cela facilite
+          la gestion des mises à jour de l'interface utilisateur en fonction de
+          l'état global de l'application.
+        </p>
+      </div>
+
+      <div>
+        <h2>Affichage du compteur dans l’application</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons utiliser la valeur de l'état récupérée via la méthode
+            "getState" pour l'afficher dans notre application. Pour cela, nous
+            allons créer un élément "span" dans notre fichier "index.html" qui
+            va contenir cette valeur, ainsi que deux boutons qui serviront à
+            déclencher des événements pour modifier la valeur de notre état :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="WNPgVMx"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/WNPgVMx"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous allons maintenant créer une fonction “render” dans notre
+            fichier “main.js” qui va injecter la valeur de notre état dans notre
+            span “counter”.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="RwvYXMz"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/RwvYXMz"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous avons désormais la valeur de notre compteur qui est affichée
+            dynamiquement dans notre application.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Mise à jour de l'état</h2>
+        <p>
+          Pour mettre à jour le store, vous devez envoyer des actions à l'aide
+          de la méthode “dispatch”.
+        </p>
+        <p>
+          Une action est un objet qui décrit une intention de modifier l'état de
+          l'application. Lorsqu'une action est dispatchée, Redux l'envoie aux
+          reducers appropriés pour mettre à jour l'état.
+        </p>
+      </div>
+
+      <div>
+        <h2>Comprendre le rôle du dispatcher</h2>
+        <p>
+          Le dispatcher est un mécanisme clé dans Redux. Il reçoit les actions
+          et les transmet aux reducers appropriés. Son rôle est de garantir que
+          les actions sont traitées de manière séquentielle et ordonnée.
+        </p>
+        <p>
+          Le dispatcher est intégré au store de Redux et est utilisé
+          automatiquement lorsque vous dispatchez une action. Vous n'avez pas
+          besoin de le configurer manuellement.
+        </p>
+      </div>
+
+      <div>
+        <h2>Mettre à jour le compteur</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons créer un fichier "index.js" dans notre répertoire
+            "actions" afin de créer une action qui permettra d'incrémenter la
+            valeur de notre compteur, ainsi qu'une action pour décrémenter cette
+            valeur :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="wvNEVXM"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/wvNEVXM"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Tout d'abord, nous avons importé notre store, puis nous avons
+            attribué des actions respectives à nos boutons, qui seront
+            déclenchées au clic. Vous pouvez remarquer que nous utilisons la
+            méthode "dispatch" de notre store pour passer l'action qui contient
+            le type approprié pour notre reducer.
+          </p>
+          <p>
+            En fonction du type reçu, le switch présent dans notre
+            counterReducer va incrémenter ou décrémenter la valeur de l'état
+            avant de retourner sa valeur.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>S’abonner au changement</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Vous pouvez remarquer que nous n'avons aucun changement sur
+            l'interface utilisateur lorsque nous incrémentons ou décrémentons la
+            valeur de notre compteur. En effet, la valeur contenue dans notre
+            compteur n'est injectée qu'une seule fois via la fonction "render"
+            lors de l'initialisation.
+          </p>
+          <p>
+            Pour remédier à cela, nous pouvons nous abonner aux changements
+            d'état afin de mettre à jour l'interface utilisateur lorsque l'état
+            contenu dans notre store est modifié.
+          </p>
+          <p>
+            Pour cela, vous pouvez écrire le code suivant dans le fichier
+            “main.js” :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="eYxLqLy"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/eYxLqLy"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            En utilisant la méthode "subscribe" de notre store, nous appelons la
+            fonction "render" à chaque fois que l'état est mis à jour. Ainsi,
+            nous obtenons une interface utilisateur réactive aux changements
+            d'état.
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>

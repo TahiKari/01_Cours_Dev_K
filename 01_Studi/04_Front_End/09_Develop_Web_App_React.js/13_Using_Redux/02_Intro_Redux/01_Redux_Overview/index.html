@@ -3,13 +3,128 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Présentation de Redux</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Présentation de Redux</h1>
+      <div>
+        <p>Voir vidéo</p>
+      </div>
+
+      <div>
+        <h2>
+          Introduction aux concepts de gestion de l'état dans les applications
+        </h2>
+        <p>
+          Lorsque nous développons des applications, qu'elles soient web ou
+          mobiles, la gestion de l'état est l'un des aspects les plus importants
+          à prendre en compte. L'état représente les données qui évoluent au fil
+          du temps en réponse aux actions de l'utilisateur ou aux événements
+          survenant dans l'application.
+        </p>
+        <p>
+          La gestion de l'état peut devenir complexe, en particulier dans les
+          applications de grande envergure. Les développeurs doivent s'assurer
+          que les différentes parties de l'application sont synchronisées et que
+          l'état est géré de manière cohérente. Sans une gestion appropriée,
+          l'état peut devenir difficile à maintenir, entraînant des bugs, des
+          erreurs et une mauvaise expérience utilisateur.
+        </p>
+        <p>
+          C'est là qu'intervient Redux, son objectif principal est de faciliter
+          la gestion de l'état en proposant une approche structurée et
+          déterministe.
+        </p>
+      </div>
+
+      <div>
+        <h2>Qu'est-ce que Redux et pourquoi l'utiliser ?</h2>
+        <p>
+          Redux est une bibliothèque JavaScript open source, développée par Dan
+          Abramov, qui offre une solution efficace et prévisible pour la gestion
+          de l'état dans les applications. Bien qu'initialement conçu pour les
+          applications React, Redux peut être utilisé avec n'importe quels
+          framework et bibliothèque JavaScript ou dans vos applications natives.
+        </p>
+        <p>
+          Redux propose un modèle de gestion de l'état centralisé. L'état de
+          l'application est stocké dans un seul endroit appelé le store, ce qui
+          facilite la synchronisation de l'état entre les différents composants
+          de l'application. Cela permet de maintenir un état cohérent et
+          d'éviter les incohérences potentielles liées à la gestion de l'état
+          local dans chaque composant.
+        </p>
+        <p>
+          Cette bibliothèque suit un flux de données unidirectionnel, ce qui
+          signifie que les données circulent dans une seule direction, de
+          manière prévisible.
+        </p>
+        <p>
+          En utilisant Redux, chaque modification de l'état est représentée par
+          une action explicite. Cela permet de retracer facilement comment
+          l'état a évolué au fil du temps et de reproduire les scénarios
+          spécifiques en rejouant les actions. Cette traçabilité facilite le
+          débogage et la compréhension du flux de données dans l'application.
+        </p>
+        <p>
+          De plus, Redux encourage le développement de code indépendant des
+          frameworks et hautement testable. En isolant la logique de l'état dans
+          le “store”, il est plus facile de créer des tests d'intégration pour
+          vérifier le comportement global de l'application.
+        </p>
+        <p>
+          Enfin, grâce à son architecture modulaire, Redux facilite le
+          développement d'applications évolutives, permet de gérer efficacement
+          la croissance de l'application et d'ajouter de nouvelles
+          fonctionnalités sans introduire de complexité excessive.
+        </p>
+      </div>
+
+      <div>
+        <h2>Vue d'ensemble des principes fondamentaux de Redux</h2>
+        <p>
+          Pour comprendre pleinement Redux, il est essentiel de se familiariser
+          avec ses principes fondamentaux.
+        </p>
+        <p>
+          Premièrement, nous avons le “store” qui est l'objet central de Redux.
+          Il contient l'état global de l'application et offre des méthodes pour
+          accéder à cet état, le mettre à jour et s'abonner aux changements. Le
+          “store” est immuable, ce qui signifie que l'état ne peut être modifié
+          que par le biais d'actions spécifiques.
+        </p>
+        <p>
+          Ensuite, les actions sont des objets qui décrivent une intention de
+          modifier l'état de l'application. Elles contiennent un type qui
+          identifie le type d'action et des données supplémentaires si
+          nécessaire. Les actions sont généralement déclenchées par les
+          utilisateurs ou par d'autres événements au sein de l'application.
+        </p>
+        <p>
+          Le dispatcher est l’un des principes fondamentaux de Redux et est
+          responsable de la distribution des actions aux reducers. Lorsqu'une
+          action est déclenchée, elle est envoyée au “dispatcher” qui la
+          transmet ensuite aux reducers appropriés. Le dispatcher garantit que
+          les actions sont traitées de manière séquentielle et ordonnée.
+        </p>
+        <p>
+          Par ailleurs, les reducers sont des fonctions pures qui spécifient
+          comment l'état de l'application est modifié en réponse à une action
+          donnée. Chaque reducer traite une action spécifique en fonction de son
+          type et retourne une nouvelle version de l'état. Les reducers ne
+          doivent pas modifier l'état existant, mais plutôt créer une copie
+          modifiée de celui-ci.
+        </p>
+        <p>
+          Enfin, les vues sont des composants qui extraient les données
+          nécessaires du store et les utilisent pour afficher l'interface
+          utilisateur. Lorsque l'état du store est mis à jour, les vues sont
+          automatiquement mises à jour pour refléter ces changements.
+        </p>
+      </div>
     </div>
   </body>
 </html>

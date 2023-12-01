@@ -3,13 +3,149 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Présentation et installation de Redux DevTools</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Présentation et installation de Redux DevTools</h1>
+      <div>
+        <h2>Vue d'ensemble des fonctionnalités de Redux DevTools</h2>
+        <p>
+          Redux DevTools est un ensemble d'outils de développement qui facilite
+          le débogage, l'inspection et la surveillance de votre application
+          Redux. Il offre des fonctionnalités avancées pour comprendre et
+          analyser le flux des actions, ainsi que l'état de votre store Redux.
+        </p>
+        <p>
+          Redux DevTools permet de remonter dans le temps et de rejouer toutes
+          les actions qui ont modifié l'état de votre application. Cela vous
+          permet de visualiser l'historique des actions et de revenir à des
+          états précédents, ce qui est extrêmement utile pour le débogage et la
+          reproduction des bugs.
+        </p>
+        <p>
+          Vous pouvez également inspecter chaque action dispatchée dans votre
+          application, afficher les détails de l'action, y compris son type et
+          sa charge utile (payload). Cela vous permet de comprendre comment les
+          actions modifient l'état de votre application.
+        </p>
+        <p>
+          Visualisation de l'état : Redux DevTools offre une visualisation
+          graphique de l'état de votre application à chaque instant. Vous pouvez
+          voir comment l'état évolue au fil du temps et repérer facilement les
+          changements importants.
+        </p>
+      </div>
+
+      <div>
+        <h2>Installation de Redux DevTools dans l'application</h2>
+        <p>
+          Pour installer Redux DevTools, vous pouvez ajouter une extension
+          compatible à votre navigateur. Redux DevTools est disponible en tant
+          qu'extension pour les navigateurs tels que Chrome, Firefox et autres.
+        </p>
+        <p>
+          Il est également possible d’installer Redux DevTools en utilisant de
+          nombreuses alternatives proposées dans la documentation officielle de
+          Redux DevTools :
+        </p>
+        <a
+          href="https://github.com/reduxjs/redux-devtools/tree/main/extension#installation"
+          target="_blank"
+          rel="alternate"
+          >reduxjs / redux devtools</a
+        >
+        <p>
+          Ces alternatives peuvent varier selon le navigateur que vous utilisez.
+        </p>
+      </div>
+
+      <div>
+        <h2>Configuration de Redux DevTools</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous pouvons configurer Redux DevTools en passant un argument
+            supplémentaire à notre fonction “createStore” :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="gOqBoWy"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/gOqBoWy"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, la fonction “createStore” est appelée avec deux
+            arguments.
+          </p>
+          <p>
+            Le premier argument est le rootReducer, et le deuxième argument
+            utilise la méthode "REDUX_DEVTOOLS_EXTENSION" pour activer Redux
+            DevTools lors de la création du store.
+          </p>
+          <p>
+            Il est possible de personnaliser la configuration de cet outil en
+            fonction des besoins spécifiques de votre application. L'ensemble
+            des techniques de configuration est disponible dans la documentation
+            officielle de Redux DevTools.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>
+          Utilisation des outils de développement pour le débogage et
+          l'inspection du store
+        </h2>
+        <p>
+          Une fois Redux DevTools configuré, vous pouvez utiliser les outils de
+          développement pour déboguer et inspecter votre store Redux.
+        </p>
+        <p>
+          En ouvrant l'extension Redux DevTools dans votre navigateur, vous
+          pouvez accéder à toutes les fonctionnalités mentionnées précédemment.
+          Vous pouvez naviguer dans l'historique des actions, examiner les
+          détails des actions individuelles, visualiser l'état à différents
+          moments et même effectuer des modifications pour tester votre
+          application.
+        </p>
+        <p>
+          Cela facilite grandement le débogage des problèmes d'état et
+          l'inspection de l'interaction entre les actions et l'état de votre
+          application.
+        </p>
+        <p>
+          En conclusion, Redux DevTools est un outil puissant pour le
+          développement et le débogage d'applications utilisant Redux. Il offre
+          des fonctionnalités avancées pour inspecter, analyser et déboguer
+          votre store Redux.
+        </p>
+      </div>
     </div>
   </body>
 </html>
