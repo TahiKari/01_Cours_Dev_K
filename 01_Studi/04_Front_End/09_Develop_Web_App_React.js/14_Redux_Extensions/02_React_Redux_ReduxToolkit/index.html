@@ -3,13 +3,641 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>React-Redux et ReduxToolkit</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>React-Redux et ReduxToolkit</h1>
+      <div>
+        <h2>Initialisation de l’application</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Dans ce cours nous allons utiliser le bundler « Vite » pour
+            initialiser notre application React, mais vous pouvez choisir
+            d’utiliser des méthodes alternatives telles que CRA ou encore
+            initialiser votre application « from scratch ».
+          </p>
+          <p>
+            Nous créons au préalable un dossier sur notre système, nous accédons
+            à ce dossier depuis notre éditeur de code, puis dans le terminal de
+            l’éditeur nous tapons la commande suivante pour initier une
+            application React basée sur « Vite » :
+          </p>
+          <code>npm create vite@latest</code>
+          <p>
+            Vous pouvez également utiliser yarn ou pnpm pour initier notre
+            application.
+          </p>
+          <p>
+            Nous suivons les différentes étapes requises pour initier le projet
+            : indiquer le nom de l’application, choisir un environnement de
+            développement React et l’utilisation de JavaScript
+          </p>
+          <p>
+            Enfin, nous pouvons supprimer le contenu du composant « App.jsx »
+            qui contient les éléments de présentation de « Vite ».
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Version de React</h2>
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            Veuillez noter que dans ce cours, nous utilisons la dernière version
+            disponible de React « 18.02 ».
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Présentation de React-Redux</h2>
+        <p>
+          React-Redux est une bibliothèque qui permet de combiner les
+          fonctionnalités de React et Redux pour gérer l'état des applications
+          React de manière efficace et prévisible. React, une bibliothèque
+          JavaScript développée par Facebook, est utilisée pour la construction
+          d'interfaces utilisateur réactives et dynamiques. Redux, quant à lui,
+          est un conteneur de gestion d'état qui facilite le suivi et la mise à
+          jour de l'état de l'application de manière prévisible.
+        </p>
+        <p>
+          React-Redux agit comme une couche d'abstraction entre React et Redux,
+          offrant ainsi une intégration fluide et harmonieuse des deux
+          bibliothèques. Il fournit des outils et des composants spécifiques
+          pour faciliter l'utilisation de Redux avec React, en veillant à ce que
+          les mises à jour de l'état soient correctement propagées aux
+          composants React qui en dépendent.
+        </p>
+        <p>
+          L'un des principaux avantages de l'utilisation de React-Redux est la
+          séparation claire entre la logique métier de l'application et la
+          gestion de l'état. En isolant la logique de gestion d'état dans des
+          composants spécifiques, React-Redux facilite la réutilisabilité du
+          code, améliore la maintenabilité et favorise une architecture plus
+          modulaire.
+        </p>
+      </div>
+
+      <div>
+        <h2>Présentation de Redux Toolkit</h2>
+        <p>
+          Redux Toolkit est une extension officielle de Redux qui simplifie et
+          rationalise la façon dont vous pouvez gérer l'état de votre
+          application. Il vise à résoudre certains des problèmes courants
+          auxquels les développeurs sont confrontés lorsqu'ils utilisent Redux,
+          tels que la configuration complexe, la duplication de code et la
+          verbosité excessive.
+        </p>
+        <p>
+          Redux Toolkit fournit un ensemble d'outils et de conventions pour vous
+          aider à écrire du code Redux de manière plus concise, lisible et
+          maintenable. Il inclut notamment des fonctionnalités telles que la
+          création automatique de tranches Redux, la gestion simplifiée des
+          actions et des réducteurs, ainsi que des utilitaires pour
+          l'immutabilité des données.
+        </p>
+        <p>
+          L'une des principales fonctionnalités de Redux Toolkit est la création
+          de tranches Redux à l'aide de la fonction “createSlice”. Cela vous
+          permet de définir une tranche de l'état de l'application, comprenant à
+          la fois son réducteur correspondant et les actions nécessaires pour le
+          mettre à jour. Avec Redux Toolkit, la configuration initiale et la
+          gestion des actions sont grandement simplifiées, vous permettant ainsi
+          de vous concentrer sur la logique métier plutôt que sur les détails de
+          mise en place.
+        </p>
+        <p>
+          En utilisant Redux Toolkit avec React-Redux, vous pouvez exploiter la
+          puissance de Redux de manière plus intuitive et efficace. Cela
+          simplifie le processus de création et de gestion de l'état de votre
+          application React, tout en réduisant la quantité de code nécessaire.
+        </p>
+      </div>
+
+      <div>
+        <h2>Installation de React-Redux et Redux Toolkit</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous pouvons maintenant installer les extensions React-Redux et
+            Redux Toolkit dans notre application. Pour cela, accédez au dossier
+            contenant notre application depuis le terminal et tapez la commande
+            suivante :
+          </p>
+          <code>npm install @reduxjs/toolkit react-redux</code>
+        </div>
+      </div>
+
+      <div>
+        <h2>Versions des extensions</h2>
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            Veuillez noter que dans ce cours, nous utiliserons les dernières
+            versions disponibles de React Redux et Redux Toolkit, qui sont
+            respectivement la version « 8.0.5 » et « 1.9.5 ».
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Introduire Redux dans l'architecture de l’application</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Pour garder une architecture cohérente dans notre application, nous
+            pouvons créer un nouveau répertoire dans le dossier « src » que nous
+            allons nommer « redux », c’est dans ce dossier que nous allons
+            injecter la logique principale de notre gestionnaire d’état.
+          </p>
+        </div>
+      </div>
+      <div>
+        <h2>Création du store avec Redux Toolkit</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Au sein de notre nouveau dossier « redux », nous pouvons créer un
+            nouveau fichier « store.js » dans lequel nous allons initier notre
+            store en utilisant Redux Toolkit :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="RwvqbqR"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/RwvqbqR"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            En premier lieu, nous avons importé la méthode « configureStore » de
+            Redux Toolkit, puis nous avons utilisé cette méthode pour créer
+            notre store.
+          </p>
+          <p>
+            Veuillez noter que nous passons un objet à cette méthode, qui
+            contient une propriété « reducer », cette propriété va contenir
+            l’ensemble des reducers que nous créerons dans application.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Fournir notre store à React</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Pour transmettre le store à notre application, nous pouvons utiliser
+            l’extension React Redux, qui va utiliser un « Provider » et
+            transmettre notre store depuis la racine de notre application.
+          </p>
+          <p>
+            Dans le fichier « main.jsx » nous pouvons inscrire le code suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="zYeMObX"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/zYeMObX"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici, nous avons importé notre store créé précédemment, ainsi que «
+            Provider » depuis l’extension React Redux, enfin nous avons englobé
+            l’ensemble de notre application dans le « Provider » en lui passant
+            notre store en tant qu’attribut.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Introduction au Slice de Redux Toolkit</h2>
+        <p>
+          Dans Redux Toolkit, un Slice est une entité centrale qui regroupe un
+          ensemble d'actions et un réducteur spécifiques pour gérer une partie
+          de l'état de votre application. Il fournit une abstraction pratique
+          pour organiser et gérer les différentes parties de votre état global.
+        </p>
+        <p>
+          L'utilisation de Slices avec Redux Toolkit simplifie considérablement
+          le flux de travail de développement avec Redux.
+        </p>
+      </div>
+
+      <div>
+        <h2>Création d’un nouveau fichier contenant notre slice</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous pouvons mettre en place un nouveau fichier qui va contenir
+            notre premier slice.
+          </p>
+          <p>
+            Dans le dossier « redux », créez un fichier nommé « counterSlice.js
+            », et nous pouvons y inscrire le code suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="YzBRKmW"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/YzBRKmW"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici, nous avons importé la fonction “createSlice” de Redux Toolkit
+            et utilisé cette fonction pour créer un slice.
+          </p>
+          <p>
+            Nous avons défini plusieurs propriétés dans notre « counterSlice » :
+          </p>
+          <p>
+            Premièrement, nous avons spécifié un nom à notre slice qui porte la
+            valeur 'counter', ensuite nous avons passé l’état initial du
+            compteur, qui est un objet qui possède une valeur de 0.
+          </p>
+          <p>
+            Nous avons également défini « increment » et « decrement » qui vont
+            respectivement incrémenter et décrémenter notre état. Notez que
+            Redux Toolkit nous permet d’écrire une logique mutative dans les
+            reducers. Cependant , il ne mute pas réellement l'état, car il
+            utilise la bibliothèque Immer en interne.
+          </p>
+          <p>
+            Enfin, nous exportons nos différents éléments afin de pouvoir les
+            utiliser dans d’autres parties de l’application.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Immer</h2>
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            Immer est une bibliothèque qui permet de manipuler l'immuabilité de
+            manière plus facile et intuitive, en utilisant une syntaxe proche de
+            la manipulation mutable des objets. Elle offre une expérience de
+            développement plus agréable en évitant la nécessité de copier et de
+            créer des objets immutables à chaque mise à jour de l'état.
+          </p>
+          <p>
+            Avec l'intégration de Immer dans Redux Toolkit, vous pouvez utiliser
+            la fonction createSlice pour définir des tranches de réducteurs
+            (reducers) qui utilisent Immer sous le capot.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Ajouter le reducer à notre store</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons maintenant transmettre notre reducer à notre store dans
+            le fichier « store.js » :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="yLZQLBR"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/yLZQLBR"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous avons importé notre « counterReducer » dans notre store et nous
+            l’avons transmis à notre store.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Création de notre composant counter</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons maintenant créer notre composant « Counter.jsx » dans le
+            répertoire « src », ce composant nous permettra d’afficher la valeur
+            du compteur dans l’application ainsi que de gérer les événements
+            pour déclencher les actions d'incrémentation et de décrémentation.
+            Nous pouvons écrire le code suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="dyaQyPM"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/dyaQyPM"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous avons créé un composant fonctionnel standard qui comprend un «
+            span » dans lequel nous allons afficher la valeur de notre compteur,
+            ainsi que deux boutons qui vont permettre de modifier la valeur du
+            compteur. Maintenant, nous pouvons instancier ce composant dans le
+            composant principal de notre application « App.jsx » via le code
+            suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="zYeMYGg"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/zYeMYGg"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les Hooks de React-Redux</h2>
+        <p>
+          Les hooks de React Redux sont des fonctions fournies par la
+          bibliothèque React Redux qui permettent de connecter facilement les
+          composants React au store de Redux et d'accéder aux données de l'état
+          et aux actions du store. Ces hooks simplifient la gestion de l'état
+          global dans une application React en fournissant une interface plus
+          concise et fonctionnelle.
+        </p>
+        <p>Voici les hooks les plus couramment utilisés dans React Redux :</p>
+        <ul>
+          <li>
+            useSelector : ce hook permet de sélectionner des données spécifiques
+            à partir du store Redux. Il prend en argument une fonction de
+            sélecteur qui spécifie les données que vous souhaitez extraire de
+            l'état global. Le hook renvoie alors les données sélectionnées, et
+            chaque fois que ces données sont mises à jour dans le store, le
+            composant est automatiquement réexécuté pour refléter ces
+            changements.
+          </li>
+          <li>
+            useDispatch : ce hook renvoie une fonction de dispatch qui permet de
+            déclencher des actions dans le store Redux. En utilisant ce hook,
+            vous pouvez appeler la fonction de dispatch directement dans votre
+            composant pour envoyer des actions au store et mettre à jour l'état
+            global.
+          </li>
+          <li>
+            useStore : ce hook permet d'accéder à l'instance du store Redux. Il
+            renvoie l'objet complet du store, vous permettant ainsi d'accéder à
+            toutes ses fonctionnalités telles que l'abonnement aux mises à jour
+            de l'état, l'accès aux middlewares, etc. Cependant, l'utilisation de
+            ce hook est généralement moins courante, car il est préférable de
+            privilégier l'utilisation des autres hooks plus spécialisés.
+          </li>
+        </ul>
+        <p>
+          Ces hooks offrent une alternative plus légère et plus simple à
+          l'utilisation des composants connectés de React Redux.
+        </p>
+        <p>
+          Ils permettent de réduire la quantité de code nécessaire pour
+          connecter un composant à un store Redux, en évitant le besoin de créer
+          des composants connectés séparés. Les hooks offrent également une
+          meilleure intégration avec les fonctionnalités de React, telles que
+          l'utilisation des hooks de cycle de vie.
+        </p>
+      </div>
+
+      <div>
+        <h2>Accès au state avec useSelector</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons maintenant utiliser le hook « useSelector » de React
+            Redux afin d’accéder à notre état contenu dans le store, et ce, en
+            vue d’afficher la valeur du compteur dans notre application. Pour
+            cela, nous pouvons inscrire le code suivant dans notre composant «
+            Counter.jsx » :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="yLZQLeG"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/yLZQLeG"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Premièrement, nous avons importé le hook « useSelector » de React
+            Redux, puis nous avons instancié une variable count, qui utilise ce
+            hook pour accéder à la valeur de notre compteur contenue dans l’état
+            du store.
+          </p>
+          <p>
+            Enfin, nous utilisons cette variable dans notre JSX afin d’afficher
+            cette valeur dans l’application.
+          </p>
+        </div>
+      </div>
+
+      <div>hé Dispatch d’une action avec useDispatch</div>
+      <div>
+        <h3>Méthode</h3>
+        <p>
+          Pour permettre à nos boutons de modifier la valeur de notre compteur,
+          nous devons utiliser le hook « useDispatch » pour dispatcher les
+          actions vers notre reducer :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="abXQbmz"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/abXQbmz"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Ici, nous importons le hook « useDispatch » de React Redux, qui nous
+          permet de dispatcher les actions « increment » et « decrement » que
+          nous avons importées depuis notre slice.
+        </p>
+        <p>
+          Lors du clic sur l’un des boutons, le hook « useDispatch » dispatche
+          l’action passée dans la fonction de notre attribut « onClick ».
+        </p>
+        <p>
+          Nous pouvons désormais voir la valeur du compteur être mise à jour
+          dynamiquement dans notre application.
+        </p>
+        <p>
+          Voir vidéo
+        </p>
+      </div>
     </div>
   </body>
 </html>
