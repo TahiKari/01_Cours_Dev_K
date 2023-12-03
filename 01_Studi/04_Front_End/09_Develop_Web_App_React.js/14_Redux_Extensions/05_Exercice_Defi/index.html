@@ -3,13 +3,151 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Exercice défi</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Exercice défi</h1>
+      <div>
+        <p>
+          Imaginez avoir besoin d’une nouvelle fonctionnalité dans notre
+          application qui permet à l'utilisateur de saisir son nom et de
+          l’afficher sur la page d’accueil. Nous souhaitons que lorsque
+          l’utilisateur recharge l’application, son nom soit sauvegardé et
+          affiché dans notre application.
+        </p>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>Créer un nouveau sous-ensemble d’état pour notre store.</p>
+        <div>
+          <h2>Solution</h2>
+          <p>
+            Nous pouvons créer un nouveau fichier “userSlice.js” qui va contenir
+            le code suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="yLZQbMP"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/yLZQbMP"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous avons créé un nouveau slice qui porte le nom « useSlice », nous
+            pouvons maintenant joindre le reducer de notre slice au store de
+            notre application, dans le fichier « store.js » :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="zYeMwZL"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/zYeMwZL"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          Récupérer la valeur du nom de l’utilisateur dans notre store, afficher
+          cette valeur dans l’application et gérer la modification de l’état en
+          fonction du nom soumis par l’utilisateur.
+        </p>
+        <div>
+          <h2>Solution</h2>
+          <p>
+            Nous pouvons créer un nouveau composant « User.jsx » et y inscrire
+            notre logique pour récupérer la valeur contenue dans le store et
+            gérer la modification de cet état :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="qBgQmrg"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/qBgQmrg"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Actuellement, dans la configuration de notre « persistReducer »,
+            nous avons spécifié l’exclusion de notre état « counter », par
+            défaut les autres sous-ensembles d’état seront automatiques
+            persistants, nous n’avons donc pas besoin de réaliser de
+            modifications particulières afin de sauvegarder le nom de
+            l’utilisateur.
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>

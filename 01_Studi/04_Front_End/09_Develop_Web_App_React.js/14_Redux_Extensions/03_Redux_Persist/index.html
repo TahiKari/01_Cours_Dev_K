@@ -3,13 +3,531 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Redux Persist</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Redux Persist</h1>
+      <div>
+        <h2>Qu'est-ce que Redux Persist ?</h2>
+        <p>
+          Redux Persist est une bibliothèque JavaScript utilisée en conjonction
+          avec Redux pour la gestion de l'état dans les applications React. L'un
+          des principaux défis lors du développement d'applications React est de
+          maintenir l'état de l'application de manière persistante, même lorsque
+          la page est rechargée ou que l'application est redémarrée. C'est là
+          que Redux Persist intervient.
+        </p>
+        <p>
+          Redux Persist permet de sauvegarder l'état de votre application Redux
+          dans le stockage local (localStorage) ou le stockage de session
+          (sessionStorage) du navigateur. Cela signifie que les données sont
+          conservées même après la fermeture de l'application ou lorsque
+          l'utilisateur recharge la page.
+        </p>
+      </div>
+
+      <div>
+        <h2>Pourquoi utiliser Redux Persist ?</h2>
+        <p>
+          La persistance de l'état est particulièrement utile pour des cas
+          d'utilisation tels que la conservation de l'état d'authentification de
+          l'utilisateur, les préférences utilisateur ou tout autre donnée que
+          vous souhaitez conserver entre les sessions.
+        </p>
+        <p>
+          L'un des avantages clés de Redux Persist est sa simplicité
+          d'utilisation. En utilisant Redux Persist, vous pouvez éviter d'écrire
+          manuellement du code complexe pour gérer la persistance de l'état. La
+          bibliothèque s'intègre facilement dans votre flux Redux existant et
+          fournit des méthodes simples pour configurer et gérer la persistance.
+        </p>
+      </div>
+
+      <div>
+        <h2>Version de Redux Persist</h2>
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            Dans ce cours, nous allons nous baser sur la dernière version
+            disponible de Redux Persit, la version 6.0.0.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Installation de Redux Persist</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Pour installer Redux Persist dans nos dépendances, nous pouvons
+            accéder au dossier de notre application depuis le terminal de notre
+            éditeur de code et taper la commande suivante :
+          </p>
+          <code>npm install redux-persist</code>
+        </div>
+      </div>
+
+      <div>
+        <h2>Création d’un nouveau slice</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons créer un nouveau slice qui va gérer la couleur de fond
+            de notre application, pour cela nous créons un nouveau fichier «
+            colorSlice.js » dans le dossier « redux » qui va contenir le code
+            suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="eYxQvoE"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/eYxQvoE"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous pouvons maintenant combiner nos deux reducers grâce à la
+            méthode « combineReducers » fournie par Redux Toolkit, dans le
+            fichier « store.js » nous inscrivons le code suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="vYbQxwP"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/vYbQxwP"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous avons combiné nos deux reducers et avons transmis le résultat
+            de cette combinaison à notre store.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Attribution de la couleur à notre application</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous pouvons maintenant accéder à notre couleur contenue dans le
+            store et l'attribuer à la couleur de fond de notre application. Pour
+            cela, dans notre fichier « App.jsx », nous allons utiliser les hooks
+            « useSelector » et « useDispatch ». Ainsi nous pourrons mettre à
+            jour la couleur en dispatchant l’action « randomColor » de notre
+            slice « ColorSlice.js » :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="XWOyMLV"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/XWOyMLV"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Notez que nous utilisons le hook « useEffect » de React, afin
+            d’attribuer la nouvelle couleur au body de l’application à chaque
+            fois que notre variable “color” est mise à jour.
+          </p>
+          <p>Voir vidéo</p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Création d’un persistReducer</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            La première étape pour implémenter Redux Persist dans notre projet
+            est de fournir un « persisteReducer » à notre application auquel
+            nous allons fournir deux paramètres. Le premier sera un objet de
+            configuration auquel nous devons passer une clé d’identification,
+            ainsi qu’un storage qui permettra de stocker le store persistant.
+            Dans le cas d’application web, il sera stocké dans le localStorage
+            du navigateur par défaut. Le second paramètre va faire référence aux
+            reducers de notre application. Dans notre cas, nous allons fournir
+            notre « rootReducer ». Ecrivez le code suivant dans le fichier «
+            store.js » à la place des déclarations de store actuel :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="jOdQmPy"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/jOdQmPy"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Notez que nous avons transmis le persistedReducer en tant que
+            reducer pour notre store.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Utilisation de persistStore pour faire persister le store</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Afin de faire persister le store que nous avons créé, nous devons
+            utiliser « persistStore » de Redux Persist et lui transmettre notre
+            store :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="XWOyRbZ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/XWOyRbZ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous exportons également notre « persistor » afin de pouvoir le
+            transmettre à notre application depuis sa racine.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>
+          Récupération de l’état persistant lors du rechargement de
+          l’application
+        </h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous devons récupérer l’état persistant créé précédemment à la
+            racine de notre application afin que nous puissions y accéder dès le
+            chargement de l’application. Pour cela nous devons utiliser «
+            persistGate » de Redux Persist. Inscrivez le code suivant dans notre
+            fichier « main.js » :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="RwvqVPz"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/RwvqVPz"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous pouvons spécifier « null » à l’attribut « loading » de notre «
+            PersistGate », nous pouvons spécifier un composant particulier ou
+            tout autre élément, qui s'affiche avant le chargement de la page et
+            de son état persistant.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Redux DevTool</h2>
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            Si nous ouvrons Redux DevTool, nous pouvons remarquer que nous avons
+            une visibilité sur l’état persistant présent dans notre application.
+          </p>
+          <p>
+            Par ailleurs, désormais si nous actualisons la page, nous conservons
+            les valeurs respectives présentes dans l’état de notre compteur ou
+            de la couleur.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Inclusion ou exclusion de certains états</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Il est possible d’inclure et/ou exclure certains états de notre
+            store persistant, pour cela nous pouvons spécifier des propriétés
+            supplémentaires dans l’objet de configuration que nous fournissons à
+            notre « persistedReducer » dans le fichier « store.js » :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="jOdQmby"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/jOdQmby"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            En utilisant la propriété « blacklist » et en lui fournissant notre
+            sous-ensemble d’état « counter », nous avons exclu le compteur de
+            notre store persistant, de cette manière lorsque l’utilisateur
+            recharge à nouveau notre application, la valeur du compteur n’est
+            pas sauvegardée et est réinitialisée à son état initial.
+          </p>
+          <p>
+            Cette fonctionnalité peut être utile dans le cas où nous souhaitons
+            faire le tri parmi les différents sous-ensembles d’état et
+            sélectionner ceux qui ont besoin d’être sauvegardés ou non.
+          </p>
+          <p>
+            Dans la même logique, nous pouvons également spécifier la propriété
+            « whitelist » qui permet d’inclure exclusivement certains
+            sous-ensembles d’état.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Sérialiseur/désérialiseur</h2>
+        <p>
+          Les sérialiseurs et les désérialiseurs sont des fonctions utilisées
+          pour convertir les données de l'état de Redux en une forme sérialisée
+          (par exemple, une chaîne de caractères JSON) et vice versa.
+        </p>
+        <p>
+          Ils sont utilisés dans le cadre de la persistance des données, ce qui
+          permet de conserver l'état de l'application entre les sessions ou les
+          rafraîchissements de page.
+        </p>
+        <p>
+          Un sérialiseur est une fonction qui prend en entrée l'état de
+          l'application et renvoie une représentation sérialisée de cet état.
+        </p>
+        <p>
+          Le désérialiseur, quant à lui, est une fonction qui prend en entrée la
+          représentation sérialisée de l'état de l'application et renvoie l'état
+          désérialisé correspondant. Le désérialiseur permet de reconstituer
+          l'état de l'application à partir de sa forme sérialisée.
+        </p>
+      </div>
+
+      <div>
+        <h2>Explication de l’erreur générée</h2>
+        <p>
+          En effet, vous l’aviez peut-être remarqué, nous avons actuellement une
+          erreur générée dans la console, cela est dû au fait que Redux
+          n’accepte pas que des données non sérialisables, soit présentes dans
+          l’état de l’application.
+        </p>
+        <p>
+          Cependant, Redux Persist utilise des actions telles que « FLUSH », «
+          REHYDRATE », « PAUSE », « PERSIST », « PURGE » et « REGISTER » qui
+          sont liées à son fonctionnement interne et que ne sont pas destinées à
+          être transmises ou enregistrées de manière autonome.
+        </p>
+        <p>
+          Pour éviter les erreurs lors de la sérialisation de l'état de
+          l'application, Redux Persist propose des mécanismes spécifiques, tels
+          que les sérialiseurs et les désérialiseurs mentionnés précédemment,
+          qui permettent de gérer la conversion de l'état de l'application de
+          manière sérialisable. Les actions spéciales de Redux Persist ne sont
+          pas incluses dans cette sérialisation, car elles ne font pas partie de
+          l'état de l'application lui-même.
+        </p>
+      </div>
+
+      <div>
+        <h2>Gestion de l’erreur</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous pouvons résoudre ce problème en configurant le middleware de
+            notre store en utilisant la fonction “getDefaultMiddleware” fournie
+            par Redux Toolkit.
+          </p>
+          <p>
+            Cette fonction retourne une liste de middleware pour la gestion des
+            actions asynchrones.
+          </p>
+          <p>
+            Il est possible de passer un objet de configuration supplémentaire
+            afin de spécifier les actions à ignorer lors de la vérification de
+            sérialisabilité, nous pouvons inscrire le code suivant dans notre
+            fichier « store.js » :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="GRzwmoR"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/GRzwmoR"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            En ajoutant la liste « ignoredActions », nous indiquons à Redux
+            Toolkit de ne pas effectuer la vérification de sérialisabilité pour
+            ces actions spécifiques. Ainsi l’erreur générée n’est plus présente.
+          </p>
+        </div>
+      </div>
     </div>
   </body>
 </html>
