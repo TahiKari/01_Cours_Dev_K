@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Context</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <h1>React Context</h1>
+      <div>
+        <h2>Qu’est-ce que React Context ?</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            React Context est une fonctionnalité intégrée à la bibliothèque
+            React qui permet de gérer l’état global d’une application et de le
+            rendre disponible à tous les composants, sans avoir à les passer
+            explicitement en tant que props. Cela évite la nécessité de
+            transmettre des données de haut en bas dans l’arbre des composants
+            (appelé props drilling), rendant ainsi le code plus propre et plus
+            facile à maintenir.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Avantages de l’utilisation de React Context</h2>
+        <p>
+          L’utilisation de React Context est particulièrement utile dans les cas
+          où plusieurs composants ont besoin d’accéder aux mêmes données, mais
+          ne sont pas directement liés par une relation parent-enfant. Cela peut
+          inclure des composants situés à différents niveaux de l’arbre des
+          composants ou des composants situés dans des parties distinctes de
+          votre application.
+        </p>
+        <p>
+          React Context fournit une solution élégante pour gérer l’état global
+          de l’application, en évitant les problèmes de propagation de props et
+          en permettant aux composants d’accéder facilement aux données
+          partagées. Cela améliore la maintenabilité du code et facilite le
+          développement d’applications React plus modulaires et évolutives.
+        </p>
+      </div>
+
+      <div>
+        <h2>createContext()</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            La fonction createContext() est une fonctionnalité clé de React
+            Context. Elle est utilisée pour créer un nouveau contexte dans
+            lequel les données partagées peuvent être stockées et rendues
+            accessibles à tous les composants de l’application.
+          </p>
+          <p>
+            Lorsque vous appelez createContext(), vous obtenez un objet avec
+            deux propriétés : provider et Consumer.
+          </p>
+          <p>
+            createContext() peut prendre un argument facultatif, appelé « valeur
+            par défaut ». Cette valeur par défaut est utilisée lorsque le
+            composant consommateur est rendu en dehors de la hiérarchie du
+            Provider. Elle sert donc de valeur de secours lorsqu’aucune valeur
+            n’est fournie par le Provider correspondant.
+          </p>
+          <p>
+            Vous pouvez créer autant de contextes que nécessaire dans votre
+            application. Cela permet de compartimenter les différentes données
+            partagées en fonction de leur utilisation ou de leur domaine
+            spécifique.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Le Provider</h2>
+        <p>
+          Le Provider fait partie de la structure fournie par createContext() et
+          est utilisé pour fournir les données du contexte à tous les composants
+          descendants qui en ont besoin.
+        </p>
+        <p>
+          Il est généralement placé le plus haut possible dans l’arborescence
+          des composants, de sorte que ses données soient accessibles à tous les
+          composants enfants. Lorsque vous utilisez le Provider, vous spécifiez
+          les données à fournir en tant que prop appelée « value ».
+        </p>
+        <p>
+          Le Provider enveloppe les composants enfants et leur transmet les
+          données du contexte via le mécanisme de « propagation ». Ainsi, tous
+          les composants descendants peuvent accéder aux données du contexte
+          sans nécessiter de transmission explicite de props de parent en
+          enfant.
+        </p>
+        <p>
+          Il est possible d’utiliser plusieurs instances de Provider dans une
+          application pour créer des contextes distincts avec des données
+          différentes.
+        </p>
+      </div>
+
+      <div>
+        <h2>Le Consumer</h2>
+        <p>
+          Le Consumer est utilisé pour consommer les données fournies par le
+          Provider dans le contexte.
+        </p>
+        <p>
+          Lorsqu’on l’utilise, on enveloppe les parties spécifiques du composant
+          qui a besoin d’accéder aux données du contexte.
+        </p>
+        <p>
+          Le Consumer permet d’accéder aux données du contexte de manière
+          sélective, ce qui signifie que vous pouvez choisir quelles données
+          spécifiques vous souhaitez extraire du contexte. Vous pouvez également
+          accéder à des fonctions ou des méthodes fournies par le contexte et
+          les utiliser dans votre composant.
+        </p>
+        <p>
+          Lorsque les données du contexte fournies par le Provider changent, le
+          Consumer sera automatiquement mis à jour pour refléter ces
+          changements. Cela permet aux composants consommateurs de réagir
+          dynamiquement aux nouvelles valeurs du contexte sans nécessiter de
+          gestion manuelle des mises à jour.
+        </p>
+        <p>
+          Il est important de noter que le Consumer doit être utilisé dans les
+          composants qui se trouvent dans l’arborescence en dessous du Provider
+          correspondant.
+        </p>
+      </div>
+
+      <div>
+        <h2>useContext()</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            useContext() est un hook fourni par React qui facilite l’accès aux
+            données du contexte dans les composants fonctionnels.
+          </p>
+          <p>
+            Ce hook est utilisé pour accéder aux valeurs du contexte sans avoir
+            à utiliser explicitement le Consumer. Il prend en argument le
+            contexte créé à l’aide de createContext() et retourne la valeur
+            actuelle du contexte.
+          </p>
+          <p>
+            Ainsi, useContext() permet de récupérer les données du contexte
+            directement dans le corps du composant fonctionnel, sans nécessiter
+            de niveau supplémentaire de hiérarchie ou de composants
+            intermédiaires.
+          </p>
+          <p>
+            L’utilisation de ce hook permet de simplifier considérablement le
+            code en évitant d’avoir à envelopper les parties du composant avec
+            un Consumer et d’accéder aux valeurs du contexte via une fonction de
+            rendu. Au lieu de cela, vous pouvez simplement déclarer une variable
+            à l’aide de useContext() et y assigner la valeur du contexte.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Création d’une architecture</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Après avoir initié un projet React avec la méthode de votre choix,
+            nous allons créer une architecture afin d’illustrer l’utilisation de
+            React Context. Pour cela, nous créons un en premier lieu un
+            composant Name :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="yLZQxqJ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/yLZQxqJ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ensuite, nous allons créer un composant User qui va instancier notre
+            composant Name :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="vYbQzzQ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/vYbQzzQ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Enfin, dans le composant principal de notre application App, nous
+            pouvons maintenant instancier le composant User :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="eYxQLQv"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/eYxQLQv"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Création d’un contexte avec createContext()</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons maintenant créer un contexte en utilisant
+            createContext().
+          </p>
+          <p>
+            Ce contexte va contenir une valeur par défaut qui sera une chaîne de
+            caractère “name”.
+          </p>
+          <p>
+            Dans le composant principal “App.js”, nous inscrivons le code
+            suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="LYqXJXm"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/LYqXJXm"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Fournir des données avec le Provider</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Ensuite, nous pouvons fournir les données du context, plus bas dans
+            l’arborescence de nos composants en utilisant le Provider.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="QWYJVzj"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/QWYJVzj"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Notez que nous avons fourni une valeur dans l’attribut "value" du
+            Provider. Si nous n’avions pas spécifié de valeur particulière, la
+            valeur par défaut "name" définie dans la fonction createContext
+            aurait été utilisée.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Consommer des données avec le Consumer</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Enfin, il est maintenant possible de consommer les données de notre
+            contexte plus bas dans l’architecture grâce à son Consumer.
+          </p>
+          <p>Dans le composant Name, nous inscrivons le code suivant :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="XWOyPOa"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/XWOyPOa"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous avons importé le contexte depuis le composant App, où nous
+            l’avons instancié. Ensuite, nous avons englobé le span avec son
+            Consumer. De cette manière, nous pouvons accéder aux données
+            transmises et afficher la valeur du nom dans notre application.
+          </p>
+          <p>
+            Sans React Context, nous aurions dû utiliser le "props drilling" en
+            transmettant la valeur du nom en tant que props du composant User,
+            qui l’aurait ensuite transmise en tant que props au composant Name.
+            Dans ce scénario, cette approche aurait été acceptable. Cependant,
+            dans une application avec une architecture complexe, l’utilisation
+            de React Context permet d’avoir un partage de données plus efficace
+            et maintenable entre les composants.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>
+          Utilisation de useContext() pour accéder aux données du contexte
+        </h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous avons précédemment utilisé le Consumer de notre contexte pour
+            accéder aux données dans le composant Name. Cependant, cette
+            approche est déconseillée depuis l’introduction du hook useContext
+            dans React.
+          </p>
+          <p>Nous pouvons inscrire le code suivant dans le composant Name :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="abXQaME"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/abXQaME"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous avons transmis le contexte à notre hook useContext, qui renvoie
+            les données reçues. Nous stockons ces données dans la variable
+            "name" afin de les afficher dans notre application.
+          </p>
+          <p>
+            Bien que ce hook ne puisse être utilisé que dans les composants
+            fonctionnels, il permet de clarifier le code, de réduire sa quantité
+            et d’extraire les données du contexte de manière plus efficace.
+          </p>
+          <p>Voir vidéo</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

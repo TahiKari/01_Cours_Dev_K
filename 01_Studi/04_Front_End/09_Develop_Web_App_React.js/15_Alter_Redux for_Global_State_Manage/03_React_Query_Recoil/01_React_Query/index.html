@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Query</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <h1>React Query</h1>
+      <div>
+        <h2>Qu’est-ce que React Query ?</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            React Query est une bibliothèque de gestion de l’état et de requêtes
+            asynchrones spécialement conçue pour les applications React. Elle
+            simplifie la gestion des données provenant de sources externes
+            telles que des API.
+          </p>
+          <p>
+            Le principal objectif de React Query est de fournir un moyen simple
+            et intuitif de gérer l’état et les requêtes de données, en mettant
+            l’accent sur la gestion transparente du caching, du prefetching et
+            de la synchronisation automatique des données.
+          </p>
+          <p>
+            La bibliothèque introduit le concept de « queries » (requêtes) pour
+            interroger les données, ainsi que de « mutations » pour effectuer
+            des modifications. Ces requêtes et mutations sont effectuées de
+            manière asynchrone, gérées par React Query, et fournissent des
+            résultats mis à jour de manière transparente.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Avantages de l’utilisation de React Query</h2>
+        <p>
+          L’un des principaux avantages de React Query est sa capacité à gérer
+          automatiquement le caching des données, ce qui permet de réduire les
+          appels répétés à l’API pour les mêmes données. Lorsqu’une requête est
+          effectuée, React Query vérifie d’abord si les données sont déjà en
+          cache, et les renvoie immédiatement si c’est le cas. Sinon, il
+          effectue la requête et met à jour le cache pour les futures
+          utilisations.
+        </p>
+        <p>
+          React Query facilite également le prefetching des données, ce qui
+          signifie qu’il peut anticiper les besoins futurs en données et les
+          récupérer en avance. Cela améliore les performances en fournissant les
+          données nécessaires avant même qu’elles ne soient demandées par les
+          composants.
+        </p>
+        <p>
+          Enfin, la synchronisation automatique des données est un autre
+          avantage de React Query. Lorsqu’une mutation est effectuée (par
+          exemple, une création ou une modification de données), React Query met
+          à jour automatiquement les résultats des requêtes associées pour
+          refléter les modifications effectuées.
+        </p>
+      </div>
+
+      <div>
+        <h2>Les concepts de queries, mutations et invalidations</h2>
+        <div>
+          <h3>Fondamental</h3>
+          <p>
+            Les concepts clés de React Query sont les queries, les mutations et
+            les invalidations.
+          </p>
+          <p>
+            Les queries permettent de récupérer des données à partir de sources
+            externes, tandis que les mutations permettent de modifier les
+            données, comme créer, mettre à jour ou supprimer des
+            enregistrements.
+          </p>
+          <p>
+            Les invalidations, quant à elles, sont utilisées pour marquer les
+            données en cache comme obsolètes ou pour les supprimer du cache.
+            Cela permet de maintenir la cohérence des données et de s’assurer
+            que les données récupérées sont toujours à jour.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Le QueryClientProvider</h2>
+        <div>
+          <h3>Fondamental</h3>
+          <p>
+            Le QueryClientProvider est une composante essentielle de React
+            Query. Il est utilisé pour envelopper l’arborescence des composants
+            de votre application et fournir le QueryClient à tous les composants
+            qui en ont besoin.
+          </p>
+          <p>
+            Il est généralement placé au niveau supérieur de l’arborescence de
+            votre application, juste en dessous du point d’entrée principal. Il
+            est responsable de la création et de la gestion d’une instance de
+            QueryClient, qui est l’objet central utilisé par React Query pour
+            gérer les requêtes et les données.
+          </p>
+          <p>
+            Lorsque vous utilisez le QueryClientProvider, vous lui fournissez
+            une instance de QueryClient en tant que prop appelée « client ».
+          </p>
+          <p>
+            Ensuite, il rend cette instance accessible à tous les composants
+            descendants via le mécanisme de contexte de React. Cela permet aux
+            composants de l’application d’accéder au QueryClient et d’utiliser
+            les fonctionnalités de React Query, telles que les requêtes, les
+            mutations et la gestion de l’état.
+          </p>
+          <p>
+            Le QueryClientProvider garantit également que l’état du QueryClient
+            est préservé entre les rendus des composants. Cela signifie que même
+            si les composants sont démontés et remontés dans l’arborescence,
+            l’état du QueryClient est conservé, ce qui permet de maintenir la
+            cohérence des données et d’éviter les requêtes redondantes.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les hooks useQuery, useMutation, etc.</h2>
+        <p>
+          Il existe plusieurs hooks prédéfinis dans React Query, qui facilitent
+          l’utilisation de fonctionnalités spécifiques telles que les requêtes
+          de données et les mutations. Les hooks les plus couramment utilisés
+          sont useQuery, useMutation, useQueryClient, et
+          useQueryErrorResetBoundary :
+        </p>
+        <ul>
+          <li>
+            useQuery : le hook useQuery est utilisé pour effectuer des requêtes
+            de données. Il accepte un identifiant unique pour la requête et une
+            fonction de requête qui spécifie comment obtenir les données.
+            useQuery gère automatiquement l’exécution de la requête, le caching
+            des résultats et le rafraîchissement des données en fonction des
+            dépendances spécifiées.
+          </li>
+          <li>
+            useMutation : le hook useMutation est utilisé pour effectuer des
+            mutations, c’est-à-dire des opérations de création, mise à jour ou
+            suppression de données. Il accepte une fonction de mutation qui
+            spécifie comment effectuer l’opération et gère automatiquement la
+            soumission de la mutation, le rafraîchissement des données et la
+            gestion des erreurs.
+          </li>
+          <li>
+            useQueryClient : le hook useQueryClient permet d’accéder à
+            l’instance du QueryClient dans les composants où il est utilisé. Il
+            est utile lorsque vous souhaitez exécuter des actions spécifiques
+            sur le QueryClient, telles que l’invalidation du cache, l’effacement
+            des erreurs, etc.
+          </li>
+          <li>
+            useQueryErrorResetBoundary : le hook useQueryErrorResetBoundary
+            permet de définir une limite pour la gestion des erreurs dans les
+            requêtes. Il permet de délimiter une zone où les erreurs sont
+            réinitialisées, ce qui signifie que lorsque vous sortez de cette
+            limite, les erreurs sont automatiquement effacées.
+          </li>
+        </ul>
+        <p>
+          Ces hooks simplifient l’intégration des fonctionnalités de React Query
+          dans vos composants. Ils fournissent une interface intuitive pour
+          effectuer des requêtes de données, des mutations et accéder aux
+          fonctionnalités du QueryClient.
+        </p>
+      </div>
+
+      <div>
+        <h2>Installation de React Query</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous pouvons écrire la commande suivante dans le terminal de notre
+            éditeur afin d’installer React Query dans notre projet :
+          </p>
+          <code>npm i @tanstack/react-query</code>
+          <p>
+            Si vous utilisez yarn, vous pouvez utiliser la commande suivante :
+          </p>
+          <code>yarn add @tanstack/react-query</code>
+        </div>
+      </div>
+
+      <div>
+        <h2>Configuration du QueryClientProvider</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Maintenant que nous avons inclus React Query dans notre projet, nous
+            allons sans plus attendre configurer un QueryClientProvider dans
+            notre application.
+          </p>
+          <p>
+            Pour cela, supprimez le code relatif à React Context et inscrivez le
+            code suivant dans le composant App :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="MWLzPmO"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/MWLzPmO"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici nous avons englobé notre composant User dans QueryClientProvider
+            auquel nous avons fourni l’instance de queryClient.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>
+          Utilisation du hook useQuery pour effectuer des requêtes de données
+        </h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons maintenant utiliser le hook useQuery dans notre
+            composant User afin d’effectuer une requête de données depuis une
+            API d’exemple.
+          </p>
+          <p>
+            Cela va nous permettre de récupérer les informations d’utilisateurs
+            fictifs et de les afficher dans notre application. Nous pouvons
+            inscrire le code suivant dans le composant User :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="XWOyxgq"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/XWOyxgq"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous avons utilisé le hook useQuery en lui transmettant une clé
+            d’identification et une fonction qui effectue une requête vers une
+            API pour obtenir les données des utilisateurs.
+          </p>
+          <p>
+            En utilisant la destructuration, nous avons accédé aux variables
+            isLoading, error et data.
+          </p>
+          <p>
+            isLoading est un booléen qui est vrai tant que nous n’avons pas reçu
+            de réponse à notre requête. Pendant que ce booléen est vrai, notre
+            composant renvoie la chaîne de caractères "Loading...".
+          </p>
+          <p>
+            Ensuite, pour gérer les erreurs potentielles renvoyées par notre
+            requête, nous utilisons une condition pour renvoyer un message
+            indiquant qu’une erreur s’est produite, ainsi que l’erreur
+            spécifique.
+          </p>
+          <p>
+            Enfin, lorsque le chargement est terminé et qu’aucune erreur n’est
+            renvoyée, nous utilisons la variable data pour afficher les données
+            de l’utilisateur dans notre application.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Utilisation du hook useMutation pour effectuer des mutations</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons implémenter l’utilisation du hook useMutation afin de
+            mettre à jour la donnée correspondante au nom de l’utilisateur, pour
+            cela inscrivez le code suivant dans notre composant User :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="XWOyxYP"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/XWOyxYP"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici, la fonction de mutation de notre hook useMutation est définie
+            pour effectuer une requête PATCH vers notre API d’exemple. Cette
+            fonction prend un nouveau nom en paramètre et met à jour le nom de
+            l’utilisateur dans le corps de la requête. Les résultats de la
+            mutation sont ensuite stockés dans la variable mutation.
+          </p>
+          <p>
+            Nous utilisons les variables isLoading, error et isSuccess pour
+            gérer le chargement, les erreurs et mettre à jour notre interface
+            utilisateur en conséquence. Cependant, veuillez noter que vous
+            devrez utiliser votre propre backend pour effectivement mettre à
+            jour les données. Cet exemple illustre l’utilisation de useMutation,
+            mais il ne met pas réellement à jour les données de notre API.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

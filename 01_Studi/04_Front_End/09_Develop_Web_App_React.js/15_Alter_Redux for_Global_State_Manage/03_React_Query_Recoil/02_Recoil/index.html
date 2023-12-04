@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recoil</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <h1>Recoil</h1>
+      <div>
+        <h2>Qu’est-ce que Recoil ?</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Recoil est une bibliothèque d’état gérée par Facebook, conçue pour
+            la gestion de l’état global dans les applications React. Elle offre
+            une approche simple et déclarative pour gérer l’état partagé entre
+            les composants sans la nécessité d’utiliser des librairies tierces
+            complexes.
+          </p>
+          <p>
+            Contrairement à d’autres solutions d’état global telles que Redux,
+            Recoil ne nécessite pas la mise en place d’actions, de réducteurs ou
+            de middleware. Au lieu de cela, elle utilise un modèle de
+            programmation basé sur des atomes et des sélecteurs.
+          </p>
+          <p>
+            Recoil est conçu pour être facile à utiliser, offrant de bonnes
+            performances et une meilleure expérience de développement pour les
+            développeurs React.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Avantages de l’utilisation de Recoil</h2>
+        <p>
+          L’un des avantages clés de Recoil est sa simplicité et sa facilité
+          d’utilisation. Il permet aux développeurs de gérer l’état global de
+          manière intuitive.
+        </p>
+        <p>
+          De plus, Recoil offre de bonnes performances grâce à son système de
+          gestion d’état optimisé.
+        </p>
+      </div>
+
+      <div>
+        <h2>Les atomes</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Les atomes sont des unités d’état indépendantes qui peuvent être
+            lues et mises à jour par les composants.
+          </p>
+          <p>
+            Ils peuvent représenter n’importe quel type de données, qu’il
+            s’agisse de primitives, d’objets complexes ou de tableaux. Chaque
+            atome a un identifiant unique et une valeur associée.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les sélecteurs</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Les sélecteurs sont des fonctions qui permettent de dériver des
+            valeurs à partir d’atomes ou d’autres sélecteurs. Ils sont utilisés
+            pour effectuer des calculs, des transformations ou des filtrages des
+            données. Les sélecteurs peuvent également avoir des dépendances, ce
+            qui signifie qu’ils se mettront à jour automatiquement lorsque les
+            atomes ou d’autres sélecteurs dont ils dépendent changeront.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les hooks useRecoilState et useRecoilValue</h2>
+        <p>
+          Recoil fournit également des hooks personnalisés, tels que
+          useRecoilState et useRecoilValue, pour interagir avec les atomes et
+          les sélecteurs dans les composants.
+        </p>
+        <p>
+          Le hook useRecoilState permet de lire et de mettre à jour la valeur
+          d’un atome, tandis que useRecoilValue permet de lire la valeur d’un
+          atome ou d’un sélecteur sans la modifier.
+        </p>
+      </div>
+
+      <div>
+        <h2>Installation de Recoil</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Afin d’installer cette bibliothèque d’état a notre projet, nous
+            pouvons taper la commande suivant dans le terminal de notre éditeur
+            :
+          </p>
+          <code>npm install recoil</code>
+          <p>Si vous utilisez yarn, vous pouvez taper la commande suivante :</p>
+          <code>yarn add recoil</code>
+        </div>
+      </div>
+
+      <div>
+        <h2>Implémentation de RecoilRoot</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Maintenant que nous avons installé Recoil a notre projet, nous
+            devons fournir un root à nos composants en utilisant RecoilRoot :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="WNPYYMg"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/WNPYYMg"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Création d’atomes avec atom()</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Afin d’accueillir notre gestion d’état avec Recoil dans notre
+            projet, nous pouvons créer un nouveau dossier recoil dans lequel
+            nous allons initier un nouveau fichier atoms.js.
+          </p>
+          <p>
+            Dans ce fichier vous pouvez inscrire le code suivant afin
+            d’implémenter nos premiers atomes.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="QWYJJrZ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/QWYJJrZ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici nous avons simplement importé la fonction atom de Recoil et créé
+            deux atomes qui contiennent une clé d’identification et une valeur
+            par défaut.
+          </p>
+          <p>
+            Par ailleurs, notez que l’on exporte ces atomes afin de les utiliser
+            dans d’autres parties de notre application.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>
+          Utilisation des hooks useRecoilState et useRecoilValue pour accéder
+          aux valeurs des atomes
+        </h2>
+        <h3>Méthode</h3>
+        <p>
+          Nous pouvons dès à présent accéder au composant User et supprimer le
+          code relatif à React Query afin d’inscrire le code suivant :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="yLZQQEr"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/yLZQQEr"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Le hook useRecoilValue nous permet d’accéder en lecture seule à notre
+          état contenu dans l’atome ageState, nous utilisons ce hook afin
+          d’extraire cette valeur dans une variable et l’afficher dans notre
+          application.
+        </p>
+        <p>
+          Enfin, dans le composant Name, nous pouvons inscrire le code suivant
+          pour nous permettre d’accéder au nom contenu dans notre état et
+          potentiellement modifier sa valeur :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="NWoEEBL"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/NWoEEBL"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          L’utilisation du hook useRecoilState nous permet d’accéder à notre
+          état en lecture ainsi qu’en écriture, de cette manière lorsque
+          l’utilisateur va modifier son nom via l’input, l’application sera
+          automatiquement mise à jour avec la nouvelle valeur.
+        </p>
+      </div>
+
+      <div>
+        <h2>Création de sélecteurs avec selector()</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Les sélecteurs permettent de dériver des valeurs calculées à partir
+            de l’état atomique existant. Les sélecteurs peuvent être utilisés
+            pour effectuer des transformations, des filtrages ou des calculs sur
+            les données de l’état atomique, tout en restant réactifs aux
+            changements de l’état sous-jacent.
+          </p>
+          <p>
+            Nous allons créer un nouveau fichier selector.js dans le dossier
+            recoil afin d’accueillir un sélecteur qui va combiner nos deux
+            atomes et présenter l’utilisateur :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="VwgVVGp"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/VwgVVGp"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ensuite, nous pouvons afficher le résultat dans l’application depuis
+            notre composant User :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="wvNQQEX"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/wvNQQEX"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ainsi, lorsque la valeur du nom de l’utilisateur est modifiée, notre
+            sélecteur va automatiquement être mis à jour et la nouvelle
+            présentation avec le nouveau nom sera affichée.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

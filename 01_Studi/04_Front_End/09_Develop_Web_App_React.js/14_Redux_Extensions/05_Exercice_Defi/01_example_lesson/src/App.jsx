@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { randomColor } from './redux/colorSlice'
 import Counter from './Counter'
+import User from './User.jsx'
 
 function App() {
 
@@ -14,10 +15,11 @@ function App() {
   },[color])
 
   return (
-    <>
+    <div>
       <button onClick={()=> { dispatch(randomColor()) }}>Changer Couleur</button>
       <Counter/>
-    </>
+      <User/>
+    </div>
   )
 }
 
