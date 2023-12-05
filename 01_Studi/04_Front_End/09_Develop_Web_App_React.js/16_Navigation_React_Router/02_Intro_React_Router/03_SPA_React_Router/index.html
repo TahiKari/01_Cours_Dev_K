@@ -3,13 +3,126 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>SPA et React Router</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>SPA et React Router</h1>
+      <div>
+        <h2>Définition d'une Single-Page Application</h2>
+        <div>
+          <h3>Rappel</h3>
+          <p>
+            Une Single Page Application (SPA) est une application web qui
+            fonctionne comme une seule page en chargement initial, plutôt que de
+            recharger la page à chaque interaction de l'utilisateur. Cela
+            signifie que les utilisateurs peuvent interagir avec l'application
+            sans avoir à naviguer vers une nouvelle page ou recharger la page
+            existante.
+          </p>
+          <p>
+            Une SPA utilise des techniques de programmation côté client pour
+            rendre l'application réactive, en chargeant les données et les
+            ressources nécessaires en arrière-plan pour minimiser le temps
+            d'attente des utilisateurs. L'interaction utilisateur est gérée par
+            des événements JavaScript, qui modifient dynamiquement le contenu
+            affiché à l'écran.
+          </p>
+          <p>
+            Les SPAs sont souvent utilisées pour les applications modernes,
+            telles que les applications de messagerie, les outils de
+            collaboration en temps réel, les tableaux de bord et les jeux. Les
+            avantages des SPAs incluent une expérience utilisateur plus rapide
+            et plus fluide, une réduction du trafic réseau et une meilleure
+            gestion des données côté client.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Pourquoi utiliser React Router dans une SPA ?</h2>
+        <p>
+          Comme cité précédemment, les SPAs sont des applications web qui se
+          chargent entièrement dans une seule page, sans actualisation ou
+          rechargement de la page. Cependant, gérer l'état de l'application et
+          la navigation peut être difficile.
+        </p>
+        <p>
+          C'est là que React Router entre en jeu. Cette bibliothèque permet de
+          créer des routes pour les différentes vues et composants de
+          l’application, facilitant ainsi la gestion des états et des URLs de
+          celle-ci. Elle permet également de créer des liens entre les
+          différentes pages de l'application, permettant à l'utilisateur de
+          naviguer facilement entre elles sans recharger la page.
+        </p>
+        <p>
+          En outre, React Router peut aider à résoudre les problèmes
+          d'indexation SEO souvent associés aux SPA. En utilisant des liens et
+          des URLs appropriés pour les différentes pages de l'application, React
+          Router peut améliorer l'indexation SEO de l'application.
+        </p>
+        <p>
+          Enfin, la flexibilité de React Router permet de gérer une grande
+          variété de scénarios de navigation, tels que la navigation avec des
+          paramètres, la gestion des erreurs ou encore la navigation à
+          l'intérieur de composants imbriqués.
+        </p>
+      </div>
+
+      <div>
+        <h2>
+          Les besoins en navigation dans une SPA et comment React Router répond
+          à ces besoins
+        </h2>
+        <p>
+          Les SPAs possèdent de nombreux avantages, notamment des temps de
+          chargement plus rapides, une expérience utilisateur plus fluide et une
+          réduction de la charge serveur. Cependant, les SPA nécessitent une
+          gestion efficace de la navigation pour garantir une expérience
+          utilisateur optimale.
+        </p>
+        <p>
+          La navigation dans une SPA se fait souvent en utilisant des liens
+          hypertextes. Lorsqu'un utilisateur clique sur un lien, la SPA doit
+          charger la page correspondante sans recharger la page entière. Les
+          navigateurs modernes prennent en charge cette fonctionnalité en
+          utilisant l'API History du navigateur pour manipuler l'URL sans
+          recharger la page. Cela signifie que le développeur doit s'assurer que
+          l'URL est correctement gérée pour que l'utilisateur puisse utiliser
+          les boutons « Précédent » et « Suivant » du navigateur pour naviguer
+          dans l'application.
+        </p>
+        <p>
+          React Router permet de gérer efficacement la navigation dans les SPA.
+          Il utilise une approche déclarative pour définir les routes de
+          l'application. Les routes sont définies à l'aide de composants React
+          qui spécifient le chemin de l'URL correspondant à ce composant. Pour
+          cela, il utilise plusieurs composants tels que “BrowserRouter”,
+          “HashRouter”, “MemoryRouter” et “StaticRouter”.
+        </p>
+        <p>
+          Le “BrowserRouter” utilise l'historique du navigateur pour
+          synchroniser l'état de l'application avec l'URL du navigateur. Le
+          “HashRouter” utilise la partie "hash" de l'URL pour gérer l'état de
+          l'application et de la navigation. Le “MemoryRouter” ne met pas à jour
+          l'URL du navigateur, mais gère l'état de l'application et de la
+          navigation en interne. Enfin, le ”StaticRouter” est utilisé pour le
+          rendu côté serveur (server-side rendering) d'une application React.
+        </p>
+        <p>
+          Lorsqu'un utilisateur clique sur un lien, React Router compare l'URL à
+          chaque route définie pour trouver la route correspondante. Si une
+          correspondance est trouvée, React Router rend le composant associé à
+          cette route, sans recharger la page entière. React Router prend
+          également en charge les paramètres de l'URL et les chemins imbriqués.
+          Les paramètres de l'URL permettent de créer des URLs dynamiques qui
+          peuvent être utilisées pour afficher des données spécifiques, tandis
+          que les chemins imbriqués permettent de créer des hiérarchies de pages
+          dans l'application.
+        </p>
+      </div>
     </div>
   </body>
 </html>

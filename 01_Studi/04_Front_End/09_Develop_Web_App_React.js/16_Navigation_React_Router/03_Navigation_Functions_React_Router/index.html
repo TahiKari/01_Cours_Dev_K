@@ -3,13 +3,632 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Les composants de base de React Router</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
     <script src="script.js" defer></script>
   </head>
   <body>
     <div>
-      <h1></h1>
+      <h1>Les composants de base de React Router</h1>
+      <div>
+        <h2>Présentation de “RouterProvider” et “createBrowserRouter”</h2>
+        <p>
+          Le composant “RouteProvider” est utilisé pour fournir un contexte à
+          d'autres composants Route de React Router. Ce contexte contient des
+          informations sur la configuration de l'application, telles que les
+          routes disponibles, les paramètres d'URL et les gestionnaires de
+          redirection.
+        </p>
+        <p>
+          Le composant “RouteProvider” est généralement utilisé en haut de
+          l'arborescence des composants de l'application, où il encapsule les
+          composants de l'interface utilisateur qui nécessitent une navigation.
+          Ensuite, les routes peuvent être utilisées à l'intérieur de cet arbre
+          de composants pour gérer les différentes vues de l'application.
+        </p>
+        <p>
+          “createBrowserRouter” est une fonction de la bibliothèque React Router
+          qui permet de créer un objet “Router” pour gérer les routes dans une
+          application React. Elle permet de définir des routes et de les
+          associer à des composants, afin de rendre ces composants lorsque
+          l'utilisateur navigue sur l'application.
+        </p>
+        <p>
+          La fonction “createBrowserRouter” est utilisée en fournissant une
+          liste d'objets de configuration de route, qui définissent les chemins
+          d'accès et les composants correspondants à chaque chemin. Ces objets
+          de configuration peuvent également spécifier des composants de
+          redirection et des composants d'erreur, pour une gestion plus avancée
+          de la navigation.
+        </p>
+        <p>
+          Une fois que le “Router” est créé à l'aide de “createBrowserRouter”,
+          il peut être fourni à d'autres composants de l'application à l'aide de
+          “RouterProvider”, qui permet de propager les informations de
+          navigation à travers l'arbre des composants.
+        </p>
+        <p>
+          “createBrowserRouter” est particulièrement utile pour les applications
+          Web complexes, qui nécessitent une gestion avancée de la navigation et
+          une grande flexibilité dans la définition des routes et des composants
+          associés. Il permet également de séparer clairement la logique de
+          navigation, de la logique d'affichage, ce qui rend l'application plus
+          facile à maintenir et à améliorer.
+        </p>
+      </div>
+
+      <div>
+        <h2>Comment utiliser “RouterProvider” et “createBrowserRouter”</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons mettre en place le composant de niveau supérieur
+            “RouterProvider” et utiliser la fonction “createBrowserRouter” pour
+            instancier une route dans notre application.
+          </p>
+          <p>
+            Pour réaliser cela, nous pouvons inscrire le code suivant dans le
+            fichier main de notre application, “index.js” :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="wvNRoWa"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/wvNRoWa"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici, nous utilisons la fonction “createBrowserRouter()” pour créer
+            un routeur de navigation pour l'application. Le routeur est
+            configuré pour rediriger les demandes de l'URL racine ("/") vers le
+            composant App.
+          </p>
+          <p>
+            Enfin, nous utilisons l'élément “&ltRouterProvider/&gt” auquel nous
+            passons le routeur créé précédemment et qui fournit une gestion de
+            la navigation pour l'ensemble de l'application.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Gestion des erreurs</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous pouvons passer une propriété “errorElement” à notre objet qui
+            contient les différents paramètres de notre route.
+          </p>
+          <p>
+            Cette propriété va nous permettre de retourner une erreur dans le
+            cas où les ressources de la page ne sont pas accessibles ou lorsque
+            l’URL utilisée est erronée.
+          </p>
+          <p>
+            Par défaut, React Router retourne une page d’erreur pré-conçue
+            lorsqu'une erreur survient, mais il est tout à fait possible de
+            créer et retourner un composant créé par nos soins. Pour cela, nous
+            allons créer un dossier nommé “Routes” dans notre répertoire “src”
+            et créer le fichier “ErrorPage.js” :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="OJdrbbP"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/OJdrbbP"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans notre composant “ErrorPage.js”, nous avons utilisé le hook
+            “useRouteError()“ de React Router qui nous permet de récupérer les
+            erreurs de routage éventuelles qui peuvent survenir lors de la
+            navigation de l'utilisateur sur le site. Ce hook renvoie un objet
+            contenant des informations sur l'erreur, notamment le code d'erreur
+            et le message d'erreur.
+          </p>
+          <p>
+            Ensuite, nous affichons un message personnalisé dans notre JSX qui
+            va notamment retourner l’erreur générée.
+          </p>
+          <p>
+            Nous pouvons maintenant utiliser notre composant dans notre route
+            principale, en le passant dans la propriété “errorElement” de notre
+            objet contenant notre route principale :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="YzBdppg"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/YzBdppg"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous pouvons désormais réaliser un test pour voir apparaître notre
+            composant d’erreur ainsi que l’erreur générée, en spécifiant une URL
+            erronée dans notre navigateur.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>
+          Utilisation du JSX et “createRoutesFromElements” pour passer les
+          routes
+        </h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Notez qu’il est possible d’utiliser JSX pour créer nos routes en
+            utilisant “createRoutesFromElements”.
+          </p>
+          <p>
+            Cette fonction permet d’utiliser l'élément JSX “&ltRoute/&gt” et est
+            passée directement à notre fonction “createBrowserRouter”. Par
+            exemple, pour reproduire la route créée précédemment, nous pourrions
+            utiliser le code suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="WNPLoRx"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/WNPLoRx"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>Voir vidéo</p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Présentation du composant Link</h2>
+        <p>
+          Le composant “Link” de React Router est un élément essentiel pour
+          créer des liens cliquables dans une application React qui utilise le
+          routing. Il permet aux utilisateurs de naviguer facilement entre les
+          différentes pages de l'application sans avoir besoin de recharger la
+          page.
+        </p>
+        <p>
+          Le composant “Link” est facile à utiliser et fonctionne en créant un
+          lien HTML traditionnel avec un attribut href qui pointe vers l'URL de
+          la page souhaitée. Lorsque l'utilisateur clique sur ce lien, le
+          navigateur n'envoie pas une demande au serveur pour charger la page
+          entière, mais plutôt, le routeur de React intercepte l'événement de
+          clic et rend la nouvelle page à l'aide de la technologie JavaScript.
+        </p>
+        <p>
+          Le composant “Link” prend plusieurs props pour personnaliser
+          l'apparence et le comportement du lien, y compris :
+        </p>
+        <ul>
+          <li>to : spécifie l'URL de la page que le lien doit ouvrir.</li>
+          <li>
+            replace : lorsque défini à true, le lien remplace l'historique de
+            navigation plutôt que d'ajouter une nouvelle entrée.
+          </li>
+          <li>
+            target : définit la cible de l'URL, comme "contact" pour ouvrir le
+            lien dans un nouvel onglet.
+          </li>
+          <li>
+            className : ajoute des classes CSS au lien pour personnaliser son
+            apparence.
+          </li>
+          <li>
+            onClick : permet aux développeurs de définir une fonction à exécuter
+            lorsqu'un utilisateur clique sur le lien.
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Création d’un composant contact et une route associée</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons maintenant créer un nouveau composant “Contact.js” et
+            créer une route associée afin de naviguer depuis notre composant
+            principal “App.js” vers une page contact. Nous pouvons créer le
+            fichier “Contact.js” dans notre répertoire “Routes” et inscrire le
+            code suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="VwgqmXO"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/VwgqmXO"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Maintenant nous allons créer la route vers notre page contact dans
+            la fonction “createBrowserRouter” de notre fichier “index.js” :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="dyawOKE"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/dyawOKE"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous avons maintenant accès à notre composant “Contact.js” à l'URL
+            suivant : localhost:3000/contact
+          </p>
+          <p>
+            Notez qu’il est possible de créer une logique d’imbrication de route
+            pour créer une architecture dans nos routes, par exemple nous
+            pouvons passer notre route vers la page contact en tant qu’enfant de
+            notre route principale :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="mdvaROO"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/mdvaROO"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Utilisation du composant Link</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons maintenant utiliser le composant “Link” pour nous
+            permettre de naviguer de notre page d’accueil vers notre page
+            contact, sans avoir besoin de spécifier manuellement l’URL. Pour
+            cela, nous allons inscrire le code suivant dans le composant
+            “App.js”.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="mdvaRWO"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/mdvaRWO"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici, grâce à l’attribut “to” de notre composant “Link”, nous pouvons
+            maintenant accéder à notre page de contact en cliquant sur notre
+            lien “Mes contacts”.
+          </p>
+          <p>
+            Notez qu’il existe d'autres attributs que nous pouvons spécifier
+            pour modifier le comportement de notre composant “Link”, comme
+            l’attribut “target” qui nous permet de nous rediriger dans un nouvel
+            onglet.
+          </p>
+        </div>
+
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            Notez que dans le cas actuel cela fonctionne pour composant Parent
+            et non enfant.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Le composant “Outlet”</h2>
+        <p>
+          Le composant “Outlet” de React Router est un élément clé pour la
+          gestion de la navigation dans une application React. “Outlet” est
+          utilisé pour définir où le contenu de chaque itinéraire doit être
+          rendu dans l'application.
+        </p>
+        <p>
+          En d'autres termes, il permet de définir un point de montage pour les
+          différents composants d'une application en fonction de l'itinéraire
+          (route) sélectionné par l'utilisateur. Lorsqu'un itinéraire est
+          activé, React Router recherche l'Outlet approprié et y insère le
+          contenu correspondant.
+        </p>
+        <p>
+          Son utilisation est particulièrement utile pour les applications qui
+          nécessitent plusieurs niveaux de navigation ou qui ont des itinéraires
+          complexes. En définissant un point de montage centralisé pour le
+          contenu, il devient plus facile de gérer les changements de route et
+          de maintenir une architecture de code claire et organisée.
+        </p>
+      </div>
+
+      <div>
+        <h2>Utilisation de “Outlet”</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Vous pouvez remarquer que lorsque nous naviguons vers notre page
+            contact, notre composant “Contact.js” n'apparaît pas dans le
+            navigateur. Ce comportement est normal, étant donné que nous avons
+            spécifié notre route “contact” en tant qu’enfant de notre route
+            principale, nous devons utiliser le composant “Outlet” pour
+            déterminer où nous souhaitons rendre le composant “Contact.js”.
+          </p>
+          <p>
+            Nous pouvons donc importer ce composant et l’utiliser dans “App.js”
+            :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="ZEwVLXw"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/ZEwVLXw"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Maintenant nous avons un rendu du composant “Contact.js” lorsque
+            nous naviguons vers l’URL correspondant, tout en ayant toujours une
+            visibilité sur notre composant principal.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Le composant “Navigate”</h2>
+        <p>
+          Le composant “Navigate” est un élément de l'interface utilisateur qui
+          permet de définir une destination pour une navigation. Il peut être
+          utilisé pour rediriger l'utilisateur vers une autre page en réponse à
+          un événement déclenché par celui-ci, comme un clic sur un bouton ou un
+          lien ou lorsque ce composant “Navigate” est rendu.
+        </p>
+        <p>
+          Ce composant prend en charge plusieurs types de destinations, tels que
+          les URL absolues, les URL relatives, les routes nommées et les
+          redirections. Il peut également prendre en charge des paramètres
+          dynamiques dans l'URL, ce qui permet de créer des liens qui varient en
+          fonction du contexte de l'application.
+        </p>
+        <p>
+          En utilisant le composant “Navigate”, les développeurs peuvent
+          facilement ajouter des liens et des boutons de navigation à leur
+          application web. Il offre une grande flexibilité et une facilité
+          d'utilisation, en permettant de définir des liens de manière simple et
+          intuitive. Il est également très utile pour la gestion des erreurs et
+          des redirections.
+        </p>
+        <p>
+          Supposons que l’utilisateur de notre application doive se connecter
+          via ses identifiants, nous pourrions utiliser le composant “Navigate”
+          pour rediriger l’utilisateur en effectuant un rendu conditionnel :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="QWYzdOx"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/QWYzdOx"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, nous utilisons le rendu conditionnel pour notre
+          composant “Navigate”, nous utilisons une fonction qui vérifie les
+          identifiants d’un utilisateur. Si ces identifiants sont validés alors
+          nous passons notre state “logged” à une valeur de “true”, ce qui va
+          entraîner le rendu de notre composant “Navigate”. L’utilisateur va
+          alors être redirigé vers l’URL “accueil”
+        </p>
+        <p>Voir vidéo</p>
+      </div>
     </div>
   </body>
 </html>
