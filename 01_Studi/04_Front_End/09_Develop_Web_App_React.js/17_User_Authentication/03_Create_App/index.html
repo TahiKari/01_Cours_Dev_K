@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Création de l’application</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <h1>Création de l’application</h1>
+      <div>
+        <h2>Installation des dépendances</h2>
+        <div>
+          <h3>Installation des dépendances</h3>
+          <p>
+            Nous avons besoin d’installer Firebase, react-firebase-hooks, ainsi
+            que React router dans notre projet pour créer différentes routes et
+            redirections. Pour cela, nous pouvons écrire la commande suivant
+            dans le terminal de notre éditeur de code :
+          </p>
+          <code
+            >npm install firebase react-firebase-hooks react-router-dom</code
+          >
+        </div>
+      </div>
+
+      <div>
+        <h2>Création d’un fichier de configuration</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons maintenant créer un fichier firebase.js qui va contenir
+            l’ensemble de notre logique de configuration de l’authentification.
+          </p>
+          <p>
+            En premier lieu, nous allons importer les méthodes de «
+            firebase/auth »” nécessaires pour la gestion de l’authentification
+            ainsi que les méthodes de « firebase/firestore » qui serviront à la
+            création de nouveaux utilisateurs et le stockage de leurs
+            informations.
+          </p>
+          <p>
+            Ensuite, nous allons utiliser l’objet de configuration fourni par
+            firebase lors de l’ajout de notre application :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="bGzzXKQ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/bGzzXKQ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Mise en place de la fonction d’authentification</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons maintenant utiliser la méthode getAuth stockée dans
+            notre variable auth ainsi que la méthode signInWithEmailAndPassword
+            afin de créer une fonction qui permettra à l’utilisateur de se
+            connecter. Dans le fichier firebase.js, inscrivez le code suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="vYbboaW"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/vYbboaW"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Grâce à cette fonction, si l’utilisateur fournit une adresse e-mail
+            ainsi qu’un mot de passe, nous sommes en mesure de vérifier ses
+            droits de connexion.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Mise en place de la fonction d’enregistrement</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Maintenant, si l’utilisateur ne possède pas encore de compte, nous
+            devons lui permettre d’en créer un. Pour cela nous allons créer une
+            fonction qui permet de s’enregistrer dans notre application. Nous
+            allons utiliser la méthode createUserWithEmailAndPassword de «
+            firebase/auth », ainsi que les méthodes de « firebase/firestore »
+            que nous avons importées préalablement. Dans le fichier firebase.js,
+            inscrivez le code suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="XWOOvPm"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/XWOOvPm"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici, nous utilisons la méthode createUserWithEmailAndPassword à
+            laquelle nous transmettons le mail ainsi que le mot de passe fournis
+            par l’utilisateur. Si nous avons reçu un retour positif de cette
+            requête, nous utilisons les méthodes de firestore pour stocker les
+            informations relatives à notre utilisateur dans firestore. La
+            méthode addDoc() est utilisée pour ajouter un nouveau document à la
+            collection de Firestore.
+          </p>
+        </div>
+      </div>
+      <div>
+        <h2>
+          Mise en place de la fonction de réinitialisation de mot de passe
+        </h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Si l’un de nos utilisateurs a oublié son mot de passe, nous devons
+            lui permettre de le réinitialiser.
+          </p>
+          <p>
+            Nous allons donc maintenant créer une fonction qui permet l’envoi
+            d’un mail de réinitialisation à l’utilisateur. Écrivez le code
+            suivant dans notre fichier firebase.js :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="qBggeMR"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/qBggeMR"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici, nous avons utilisé la méthode sendPasswordResetMail à laquelle
+            nous passons le mail fourni par l’utilisateur en tant que paramètre
+            et qui va envoyer un mail de réinitialisation à l’utilisateur si le
+            mail est reconnu. Un message de confirmation s’affiche si la requête
+            n’a pas rencontré d’erreur.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Mise en place de la fonction de déconnexion</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Enfin, nous pouvons maintenant mettre en place la dernière fonction
+            qui servira à gérer la déconnexion de l’utilisateur. Ici, nous
+            utiliserons la méthode signOut de « firebase/auth », puis nous
+            exportons l’ensemble des fonctions créées précédemment afin de les
+            utiliser dans nos composants :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="mdvvNGX"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/mdvvNGX"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>Voir vidéo</p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Mise en place de React Router et des routes</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Afin de pouvoir gérer plusieurs routes et effectuer des
+            redirections, nous allons mettre en place React Router dans notre
+            application. Dans notre composant racine main.jsx, nous pouvons
+            inscrire le code suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="oNmVvoy"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/oNmVvoy"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici, nous avons créé plusieurs routes grâce a createBrowserRouter
+            que nous avons fourni à RouterProvider. Nous avons également réalisé
+            les imports des composants Login, Home, Register et Reset que nous
+            allons créer ensemble dans la suite du cours. Ces composants sont
+            associés aux différentes routes et permettent à l’utilisateur de
+            naviguer à travers les différentes étapes d’authentification.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Création du composant Login</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons maintenant créer le composant Login, qui sera la
+            première page sur laquelle arrivera l’utilisateur lorsqu’il
+            rejoindra notre application. Dans ce composant nous allons utiliser
+            la fonction de logIn créée précédemment afin que l’utilisateur
+            puisse se connecter. Créez un nouveau fichier Login.jsx et inscrivez
+            le code suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="ZEwPzMK"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/ZEwPzMK"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici, nous stockons la saisie du mail et du mot de passe dans l’état
+            du composant et lorsque l’utilisateur clique sur le bouton pour se
+            connecter nous utilisons notre fonction logIn.
+          </p>
+          <p>
+            Grâce au hook useAuthState de react-firebase-hooks nous pouvons
+            gérer l’authentification de l’utilisateur. Ainsi, si
+            l’authentification est validée, user aura un token d’accès valide et
+            nous pouvons effectuer une redirection vers la page d’accueil. Par
+            ailleurs, nous utilisons le composant Link de react router pour
+            permettre à l’utilisateur de naviguer vers la page d’enregistrement
+            s’il ne possède pas de compte.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Création du composant Home</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Maintenant que nous avons mis en place notre composant de connexion,
+            nous pouvons créer un fichier Home.jsx qui va contenir notre page
+            d’accueil vers laquelle l’utilisateur connecté sera redirigé :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="gOqEYvJ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/gOqEYvJ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici nous avons utilisé à nouveau le hook useAuthState afin d’accéder
+            à l’objet user. En effet, dans notre hook useEffect, vous pouvez
+            remarquer que si l’utilisateur n’est pas connecté, il sera
+            automatiquement redirigé vers la page de connexion. En revanche, si
+            l’utilisateur est connecté, nous afficherons le mail utilisé. Nous
+            avons également implanté un bouton de déconnexion qui va effectuer
+            un appel vers la fonction logOut que nous avons créée dans le
+            fichier firebase.js.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Création du composant Register</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Maintenant que nous avons notre page d’accueil et notre composant de
+            connexion, nous pouvons mettre en place un nouveau composant qui
+            permette à l’utilisateur de créer un compte. Pour cela, nous créons
+            un fichier Register.jsx dans lequel nous inscrivons le code suivant
+            :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="LYqaPdr"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/LYqaPdr"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous avons utilisé la fonction registerUser créée dans notre fichier
+            firebase.js afin de transmettre le mail et le mot de passe fournis
+            par l’utilisateur et de créer un compte. Par ailleurs, nous
+            redirigeons l’utilisateur sur la page d’accueil dès lors que sa
+            connexion est validée.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Création du composant Reset</h2>
+        <div>
+          <h3>Méthode</h3>
+          *
+          <p>
+            Enfin, nous pouvons mettre en place la dernière fonctionnalité de
+            notre application qui permette à l’utilisateur de réinitialiser son
+            mot de passe en cas d’oubli. Pour cela, nous pouvons créer un
+            nouveau fichier Reset.jsx dans lequel nous inscrivons le code
+            suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="xxMBKjY"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/xxMBKjY"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici, nous avons utilisé la fonction resetPassword créée dans le
+            fichier firebase.js afin d’envoyer un mail de réinitialisation
+            lorsque le bouton est cliqué par l’utilisateur. Désormais, nous
+            avons un système d’authentification complet et fonctionnel dans
+            notre application.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
