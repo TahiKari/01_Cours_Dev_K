@@ -87,7 +87,7 @@
     // Permet d'éviter les élément lier
     "editor.linkedEditing": true,
     // Permet de mettre les occurence en surveillance
-    "editor.occurrencesHighlight": false,
+    "editor.occurrencesHighlight": "off",
     // permet de definir comment insérer les suggestions
     "editor.suggest.insertMode": "replace",
     // Permet d'utiliser les suggestions

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercice Défi</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <h1>Exercice défi</h1>
+      <div>
+        <p>
+          Vous êtes auto-entrepreneur et vous êtes sollicités par la mairie
+          d’Antibes qui souhaite ajouter à son site web une rubrique « météo des
+          plages ». Pour une première version de cette rubrique, il s’agit
+          d’afficher la température du jour et celle du lendemain à 13 h 00. Il
+          vous est suggéré d’utiliser l’API gratuite et open source
+          open-météo.com, en association avec React.
+        </p>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          À partir de la documentation de cette API météo gratuite et open
+          source :
+          <a
+            href="https://open-meteo.com/en/docs"
+            target="_blank"
+            rel="alternate"
+            >Open-Meteo</a
+          >, codez une application React qui, au démarrage, affiche la prévision
+          de température pour la ville d’Antibes d’aujourd’hui à 13 h 00.
+        </p>
+        <div>
+          <h2>Solution</h2>
+          <p>Voici un code qui fonctionne :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="ExrMvJy"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/ExrMvJy"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            La première ligne importe les hooks useState et useEffect de React.
+            Le hook useState permet de définir une variable d’état (temperature)
+            et une fonction pour la mettre à jour (setTemperature). Le hook
+            useEffect permet de gérer les effets secondaires, tels que les
+            appels à des API externes.
+          </p>
+          <p>
+            Quant au composant TodayTemperature, celui-ci définit la variable
+            d’état température en utilisant le hook useState et l’initialise à
+            undefined. Ensuite, il utilise le hook useEffect pour effectuer un
+            appel à l’API
+            <a
+              href="https://api.open-meteo.com/v1/forecast?latitude=43.59&longitude=7.11&hourly=temperature_2m"
+              target="_blank"
+              rel="alternate"
+              >Open-Meteo</a
+            >
+            en utilisant la méthode Fetch. Cette API renvoie aux prévisions
+            météorologiques pour une ville donnée. L’objet de réponse est
+            converti en JSON en utilisant la méthode json(). Ensuite, la
+            température à 13 heures est extraite de l’objet JSON et stockée dans
+            la variable d’état température en utilisant la fonction
+            setTemperature.
+          </p>
+          <p>
+            Le composant affiche ensuite la température actuelle à 13 heures en
+            utilisant la variable d’état température dans une balise &lth2&gt.
+            La ligne {temperature ? temperature : null} affiche la valeur de
+            température si elle est définie (temperature ?) ou null si elle ne
+            l’est pas (: null).
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          À partir de la documentation de cette API météo gratuite et open
+          source :
+          <a
+            href="https://open-meteo.com/en/docs"
+            target="_blank"
+            rel="alternate"
+            >Open-Meteo</a
+          >, codez une application React qui, au démarrage, affiche la prévision
+          de température pour la ville d’Antibes du lendemain à 13 h 00.
+        </p>
+        <div>
+          <h2>Solution</h2>
+          <p>Voici un code qui fonctionne :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="gOqExyK"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/gOqExyK"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

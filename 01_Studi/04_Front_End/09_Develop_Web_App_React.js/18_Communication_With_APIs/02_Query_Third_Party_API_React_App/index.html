@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interroger une API tierce dans une application React</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <h1>Interroger une API tierce dans une application React</h1>
+      <div>
+        <h2>Les API</h2>
+        <p>
+          Le terme API (Application Programming Interface) fait référence de
+          manière générale aux interfaces entre applications, ou entre blocs de
+          code. En quelque sorte, c’est la partie accessible d’une application,
+          d’une librairie ou plus généralement de tout bloc de code qui se
+          destine à dialoguer avec une application ou une librairie tierce.
+          Beaucoup d’applications intègrent des API, à l’exception bien sûr des
+          applications dont l’utilisation passe exclusivement par une
+          interaction directe avec un utilisateur humain, sans interaction avec
+          d’autres applications.
+        </p>
+        <p>
+          Dans le contexte de la programmation web, on exploite principalement
+          deux types d’API : les browsers API (API de navigateur), et les API
+          web tierces.
+        </p>
+      </div>
+
+      <div>
+        <h2>Les browsers API</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Les <strong>browsers API</strong> sont des API qui sont nativement
+            intégrées dans les navigateurs et qui permettent de travailler sur
+            des données, par exemple issues du navigateur, de l’ordinateur ou de
+            serveurs tiers. À titre illustratif, l’API Web Audio offre des
+            commandes simples pour interagir avec une piste audio dans le
+            navigateur, en y appliquant des effets, en modifiant le volume, etc.
+            Ces commandes simples font appel à du code complexe, rédigé par une
+            tierce personne généralement dans un langage assez bas niveau de
+            type C++, sans que nous ayons besoin de comprendre ce que fait
+            précisément ce code complexe. C’est précisément la raison d’être des
+            Browser API que de permettre d’utiliser du code complexe
+            préexistant, à l’aide de commandes d’« interface » idéalement aussi
+            simples que possible. Les browsers API sont généralement prévues
+            pour être utilisées en JavaScript. Il en existe un assez grand
+            nombre, qui sont listées ici :
+            <a
+              href="https://developer.mozilla.org/en-US/docs/Web/API"
+              target="_blank"
+              rel="alternate"
+              >Web APIs</a
+            >.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les API web tierces</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Les <strong>API web tierces</strong> (Third Party web API) sont les
+            API qui sont implémentées dans des applications web tierces (par
+            exemple Twitter, Facebook, etc.) afin de permettre à ces
+            applications d’interagir avec d’autres applications. Ces API tierces
+            sont utilisées quand un développeur cherche à faire interagir sa
+            propre application ou son propre site web (le client) avec
+            l’application web tierce qui met à disposition l’API (le serveur),
+            par exemple pour permettre le traitement automatisé d’un grand
+            nombre de données. À contrario, aucune API n’intervient quand un
+            utilisateur se connecte à un site web à partir de la page d’accueil
+            et navigue manuellement jusqu’à trouver certaines données, par
+            exemple pour les télécharger ou simplement pour les visualiser. Il
+            existe un nombre infini d’API tierces disponibles sur le web, que ce
+            soit pour récupérer des données météorologiques, des données
+            Twitter, Facebook, etc., des informations géographiques, des
+            ensembles d’images sur tel ou tel sujet, ou à peu près toutes sortes
+            d’informations possibles et imaginables. Certaines API tierces
+            permettent également de recevoir des données d’une application
+            cliente.
+          </p>
+          <p>
+            Certaines Browser API ont précisément pour finalité de mettre à
+            disposition des développeurs web des commandes simples pour
+            interagir avec les API web tierces. C’est le cas de l’API
+            XMLHttpRequest, qui n’est plus tellement utilisée telle quelle par
+            les développeurs modernes, et de l’API Fetch qui sera utilisée dans
+            cette première partie.
+          </p>
+        </div>
+        <p>
+          Le terme « Web API », ou « API web », fait parfois référence aux
+          browsers API, parfois aux API web tierces.
+        </p>
+        <p>
+          Savoir concevoir une API fait partie des compétences attendues d’un
+          développeur web accompli, bien que ce ne soit pas l’objet de ce cours.
+        </p>
+        <div>
+          <h3>Attention</h3>
+          <p>
+            L’API Fetch est incompatible avec les anciens navigateurs, dont
+            notamment Internet Explorer. Si une telle compatibilité est jugée
+            indispensable par le développeur, il existe tout de même des moyens
+            de contourner ce problème, comme l’utilisation d’un polyfill.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les hooks</h2>
+        <div>
+          <h3>Rappel</h3>
+          <p>
+            Les hooks sont de nouveaux outils React qui permettent d’effectuer
+            un certain nombre d’opérations de manière simple et efficace. Nous
+            nous en servirons pour l’application que nous allons coder.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Initier une Application React</h2>
+        <p>
+          Voyons comment interroger une API web tierce dans une application
+          React. Pour cela, nous allons coder une application React qui récupère
+          des listes de villes et affiche leur population à l’écran, en
+          s’appuyant sur l’API Fetch.
+        </p>
+        <p>
+          Pour cet exercice, nous utiliserons Replit, qui est un IDE sur
+          navigateur. Le code fonctionne aussi avec Sandbox par exemple. Une
+          vidéo est disponible à la fin de cette première partie, qui montre
+          comment créer une application React avec Replit et comment faire
+          fonctionner le code proposé dans ce cours.
+        </p>
+        <p>Le code React qu’on utilisera se base notamment sur deux hooks :</p>
+        <ul>
+          <li>
+            Le hook useState, qui permet la déclaration de variables « React »,
+            dont toute modification entraîne un rafraîchissement ciblé du DOM
+            par React, et,
+          </li>
+          <li>
+            Le hook useEffect, qui permet la déclaration d’actions à effectuer
+            au lancement ou en cas de mise à jour ou de rafraîchissement.
+          </li>
+        </ul>
+        <p>
+          Dans un premier temps, codons l’application React sans la partie API,
+          en se basant sur une petite liste de villes écrite manuellement : à
+          partir d’une nouvelle solution React Javascript sur Replit, remplaçons
+          le contenu du fichier App.jsx par ce qui suit.
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="BaMbZPp"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/BaMbZPp"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+
+      <div>
+        <h2>Précautions d’utilisation de « index » avec l’attribut « key »</h2>
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            L’utilisation de « index » avec l’attribut « key », comme nous
+            venons de le faire dans le code précédent, doit se faire avec
+            précaution. En particulier, il est impératif d’éviter une telle
+            utilisation dès lors que l’ordre des éléments affichés est
+            susceptible de changer, ainsi que cela est expliqué en détail ici :
+            <a
+              href="https://www.developerway.com/posts/react-key-attribute"
+              target="_blank"
+              rel="alternate"
+              >Developer way</a
+            >. C’est pourquoi en règle générale il est recommandé d’utiliser un
+            élément unique autre que l’index pour identifier chaque élément de
+            la liste, comme cela est montré dans les itérations ultérieures de
+            ce code.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Interroger une API tierce</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous venons de coder une application React simplissime, qui affiche
+            les villes que nous avons préalablement listées dans la variable «
+            villes », ainsi que leur population. Voyons maintenant comment
+            modifier cette application en y intégrant des données récupérées sur
+            l’API geo.api.data.gouv.fr, qui liste les villes françaises.
+          </p>
+          <p>
+            En regardant la documentation de ce site, nous voyons que cette URL
+            <a
+              href="https://geo.api.gouv.fr/communes?codeDepartement=01"
+              target="_blank"
+              rel="alternate"
+              >geo.api.gouv</a
+            >
+            permet d’accéder à la liste des villes du département 01, et ainsi
+            de suite pour les autres départements. En accédant à cette URL à
+            partir d’un navigateur, on peut voir les données brutes au format
+            JSON. On peut constater qu’il y a beaucoup d’informations et que ce
+            n’est pas extrêmement lisible au premier coup d’œil. Nous allons
+            donc récupérer cette liste et l’intégrer dans notre application,
+            pour n’afficher que les informations que nous souhaitons.
+          </p>
+          <p>
+            Voici la syntaxe de base pour récupérer cette liste JSON, et
+            l’afficher dans la console :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="gOqEREL"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/gOqEREL"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Cette syntaxe fait appel à la fonction fetch, qui comme nous l’avons
+            vu est nativement intégrée à tous les navigateurs modernes. Nous
+            verrons des alternatives possibles dans la seconde partie de ce
+            cours. Fetch est appelée dans le hook useEffect : les données seront
+            récupérées à nouveau à chaque rafraîchissement du composant App
+            (donc de la page).
+          </p>
+          <p>
+            Grâce à ce morceau de code, nous avons accès dans la console à la
+            manière dont les données de l’API sont organisées, par exemple :
+          </p>
+          <p>nom : "L’Abergement-Clémenciat"</p>
+          <p>code : "01001"</p>
+          <p>codeDepartement : "01"</p>
+          <p>siren : "210100012"</p>
+          <p>codeEpci : "200069193"</p>
+          <p>codeRegion : "84"</p>
+          <p>codesPostaux : (1) ["01400"]</p>
+          <p>population : 779</p>
+          <p>
+            Alternativement, ces informations se retrouvent également en
+            accédant à l’URL via le navigateur. Le passage par la console donne
+            néanmoins un résultat davantage lisible si les données sont
+            complexes.
+          </p>
+          <p>
+            Nous pouvons désormais enregistrer ces informations issues de l’API
+            geo.api.gouv dans la variable « villes » déjà créée, et qui
+            contenait jusqu’à présent les deux villes que nous avions ajoutées
+            manuellement.
+          </p>
+          <p>
+            Pour cela, il faut bien faire attention à deux choses dans notre
+            fichier App.jsx :
+          </p>
+          <ul>
+            <li>
+              Ne pas oublier d’importer useEffect au début du fichier, avant de
+              l’utiliser.
+            </li>
+            <li>
+              Corriger les noms des propriétés afin qu’elles correspondent à
+              celles fournies par l’API : dans les données que nous avons
+              récupérées, le nom de chaque ville est décrit par la chaîne de
+              caractère « nom » alors que nous avions choisi arbitrairement «
+              nomVille », et idem pour « population » qui devra remplacer notre
+              choix initial « habitants ».
+            </li>
+          </ul>
+          <p>
+            Voici donc le nouveau code (qui remplace le précédent, toujours dans
+            le fichier App.jsx) :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="JjxzyPP"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/JjxzyPP"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Et voilà ! Nous sommes parvenus à afficher toutes les villes du
+            département de l’Ain (01) dans notre application, en quelques lignes
+            de code.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Prise en compte d’un input utilisateur avec React</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Enfin, pour illustrer un cas d’utilisation un peu plus avancé,
+            ajoutons un formulaire destiné à recueillir le numéro du département
+            souhaité, et un bouton « Update » qui affiche la liste des villes du
+            département correspondant. Dans cette ultime version, nous nous
+            passerons du hook useEffect dans la mesure où Fetch sera désormais
+            appelée en cas de clic sur le bouton « Udpate » plutôt qu’au
+            chargement de la page. Idéalement, il faudrait traiter le cas où le
+            formulaire envoie un résultat incompatible (nombre supérieur à 95,
+            ou au mauvais format), ce qui ne sera pas fait ici par souci de
+            simplicité.
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="QWYoMLm"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/QWYoMLm"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+        <p>
+          Voici une vidéo qui montre comment faire fonctionner cette dernière
+          version de notre application avec Replit :
+        </p>
+        <p>Voir vidéo</p>
+        <div>
+          <h3>Attention</h3>
+          <p>
+            Par souci de simplicité pour le suivi du cours, tout le code React a
+            été incorporé dans le fichier principal App.jsx. Idéalement, il
+            aurait été préférable de déplacer une partie de ce code dans
+            d’autres composants React, pour des questions de lisibilité et de
+            réusabilité du code.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interagir avec les API avec Axios</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <h1>Interagir avec les API avec Axios</h1>
+      <div>
+        Dans la première partie, nous avons vu comment aller chercher simplement
+        les données d’une API tierce. Dans cette seconde partie, nous verrons
+        comment transmettre des informations à l’API, et à cette occasion nous
+        utiliserons la librairie Axios qui est une alternative à l’API Fetch.
+      </div>
+
+      <div>
+        <h2>Présentation d’Axios, ses avantages, ses inconvénients</h2>
+        <p>
+          Axios est une petite librairie très utilisée qui permet, tout comme
+          l’API Fetch, d’interagir avec des API. Axios et Fetch sont deux outils
+          largement interchangeables.
+        </p>
+        <p>
+          Par rapport à Fetch, Axios présente notamment l’intérêt de faciliter
+          grandement la réalisation de certaines opérations complexes,
+          typiquement la gestion des annulations de requêtes et la gestion des
+          délais. Par ailleurs, Axios est directement compatible avec d’anciens
+          navigateurs tels qu’Internet Explorer. Il est possible d’obtenir les
+          mêmes fonctionnalités avec Fetch, mais au prix d’une complexité accrue
+          du code.
+        </p>
+        <p>
+          Par contre, contrairement à Fetch, Axios n’est pas disponible
+          nativement dans le navigateur, il est donc nécessaire d’ajouter la
+          librairie Axios à notre projet React, ce qui est en soi un défaut. En
+          effet, plus le projet contient de librairies :
+        </p>
+        <ul>
+          <li>
+            Plus le risque est grand de se retrouver avec un problème de
+            compatibilité à un moment ou à un autre,
+          </li>
+          <li>
+            Plus le projet est lourd (temps de chargement accru au lancement,
+            trafic accru, etc.),
+          </li>
+          <li>Plus le risque de failles de sécurité est grand.</li>
+        </ul>
+        <p>
+          De manière générale, Axios est une solution intéressante pour les
+          développeurs débutants qui cherchent la simplicité de rédaction, ou
+          pour les développeurs qui privilégient l’efficacité d’écriture du
+          code, dès lors que le temps de chargement initial et le trafic ne sont
+          pas un critère critique. Axios est une librairie suffisamment légère
+          (y compris par rapport à React) pour que cet inconvénient reste
+          relatif.
+        </p>
+        <p>
+          Ces considérations sont valables que ce soit dans le cadre d’une
+          application React ou de toute autre application web.
+        </p>
+      </div>
+
+      <div>
+        <h2>Installation d’Axios</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Voyons comment intégrer Axios à un projet React. Pour cela, nous
+            allons reprendre le projet de la partie précédente et remplacer
+            l’utilisation de Fetch par celle d’Axios. Une deuxième vidéo qui
+            montre ces manipulations en pratique est disponible plus bas.
+          </p>
+          <p>
+            La manière la plus simple d’installer Axios est de passer par une
+            commande console et par le gestionnaire de paquets npm.
+          </p>
+          <p>
+            En reprenant le projet réalisé dans la première partie, sur Replit,
+            après avoir stoppé le projet (bouton Stop en haut de la fenêtre
+            navigateur), tapons ceci dans la console :
+          </p>
+          <code>npm i axios</code>
+          <p>
+            Axios devrait désormais être installé. Pour en être sûr, on peut
+            vérifier dans le fichier package.json qu’Axios y apparaît bien.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Exemple d’utilisation d’Axios</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Une fois ceci réalisé, importons Axios en haut de la page du fichier
+            App.jsx :
+          </p>
+          0
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="LYqajjZ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/LYqajjZ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Puis remplaçons cette expression écrite précédemment basée sur Fetch
+            :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="bGzZrrK"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/bGzZrrK"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>Par ce nouveau code qui utilise Axios :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="VwgRzMP"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/VwgRzMP"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous notons deux différences dans le code basé sur Axios, par
+            rapport à Fetch :
+          </p>
+          <ul>
+            <li>
+              Axios exécute automatiquement la fonction json() sans qu’on ait à
+              le coder, ce qui permet d’économiser une ligne de code.
+            </li>
+            <li>
+              Il a fallu ajouter un « .data » à l’objet « data » (=> data.data)
+              car les données ont été récupérées à un niveau au-dessus par
+              rapport à Fetch ; comme cela est montré dans la 2e vidéo
+              ci-dessous, il peut être conseillé de commencer par envoyer les
+              données récupérées dans un log console, pour voir si une telle
+              opération est nécessaire, ou si les données récupérées
+              correspondent exactement aux données recherchées.
+            </li>
+          </ul>
+          <p>
+            Voici la 2e vidéo de ce cours, qui montre comment remplacer Fetch
+            par Axios ainsi que nous venons de l’expliquer, en partant du projet
+            codé dans la première partie du cours :
+          </p>
+        </div>
+
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            Dans cette vidéo, le raccourci Ctrl+/ est régulièrement utilisé pour
+            gagner un peu de temps : il permet de commenter rapidement des
+            lignes de codes, ou à l’inverse de « décommenter » tout aussi
+            rapidement des lignes de codes qui auraient été préalablement
+            commentées. Cette façon de procéder permet d’éviter d’effacer du
+            code qui pourrait devoir être réutilisé ultérieurement : dans un
+            premier temps on commente le code dont on ne veut plus, et dès qu’il
+            se confirme que ce code ne sera plus utilisé, on le supprime.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les opérations CRUD et les méthodes HTTP</h2>
+        <p>
+          Le terme CRUD est l’acronyme des noms des quatre opérations de base
+          pour gérer des données persistantes :
+        </p>
+        <ul>
+          <li><strong>C</strong>reate : ajouter des données</li>
+          <li>
+            <strong>R</strong>ead ou Retrieve : lire ou récupérer des données
+          </li>
+          <li>
+            <strong>U</strong>pdate : mettre à jour, ou modifier des données
+          </li>
+          <li><strong>D</strong>elete : supprimer des données</li>
+        </ul>
+        <p>
+          Sans rentrer dans les détails du protocole HTTP, qui sert de fondement
+          à Internet, notons que ce protocole HTTP comprend huit méthodes de
+          base, dont quatre correspondent à peu près aux opérations CRUD :
+        </p>
+        <ul>
+          <li>
+            POST, pour envoyer des données à un serveur (via une API) afin de
+            créer une ressource
+          </li>
+          <li>GET, pour récupérer des données</li>
+          <li>
+            PUT, pour modifier une ressource, ou pour en créer une à une adresse
+            spécifique
+          </li>
+          <li>DELETE, pour supprimer une ressource</li>
+        </ul>
+      </div>
+
+      <div>
+        <h2>Configuration d’une requête Axios</h2>
+        <p>
+          Lorsqu’on envoie une requête avec Axios, un certain nombre d’options
+          ou paramètres peuvent être précisés, comme le type de format sous
+          lequel on souhaite récupérer les données. À l’exception de l’URL, tous
+          ces paramètres ont des valeurs par défaut et sont optionnels. Par
+          exemple, la méthode par défaut est la méthode GET, le type de format
+          par défaut est json. Tous les paramètres disponibles sont décrits dans
+          la documentation d’<a
+            href="https://axios-http.com/fr/docs/req_config"
+            target="_blank"
+            rel="alternate"
+            >axios-http</a
+          >.
+        </p>
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            L’utilisation du paramètre CancelToken, qui permet de gérer
+            l’annulation de requêtes, est désormais dépréciée, c’est-à-dire
+            qu’une alternative a été mise en place dont l’utilisation est
+            recommandée pour les nouveaux projets qui utilisent Axios ; ainsi,
+            plutôt que les CancelTokens, il est désormais recommandé d’utilisé
+            l’AbortController (voir
+            <a
+              href="https://axios-http.com/fr/docs/cancellation"
+              target="_blank"
+              rel="alternate"
+              >axios-http</a
+            >).
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les différentes syntaxes d’une requête Axios</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Plusieurs syntaxes sont possibles pour l’envoi d’une requête Axios.
+            Il existe une syntaxe universelle sous cette forme (peu utilisée) :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="MWLxvVM"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/MWLxvVM"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Une première alternative plus courante existe (c’est celle que nous
+            avons utilisée plus haut) :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="xxMBLjV"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/xxMBLjV"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Une seconde alternative consiste à créer une nouvelle instance
+            d’Axios, typiquement avec une configuration spécifique qui pourra
+            être utilisée pour éviter d’avoir à réécrire les mêmes options
+            plusieurs fois. Exemple :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="gOqExzv"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/gOqExzv"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            L’option baseURL ci-dessus permet d’ajouter la chaîne de caractère
+            indiquée en amont des URL indiquées ultérieurement, nous verrons
+            plus concrètement son utilisation quand nous coderons le second
+            exemple de ce cours. L’option timeout permet d’indiquer une durée
+            au-delà de laquelle la requête est annulée.
+          </p>
+          <p>
+            Une fois cette instance créée, elle s’appelle avec un
+            instance.request(…) ou plus classiquement de cette façon :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="NWoJvMO"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/NWoJvMO"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Lorsque l’instance est appelée, il est possible de compléter, voire
+            de remplacer, les options renseignées au moment de la création de
+            l’instance (en les intégrant dans les paramètres de fonction comme
+            on le ferait avec un axios.get(…). Pour les projets React de taille
+            un minimum conséquente, il est recommandé de créer une ou plusieurs
+            instances Axios dans un composant dédié, en renseignant typiquement
+            l’option baseURL ; c’est le concept de la LayerAPI, avec les
+            avantages suivants : modularité, clarté du code, maintenance et
+            updates facilitées, etc. Enfin, il est possible de lancer plusieurs
+            requêtes en parallèle avec la fonction Promise.all.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Gestion des erreurs</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Il est de bonne pratique de gérer les erreurs qui peuvent survenir,
+            au minimum de cette façon :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="XWOGaYJ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/XWOGaYJ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Pour un traitement davantage avancé des erreurs, voir la
+            documentation d’Axios sur la question :
+            <a
+              href="https://axios-http.com/fr/docs/handling_errors"
+              target="_blank"
+              rel="alternate"
+              >axios-http</a
+            >.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Réalisation des quatre opérations CRUD avec Axios et React</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous avons déjà vu comment récupérer des données (Read / GET) à
+            partir d’une API avec Axios et Fetch, nous allons désormais voir
+            comment réaliser les trois autres opérations CRUD avec Axios. Pour
+            cela, nous allons mettre en place une deuxième application React.
+          </p>
+          <p>
+            L’API que nous avions utilisée dans la partie «
+            <strong
+              >Interroger une API tierce dans une application React</strong
+            >
+            » ne permet pas d’autre opération que l’opération GET. Nous allons
+            donc utiliser une autre API pour cette nouvelle application : l’API
+            JSONPlaceholder qui est une « fausse » API qui sert aux développeurs
+            pour tester leurs requêtes d’API. Cette API propose notamment dans
+            sa partie « /posts » des simili-posts (composés d’un title et d’un
+            body) qu’il est possible de récupérer avec la méthode GET. L’API
+            autorise aussi les autres opérations (dont POST, PUT, DELETE) mais
+            ces opérations n’ont pas d’effet réel sur la liste de ces
+            simili-posts. L’intérêt de cette API réside dans le fait qu’à chaque
+            requête qu’elle reçoit, l’API JSONPlaceholder renvoie une réponse
+            qui indique si la requête a été correctement formulée ou non : ceci
+            se détermine en regardant soit le paramètre « data », soit le
+            statut, de la réponse renvoyée par l’API à la suite d’une requête,
+            comme cela est expliqué dans la 3e vidéo de ce cours, plus bas.
+          </p>
+          <p>
+            Créons donc une nouvelle application React Javascript sur Replit.
+            Commençons par installer Axios, toujours en tapant dans la console :
+          </p>
+          <code>npm i axios</code>
+          <p>
+            Puis créons notre application avec les quatre fonctions CRUD qui
+            interagissent avec l’API JSONPlaceholder/Posts :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="BaMbdVV"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/BaMbdVV"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Et voilà ! Cette nouvelle application permet non seulement de
+            comprendre comment rédiger les différentes requêtes CRUD dans une
+            application React + Axios, mais elle permet aussi de se familiariser
+            avec l’API JSONPlaceholer qui est très utile pour expérimenter ces
+            requêtes POST, PUT et DELETE.
+          </p>
+          <p>
+            La 3e vidéo de ce cours s’appuie sur ce code ci-dessus (qu’il est
+            suggéré de copier-coller comme indiqué dans la vidéo) pour montrer
+            comment vérifier que les requêtes adressées à l’API JSONPlaceholder
+            reçoivent une réponse « positive » de l’API.
+          </p>
+          <p>Voir vidéo</p>
+          <p>
+            Comme cela a été mentionné, toutes les opérations réalisées avec
+            Axios sont également réalisables avec l’API Fetch que nous avions
+            découverte dans la partie «
+            <strong
+              >Interroger une API tierce dans une application React</strong
+            >
+            », bien que l’utilisation de Fetch demande souvent d’écrire un code
+            plus long et plus complexe.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
