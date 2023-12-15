@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Introduction à Cypress pour les tests end-to-end dans une application
+      React
+    </title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <h1>
+        Introduction à Cypress pour les tests end-to-end dans une application
+        React
+      </h1>
+      <div>
+        <h2>Les test end-to-end</h2>
+        <p>
+          Les tests end-to-end sont une pratique essentielle dans le
+          développement pour garantir la qualité et le bon fonctionnement d’une
+          application. Ces tests permettent de vérifier le comportement d’une
+          application dans son ensemble, en simulant les interactions de bout en
+          bout entre les différents composants et systèmes.
+        </p>
+        <p>
+          L’objectif principal des tests E2E est de s’assurer que l’application
+          fonctionne correctement dans un environnement proche de la production,
+          en reproduisant les interactions réelles de l’utilisateur avec
+          l’application. Ils sont généralement réalisés en automatisant les
+          actions utilisateur, telles que la saisie de données, la navigation
+          sur le site web ou l’utilisation de fonctionnalités spécifiques, afin
+          de vérifier que l’application se comporte comme prévu.
+        </p>
+      </div>
+
+      <div>
+        <h2>Présentation de Cypress</h2>
+        <p>
+          Cypress est une bibliothèque de tests automatisés pour les
+          applications. Elle est conçue pour faciliter la création, l’exécution
+          et la maintenance de tests end-to-end, offrant ainsi une excellente
+          expérience pour les développeurs.
+        </p>
+        <p>
+          L’une des fonctionnalités les plus puissantes de Cypress est sa
+          capacité à exécuter les tests directement dans le navigateur. Cela
+          signifie que vous pouvez voir en temps réel l’exécution de vos tests
+          et déboguer facilement en utilisant les outils de développement du
+          navigateur. Cette approche unique élimine les problèmes liés à la
+          communication entre le navigateur et le testeur, ce qui rend les tests
+          plus fiables et plus rapides.
+        </p>
+        <p>
+          Cypress propose également une API riche qui permet de réaliser des
+          actions complexes et de vérifier facilement l’état de votre
+          application pendant les tests. Vous pouvez simuler des interactions
+          utilisateur telles que le clic, la saisie de texte et la soumission de
+          formulaires. De plus, Cypress offre une grande variété d’assertions
+          prédéfinies pour vérifier les résultats attendus de vos tests.
+        </p>
+        <p>
+          Une autre caractéristique intéressante de Cypress est sa capacité à
+          effectuer des tests de manière asynchrone. Il gère automatiquement les
+          attentes et les délais, ce qui évite les problèmes de synchronisation
+          couramment rencontrés dans d’autres outils de test. Cela permet de
+          rédiger des tests plus stables et plus fiables, tout en réduisant le
+          temps nécessaire pour les exécuter.
+        </p>
+      </div>
+
+      <div>
+        <h2>Installation de Cypress</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Afin d’installer Cypress à notre projet, nous pouvons écrire la
+            commande suivante dans le terminal de notre éditeur :
+          </p>
+          <code>npm install cypress -save-dev</code>
+          <p>
+            Nous avons maintenant Cypress dans notre application dans sa
+            dernière version actuelle disponible (actuellement 12.14.0)
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Exécution de Cypress</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Afin d’exécuter Cypress, nous pouvons écrire la commande suivante
+            dans le terminal :
+          </p>
+          <code>npx cypress open</code>
+        </div>
+      </div>
+
+      <div>
+        <h2>Configuration des test end-to-end</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Maintenant que Cypress est lancé, nous allons cliquer sur E2E
+            Testing afin d’entamer la configuration des test end-to-end :
+          </p>
+          <img
+            src="02_Img/tests-automat-applic-react-im3.png"
+            alt="Image tests-automat-applic-react-im3"
+          />
+          <p>
+            Ensuite, nous avons la liste des différents fichiers qui vont être
+            ajoutés à notre projet, notamment le fichier de configuration de
+            Cypress, nous pouvons appuyer sur le bouton Continue.
+          </p>
+          <p>
+            Enfin, nous pouvons choisir le navigateur dans lequel nous
+            souhaitons exécuter nos tests et appuyer sur le bouton Start E2E
+            Testing in “Nom du navigateur”.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Création d’un test</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Maintenant que Cypress a lancé le navigateur, nous allons pouvoir
+            mettre en place notre premier test.
+          </p>
+          <p>Cliquez sur la partie Create new spec :</p>
+          <img
+            src="02_Img/tests-automat-applic-react-im4.png"
+            alt="Image tests-automat-applic-react-im4"
+          />
+          <p>
+            Ensuite, nous avons la possibilité de personnaliser le nom et le
+            chemin d’accès à notre nouveau test, nous pouvons laisser le nom par
+            défaut et simplement cliquer sur le bouton Create Spec.
+          </p>
+          <p>
+            Un message de confirmation s’affiche et le test d’exemple a été
+            automatiquement créé et ajouté à notre projet dans le dossier
+            cypress/e2e/.
+          </p>
+          <p>
+            Nous pouvons tenter d’exécuter ce test en cliquant sur le bouton
+            Okay,run the spec.
+          </p>
+          <p>
+            Dans l’interface présente dans le navigateur, nous pouvons remarquer
+            que le test s’est passé correctement :
+          </p>
+          <img
+            src="02_Img/tests-automat-applic-react-im5_1.png"
+            alt="Image tests-automat-applic-react-im5_1"
+          />
+          <p>
+            Par ailleurs, sur la droite un aperçu de l’application est visible :
+          </p>
+          <img
+            src="02_Img/tests-automat-applic-react-im6.png"
+            alt="Image tests-automat-applic-react-im6"
+          />
+          <p>
+            En effet, le test d’exemple fourni par Cypress a réalisé une
+            navigation vers l’URL ('<a
+              href="https://example.cypress.io"
+              target="_blank"
+              rel="alternate"
+              >https://example.cypress.io</a
+            >') grâce à sa méthode visit().
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Personnalisation de notre test</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous pouvons accéder au fichier spec.cy.js afin de supprimer le test
+            d’exemple et créer à la place un test qui va réellement tester notre
+            application. Dans ce fichier, nous écrivons le code suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="YzBoVzW"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/YzBoVzW"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Veuillez noter qu’il est nécessaire d’importer le composant Users
+            dans le composant principal App et de retourner une instance de ce
+            composant.
+          </p>
+          <p>
+            Ici nous avons repris la même logique que les tests préalables
+            réalisés avec Jest.
+          </p>
+          <p>
+            Après nous être assurés que le serveur de test est toujours lancé,
+            nous utilisons la méthode visit afin d’indiquer à Cypress de se
+            rendre sur la page de notre application lancée sur le live serveur
+            en spécifiant l’URL.
+          </p>
+          <p>
+            Ensuite, nous vérifions que le prénom Arthur n’est pas affiché dans
+            l’application, puis nous simulons un clic sur notre bouton “Afficher
+            Liste”.
+          </p>
+          <p>
+            Enfin, nous vérifions que le prénom Arthur est maintenant présent
+            dans l’application.
+          </p>
+          <p>
+            Dans l’interface de Cypress ouverte dans le navigateur, nous
+            retrouvons le test qui a été passé avec succès avec le détail des
+            étapes testées :
+          </p>
+          <img
+            src="02_Img/tests-automat-applic-react-im7_1.png"
+            alt="Image tests-automat-applic-react-im7_1"
+          />
+        </div>
+      </div>
+
+      <div>
+        <h2>Vérification de la longueur des noms</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            De la même manière, nous pouvons également vérifier le résultat de
+            l’exécution de notre fonction nameLength qui vérifie la longueur des
+            noms d’utilisateurs.
+          </p>
+          <p>
+            Pour cela nous pouvons compléter notre test avec le code suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="VwgJbYa"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/VwgJbYa"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>Nous avons en premier lieu importé notre fonction nameLength.</p>
+          <p>
+            Ensuite, nous stockons le résultat de notre fonction nameLength,
+            puis nous vérifions qu’elle contient le nom Arthur, mais pas le nom
+            Lola qui possède moins de 5 lettres.
+          </p>
+          <p>
+            Maintenant, nous pouvons exécuter le test avec Cypress et nous avons
+            le résultat du test qui s’affiche dans l’interface :
+          </p>
+          <img
+            src="02_Img/tests-automat-applic-react-im8_1.png"
+            alt="Image tests-automat-applic-react-im8_1"
+          />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

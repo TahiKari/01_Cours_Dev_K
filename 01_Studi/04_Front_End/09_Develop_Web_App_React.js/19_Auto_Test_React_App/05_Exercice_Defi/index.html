@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercice défi</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <h1>Exercice défi</h1>
+      <div>
+        <p>
+          Imaginez avoir le besoin de réaliser un test avec Jest qui vérifie que
+          le nombre d’utilisateurs initiaux présents dans le tableau users est
+          inférieur à 5, et vérifier que la valeur totale soit bien égale à 4.
+        </p>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          Effectuez une recherche sur les références des comparateurs afin de
+          trouver celui qui permet de vérifier si un nombre est inférieur à un
+          autre, et celui qui permet de vérifier la longueur exacte de notre
+          tableau.
+        </p>
+        <div>
+          <h2>Solution</h2>
+          <p>
+            Dans la documentation de Jest, l’ensemble des comparateurs est
+            référencé ici :
+            <a
+              href="https://jestjs.io/fr/docs/expect"
+              target="_blank"
+              rel="alternate"
+              >https://jestjs.io/fr/docs/expect</a
+            >.
+          </p>
+          <p>
+            Après recherche, nous avons pu identifier que le comparateur utilisé
+            pour vérifier qu’un nombre est inférieur à un autre est
+            toBeLessThan() :
+            <a
+              href="https://jestjs.io/fr/docs/expect#tobelessthannumber--bigint"
+              target="_blank"
+              rel="alternate"
+              >https://jestjs.io/fr/docs/expect#tobelessthannumber--bigint</a
+            >.
+          </p>
+          <p>
+            Ensuite, pour vérifier la longueur de notre tableau, nous devons
+            utiliser toHaveLength() :
+            <a
+              href="https://jestjs.io/fr/docs/expect#tohavelengthnumber"
+              target="_blank"
+              rel="alternate"
+              >https://jestjs.io/fr/docs/expect#tohavelengthnumber</a
+            >.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          Mettre en place un test qui vérifie que la longueur de notre tableau
+          d’utilisateurs est inférieure à 5 et qu’il contient 4 utilisateurs.
+        </p>
+        <div>
+          <h2>Solution</h2>
+          <p>
+            En premier lieu, nous pouvons exporter notre tableau d’utilisateur
+            afin d’y accéder dans notre Users.test.js :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="ZEwdKMz"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/ZEwdKMz"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ensuite, nous pouvons écrire le code suivant dans notre fichier test
+            :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="dyaBWqW"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/dyaBWqW"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous avons importé le tableau d’utilisateur et utilisé toBeLessThan
+            pour vérifier que sa longueur est inférieure à 5, et nous avons
+            utilisé toHaveLength afin de vérifier que sa longueur exacte est 4.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

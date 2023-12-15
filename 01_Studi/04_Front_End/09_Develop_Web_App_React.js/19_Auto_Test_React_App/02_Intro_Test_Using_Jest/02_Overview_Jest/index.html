@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Présentation de Jest</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <h1>Présentation de Jest</h1>
+      <div>
+        <p>
+          Jest est un framework de test JavaScript largement utilisé dans le
+          développement d’applications web. Il offre une suite complète d’outils
+          et de fonctionnalités qui facilitent l’écriture, l’exécution et
+          l’analyse des tests.
+        </p>
+        <p>
+          Ce framework est spécialement conçu pour les projets basés sur des
+          technologies comme React, Vue.js, Angular et Node.js, mais il peut
+          également être utilisé avec d’autres frameworks et bibliothèques
+          JavaScript.
+        </p>
+        <p>
+          L’un des principaux avantages de Jest réside dans sa facilité
+          d’utilisation. Il est livré avec une configuration par défaut prête à
+          l’emploi, ce qui signifie que vous pouvez commencer à écrire des tests
+          immédiatement, sans avoir à se soucier de la mise en place de
+          l’environnement de test.
+        </p>
+        <p>
+          Ce framework offre une syntaxe claire et concise pour écrire des
+          assertions, ce qui rend les tests plus lisibles et maintenables. Il
+          prend en charge les fonctionnalités avancées telles que le groupement
+          des tests, les mocks et les spies, permettant aux développeurs de
+          simuler des comportements et de vérifier les appels de fonctions.
+        </p>
+        <p>
+          Une autre caractéristique intéressante est sa fonction de surveillance
+          intégrée. Lorsque vous lancez les tests, il surveille les fichiers
+          modifiés et ne relance que les tests pertinents, ce qui permet
+          d’accélérer considérablement le processus de développement.
+        </p>
+        <p>
+          Après l’exécution des tests, Jest livre un rapport détaillé
+          fournissant des informations sur les tests réussis, les échecs et la
+          couverture de code. Cela facilite le suivi et la correction des
+          erreurs.
+        </p>
+      </div>
+
+      <div>
+        <h2>Les assertions</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Les assertions sont des déclarations qui permettent de vérifier si
+            un résultat attendu correspond à celui obtenu lors de l’exécution
+            d’un test. Elles servent à évaluer si une condition est vraie ou
+            fausse. Dans le contexte des tests unitaires, les assertions sont
+            utilisées pour valider le comportement d’une fonction ou d’un
+            morceau de code.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les mocks</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Les mocks sont des objets simulés qui remplacent des dépendances
+            réelles dans les tests unitaires. Ils permettent d’isoler le code en
+            cours de test en remplaçant les parties du code qui interagissent
+            avec des composants externes, tels que des API, des bases de données
+            ou d’autres services. En utilisant des mocks, vous pouvez contrôler
+            les réponses attendues de ces dépendances et simuler différents
+            scénarios de test. Jest offre des fonctionnalités intégrées pour
+            créer et gérer des mocks, notamment en remplaçant les modules
+            importés par des versions simulées et en définissant des
+            comportements spécifiques pour les appels de fonctions.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les spies</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Les spies (espions) sont des fonctionnalités qui permettent de
+            surveiller et de suivre le comportement des fonctions lors de
+            l’exécution des tests. Ils enregistrent des informations sur les
+            appels de fonctions, comme les arguments passés, le nombre d’appels
+            et les valeurs de retour. Les spies sont utiles pour vérifier si une
+            fonction a été appelée avec les bons arguments, combien de fois elle
+            a été appelée ou pour obtenir des informations sur son comportement
+            interne pendant les tests.
+          </p>
+          <p>Voir vidéo</p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Initialisation du projet</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Dans ce cours, nous utiliserons <strong>Vite</strong> pour initier
+            notre application React, dans le terminal de notre éditeur de code,
+            nous écrivons la commande suivante :
+          </p>
+          <code>npm init vite@latest</code>
+          <p>
+            Après avoir saisi le nom du projet ainsi qu’un environnement de
+            développement React avec JavaScript, nous pouvons accéder au dossier
+            qui contient notre projet grâce à la commande suivante :
+          </p>
+          <code>cd mon-app</code>
+          <p>
+            Puis en tapant la commande suivante pour installer les dépendances
+          </p>
+          <code>npm install</code>
+          <p>
+            Nous allons utiliser testing-library afin d’inclure Jest a notre
+            projet.
+          </p>
+          <p>
+            Pour cela, nous pouvons inscrire la commande suivante dans le
+            terminal de notre éditeur :
+          </p>
+          <code
+            >npm install @testing-library/jest-dom @testing-library/react
+            jest</code
+          >
+          <p>
+            Nous avons désormais Jest en version 29.5.0 dans notre projet React.
+          </p>
+          <p>
+            Afin de gérer l’exécution des tests par Jest, nous devons rajouter
+            un script supplémentaire dans notre fichier package.json :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="xxMNBZL"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/xxMNBZL"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Par ailleurs, pour être en mesure d’effectuer le rendu des
+            snapshots, nous devons ajouter react-test-renderer à notre
+            application. Pour cela, écrivez la commande suivante dans le
+            terminal :
+          </p>
+          <code>npm install --save-dev react-test-renderer</code>
+        </div>
+      </div>
+
+      <div>
+        <h2>Qu’est-ce qu’un snapshot ?</h2>
+        <p>
+          Dans le contexte de Jest, un snapshot est une capture de la sortie
+          rendue par un composant ou une fonction lors de son exécution. Il
+          s’agit d’une représentation textuelle de la structure HTML, des
+          propriétés et des valeurs des composants ou d’autres éléments rendus.
+        </p>
+        <p>
+          Lorsque vous créez un snapshot, Jest enregistre le rendu actuel du
+          composant ou de la fonction dans un fichier .snap. Ce fichier contient
+          les données qui correspondent à l’état du composant à un moment
+          précis. Lorsque les tests sont exécutés à nouveau, Jest compare la
+          sortie actuelle avec le snapshot enregistré pour s’assurer qu’aucun
+          changement inattendu n’a été introduit.
+        </p>
+      </div>
+
+      <div>
+        <h2>Explications du test d’exemple présent dans le projet</h2>
+        <p>
+          Le test d’exemple présent dans le projet utilise la bibliothèque de
+          tests @testing-library/react.
+        </p>
+        <p>
+          Il teste si le composant App rend correctement le lien "learn react".
+        </p>
+        <p>
+          La fonction render est appelée pour rendre le composant App. Cela
+          simule le rendu du composant dans un environnement de test isolé.
+        </p>
+        <p>
+          Ensuite, la constante linkElement est déclarée en utilisant la
+          fonction screen.getByText(/learn react/i). Cette fonction recherche
+          dans le rendu du composant si un élément contenant le texte "learn
+          react" est présent.
+        </p>
+        <p>Si un tel élément est trouvé, il est stocké dans cette variable.</p>
+        <p>
+          Enfin, expect est appelée en combinaison avec toBeInTheDocument pour
+          vérifier si linkElement est bien présent dans le document. Si c’est le
+          cas, le test réussit. Sinon, le test échoue.
+        </p>
+      </div>
+
+      <div>
+        <h2>Lancer le test</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Afin de pouvoir lancer le test, et vérifier si notre composant App
+            effectue correctement le rendu de ce lien “learn react”, nous
+            pouvons utiliser la commande suivante dans le terminal :
+          </p>
+          <code>npm run test </code>
+          <p>
+            Après quelques instants, nous pouvons voir que le test App.test.js
+            est passé avec succès !
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les comparateurs</h2>
+        <p>
+          Jest offre une variété de comparateurs intégrés pour vérifier
+          différentes conditions et assertions dans les tests unitaires.
+        </p>
+        <p>
+          Ces comparateurs facilitent la validation des résultats attendus, en
+          permettant de vérifier divers aspects du code testé.
+        </p>
+        <p>
+          Vous pouvez retrouver l’ensemble des comparateurs proposé par Jest
+          dans la documentation :
+        </p>
+        <a
+          href="https://jestjs.io/fr/docs/expect"
+          target="_blank"
+          rel="alternate"
+          >JEST</a
+        >
+      </div>
+
+      <div>
+        <h2>Création d’un composant d’exemple</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons créer un composant nommé Users.js afin d’illustrer
+            l’utilisation des tests. Dans ce nouveau fichier Users.js, écrivez
+            le code suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="xxMNBRX"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/xxMNBRX"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici nous avons simplement créé un tableau contenant plusieurs noms
+            d’utilisateurs, une fonction qui permet d’exclure les utilisateurs
+            possédant un nom composé de 5 lettres ou moins.
+          </p>
+          <p>
+            Et enfin une logique de rendu nous permettant d’afficher la liste
+            des utilisateurs dans notre application.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Test de fonction avec Jest</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons maintenant mettre en place un test pour notre fonction
+            nameLength, afin de nous assurer que celle-ci occupe bien le rôle
+            attendu. Pour cela, nous pouvons créer un fichier Users.test.js qui
+            va contenir notre logique de test correspondante à notre composant
+            Users.
+          </p>
+          <p>
+            Nous allons inscrire le code suivant afin de tester notre fonction :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="abXrMWL"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/abXrMWL"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici nous avons créé un test qui va tester la fonction nameLength
+            importée.
+          </p>
+          <p>
+            Nous stockons le résultat de la fonction dans une variable
+            filteredUsers et vérifions si le tableau retourne bien le nom Arthur
+            qui possède plus de 5 lettres et si le prénom Lola a bien été
+            supprimé.
+          </p>
+          <p>
+            Pour lancer le test, nous pouvons accéder au terminal de l’éditeur
+            et écrire la commande suivante :
+          </p>
+          <code>npm run test</code>
+          <p>
+            Après l’exécution du test par Jest, nous devrions avoir un retour
+            indiquant que le test est passé avec succès :
+          </p>
+          <img
+            src="02_Img/tests-automat-applic-react-im1_1.png"
+            alt="Image tests-automat-applic-react-im1_1"
+          />
+        </div>
+      </div>
+
+      <div>
+        <h2>Tests de rendu de composant avec Jest</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Afin d’effectuer un test du rendu de notre composant, nous devons
+            utiliser les méthodes render et screen de testing-library. Ces
+            méthodes vont nous permettre de créer un rendu du composant et ainsi
+            pouvoir tester le résultat de ce rendu. Nous allons écrire un test
+            supplémentaire dans notre fichier Users.test.js afin de vérifier que
+            la liste des utilisateurs s’affiche correctement dans l’application
+            :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="ExrzMbb"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/ExrzMbb"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans ce test supplémentaire, nous avons utilisé la méthode render
+            afin d’effectuer un rendu de notre composant Users.
+          </p>
+          <p>
+            Ensuite via la méthode getByText de screen, nous avons pu vérifier
+            si le nom d’utilisateur Julien était bien présent dans
+            l’application, dans ce cas le test sera passé avec succès.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Tests d’événement avec Jest</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Afin d’illustrer la mise en place des tests d’événement avec Jest,
+            nous pouvons mettre en place une logique de rendu conditionnel de
+            notre liste dans le composant Users, écrivez le code suivant dans
+            Users.js :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="KKJLEZM"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/KKJLEZM"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici nous avons ajouté un bouton qui permet d’afficher ou cacher la
+            liste via un rendu conditionnel soumis à la valeur de l’état du
+            composant.
+          </p>
+          <p>
+            Ainsi, par défaut la liste n’est pas affichée et si l’utilisateur
+            clique sur le bouton, la liste apparaît dans l’application.
+          </p>
+          <p>
+            Pour effectuer des tests d’événement, nous pouvons utiliser
+            fireEvent de Jest qui va permettre de simuler une interaction de
+            l’utilisateur, ainsi nous sommes en mesure de tester notre composant
+            et sa réaction à l’interaction.
+          </p>
+          <p>Dans notre fichier test User.test.js écrivez le code suivant :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="qBgGvpY"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/qBgGvpY"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Après avoir effectué un rendu du composant User, nous vérifions que
+            le prénom Elodie n’est pas présent dans l’application, car par
+            défaut la liste n’est pas affichée dans l’application.
+          </p>
+          <p>
+            Ensuite, nous stockons notre bouton dans une variable button en y
+            accédant via le texte qu’il contient, puis via la méthode click de
+            fireEvent, nous simulons un clic sur ce bouton afin de déclencher le
+            rendu de la liste.
+          </p>
+          <p>
+            Enfin, nous vérifions que le prénom Elodie apparaît maintenant dans
+            notre application.
+          </p>
+          <p>
+            Si nous effectuons maintenant le lancement des tests, nous devrions
+            avoir deux tests passés avec succès :
+          </p>
+          <img
+            src="02_Img/tests-automat-applic-react-im2_1.png"
+            alt="Image tests-automat-applic-react-im2_1"
+          />
+          <p>Voir vidéo</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
