@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vue.js Example with CDN</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1 v-bind:title="titleText">{{ titleText }}</h1>
+      <img v-bind:src="imageSource" alt="Example image" />
+      <form>
+        <label>
+          Title:
+          <input type="text" v-model="titleText" />
+        </label>
+        <label>
+          Image URL :
+          <input type="text" v-model="imageSource" />
+        </label>
+      </form>
+    </div>
+
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            titleText: 'Exemple de v-bind',
+            imageSource: 'https://via.placeholder.com/350x150'
+          }
+        }
+      })
+
+      app.mount('#app')
+    </script>
+  </body>
+</html>

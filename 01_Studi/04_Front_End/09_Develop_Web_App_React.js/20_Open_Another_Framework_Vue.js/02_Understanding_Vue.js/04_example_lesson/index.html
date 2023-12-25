@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vue.js Example</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ message }}</h1>
+      <div>
+        <p>Count : {{ count }}</p>
+        <button v-on:click="handleClick">Click me</button>
+      </div>
+    </div>
+    
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            count: 0
+          }
+        },
+        methods: {
+          handleClick() {
+            this.count++
+          }
+        }
+      })
+    </script>
+  </body>
+</html>

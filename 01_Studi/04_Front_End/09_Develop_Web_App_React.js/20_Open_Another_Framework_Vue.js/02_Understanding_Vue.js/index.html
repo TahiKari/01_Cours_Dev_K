@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Comprendre Vue.js</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <h1>Comprendre Vue.js</h1>
+      <div>
+        <h2>
+          Importance et popularité de Vue dans le développement web moderne
+        </h2>
+        <p>
+          Vue.js est devenu de plus en plus populaire dans le développement web
+          moderne en raison de sa facilité d’utilisation, de sa flexibilité et
+          de ses performances. Sa syntaxe simple et intuitive permet aux
+          développeurs de créer et de prototyper rapidement des applications, ce
+          qui en fait un excellent choix pour les startups et les petites
+          entreprises. La simplicité de Vue.js permet également de développer
+          des flux de travail plus efficaces, ce qui permet de gagner du temps
+          et d’économiser des ressources.
+        </p>
+        <p>
+          De plus, la liaison réactive des données et le DOM virtuel de Vue.js
+          en font un framework efficace et performant, permettant de créer des
+          interfaces utilisateur rapides et réactives. Ceci est particulièrement
+          important dans le paysage actuel du développement web, où les
+          utilisateurs attendent des expériences rapides et transparentes. Un
+          autre facteur contribuant à la popularité de Vue.js est sa communauté
+          active et croissante, qui fournit de nombreuses ressources, de la
+          documentation et de l’assistance. L’approche communautaire a également
+          conduit au développement de nombreux plugins et extensions, faisant de
+          Vue.js un framework hautement personnalisable et polyvalent. En outre,
+          l’évolutivité de Vue.js et sa facilité d’intégration avec d’autres
+          outils et bibliothèques en ont fait un choix privilégié pour les
+          grandes entreprises et les entreprises établies.
+        </p>
+      </div>
+
+      <div>
+        <h2>Les composants Vue.js</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Vue.js est un framework basé sur des composants, ce qui signifie que
+            les applications sont construites à l’aide de composants
+            réutilisables et autonomes. Un composant Vue.js est un élément
+            personnalisé qui encapsule la logique HTML, CSS et JavaScript. Les
+            composants peuvent être imbriqués les uns dans les autres pour créer
+            des applications complexes, ce qui en fait un outil puissant pour
+            construire des interfaces utilisateur dynamiques et modulaires. Les
+            composants dans Vue.js sont définis à l’aide de la méthode
+            Vue.component() ou en créant une nouvelle instance Vue. Le modèle du
+            composant peut être défini soit à l’aide d’une chaîne de caractères,
+            soit sous la forme d’un fichier distinct portant l’extension .vue,
+            ce qui correspond à un composant à fichier unique. Chaque composant
+            Vue.js possède sa propre instance de données, qui est indépendante
+            des autres composants. Il est donc facile de gérer l’état de chaque
+            composant sans affecter les autres.
+          </p>
+        </div>
+
+        <div>
+          <h3>Exemple</h3>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="rNPXzoK"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/rNPXzoK"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>Et :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="BaMXdbQ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/BaMXdbQ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+        <p>Dans ces exemples, nous importons Vue avec la ligne :</p>
+        <code
+          >&ltscript
+          src="https://unpkg.com/vue@3/dist/vue.global.js"&gt&lt/script&gt</code
+        >
+        <p>
+          Dans chaque cas, nous créons une nouvelle instance d’application
+          Vue.js à l’aide de la méthode Vue.createApp().
+        </p>
+        <p>
+          Nous définissons ensuite une méthode data() qui renvoie un objet avec
+          les propriétés qui nous intéressent. Dans le premier cas, le message à
+          afficher, dans le deuxième, le nombre de fois qu’on a cliqué.
+        </p>
+        <p>
+          Nous montons ensuite notre instance d’application Vue.js dans
+          l’élément #app à l’aide de la méthode app.mount('#app'). (Notez
+          l’importance de mettre id="app" sur nos divs.).
+        </p>
+        <p>
+          La syntaxe {{ OBJET }} permet d’afficher la valeur d’OBJET dans notre
+          div.
+        </p>
+        <p>
+          Enfin, dans le dernier exemple, à l’intérieur de l’élément div, il y a
+          un bouton qui a un récepteur d’événement @click. L’écouteur @click est
+          une syntaxe abrégée pour la directive v-on:click qui lie un événement
+          de clic au bouton. Lorsque l’on clique sur le bouton, la variable
+          count est incrémentée de 1 et la valeur actualisée de count est
+          affichée dans le texte du bouton à l’aide de la syntaxe {{ count }}.
+        </p>
+      </div>
+
+      <div>
+        <h2>Les directives Vue</h2>
+        <div>
+          <h3>Définition</h3>
+          <p>
+            Les directives Vue.js sont des attributs spéciaux préfixés par « v-
+            » et utilisés pour manipuler le comportement des éléments HTML dans
+            la vue. Les directives permettent de lier des données à la vue,
+            d’effectuer un rendu conditionnel des éléments et de boucler des
+            tableaux.
+          </p>
+          <p>Voici quelques directives Vue.js couramment utilisées :</p>
+          <ul>
+            <li>
+              « v-bind » lie des données à l’attribut ou à la propriété d’un
+              élément. Par exemple, « v-bind:href="url" » lie la valeur d’URL à
+              l’attribut href d’un élément d’ancrage.
+            </li>
+            <li>
+              « v-model » lie les données à un élément input, select ou
+              textarea, ce qui permet de lier les données dans les deux sens
+              entre la vue et les données. Par exemple, « v-model="message" »
+              lie la valeur de message à la valeur d’un élément de saisie.
+            </li>
+            <li>
+              « v-if » et « v-else » : rendent les éléments en fonction d’une
+              condition. Par exemple, « v-if="isUserLoggedIn" » ne rendra
+              l’élément que si la variable isUserLoggedIn est vraie.
+            </li>
+            <li>
+              « v-for » : permet de parcourir en boucle un tableau et de rendre
+              un modèle pour chaque élément du tableau. Par exemple, «
+              v-for="item in items" » parcourra en boucle le tableau items et
+              rendra un modèle pour chaque élément.
+            </li>
+            <li>
+              « v-on » : attache un récepteur d’événement à un élément. Par
+              exemple, « v-on:click="handleClick" » associe un récepteur
+              d’événement click à un élément et appelle la méthode handleClick
+              lorsque l’élément est cliqué.
+            </li>
+            <li>
+              « v-show » : effectue un rendu conditionnel des éléments en
+              fonction d’une condition, mais ne les supprime pas du DOM. Par
+              exemple, « v-show="isUserLoggedIn" » cache l’élément si la
+              variable isUserLoggedIn est fausse.
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Voici un exemple complet d’un composant Vue.js qui utilise diverses
+            directives :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="oNmKGGj"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/oNmKGGj"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+        <p>
+          Nous utilisons v-bind pour lier l’attribut src d’une balise img à une
+          valeur dynamique dans les données du composant. Dans ce cas, la
+          variable imageSource contient l’URL d’une image qui sera affichée dans
+          la balise img. En utilisant v-bind, l’attribut src de la balise img
+          est mis à jour dynamiquement lorsque la valeur de imageSource change
+          dans les données du composant. Nous utilisons v-model pour lier la
+          variable message à un élément d’entrée, ce qui permet de lier les
+          données dans les deux sens entre la vue et les données. Cela signifie
+          que lorsque l’utilisateur tape dans le champ de saisie, la valeur du
+          message dans les données du composant est mise à jour, et lorsque la
+          valeur du message est mise à jour dans les données du composant, la
+          valeur du champ de saisie est mise à jour en conséquence.
+        </p>
+        <p>
+          Nous utilisons v-if et v-else pour effectuer un rendu conditionnel des
+          éléments en fonction de la valeur de la variable isUserLoggedIn. Si
+          l’utilisateur est connecté, nous affichons un message de bienvenue et
+          un bouton de déconnexion. Dans le cas contraire, nous affichons un
+          formulaire de connexion qui invite l’utilisateur à saisir son nom
+          d’utilisateur et son mot de passe. Nous utilisons v-for pour parcourir
+          en boucle le tableau des éléments et rendre un modèle pour chaque
+          élément du tableau. Dans ce cas, nous rendons une liste non ordonnée
+          avec un élément de liste pour chaque élément du tableau. Nous
+          utilisons v-show pour afficher conditionnellement un bouton en
+          fonction de la valeur de la variable showButton. Si showButton vaut
+          true, le bouton est affiché. Dans le cas contraire, le bouton est
+          caché. Dans l’objet methods, nous définissons trois méthodes : login,
+          logout et handleClick. Ces méthodes sont appelées lorsque certains
+          événements se produisent dans le composant, comme un clic sur un
+          bouton. Les méthodes login et logout mettent à jour la valeur de
+          isUserLoggedIn dans les données du composant, et la méthode
+          handleClick affiche une alerte lorsqu’un bouton est cliqué.
+        </p>
+      </div>
+
+      <div>
+        <h2>Les mots-clés data et methods</h2>
+        <p>
+          Dans Vue.js, l’option data est utilisée pour définir l’état initial
+          des données d’un composant. L’option data doit être une fonction qui
+          renvoie un objet contenant les propriétés de données du composant. Par
+          exemple :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="VwgoMXK"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/VwgoMXK"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          L’option methods permet de définir les méthodes d’un composant. Les
+          méthodes sont des fonctions qui sont exécutées lorsqu’un événement est
+          déclenché dans le composant, comme le clic d’un bouton ou la
+          soumission d’un formulaire. Par exemple :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="abXeLjz"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/abXeLjz"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, nous définissons un composant Vue.js avec un objet
+          methods qui contient une méthode showMessage. La méthode showMessage
+          affiche une boîte de dialogue d’alerte avec la valeur de la propriété
+          message. Pour appeler une méthode dans un modèle, nous pouvons
+          utiliser la directive v-on pour attacher un écouteur d’événement à un
+          élément, comme ceci :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="zYegEmO"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/zYegEmO"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Ainsi, les options data et methods sont des éléments fondamentaux d’un
+          composant Vue.js. En utilisant l’option data, nous pouvons définir
+          l’état initial des données d’un composant, et en utilisant l’option
+          methods, nous pouvons définir les méthodes d’un composant qui
+          répondent aux actions de l’utilisateur ou à d’autres événements.
+        </p>
+        <p>Voir vidéo</p>
+      </div>
+
+      <div>
+        <h2>Le DOM</h2>
+        <div>
+          <h3>Rappel</h3>
+          <p>
+            Le DOM (Document Object Model) est une interface de programmation
+            pour les documents web. Il représente le contenu HTML, XML ou XHTML
+            d’une page web sous la forme d’une structure arborescente où chaque
+            nœud représente une partie du document. Les nœuds sont des objets
+            auxquels les développeurs web peuvent accéder et qu’ils peuvent
+            manipuler à l’aide de langages de script tels que JavaScript.
+          </p>
+          <p>
+            Lorsqu’une page web est chargée dans un navigateur web, ce dernier
+            crée un modèle d’objet de document (DOM) de la page. Le DOM
+            représente la page sous forme de nœuds et d’objets dans une
+            structure hiérarchique arborescente où chaque nœud représente un
+            élément, un attribut ou un texte de la page. Les développeurs
+            peuvent utiliser le DOM pour manipuler le contenu, la structure et
+            le style de la page web, ainsi que pour interagir avec l’utilisateur
+            par le biais d’événements tels que les clics, la saisie et le
+            défilement.
+          </p>
+          <p>
+            Le DOM est un élément essentiel du développement web moderne, car il
+            permet aux développeurs de créer des pages web dynamiques et
+            interactives. Grâce au DOM, les développeurs peuvent ajouter,
+            modifier ou supprimer des éléments de la page en temps réel sans
+            avoir à recharger la page entière. Cela permet de créer des
+            applications web réactives, dynamiques.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Points communs avec React</h2>
+        <p>
+          L’un des points communs entre Vue.js et React est l’utilisation d’un
+          DOM virtuel.
+        </p>
+        <p>
+          Le DOM virtuel est une représentation en mémoire du DOM réel, qui
+          permet à Vue.js et React de mettre à jour l’interface utilisateur de
+          manière efficace. Au lieu de mettre directement à jour le DOM réel
+          chaque fois que l’état de l’application change, Vue.js et React
+          mettent d’abord à jour le DOM virtuel, puis comparent le DOM virtuel
+          mis à jour au DOM virtuel précédent. Ce faisant, Vue.js et React
+          peuvent déterminer le nombre minimum de mises à jour du DOM réel
+          nécessaires pour refléter les changements dans l’interface
+          utilisateur, ce qui améliore les performances. Vue.js et React
+          utilisent tous deux des algorithmes de différenciation pour comparer
+          le DOM virtuel mis à jour au DOM virtuel précédent et déterminer le
+          nombre minimum de mises à jour réelles du DOM nécessaires.
+          L’algorithme de différenciation compare le nouveau DOM virtuel à
+          l’ancien DOM virtuel et identifie les différences entre eux. Ensuite,
+          il n’applique que les changements nécessaires au DOM réel pour mettre
+          à jour l’interface utilisateur. En utilisant un DOM virtuel, Vue.js et
+          React facilitent l’écriture d’applications web efficaces et
+          performantes qui répondent rapidement aux changements d’état de
+          l’application. Le DOM virtuel permet également aux développeurs
+          d’écrire du code dans un style déclaratif, où ils décrivent ce à quoi
+          l’interface utilisateur devrait ressembler, plutôt que la manière de
+          la mettre à jour.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>Exemple comparant React à Vue.js pour la manipulation du DOM.</p>
+          <p>
+            Supposons que vous ayez un composant simple qui affiche un bouton et
+            un compteur, et que vous souhaitiez mettre à jour le compteur chaque
+            fois que le bouton est cliqué. Vous pouvez y parvenir avec React et
+            Vue.js, mais l’implémentation sera légèrement différente.
+          </p>
+          <p>
+            Dans React, vous utiliserez généralement le hook useState pour gérer
+            l’état du composant, et la propriété onClick pour attacher un
+            écouteur d’événement de clic au bouton. Voici un exemple :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="mdvNqmL"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/mdvNqmL"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+        <p>
+          Dans cet exemple, nous utilisons le hook useState pour définir une
+          variable d’état count et une fonction setCount pour mettre à jour
+          l’état. Nous définissons également une fonction handleClick qui met à
+          jour l’état de comptage lorsque le bouton est cliqué. Enfin, nous
+          rendons l’état de comptage et le bouton dans le modèle du composant,
+          et nous attachons la fonction handleClick à la propriété onClick du
+          bouton pour écouter les événements de clic.
+        </p>
+        <p>
+          Dans Vue.js, vous utiliseriez généralement l’option data pour gérer
+          l’état dans le composant et la directive v-on pour attacher un
+          écouteur d’événement de clic au bouton. Voici un exemple :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="OJdKOOr"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/OJdKOOr"> Untitled</a>
+            by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+              >@OpenSpirit</a
+            >) on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Un autre point commun entre React et Vue est l’architecture à
+          composants.
+        </p>
+        <p>
+          C’est un modèle de conception couramment utilisé dans les cadres de
+          développement web modernes tels que Vue.js et React. L’idée derrière
+          l’architecture à base de composants est de décomposer l’interface
+          utilisateur en éléments plus petits et réutilisables appelés
+          composants, qui peuvent être composés et réutilisés dans toute
+          l’application. Chaque composant est responsable du rendu d’une partie
+          de l’interface utilisateur et de la gestion de son état et de son
+          comportement. Les composants peuvent être imbriqués dans d’autres
+          composants, ce qui permet une architecture modulaire et évolutive qui
+          peut être facilement maintenue et étendue.
+        </p>
+        <p>
+          Par exemple, dans une application web typique, vous pouvez avoir un
+          formulaire de connexion, une barre de navigation et une section de
+          pied de page qui sont utilisés sur plusieurs pages de l’application.
+          Au lieu d’écrire le même code pour chaque page, vous pourriez créer
+          des composants distincts pour chacun de ces éléments d’interface
+          utilisateur et les réutiliser dans l’ensemble de l’application. Dans
+          Vue.js et React, les composants sont généralement définis à l’aide
+          d’une combinaison de syntaxe de type HTML et de JavaScript. Les
+          composants peuvent avoir des propriétés qui sont transmises par leurs
+          composants parents, ce qui permet de créer des interfaces utilisateur
+          dynamiques et flexibles.
+        </p>
+        <p>
+          Les composants peuvent également émettre des événements qui peuvent
+          être gérés par les composants parents, ce qui permet la communication
+          et la coordination entre les composants. L’architecture à base de
+          composants facilite la création, la maintenance et l’extension des
+          applications web en favorisant la réutilisation du code, la modularité
+          et l’évolutivité. En décomposant l’interface utilisateur en éléments
+          plus petits et réutilisables, les développeurs peuvent écrire un code
+          plus propre et mieux organisé, ce qui réduit le risque de bogues et
+          facilite l’ajout de nouvelles caractéristiques et fonctionnalités.
+        </p>
+        <p>
+          L’un des points communs entre Vue.js et React est la manière dont ils
+          gèrent l’état. Vue.js et React utilisent tous deux une architecture de
+          flux de données unidirectionnel pour gérer l’état, ce qui signifie que
+          les données circulent dans une seule direction du composant parent au
+          composant enfant. Cela permet de garder l’état de l’application
+          prévisible et facile à raisonner. Dans Vue.js, la gestion de l’état
+          est assurée par l’option data, qui définit l’état initial du
+          composant. Lorsque l’état du composant change, Vue.js redessine
+          automatiquement le composant et ses composants enfants, ce qui
+          garantit que l’interface utilisateur reste synchronisée avec l’état de
+          l’application.
+        </p>
+        <p>
+          De même, dans React, la gestion de l’état est assurée par les hooks
+          useState et useReducer, qui permettent aux composants de définir et de
+          mettre à jour leur propre état. Lorsque l’état du composant change,
+          React redessine le composant et ses composants enfants.
+        </p>
+        <p>
+          Vue.js et React fournissent tous deux des outils et des bibliothèques
+          permettant de gérer des états plus complexes dans des applications
+          plus importantes, comme Vuex pour Vue.js et Redux pour React. Ces
+          bibliothèques fournissent un store centralisé qui permet aux
+          composants de partager et d’accéder à l’état d’une manière prévisible
+          et cohérente, ce qui facilite la création et la maintenance
+          d’applications à grande échelle.
+        </p>
+        <p>
+          L’une des principales différences entre Vue.js et React est leur
+          approche de la syntaxe et des modèles.
+        </p>
+        <p>
+          Vue.js utilise une syntaxe basée sur les modèles qui est similaire à
+          HTML, permettant aux développeurs d’écrire un code déclaratif facile à
+          lire et à comprendre. Les modèles sont définis à l’aide de la balise
+          template et peuvent inclure des liaisons de données, des directives et
+          d’autres syntaxes spécifiques à Vue.
+        </p>
+        <p>
+          React, quant à lui, utilise une syntaxe basée sur JavaScript appelée
+          JSX, qui permet aux développeurs d’écrire du code de type HTML à
+          l’intérieur de leurs fichiers JavaScript. JSX n’est pas un langage de
+          modèle, mais une extension syntaxique pour JavaScript qui permet aux
+          développeurs d’écrire du code déclaratif d’une manière plus familière
+          et plus concise.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Voici un exemple de composant simple écrit à la fois en Vue.js et en
+            React. D’abord en Vue.js :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="dyaxZed"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/dyaxZed"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>Puis en React à présent :</p>
+          <p>
+            Comme vous pouvez le voir, le composant Vue.js utilise une syntaxe
+            basée sur des modèles qui définit l’interface utilisateur de manière
+            déclarative à l’aide de balises et de liaisons de données de type
+            HTML. Le composant React, quant à lui, utilise la syntaxe JSX pour
+            définir l’interface utilisateur de manière déclarative à l’aide d’un
+            code JavaScript qui ressemble à du HTML. Les deux approches ont
+            leurs avantages et leurs inconvénients. Les modèles Vue.js sont
+            faciles à lire et à comprendre, en particulier pour les développeurs
+            qui connaissent le HTML. Cependant, ils peuvent parfois être limités
+            en termes d’expressivité et de flexibilité. JSX, quant à lui, permet
+            aux développeurs d’écrire des interfaces utilisateur plus complexes
+            et dynamiques à l’aide de code JavaScript, mais peut être moins
+            intuitif pour les développeurs qui ne sont pas familiers avec la
+            syntaxe.
+          </p>
+        </div>
+        <p>
+          Une autre différence essentielle entre Vue.js et React est leur
+          approche de la réactivité et de la liaison de données. Vue.js utilise
+          un système réactif qui met automatiquement à jour l’interface
+          utilisateur lorsque les données sous-jacentes changent. Lorsque les
+          données changent, Vue.js met à jour le DOM virtuel, le compare à
+          l’état précédent et met à jour de manière sélective uniquement les
+          parties du DOM qui doivent être modifiées.
+        </p>
+        <p>
+          Il est ainsi facile de synchroniser l’interface utilisateur avec
+          l’état de l’application et de construire des interfaces complexes et
+          dynamiques sans se soucier des détails de l’implémentation
+          sous-jacente. Dans Vue.js, la liaison des données est réalisée à
+          l’aide de la directive v-bind, qui vous permet de lier une propriété
+          ou un attribut à une valeur dans les données du composant. Vue.js
+          fournit également un certain nombre d’autres directives, telles que
+          v-on pour la gestion des événements et v-if pour le rendu
+          conditionnel, qui vous permettent de construire facilement des
+          interfaces utilisateur dynamiques qui réagissent aux changements dans
+          les données.
+        </p>
+        <p>
+          React, quant à lui, utilise un système de flux de données
+          unidirectionnel, où les données circulent du composant parent au
+          composant enfant via des accessoires. Lorsque les données changent,
+          React redonne l’arborescence complète du composant, même si seule une
+          petite partie de l’interface utilisateur doit être mise à jour. Cela
+          peut compliquer la création d’interfaces utilisateur complexes et
+          dynamiques, en particulier dans les applications de grande taille.
+        </p>
+        <p>
+          Dans React, la liaison des données est réalisée à l’aide de state et
+          de props. Les composants peuvent définir leur propre état à l’aide du
+          crochet useState et peuvent recevoir des données de leurs composants
+          parents à l’aide de props. Pour mettre à jour l’interface utilisateur
+          lorsque les données changent, React fournit un certain nombre de
+          méthodes de cycle de vie, telles que componentDidUpdate, qui vous
+          permettent de mettre à jour manuellement le DOM lorsque les données
+          changent.
+        </p>
+        <p>
+          Bien que Vue.js et React fournissent tous deux des outils puissants
+          pour créer des interfaces utilisateur dynamiques, leurs approches de
+          la réactivité et de la liaison de données sont différentes. Vue.js
+          fournit un système plus intuitif et automatique pour maintenir
+          l’interface utilisateur en phase avec l’état de l’application, tandis
+          que React fournit un système plus flexible et personnalisable qui
+          nécessite davantage d’interventions manuelles.
+        </p>
+        <p>
+          Une dernière différence importante entre Vue.js et React est leur
+          courbe d’apprentissage et leur documentation.
+        </p>
+        <p>
+          Vue.js est connu pour sa simplicité et sa facilité d’utilisation, avec
+          une courbe d’apprentissage relativement faible par rapport à d’autres
+          frameworks JavaScript. La documentation de Vue.js est bien organisée
+          et facile à suivre, avec des exemples et des explications claires de
+          toutes les fonctionnalités et de tous les concepts de base. La
+          communauté Vue.js est également connue pour son aide et son soutien,
+          avec un certain nombre de ressources disponibles pour les débutants et
+          les développeurs expérimentés.
+        </p>
+        <p>
+          En revanche, React présente une courbe d’apprentissage plus abrupte,
+          en particulier pour les développeurs qui ne sont pas familiarisés avec
+          JSX et le paradigme de programmation fonctionnelle. La documentation
+          de React peut être écrasante pour les débutants, et peut nécessiter
+          plus de temps et d’efforts pour être pleinement comprise. Cependant,
+          une fois la courbe d’apprentissage initiale dépassée, React peut être
+          un outil puissant et flexible pour la construction d’interfaces
+          utilisateur et d’applications complexes.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

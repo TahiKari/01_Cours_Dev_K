@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact ist App</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" v-model="newContact.name" />
+        <label for="email">Email:</label>
+        <input type="email" id="email" v-model="newContact.email" />
+        <button v-on:click.prevent="addContact">Add Contact</button>
+      </form>
+      <ul>
+        <li v-for="(contact, index) in contacts" :key="index">
+          <input type="text" v-model="contact.name" />
+          <input type="email" v-model="contact.email" />
+          <button v-on:click.prevent="removeContact(index)">Remove</button>
+        </li>
+      </ul>
+    </div>
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            contacts: [
+              { name: 'John Doe', email: 'john@example.com' },
+              { name: 'Jane Smith', email: 'jane@example.com' },
+              { name: 'Bob Johnson', email: 'bob@example.com' }
+            ],
+            newContact: { name: '', email: '' }
+          }
+        },
+        methods: {
+          addContact() {
+            this.contacts.push({
+              name: this.newContact.name,
+              email: this.newContact.email
+            })
+            this.newContact = { name: '', email: '' }
+          },
+          removeContact(index) {
+            this.contacts.splice(index, 1)
+          }
+        }
+      })
+
+      app.mount('#app')
+    </script>
+  </body>
+</html>

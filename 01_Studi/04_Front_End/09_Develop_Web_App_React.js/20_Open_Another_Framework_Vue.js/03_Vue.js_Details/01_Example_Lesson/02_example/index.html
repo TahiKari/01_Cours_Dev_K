@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Computed Properties</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ fullName }}</h1>
+      <p>{{ message }}</p>
+      <form>
+        <label>
+          First Name:
+          <input type="text" v-model="firstName" />
+        </label>
+        <label>
+          Last Name:
+          <input type="text" v-model="lastName" />
+        </label>
+        <label>
+          Greeting:
+          <input type="text" v-model="greeting" />
+        </label>
+      </form>
+    </div>
+
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            firstName: 'John',
+            lastName: 'Doe',
+            greeting: 'Hello'
+          }
+        },
+        computed: {
+          fullName() {
+            return this.firstName + ' ' + this.lastName
+          },
+          message() {
+            return this.greeting + ', ' + this.fullName + '!'
+          }
+        }
+      })
+
+      app.mount('#app')
+    </script>
+  </body>
+</html>

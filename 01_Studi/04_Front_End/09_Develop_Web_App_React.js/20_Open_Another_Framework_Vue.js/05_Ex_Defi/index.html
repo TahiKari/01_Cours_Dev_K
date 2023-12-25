@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercice défi</title>
+  </head>
+  <body>
+    <div>
+      <h1>Exercice défi</h1>
+      <div>
+        <p>
+          Votre société vous a chargé de créer une application pour créer des to
+          do lists en Vue.js et Vuex qui permet à l’utilisateur d’ajouter de
+          nouvelles tâches, de marquer des tâches comme terminées et de
+          supprimer des tâches de la liste.
+        </p>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          Créez un store Vuex qui gérera l’état de la liste de tâches. Il doit
+          avoir les fonctionnalités suivantes :
+        </p>
+        <ul>
+          <li>Un tableau « tasks » qui contiendra la liste des tâches.</li>
+          <li>
+            Une mutation appelée « addTask » qui ajoutera une nouvelle tâche au
+            tableau « tasks ».
+          </li>
+          <li>
+            Une mutation appelée « toggleTask » qui basculera l’état terminé
+            d’une tâche dans le tableau « tasks ».
+          </li>
+          <li>
+            Une mutation appelée « removeTask » qui supprimera une tâche du
+            tableau « tasks ».
+          </li>
+          <li>
+            Un getter appelé « completedTasks » qui renverra le nombre de tâches
+            terminées dans le tableau « tasks ».
+          </li>
+          <li>Un getter appelé « allTasks » qui renverra toutes les tâches.</li>
+        </ul>
+        <div>
+          <h2>Solution</h2>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="bGZNBRp"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/bGZNBRp"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans ce store, nous avons un objet d’état avec une seule propriété
+            tasks, qui est un tableau qui contiendra notre liste de tâches.
+          </p>
+          <p>
+            Nous définissons également trois mutations : addTask, toggleTask et
+            removeTask. La mutation addTask prend un objet de tâche et l’ajoute
+            au tableau des tâches. La mutation toggleTask prend un taskIndex et
+            bascule l’état terminé de la tâche correspondante dans le tableau
+            des tâches. La mutation removeTask prend un index des tâches et
+            supprime la tâche correspondante du tableau des tâches.
+          </p>
+          <p>
+            Enfin, nous définissons un getter appelé filledTasks qui renvoie le
+            nombre de tâches terminées dans le tableau des tâches. Ce getter
+            filtre le tableau des tâches pour n’inclure que les tâches
+            terminées, puis renvoie la longueur du tableau résultant.
+          </p>
+          <p>
+            Puis on utilise un dernier getter allTasks pour récupérer toutes les
+            tâches (finies ou non).
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          Créez un composant Vue.js appelé « TodoList » qui utilisera le store
+          pour gérer la liste des tâches. Il doit avoir les fonctionnalités
+          suivantes :
+        </p>
+        <ul>
+          <li>
+            Une entrée de texte et un bouton « Ajouter une tâche » qui ajoutera
+            une nouvelle tâche à la liste lorsqu’il sera cliqué.
+          </li>
+          <li>
+            Une case à cocher à côté de chaque tâche qui marquera la tâche comme
+            terminée lorsque vous cliquez dessus.
+          </li>
+          <li>
+            Un bouton « Supprimer la tâche » à côté de chaque tâche qui
+            supprimera la tâche de la liste lorsque vous cliquez dessus.
+          </li>
+          <li>
+            Une computed property qui calculera le nombre de tâches terminées et
+            l’affichera à l’écran.
+          </li>
+        </ul>
+        <div>
+          <h2>Indice</h2>
+          <ul>
+            <li>
+              Vous pouvez utiliser v-for pour parcourir le tableau « tâches » et
+              afficher chaque tâche dans le composant TodoList.
+            </li>
+            <li>
+              Vous pouvez utiliser v-model pour lier l’entrée de texte à une
+              propriété de données dans le composant TodoList.
+            </li>
+            <li>
+              Vous pouvez utiliser v-bind pour lier l’attribut « coché » de la
+              case à cocher au statut terminé d’une tâche.
+            </li>
+            <li>
+              Vous pouvez utiliser v-on pour attacher des écouteurs d’événements
+              de clic aux éléments « Ajouter une tâche », « Supprimer une tâche
+              » et case à cocher.
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h2>Solution</h2>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="oNVgYwm"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/oNVgYwm"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Le code principal de l’application se trouve dans le fichier «
+            TodoList.vue », La propriété data contient une seule propriété
+            appelée « newTask », qui est utilisée pour stocker la valeur de
+            l’entrée de texte pour ajouter une nouvelle tâche. La computed «
+            completedCount » calcule le nombre de tâches terminées à l’aide du
+            getter « completedTasks » du store Vuex. La propriété method
+            contient trois méthodes : « addTask », qui est appelée lorsque le
+            bouton « Ajouter une tâche » est cliqué et ajoute une nouvelle tâche
+            au magasin Vuex, « toggleTask » qui active ou désactive une tâche et
+            « removeTask », qui supprime une tâche du store Vuex lorsque le
+            bouton « Supprimer tâche » est cliqué.
+          </p>
+          <p>
+            Le modèle contient une entrée de texte et un bouton « Ajouter une
+            tâche » qui sont liés à la propriété de données « newTask » à l’aide
+            de la directive « v-model ». Il contient également une liste de
+            tâches rendues à l’aide de la directive « v-for », chaque tâche
+            ayant une case à cocher pour basculer son état terminé et un bouton
+            « Supprimer la tâche » pour la supprimer. La computed property «
+            completedCount » est utilisée pour afficher le nombre de tâches
+            terminées à l’écran.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

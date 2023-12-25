@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Hooks</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ message }}</h1>
+    </div>
+
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            message : 'Hello, Vue.js!'
+          }
+        },
+        created() {
+          console.log('Component created.')
+        }
+      })
+
+      app.mount('#app')
+    </script>
+  </body>
+</html>

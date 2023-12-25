@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Events</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+</head>
+<body>
+    <div id="app">
+        <form v-on:submit.prevent="handleSubmit">
+            <input type="text" v-model="searchQuery" v-on:focus="handleFocus" placeholder="Entrer un terme...">
+            <button v-on:mouseover="handleMouseOver" v-on:mouseout="handleMouseOut">Chercher</button>
+        </form>
+        <ul>
+            <li v-for="item in items" v-bind:key="item.id">{{ item.text }}</li>
+        </ul>
+        <p v-show="showMessage">{{ message }}</p>
+        <div v-on:keydown="handleKeyDown" style="height: 300px; overflow-y: scroll;">
+            <p v-for="i in 50">{{ i }}</p>
+        </div>
+    </div>
+
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    searchQuery: '',
+                    items : [
+                        { id: 1, text : 'Item 1' },
+                        { id: 2, text : 'Item 2' },
+                        { id : 3, text : 'Item 3' }
+                    ],
+                    message : 'Vous avez cherché : ',
+                    showMessage: false
+                }
+            },
+            methods: {
+                handleSubmit() {
+                    this.showMessage = true
+                    this.message = `Vous avez cherché : ${this.searchQuery}`
+                },
+                handleFocus() {
+                    console.log('Input field focused !')
+                },
+                handleMouseOver() {
+                    console.log('Mouse over button!')
+                },
+                handleMouseOut() {
+                    console.log('Mouse out button!')
+                },
+                handleKeyDown(event) {
+                    console.log(`Key pressed: ${event.key}`)
+                }
+            }
+        })
+
+        app.mount('#app')
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vue.js Example</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <h1>{{ message }}</h1>
+      <button @click="count++">Count is: {{ count }}</button>
+      <img v-bind:src="imageSource" />
+      <input type="text" v-model="message" />
+      <div v-if="isUserLoggedIn">
+        <p>Welcome, {{ username }}!</p>
+        <button v-on:click="logout">Log out</button>
+      </div>
+      <div v-else>
+        <p>Please log in:</p>
+        <input type="text" v-model="username" />
+        <input type="password" v-model="password" />
+        <button v-on:click="login">Log in</button>
+      </div>
+      <ul>
+        <li v-for="item in items">{{ item }}</li>
+      </ul>
+      <button v-show="showButton" v-on:click="handleClick">Click me</button>
+      <br />
+      <br />
+      <button v-on:click="showMessage">Click me</button>
+    </div>
+
+    <script>
+      const app = Vue.createApp({
+        data() {
+          return {
+            message: 'Hello, Vue.js!',
+            count: 0,
+            imageSource: 'https://via.placeholder.com/2214x541',
+            message: 'Hello, Vue.js!',
+            isUserLoggedIn: false,
+            username: '',
+            password: '',
+            items: ['Pomme', 'Banane', 'Cerise'],
+            showButton: true,
+            message: 'Hello, Vue!'
+          }
+        },
+        methods: {
+          login() {
+            this.isUserLoggedIn = true
+          },
+          logout() {
+            this.isUserLoggedIn = false
+          },
+          handleClick() {
+            alert('Bouton Cliqué !')
+          },
+          showMessage() {
+            alert(this.message)
+          }
+        }
+      })
+
+      app.mount('#app')
+    </script>
+  </body>
+</html>

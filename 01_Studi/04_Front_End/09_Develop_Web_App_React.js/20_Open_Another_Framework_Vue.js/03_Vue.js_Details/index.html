@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js en détails</title>
+  </head>
+  <body>
+    <div>
+      <h1>Vue.js en détails</h1>
+      <div>
+        <h2>Les liaisons de données</h2>
+        <p>
+          L’une des principales caractéristiques de Vue.js est son système de
+          liaison de données réactif, qui facilite la synchronisation de
+          l’interface utilisateur avec l’état de l’application. Dans Vue.js, la
+          liaison de données est réalisée à l’aide de la directive v-bind, qui
+          vous permet de lier une propriété ou un attribut à une valeur dans les
+          données du composant.
+        </p>
+        <p>
+          Lorsque les données changent, Vue.js met automatiquement à jour le DOM
+          virtuel, le compare à l’état précédent et met à jour de manière
+          sélective uniquement les parties du DOM qui doivent être modifiées. Il
+          est ainsi facile de construire des interfaces utilisateur complexes et
+          dynamiques qui réagissent aux changements de données, sans se soucier
+          des détails de l’implémentation sous-jacente.
+        </p>
+        <p>
+          Vue.js fournit également un certain nombre d’autres outils pour
+          travailler avec des données réactives, notamment des computed
+          properties, des watchers et des events.
+        </p>
+      </div>
+
+      <div>
+        <h2>v-bind</h2>
+        <div>
+          <h3>Exemple</h3>
+          <p>Voici comment v-bind fonctionne :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="VwRYjgp"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/VwRYjgp"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, nous avons un composant qui affiche une image et
+            un titre. Nous utilisons v-bind pour lier l’attribut title de
+            l’élément &lth1&gt à la propriété de données titleText et l’attribut
+            src de l’élément &ltimg&gt à la propriété de données imageSource.
+          </p>
+          <p>
+            Cela signifie que lorsque les propriétés titleText ou imageSource
+            changent dans les données du composant, les attributs correspondants
+            dans le HTML seront automatiquement mis à jour pour refléter les
+            nouvelles valeurs. Sans v-bind, nous aurions à mettre à jour
+            manuellement ces attributs dans le DOM à chaque fois que les données
+            changeaient, ce qui serait beaucoup plus fastidieux et sujet aux
+            erreurs.
+          </p>
+          <p>
+            Désormais, lorsque l’utilisateur entre de nouvelles valeurs dans le
+            formulaire, les propriétés titleText et imageSource seront
+            automatiquement mises à jour pour refléter les nouvelles valeurs, et
+            le HTML sera mis à jour en conséquence grâce aux directives v-bind.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les computed properties</h2>
+        <p>
+          Dans Vue.js, les computed properties sont un outil puissant pour
+          dériver de nouvelles valeurs à partir de données existantes dans le
+          composant. Elles sont définies comme des fonctions dans l’objet «
+          computed » du composant et peuvent être utilisées comme des propriétés
+          de données normales dans le modèle du composant.
+        </p>
+        <p>
+          Elles sont « réactives », ce qui signifie qu’elles sont
+          automatiquement mises à jour chaque fois que les données dont elles
+          dépendent changent. Cela facilite la création d’interfaces utilisateur
+          complexes et dynamiques qui réagissent aux modifications des données,
+          sans avoir à écrire de code supplémentaire pour mettre à jour
+          manuellement le DOM.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>Voici un exemple :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="oNVgLOB"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/oNVgLOB"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>Dans cet exemple, l’utilisateur peut entrer son nom et prénom.</p>
+          <p>
+            La computed property « fullName » concatène les propriétés de
+            données firstName et lastName pour créer une chaîne de nom complet.
+            La computed « message » utilise greeting, firstName et lastName pour
+            créer une chaîne de message de salutation.
+          </p>
+          <p>
+            Si on modifie n’importe quelle donnée parmi firstName et lastName,
+            le message sera automatiquement recalculé.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les watchers</h2>
+        <p>
+          Les watchers sont une fonctionnalité qui vous permet de surveiller les
+          modifications apportées à une propriété de données spécifique, puis
+          d’effectuer une action lorsque cette propriété change. Les watchers
+          sont définis comme des fonctions dans l’objet watch du composant et
+          peuvent être utilisés pour déclencher tout type d’effet secondaire ou
+          de comportement lorsque les données surveillées changent.
+        </p>
+        <p>
+          Les watchers peuvent être utiles lorsque vous devez effectuer une
+          certaine action en fonction d’une condition ou lorsque vous devez
+          synchroniser les modifications entre deux propriétés de données
+          différentes dans votre composant.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>Voici un exemple de watchers :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="jOJErgJ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/jOJErgJ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, nous avons un composant simple avec une propriété
+            de données « count » et une méthode increment qui augmente le nombre
+            de un. Nous définissons également un watcher dans l’objet watch qui
+            alerte un message chaque fois que la propriété count data change.
+            Désormais, lorsque l’utilisateur clique sur le bouton « Incrémenter
+            », la propriété count augmente de un et le watcher est déclenché.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les events</h2>
+        <p>
+          Les événements sont un moyen de gérer les interactions de
+          l’utilisateur avec l’application, telles que les clics sur les
+          boutons, les soumissions de formulaires et les mouvements de la
+          souris. Vue.js fournit un système puissant et flexible pour gérer les
+          événements, vous permettant de créer facilement des interfaces
+          utilisateur dynamiques et réactives.
+        </p>
+        <p>
+          Les événements dans Vue.js sont déclenchés à l’aide de la directive
+          v-on, qui est utilisée pour lier un écouteur d’événement spécifique à
+          un élément du modèle. Lorsque l’utilisateur effectue l’action
+          spécifiée, comme cliquer sur un bouton, l’écouteur d’événement est
+          déclenché et la méthode spécifiée est appelée.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>Voici un exemple d’utilisation des events :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="qBvEaBR"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/qBvEaBR"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, nous avons un composant qui comprend un formulaire
+            de recherche avec un champ de saisie et un bouton d’envoi. Nous
+            utilisons la directive v-on pour lier plusieurs types d’événements
+            différents à divers éléments du modèle.
+          </p>
+          <ul>
+            <li>
+              submit pour déclencher la méthode handleSubmit lorsque
+              l’utilisateur soumet le formulaire.
+            </li>
+            <li>
+              input pour lier la valeur du champ d’entrée à la propriété de
+              données searchQuery.
+            </li>
+            <li>
+              focus pour déclencher la méthode handleFocus lorsque l’utilisateur
+              se concentre sur le champ de saisie.
+            </li>
+            <li>
+              mouseover et mouseout pour déclencher les méthodes handleMouseOver
+              et handleMouseOut lorsque l’utilisateur survole et s’éloigne du
+              bouton d’envoi.
+            </li>
+            <li>
+              keydown pour déclencher la méthode handleKeyDown lorsque
+              l’utilisateur appuie sur une touche alors que le focus est sur
+              l’élément div défilable.
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les hooks</h2>
+        <p>
+          Les hooks de cycle de vie des composants sont un aspect fondamental de
+          Vue.js qui permet aux développeurs de contrôler le comportement de
+          leurs composants tout au long de leur cycle de vie. Dans Vue.js,
+          chaque composant passe par une série d’étapes au fur et à mesure de sa
+          création, de sa mise à jour et de sa destruction, et les hooks
+          permettent de se connecter à ces étapes et d’exécuter une logique
+          personnalisée.
+        </p>
+        <p>
+          Il existe plusieurs hooks disponibles dans Vue.js, chacun
+          correspondant à une étape spécifique du cycle de vie du composant. Ces
+          hooks peuvent être divisés en trois catégories :
+        </p>
+        <ul>
+          <li>
+            Hooks de création : ces hooks sont appelés lorsqu’un composant est
+            créé et monté pour la première fois sur la page. Les hooks de
+            création disponibles incluent beforeCreate, created, beforeMount et
+            mounted.
+          </li>
+          <li>
+            Hooks de mise à jour : ces hooks sont appelés lorsque les données
+            d’un composant changent et que le composant doit être rendu à
+            nouveau. Les hooks de mise à jour disponibles incluent beforeUpdate
+            et updated.
+          </li>
+          <li>
+            Crochets de hooks : ces hooks sont appelés lorsqu’un composant est
+            détruit et supprimé de la page. Il y a beforeUnmount et unmounted.
+          </li>
+        </ul>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Voici un exemple d’utilisation d’un hook de création pour consigner
+            un message lors de la création d’un composant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="vYPEXNp"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/vYPEXNp"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Présentation de Vue CLI</h2>
+        <p>
+          Vue CLI, abréviation de Vue Command Line Interface, est un outil
+          puissant qui simplifie le processus de création, de configuration et
+          de déploiement des applications Vue.js. Il fournit un ensemble de
+          commandes et d’outils qui automatisent de nombreuses tâches de
+          développement courantes, telles que l’échafaudage de projets, la
+          gestion des dépendances et la configuration de la construction.
+        </p>
+        <p>
+          L’objectif principal de Vue CLI est de fournir aux développeurs une
+          expérience de développement rationalisée et cohérente qui les aide à
+          être plus productifs et efficaces. En fournissant un ensemble d’outils
+          et de workflows standardisés, Vue CLI aide les développeurs à se
+          concentrer sur la création de leurs applications plutôt que sur la
+          gestion de l’infrastructure sous-jacente.
+        </p>
+        <p>Certains des avantages de l’utilisation de Vue CLI incluent :</p>
+        <ul>
+          <li>
+            Scaffolding de projet : vue CLI fournit une gamme de modèles de
+            projet préconfigurés qui peuvent être utilisés comme point de départ
+            pour créer de nouvelles applications. Ces modèles incluent des
+            paramètres préconfigurés pour des outils tels que Webpack, Babel et
+            ESLint, ce qui peut faire gagner beaucoup de temps et d’efforts aux
+            développeurs.
+          </li>
+          <li>
+            Gestion des dépendances : vue CLI gère automatiquement les
+            dépendances de vos projets, ce qui facilite l’ajout, la mise à jour
+            et la suppression des dépendances selon les besoins. Il fournit
+            également une gamme de plugins et de préréglages qui peuvent être
+            utilisés pour étendre les fonctionnalités de votre application.
+          </li>
+          <li>
+            Configuration de build : vue CLI fournit une gamme de paramètres de
+            build préconfigurés qui peuvent être utilisés pour optimiser les
+            performances et l’efficacité de votre application. Il prend
+            également en charge une gamme d’options de personnalisation, vous
+            permettant de configurer votre processus de build en fonction de vos
+            besoins spécifiques.
+          </li>
+          <li>
+            Test et débogage : ceci inclut une prise en charge intégrée des
+            tests unitaires et des tests de bout en bout, ce qui facilite le
+            test et le débogage de votre application pendant le développement.
+          </li>
+        </ul>
+        <p>Voir vidéo</p>
+      </div>
+
+      <div>
+        <h2>Vuex</h2>
+        <p>
+          Vuex est une bibliothèque de gestion d’état pour Vue.js qui vous
+          permet de gérer l’état de votre application dans un store centralisé.
+          Le store contient l’état de l’ensemble de l’application, et les
+          composants peuvent accéder à l’état et le modifier grâce à un ensemble
+          d’actions et de mutations bien définies.
+        </p>
+        <p>
+          Voici un exemple qui montre comment utiliser Vuex pour gérer l’état
+          d’une application de compteur simple :
+        </p>
+        <div>
+          <h3>Complément</h3>
+          <p>
+            Pour ceux qui ne peuvent pas regarder la vidéo, voici le code, dans
+            le fichier store/index.js :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="dyrPpBq"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/dyrPpBq"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>Dans components/counterComponent.vue :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="GRegjbL"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/GRegjbL"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>Et enfin dans App.vue :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="bGZNwXN"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/bGZNwXN"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
