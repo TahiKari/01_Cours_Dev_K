@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercice défi</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <h1>Exercice défi</h1>
+      <div>
+        <p>
+          Votre entreprise vous a chargé de créer une application de gestion de
+          liste de courses en utilisant Vue.js et Vuex. L’application doit
+          permettre à l’utilisateur d’ajouter des articles à la liste, de
+          marquer les articles comme achetés et de supprimer les articles de la
+          liste.
+        </p>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          Créez un store Vuex qui gérera l’état de la liste de courses. Le store
+          doit inclure les fonctionnalités suivantes :
+        </p>
+        <ul>
+          <li>Un tableau « items » qui contient la liste des articles.</li>
+          <li>
+            Une mutation appelée « addItem » qui ajoute un nouvel article au
+            tableau « items ».
+          </li>
+          <li>
+            Une mutation appelée « toggleItem » qui bascule l’état acheté d’un
+            article dans le tableau « items ».
+          </li>
+          <li>
+            Une mutation appelée « removeItem » qui supprime un article du
+            tableau « items ».
+          </li>
+          <li>
+            Un getter appelé « purchasedItems » qui renvoie les articles achetés
+            dans le tableau « items ».
+          </li>
+          <li>
+            Un getter appelé « allItems » qui renvoie tous les articles dans le
+            tableau « items ».
+          </li>
+        </ul>
+        <div>
+          <h2>Solution</h2>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="GReJNBK"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/GReJNBK"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans ce store Vuex, nous avons un objet d’état avec une seule
+            propriété items, qui est un tableau qui contiendra notre liste de
+            courses.
+          </p>
+          <p>
+            Nous définissons également trois mutations : addItem, toggleItem et
+            removeItem. La mutation addItem prend un objet d’article et l’ajoute
+            au tableau des articles. La mutation toggleItem prend un itemIndex
+            et bascule l’état acheté de l’article correspondant dans le tableau
+            des articles. La mutation removeItem prend un index d’article et
+            supprime l’article correspondant du tableau des articles.
+          </p>
+          <p>
+            Enfin, nous définissons un getter appelé purchasedItems qui renvoie
+            les articles achetés dans le tableau des articles. Ce getter filtre
+            le tableau des articles pour n’inclure que les articles achetés.
+          </p>
+          <p>
+            Puis nous ajoutons un autre getter allItems pour récupérer tous les
+            articles dans le tableau
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Question</h2>
+        <p>
+          Créez un composant Vue.js appelé « ShoppingList » qui utilise le store
+          pour gérer la liste des articles. Il doit avoir les fonctionnalités
+          suivantes :
+        </p>
+        <ul>
+          <li>
+            Une entrée de texte et un bouton « Ajouter un article » qui ajoute
+            un nouvel article à la liste lorsqu’il est cliqué.
+          </li>
+          <li>
+            Une case à cocher à côté de chaque article qui marquera l’article
+            comme acheté lorsqu’elle est cochée.
+          </li>
+          <li>
+            Un bouton « Supprimer l’article » à côté de chaque article qui
+            supprime l’article de la liste lorsqu’il est cliqué.
+          </li>
+          <li>
+            Une computed property qui calculera le nombre d’articles achetés et
+            l’affichera à l’écran.
+          </li>
+        </ul>
+        <div>
+          <h2>Indice</h2>
+          <ul>
+            <li>
+              Vous pouvez utiliser v-for pour parcourir le tableau « tâches » et
+              afficher chaque tâche dans le composant TodoList.
+            </li>
+            <li>
+              Vous pouvez utiliser v-model pour lier l’entrée de texte à une
+              propriété de données dans le composant TodoList.
+            </li>
+            <li>
+              Vous pouvez utiliser v-bind pour lier l’attribut coché de la case
+              à cocher au statut terminé d’une tâche.
+            </li>
+            <li>
+              Vous pouvez utiliser v-on pour attacher des écouteurs d’événements
+              de clic aux éléments « Ajouter un article », « Supprimer un
+              article » et case à cocher.
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h2>Solution</h2>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="ExMjNpL"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/ExMjNpL"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Le composant « ShoppingList » utilise le store Vuex pour gérer la
+            liste des articles à acheter. La propriété data contient une seule
+            propriété appelée « newItem », qui est utilisée pour stocker la
+            valeur de l’entrée de texte pour ajouter un nouvel article. La
+            computed property « purchasedItemCount » calcule le nombre
+            d’articles achetés à l’aide du getter « purchasedItems » du store
+            Vuex. La propriété method contient trois méthodes : « addItem », qui
+            est appelée lorsque le bouton « Ajouter un article » est cliqué et
+            ajoute un nouvel article au magasin Vuex, « toggleItem » qui active
+            ou désactive l’achat d’un article et « removeItem », qui supprime un
+            article du store Vuex lorsque le bouton « Supprimer l’article » est
+            cliqué.
+          </p>
+          <p>
+            Le modèle contient une entrée de texte et un bouton « Ajouter un
+            article » qui sont liés à la propriété de données « newItem » à
+            l’aide de la directive « v-model ». Il contient également une liste
+            d’articles rendus à l’aide de la directive « v-for », chaque article
+            ayant une case à cocher pour marquer comme acheté et un bouton «
+            Supprimer l’article » pour le supprimer. La computed property «
+            purchasedItemCount » est utilisée pour afficher le nombre d’articles
+            achetés à l’écran.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

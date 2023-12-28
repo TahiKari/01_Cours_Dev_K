@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Préparer un projet Vue</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <h1>Préparer un projet Vue</h1>
+      <div>
+        <h2>Vue CLI</h2>
+        <p>
+          Pour démarrer avec le développement Vue.js, vous devez installer Vue
+          CLI, un outil d’interface de ligne de commande qui facilite la mise en
+          place du projet, le développement et la création d’applications
+          Vue.js.
+        </p>
+        <p>
+          Pour installer Vue CLI, vous devez avoir Node.js installé sur votre
+          machine. Si vous n’avez pas installé Node.js, vous pouvez le
+          télécharger et l’installer à partir du site officiel. Une fois que
+          vous avez installé Node.js, vous pouvez installer Vue CLI à l’aide de
+          la commande suivante dans votre terminal ou invite de commande :
+        </p>
+        <code>npm install -g @vue/cli</code>
+        <p>
+          Cela installera la dernière version de Vue CLI globalement sur votre
+          machine. Une fois l’installation terminée, vous pouvez vérifier que la
+          CLI de Vue est installée en exécutant la commande suivante :
+        </p>
+        <code>vue --version</code>
+        <p>
+          Cela devrait afficher le numéro de version de Vue CLI que vous venez
+          d’installer. Avec Vue CLI installé, vous êtes maintenant prêt à
+          commencer à créer des projets Vue.js et à créer des applications
+          étonnantes.
+        </p>
+      </div>
+
+      <div>
+        <h2>Créer un projet Vue</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            La création d’un nouveau projet Vue.js à l’aide de Vue CLI implique
+            la mise en place de la structure du projet à l’aide de l’interface
+            de ligne de commande.
+          </p>
+          <p>
+            Pour commencer, accédez au répertoire où vous souhaitez créer votre
+            projet et exécutez la commande « vue create nom-du-projet ». Cette
+            commande vous invitera à choisir un préréglage ou une configuration
+            pour votre projet. Vous pouvez choisir parmi une variété d’options,
+            notamment la sélection manuelle des fonctionnalités, la sélection
+            d’un préréglage par défaut ou la sélection d’un préréglage
+            enregistré.
+          </p>
+          <p>
+            Nous aurons besoin des packages Router et Vuex. Pour installer Vue
+            Router et Vuex en même temps que la configuration par défaut du
+            projet, après avoir exécuté la commande « vue create my-project »,
+            choisissez « Sélection manuelle des fonctionnalités » et appuyez sur
+            entrée. Vous serez alors invité à sélectionner les fonctionnalités
+            que vous souhaitez inclure dans votre projet.
+          </p>
+          <p>
+            Faites défiler vers le bas pour trouver les options « Router » et «
+            Vuex » et sélectionnez-les à l’aide de la barre d’espace.
+          </p>
+          <p>
+            Une fois que vous avez fait vos sélections, appuyez sur entrée pour
+            continuer le processus de configuration du projet. Vue Router et
+            Vuex seront installés et configurés automatiquement dans votre
+            projet.
+          </p>
+          <p>
+            Alternativement, si vous avez déjà créé votre projet sans ces
+            fonctionnalités, vous pouvez les ajouter ultérieurement en exécutant
+            la commande « vue add router » ou « vue add vuex », respectivement.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>La structure du projet Vue CLI</h2>
+        <p>
+          Créer un nouveau projet Vue.js en utilisant Vue CLI implique la
+          compréhension de la structure de projet qu’il met en place. Une fois
+          que vous avez créé un nouveau projet en utilisant la commande « vue
+          create », vous remarquerez que Vue CLI a créé plusieurs fichiers et
+          répertoires dans votre répertoire de projet.
+        </p>
+        <p>
+          Les principaux fichiers avec lesquels vous travaillerez sont dans le
+          dossier « src », dont « main.js » et « App.vue ». « main.js » est le
+          point d’entrée de votre application et est responsable de la création
+          de l’instance Vue et de son montage dans le DOM. « App.vue » est le
+          composant racine de votre application, qui contient tous les autres
+          composants qui constituent votre application.
+        </p>
+        <p>
+          Vue CLI configure également plusieurs répertoires pour organiser votre
+          code et vos ressources. Le répertoire « src » est l’endroit où vous
+          écrirez la plupart de votre code d’application, y compris les
+          composants, les vues et les utilitaires. Le répertoire « public » est
+          l’endroit où vous placerez toutes les ressources statiques telles que
+          les images ou les polices.
+        </p>
+        <p>
+          Le dossier « src/components » dans un projet Vue CLI est l’endroit où
+          vous pouvez stocker tous vos composants Vue. Les composants sont des
+          éléments d’interface utilisateur réutilisables qui peuvent être
+          assemblés pour créer une application plus complexe.
+        </p>
+        <p>
+          Enfin, Vue CLI configure des fichiers de configuration tels que «
+          babel.config.js » et « eslintrc.js » pour configurer votre processus
+          de construction et la vérification du code. Comprendre la structure de
+          votre projet Vue.js est important pour organiser efficacement votre
+          code et vos ressources, ainsi que pour résoudre tout problème qui
+          pourrait survenir.
+        </p>
+        <p>
+          Lorsque vous créez un nouveau projet Vue.js en utilisant Vue CLI, deux
+          des fichiers principaux avec lesquels vous travaillerez sont « main.js
+          » et « App.vue ».
+        </p>
+        <p>
+          « main.js » est le point d’entrée de votre application et est
+          responsable de la création de l’instance Vue et de son montage sur le
+          DOM. Il importe également le composant racine de votre application, «
+          App.vue ».
+        </p>
+        <p>
+          « App.vue » est le composant racine de votre application, qui contient
+          tous les autres composants qui composent votre application. Il est
+          composé de trois parties : le template, le script et le style.
+        </p>
+        <p>
+          Le template contient le HTML et les directives Vue qui définissent la
+          structure du composant. Le script contient la logique du composant, y
+          compris les données, les méthodes et les hooks de cycle de vie. Le
+          style contient le CSS qui stylise le composant.
+        </p>
+        <p>
+          « main.js » et « App.vue » sont tous deux essentiels pour la
+          construction d’une application Vue.js. Dans « main.js », vous pouvez
+          configurer Vue et importer tous les plugins ou bibliothèques dont vous
+          pourriez avoir besoin. Dans « App.vue », vous pouvez définir la
+          structure et le comportement du composant racine de votre application.
+        </p>
+      </div>
+
+      <div>
+        <h2>Vuex Store</h2>
+        <p>
+          Le Vuex Store est un modèle de gestion d’état et une bibliothèque pour
+          les applications Vue.js. Il est utile pour gérer l’état de
+          l’application, qui comprend les données partagées entre différents
+          composants de l’application. Avec Vuex, l’état de l’application est
+          stocké dans un emplacement centralisé appelé store, ce qui facilite la
+          gestion et la mise à jour de l’état de manière cohérente et
+          prévisible.
+        </p>
+        <p>
+          Le store Vuex a quatre composants principaux : l’état, les getters,
+          les mutations et les actions.
+        </p>
+        <ul>
+          <li>
+            État : c’est le magasin centralisé qui contient l’état de
+            l’application. L’état est réactif, ce qui signifie que lorsque
+            l’état change, les composants qui en dépendent sont automatiquement
+            mis à jour.
+          </li>
+          <li>
+            Getters : ce sont des fonctions qui vous permettent de récupérer des
+            données de l’état de manière similaire à une propriété calculée. Les
+            getters peuvent également être utilisés pour filtrer ou transformer
+            les données de l’état avant de les renvoyer au composant.
+          </li>
+          <li>
+            Mutations : ce sont des fonctions qui sont utilisées pour mettre à
+            jour l’état. Ils sont la seule façon de changer l’état dans un store
+            Vuex. Les mutations sont synchrones, ce qui signifie qu’elles
+            mettent à jour l’état immédiatement. On utilisera le mot-clé «
+            commit » pour les appeler.
+          </li>
+          <li>
+            Actions : ce sont des fonctions qui sont utilisées pour effectuer
+            des opérations asynchrones, telles que la récupération de données à
+            partir d’une API. Les actions peuvent appeler des mutations pour
+            mettre à jour l’état une fois que les données ont été récupérées. On
+            utilisera le mot-clé « disptach » pour les appeler.
+          </li>
+        </ul>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            La première étape va être de définir un store pour stocker nos
+            données.
+          </p>
+          <p>
+            Dans le dossier src/store, créez un sous dossier modules. Puis créez
+            deux fichiers : level.js, habits.js, à l’intérieur du dossier
+            précédemment créé. Ces fichiers vont contenir respectivement le
+            niveau de l’utilisateur et les habitudes.
+          </p>
+          <p>Puis dans le fichier index.js de src/store, écrivez ceci ;</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="WNmbdzV"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/WNmbdzV"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Il s’agit d’un fichier de store Vuex qui exporte une instance de
+            store. Le store est créé en utilisant la fonction createStore
+            importée depuis la bibliothèque Vuex.
+          </p>
+          <p>
+            Dans ce store, il y a deux modules qui sont enregistrés en utilisant
+            la propriété modules de l’instance de store. Le module habits et le
+            module level sont définis dans des fichiers distincts du répertoire
+            ./modules. En enregistrant ces modules dans le store, l’état, les
+            getters, les mutations et les actions définis dans chaque module
+            sont accessibles depuis n’importe quel composant de l’application
+            qui utilise le store. Cela permet un système de gestion d’état
+            centralisé qui facilite la mise à jour et la récupération de données
+            dans plusieurs composants.
+          </p>
+          <p>
+            Dans l’ensemble, ce fichier de store démontre l’utilisation de
+            modules pour organiser et gérer différents aspects de l’état de
+            l’application dans un store Vuex.
+          </p>
+          <p>Écrivez ceci dans src/store/modules/level.js :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="LYaEeBe"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/LYaEeBe"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Il définit le state, les getters, les actions et les mutations pour
+            gérer le niveau et les points d’expérience de l’utilisateur dans
+            l’application similaire à Habitica.
+          </p>
+          <p>
+            Le state contient deux propriétés : « level » et « experiencePoints
+            », qui sont tous deux initialisés à 1 et 0 respectivement.
+          </p>
+          <p>
+            Les getters définissent « progressPercentage » qui calcule le
+            progrès de l’utilisateur vers le prochain niveau en pourcentage en
+            fonction de ses points d’expérience actuels et de son niveau, ainsi
+            que les getters pour obtenir les levels et experiences.
+          </p>
+          <p>
+            Les actions définissent « addExperiencePoints » qui prend en entrée
+            les « points » et commet la mutation « incrementExperiencePoints »
+            pour ajouter les points aux points d’expérience de l’utilisateur. Si
+            les points d’expérience de l’utilisateur atteignent ou dépassent les
+            points requis pour le prochain niveau, l’action commit également la
+            mutation « levelUp » pour augmenter le niveau de l’utilisateur. Il y
+            a l’action symétrique « removeExperiencePoints ».
+          </p>
+          <p>
+            Les mutations définissent deux mutations : «
+            incrementExperiencePoints » pour augmenter les points d’expérience
+            de l’utilisateur d’une certaine quantité, et « levelUp » pour
+            augmenter le niveau de l’utilisateur de 1.
+          </p>
+          <p>
+            Il y a les mutations et actions symétriques ; levelDown et
+            decrementExperiencePoints.
+          </p>
+          <p>De la même manière pour habits.js :</p>
+          <p>Voir la vidéo</p>
+          <div>
+            <h3>Complément</h3>
+            <p>Voici le fichier store/habits.js écrit dans la vidéo :</p>
+            <p
+              class="codepen"
+              data-height="300"
+              data-default-tab="html,result"
+              data-slug-hash="mdoyXPg"
+              data-user="OpenSpirit"
+              style="
+                height: 300px;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: 2px solid;
+                margin: 1em 0;
+                padding: 1em;
+              "
+            >
+              <span
+                >See the Pen
+                <a href="https://codepen.io/OpenSpirit/pen/mdoyXPg">
+                  Untitled</a
+                >
+                by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                  >@OpenSpirit</a
+                >) on <a href="https://codepen.io">CodePen</a>.</span
+              >
+            </p>
+            <script
+              async
+              src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+            ></script>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2>Vue Router</h2>
+        <p>
+          Vue Router est un routeur officiel pour les applications Vue.js. Il
+          permet de gérer la navigation de l’utilisateur dans l’application en
+          utilisant les URL et les routes.
+        </p>
+        <p>
+          Concrètement, il permet de définir des routes pour chaque composant de
+          l’application et de les associer à des URL. Ainsi, lorsque
+          l’utilisateur clique sur un lien ou saisit une URL dans la barre
+          d’adresse, Vue Router va automatiquement afficher le composant
+          correspondant à cette route.
+        </p>
+        <p>
+          Vue Router permet également de gérer les paramètres d’URL, les
+          redirections, les transitions d’écran et les gardes de navigation pour
+          contrôler l’accès aux routes.
+        </p>
+        <p>
+          Si vous vous rendez dans App.Vue, vous devriez avoir quelque chose
+          comme ça :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="wvOByWB"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/wvOByWB"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Ce code représente un composant Vue appelé « App.vue » qui est la
+          racine du site web. Le template définit un élément de navigation
+          contenant deux liens, l’un vers la page d’accueil et l’autre vers la
+          page « About ». La directive « router-link » est utilisée pour créer
+          des liens qui sont gérés par le routeur Vue. Le composant «
+          router-view » est également inclus dans le template, qui est l’endroit
+          où les composants de vue sont rendus en fonction de l’URL actuelle.
+        </p>
+        <p>
+          &ltrouter-view&gt est un composant fourni par la bibliothèque Vue
+          Router qui rend le composant correspondant à la route actuelle. Il
+          agit comme un espace réservé où le composant de la route actuelle est
+          affiché. Lorsqu’un utilisateur navigue vers une URL spécifique, le
+          routeur Vue recherche la définition de la route correspondante et rend
+          le composant associé à cette route dans l’élément &ltrouter-view&gt.
+          Cela permet le rendu de contenu dynamique et offre une expérience
+          utilisateur fluide lors de la navigation entre différentes vues dans
+          une application monopage.
+        </p>
+        <p>
+          router-link est un composant fourni par Vue Router. Il est utilisé
+          pour créer des liens entre différentes pages de l’application en
+          utilisant les routes définies dans le fichier de configuration de Vue
+          Router.
+        </p>
+        <p>
+          La balise router-link crée un lien vers une route définie dans
+          l’application et permet de naviguer entre différentes vues de manière
+          dynamique, sans rafraîchir la page. Il est préférable d’utiliser
+          router-link plutôt que des balises HTML de liens classiques pour
+          améliorer la performance et l’expérience utilisateur dans une
+          application Vue.
+        </p>
+        <p>
+          Le composant router-link accepte plusieurs attributs, tels que le nom
+          de la route ou l’URL cible, ainsi que des options pour personnaliser
+          l’affichage et le comportement du lien. En outre, il fournit également
+          des classes CSS pour afficher des états actifs ou inactifs sur le lien
+          en fonction de la route courante.
+        </p>
+        <p>
+          Si vous vous rendez dans router/index.js, vous aurez un script
+          similaire à :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="JjzopKZ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/JjzopKZ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <div>
+          <p>Redéfinissez App.vue comme tel :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="mdoyXEY"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/mdoyXEY"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous avons changé les router-link vers des routes qui correspondent
+            mieux à notre projet.
+          </p>
+          <p>
+            Dans le dossier views, supprimer les .vue déjà existants et
+            remplacez-les par HabitPage.vue et LevelPage.vue :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="wvOByza"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/wvOByza"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Désormais, il nous faut redéfinir router/index.js afin qu’il utilise
+            nos routes et composants :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="QWowQKE"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/QWowQKE"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Si ce n’est pas déjà le cas, ouvrez une ligne de commande à la
+            racine de votre projet Vue (là où se trouve « package.json ») et
+            tapez la commande « npm run serve » pour lancer un serveur local.
+          </p>
+          <p>
+            Si vous vous rendez sur http://localhost:8080/ et
+            http://localhost:8080/habits, vous verrez vos composants s’afficher.
+          </p>
+          <p>
+            Cependant, ces composants sont bien vides… Dans la prochaine partie,
+            nous plongerons dans Vue pour créer des composants qui utilisent les
+            stores que nous avons définis avant.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

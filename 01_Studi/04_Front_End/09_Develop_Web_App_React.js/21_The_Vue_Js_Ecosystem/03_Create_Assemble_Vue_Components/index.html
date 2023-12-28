@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Créer et assembler des composants Vue</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <h1>Créer et assembler des composants Vue</h1>
+      <div>
+        <h2>Les composants Vue</h2>
+        <p>
+          Les composants sont les briques essentielles de Vue.js. On peut avoir
+          un composant pour une barre d’expérience, pour un footer, pour un
+          bouton qu’on utilise tout le temps, etc.
+        </p>
+        <p>Leur intérêt est qu’ils sont réutilisables.</p>
+        <p>
+          Dans le dossier src/components, créer un fichier HabitSingle.vue. Ce
+          composant va être une habitude que l’on souhaite prendre ou au
+          contraire perdre. On pourra définir sa description. Et si on a
+          progressé dans cette habitude on pourra cliquer sur « + » pour gagner
+          des points, sinon sur « - » pour en perdre.
+        </p>
+        <p>Remplissez HabitSingle.vue comme suit :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="YzgXGzZ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/YzgXGzZ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+      </div>
+
+      <div>
+        <h2>Directive v-on</h2>
+        <p>
+          En premier nous avons le template. À l’intérieur se trouve le code
+          HTML du composant.
+        </p>
+        <p>
+          Nous avons 3 boutons : « - », « + » et « delete ». Le mot-clé
+          v-on:click indique l’action qui doit être faite quand on clique sur le
+          bouton, respectivement, appeler les méthodes decrementProgress,
+          incrementProgress, deleteHabit.
+        </p>
+        <p>
+          La directive v-on de Vue.js est utilisée pour lier un écouteur
+          d’événements à un élément, ce qui vous permet d’écouter différents
+          événements et d’effectuer une action lorsque l’événement se produit.
+        </p>
+        <p>
+          Voici quelques exemples d’événements différents qui peuvent être
+          utilisés avec v-on :
+        </p>
+        <p>Événement Click :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="QWobKWZ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/QWobKWZ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Cela appellera la méthode doSomething lorsque le bouton est cliqué.
+        </p>
+        <p>Événement Submit :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="ExMjgaa"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/ExMjgaa"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Cela appellera la méthode handleSubmit lorsque le formulaire est
+          soumis.
+        </p>
+        <p>Événement Keydown :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="PoLqGwE"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/PoLqGwE"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Cela appellera la méthode searchItems lorsque la touche Entrée est
+          enfoncée dans le champ de saisie.
+        </p>
+        <p>Événement Mouseover :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="QWobKwZ"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/QWobKwZ"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Cela appellera la méthode showTooltip lorsque la souris est sur
+          l’élément div.
+        </p>
+        <p>Événement Focus :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="zYbGKGx"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/zYbGKGx"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Cela appellera la méthode onFocus lorsque le champ de saisie reçoit le
+          focus.
+        </p>
+        <p>Événement Blur :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="GReJjJO"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/GReJjJO"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Cela appellera la méthode onBlur lorsque le champ de saisie perd le
+          focus.
+        </p>
+      </div>
+
+      <div>
+        <h2>La syntaxe Mustache</h2>
+        <p>
+          La syntaxe Mustache est une syntaxe de modèle qui permet d’afficher
+          dynamiquement des données dans une page web en utilisant des modèles
+          préformatés.
+        </p>
+        <p>
+          En Vue.js, la syntaxe Mustache est utilisée pour lier des données
+          entre le modèle et les propriétés de l’instance de Vue. Pour utiliser
+          la syntaxe Mustache dans un fichier HTML, on encadre la propriété de
+          l’instance de Vue que l’on veut afficher avec des doubles accolades
+          {{}}.
+        </p>
+        <p>
+          Par exemple, si nous avons une propriété « message » dans l’instance
+          de Vue, on peut afficher son contenu dans la page en utilisant la
+          syntaxe Mustache comme ceci :
+        </p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="eYXNdNq"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/eYXNdNq"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Lorsque la page est rendue, la propriété « message » sera remplacée
+          par sa valeur dans l’instance de Vue.
+        </p>
+      </div>
+
+      <div>
+        <h2>Les props</h2>
+        <p>
+          Les props en Vue.js sont utilisées pour transmettre des données d’un
+          composant parent à un composant enfant. Cela permet de rendre les
+          composants plus modulaires et réutilisables.
+        </p>
+        <p>
+          Les props sont définies en tant qu’attributs dans la balise du
+          composant enfant, et sont passées au composant depuis le parent en
+          utilisant la syntaxe v-bind. Le composant enfant peut alors utiliser
+          ces props pour afficher des données ou effectuer des calculs.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>Voici un composant qui définit 2 props, title et message :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="gOEpwao"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/gOEpwao"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Dans cet exemple, le composant enfant possède deux props : « title »
+            et « message », qui sont tous deux de type String. Le parent peut
+            alors transmettre des données au composant enfant, comme ceci :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="NWJqRGL"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/NWJqRGL"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les computed properties</h2>
+        <p>
+          Les computed properties, ou propriétés calculées, sont un autre outil
+          important de Vue.js pour la manipulation de données. Ils permettent de
+          créer des propriétés qui dépendent de la valeur d’autres propriétés,
+          mais qui sont calculées dynamiquement à partir de ces dernières. Les
+          computed properties sont des fonctions qui retournent une valeur
+          calculée en fonction de l’état actuel de l’instance Vue. Ces fonctions
+          sont appelées automatiquement dès que les données auxquelles elles
+          font référence sont mises à jour. Elles sont très utiles pour
+          effectuer des opérations de calcul ou de filtrage sur les données de
+          l’application, sans avoir à stocker les résultats dans des propriétés
+          de données.
+        </p>
+        <p>
+          Par exemple, vous pouvez utiliser une computed property pour calculer
+          le prix total dans un panier d’achats en fonction du nombre de chaque
+          article et de son prix. Les computed properties sont similaires aux
+          propriétés de données, mais avec une différence importante : elles ne
+          sont pas modifiables directement. Au lieu de cela, elles sont mises à
+          jour automatiquement lorsque les données auxquelles elles font
+          référence changent. Cela signifie que les computed properties sont
+          toujours à jour et reflètent l’état actuel de l’application. Il est
+          important de noter que les computed properties sont mises en cache et
+          ne sont re-calculées que lorsque les données auxquelles elles font
+          référence sont mises à jour. Cela signifie qu’elles sont très
+          performantes et qu’elles ne ralentissent pas l’application. En résumé,
+          elles sont un moyen pratique et performant de calculer des valeurs
+          dynamiques dans une application Vue.js. Elles permettent de séparer la
+          logique de calcul de la présentation des données, rendant ainsi
+          l’application plus facile à comprendre et à maintenir.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>
+            Voici un exemple concret pour illustrer les computed properties en
+            Vue.js :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="mdoJrVB"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/mdoJrVB"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+
+        <div>
+          <h3>Attention</h3>
+          <p>
+            Veuillez noter la syntaxe pour utiliser les getters de store dans
+            Vue.js :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="OJqVRMv"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/OJqVRMv"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les méthodes</h2>
+        <p>
+          Les méthodes en Vue.js sont un moyen de définir des fonctions que l’on
+          peut appeler à partir d’un composant. Les méthodes sont définies dans
+          l’objet « methods » d’une instance Vue, et peuvent être appelées
+          depuis le code HTML du composant à l’aide de la syntaxe v-on. Les
+          méthodes sont très utiles pour définir des comportements dynamiques
+          dans un composant. Par exemple, si vous souhaitez effectuer une action
+          lorsque l’utilisateur clique sur un bouton, vous pouvez définir une
+          méthode qui gère l’événement de clic.
+        </p>
+        <div>
+          <h3>Exemple</h3>
+          <p>Voici un exemple de composant qui utilise des méthodes :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="yLwNaer"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/yLwNaer"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous allons écrire un composant pour la barre d’expérience dans
+            cette vidéo :
+          </p>
+        </div>
+
+        <div>
+          <h3>Complément</h3>
+          <p>
+            Voici le code écrit dans la vidéo précédente pour
+            components/LevelBar.vue :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="JjzdRXK"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/JjzdRXK"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>Dans views/LevelPage.vue :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="YzgXGqQ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/YzgXGqQ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>Et enfin dans views/HabitPage.vue :</p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="RwdPGaL"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/RwdPGaL"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Les watchers</h2>
+        <p>
+          Les watchers sont un outil important de Vue.js pour suivre les
+          changements de données dans l’application. Ils permettent d’exécuter
+          du code en réponse aux changements de données, sans avoir besoin de
+          re-rendre tout le composant. Ils sont définis dans l’objet « watch »
+          d’un composant Vue. Lorsqu’une donnée référencée par le watcher
+          change, le code défini dans le watcher est exécuté.
+        </p>
+        <p>Voici un exemple de watcher dans un composant Vue :</p>
+        <p
+          class="codepen"
+          data-height="300"
+          data-default-tab="html,result"
+          data-slug-hash="jOJPMqd"
+          data-user="OpenSpirit"
+          style="
+            height: 300px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/OpenSpirit/pen/jOJPMqd"> Untitled</a> by
+            OpenSpirit (<a href="https://codepen.io/OpenSpirit">@OpenSpirit</a>)
+            on <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <p>
+          Dans cet exemple, le watcher surveille la propriété « inputValue ».
+          Lorsque cette propriété change, le code défini dans le watcher est
+          exécuté. Ici, il met à jour la propriété « message » avec la nouvelle
+          valeur de « inputValue ». Les watchers peuvent également être utilisés
+          pour surveiller des propriétés calculées, des propriétés de Vuex ou
+          d’autres données dans l’application. Il est important de noter que les
+          watchers peuvent ralentir les performances de l’application s’ils sont
+          mal utilisés. Il est recommandé d’utiliser les computed properties
+          plutôt que les watchers lorsqu’il est possible de le faire, car les
+          computed properties sont plus performantes.
+        </p>
+      </div>
+
+      <div>
+        <h2>Les hooks</h2>
+        <p>Voici une vidéo expliquant les hooks dans Vue :</p>
+      </div>
+    </div>
+  </body>
+</html>
