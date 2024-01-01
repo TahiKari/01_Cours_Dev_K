@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La récupération des data depuis les API</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <h1>La gestion du changement de langue</h1>
+      <div>
+        <h2>Changer la langue</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            La prochaine étape est de permettre à l’utilisateur de changer la
+            langue dans notre application. Afin d’ajouter cette fonctionnalité,
+            nous pouvons écrire le code suivant dans le fichier « Header.js » :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="WNmQRPd"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/WNmQRPd"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici, nous avons créé une logique d’événement qui sera déclenchée
+            lors du clic sur le bouton du composant. Lorsque celui-ci sera
+            cliqué, l’état sera mis à jour ainsi que l’apparence visuelle des
+            span contenus dans le bouton. Par ailleurs, nous afficherons le
+            titre de l’application en fonction de la langue actuelle contenue
+            dans l’état.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Effectuer une nouvelle requête lors du changement de la langue</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Sachant que les informations reçues par l’API d’OpenWeatherMap
+            dépendent de la langue que nous avons spécifiée, nous devons
+            effectuer une nouvelle requête avec la langue actuelle lorsque
+            celle-ci est modifiée, ainsi le contenu présent dans l’application
+            sera automatiquement mis à jour.
+          </p>
+          <p>
+            Pour cela, inscrivez le code suivant dans le fichier « Meteo.js » :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="rNROjPo"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/rNROjPo"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Nous avons ajouté notre état « lang » dans le tableau de dépendance
+            du hook useEffect, afin que la fonction getWeather soit appelée à
+            nouveau lors d’un changement sur cet état.
+          </p>
+          <p>Voir vidéo</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

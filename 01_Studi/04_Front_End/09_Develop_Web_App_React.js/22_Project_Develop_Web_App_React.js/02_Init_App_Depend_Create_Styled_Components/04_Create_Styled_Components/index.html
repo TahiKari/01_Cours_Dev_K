@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La création des composants stylisés</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <h1>La création des composants stylisés</h1>
+      <div>
+        <h2>Ajouter une couleur de fond à notre application</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons ajouter un dégradé linéaire a notre body afin d’avoir
+            une couleur de fond pour notre application. Dans le fichier «
+            index.css », inscrivez le code suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="WNmQQrR"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/WNmQQrR"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>L'architecture de l’application</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons créer un dossier « Components » dans le répertoire src
+            qui va contenir chacun des dossiers propres à nos composants. Chacun
+            de ces dossiers va accueillir le composant en lui-même et son
+            fichier test, ce qui va nous permettre de garder une architecture
+            claire et aisément maintenable.
+          </p>
+          <p>Créez un dossier « Components » dans le dossier src.</p>
+          <p>
+            Ensuite, créez un dossier « Header », « Meteo » et « CityInput »
+            dans le dossier Components.
+          </p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Mettre en place le composant Headers</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous pouvons maintenant mettre en place notre premier composant
+            stylisé grâce à Styled-Components. Créez un fichier « Header.js »
+            dans le répertoire Header et écrivez le code suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="YzgyyZK"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/YzgyyZK"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>Voir vidéo</p>
+        </div>
+      </div>
+
+      <div>
+        <H2>Créer le composant Météo </H2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons désormais créer le composant Météo qui va accueillir les
+            données météorologiques que nous afficherons à l’utilisateur. Créez
+            un fichier « Météo.js » dans le répertoire Météo et inscrivez le
+            code suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="wvOKKJo"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/wvOKKJo"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>Voir Vidéo</p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Créer le composant CityInput</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Enfin, nous pouvons initier notre dernier composant, qui contiendra
+            un input pour permettre à l’utilisateur de saisir le nom de la ville
+            sur laquelle il souhaite obtenir les informations.
+          </p>
+          <p>
+            Créez un fichier « CityInput.js » dans le répertoire CityInput et
+            inscrivez le code suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="MWxaamQ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/MWxaamQ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>Voir Vidéo</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

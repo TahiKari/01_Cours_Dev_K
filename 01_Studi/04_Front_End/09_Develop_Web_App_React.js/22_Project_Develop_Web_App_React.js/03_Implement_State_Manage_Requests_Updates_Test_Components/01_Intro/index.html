@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <h1>Introduction</h1>
+      <div>
+        <h2>Objectifs</h2>
+        <ul>
+          <li>
+            Mettre en place la gestion de l’état global de l’application en
+            utilisant Redux. Cela permettra de stocker la ville saisie par
+            l’utilisateur et la langue choisie.
+          </li>
+          <li>
+            Créer des slices (tranches) pour gérer l’état de la ville et de la
+            langue. Chaque slice aura un reducer pour mettre à jour l’état et
+            des actions pour modifier les valeurs.
+          </li>
+          <li>
+            Fournir le store de Redux à l’application en utilisant le Provider
+            de React-redux dans le fichier « index.js ».
+          </li>
+          <li>
+            Effectuer des requêtes vers les API OpenWeatherMap et TimeZoneDb
+            pour récupérer les données météorologiques et temporelles en temps
+            réel de la ville. Utiliser Axios pour effectuer les requêtes et
+            mettre à jour les données dans le composant Meteo.
+          </li>
+          <li>
+            Gérer le changement de langue dans l’application en permettant à
+            l’utilisateur de sélectionner la langue souhaitée. Mettre à jour
+            l’état de la langue et afficher les éléments de l’interface dans la
+            langue sélectionnée.
+          </li>
+          <li>
+            Gérer l’entrée utilisateur en permettant à l’utilisateur de saisir
+            le nom de la ville dans un input. Mettre à jour l’état de la ville
+            et effectuer une nouvelle requête pour afficher les informations
+            météorologiques de la nouvelle ville saisie.
+          </li>
+          <li>
+            Réaliser des tests pour chaque composant de l’application. Tester le
+            rendu des composants, les fonctionnalités de changement de langue,
+            de saisie de la ville et les appels aux API. Utiliser des
+            bibliothèques de tests comme React-testing-library et Jest pour
+            effectuer les tests.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

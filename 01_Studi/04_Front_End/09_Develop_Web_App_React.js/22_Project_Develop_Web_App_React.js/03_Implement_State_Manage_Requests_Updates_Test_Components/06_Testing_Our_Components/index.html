@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Les tests de nos composants</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <h1>Les tests de nos composants</h1>
+      <div>
+        <h2>Mettre en place des tests</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Maintenant que notre application est fonctionnelle, nous devons nous
+            assurer de sa robustesse en réalisant des tests pour chacun de nos
+            composants. Afin d’utiliser Axios dans nos tests, nous devons nous
+            assurer de pouvoir l’importer. En effet, Jest fonctionne dans
+            l’environnement Node.js, il utilise donc des modules qui suivent le
+            CommonJS. Si nous souhaitons utiliser Axios, nous devons transpiler
+            le module JavaScript du type ECMAScript au type CommonJS.
+          </p>
+          <p>
+            Pour cela, nous pouvons ajouter le code suivant dans notre fichier «
+            package.json » :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="LYapWGp"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/LYapWGp"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Tester le composant Meteo</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons tester le composant Meteo. Pour cela, créez un fichier «
+            Meteo.test.js » dans le dossier Meteo et inscrivez le code suivant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="OJqypMx"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/OJqypMx"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+        </div>
+      </div>
+
+      <div>
+        <h2>Wrapper</h2>
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            Notez que nous avons utilisé la fonction Wrapper pour englober notre
+            composant dans un Provider afin de permettre le rendu de celui-ci en
+            lui fournissant le store de l’application.
+          </p>
+          <p>Voir vidéo</p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Tester le composant Header</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Ensuite, nous pouvons implémenter des tests pour le composant Header
+            dans un nouveau fichier « Header.test.js » que nous placerons dans
+            le dossier Header :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="yLwYMeQ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/yLwYMeQ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>Voir vidéo</p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Tester le composant CityInput</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Enfin, nous pouvons créer un fichier « CityInput.test.js » dans le
+            dossier CityInput qui va nous permettre de réaliser un test pour le
+            composant :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="qBvOrZO"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/qBvOrZO"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>Voir vidéo</p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Lancer les tests</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous pouvons lancer les tests de notre application afin de nous
+            assurer qu’il s’exécutent tous avec succès. Pour cela, ouvrez le
+            terminal et accédez au dossier de l’application via la commande
+            suivante :
+          </p>
+          <code>cd mon-projet</code>
+          <p>
+            Enfin, nous pouvons écrire la commande suivante pour lancer les
+            tests :
+          </p>
+          <code>npm run test</code>
+          <p>
+            Si l’ensemble des tests sont passés, nous avons maintenant
+            l’assurance que notre application réagit correctement par rapport à
+            nos attentes initiales.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

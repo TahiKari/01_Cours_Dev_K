@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>L'essentiel</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <h1>L'essentiel</h1>
+      <div>
+        <p>
+          Ce projet utilise Create React App (CRA) pour créer une application en
+          React. Il installe les dépendances nécessaires telles que
+          Styled-Component, Redux-toolkit, React-redux, Axios et Jest. 3
+          composants stylisés (Header, Meteo et CityInput) sont créés en
+          utilisant Styled-Components. Un dégradé linéaire est ajouté comme
+          couleur de fond dans « index.css ». Les clés d'API pour les données
+          météorologiques et temporelles sont stockées dans un fichier « .env ».
+          Redux est utilisé pour gérer l'état global de l'application avec des
+          slices pour la ville et la langue. Les API OpenWeatherMap et
+          TimeZoneDb sont requêtées via Axios pour obtenir les données en temps
+          réel. L'application permet à l'utilisateur de choisir la langue et de
+          saisir le nom de la ville pour afficher les informations météo. Enfin,
+          des tests sont effectués avec React-testing-library et Jest pour
+          vérifier les fonctionnalités et le rendu des composants.
+        </p>
+      </div>
+
+      <div>
+        <h2>Pour aller plus loin</h2>
+        <p>
+          Grâce à ce projet, nous avons pu mettre en place une application React
+          complète qui imbrique plusieurs fonctionnalités avancées. Il vous a
+          permis de mettre en pratique vos connaissances et de réaliser une
+          application parfaitement fonctionnelle.
+        </p>
+        <p>
+          Vous avez pu constater l’utilité de l’ensemble des dépendances que
+          nous avons utilisées et l’importance de chacune d’entre elles. Il est
+          possible d’approfondir et de perfectionner cette application, voici
+          quelque pistes d’améliorations que vous pouvez implémenter :
+        </p>
+        <ul>
+          <li>
+            <strong>Conserver la ville saisie par l’utilisateur :</strong> vous
+            pouvez implémenter un état persistant avec Redux Persist afin de
+            conserver la dernière ville saisie par l’utilisateur lorsqu’il
+            quitte et revient sur l’application.
+          </li>
+          <li>
+            <strong>Afficher d’avantage d’informations :</strong> les API que
+            nous avons utilisées fournissent davantage d’informations que celles
+            que nous avons affichées dans l’application, vous pourriez fournir
+            une application météo plus complète en affichant d’autre données
+            supplémentaire.
+          </li>
+          <li>
+            <strong>Améliorer le style :</strong> vous pouvez styliser
+            l’application à votre goût, et peut-être implémenter une
+            fonctionnalité qui va utiliser différents thèmes en fonction du
+            temps actuel de la ville saisie, par exemple des couleurs plus
+            froides pour les basses températures et à l’inverse, des couleurs
+            plus chaudes pour les températures élevées.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

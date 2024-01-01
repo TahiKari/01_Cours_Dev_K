@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La récupération des data depuis les API</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <h1>La récupération des data depuis les API</h1>
+      <div>
+        <h2>Effectuer une requête vers l’API d’OpenWeatherMap</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Nous allons utiliser Axios afin d’effectuer une requête l’API
+            d’OpenWeatherMap. Nous allons récupérer des informations
+            météorologiques concernant la ville contenue dans notre état.
+          </p>
+          <p>
+            Ensuite, nous utiliserons les données reçues pour afficher les
+            données souhaitées dans l’application. Inscrivez le code suivant
+            dans le fichier « Meteo.js » :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="VwRvPrZ"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/VwRvPrZ"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>
+            Ici, nous avons accédé à notre état global afin de transmettre la
+            ville et la langue actuelle dans l’URL de la requête, ainsi nous
+            avons un retour dynamique relatif à notre état.
+          </p>
+          <p>
+            Ensuite, nous effectuons un rendu des données reçues dans le JSX du
+            composant. Par ailleurs, nous avons ajouté un nouvel élément stylisé
+            qui va afficher une image dynamiquement en fonction du temps actuel
+            de la ville.
+          </p>
+          <p>Voir vidéo</p>
+        </div>
+      </div>
+
+      <div>
+        <h2>Effectuer une requête vers l’API TimeZoneDb</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Maintenant que nous avons accès aux coordonnées géographiques de la
+            ville, nous pouvons effectuer une requête vers l’API de TimeZoneDb
+            afin de récupérer les informations temporelles en temps réel de
+            cette ville. Inscrivez le code suivant dans le fichier « Meteo.js »
+            :
+          </p>
+          <p
+            class="codepen"
+            data-height="300"
+            data-default-tab="html,result"
+            data-slug-hash="qBvORQe"
+            data-user="OpenSpirit"
+            style="
+              height: 300px;
+              box-sizing: border-box;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border: 2px solid;
+              margin: 1em 0;
+              padding: 1em;
+            "
+          >
+            <span
+              >See the Pen
+              <a href="https://codepen.io/OpenSpirit/pen/qBvORQe"> Untitled</a>
+              by OpenSpirit (<a href="https://codepen.io/OpenSpirit"
+                >@OpenSpirit</a
+              >) on <a href="https://codepen.io">CodePen</a>.</span
+            >
+          </p>
+          <script
+            async
+            src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+          ></script>
+          <p>Voir vidéo</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

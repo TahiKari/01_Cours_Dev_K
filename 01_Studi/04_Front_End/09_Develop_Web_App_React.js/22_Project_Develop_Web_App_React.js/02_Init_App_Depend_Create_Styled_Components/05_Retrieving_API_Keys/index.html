@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La récupération des clés d’API</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div>
+      <h1>La récupération des clés d’API</h1>
+      <div>
+        <h2>L'utilisation d’API</h2>
+        <div>
+          <h3>Remarque</h3>
+          <p>
+            Nous allons utiliser 2 API dans ce projet :
+            <strong>OpenWeatherMap</strong> afin d’accéder aux données
+            météorologiques d’une ville en temps réel, ainsi que
+            <strong>TimeZoneDb</strong> qui va nous permettre de récupérer la
+            date et l’heure en temps réel de cette ville.
+          </p>
+          <p>
+            Nous avons besoin d’avoir l’autorisation d’utiliser ces API et pour
+            cela, nous devons récupérer une clé que nous allons utiliser dans le
+            code de notre application.
+          </p>
+          <p>
+            Afin de récupérer ces clés, vous devez créer un compte sur chacune
+            des plateformes accessibles aux liens suivants :
+          </p>
+          <ul>
+            <li>
+              <a
+                href="https://openweathermap.org/"
+                target="_blank"
+                rel="alternate"
+                >Open weather map</a
+              >
+            </li>
+            <li>
+              <a href="https://timezonedb.com/" target="_blank" rel="alternate"
+                >Time zone db</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div>
+        <h2>Stocker des clés dans un fichier</h2>
+        <div>
+          <h3>Méthode</h3>
+          <p>
+            Maintenant que nous avons récupéré les clés d’accès pour ces API,
+            nous pouvons créer un fichier « <strong>.env</strong> » dans lequel
+            nous allons stocker ces clés dans des variables
+            <strong>d’environnement</strong> afin de les utiliser plus tard dans
+            l’application. Inscrivez le code suivant dans le fichier créé :
+          </p>
+          <code
+            >REACT_APP_WEATHER_KEY = 'votre-clé-récupérée-sur-openweathermap'
+          </code>
+          <code
+            >REACT_APP_TIMEDB_KEY = 'votre-clé-récupérée-sur-timezonedb'</code
+          >
+          <p>Voir vidéo</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
